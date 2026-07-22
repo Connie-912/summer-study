@@ -332,6 +332,31 @@ html, body {
 .history-item:last-child { border-bottom: none; }
 .history-item:hover { background: var(--primary-softer); }
 
+/* 成绩概览 */
+.score-grid { display: flex; flex-direction: column; gap: 8px; }
+.score-item { display: flex; align-items: center; gap: 10px; }
+.score-subject { width: 90px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.score-priority { font-size: 10px; padding: 2px 5px; border-radius: 4px; font-weight: 700; color: white; flex-shrink: 0; }
+.score-p0 { background: var(--danger); }
+.score-p1 { background: var(--warning); }
+.score-p2 { background: var(--text-secondary); }
+.score-p3 { background: var(--success); }
+.score-bar-track { flex: 1; height: 20px; background: var(--primary-softer); border-radius: 10px; overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: 10px; font-size: 11px; color: white; font-weight: 600; display: flex; align-items: center; padding-left: 8px; transition: width 0.5s ease; min-width: 30px; }
+
+/* 科目分区标签 */
+.group-label {
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg);
+  margin: 8px 0 4px;
+  border-radius: var(--radius);
+}
+.group-label-core { color: var(--primary); }
+.group-label-extra { color: var(--success); }
+
 /* loading动画 */
 .loading-dots {
   display: flex;
@@ -1424,6 +1449,23 @@ html, body {
 .badge-item .badge-icon { font-size: 26px; margin-bottom: 4px; }
 .badge-item .badge-name { font-size: 12px; font-weight: 700; }
 .badge-item .badge-desc { font-size: 10px; color: var(--text-secondary); margin-top: 2px; }
+.badge-count { font-size: 10px; color: var(--text-light); margin-top: 2px; }
+
+/* 成绩编辑 */
+.score-edit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.score-edit-item { display: flex; align-items: center; gap: 8px; }
+.score-edit-item label { font-size: 13px; font-weight: 600; min-width: 60px; flex-shrink: 0; }
+.score-input {
+  flex: 1; min-width: 0;
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 8px; font-size: 14px; font-weight: 600;
+  color: var(--primary); background: var(--primary-softer);
+  outline: none; width: 60px; text-align: center;
+  transition: border-color 0.2s;
+}
+.score-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+@media (max-width: 640px) { .score-edit-grid { grid-template-columns: 1fr; } }
+
 @media (max-width: 768px) {
   .badge-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
 }
@@ -2114,59 +2156,76 @@ const SUBJECTS = [
     id: 'chinese', name: '语文', icon: '\u{1F4D6}', color: '#ef4444',
     materialPath: '../chinese/\u65B0\u9AD8\u4E8C\u8BED\u6587\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u82CF\u8001\u5E08', title: '\u9AD8\u7EA7\u8BED\u6587\u6559\u5E08\u00B720\u5E74\u6559\u9F84', avatar: '\u{1F469}\u{200D}\u{1F3EB}', style: '\u6E29\u6587\u5C14\u96C5\uFF0C\u8BF4\u8BDD\u5E38\u5F15\u7528\u53E4\u8BD7\u6587\uFF0C\u6CE8\u91CD\u9605\u8BFB\u7406\u89E3\u548C\u5199\u4F5C\u65B9\u6CD5' },
-    topics: ['现代文阅读基础', '文言文实词虚词', '古诗词鉴赏', '名篇名句默写', '语言文字运用', '作文审题立意', '作文结构布局', '传统文化常识']
+    topics: ['现代文阅读基础', '文言文实词虚词', '古诗词鉴赏', '名篇名句默写', '语言文字运用', '作文审题立意', '作文结构布局', '传统文化常识'],
+    score: 80, priority: 3, group: 'core'
   },
   {
     id: 'math', name: '数学', icon: '\u{1F4D0}', color: '#2563eb',
     materialPath: '../math/\u65B0\u9AD8\u4E8C\u6570\u5B66\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u9648\u8001\u5E08', title: '\u6570\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u5965\u8D5B\u6559\u7EC3', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u4E25\u8C28\u8010\u5FC3\uFF0C\u5F3A\u8C03\u6BCF\u4E00\u6B65\u90FD\u8981\u6709\u4F9D\u636E\uFF0C\u6CE8\u91CD\u89E3\u9898\u65B9\u6CD5\u548C\u601D\u7EF4\u8BAD\u7EC3' },
-    topics: ['平面向量', '解三角形', '等差与等比数列', '数列求通项与求和', '函数概念与基本性质', '指数与对数函数', '函数零点与方程', '不等式基础']
+    topics: ['平面向量', '解三角形', '等差与等比数列', '数列求通项与求和', '函数概念与基本性质', '指数与对数函数', '函数零点与方程', '不等式基础'],
+    score: 41, priority: 0, group: 'core'
   },
   {
     id: 'english', name: '英语', icon: '\u{1F524}', color: '#8b5cf6',
     materialPath: '../english/\u65B0\u9AD8\u4E8C\u82F1\u8BED\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: 'Lily\u8001\u5E08', title: '\u82F1\u8BED\u9AA8\u5E72\u6559\u5E08\u00B7\u96C5\u601D8\u5206', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6D3B\u6CFC\u9F13\u52B1\uFF0C\u4E2D\u82F1\u5939\u6742\uFF0C\u6CE8\u91CD\u8BED\u611F\u548C\u505A\u9898\u6280\u5DE7\uFF0C\u9F13\u52B1\u5B66\u751F\u5927\u80C6\u5C1D\u8BD5' },
-    topics: ['时态语态', '非谓语动词', '定语从句', '名词性从句', '状语从句', '完形填空', '阅读理解', '书面表达']
+    topics: ['时态语态', '非谓语动词', '定语从句', '名词性从句', '状语从句', '完形填空', '阅读理解', '书面表达'],
+    score: 42, priority: 0, group: 'core'
   },
   {
     id: 'physics', name: '物理', icon: '\u269B\uFE0F', color: '#f59e0b',
     materialPath: '../physics/\u65B0\u9AD8\u4E8C\u7269\u7406\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u738B\u8001\u5E08', title: '\u7269\u7406\u9AD8\u7EA7\u6559\u5E08\u00B7\u5B9E\u9A8C\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F52C}', style: '\u70ED\u7231\u5B9E\u9A8C\uFF0C\u559C\u6B22\u7528\u751F\u6D3B\u4F8B\u5B50\u89E3\u91CA\u6982\u5FF5\uFF0C\u6CE8\u91CD\u7269\u7406\u6A21\u578B\u5EFA\u7ACB' },
-    topics: ['匀变速直线运动', '相互作用与平衡', '牛顿运动定律', '曲线运动', '万有引力与航天', '功和能', '动量与动量守恒', '电场基础']
+    topics: ['匀变速直线运动', '相互作用与平衡', '牛顿运动定律', '曲线运动', '万有引力与航天', '功和能', '动量与动量守恒', '电场基础'],
+    score: 0, priority: 1, group: 'core'
   },
   {
     id: 'chemistry', name: '化学', icon: '\u{1F9EA}', color: '#10b981',
     materialPath: '../chemistry/\u65B0\u9AD8\u4E8C\u5316\u5B66\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u674E\u8001\u5E08', title: '\u5316\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u547D\u9898\u4E13\u5BB6', avatar: '\u{1F469}\u{200D}\u{1F52C}', style: '\u7EC6\u81F4\u4E25\u8C28\uFF0C\u5F3A\u8C03\u5316\u5B66\u65B9\u7A0B\u5F0F\u89C4\u8303\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u4E4B\u95F4\u7684\u8054\u7CFB' },
-    topics: ['物质的分类与转化', '离子反应', '氧化还原反应', '钠及其化合物', '氯及其化合物', '物质的量', '铁及其化合物', '原子结构与元素周期律']
+    topics: ['物质的分类与转化', '离子反应', '氧化还原反应', '钠及其化合物', '氯及其化合物', '物质的量', '铁及其化合物', '原子结构与元素周期律'],
+    score: 0, priority: 1, group: 'core'
   },
   {
     id: 'biology', name: '生物', icon: '\u{1F9EC}', color: '#16a34a',
     materialPath: '../biology/\u65B0\u9AD8\u4E8C\u751F\u7269\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u5468\u8001\u5E08', title: '\u751F\u7269\u9AA8\u5E72\u6559\u5E08\u00B7\u5E7D\u9ED8\u98CE\u8DA3', avatar: '\u{1F469}\u{200D}\u{1F393}', style: '\u6E29\u548C\u4EB2\u5207\uFF0C\u559C\u6B22\u7528\u56FE\u89E3\u548C\u7C7B\u6BD4\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u7406\u89E3\u548C\u8BB0\u5FC6\u7ED3\u5408' },
-    topics: ['走近细胞', '组成细胞的分子', '细胞的基本结构', '细胞的物质输入和输出', '细胞的能量供应和利用', '细胞的生命历程', '遗传的细胞基础', '遗传的分子基础']
+    topics: ['走近细胞', '组成细胞的分子', '细胞的基本结构', '细胞的物质输入和输出', '细胞的能量供应和利用', '细胞的生命历程', '遗传的细胞基础', '遗传的分子基础'],
+    score: 0, priority: 3, group: 'extra'
   },
   {
     id: 'history', name: '历史', icon: '\u{1F4DC}', color: '#991b1b',
     materialPath: '../history/\u65B0\u9AD8\u4E8C\u5386\u53F2\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u5F20\u8001\u5E08', title: '\u5386\u53F2\u9AD8\u7EA7\u6559\u5E08\u00B7\u6587\u53F2\u5B66\u8005', avatar: '\u{1F468}\u{200D}\u{1F393}', style: '\u77E5\u8BC6\u6E0A\u535A\uFF0C\u64C5\u957F\u8BB2\u6545\u4E8B\u548C\u6A2A\u5411\u5BF9\u6BD4\uFF0C\u6CE8\u91CD\u5386\u53F2\u601D\u7EF4\u548C\u65F6\u95F4\u7EBF' },
-    topics: ['先秦时期', '秦汉时期', '魏晋南北朝', '隋唐时期', '辽宋夏金元', '明清时期', '中国近代史', '中国现代史']
+    topics: ['先秦时期', '秦汉时期', '魏晋南北朝', '隋唐时期', '辽宋夏金元', '明清时期', '中国近代史', '中国现代史'],
+    score: 46, priority: 2, group: 'core'
   },
   {
     id: 'politics', name: '政治', icon: '\u2696\uFE0F', color: '#dc2626',
     materialPath: '../politics/\u65B0\u9AD8\u4E8C\u653F\u6CBB\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u5218\u8001\u5E08', title: '\u653F\u6CBB\u9AA8\u5E72\u6559\u5E08\u00B7\u65F6\u653F\u8BC4\u8BBA\u5458', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6761\u7406\u6E05\u6670\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u70B9\u4E0E\u70ED\u70B9\u7ED3\u5408\uFF0C\u5F3A\u8C03\u7B54\u9898\u89C4\u8303' },
-    topics: ['生活与消费', '生产劳动与经营', '收入与分配', '社会主义市场经济', '公民的政治生活', '为人民服务的政府', '社会主义民主政治', '哲学基础']
+    topics: ['生活与消费', '生产劳动与经营', '收入与分配', '社会主义市场经济', '公民的政治生活', '为人民服务的政府', '社会主义民主政治', '哲学基础'],
+    score: 56, priority: 2, group: 'core'
   },
   {
     id: 'geography', name: '地理', icon: '\u{1F30D}', color: '#0ea5e9',
     materialPath: '../geography/\u65B0\u9AD8\u4E8C\u5730\u7406\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
     teacher: { name: '\u8D75\u8001\u5E08', title: '\u5730\u7406\u7279\u7EA7\u6559\u5E08\u00B7\u91CE\u5916\u8003\u5BDF\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u7A7A\u95F4\u601D\u7EF4\u5F3A\uFF0C\u559C\u6B22\u753B\u56FE\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u5730\u56FE\u548C\u6570\u636E\u5206\u6790' },
-    topics: ['地球与地图', '地球上的大气', '地球上的水', '地表形态的塑造', '自然地理环境的整体性与差异性', '人口与城市', '农业与工业区位', '交通运输与可持续发展']
+    topics: ['地球与地图', '地球上的大气', '地球上的水', '地表形态的塑造', '自然地理环境的整体性与差异性', '人口与城市', '农业与工业区位', '交通运输与可持续发展'],
+    score: 50, priority: 2, group: 'core'
   }
 ];
 
-/* ========== 离线预设回复 ========== */
+/* 科目优先级说明：
+   priority 0 = P0 最高优先级（数学、英语，暑假必须补）
+   priority 1 = P1 重要（物理、化学，选理科必须补）
+   priority 2 = P2 常规（历史、政治、地理）
+   priority 3 = P3 保持（语文、生物）
+   group 'core' = 6科核心（有分数记录的考试科目）
+   group 'extra' = 3科拓展（物化生中的生物，有兴趣再看）
+   真实分数：语文80 数学41 英语42 历史46 政治56 地理50
+*/
 const OFFLINE_RESPONSES = {
   chinese: [
     '苏老师觉得你现在的文言文基础还需要加强，建议先从专题2的实词虚词入手，多读多背。暑假是补基础的黄金时间，加油！',
@@ -2229,6 +2288,11 @@ const DEFAULT_STATE = {
     nickname: '同学',
     goal: '未定'
   },
+  scores: {
+    chinese: 80, math: 41, english: 42,
+    physics: 0, chemistry: 0, biology: 0,
+    history: 46, politics: 56, geography: 50
+  },
   studyDays: [],
   examSettings: {
     subjects: [],
@@ -2270,6 +2334,17 @@ function saveState() {
 }
 
 /* ========== 工具函数 ========== */
+
+/* 获取科目分数（优先从 state 读取，兼容旧数据回退到 SUBJECTS 硬编码） */
+function getScore(subjectId) {
+  const s = SUBJECTS.find(sub => sub.id === subjectId);
+  const val = state.scores && state.scores[subjectId] !== undefined ? state.scores[subjectId] : (s ? s.score : 0);
+  return val;
+}
+function getTotalScore() {
+  if (!state.scores) return 0;
+  return Object.values(state.scores).reduce((a, b) => a + b, 0);
+}
 
 /* 获取问候语 */
 function getGreeting() {
@@ -2472,6 +2547,30 @@ function showCelebration(subjectId) {
     </div>
   `;
   document.body.appendChild(overlay);
+}
+
+/* ========== 鼓励提示（完成单个专题） ========== */
+const encouragements = [
+  '太棒了！继续加油 💪',
+  '又进一步，真厉害 ✨',
+  '好样的！坚持就是胜利 🌟',
+  '每天进步一点点，加油 🎯',
+  '真不错！继续努力 💫',
+  '每完成一个专题，就离目标更近一步 🚀',
+  '坚持学习的样子最酷了 🌈',
+  '很好！保持这个节奏 🎵',
+  '做得好！你已经超过了昨天的自己 📈',
+  '第 {n} 个专题完成，继续保持！🎉'
+];
+function showEncourage(msg) {
+  const el = document.createElement('div');
+  el.className = 'encourage-toast';
+  const n = getTotalCompleted();
+  const text = msg || encouragements[Math.floor(Math.random() * encouragements.length)].replace('{n}', n);
+  el.textContent = text;
+  document.body.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 2000);
 }
 
 /* ========== 确认弹窗 ========== */
@@ -2733,6 +2832,30 @@ function renderHome() {
       ${todayTasksHtml}
     </div>
 
+    <!-- 成绩概览 -->
+    <div class="card">
+      <div class="card-title">📝 高一期末成绩概览</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">总分${getTotalScore()} · 找准薄弱点，暑假重点突破</div>
+      <div class="score-grid">
+        ${SUBJECTS.filter(s => s.group === 'core').sort((a,b) => getScore(a.id) - getScore(b.id)).map(s => {
+          const sc = getScore(s.id);
+          return `
+          <div class="score-item">
+            <div class="score-subject">
+              <span class="score-priority score-p${s.priority}">P${s.priority}</span>
+              <span>${s.icon} ${s.name}</span>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width:${Math.max(sc, 5)}%;background:${s.color};">${sc > 0 ? sc + '分' : '未考'}</div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:11px;color:var(--text-secondary);">
+        <span style="color:var(--danger);font-weight:600;">P0</span> = 暑假必须补 · <span style="color:var(--warning);font-weight:600;">P1</span> = 重要 · <span style="color:var(--text-secondary);font-weight:600;">P2</span> = 常规 · <span style="color:var(--success);font-weight:600;">P3</span> = 保持
+      </div>
+    </div>
+
     <!-- 下一步建议 -->
     ${nextStepHtml}
 
@@ -2757,7 +2880,40 @@ function renderSubjects() {
   if (!state.currentSubject) {
     // 列表视图
     let html = '';
-    SUBJECTS.forEach(s => {
+
+    // 核心科目（有分数记录的6科）
+    const coreSubjects = SUBJECTS.filter(s => s.group === 'core').sort((a, b) => a.priority - b.priority);
+    html += `<div class="group-label group-label-core">🔥 核心科目（6科 · 暑假重点突破）</div>`;
+    coreSubjects.forEach(s => {
+      const p = getSubjectProgress(s.id);
+      let dots = s.topics.map((_, i) => {
+        const checked = state.progress[`${s.id}_${i}`] ? 'completed' : '';
+        return `<div class="topic-dot ${checked}"></div>`;
+      }).join('');
+      const scoreTag = getScore(s.id) > 0 ? `<span style="font-size:11px;color:${s.color};background:${s.color}15;padding:2px 6px;border-radius:4px;margin-left:6px;">${getScore(s.id)}分</span>` : '';
+      const priorityTag = s.priority <= 1 ? `<span style="font-size:10px;color:var(--danger);margin-left:4px;">●</span>` : '';
+
+      html += `
+        <div class="subject-card" onclick="openSubject('${s.id}')">
+          <div class="card-emoji">${s.icon}</div>
+          <div class="subject-card-info">
+            <div class="s-name">${s.name}${priorityTag}${scoreTag}</div>
+            <div class="s-teacher">${s.teacher.name} · ${getSubjectProgress(s.id).completed}/8</div>
+          </div>
+          <div class="subject-card-right">
+            <div class="s-percent" style="color:${s.color}">${p.percent}%</div>
+            <div class="s-arrow">&#8250;</div>
+          </div>
+        </div>
+        <div style="padding:0 16px;margin-top:-4px;margin-bottom:8px;">
+          <div class="topic-dots">${dots}</div>
+        </div>`;
+    });
+
+    // 拓展科目（有兴趣再看）
+    const extraSubjects = SUBJECTS.filter(s => s.group === 'extra');
+    html += `<div class="group-label group-label-extra">🌱 拓展科目（3科 · 有兴趣再看）</div>`;
+    extraSubjects.forEach(s => {
       const p = getSubjectProgress(s.id);
       let dots = s.topics.map((_, i) => {
         const checked = state.progress[`${s.id}_${i}`] ? 'completed' : '';
@@ -2780,6 +2936,7 @@ function renderSubjects() {
           <div class="topic-dots">${dots}</div>
         </div>`;
     });
+
     el.innerHTML = html;
   } else {
     // 详情视图
@@ -3879,6 +4036,21 @@ function renderMe() {
     </div>
 
     <div class="card">
+      <div class="card-title">📝 成绩录入</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">修改各科期末成绩，首页概览会自动更新</div>
+      <div class="score-edit-grid">
+        ${SUBJECTS.filter(s => s.group === 'core').map(s => `
+          <div class="score-edit-item">
+            <label>${s.icon} ${s.name}</label>
+            <input type="number" min="0" max="150" class="score-input"
+              value="${getScore(s.id)}"
+              onchange="updateScore('${s.id}', parseInt(this.value) || 0)">
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="card">
       <div class="card-title">数据管理</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
         <button class="btn btn-outline btn-block" onclick="exportData()">导出学习数据</button>
@@ -3901,6 +4073,15 @@ function renderMe() {
 function updateNickname(name) {
   state.config.nickname = name || '同学';
   saveState();
+}
+
+/* 更新分数 */
+function updateScore(subjectId, val) {
+  if (!state.scores) state.scores = {};
+  state.scores[subjectId] = Math.max(0, Math.min(150, val || 0));
+  saveState();
+  render();
+  showEncourage('📝 成绩已更新，首页概览已自动调整');
 }
 
 function setGoal(goal) {
