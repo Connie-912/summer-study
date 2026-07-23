@@ -3,33 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>新高二暑假智能学习系统</title>
+<title>AI智能学伴</title>
 <style>
 /* ========== CSS 变量 ========== */
 :root {
-  --primary: #2563eb;
-  --primary-light: #93c5fd;
-  --primary-dark: #1e40af;
-  --primary-soft: #e9f0fe;
-  --primary-softer: #f3f7ff;
+  --primary: #0891b2;
+  --primary-light: #22d3ee;
+  --primary-dark: #0e7490;
+  --primary-soft: #ecfeff;
+  --primary-softer: #f0fdfa;
   --accent: #0d9488;
-  --bg: #f2f6ff;
+  --accent-light: #5eead4;
+  --bg: #f0f9ff;
   --card: #ffffff;
-  --text: #1e293b;
+  --text: #0f172a;
   --text-secondary: #64748b;
   --text-light: #94a3b8;
   --border: #e2e8f0;
   --danger: #ef4444;
   --success: #10b981;
   --warning: #f59e0b;
-  --gradient-primary: #2563eb;
-  --gradient-header: #1e3a8a;
-  --radius: 10px;
-  --shadow: 0 1px 3px rgba(37,99,235,0.07);
-  --shadow-md: 0 4px 14px rgba(37,99,235,0.10);
+  --gradient-primary: linear-gradient(135deg, #0e7490, #0891b2);
+  --gradient-header: linear-gradient(135deg, #0f766e, #0891b2);
+  --gradient-warm: linear-gradient(135deg, #0d9488, #22d3ee);
+  --gradient-green: linear-gradient(135deg, #059669, #10b981);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 1px 3px rgba(8,145,178,0.06), 0 1px 2px rgba(8,145,178,0.04);
+  --shadow-md: 0 4px 16px rgba(8,145,178,0.10);
+  --shadow-lg: 0 8px 32px rgba(8,145,178,0.12);
   --tab-height: 56px;
   --header-height: 48px;
-  --font: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  --font: -apple-system, "PingFang SC", "SF Pro Display", "HarmonyOS Sans", "Helvetica Neue", sans-serif;
 }
 
 /* ========== 基础样式 ========== */
@@ -145,7 +151,7 @@ html, body {
   background: var(--gradient-primary);
   color: white;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(30,64,175,0.2);
+  box-shadow: 0 2px 6px rgba(8,145,178,0.25);
 }
 
 .sidebar-item .si-icon {
@@ -378,24 +384,37 @@ html, body {
 
 /* ========== 首页样式 ========== */
 .welcome-section {
-  background: var(--gradient-primary);
+  background: var(--gradient-header);
   color: white;
-  padding: 20px 16px;
+  padding: 24px 20px;
   margin: 0;
   border-radius: 0;
 }
 
-.welcome-greeting {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
+  .welcome-greeting {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
 
-.welcome-subtitle {
-  font-size: 13px;
-  opacity: 0.85;
-  margin-bottom: 16px;
-}
+  .welcome-subtitle {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+
+  /* 年级徽章 */
+  .grade-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
 
 .welcome-stats {
   display: flex;
@@ -2147,12 +2166,12 @@ html, body {
   <!-- 顶部标题栏 -->
   <div class="header" id="header">
     <button class="back-btn" id="backBtn" onclick="goBack()">&#8592;</button>
-    <span id="headerTitle">新高二暑假学习系统</span>
+    <span id="headerTitle">AI智能学伴</span>
   </div>
 
   <!-- 侧边导航栏（桌面端） -->
   <div class="sidebar" id="sidebar">
-    <div class="sidebar-logo">新高二暑假学习系统</div>
+    <div class="sidebar-logo">AI智能学伴</div>
     <div class="sidebar-nav">
       <button class="sidebar-item active" onclick="switchTab('home')" data-tab="home">
         <span class="si-icon">&#127968;</span>
@@ -2203,6 +2222,20 @@ html, body {
       <!-- 我的Tab -->
       <div class="tab-content" id="tab-me"></div>
     </div>
+
+      ${(function () {
+        try { if (localStorage.getItem('studyAdmin') !== '1') return ''; } catch (e) { return ''; }
+        return '<div class="card" style="border-left:4px solid #f59e0b;margin-top:14px;">' +
+          '<div class="card-title">🔑 邀请码管理（仅你可见）</div>' +
+          '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">每售出一份课程就生成一个邀请码发给家长，注册时必须填写。默认每码可用 1 次。</div>' +
+          '<div style="display:flex;gap:8px;margin-bottom:10px;">' +
+            '<button class="btn btn-primary btn-sm" onclick="adminGenInvite(1)">生成 1 次码</button>' +
+            '<button class="btn btn-outline btn-sm" onclick="adminGenInvite(5)">生成 5 次码</button>' +
+            '<button class="btn btn-outline btn-sm" onclick="adminListInvites()">刷新列表</button>' +
+          '</div>' +
+          '<div id="inviteList" style="font-size:13px;color:#334155;max-height:220px;overflow:auto;">点「刷新列表」查看已生成的邀请码</div>' +
+        '</div>';
+      })()}
   </div>
 
   <!-- 底部Tab栏（仅移动端显示） -->
@@ -2241,42 +2274,42 @@ const SUBJECTS = [
     id: 'chinese', name: '语文', icon: '\u{1F4D6}', color: '#ef4444',
     materialPath: 'materials/chinese.html',
     teacher: { name: '\u82CF\u8001\u5E08', title: '\u9AD8\u7EA7\u8BED\u6587\u6559\u5E08\u00B720\u5E74\u6559\u9F84', avatar: '\u{1F469}\u{200D}\u{1F3EB}', style: '\u6E29\u6587\u5C14\u96C5\uFF0C\u8BF4\u8BDD\u5E38\u5F15\u7528\u53E4\u8BD7\u6587\uFF0C\u6CE8\u91CD\u9605\u8BFB\u7406\u89E3\u548C\u5199\u4F5C\u65B9\u6CD5' },
-    topics: ['现代文阅读基础', '文言文实词虚词', '古诗词鉴赏', '名篇名句默写', '语言文字运用', '作文审题立意', '作文结构布局', '传统文化常识'],
+    topics: ['古诗文背诵', '文言实词', '文言虚词', '诗歌鉴赏', '现代文阅读', '作文素材', '语言运用', '议论文写作'],
     score: null, priority: 3, group: 'core'
   },
   {
     id: 'math', name: '数学', icon: '\u{1F4D0}', color: '#2563eb',
     materialPath: 'materials/math.html',
     teacher: { name: '\u9648\u8001\u5E08', title: '\u6570\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u5965\u8D5B\u6559\u7EC3', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u4E25\u8C28\u8010\u5FC3\uFF0C\u5F3A\u8C03\u6BCF\u4E00\u6B65\u90FD\u8981\u6709\u4F9D\u636E\uFF0C\u6CE8\u91CD\u89E3\u9898\u65B9\u6CD5\u548C\u601D\u7EF4\u8BAD\u7EC3' },
-    topics: ['平面向量', '解三角形', '等差与等比数列', '数列求通项与求和', '函数概念与基本性质', '指数与对数函数', '函数零点与方程', '不等式基础'],
+    topics: ['平面向量', '解三角形', '数列', '函数复习（重点）', '三角函数', '空间向量与立体几何·预习', '直线与圆的方程·预习', '数学解题思维导图'],
     score: null, priority: 0, group: 'core'
   },
   {
     id: 'english', name: '英语', icon: '\u{1F524}', color: '#8b5cf6',
     materialPath: 'materials/english.html',
     teacher: { name: 'Lily\u8001\u5E08', title: '\u82F1\u8BED\u9AA8\u5E72\u6559\u5E08\u00B7\u96C5\u601D8\u5206', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6D3B\u6CFC\u9F13\u52B1\uFF0C\u4E2D\u82F1\u5939\u6742\uFF0C\u6CE8\u91CD\u8BED\u611F\u548C\u505A\u9898\u6280\u5DE7\uFF0C\u9F13\u52B1\u5B66\u751F\u5927\u80C6\u5C1D\u8BD5' },
-    topics: ['时态语态', '非谓语动词', '定语从句', '名词性从句', '状语从句', '完形填空', '阅读理解', '书面表达'],
+    topics: ['动词-ing形式', '动词不定式', '过去分词', '定语从句', '名词性从句', '状语从句', '完形填空技巧', '应用文写作'],
     score: null, priority: 0, group: 'core'
   },
   {
     id: 'physics', name: '物理', icon: '\u269B\uFE0F', color: '#f59e0b',
     materialPath: 'materials/physics.html',
     teacher: { name: '\u738B\u8001\u5E08', title: '\u7269\u7406\u9AD8\u7EA7\u6559\u5E08\u00B7\u5B9E\u9A8C\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F52C}', style: '\u70ED\u7231\u5B9E\u9A8C\uFF0C\u559C\u6B22\u7528\u751F\u6D3B\u4F8B\u5B50\u89E3\u91CA\u6982\u5FF5\uFF0C\u6CE8\u91CD\u7269\u7406\u6A21\u578B\u5EFA\u7ACB' },
-    topics: ['匀变速直线运动', '相互作用与平衡', '牛顿运动定律', '曲线运动', '万有引力与航天', '功和能', '动量与动量守恒', '电场基础'],
+    topics: ['匀变速直线运动', '受力分析', '牛顿运动定律', '曲线运动', '圆周运动', '万有引力与航天', '功和能', '静电场（预习）'],
     score: null, priority: 1, group: 'core'
   },
   {
     id: 'chemistry', name: '化学', icon: '\u{1F9EA}', color: '#10b981',
     materialPath: 'materials/chemistry.html',
     teacher: { name: '\u674E\u8001\u5E08', title: '\u5316\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u547D\u9898\u4E13\u5BB6', avatar: '\u{1F469}\u{200D}\u{1F52C}', style: '\u7EC6\u81F4\u4E25\u8C28\uFF0C\u5F3A\u8C03\u5316\u5B66\u65B9\u7A0B\u5F0F\u89C4\u8303\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u4E4B\u95F4\u7684\u8054\u7CFB' },
-    topics: ['物质的分类与转化', '离子反应', '氧化还原反应', '钠及其化合物', '氯及其化合物', '物质的量', '铁及其化合物', '原子结构与元素周期律'],
+    topics: ['物质的量', '氧化还原反应', '离子反应', '钠及其化合物', '氯及其化合物', '铁和铝', '元素周期律', '化学键与分子结构'],
     score: null, priority: 1, group: 'core'
   },
   {
     id: 'biology', name: '生物', icon: '\u{1F9EC}', color: '#16a34a',
     materialPath: 'materials/biology.html',
     teacher: { name: '\u5468\u8001\u5E08', title: '\u751F\u7269\u9AA8\u5E72\u6559\u5E08\u00B7\u5E7D\u9ED8\u98CE\u8DA3', avatar: '\u{1F469}\u{200D}\u{1F393}', style: '\u6E29\u548C\u4EB2\u5207\uFF0C\u559C\u6B22\u7528\u56FE\u89E3\u548C\u7C7B\u6BD4\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u7406\u89E3\u548C\u8BB0\u5FC6\u7ED3\u5408' },
-    topics: ['走近细胞', '组成细胞的分子', '细胞的基本结构', '细胞的物质输入和输出', '细胞的能量供应和利用', '细胞的生命历程', '遗传的细胞基础', '遗传的分子基础'],
+    topics: ['走近细胞', '组成细胞的分子', '细胞基本结构', '物质运输', '能量供应', '细胞生命历程', '遗传细胞基础', '遗传分子基础'],
     score: null, priority: 3, group: 'extra'
   },
   {
@@ -2290,17 +2323,50 @@ const SUBJECTS = [
     id: 'politics', name: '政治', icon: '\u2696\uFE0F', color: '#dc2626',
     materialPath: 'materials/politics.html',
     teacher: { name: '\u5218\u8001\u5E08', title: '\u653F\u6CBB\u9AA8\u5E72\u6559\u5E08\u00B7\u65F6\u653F\u8BC4\u8BBA\u5458', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6761\u7406\u6E05\u6670\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u70B9\u4E0E\u70ED\u70B9\u7ED3\u5408\uFF0C\u5F3A\u8C03\u7B54\u9898\u89C4\u8303' },
-    topics: ['生活与消费', '生产劳动与经营', '收入与分配', '社会主义市场经济', '公民的政治生活', '为人民服务的政府', '社会主义民主政治', '哲学基础'],
+    topics: ['生活与消费', '生产与经营', '收入与分配', '市场经济', '公民政治', '政府服务', '民主政治', '哲学基础'],
     score: null, priority: 2, group: 'core'
   },
   {
     id: 'geography', name: '地理', icon: '\u{1F30D}', color: '#0ea5e9',
     materialPath: 'materials/geography.html',
     teacher: { name: '\u8D75\u8001\u5E08', title: '\u5730\u7406\u7279\u7EA7\u6559\u5E08\u00B7\u91CE\u5916\u8003\u5BDF\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u7A7A\u95F4\u601D\u7EF4\u5F3A\uFF0C\u559C\u6B22\u753B\u56FE\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u5730\u56FE\u548C\u6570\u636E\u5206\u6790' },
-    topics: ['地球与地图', '地球上的大气', '地球上的水', '地表形态的塑造', '自然地理环境的整体性与差异性', '人口与城市', '农业与工业区位', '交通运输与可持续发展'],
+    topics: ['地球运动', '大气环流与气候', '水循环', '地质地貌', '人口与城市', '农业与工业', '读图技巧', '答题模板'],
     score: null, priority: 2, group: 'core'
   }
 ];
+
+/* 年级 → 科目映射 */
+function getGradeSubjects() {
+  const g = state.grade || '高一';
+  // 初中：语文、数学、英语、历史、地理、政治、生物、物理（初二+初三）、化学（初三）
+  if (['初一','初二','初三'].includes(g)) {
+    var junior = SUBJECTS.filter(function(s) {
+      if (g === '初一' && (s.id === 'physics' || s.id === 'chemistry')) return false;
+      if (g === '初二' && s.id === 'chemistry') return false;
+      return true;
+    });
+    return junior;
+  }
+  // 高中：全部9科（高一按分科意向筛选）
+  if (g === '高一') return SUBJECTS.filter(function(s) { return s.id !== 'chemistry' || true; }); // 高一全科
+  // 高二/高三：全9科
+  return SUBJECTS;
+}
+
+
+/* 获取当前年级的默认分数模板 */
+/* 薄弱分析数据 */
+const WEAKNESS_KEYS = {
+  math: ['代数运算','函数理解','图形几何','概率统计'],
+  chinese: ['基础知识','文言文','阅读','写作'],
+  english: ['词汇','语法','阅读','写作'],
+  physics: ['概念理解','公式应用','实验分析','计算能力'],
+  chemistry: ['方程式','实验操作','计算','推断'],
+  biology: ['概念记忆','理解分析','实验','论述'],
+  history: ['时间线','因果分析','材料解析','论述'],
+  politics: ['概念理解','材料分析','时事结合','论述'],
+  geography: ['读图能力','自然地理','人文地理','区域分析'],
+};
 
 /* 科目优先级说明：
    priority 0 = P0 最高优先级（数学、英语，暑假必须补）
@@ -2309,7 +2375,6 @@ const SUBJECTS = [
    priority 3 = P3 保持（语文、生物）
    group 'core' = 6科核心（有分数记录的考试科目）
    group 'extra' = 3科拓展（物化生中的生物，有兴趣再看）
-   真实分数：语文80 数学41 英语42 历史46 政治56 地理50
 */
 const OFFLINE_RESPONSES = {
   chinese: [
@@ -2367,6 +2432,7 @@ const DEFAULT_STATE = {
   progress: {},
   foundation: {},
   chatHistory: {},
+  grade: '',
   config: {
     apiEndpoint: 'https://api.deepseek.com/v1/chat/completions',
     apiKey: '',
@@ -2375,6 +2441,7 @@ const DEFAULT_STATE = {
     goal: '未定'
   },
   scores: {},
+  weakness: {},
   studyDays: [],
   examSettings: {
     subjects: [],
@@ -2464,8 +2531,20 @@ const FOUNDATION = {
   ]
 };
 
-/* 历史默认成绩（仅管理员账号首次登录时播种，普通新用户保持空白自己填） */
+/* 历史默认成绩（仅首次登录时播种，普通新用户保持空白自己填） */
 const LEGACY_SCORES = { chinese: 80, math: 41, english: 42, history: 46, politics: 56, geography: 50 };
+
+/* XSS 净化 */
+function sanitizeHtml(html) {
+  return html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/on\w+\s*=\s*['"][^'"]*['"]/gi, '')
+    .replace(/on\w+\s*=\s*[^\s>]+/gi, '')
+    .replace(/javascript\s*:/gi, '');
+}
+
+/* AI请求取消控制器 */
+var _chatAbortController = null;
+var _diagAbortController = null;
 
 /* ========== 工具函数 ========== */
 
@@ -2499,16 +2578,55 @@ function getDayOfWeek() {
 /* 获取今日安排 */
 function getTodaySchedule() {
   const day = new Date().getDay();
-  switch (day) {
-    case 1: return { label: '自修日', detail: '数学（AI讲课+练习）', subjectIds: ['math'] };
-    case 2: return { label: '自修日', detail: '英语（AI讲课+练习）', subjectIds: ['english'] };
-    case 3: return { label: '自修日', detail: '数学+英语（错题+巩固）', subjectIds: ['math', 'english'] };
-    case 4: return { label: '自修日', detail: '语文 + 物理', subjectIds: ['chinese', 'physics'] };
-    case 5: return { label: '自修日', detail: '化学 / 生物', subjectIds: ['chemistry', 'biology'] };
-    case 6: return { label: '自修日', detail: '史地政', subjectIds: ['history', 'politics', 'geography'] };
-    case 0: return { label: '休息日', detail: '竹笛练习', subjectIds: [] };
-    default: return { label: '自修日', detail: '自由复习', subjectIds: [] };
+  // 周日休息日
+  if (day === 0) return { label: '复盘日', detail: '不做新内容：翻翻本周错题、把薄弱科的补漏过一遍', subjectIds: [] };
+
+  // 按分数升序排列（最弱优先），诊断标记的薄弱科额外提升优先级
+  var sorted = getGradeSubjects().filter(function(s) {
+    var sc = getScore(s.id);
+    return sc !== null && sc > 0;
+  }).sort(function(a, b) {
+    var sa = getScore(a.id) || 999;
+    var sb = getScore(b.id) || 999;
+    // 诊断标记的薄弱科额外 -20（等效20分的优先级加成）
+    var diagA = state.weakness && state.weakness[a.id] && state.weakness[a.id].fromDiagnosis ? 20 : 0;
+    var diagB = state.weakness && state.weakness[b.id] && state.weakness[b.id].fromDiagnosis ? 20 : 0;
+    var effectiveA = sa - diagA;
+    var effectiveB = sb - diagB;
+    if (effectiveA === effectiveB) return a.priority - b.priority;
+    return effectiveA - effectiveB;
+  });
+
+  // 如果所有科目都没有分数，但诊断标记了薄弱科，用诊断结果
+  if (sorted.length === 0 && state.weakness) {
+    var diagSubjects = getGradeSubjects().filter(function(s) {
+      return state.weakness[s.id] && state.weakness[s.id].fromDiagnosis;
+    });
+    if (diagSubjects.length > 0) sorted = diagSubjects;
   }
+
+  // 如果仍然为空，回退到admin默认值
+  if (sorted.length === 0) sorted = getGradeSubjects().filter(function(s) { return s.group === 'core'; });
+
+  // 每天安排1-3科，按天轮换
+  var idx = (day - 1) % sorted.length;
+  var todaySubjects = [];
+  // 周一1科，周二1科，周三2科，周四2科，周五2科，周六全部弱科
+  if (day === 1 || day === 2) {
+    todaySubjects = [sorted[idx].id];
+  } else if (day <= 5) {
+    todaySubjects = [sorted[idx].id, sorted[(idx + 1) % sorted.length].id];
+  } else {
+    // 周六：所有薄弱科（分数<60的）
+    var weaks = sorted.filter(function(s) { return (getScore(s.id) || 0) < 60; });
+    todaySubjects = weaks.length > 0 ? weaks.map(function(s) { return s.id; }) : [sorted[0].id, sorted[1].id];
+  }
+
+  var names = todaySubjects.map(function(id) {
+    var s = getGradeSubjects().find(function(sub) { return sub.id === id; });
+    return s ? s.name : id;
+  });
+  return { label: '自修日', detail: names.join('、') + '（AI讲课+练习）', subjectIds: todaySubjects };
 }
 
 /* 计算科目完成进度 */
@@ -2743,6 +2861,63 @@ function showEncourage(msg) {
 }
 
 /* ========== 确认弹窗 ========== */
+/* Toast 轻提示 */
+function showToast(msg, type) {
+  type = type || 'info';
+  var toast = document.createElement('div');
+  var bgColor = type === 'error' ? '#ef4444' : type === 'warning' ? '#f59e0b' : type === 'success' ? '#10b981' : '#0891b2';
+  toast.style.cssText = 'position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:99999;background:' + bgColor + ';color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;box-shadow:0 4px 16px rgba(0,0,0,0.15);max-width:85%;text-align:center;animation:fadeIn 0.25s ease;';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(function () { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.3s'; setTimeout(function () { toast.remove(); }, 300); }, 2500);
+}
+
+/* 应用诊断结果到学习计划 */
+function applyDiagnosisToPlan() {
+  if (!state.diagnosisResult) return;
+  
+  // 从诊断文本中提取提到的科目，自动标记为薄弱
+  var text = state.diagnosisResult.replace(/<[^>]+>/g, '').toLowerCase();
+  var weakSubjects = [];
+  
+  // 科目关键词检测
+  var subjectKeywords = {
+    math: ['数学', '函数', '向量', '数列', '三角', '不等式', '几何', '代数'],
+    chinese: ['语文', '文言文', '古诗', '阅读', '作文', '默写'],
+    english: ['英语', '英语', '时态', '语态', '从句', '词汇', '阅读'],
+    physics: ['物理', '力学', '牛顿', '运动', '曲线', '万有引力', '功'],
+    chemistry: ['化学', '离子', '氧化还原', '方程式', '物质的量', '周期律'],
+    biology: ['生物', '细胞', '基因', '遗传', '分子'],
+    history: ['历史', '朝代', '先秦', '秦汉', '隋唐', '近代史'],
+    politics: ['政治', '经济', '哲学', '民主', '政府', '分配'],
+    geography: ['地理', '地图', '气候', '地貌', '环流', '经纬']
+  };
+  
+  Object.keys(subjectKeywords).forEach(function(sid) {
+    var matched = subjectKeywords[sid].some(function(kw) { return text.indexOf(kw.toLowerCase()) !== -1; });
+    if (matched) weakSubjects.push(sid);
+  });
+  
+  if (weakSubjects.length === 0) {
+    showToast('未从诊断结果中识别出薄弱科目，请手动调整', 'warning');
+    return;
+  }
+  
+  if (!state.weakness) state.weakness = {};
+  
+  // 标记为薄弱（level=weak），并记录来源为诊断
+  weakSubjects.forEach(function(sid) {
+    var sc = getScore(sid);
+    var level = sc !== null && sc < 60 ? 'severe' : 'weak';
+    state.weakness[sid] = { level: level, score: sc || 0, updatedAt: Date.now(), fromDiagnosis: true };
+  });
+  
+  state.diagnosisApplied = true;
+  saveState();
+  showToast('✅ 已识别 ' + weakSubjects.length + ' 个薄弱科目，已更新学习计划', 'success');
+  render();
+}
+
 function showConfirm(title, text, onConfirm) {
   const overlay = document.createElement('div');
   overlay.className = 'confirm-overlay';
@@ -2797,7 +2972,7 @@ function render() {
     headerTitle.textContent = subject ? subject.name : '科目详情';
     backBtn.classList.add('show');
   } else if (state.currentTab === 'home') {
-    headerTitle.textContent = '新高二暑假学习系统';
+    headerTitle.textContent = 'AI智能学伴';
     backBtn.classList.remove('show');
   } else if (state.currentTab === 'subjects') {
     headerTitle.textContent = '科目进度';
@@ -2840,24 +3015,67 @@ function getNextTopicInfo(subjectId) {
 /* 获取进度最落后的科目（P0-3，用于"下一步建议"） */
 function getWeakestSubject() {
   // 成绩优先：有分数记录时，优先补分数最低的科目（缺啥补啥）
-  const scored = SUBJECTS.filter(s => { const v = getScore(s.id); return v !== null && v > 0; });
+  const scored = getGradeSubjects().filter(s => { const v = getScore(s.id); return v !== null && v > 0; });
   if (scored.length > 0) {
     let weakest = scored[0];
-    scored.forEach(s => { if (getScore(s.id) < getScore(weakest.id)) weakest = s; });
+    scored.forEach(s => {
+      const diff = getScore(s.id) - getScore(weakest.id);
+      if (diff < 0 || (diff === 0 && s.priority < weakest.priority)) weakest = s;
+    });
     weakest._weakByScore = true;
     return weakest;
   }
-  // 无分数时按学习进度
+  // 无分数时按学习进度，同进度则按priority
   let weakest = null;
   let lowest = 101;
   SUBJECTS.forEach(s => {
     const p = getSubjectProgress(s.id);
-    if (p.percent < lowest) {
+    if (p.percent < lowest || (p.percent === lowest && s.priority < (weakest ? weakest.priority : 999))) {
       lowest = p.percent;
       weakest = s;
     }
   });
   return weakest;
+}
+
+/* ========== 智能诊断 ========== */
+
+/* 开始智能诊断 — 用AI出题 */
+function startDiagnostic() {
+  if (!state.config) state.config = {};
+  const subjects = getGradeSubjects().filter(s => s.group === 'core').slice(0, 4);
+  const names = subjects.map(s => s.name).join('、');
+  state.currentTab = 'chat';
+  state.currentTeacher = subjects[0].id;
+  saveState();
+  render();
+  setTimeout(() => {
+    const input = document.getElementById('chatInput');
+    if (!input) return;
+    input.value = `我是一名${state.grade || '高中'}学生，请帮我做一次快速摸底诊断。
+请针对以下4科各出2道代表题（共8题）：${names}。
+要求：
+1. 每题4个选项，只出题和选项，绝对不要预先写出答案和解析
+2. 题目标注对应的知识点
+3. 我会把答案回复给你，你收到后再逐题批改对错、讲解错题
+4. 批改完告诉我哪个知识点最薄弱，并推荐我优先学什么
+请开始出题吧，记住：现在不要给答案。`;
+    sendMessage();
+  }, 500);
+}
+
+/* 根据成绩计算薄弱分析 */
+function calcWeakness() {
+  if (!state.weakness) state.weakness = {};
+  getGradeSubjects().forEach(s => {
+    const sc = getScore(s.id);
+    if (sc === null) return;
+    // 分数 → 薄弱等级：<50分=严重薄弱, <70=薄弱, <85=一般, >=85=良好
+    const level = sc < 50 ? 'severe' : (sc < 70 ? 'weak' : (sc < 85 ? 'normal' : 'good'));
+    state.weakness[s.id] = { level, score: sc, updatedAt: Date.now() };
+  });
+  saveState();
+  render();
 }
 
 /* ========== 基础补漏 ========== */
@@ -3042,7 +3260,7 @@ function renderHome() {
   el.innerHTML = `
     <!-- 欢迎区 -->
     <div class="welcome-section">
-      <div class="welcome-greeting">${getGreeting()}，${nickname}！</div>
+      <div class="welcome-greeting">${getGreeting()}，${nickname}！<span class="grade-badge">${state.grade || '未设置'}</span></div>
       <div class="welcome-subtitle">${getDayOfWeek()} ${schedule.label} · ${schedule.detail}</div>
       <div class="welcome-stats">
         <div class="stat-item">
@@ -3068,6 +3286,63 @@ function renderHome() {
 
     ${zeroStateHtml}
 
+    <!-- ===== 🎯 智能诊断 ===== -->
+    <div class="card" style="border-left:4px solid var(--primary);">
+      <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;">
+        <span>🎯 智能诊断分析</span>
+        ${!hasAnyScore() || Object.keys(state.weakness).length === 0 ? '<span style="font-size:11px;background:var(--danger);color:#fff;padding:2px 10px;border-radius:10px;font-weight:600;">待诊断</span>' : '<span style="font-size:11px;background:var(--success);color:#fff;padding:2px 10px;border-radius:10px;font-weight:600;">有诊断报告</span>'}
+      </div>
+      ${
+        !hasAnyScore() && Object.keys(state.weakness).length === 0
+        ? `<div style="text-align:center;padding:20px 0;">
+             <div style="font-size:40px;margin-bottom:12px;">🔍</div>
+             <div style="font-size:15px;font-weight:600;margin-bottom:6px;">还没进行摸底诊断</div>
+             <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">先做诊断测试，AI 自动分析你的薄弱环节，<br>为你推荐最需要巩固的专题</div>
+             <button class="btn btn-primary" onclick="startDiagnostic()" style="padding:12px 28px;font-size:15px;border-radius:12px;">🚀 开始智能诊断</button>
+             <div style="margin-top:12px;font-size:12px;color:var(--text-light);">或者先去「我的」填写期末成绩，也能自动分析薄弱点</div>
+           </div>`
+        : hasAnyScore() && Object.keys(state.weakness).length === 0
+        ? `<div style="text-align:center;padding:16px 0;">
+             <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">已检测到成绩数据，正在分析薄弱环节...</div>
+             <button class="btn btn-primary" onclick="calcWeakness()">🔄 生成薄弱分析报告</button>
+           </div>`
+        : `<div>
+             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+               ${getGradeSubjects().filter(s => getScore(s.id) !== null).slice(0, 6).map(s => {
+                 const w = state.weakness[s.id];
+                 const sc = getScore(s.id);
+                 const level = sc === null ? '未测' : (sc < 50 ? '⚠️ 薄弱' : (sc < 70 ? '⚡ 待加强' : (sc < 85 ? '✅ 良好' : '🌟 优秀')));
+                 const barColor = sc === null ? '#e2e8f0' : (sc < 50 ? '#ef4444' : (sc < 70 ? '#f59e0b' : (sc < 85 ? '#10b981' : '#0891b2')));
+                 return `<div style="background:var(--primary-softer);border-radius:10px;padding:12px;">
+                   <div style="font-size:13px;font-weight:600;margin-bottom:6px;">${s.icon} ${s.name}</div>
+                   <div style="height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:4px;">
+                     <div style="height:100%;width:${sc || 50}%;background:${barColor};border-radius:3px;transition:width 0.5s;"></div>
+                   </div>
+                   <div style="display:flex;justify-content:space-between;font-size:11px;">
+                     <span style="color:var(--text-secondary);">${sc === null ? '未填' : sc + '分'}</span>
+                     <span style="font-weight:600;color:${barColor};">${level}</span>
+                   </div>
+                 </div>`;
+               }).join('')}
+             </div>
+             <div style="background:var(--primary-soft);border-radius:10px;padding:14px;">
+               <div style="font-size:13px;font-weight:600;margin-bottom:8px;">📌 优先推荐</div>
+               ${(() => {
+                 const sorted = getGradeSubjects().filter(s => getScore(s.id) !== null).sort((a,b) => (getScore(a.id)||999) - (getScore(b.id)||999));
+                 const top = sorted[0];
+                 if (!top) return '<div style="font-size:12px;color:var(--text-secondary);">暂无推荐，请先填写成绩</div>';
+                 const next = getNextTopicInfo(top.id);
+                 return `<div style="font-size:13px;">
+                   <span style="font-weight:600;">${top.icon} ${top.name}</span> 当前 <span style="color:var(--danger);font-weight:600;">${getScore(top.id)}分</span>，最需要提升<br>
+                   ${next ? `建议优先学习：<span style="font-weight:500;color:var(--primary);">专题 ${next.index+1} · ${next.name}</span>` : '所有专题已完成 ✅'}
+                 </div>
+                 <button class="btn btn-primary btn-sm" onclick="switchTab('subjects');openSubject('${top.id}')" style="margin-top:8px;">去学习</button>`;
+               })()}
+             </div>
+           </div>`
+      }
+    </div>
+
     <!-- 今日任务 -->
     <div class="card">
       <div class="card-title">📅 今日任务</div>
@@ -3076,7 +3351,7 @@ function renderHome() {
 
     <!-- 成绩概览 -->
     <div class="card">
-      <div class="card-title">📝 高一期末成绩概览</div>
+      <div class="card-title">📝 ${state.grade || '本学期'}成绩概览</div>
       <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">${hasAnyScore() ? '总分' + getTotalScore() + ' · 找准薄弱点，暑假重点突破' : '还没有成绩数据——点右下角「我的」→ 成绩管理，填入期末分数，系统才能帮你找准薄弱点'}</div>
       <div class="score-grid">
         ${SUBJECTS.filter(s => s.group === 'core').sort((a,b) => { const sa = getScore(a.id), sb = getScore(b.id); return (sa === null ? 999 : sa) - (sb === null ? 999 : sb); }).map(s => {
@@ -3192,6 +3467,8 @@ function renderSubjects() {
       const checked = state.progress[`${subject.id}_${i}`] ? 'checked' : '';
       const completedClass = state.progress[`${subject.id}_${i}`] ? 'completed-text' : '';
       const topicPage = `materials/topics/${subject.id}-${String(i + 1).padStart(2, '0')}.html`;
+      const EXPERT_MAP = { math: { 0: 'materials/expert/math-01.html', 1: 'materials/expert/math-02.html' }, english: { 0: 'materials/expert/english-01.html', 1: 'materials/expert/english-02.html', 2: 'materials/expert/english-03.html' } };
+      const expertPage = EXPERT_MAP[subject.id] && EXPERT_MAP[subject.id][i];
       return `
         <div class="topic-list-item">
           <div class="topic-checkbox ${checked}" onclick="event.stopPropagation();toggleTopic('${subject.id}', ${i})">${checked ? '&#10003;' : ''}</div>
@@ -3202,6 +3479,7 @@ function renderSubjects() {
           <div class="topic-actions">
             <button class="btn btn-primary btn-sm" onclick="event.stopPropagation();startLecture('${subject.id}', ${i})">讲课</button>
             <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();location.href='${topicPage}'">资料</button>
+            ${expertPage ? `<button class="btn btn-outline btn-sm" style="color:#b45309;border-color:#fcd34d;background:#fffbeb;" onclick="event.stopPropagation();location.href='${expertPage}'">精编</button>` : ''}
             <button class="btn btn-outline btn-sm quiz-entry" onclick="event.stopPropagation();startPracticeQuiz('${subject.id}', ${i})">练习</button>
           </div>
         </div>`;
@@ -3292,6 +3570,10 @@ function renderExam() {
 
       <div class="exam-form-section">
         <label>难度</label>
+        <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px;">${(() => {
+          const low = getGradeSubjects().filter(s => { const v = getScore(s.id); return v !== null && v < 60; });
+          return low.length > 0 ? '💡 检测到你有低分科目，已自动设为「基础」' : '';
+        })()}</div>
         <div class="radio-group">
           <div class="radio-item ${state.examSettings.difficulty === '基础' ? 'selected' : ''}" onclick="setExamDifficulty('基础', this)">基础</div>
           <div class="radio-item ${state.examSettings.difficulty === '中等' ? 'selected' : ''}" onclick="setExamDifficulty('中等', this)">中等</div>
@@ -3378,11 +3660,11 @@ async function startExam() {
     return;
   }
   if (state.examSettings.subjects.length === 0) {
-    alert('请至少选择一个考试科目');
+    showToast('请至少选择一个考试科目', 'warning');
     return;
   }
   if (state.examSettings.types.length === 0) {
-    alert('请至少选择一种题型');
+    showToast('请至少选择一种题型', 'warning');
     return;
   }
 
@@ -3392,11 +3674,19 @@ async function startExam() {
     return `${s.name}：${completed.join('、') || '全部专题'}`;
   });
 
+  // 出卷难度：按科目各自的分数单独调整（<60 分的科用基础题，其余保持所选难度）
+  var diffLines = state.examSettings.subjects.map(function (sid) {
+    var sub = SUBJECTS.find(s => s.id === sid);
+    var sc = getScore(sid);
+    var d = (sc !== null && sc < 60) ? '基础' : state.examSettings.difficulty;
+    return sub.name + '=' + d + (sc !== null ? '（当前' + sc + '分）' : '');
+  });
+
   const prompt = `请出一份高考模拟练习卷，要求如下：
 科目：${state.examSettings.subjects.map(sid => SUBJECTS.find(s => s.id === sid).name).join('、')}
 考试范围：${subjectsInfo.join('；')}
 题目数量：${state.examSettings.questionCount}题
-难度：${state.examSettings.difficulty}
+难度（按科目分别执行）：${diffLines.join('；')}
 题型：${state.examSettings.types.join('、')}（选择题=choice，填空题=fill，解答题=essay）
 要求：严格限定在范围内；难度由易到难；紧扣高考考点；每题给出答案和简洁解析。按JSON格式输出。`;
 
@@ -3459,7 +3749,7 @@ async function startPracticeQuiz(subjectId, topicIndex) {
     openQuizSession(quiz, { kind: 'practice', label: label, subjectId: subjectId, topicIndex: topicIndex });
   } catch (error) {
     closeQuizLoading();
-    alert('练习生成失败：' + (error.message || '未知错误') + '\n请检查网络后重试。');
+    showToast('练习生成失败：' + (error.message || '未知错误') + '，请检查网络后重试。', 'error');
   }
 }
 
@@ -3746,7 +4036,9 @@ function startLecture(subjectId, topicIndex) {
 
   // 自动发送讲课请求
   setTimeout(() => {
-    const lecturePrompt = `请给我讲解「${topicName}」这个专题。要求：
+    const myScore = getScore(subjectId);
+    const scoreLine = (myScore !== null && myScore > 0) ? `（我当前${subject.name}成绩为${myScore}分，请针对这个水平讲解）` : '';
+    const lecturePrompt = `请给我讲解「${topicName}」这个专题${scoreLine}。要求：
 1. 先梳理核心知识点（列出重点概念和公式）
 2. 用通俗的例子帮助我理解每个知识点
 3. 指出高考常考的考点和考法
@@ -3784,7 +4076,16 @@ function renderDiagnosis() {
       </div>
       <div class="card" style="margin-top:0;">
         <div class="card-title">AI诊断报告</div>
-        <div class="diagnosis-report" id="diagnosisReport">${state.diagnosisResult}</div>
+        <div class="diagnosis-report" id="diagnosisReport">${sanitizeHtml(state.diagnosisResult)}</div>
+        ${!state.diagnosisApplied ? `
+        <div style="margin-top:16px;padding:16px;background:#f0fdfa;border:1px solid #ccfbf1;border-radius:12px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:8px;color:#0f766e;">📋 应用到学习计划</div>
+          <div style="font-size:13px;color:#475569;margin-bottom:12px;">系统已自动识别诊断报告中提到的薄弱科目，点击按钮将调整学习计划，优先安排薄弱科目复习。</div>
+          <button class="btn btn-primary" onclick="applyDiagnosisToPlan()" style="width:100%;">✅ 应用诊断结果</button>
+        </div>` : `
+        <div style="margin-top:16px;padding:12px 16px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;font-size:13px;color:#065f46;text-align:center;">
+          ✅ 诊断结果已应用，学习计划已自动调整
+        </div>`}
       </div>
       ${state.diagnosisImages && state.diagnosisImages.length > 0 ? `
       <div class="card">
@@ -3910,7 +4211,7 @@ async function analyzePaper() {
   }
 
   if (!state.diagnosisImages || state.diagnosisImages.length === 0) {
-    alert('请先上传试卷照片');
+    showToast('请先上传试卷照片', 'warning');
     return;
   }
 
@@ -3934,6 +4235,18 @@ async function analyzePaper() {
     </div>
   `;
 
+  // 构建已录入成绩信息
+  var scoreInfoLines = [];
+  getGradeSubjects().forEach(function (s) {
+    var sc = getScore(s.id);
+    if (sc !== null) {
+      scoreInfoLines.push(s.name + '：' + sc + '分');
+    }
+  });
+  var scorePrompt = scoreInfoLines.length > 0
+    ? '\n\n该学生已录入的期末成绩如下（满分150分）：\n' + scoreInfoLines.join('\n')
+    : '\n\n该学生暂无已录入的期末成绩。\n';
+
   const systemPrompt = `你是一位资深教育分析师，擅长分析学生试卷并找出薄弱环节。请分析上传的试卷图片，给出以下内容：
 
 1. **逐题分析**：哪些题做对了，哪些做错了，错因是什么
@@ -3952,7 +4265,7 @@ async function analyzePaper() {
 - 历史：先秦至现代各朝代
 - 政治：消费、生产、分配、市场经济、政治生活、政府、民主政治、哲学
 - 地理：地球地图、大气、水、地貌、整体性差异性、人口城市、工农业、交通
-
+${scorePrompt}
 请用清晰的HTML格式输出分析报告（使用<h3>、<p>、<ul>、<li>、<table>等标签），不要使用markdown代码块。`;
 
   // 构建消息内容（支持多张图片）
@@ -3965,6 +4278,9 @@ async function analyzePaper() {
   ];
 
   try {
+    if (_diagAbortController) _diagAbortController.abort();
+    _diagAbortController = new AbortController();
+
     const response = await fetch(cfg.apiEndpoint || 'https://api.deepseek.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -3978,7 +4294,8 @@ async function analyzePaper() {
           { role: 'user', content: userContent }
         ],
         stream: true
-      })
+      }),
+      signal: _diagAbortController.signal
     });
 
     if (!response.ok) {
@@ -4017,7 +4334,7 @@ async function analyzePaper() {
             content += delta;
             const streamEl = document.getElementById('diagnosisStreaming');
             if (streamEl) {
-              streamEl.innerHTML = content;
+              streamEl.innerHTML = sanitizeHtml(content);
               streamEl.parentElement.scrollTop = streamEl.parentElement.scrollHeight;
             }
           } catch (e) {
@@ -4249,6 +4566,10 @@ async function sendMessage() {
 
   // 调用AI API
   try {
+    // 取消上一次请求
+    if (_chatAbortController) _chatAbortController.abort();
+    _chatAbortController = new AbortController();
+
     const systemPrompt = getSystemPrompt(subjectId);
     const messages = state.chatHistory[subjectId].map(m => ({
       role: m.role,
@@ -4268,7 +4589,8 @@ async function sendMessage() {
           ...messages
         ],
         stream: true
-      })
+      }),
+      signal: _chatAbortController.signal
     });
 
     if (!response.ok) {
@@ -4522,6 +4844,12 @@ function renderMe() {
 
     <div class="card">
       <div class="card-title">📝 成绩录入</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:13px;">
+        <span style="font-weight:600;color:#334155;">我的年级</span>
+        <select onchange="updateGrade(this.value)" style="padding:6px 10px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:13px;background:#fff;">
+          ${['高一','高二','高三'].map(g => '<option value="' + g + '"' + ((state.grade || '高一') === g ? ' selected' : '') + '>' + g + '</option>').join('')}
+        </select>
+      </div>
       <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">填入各科期末成绩（没考的科目留空），首页概览和薄弱科推荐会自动更新</div>
       <div class="score-edit-grid">
         ${SUBJECTS.filter(s => s.group === 'core').map(s => `
@@ -4546,10 +4874,10 @@ function renderMe() {
     </div>
 
     <div class="card" style="text-align:center;color:var(--text-secondary);">
-      <div style="font-size:15px;font-weight:600;margin-bottom:4px;">新高二暑假智能学习系统</div>
-      <div style="font-size:12px;">v1.0</div>
-      <div style="font-size:11px;margin-top:4px;">为新高二暑假复习量身打造的智能学习系统</div>
-      <div style="font-size:11px;margin-top:2px;">9科全覆盖 · AI老师在线答疑 · 智能组卷</div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:4px;">AI智能学伴</div>
+      <div style="font-size:12px;">v4.0</div>
+      <div style="font-size:11px;margin-top:4px;">多年级 · 多科目 · AI自适应学习平台</div>
+      <div style="font-size:11px;margin-top:2px;">初一～高三 · 9科全覆盖 · AI老师答疑 · 智能诊断 · 智能组卷</div>
     </div>
   `;
 }
@@ -4561,6 +4889,58 @@ function updateNickname(name) {
 }
 
 /* 更新分数 */
+function copyInvite(btn) {
+  var c = btn.getAttribute('data-code') || '';
+  function done() { showToast('已复制 ' + c, 'success'); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(c).then(done).catch(function () { showToast('复制失败，请手动抄录：' + c, 'warning'); });
+  } else {
+    showToast('请手动抄录邀请码：' + c, 'info');
+  }
+}
+
+function adminGenInvite(max) {
+  fetch('/api/invite', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getToken() },
+    body: JSON.stringify({ max: max })
+  }).then(function (r) { return r.json(); }).then(function (d) {
+    if (d && d.ok && d.code) {
+      showToast('已生成邀请码：' + d.code, 'success');
+      adminListInvites();
+    } else {
+      showToast('生成失败：' + ((d && d.error) || '未知错误'), 'error');
+    }
+  }).catch(function () { showToast('网络异常', 'error'); });
+}
+
+function adminListInvites() {
+  var box = document.getElementById('inviteList');
+  if (!box) return;
+  box.textContent = '加载中…';
+  fetch('/api/invite', { headers: { 'Authorization': 'Bearer ' + getToken() } })
+    .then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || !d.ok) { box.textContent = '加载失败：' + ((d && d.error) || ''); return; }
+      if (!d.invites.length) { box.textContent = '还没有邀请码，点上方按钮生成'; return; }
+      box.innerHTML = d.invites.map(function (v) {
+        var left = (v.max || 1) - (v.used || 0);
+        var color = left > 0 ? '#059669' : '#94a3b8';
+        return '<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-bottom:1px dashed #e2e8f0;">' +
+          '<span style="font-weight:700;letter-spacing:2px;font-family:monospace;font-size:15px;">' + v.code + '</span>' +
+          '<span style="font-size:12px;color:' + color + ';">剩余 ' + left + '/' + (v.max || 1) + ' 次</span>' +
+          '<button class="btn btn-outline btn-sm" data-code="' + v.code + '" onclick="copyInvite(this)">复制</button>' +
+        '</div>';
+      }).join('');
+    }).catch(function () { box.textContent = '网络异常'; });
+}
+
+function updateGrade(g) {
+  state.grade = g;
+  saveState();
+  render();
+  showToast('年级已更新为' + g, 'success');
+}
+
 function updateScore(subjectId, val) {
   if (!state.scores) state.scores = {};
   if (val === null || val === undefined || isNaN(val)) {
@@ -5238,8 +5618,8 @@ render();
     if (!t) return;
     state.config.apiEndpoint = location.origin + '/api/ai';
     state.config.apiKey = t;
-    // 老设备兜底：管理员令牌且从未播种成绩时，补种历史默认成绩
-    if ((t === '9104c1a9c10083691d3733d5247a368f7c4d4cd6ad03a84e' || localStorage.getItem('studyAdmin') === '1') && !hasAnyScore()) {
+    // 老设备兜底：仅管理员（登录时已打标）补种历史默认成绩，普通用户保持空白自己填
+    if (localStorage.getItem('studyAdmin') === '1' && !hasAnyScore()) {
       state.scores = Object.assign({}, LEGACY_SCORES);
     }
     try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
@@ -5251,28 +5631,40 @@ render();
     var gate = document.createElement('div');
     gate.id = 'loginGate';
     gate.innerHTML =
-      '<div style="position:fixed;inset:0;z-index:99999;background:linear-gradient(160deg,#0f2557 0%,#1e3a8a 45%,#2563eb 100%);display:flex;align-items:center;justify-content:center;padding:24px;">' +
-        '<div style="width:100%;max-width:360px;background:#ffffff;border-radius:16px;padding:32px 28px;box-shadow:0 24px 64px rgba(2,12,45,.45);">' +
-          '<div style="text-align:center;margin-bottom:20px;">' +
-            '<div style="width:56px;height:56px;margin:0 auto 12px;border-radius:14px;background:linear-gradient(135deg,#2563eb,#1e40af);display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;">&#128218;</div>' +
-            '<div style="font-size:20px;font-weight:700;color:#0f172a;letter-spacing:.5px;">新高二暑假智能学习系统</div>' +
-            '<div style="font-size:12px;color:#64748b;margin-top:6px;">每位同学一个账号，学习记录云端保存、多设备同步</div>' +
+      '<div style="position:fixed;inset:0;z-index:99999;background:linear-gradient(160deg,#0f766e 0%,#0e7490 45%,#0891b2 100%);display:flex;align-items:center;justify-content:center;padding:24px;">' +
+        '<div style="width:100%;max-width:380px;background:#ffffff;border-radius:20px;padding:36px 32px 28px;box-shadow:0 24px 64px rgba(15,118,110,.4);">' +
+          '<div style="text-align:center;margin-bottom:24px;">' +
+            '<div style="width:64px;height:64px;margin:0 auto 14px;border-radius:18px;background:linear-gradient(135deg,#0e7490,#0891b2);display:flex;align-items:center;justify-content:center;font-size:30px;color:#fff;box-shadow:0 4px 12px rgba(8,145,178,.3);">🧠</div>' +
+            '<div style="font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.3px;">AI智能学伴</div>' +
+            '<div style="font-size:13px;color:#64748b;margin-top:6px;line-height:1.5;">每位同学一个专属空间<br>学习记录云端保存，缺啥补啥</div>' +
           '</div>' +
-          '<div style="display:flex;background:#f1f5f9;border-radius:10px;padding:4px;margin-bottom:18px;">' +
-            '<button id="lgTabLogin" style="flex:1;padding:9px;border:none;border-radius:8px;background:#2563eb;color:#fff;font-size:14px;font-weight:600;cursor:pointer;">登 录</button>' +
-            '<button id="lgTabReg" style="flex:1;padding:9px;border:none;border-radius:8px;background:transparent;color:#475569;font-size:14px;font-weight:600;cursor:pointer;">注 册</button>' +
+          '<div style="display:flex;background:#f1f5f9;border-radius:12px;padding:4px;margin-bottom:20px;">' +
+            '<button id="lgTabLogin" style="flex:1;padding:10px;border:none;border-radius:10px;background:#0891b2;color:#fff;font-size:14px;font-weight:700;cursor:pointer;">登 录</button>' +
+            '<button id="lgTabReg" style="flex:1;padding:10px;border:none;border-radius:10px;background:transparent;color:#475569;font-size:14px;font-weight:600;cursor:pointer;">注 册</button>' +
           '</div>' +
           '<div id="lgRegFields" style="display:none;">' +
-            '<label style="font-size:13px;color:#334155;font-weight:600;">姓名（同学称呼）</label>' +
-            '<input id="lgName" type="text" autocomplete="nickname" placeholder="例如：小雅" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
+            '<label style="font-size:13px;color:#334155;font-weight:600;">姓名</label>' +
+            '<input id="lgName" type="text" autocomplete="nickname" placeholder="同学称呼，如：小雅" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
+            '<label style="font-size:13px;color:#334155;font-weight:600;">年级</label>' +
+            '<select id="lgGrade" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;background:#fff;color:#0f172a;appearance:auto;">' +
+              '<option value="">请选择年级</option>' +
+              '<option value="高一">高一</option>' +
+              '<option value="高二">高二</option>' +
+              '<option value="高三">高三</option>' +
+            '</select>' +
+              '<label style="font-size:13px;color:#334155;font-weight:600;">邀请码</label>' +
+              '<input id="lgCode" type="text" autocomplete="off" placeholder="向已购课家长或老师索取" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;text-transform:uppercase;">' +
           '</div>' +
           '<label style="font-size:13px;color:#334155;font-weight:600;">用户名</label>' +
           '<input id="lgUser" type="text" autocomplete="username" placeholder="手机号或字母数字均可" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
           '<label style="font-size:13px;color:#334155;font-weight:600;">密码</label>' +
           '<input id="lgPass" type="password" autocomplete="current-password" placeholder="至少6位" style="width:100%;box-sizing:border-box;margin:6px 0 8px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
           '<div id="lgErr" style="min-height:20px;font-size:12px;color:#dc2626;margin-bottom:6px;"></div>' +
-          '<button id="lgBtn" style="width:100%;padding:13px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-size:15px;font-weight:600;cursor:pointer;">登 录</button>' +
+          '<button id="lgBtn" style="width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#0e7490,#0891b2);color:#fff;font-size:15px;font-weight:700;cursor:pointer;">登 录</button>' +
           '<div id="lgHint" style="text-align:center;font-size:12px;color:#94a3b8;margin-top:12px;">还没有账号？点上方「注册」10秒开通</div>' +
+          '<div style="text-align:center;margin-top:10px;padding-top:10px;border-top:1px solid #f1f5f9;">' +
+            '<button id="lgGuestBtn" style="background:none;border:none;color:#94a3b8;font-size:12px;cursor:pointer;text-decoration:underline;">🐾 先看看，不登录</button>' +
+          '</div>' +
         '</div>' +
       '</div>';
     document.body.appendChild(gate);
@@ -5301,13 +5693,20 @@ render();
       setToken(d.token);
       if (d.admin) {
         try { localStorage.setItem('studyAdmin', '1'); } catch (e) {}
-        if (!hasAnyScore()) { state.scores = Object.assign({}, LEGACY_SCORES); }
       } else {
         try { localStorage.removeItem('studyAdmin'); } catch (e) {}
+      }
+      // 成绩不播种：每位同学自己填（仅管理员账号补种历史默认成绩，兼容老设备）
+      if (d.admin && !hasAnyScore()) {
+        state.scores = Object.assign({}, LEGACY_SCORES);
       }
       if (d.name) {
         if (!state.config) state.config = {};
         state.config.nickname = d.name;
+        try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
+      }
+      if (d.grade) {
+        state.grade = d.grade;
         try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
       }
       applyBackendConfig();
@@ -5325,9 +5724,15 @@ render();
       var url = '/api/login';
       if (mode === 'register') {
         var name = document.getElementById('lgName').value.trim();
-        if (!name) { err.textContent = '请填写姓名（同学称呼）'; return; }
+        var grade = document.getElementById('lgGrade').value;
+        if (!name) { err.textContent = '请填写姓名（同学称呼）'; btn.disabled = false; return; }
+        if (!grade) { err.textContent = '请选择年级'; btn.disabled = false; return; }
         if (p.length < 6) { err.textContent = '密码至少6位'; return; }
+        var code = document.getElementById('lgCode').value.trim();
+        if (!code) { err.textContent = '请填写邀请码（向已购课家长或老师索取）'; btn.disabled = false; return; }
         body.name = name;
+        body.grade = grade;
+        body.code = code;
         url = '/api/register';
       }
       btn.disabled = true; btn.textContent = mode === 'register' ? '注册中…' : '登录中…'; err.textContent = '';
@@ -5350,6 +5755,21 @@ render();
         });
     }
     btn.addEventListener('click', doSubmit);
+    document.getElementById('lgGuestBtn').addEventListener('click', function () {
+      gate.remove();
+      state.config.nickname = '访客';
+      state.grade = state.grade || '高一';
+      try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
+      render();
+      // 游客提示条
+      var tip = document.createElement('div');
+      tip.id = 'guestTip';
+      tip.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99998;background:#0891b2;color:#fff;text-align:center;padding:8px 16px;font-size:13px;display:flex;align-items:center;justify-content:center;';
+      tip.innerHTML = '🐾 游客体验 · AI 每日限 15 次 · 数据仅存本机，注册解锁完整功能 <button onclick="document.getElementById(\'guestTip\').remove();showLoginGate()" style="background:rgba(255,255,255,0.2);border:none;border-radius:6px;color:#fff;padding:4px 10px;margin-left:8px;cursor:pointer;font-size:12px;">注册/登录</button>';
+      document.body.prepend(tip);
+      var h = document.querySelector('.header');
+      if (h) h.style.marginTop = '0';
+    });
     gate.addEventListener('keydown', function (e) { if (e.key === 'Enter') doSubmit(); });
     setTimeout(function () { var i = document.getElementById('lgUser'); if (i) i.focus(); }, 100);
   }
@@ -5372,6 +5792,7 @@ render();
       body: JSON.stringify(copy)
     }).then(function (r) {
       syncing = false;
+      if (r.status === 401) { authExpired(); return; }
       if (r.ok) { lastSyncAt = Date.now(); lastSyncError = ''; }
       else { lastSyncError = '同步失败(' + r.status + ')'; }
       updateSyncCard();
@@ -5388,10 +5809,16 @@ render();
     syncTimer = setTimeout(uploadState, 2000);
   }
 
+  function authExpired() {
+    clearToken();
+    try { localStorage.removeItem('studyAdmin'); } catch (e) {}
+    showLoginGate();
+  }
+
   function downloadState() {
     return fetch('/api/sync/' + SYNC_CODE, {
       headers: { 'Authorization': 'Bearer ' + getToken() }
-    }).then(function (r) { return r.ok ? r.json() : null; })
+    }).then(function (r) { if (r.status === 401) { authExpired(); return null; } return r.ok ? r.json() : null; })
       .then(function (remote) {
         if (remote && typeof remote === 'object') {
           var rt = remote.syncedAt || 0;
@@ -5505,7 +5932,7 @@ render();
    ================================================================ */
 (function () {
   if (location.protocol.indexOf('http') !== 0) return;
-  var APP_VERSION = '2026.07.23.4';
+  var APP_VERSION = '2026.07.24.2';
   var shown = false;
   function check() {
     fetch('/api/health', { cache: 'no-store' }).then(function (r) { return r.json(); })
@@ -5513,7 +5940,7 @@ render();
         if (shown || !d || !d.version || d.version === APP_VERSION) return;
         shown = true;
         var bar = document.createElement('div');
-        bar.style.cssText = 'position:fixed;left:50%;bottom:80px;transform:translateX(-50%);z-index:99998;background:#1e3a8a;color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;box-shadow:0 8px 24px rgba(2,12,45,.35);cursor:pointer;font-family:inherit;';
+        bar.style.cssText = 'position:fixed;left:50%;bottom:80px;transform:translateX(-50%);z-index:99998;background:linear-gradient(135deg,#0e7490,#0891b2);color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;box-shadow:0 8px 24px rgba(8,145,178,.35);cursor:pointer;font-family:inherit;';
         bar.textContent = '✨ 已有新版本，点我立即更新';
         bar.onclick = function () { location.reload(); };
         document.body.appendChild(bar);
