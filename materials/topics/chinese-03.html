@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>语文暑假衔接 · 03 文言文阅读 · 18个虚词用法（精选最重要的10个） · 精编讲练</title>
+<style>
+:root{--accent:#dc2626;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chinese.html">‹ 返回</a><h1>语文暑假衔接 · 03 文言文阅读 · 18个虚词用法（精选最重要的10个）</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>03 文言文阅读 · 18个虚词用法（精选最重要的10个）</h2><div class="hero-sub">语文暑假衔接 · 第 19-25 页</div><div class="hero-meta"><span>📄 7 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="h3c" style="color:#b91c1c"><strong>一、知识精讲：10个核心虚词用法详解</strong></div>
+<p>高考规定18个文言虚词：<strong>而、何、乎、乃、其、且、若、所、为、焉、也、以、</strong><strong>因、于、与、则、者、之</strong>。以下精选考查频率最高的10个详细讲解。</p>
+<table class="ptable"><tr><th style="background:#fef2f2;color:#b91c1c">虚词</th><th style="background:#fef2f2;color:#b91c1c">用法</th><th style="background:#fef2f2;color:#b91c1c">说明</th><th style="background:#fef2f2;color:#b91c1c">例句</th></tr><tr><td>之</td><td>代词（代人/事/物）</td><td>作宾语，可译为&quot;他/它/这&quot;</td><td>学而时习之（代&quot;学过的知识&quot;）</td></tr><tr><td>&#160;</td><td>助词&quot;的&quot;</td><td>定语标志</td><td>燕雀安知鸿鹄之志哉</td></tr><tr><td>&#160;</td><td>主谓之间取消独立性</td><td>不译</td><td>师道之不传也久矣</td></tr><tr><td>&#160;</td><td>宾语前置标志</td><td>不译</td><td>何陋之有</td></tr><tr><td>&#160;</td><td>动词&quot;到……去&quot;</td><td>实词用法</td><td>辍耕之垄上</td></tr><tr><td>而</td><td>并列</td><td>可译为&quot;又&quot;&quot;和&quot;</td><td>蟹六跪而二螯</td></tr><tr><td>&#160;</td><td>转折</td><td>可译为&quot;却&quot;&quot;但是&quot;</td><td>青，取之于蓝而青于蓝</td></tr><tr><td>&#160;</td><td>承接</td><td>可译为&quot;然后&quot;&quot;就&quot;</td><td>温故而知新</td></tr><tr><td>&#160;</td><td>修饰</td><td>连接状语和中心语</td><td>吾尝终日而思矣</td></tr><tr><td>以</td><td>介词&quot;用、拿、凭&quot;</td><td>后接名词</td><td>以刀劈狼首</td></tr><tr><td>&#160;</td><td>介词&quot;因为&quot;</td><td>表原因</td><td>以中有足乐者</td></tr><tr><td>&#160;</td><td>连词&quot;来、用来&quot;</td><td>表目的</td><td>属予作文以记之</td></tr><tr><td>&#160;</td><td>连词&quot;以致&quot;</td><td>表结果</td><td>以塞忠谏之路也</td></tr><tr><td>于</td><td>在</td><td>表处所</td><td>战于长勺</td></tr></table>
+<table class="ptable"><tr><th style="background:#fef2f2;color:#b91c1c">虚词</th><th style="background:#fef2f2;color:#b91c1c">用法</th><th style="background:#fef2f2;color:#b91c1c">说明</th><th style="background:#fef2f2;color:#b91c1c">例句</th></tr><tr><td>&#160;</td><td>比</td><td>比较</td><td>青于蓝</td></tr><tr><td>&#160;</td><td>对、向</td><td>表对象</td><td>于其身也，则耻师焉</td></tr><tr><td>&#160;</td><td>被</td><td>被动</td><td>受制于人</td></tr><tr><td>其</td><td>代词（他的/它的）</td><td>第三人称</td><td>其妻献疑曰</td></tr><tr><td>&#160;</td><td>代词（那/那些）</td><td>指示代词</td><td>欲穷其林</td></tr><tr><td>&#160;</td><td>副词（大概/难道）</td><td>表推测/反问</td><td>其真无马邪？</td></tr><tr><td>&#160;</td><td>连词（如果）</td><td>表假设</td><td>其若是，孰能御之</td></tr><tr><td>为</td><td>介词&quot;替、给&quot;</td><td>读wèi</td><td>公输盘为楚造云梯</td></tr><tr><td>&#160;</td><td>介词&quot;被&quot;</td><td>读wéi</td><td>身死国灭，为天下笑</td></tr><tr><td>&#160;</td><td>动词&quot;做、成为&quot;</td><td>读wéi</td><td>温故而知新，可以为师矣</td></tr><tr><td>&#160;</td><td>句末语气词&quot;呢&quot;</td><td>读wéi</td><td>何辞为</td></tr><tr><td>乃</td><td>于是，就</td><td>表承接</td><td>乃重修岳阳楼</td></tr><tr><td>&#160;</td><td>竟然</td><td>表出乎意料</td><td>乃不知有汉，无论魏晋</td></tr><tr><td>&#160;</td><td>是，就是</td><td>表判断</td><td>当立者乃公子扶苏</td></tr><tr><td>则</td><td>就，那么</td><td>表承接</td><td>学而不思则罔</td></tr><tr><td>&#160;</td><td>却</td><td>表转折</td><td>于其身也，则耻师焉</td></tr><tr><td>&#160;</td><td>是，就是</td><td>表判断</td><td>此则岳阳楼之大观也</td></tr><tr><td>且</td><td>将要</td><td>副词</td><td>年且九十</td></tr><tr><td>&#160;</td><td>况且</td><td>连词</td><td>且焉置土石</td></tr></table>
+<table class="ptable"><tr><th style="background:#fef2f2;color:#b91c1c">虚词</th><th style="background:#fef2f2;color:#b91c1c">用法</th><th style="background:#fef2f2;color:#b91c1c">说明</th><th style="background:#fef2f2;color:#b91c1c">例句</th></tr><tr><td>&#160;</td><td>尚且</td><td>连词</td><td>死且不避</td></tr><tr><td>焉</td><td>于之（兼词）</td><td>相当于&quot;于+之&quot;</td><td>三人行，必有我师焉</td></tr><tr><td>&#160;</td><td>哪里，怎么</td><td>疑问代词</td><td>焉用亡郑以陪邻</td></tr><tr><td>&#160;</td><td>语气词</td><td>句末</td><td>始一反焉</td></tr><tr><td>&#160;</td><td>二、典例破题：虚词辨析方法</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><div class="box-t" style="color:#3b82f6"><strong>方法一：位置判断法</strong></div><p>虚词在句中位置不同，用法不同。如&quot;之&quot;在动词后多为代词，在名词之间多为&quot;的&quot;。</p></div>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><table class="ptable"><tr><th style="background:#93c5fd">方法二：替换验证法用现代汉语的对应词替换，看是否通顺。如&quot;而&quot;替换为&quot;却&quot;是否合理。</th><th style="background:#93c5fd">&#160;</th></tr></table></div>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><div class="box-t" style="color:#3b82f6"><strong>方法三：删除测试法</strong></div><p>去掉该虚词后句子是否仍通顺。如&quot;师道<strong>之</strong>不传也久矣&quot;去掉&quot;之&quot;仍通顺，说明&quot;之&quot;只是取消独立性。</p></div>
+<div class="h3c" style="color:#b91c1c"><strong>三、巩固提升：虚词检测题（15道）</strong></div>
+<div class="h3c" style="color:#ef4444"><strong>1.</strong> 下列句中&quot;之&quot;的用法与&quot;辍耕之垄上&quot;相同的是：</div>
+<p>A. 学而时习之 B. 燕雀安知鸿鹄之志哉 C. 送杜少府之任蜀州 D. 何陋之有</p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong><strong>C</strong></div><p>解析：题干中&quot;之&quot;是动词&quot;到……去&quot;，C项&quot;之任蜀州&quot;也是&quot;到蜀州赴任&quot;，用法相同。A项&quot;之&quot;为代词，B项&quot;之&quot;为&quot;的&quot;，D项&quot;之&quot;为宾语前置标志。</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>2.&quot;青，取之于蓝而青于蓝&quot;中&quot;而&quot;的用法是：并列转折承接修饰A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：B解析：&quot;而&quot;表转折，可译为&quot;却&quot;——靛青是从蓝草中提取的，却比蓝草更青。</td></tr><tr><td>&#160;</td><td>3.&quot;属予作文以记之&quot;中&quot;以&quot;的用法是：用因为来，用来以致A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：C解析：出自《岳阳楼记》，&quot;以&quot;表目的，意为&quot;来、用来&quot;，全句：嘱托我写文章来记述这件事。</td></tr><tr><td>&#160;</td><td>4.&quot;皆以美于徐公&quot;中&quot;于&quot;的意思是：在比对从A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：B解析：出自《邹忌讽齐王纳谏》，&quot;于&quot;表比较，意为&quot;比&quot;——都认为比徐公美。</td></tr><tr><td>&#160;</td><td>5.&quot;其真无马邪&quot;中&quot;其&quot;的用法是：代词&quot;他的&quot;代词&quot;那&quot;难道（反问）大概A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：C解析：出自《马说》，&quot;其&quot;表反问语气，意为&quot;难道&quot;——难道真的没有千里马吗？</td></tr><tr><td>&#160;</td><td>6.&quot;身死国灭，为天下笑&quot;中&quot;为&quot;的读音和意思是：替被做因为A.wèiB.wéiC.wéiD.wèi</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><td>&#160;</td><td>答案：B解析：读wéi，表被动，&quot;被天下人耻笑&quot;。</td></tr><tr><td>&#160;</td><td>7.&quot;乃不知有汉，无论魏晋&quot;中&quot;乃&quot;的意思是：于是竟然是才A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：B解析：出自《桃花源记》，&quot;乃&quot;表出乎意料，意为&quot;竟然&quot;——竟然不知道有汉朝，更不用说魏晋了。</td></tr><tr><td>&#160;</td><td>8.&quot;学而不思则罔&quot;中&quot;则&quot;的用法是：就却是只A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：A解析：&quot;则&quot;表承接，意为&quot;就&quot;——只学习不思考就会迷惑。</td></tr><tr><td>&#160;</td><td>9.&quot;年且九十&quot;中&quot;且&quot;的意思是：而且况且将要尚且A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：C解析：出自《愚公移山》，&quot;且&quot;作副词，意为&quot;将近、将要&quot;——年纪将近九十岁了。</td></tr><tr><td>&#160;</td><td>10.&quot;三人行，必有我师焉&quot;中&quot;焉&quot;的用法是：语气词兼词&quot;于之&quot;哪里代词A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：B解析：&quot;焉&quot;=于之，&quot;必有我师焉&quot;=在其中一定有我的老师。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><td>&#160;</td><td>11.下列&quot;之&quot;的用法与其他三项不同的是：何陋之有句读之不知宋何罪之有辍耕之垄上A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：D解析：A、B、C三项中&quot;之&quot;都是宾语前置的标志，D项&quot;之&quot;是动词&quot;到……去&quot;。</td></tr><tr><td>&#160;</td><td>12.下列&quot;而&quot;的用法与&quot;蟹六跪而二螯&quot;相同的是：青，取之于蓝而青于蓝温故而知新中峨冠而多髯者为东坡吾尝终A.B.C.D.日而思矣</td></tr><tr><td>&#160;</td><td>答案：C解析：题干中&quot;而&quot;表并列，C项&quot;峨冠而多髯&quot;也是并列。A项表转折，B项表承接，D项表修饰。</td></tr><tr><td>&#160;</td><td>13.&quot;以刀劈狼首&quot;和&quot;以中有足乐者&quot;中两个&quot;以&quot;的用法分别是：用/因为来/用因为/用来/来A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：A解析：前者&quot;以刀&quot;=用刀，介词&quot;用&quot;；后者&quot;以中有足乐者&quot;=因为心中有足以快乐的事，介词&quot;因为&quot;。</td></tr><tr><td>&#160;</td><td>14.&quot;此则岳阳楼之大观也&quot;中&quot;则&quot;的用法是：就却是，就是那么A.B.C.D.</td></tr><tr><td>&#160;</td><td>答案：C解析：出自《岳阳楼记》，&quot;则&quot;表判断，可译为&quot;就是&quot;——这就是岳阳楼的壮丽景象。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>15.&quot;焉用亡郑以陪邻&quot;中&quot;焉&quot;的意思是：于之哪里语气词代词A.B.C.D.</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：出自《烛之武退秦师》，&quot;焉&quot;作疑问代词，意为&quot;哪里、怎么&quot;——哪里用得着灭掉郑国来增加邻国的土地呢？</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

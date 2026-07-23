@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题03 · 离子反应 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题03 · 离子反应</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题03 · 离子反应</h2><div class="hero-sub">化学暑假衔接 · 第 21-31 页</div><div class="hero-meta"><span>📄 11 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题03 · 离子反应</strong></div><p style="color:#6b7280">离子反应是从微观粒子角度理解溶液中的化学反应，是高考必考内容。掌握电解质判断、离子方程式书写和离子共存三大核心，即可应对大部分题型。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：电解质与非电解质</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">概念</th><th style="background:#10b981">定义</th><th style="background:#10b981">关键判断</th><th style="background:#10b981">举例</th></tr><tr><td>电解质</td><td>在水溶液或熔融状态下能导电的化合物</td><td>必须是化合物；自身电离</td><td>酸、碱、盐、活泼金属氧化物（如Na2O）</td></tr><tr><td>非电解质</td><td>在水溶液和熔融状态下均不能导电的化合物</td><td>必须是化合物</td><td>CO2、SO2、NH3、蔗糖、酒精</td></tr><tr><td>强电解质</td><td>完全电离</td><td>强酸、强碱、大多数盐</td><td>HCl、H2SO4、NaOH、NaCl</td></tr><tr><td>弱电解质</td><td>部分电离</td><td>弱酸、弱碱、水</td><td>CH3COOH、NH3·H2O、H2O</td></tr></table>
+<div class="h3c" style="color:#d97706"><strong>辨析</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="chip" style="background:#16a34a;margin-top:0">不</div><table class="ptable"><tr><th>&#160;</th><th>的水溶液能导电，但它们本身不是电解质——导电的是它们CO2、SO2、NH3与水反应生成的等属于非电解质。H2CO3、H2SO3、NH3·H2O。CO2</th><th>&#160;</th></tr><tr><td>&#160;</td><td>考点2：离子方程式书写规则</td><td>&#160;</td></tr><tr><td>&#160;</td><td>离子方程式书写四步法</td><td>&#160;</td></tr><tr><td>&#160;</td><td>写：写出正确的化学方程式。拆：将强酸、强碱、可溶性盐拆成离子形式；弱酸、弱碱、水、气体、沉淀、氧化物保留化学式。删：删去两边相同的离子（不参加反应的离子）。查：检查原子守恒、电荷守恒。</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">能拆（写离子符号）</th><th style="background:#10b981">不能拆（保留化学式）</th></tr><tr><td>强酸：HCl、HNO3、H2SO4、HBr、HI、HClO4</td><td>弱酸：CH3COOH、H2CO3、HClO、H2SiO3、HF</td></tr><tr><td>强碱：NaOH、KOH、Ba(OH)2、Ca(OH)2(微溶)</td><td>弱碱：NH3·H2O、Fe(OH)3、Cu(OH)2、Mg(OH)2</td></tr><tr><td>可溶性盐：钾钠铵盐硝酸盐均可溶</td><td>难溶盐：BaSO4、AgCl、CaCO3、BaCO3</td></tr><tr><td>—</td><td>气体：CO2、SO2、H2S、NH3、Cl2</td></tr><tr><td>—</td><td>氧化物：Fe2O3、CuO、Al2O3、MnO2</td></tr><tr><td>考点3：离子共存问题</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">具体条件</th><th style="background:#10b981">举例</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="chip" style="background:#16a34a;margin-top:0">共</div><p>生Ba2++SO42−→BaSO4↓；</p>
+<p>成阴/阳离子结合生成难溶物Ag++Cl−→AgCl↓沉淀生H++CO32−/HCO3−；OH−成2H++CO32−→H2O+CO2↑+（加热）气+NH4体生成H++OH−→H2O；H+弱H++F−→HF+CH3COO−→CH3COOH电解质氧−+Fe2+；NO3−(H+)化　强氧化性离子与强还原性离　MnO4+I−；Fe3++I−还子原双Al3++HCO3−；Fe3++CO32−水　弱碱阳离子 + 弱酸阴离子解Fe3++3SCN−→Fe(SCN)3（血络Fe3++SCN−合红色）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点4：离子推断题</strong></div><div class="h3c" style="color:#10b981"><strong>离子推断常用方法</strong></div>
+<p>1. <strong>颜色判断：</strong>Cu2+(蓝)、Fe3+(黄)、Fe2+(浅绿)、MnO4−(紫红)</p>
+<p>2. <strong>沉淀判断：</strong>加酸/碱产生沉淀，沉淀颜色和溶解性</p>
+<p>3. <strong>气体判断：</strong>加酸产生气体（CO2、SO2等），加碱产生气体（NH3）</p>
+<p>4. <strong>电荷守恒：</strong>溶液中阳离子总电荷 = 阴离子总电荷</p>
+<table class="ptable"><tr><td>二、典例破题</td><td>&#160;</td></tr><tr><td>【典例1】电解质判断下列物质中属于电解质的是（）①铜②晶体③稀硫酸④⑤液态⑦蔗糖NaClCO2HCl⑥BaSO4全部A.①②③⑤B.②⑤⑥C.②③⑤⑥D.</td><td>&#160;</td></tr><tr><td>【答案】B①铜是单质，不是化合物→不是电解质晶体是盐，熔融或溶于水导电→是电解质√②NaCl③稀硫酸是混合物→不是电解质（H2SO4才是电解质）是非电解质（导电的是H2CO3）④CO2⑤液态是化合物，溶于水导电→是电解质√HCl是盐，虽难溶但熔融态导电→是电解质√⑥BaSO4⑦蔗糖是非电解质电解质：②⑤⑥，选B</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#2563eb"><strong>【典例2】离子方程式正误判断</strong></div>
+<p>下列离子方程式正确的是（ ）A. 铁与稀硫酸反应：2Fe + 6H+ = 2Fe3+ + 3H2↑B. 碳酸钙与醋酸反应：CaCO3 + 2H+ = Ca2+ + H2O + CO2↑C. 硫酸铜与氢氧化钡反应：Ba2+ + SO42− = BaSO4↓D. 氯气与水反应：Cl2 + H2O = H+ + Cl− + HClO</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】DFe2+，不是Fe3+：Fe2H+Fe2+与稀生成+A×FeH2SO4+=H2↑</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>Ca2+醋酸是弱酸，不能拆：CaCO3+B×+2CH3COOH=2CH3COO−CO2↑+H2O+Cu2+2OH−Cu2+2−漏了Cu(OH)2↓：正确为+C×+=+SO4Ba2+2OH−Cu(OH)2↓+=BaSO4↓+均不拆，HCl拆，正确。Cl2、H2O、HClOD√</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>A.B.C.D.</td><td>【典例3】离子共存在强酸性溶液中，下列离子组能大量共存的是（）Na+、K+、CO32−、Cl−Cu2+、Na+、SO42−、NO3−Fe2+、H+、NO3−、SO42−Na+、K+、OH−、Cl−</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】B2−2H+强酸性溶液中，CO3CO2↑A×+=H2O+四种离子在酸性条件下均不反应，可大量共存。B√−Fe2+：3Fe2++NO3−酸性条件下具有强氧化性，会氧化C×NO3+4H+=3Fe3++NO↑+2H2OOH−H+强酸性溶液中D×+=H2O</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c"><strong>三、巩固提升</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1 巩固题</strong></div>
+<p><strong>Q3-1</strong>判断下列说法是否正确，并说明理由：(1) 液态 HCl 不导电，所以 HCl 不是电解质。</p>
+<p>(2) BaSO4 难溶于水，所以 BaSO4 不是电解质。</p>
+<p>(3) SO2 水溶液能导电，所以 SO2 是电解质。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) <strong>错误。</strong>液态 HCl 不导电是因为没有自由移动的离子，但 HCl 溶于水后完全电离，属于强电解质。</p>
+<p>(2) <strong>错误。</strong>BaSO4 虽难溶于水，但熔融状态下能导电，且溶解的部分完全电离，属于强电解质。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点2 巩固题</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>(3)错误。SO2水溶液导电是因为电离SO2+H2O=H2SO3，H2SO3出离子。SO2本身不能电离，属于非电解质。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>①</td><td>Q3-2下列物质中，属于强电解质的是______，属于弱电解质的是______，属于非电解质的是______。⑤酒精⑥NaOH②CH3COOH③NH3④BaSO4H2O⑦NaCl⑧CO2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】强电解质：①NaCl（强碱和大多数盐）NaOH、④BaSO4、⑦弱电解质：②H2O（弱酸和水）CH3COOH、⑥非电解质：③NH3、⑤酒精、⑧CO2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q3-3写出下列物质在水溶液中的电离方程式：NaHSO4（水溶液中）(1)(2)NaHCO3(3)CH3COOH</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】Na+H+2−（水溶液中−完全电离；熔(1)NaHSO4=++SO4HSO4Na+−）融态则为NaHSO4=+HSO4Na+−（HCO3−H+是弱酸根，不完全电离为(2)NaHCO3=+HCO32−）+CO3CH3COO−H+（弱电解质用可逆号）(3)CH3COOH⇌+</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q3-4</strong>写出下列反应的离子方程式：(1) 氢氧化钡溶液与稀硫酸反应(2) 碳酸氢钠溶液与盐酸反应(3) 铝与氢氧化钠溶液反应</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>【答案与解析】</strong></div><p>(1) <strong>Ba</strong><strong>2+</strong><strong> + 2OH</strong><strong>−</strong><strong> + 2H</strong><strong>+</strong><strong> + SO</strong><strong>4</strong><strong>2−</strong><strong> = BaSO</strong><strong>4</strong><strong>↓ + 2H</strong><strong>2</strong><strong>O</strong>注意：Ba(OH)2 和 H2SO4 均完全电离，产物有 BaSO4↓ 和 H2O，不能漏掉任何离子。</p>
+<p><strong>−</strong><strong> + H</strong><strong>+</strong><strong> = H</strong><strong>2</strong><strong>O + CO</strong><strong>2</strong><strong>↑</strong>(2) <strong>HCO</strong><strong>3</strong>(3) <strong>2Al + 2OH</strong><strong>−</strong><strong> + 2H</strong><strong>2</strong><strong>O = 2AlO</strong><strong>2</strong><strong>−</strong><strong> + 3H</strong><strong>2</strong><strong>↑</strong><strong>Q3-5</strong>判断下列离子方程式是否正确，错误的请改正：(1) 铜片插入硝酸银溶液：Cu + Ag+ = Cu2+ + Ag(2) 氢氧化铁与盐酸：OH− + H+ = H2O(3) 碳酸钙溶于醋酸：CaCO3 + 2H+ = Ca2+ + H2O + CO2↑</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) <strong>错误。</strong>电荷不守恒。正确：<strong>Cu + 2Ag</strong><strong>+</strong><strong> = Cu</strong><strong>2+</strong><strong> + 2Ag</strong>(2) <strong>错误。</strong>Fe(OH)3 难溶，不能拆。正确：<strong>Fe(OH)</strong><strong>3</strong><strong> + 3H</strong><strong>+</strong><strong> = Fe</strong><strong>3+</strong><strong>+ 3H</strong><strong>2</strong><strong>O</strong>(3) <strong>错误。</strong>醋酸是弱酸，不能拆。正确：<strong>CaCO</strong><strong>3</strong><strong> + 2CH</strong><strong>3</strong><strong>COOH =</strong><strong>Ca</strong><strong>2+</strong><strong> + 2CH</strong><strong>3</strong><strong>COO</strong><strong>−</strong><strong> + H</strong><strong>2</strong><strong>O + CO</strong><strong>2</strong><strong>↑</strong><strong>Q3-6</strong>写出下列离子方程式对应的化学方程式（各举一例）：(1) H+ + OH− = H2O(2) Ba2+ + CO32− = BaCO3↓(3) Fe + 2H+ = Fe2+ + H2↑</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) HCl + NaOH = NaCl + H2O（或 HNO3+KOH 等强酸+强碱组合）(2) BaCl2 + Na2CO3 = BaCO3↓ + 2NaCl(3) Fe + H2SO4 = FeSO4 + H2↑（或 Fe+2HCl=FeCl2+H2↑）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点3 巩固题</strong></div><p><strong>Q3-7</strong>在无色透明溶液中，下列各组离子能大量共存的是（ ）A. K+、MnO4−、Cl−、SO42−B. Na+、CO32−、K+、NO3−C. Fe3+、Na+、Cl−、SO42−D. Ba2+、Na+、SO42−、Cl−</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>B</strong></div>
+<p>− 为紫色，不符合&quot;无色&quot;条件。</p>
+<p><strong>A ×</strong> MnO4<strong>B √</strong> 四种离子相互不反应，且均为无色。</p>
+<p><strong>C ×</strong> Fe3+ 为黄色，不符合&quot;无色&quot;条件。</p>
+<p><strong>D ×</strong> Ba2+ + SO42− = BaSO4↓。</p>
+<p><strong>Q3-8</strong>在 pH=1 的溶液中，能大量共存的是（ ）+、Fe2+、SO42−、Cl−A. NH4B. Na+、K+、CO32−、NO3−C. K+、Na+、CH3COO−、Cl−D. Fe2+、H+、NO3−、SO42−</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>A</strong></div>
+<p>pH=1 即强酸性，c(H+)=0.1 mol/L。</p>
+<p><strong>A √</strong> 四种离子在酸性条件下均不反应。</p>
+<p>2− + 2H+ = H2O + CO2↑。</p>
+<p><strong>B ×</strong> CO3<strong>C ×</strong> CH3COO− + H+ = CH3COOH。</p>
+<p>− 氧化 Fe2+。<strong>D ×</strong> 酸性条件下 NO3</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q3-92−、CO32−、Cl−。为了检验其中是否含有2−，除某溶液中可能含有SO4SO4溶液外，还需什么试剂？简述理由。BaCl2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】还需稀盐酸（或稀硝酸）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>2−，加入理由：BaCO3也是白色沉淀，若溶液中含也会CO3BaCl22−2−产生白色沉淀，干扰的检验。先加稀盐酸酸化，若含则SO4CO3产生气泡（CO2），且溶于酸而不溶。酸化后无气BaCO3BaSO42−。泡，再加产生白色沉淀，说明含BaCl2SO4</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>考点4</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>①②</td><td>Q3-10Na+、Ba2+、Cu2+、CO32−、Cl−、SO42−某无色溶液可能含中的若干种。依次进行下列实验：取少量溶液，加稀盐酸，产生无色无味气体；向①反应后的溶液中加溶液，产生白色沉淀。BaCl2试推断溶液中一定含有的离子和可能含有的离子。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】Cu2+（蓝色）。无色溶液→排除2−（CO32−①加稀盐酸产生无色无味气体→含CO3+2H+=H2O+CO2↑）。2−Ba2+（BaCO3↓）。含则不能含CO32−（BaSO4↓，且②①反应后加产生白色沉淀→含BaCl2SO4不溶于酸）。BaSO42−、SO42−、Na+（Na+一定含有：CO3为了电荷守恒，因为阴离子2−2−，必须有阳离子，且Ba2+已被排除，Cu2+为和也被排CO3SO4除）。可能含有：Cl−（无法确定，不干扰实验）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q3-11</strong>有一包白色固体粉末，可能由 Na2CO3、Na2SO4、NaCl、BaCl2 中的一种或几种组成。做以下实验：</p>
+<p>① 取少量固体溶于水，得到无色澄清溶液；</p>
+<p>② 取①中溶液，加过量稀硝酸，有气泡产生；</p>
+<p>③ 取②中溶液，加 AgNO3 溶液，有白色沉淀产生。</p>
+<p>试判断固体粉末的组成。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>① 溶于水得澄清溶液→不能同时含 Na2CO3 和 BaCl2（会生成BaCO3↓），也不能同时含 Na2SO4 和 BaCl2（会生成BaSO4↓）。</p>
+<p>2−② 加过量稀硝酸有气泡→含 <strong>Na</strong><strong>2</strong><strong>CO</strong><strong>3</strong>（CO3+2H+=H2O+CO2↑）。因此不含 BaCl2。</p>
+<p>③ 加 AgNO3 有白色沉淀→含 Cl−（AgCl↓），故含 <strong>NaCl</strong>（不含BaCl2 的前提下，Cl− 只能来自 NaCl）。</p>
+<p>Na2SO4 无法确定（不干扰实验）。</p>
+<p>组成：<strong>一定含 </strong><strong>Na</strong><strong>2</strong><strong>CO</strong><strong>3</strong><strong>、</strong><strong>NaCl</strong><strong>；</strong><strong>可能含 </strong><strong>Na</strong><strong>2</strong><strong>SO</strong><strong>4</strong><strong>；一定不含</strong><strong>BaCl</strong><strong>2</strong>。</p>
+<p><strong>Q3-12</strong>某溶液中只含 Na+、Mg2+、SO42−、Cl− 四种离子，且离子个数比为 Na+ :</p>
+<p>Mg2+ : Cl− = 4 : 5 : 8，求 SO42− 与 Cl− 的个数比。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>设 Na+ 4 个，Mg2+ 5 个，Cl− 8 个，SO42− x 个。</p>
+<p>电荷守恒：正电荷总数 = 负电荷总数4×(+1) + 5×(+2) = 8×(−1) + x×(−2)4 + 10 = −8 + 2x → 14 = 2x − 8? 不对，应为：4+10 = 8 + 2x→ 14 = 8 + 2x → 2x = 6 → x = 32− : Cl− = <strong>3 : 8</strong>SO4</p>
+<div class="h3c"><strong>四、易错警示</strong></div>
+<div class="h3c" style="color:#d97706"><strong>⚠ 专题03 易错点警示</strong></div>
+<div class="h3c" style="color:#92400e">· <strong>电解质必须是化合物：</strong>单质（如 Cu、Cl2）和混合物（如盐酸、氨水）不</div>
+<p style="color:#92400e">是电解质。</p>
+<div class="h3c" style="color:#92400e">· <strong>&quot;拆&quot;的规则：</strong>只有强酸、强碱、可溶性盐才能拆成离子。微溶物作反应物</div>
+<p style="color:#92400e">且为澄清溶液时可拆，作生成物时标↓。</p>
+<p style="color:#92400e">· <strong>离子方程式电荷守恒：</strong>写完离子方程式后必须检查两边电荷是否相等。</p>
+<div class="h3c" style="color:#92400e"><strong>隐含条件：</strong>&quot;无色&quot;→排除 Cu2+、Fe3+、Fe2+、MnO4−；&quot;pH=1&quot;→强酸· </div>
+<p style="color:#92400e">性；&quot;pH=13&quot;→强碱性。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>−−·在酸性条件下才是强氧化剂：中性或碱性条件下氧化性很NO3NO3弱。</th><th>&#160;</th><th>&#160;</th></tr></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

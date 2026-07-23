@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题七：遗传的细胞基础——减数分裂与受精作用 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题七：遗传的细胞基础——减数分裂与受精作用</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题七：遗传的细胞基础——减数分裂与受精作用</h2><div class="hero-sub">生物暑假衔接 · 第 36-41 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>专题七：遗传的细胞基础——减数分裂与受精作用</td></tr><tr><td>&#160;</td><td>一、知识精讲减数分裂的概念和特点1.</td></tr><tr><td>&#160;</td><td>概念：进行有性生殖的生物，在产生成熟生殖细胞时进行的染色体数目减半的细胞分裂。特点：染色体复制一次，细胞连续分裂两次，结果成熟生殖细胞中染色体数目比原始生殖细胞减少一半。场所：动物——睾丸（精原细胞→精子）、卵巢（卵原细胞→卵细胞）；植物——花药（小孢子母细胞→花粉）、胚珠（大孢子母细胞→胚囊）。</td></tr></table>
+<div class="h3c" style="color:#15803d"><strong>2. </strong><strong>减数分裂过程（以精子形成为例，</strong><strong>2N=4</strong><strong>示意）</strong></div>
+<div class="h3c" style="color:#15803d"><strong>减数第一次分裂（减</strong><strong>Ⅰ</strong><strong>）</strong></div>
+<p style="color:#15803d">前期Ⅰ：同源染色体联会，形成四分体，可能发生交叉互换（非姐妹染色单体之间片段交换）中期Ⅰ：同源染色体成对排列在赤道板两侧后期Ⅰ：同源染色体分离，非同源染色体自由组合，分别移向细胞两极末期Ⅰ：细胞分裂为两个子细胞，染色体数目减半（2N→N）</p>
+<div class="h3c" style="color:#15803d"><strong>减数第二次分裂（减</strong><strong>Ⅱ</strong><strong>，</strong><strong>类似有丝分裂）</strong></div>
+<p style="color:#15803d">前期Ⅱ：染色体散乱分布中期Ⅱ：染色体的着丝粒排列在赤道板上后期Ⅱ：着丝粒分裂，姐妹染色单体分开，染色体暂时加倍末期Ⅱ：细胞分裂，形成四个精细胞关键点：减Ⅰ的主要特征是同源染色体的行为（联会、四分体、分离）；减Ⅱ的主要特征是着丝粒分裂</p>
+<div class="h3c" style="color:#15803d"><strong>3. </strong><strong>精子和卵细胞形成过程的比较</strong></div>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">比较项目</th><th style="background:#dcfce7;color:#166534">精子形成</th><th style="background:#dcfce7;color:#166534">卵细胞形成</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>场所　睾丸　卵巢细胞质　不均等分裂（初级卵母细胞、次级卵母细胞均等分裂分裂　不均等分裂；第一极体可均等分裂）1个精原细胞 →结果　1个卵原细胞 → 1个卵细胞 + 3个极体4个精子需要（精细胞变变形　不需要形为精子）</p>
+<div class="h3c" style="color:#15803d"><strong>4. </strong><strong>减数分裂过程中染色体、</strong><strong>DNA</strong><strong>数量变化（设体细胞</strong><strong>2N</strong><strong>）</strong></div>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">时期</th><th style="background:#dcfce7;color:#166534">染色体数</th><th style="background:#dcfce7;color:#166534">DNA数</th><th style="background:#dcfce7;color:#166534">染色单体数</th></tr><tr><td>精原细胞（间期前）</td><td>2N</td><td>2N</td><td>0</td></tr><tr><td>间期复制后</td><td>2N</td><td>4N</td><td>4N</td></tr><tr><td>减Ⅰ前、中、后期</td><td>2N</td><td>4N</td><td>4N</td></tr><tr><td>减Ⅰ末期</td><td>N</td><td>2N</td><td>2N</td></tr><tr><td>减Ⅱ前、中期</td><td>N</td><td>2N</td><td>2N</td></tr><tr><td>减Ⅱ后期</td><td>2N</td><td>2N</td><td>0</td></tr><tr><td>减Ⅱ末期（配子）</td><td>N</td><td>N</td><td>0</td></tr><tr><td>受精作用5.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p style="color:#15803d"><strong>概念：</strong>精子与卵细胞相互识别、融合成为受精卵的过程。</p>
+<div class="h3c" style="color:#15803d"><strong>结果：</strong>受精卵中染色体数目恢复到体细胞数目（N+N→2N），其中一半染色</div>
+<p>体来自父方（精子），一半来自母方（卵细胞）。</p>
+<div class="h3c" style="color:#15803d"><strong>意义：</strong>维持每种生物前后代体细胞中染色体数目的恒定，对于生物的遗传和</div>
+<p>变异十分重要。减数分裂使配子染色体数目减半，受精作用使染色体数目恢复，保证了遗传的稳定性；同时，减数分裂中的交叉互换和自由组合增加了遗传的变异性。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>6. </strong><strong>减数分裂与有丝分裂的比较</strong></div><table class="ptable"><tr><th style="background:#dcfce7;color:#166534">比较项目</th><th style="background:#dcfce7;color:#166534">有丝分裂</th><th style="background:#dcfce7;color:#166534">减数分裂</th></tr><tr><td>发生部位</td><td>体细胞、原始生殖细胞</td><td>生殖腺中的原始生殖细胞</td></tr><tr><td>分裂次数</td><td>1次</td><td>连续2次</td></tr><tr><td>同源染色体配对</td><td>无</td><td>有（前期Ⅰ联会）</td></tr><tr><td>同源染色体分离</td><td>无</td><td>有（后期Ⅰ）</td></tr><tr><td>子细胞染色体数</td><td>与母细胞相同（2N）</td><td>减半（N）</td></tr><tr><td>子细胞类型</td><td>体细胞</td><td>生殖细胞</td></tr><tr><td>子细胞数目</td><td>2个</td><td>4个（精）或1个+3极体（卵）</td></tr></table>
+<div class="h3c" style="color:#15803d"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（减数分裂过程判断）</strong></div>
+<p style="color:#78350f">在减数第一次分裂过程中，不会出现的是（　）A. 同源染色体联会　B. 四分体中的非姐妹染色单体交叉互换C. 同源染色体分离　D. 着丝粒分裂，姐妹染色单体分开 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>D</strong></div>
+<div class="h3c" style="color:#15803d"><strong>解析：</strong>着丝粒分裂、姐妹染色单体分开发生在<strong>减数第二次分裂后期</strong>，不是</div>
+<p style="color:#451a03">减数第一次分裂。减Ⅰ的主要特征是同源染色体的联会、四分体形成和同源染色体分离。 </p>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>2</strong><strong>（精卵形成比较）</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>下列关于精子和卵细胞形成过程的叙述，正确的是（　）两者都在卵巢中形成A.两者细胞质都是均等分裂B.1个精原细胞可形成4个精子，1个卵原细胞可形成1个卵细胞C.两者都需要经过变形过程D.</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：C解析：A错误，精子在睾丸中形成。B错误，卵细胞形成过程中细胞质不均等分裂。C正确。D错误，只有精子需要变形，卵细胞不需要。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>典例3（数量变化）某生物体细胞含有4条染色体，则其初级精母细胞在减数第一次分裂后期，细胞中染色体、DNA和染色单体的数目分别是（　）4、8、84、4、08、8、08、8、8A.B.C.D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：A解析：减Ⅰ后期，同源染色体分离但仍在同一个细胞中，此时染色体数目仍为2N=4（每条含两条染色单体），DNA=4N=8，染色单体=4N=8。直到减Ⅰ末期细胞分裂后，染色体才减半为N=2。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习1减数分裂过程中，染色体数目减半发生在（　）减数第一次分裂前期　B.减数第一次分裂后期A.减数第一次分裂末期　D.减数第二次分裂后期C.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习2在减数分裂过程中，同源染色体联会发生在（　）减数第一次分裂前期　B.减数第一次分裂中期A.减数第二次分裂前期　D.减数第二次分裂中期C.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>3</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：A</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<p>下列关于受精作用的叙述，错误的是（　）A. 受精卵中的染色体一半来自父方，一半来自母方B. 受精作用使受精卵中染色体数目恢复到体细胞水平C. 受精卵中的遗传物质一半来自精子，一半来自卵细胞D. 受精作用对维持生物前后代染色体数目恒定有重要意义 </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>答案：C（受精卵中的核遗传物质一半来自父方一半来自母方，但细胞质遗传物质几乎全部来自卵细胞）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习4减数分裂与有丝分裂的相同点是（　）都有同源染色体的联会A.都有同源染色体的分离B.都有DNA的复制C.分裂后子细胞染色体数目都减半D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>5</strong></div>
+<p>一个基因型为AaBb的精原细胞，在不发生交叉互换的情况下，经过减数分裂可形成的精子类型有（　）A. 1种　B. 2种　C. 4种　D. 8种 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>B</strong>（一个精原细胞只能形成2种类型的精子，即AB和ab，或Ab和</div>
+<p style="color:#1e3a8a">aB，取决于非同源染色体的组合方式）</p>
+<div class="h3c" style="color:#15803d"><strong>四、易错警示</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#991b1b"><strong>常见错误与混淆点</strong></div><div class="h3c" style="color:#15803d"><strong>同源染色体：</strong>形态、大小一般相同，一条来自父方，一条来自母方。不• </div>
+<p>是&quot;一条染色体复制后形成的两条&quot;。</p>
+<div class="h3c" style="color:#15803d"><strong>四分体</strong><strong> = </strong><strong>一对同源染色体</strong><strong> = 2</strong><strong>条染色体</strong><strong> = 4</strong><strong>条染色单体：</strong>数量关系要清• </div>
+<p>楚。</p>
+<div class="h3c" style="color:#15803d"><strong>交叉互换：</strong>发生在四分体的非姐妹染色单体之间，属于基因重组，增加配• </div>
+<p>子的遗传多样性。</p>
+<div class="h3c" style="color:#15803d"><strong>减</strong><strong>Ⅰ</strong><strong> vs </strong><strong>减</strong><strong>Ⅱ</strong><strong>的关键区别：</strong>减Ⅰ有同源染色体，减Ⅱ无同源染色体。判断细胞• </div>
+<p>分裂图像时先看有无同源染色体。</p>
+<div class="h3c" style="color:#15803d"><strong>染色体减半的时期：</strong>发生在减Ⅰ末期（同源染色体分离进入两个子细胞），• </div>
+<p>不是减Ⅱ。</p>
+<div class="h3c" style="color:#15803d"><strong>着丝粒分裂：</strong>减Ⅰ后期是同源染色体分离（着丝粒不分裂）；减Ⅱ后期是着• </div>
+<p>丝粒分裂。</p>
+<div class="h3c" style="color:#15803d"><strong>一个精原细胞 </strong><strong>vs </strong><strong>一个个体：</strong>一个精原细胞只能产生2种精子；一个个体• </div>
+<p>（含多个精原细胞）可产生2ⁿ种精子（n为等位基因对数，不考虑交叉互换）。</p>
+<div class="h3c" style="color:#15803d"><strong>卵细胞形成特点：</strong>1个卵原细胞最终只形成1个卵细胞（其余3个是极体，• </div>
+<p>退化消失）。</p>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

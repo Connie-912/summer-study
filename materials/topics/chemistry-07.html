@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题07 · 元素周期表与周期律 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题07 · 元素周期表与周期律</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题07 · 元素周期表与周期律</h2><div class="hero-sub">化学暑假衔接 · 第 55-62 页</div><div class="hero-meta"><span>📄 8 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题07 · 元素周期表与周期律</strong></div><p style="color:#6b7280">元素周期表是化学的&quot;地图&quot;，元素周期律揭示了元素性质随原子序数递增的周期性变化规律。掌握&quot;位—构—性&quot;三者关系是解题关键。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：原子结构</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">微粒</th><th style="background:#10b981">符号</th><th style="background:#10b981">相对质量</th><th style="background:#10b981">电荷</th><th style="background:#10b981">位置</th></tr><tr><td>质子</td><td>p</td><td>≈1</td><td>+1</td><td>原子核内</td></tr><tr><td>中子</td><td>n</td><td>≈1</td><td>0</td><td>原子核内</td></tr><tr><td>电子</td><td>e−</td><td>1/1836</td><td>−1</td><td>核外</td></tr></table>
+<p>原子序数 = 质子数 = 核电荷数 = 原子的核外电子数质量数(A) = 质子数(Z) + 中子数(N)</p>
+<div class="h3c" style="color:#047857"><strong>考点2：元素周期表结构</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">结构</th><th style="background:#10b981">内容</th></tr><tr><td>周期（7个）</td><td>短周期：第1~3周期（2、8、8种元素）；长周期：第4~7周期</td></tr><tr><td>族（16个）</td><td>7个主族（IA~VIIA）、7个副族（IB~VIIB）、VIII族（3列）、0族（稀有气体）</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>周期数　= 电子层数主族序数　= 最外层电子数</p>
+<div class="h3c" style="color:#047857"><strong>考点3：同周期、同主族性质递变规律</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">性质</th><th style="background:#10b981">同周期（左→右）</th><th style="background:#10b981">同主族（上→下）</th></tr><tr><td>原子半径</td><td>逐渐减小</td><td>逐渐增大</td></tr><tr><td>金属性</td><td>逐渐减弱</td><td>逐渐增强</td></tr><tr><td>非金属性</td><td>逐渐增强</td><td>逐渐减弱</td></tr><tr><td>最高价氧化物水化物酸性</td><td>逐渐增强</td><td>逐渐减弱</td></tr><tr><td>最高价氧化物水化物碱性</td><td>逐渐减弱</td><td>逐渐增强</td></tr><tr><td>第一电离能</td><td>总体增大（有波动）</td><td>逐渐减小</td></tr><tr><td>电负性</td><td>逐渐增大</td><td>逐渐减小</td></tr></table>
+<div class="h3c" style="color:#047857"><strong>考点4：元素金属性、非金属性强弱判断</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">判断依据</th><th style="background:#10b981">金属性强</th><th style="background:#10b981">非金属性强</th></tr><tr><td>单质与水/酸反应</td><td>越容易、越剧烈</td><td>—</td></tr><tr><td>最高价氧化物水化物</td><td>碱性越强</td><td>酸性越强</td></tr><tr><td>置换反应</td><td>活泼金属置换不活泼金属</td><td>活泼非金属置换不活泼非金属</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>气态氢化物稳—　越稳定定性原电池　作负极　—</p>
+<div class="h3c"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#2563eb"><strong>【典例1】位—构—性关系</strong></div>
+<p>已知 X 元素的原子序数为 17，回答：(1) X 在周期表中的位置是______(2) X 的最高价氧化物水化物的化学式为______(3) X 的气态氢化物的化学式为______，稳定性比 HBr______（填&quot;强&quot;或&quot;弱&quot;）</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>原子序数 17→Cl（氯）。</p>
+<p>(1) 位置：<strong>第三周期 </strong><strong>VIIA </strong><strong>族</strong>（电子排布：2-8-7）(2) 最高价氧化物水化物：<strong>HClO</strong><strong>4</strong>（高氯酸，最强无机酸）(3) 气态氢化物：<strong>HCl</strong>；稳定性：同主族上→下非金属性减弱，气态氢化物稳定性减弱，故 HCl 稳定性 <strong>强于</strong> HBr。</p>
+<div class="h3c" style="color:#2563eb"><strong>【典例2】半径比较</strong></div>
+<p>比较下列各组微粒半径的大小（用 &gt; 或 &lt; 连接）：(1) Na______Mg______Al(2) F−______Na+______Mg2+(3) Cl______Cl−</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) 同周期从左到右原子半径减小：Na <strong>&gt;</strong> Mg <strong>&gt;</strong> Al(2) 电子层结构相同的离子（均 2-8），核电荷数越大，半径越小：F−(9) <strong>&gt;</strong> Na+(11) <strong>&gt;</strong> Mg2+(12)(3) 阴离子半径大于其原子：Cl <strong>&lt;</strong> Cl−（得电子后电子间斥力增大）</p>
+<table class="ptable"><tr><td>&#160;</td><td>【典例3】金属性非金属性比较</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>下列事实能说明 Cl 的非金属性比 S 强的是（ ）</p>
+<p>① HCl 的酸性比 H2S 强</p>
+<p>② HCl 比 H2S 稳定</p>
+<p>③ Cl2 能与 Na2S 反应生成 S</p>
+<p>④ HClO4 的酸性比 H2SO4 强</p>
+<p>⑤ Cl2 与 Fe 反应生成 FeCl3，S 与 Fe 反应生成 FeSA. ①②③④⑤   B. ②③④⑤   C. ②③④   D. ②③⑤</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>B</strong></div>
+<p>① 无氧酸的酸性强弱不能说明非金属性强弱（HCl 是强酸，H2S 是弱酸，但 HF 是弱酸而 F 非金属性最强），×</p>
+<p>② 气态氢化物越稳定，非金属性越强，√</p>
+<p>③ 置换反应：Cl2+Na2S=2NaCl+S↓，非金属性强的置换弱的，√</p>
+<p>④ 最高价氧化物水化物酸性越强，非金属性越强，√</p>
+<p>⑤ Cl2 将 Fe 氧化到 +3 价（最高价），S 只将 Fe 氧化到 +2 价，说明Cl2 氧化性更强→非金属性更强，√正确的有②③④⑤，选 <strong>B</strong>。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>考点1</td><td>&#160;</td><td>三、巩固提升巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-1某元素原子核内有20个中子，质量数为39，该元素的原子序数为______，元素符号为______，在周期表中的位置为______。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】原子序数=质子数=质量数−中子数=39−20=19元素符号：K（钾）位置：电子排布2-8-8-1，第四周期族IA</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-2写出原子序数为8、13、16的元素的元素符号和原子结构示意图（电子排布）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>8:O（氧），电子排布2-613:Al（铝），电子排布2-8-316:S（硫），电子排布2-8-6</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-335Cl37Cl同位素和中，质子数、中子数、电子数各是多少？</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】35Cl：质子数=17，中子数=35−17=18，电子数=1737Cl：质子数=17，中子数=37−17=20，电子数=17同位素：质子数相同，中子数不同。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>考点2</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-4元素周期表中，共有______个周期，______个族。其中短周期为第______周期，不完全周期为第______周期。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】共有7个周期，16个族。短周期：第1、2、3周期不完全周期：第7周期</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-5位于第三周期族的元素是______，其原子结构示意图为______，最高VIA价氧化物水化物的化学式为______。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】第三周期族→S（硫），电子排布2-8-6VIA最高价氧化物水化物：H2SO4（硫酸）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-6</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点3 巩固题</strong></div><table class="ptable"><tr><th>&#160;</th><th>原子序数为11、12、13的元素分别位于周期表的什么位置？它们的金属性如何递变？</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【答案与解析】Na，第三周期族11:IAMg，第三周期族12:IIAAl，第三周期族13:IIIA同周期从左到右金属性减弱：Na&gt;Mg&gt;Al</td><td>&#160;</td></tr></table>
+<p><strong>Q7-7</strong>比较下列各组物质酸碱性的强弱：(1) NaOH______Mg(OH)2______Al(OH)3(2) H2SO4______HClO4(3) HF______HCl______HBr______HI（酸性）</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) NaOH <strong>&gt;</strong> Mg(OH)2<strong> &gt;</strong> Al(OH)3（同周期金属性减弱，碱性减弱）(2) H2SO4<strong> &lt;</strong> HClO4（同周期非金属性增强，最高价含氧酸酸性增强）(3) HF <strong>&lt;</strong> HCl <strong>&lt;</strong> HBr <strong>&lt;</strong> HI（无氧酸酸性：同主族上→下增强，因为键能减小，越易电离）<strong>Q7-8</strong>下列各组顺序不正确的是（ ）A. 原子半径：Na &lt; Mg &lt; AlB. 酸性：HClO4 &gt; H2SO4 &gt; H3PO4 &gt; H2SiO3C. 碱性：KOH &gt; NaOH &gt; LiOHD. 热稳定性：HF &gt; HCl &gt; HBr &gt; HI</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】A同周期从左到右原子半径减小，应为Al。A×Na&gt;Mg&gt;同周期最高价含氧酸酸性增强，Si-P-S-Cl正确。B√同主族上→下金属性增强，碱性增强。C√</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点4 巩固题</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>同主族上→下非金属性减弱，气态氢化物稳定性减弱。D√</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-9已知三种元素位于同一周期，且原子序数依次增大。X的最高价氧X、Y、Z化物水化物为强碱，Y的最高价氧化物水化物为两性氢氧化物，Z的最高价氧化物水化物为强酸。试推断可能是什么元素。X、Y、Z</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】同一周期中，X为强碱（IA族），Y为两性（Al），Z为强酸（VIIA族或族）。VIA可能的组合（第三周期）：X=Na，Y=Al，Z=Cl（或S）NaOH→强碱，Al(OH)3→两性，HClO4→强酸（或H2SO4→强酸）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q7-10</strong>设计实验证明 Na 的金属性比 Mg 强。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>方法一：分别与水反应。Na 与冷水剧烈反应（2Na+2H2O=2NaOH+H2↑），Mg 与冷水几乎不反应，与热水反应缓慢。说明 Na 金属性比 Mg 强。</p>
+<p>方法二：比较最高价氧化物水化物碱性。NaOH 是强碱，Mg(OH)2是中强碱（难溶于水），NaOH 碱性更强→Na 金属性更强。</p>
+<p><strong>Q7-11</strong>设计实验证明 Cl 的非金属性比 S 强。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>方法一：将 Cl2 通入 Na2S 溶液中，产生黄色沉淀 S：Cl2+Na2S=2NaCl+S↓。说明 Cl2 能从化合物中置换出 S，Cl 的非金属性更强。</p>
+<p>方法二：比较最高价氧化物水化物酸性：HClO4 酸性 &gt; H2SO4 酸性。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>方法三：比较气态氢化物稳定性：HCl比稳定（HCl加热不分H2S解，H2S加热易分解）。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q7-12&quot;位—构—性&quot;综合：某元素原子核外有3个电子层，最外层有7个电子。回答：(1)该元素的名称和符号；(2)在周期表中的位置；(3)预测其单质的氧化性强弱；(4)写出其气态氢化物的化学式。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】3个电子层，最外层7个电子→电子排布2-8-7→原子序数17→Cl（氯）(1)名称：氯，符号：Cl(2)位置：第三周期族VIIA(3)氧化性：Cl2是强氧化剂，氧化性比强，比弱。Br2F2(4)气态氢化物：HCl</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c"><strong>四、易错警示</strong></div>
+<div class="h3c" style="color:#d97706"><strong>⚠ 专题07 易错点警示</strong></div>
+<div class="h3c" style="color:#92400e">· <strong>原子半径比较：</strong>同周期左&gt;右，同主族上&lt;下。电子层结构相同的离子，核</div>
+<p style="color:#92400e">电荷数越大半径越小。</p>
+<div class="h3c" style="color:#92400e">· <strong>非金属性强弱判断：</strong>无氧酸的酸性不能说明非金属性强弱（如 HF 是弱酸</div>
+<p style="color:#92400e">但 F 非金属性最强）。</p>
+<p style="color:#92400e">· <strong>最高价含氧酸：</strong>F 没有最高价含氧酸（F 无正价），O 也没有含氧酸。</p>
+<div class="h3c" style="color:#92400e">· <strong>气态氢化物稳定性：</strong>非金属性越强，气态氢化物越稳定。但 HF、H2O、</div>
+<p style="color:#92400e">NH3 的沸点异常高是因为氢键。</p>
+<p style="color:#92400e">· <strong>周期表结构：</strong>第 VIII 族占 3 列，镧系和锕系各占 1 格（共 15 种元素）。</p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

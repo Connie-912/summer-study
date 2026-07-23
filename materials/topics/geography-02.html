@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 大气环流与气候 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 大气环流与气候</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>大气环流与气候</h2><div class="hero-sub">地理暑假衔接 · 第 13-21 页</div><div class="hero-meta"><span>📄 9 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>大气环流是理解全球气候分布的核心。本专题从<strong>大气受热过程</strong>出发，通过<strong>热力环流</strong>原理推导<strong>三圈环流</strong>和<strong>季风环流</strong>，最终掌握<strong>气候类型判读三步法</strong>。理科思维体现在：理解&quot;温差→气压差→气流运动&quot;的因果链。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">①</span><strong>考点一：大气受热过程</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">环节</th><th style="background:#0ea5e9">过程</th><th style="background:#0ea5e9">关键特征</th></tr><tr><td>太阳暖大地</td><td>太阳短波辐射穿过大气，大部分到达地面，被地面吸收</td><td>大气对太阳短波辐射吸收很少（&quot;太阳辐射是短波辐射&quot;）</td></tr><tr><td>大地暖大气</td><td>地面吸收太阳辐射后升温，向外发射长波辐射（地面辐射）</td><td>大气中的CO₂、水汽强烈吸收地面长波辐射</td></tr><tr><td>大气还大地</td><td>大气吸收地面辐射升温后，向地面发射大气逆辐射</td><td>大气逆辐射对地面起保温作用（温室效应）</td></tr><tr><td>&#160;</td><td>核心结论：太阳辐射是根本能量来源，地面辐射是大气的主要直接热源。</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】为什么&quot;高处不胜寒&quot;？从大气受热过程角度分析青藏高原</strong><strong>比同纬度长江中下游平原气温低的原因。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><p><span class="nno">①</span> 地面是大气的主要直接热源。海拔越高，距离地面热源越远。</p>
+<p><span class="nno">②</span> 青藏高原海拔高（平均4000m以上），空气稀薄，大气中CO₂和水汽含量少，吸收地面长波辐射的能力弱。</p>
+<p><span class="nno">③</span> 大气逆辐射弱，保温作用差，热量散失快。</p>
+<div class="h3c" style="color:#16a34a"><strong>答案：</strong>地面是大气的直接热源，青藏高原地势高、空气稀薄，吸收地面</div>
+<p>辐射少，大气逆辐射弱，保温作用差，故气温低。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.解释&quot;霜冻多出现在晴朗的夜晚&quot;的原因。</td></tr><tr><td>&#160;</td><td>答案：晴朗的夜晚，云层少，大气逆辐射弱，地面热量散失快，地面温度迅速下降。当近地面温度降至0℃以下时，水汽凝结成霜。答：晴朗夜晚大气逆辐射弱，保温作用差，地面降温快，易出现霜冻。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 为什么阴天昼夜温差小，晴天昼夜温差大？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>白天：</strong>阴天云层厚，大气对太阳辐射的<strong>反射作用强</strong>，到达地面的太阳辐</div>
+<p style="color:#166534">射少，白天气温不高。</p>
+<p style="color:#166534"><strong>夜晚：</strong>阴天云层厚，<strong>大气逆辐射强</strong>，保温作用好，夜晚气温不低。</p>
+<p style="color:#166534">晴天则相反：白天太阳辐射强，夜晚大气逆辐射弱。</p>
+<p style="color:#166534"><strong>答：阴天白天反射强气温低，夜晚保温好气温高，温差小；晴天温差大。</strong></p></div>
+<p><strong>3. 在冬季，北方农民用塑料大棚种植蔬菜，请从大气受热过程角度解释</strong><strong>其原理。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①塑料薄膜能让太阳短波辐射<strong>透入</strong>大棚内，地面吸收后升温。</p>
+<p style="color:#166534">②地面增温后发出的长波辐射被塑料薄膜<strong>阻挡</strong>，难以散失到棚外。</p>
+<p style="color:#166534">③棚内大气逆辐射增强，<strong>保温作用</strong>显著，维持棚内较高温度。</p>
+<p style="color:#166534"><strong>答：大棚利用温室效应原理，让短波辐射进入、阻挡长波辐射逸出。</strong></p></div>
+<table class="ptable"><tr><th style="background:#f59e0b">⚠易错警示1.太阳辐射是短波辐射，地面辐射和大气辐射是长波辐射。这是理解&quot;太阳暖大地→大地暖大气→大气还大地&quot;的关键。</th><th style="background:#f59e0b">&#160;</th></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>2.大气逆辐射的强弱主要取决于云量和水汽含量，不是太阳辐射强度。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>考点二：热力环流与三圈环流2</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>知识精讲热力环流基本原理：地面冷热不均→空气垂直运动（热胀上升/冷缩下沉）→同一水平面气压差异→水平气压梯度力→空气水平运动（风）。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><table class="ptable"><tr><th style="background:#0ea5e9">环流类型</th><th style="background:#0ea5e9">成因</th><th style="background:#0ea5e9">特征</th></tr><tr><td>海陆风</td><td>海陆热力性质差异</td><td>白天吹海风（海洋→陆地），夜晚吹陆风（陆地→海洋）</td></tr><tr><td>山谷风</td><td>山坡与山谷受热不均</td><td>白天吹谷风（山谷→山坡），夜晚吹山风（山坡→山谷）</td></tr></table>
+<p>城市热岛　城市气温高于近地面风从郊区吹向城市环流　郊区<strong>三圈环流（全球尺度）：</strong>低纬环流（0°~30°）、中纬环流（30°~60°）、高纬环流（60°~90°）。</p>
+<table class="ptable"><tr><th style="background:#0ea5e9">气压带</th><th style="background:#0ea5e9">纬度</th><th style="background:#0ea5e9">成因</th></tr><tr><td>赤道低气压带</td><td>0°附近</td><td>热力原因（终年高温，气流上升）</td></tr><tr><td>副热带高气压带</td><td>30°附近</td><td>动力原因（气流下沉堆积）</td></tr><tr><td>副极地低气压带</td><td>60°附近</td><td>动力原因（冷暖气流交汇上升）</td></tr><tr><td>极地高气压带</td><td>90°附近</td><td>热力原因（终年寒冷，气流下沉）</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】解释为什么30°</strong><strong>N</strong><strong>附近多沙漠（如撒哈拉沙漠），而赤道</strong><strong>附近多雨林。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><p><span class="nno">①</span> 30°N附近为副热带高气压带控制区域，气流下沉。</p>
+<p><span class="nno">②</span> 下沉气流增温，水汽不易凝结，降水稀少 → 形成沙漠。</p>
+<p><span class="nno">③</span> 赤道附近受赤道低气压带控制，气流上升。</p>
+<p><span class="nno">④</span> 上升气流降温，水汽凝结 → 降水丰沛 → 形成雨林。</p>
+<div class="h3c" style="color:#16a34a"><strong>答案：</strong>30°N受副高控制，下沉气流为主，降水少；赤道受赤道低压控</div>
+<p>制，上升气流为主，降水多。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.画出海陆风示意图，并说明白天吹海风的原因。</td></tr><tr><td>&#160;</td><td>答案：白天，陆地比热容小，升温快，气温高，近地面形成低压；海洋比热容大，升温慢，气温低，近地面形成高压。近地面风从海洋（高压）吹向陆地（低压），即海风。答：白天海陆热力差异导致陆地低压、海洋高压，风从海洋吹向陆地。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 简述三圈环流中，北半球中纬度（30°</strong><strong>N~60°N</strong><strong>）近地面盛行什么风</strong><strong>向？并说明形成原因。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> 北半球中纬度近地面盛行<strong>西南风（盛行西风）</strong>。</p>
+<p style="color:#166534">形成原因：副热带高气压带（30°N）的近地面气流向北流向副极地低气压带（60°N），受地转偏向力影响，北半球向右偏转，形成西南风。</p>
+<p style="color:#166534"><strong>答：盛行西南风（盛行西风带），由气压梯度力和地转偏向力共同作用形成。</strong></p></div>
+<p><strong>3. 分析气压带风带的季节移动规律及其对地中海气候的影响。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 气压带风带随太阳直射点移动而<strong>南北移动</strong>（北半球夏季北移，冬季南</div>
+<p style="color:#166534">移，幅度约5°~10°）。</p>
+<p style="color:#166534">地中海气候区（30°~40°大陆西岸）：<strong>夏季</strong>：副热带高气压带北移控制该区域，气流下沉，炎热干燥。</p>
+<p style="color:#166534"><strong>冬季</strong>：盛行西风带南移影响该区域，温和多雨。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#166534"><strong>答：气压带风带季节性移动导致地中海气候夏季受副高控制干燥，冬季受西风</strong></div>
+<p style="color:#166534"><strong>控制多雨。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 气压带成因分&quot;热力原因&quot;和&quot;动力原因&quot;：</strong>赤道低压和极地高压是热力原</div>
+<p style="color:#92400e">因；副热带高压和副极地低压是动力原因。考试常考区分。</p>
+<p style="color:#92400e"><strong>2. 注意&quot;南半球地转偏向力向左偏&quot;，风向与北半球不同。</strong></p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">③</span><strong>考点三：季风环流</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">季风类型</th><th style="background:#0ea5e9">分布</th><th style="background:#0ea5e9">成因</th><th style="background:#0ea5e9">夏季风</th><th style="background:#0ea5e9">冬季风</th></tr><tr><td>东亚季风</td><td>中国东部、日本、朝鲜半岛</td><td>海陆热力性质差异</td><td>东南风（温暖湿润）</td><td>西北风（寒冷干燥）</td></tr><tr><td>南亚季风</td><td>印度半岛、中南半岛</td><td>海陆热力差异+气压带风带移动</td><td>西南风（高温多雨）</td><td>东北风（温暖干燥）</td></tr><tr><td>&#160;</td><td>风（夏季西南风来自南半球东南信风越过赤道右偏）。</td><td>东亚季风冬季风强于夏季风（冬季海陆温差更大）；南亚季风夏季风强于冬季</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】比较东亚季风和南亚季风在成因和特征上的异同。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong></div><p style="color:#16a34a"><strong>相同点：</strong>都是由于海陆热力性质差异引起的季风。</p>
+<div class="h3c" style="color:#16a34a"><strong>不同点：</strong>①东亚季风仅由海陆热力差异形成；南亚季风还叠加了气压带</div>
+<p>风带的季节移动。②东亚夏季风为东南风，南亚夏季风为西南风。③东</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>亚冬季风强于夏季风，南亚夏季风强于冬季风。④南亚夏季风带来丰沛降水（印度洋水汽），东亚季风降水相对较少。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>1.</td><td>&#160;</td><td>我国东部季风区夏季盛行什么风向？分析其成因及对我国降水的影响。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：我国东部夏季盛行东南季风（来自太平洋）和西南季风（来自印度洋）。成因：夏季大陆升温快，形成亚洲低压（印度低压）；海洋升温慢，太平洋为高压（夏威夷高压）。风从海洋吹向大陆。影响：带来丰沛水汽，形成我国东部雨热同期的气候特征，夏季降水集中。答：夏季盛行东南风和西南风，带来充沛降水，形成雨热同期的气候特征。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 为什么南亚的夏季风被称为&quot;西南季风&quot;？解释其形成过程。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 南亚夏季（6-9月），太阳直射点北移，南半球的<strong>东南信风带</strong>随之北</div>
+<div class="h3c" style="color:#166534">移，越过赤道后受北半球地转偏向力（向右偏）影响，偏转为<strong>西南风</strong>，吹向南</div>
+<p style="color:#166534">亚大陆。同时叠加海陆热力差异，南亚大陆形成热低压，吸引海洋气流。</p>
+<div class="h3c" style="color:#166534"><strong>答：南半球东南信风越过赤道右偏形成西南季风，叠加海陆热力差异，风力强</strong></div>
+<p style="color:#166534"><strong>劲、水汽充沛。</strong></p></div>
+<p><strong>3. 我国冬季风的源地、风向和特点是什么？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong> 源地：<strong>蒙古—西伯利亚高压</strong>（亚洲高压）。</div><p style="color:#166534">风向：<strong>西北风</strong>（华北、东北）和<strong>东北风</strong>（南方地区）。</p>
+<p style="color:#166534">特点：<strong>寒冷干燥</strong>，势力强劲，影响范围广（可直达南海）。</p>
+<p style="color:#166534"><strong>答：冬季风源于蒙古-西伯利亚高压，盛行西北风，寒冷干燥，势力强劲。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 东亚季风区冬季风强于夏季风，南亚季风区夏季风强于冬季风。</strong>这与两地</div>
+<p style="color:#92400e">的海陆位置和地形有关。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 我国季风区与非季风区的分界线：</strong>大致为大兴安岭—阴山—贺兰山—巴颜</div>
+<p style="color:#92400e">喀拉山—冈底斯山一线。</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>考点四：气候类型判读三步法4</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>知识精讲——气候类型判读三步法</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>第一步：以&quot;温&quot;定半球——最热月在7月→北半球；最热月在1月→南半球第二步：以&quot;温&quot;定带——根据最冷月均温判断所属温度带第三步：以&quot;水&quot;定型——根据降水季节分配确定具体气候类型</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><table class="ptable"><tr><th style="background:#0ea5e9">温度带</th><th style="background:#0ea5e9">最冷月均温</th><th style="background:#0ea5e9">可能气候类型</th></tr><tr><td>热带</td><td>&gt;15℃</td><td>热带雨林/热带草原/热带季风/热带沙漠</td></tr><tr><td>亚热带</td><td>0℃~15℃</td><td>亚热带季风/地中海气候/温带海洋性</td></tr></table>
+<p>温带　&lt;0℃　温带季风/温带大陆性寒带　最热月&lt;10℃　极地气候/苔原气候/冰原气候</p></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】某地气温降水数据：最冷月（1月）均温12℃，最热月</strong><strong>（7月）均温25℃，年降水量800</strong><strong>mm</strong>，<strong>冬季降水占全年60%。判</strong><strong>断气候类型。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>三步判读：</strong></div><p><span class="nno">①</span> 以温定半球：最热月在7月→<strong>北半球</strong>。</p>
+<p><span class="nno">②</span> 以温定带：最冷月均温12℃（在0℃~15℃之间）→<strong>亚热带</strong>。</p>
+<p><span class="nno">③</span> 以水定型：冬季多雨（降水集中在冬季）→<strong>地中海气候</strong>。</p>
+<p style="color:#16a34a"><strong>答案：</strong>北半球地中海气候。 </p></div>
+<table class="ptable"></table>
+<div class="h3c" style="color:#0369a1"><strong>巩固提升</strong></div>
+<p><strong>1. 某地全年高温，最冷月均温25℃，年降水量2000</strong><strong>mm</strong>，<strong>各月降水均</strong><strong>匀。判断气候类型。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①最冷月&gt;15℃→<strong>热带</strong>。②全年多雨、各月降水均匀→<strong>热带雨林气候</strong>。</p>
+<p style="color:#166534"><strong>答：热带雨林气候。</strong></p></div>
+<p><strong>2. 某地最冷月均温-5℃，最热月均温25℃，年降水量600</strong><strong>mm</strong>，<strong>降水集</strong><strong>中在7-8月。判断气候类型。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①最热月7月→<strong>北半球</strong>。②最冷月&lt;0℃→<strong>温带</strong>。③降水集中在夏季→<strong>温</strong></div>
+<p style="color:#166534"><strong>带季风气候</strong>。</p>
+<p style="color:#166534"><strong>答：温带季风气候。</strong></p></div>
+<p><strong>3. 比较热带季风气候和热带草原气候的区别。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">比较项</th><th style="background:#0ea5e9">热带季风气候</th><th style="background:#0ea5e9">热带草原气候</th></tr><tr><td>年降水量</td><td>1500~2000mm</td><td>750~1000mm</td></tr><tr><td>降水季节</td><td>6-9月集中（雨季短）</td><td>5-10月（雨季较长）</td></tr><tr><td>旱季特征</td><td>旱季降水极少</td><td>旱季仍有少量降水</td></tr><tr><td>分布</td><td>亚洲南部（印度、中南半岛）</td><td>非洲、南美洲、澳大利亚</td></tr><tr><td>成因</td><td>海陆热力差异+气压带移动</td><td>赤道低压带与信风带交替控制</td></tr><tr><td>&#160;</td><td>核心区别：热带季风气候年降水量更大，旱雨季更分明。</td><td>&#160;</td></tr></table></div>
+<p><strong>4. 读某地气候资料：最冷月均温3℃，最热月均温18℃，全年降水均匀</strong><strong>（各月约80</strong><strong>mm</strong><strong>），年降水量约960</strong><strong>mm</strong>。<strong>判断气候类型。</strong></p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答案：①最冷月均温3℃（0℃~15℃）→亚热带或温带海洋性。②最热月仅18℃（&lt;20℃），说明夏季凉爽。③全年降水均匀→温带海洋性气候。答：温带海洋性气候（典型分布于西欧40°~60°大陆西岸）。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>⚠易错警示1.温带海洋性气候的最冷月均温&gt;0℃（0℃~15℃），但最热月&lt;20℃。不要与亚热带季风混淆（亚热带季风最热月&gt;25℃）。2.地中海气候是唯一&quot;雨热不同期&quot;的气候类型（夏季干燥、冬季多雨），这是判断的关键特征。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<table class="ptable"></table>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

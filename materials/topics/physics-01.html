@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 匀变速直线运动 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+<style>.hero-illu{width:100%;border-radius:12px;margin:0 0 16px;display:block;box-shadow:0 4px 16px rgba(15,23,42,.15)}</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 匀变速直线运动</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero" style="padding-top:16px"><img class="hero-illu" src="../img/topic-physics-01.jpg" alt=""><div class="hero-tag">精编讲练</div><h2>匀变速直线运动</h2><div class="hero-sub">物理暑假衔接 · 第 2-11 页</div><div class="hero-meta"><span>📄 10 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点1：基本概念——质点、参考系、位移、速度、加速度</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>核心知识：</strong>质点（理想化模型，物体大小形状可忽略时使用）、参</div>
+<p>考系（描述运动时选定的参照物）、位移（矢量，由初位置指向末位置的有向线段）、速度（v = Δx/Δt，矢量）、加速度（a =Δv/Δt，矢量，描述速度变化快慢）。 </p>
+<table class="ptable"><tr><th style="background:#f59e0b">物理量</th><th style="background:#f59e0b">符号</th><th style="background:#f59e0b">定义式</th><th style="background:#f59e0b">标/矢</th><th style="background:#f59e0b">单位</th></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">位移</th><th style="background:#fffbeb;color:#92400e">x</th><th style="background:#fffbeb;color:#92400e">Δx=x₂-x₁</th><th style="background:#fffbeb;color:#92400e">矢量</th><th style="background:#fffbeb;color:#92400e">m</th></tr><tr><td>速度</td><td>v</td><td>v=Δx/Δt</td><td>矢量</td><td>m/s</td></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">加速度</th><th style="background:#fffbeb;color:#92400e">a</th><th style="background:#fffbeb;color:#92400e">a=Δv/Δt</th><th style="background:#fffbeb;color:#92400e">矢量</th><th style="background:#fffbeb;color:#92400e">m/s²</th></tr><tr><td>平均速度</td><td>v̅</td><td>v̅=Δx/Δt</td><td>矢量</td><td>m/s</td></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">瞬时速度</th><th style="background:#fffbeb;color:#92400e">v</th><th style="background:#fffbeb;color:#92400e">v=lim(Δx/Δt),Δt→0</th><th style="background:#fffbeb;color:#92400e">矢量</th><th style="background:#fffbeb;color:#92400e">m/s</th></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>一辆汽车沿直线运动，先以10 m/s的速度匀速行驶5 s，再以2 m/s²的加速度匀加速行驶5 s。求：(1) 加速阶段的末速度；(2) 全程的平均速度。</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c"><strong>(1) 加速阶段末速度：</strong></div>
+<div class="h3c">v = v₀ + at = 10 + 2 × 5 = <strong>20 m/s</strong></div>
+<div class="h3c"><strong>(2) 全程平均速度：</strong></div>
+<p>匀速阶段位移：x₁ = v₀t₁ = 10 × 5 = 50 m加速阶段位移：x₂ = v₀t₂ + ½at₂² = 10 × 5 + ½ × 2 × 25= 50 + 25 = 75 m总位移：x = 50 + 75 = 125 m总时间：t = 5 + 5 = 10 s</p>
+<div class="h3c">v̅ = x / t = 125 / 10 = <strong>12.5 m/s</strong></div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>某物体做直线运动，其速度在3 s内由向东的6 m/s变为向西的3m/s。求加速度的大小和方向。（取向东为正方向）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>取向东为正方向，则：v₀ = +6 m/s，v = -3 m/s，Δt = 3 sa = (v - v₀) / Δt = (-3 - 6) / 3 = -9 / 3 = <strong>-3 m/s²</strong>加速度大小为 <strong>3 m/s²</strong>，方向为<strong>向西</strong>（负号表示与正方向相反）。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>下列哪种情况可以将物体看作质点？</p>
+<p>A. 研究地球自转时   B. 研究火车过桥时间时   C. 研究地球绕太阳公转时   D. 研究体操运动员翻腾动作时</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>详细解析质点的条件是：物体的大小和形状对所研究的问题影响可以忽略。</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>A. 地球自转，需要考虑地球的大小和形状，不能看作质点。</p>
+<p>B. 火车过桥，火车长度与桥长相比不可忽略，不能看作质点。</p>
+<p>C. 地球绕太阳公转，地日距离远大于地球直径，地球大小可忽略，<strong>可以看作质点</strong>。</p>
+<p>D. 体操运动员翻腾，需要研究姿态变化，不可看作质点。</p>
+<div class="h3c"><strong>答案：</strong><strong>C</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点2：五大公式推导</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>公式一：</strong>v = v₀ + at</div>
+<div class="h3c" style="color:#f59e0b"><strong>公式二：</strong>x = v₀t + ½at²</div>
+<div class="h3c" style="color:#f59e0b"><strong>公式三：</strong>v² - v₀² = 2ax</div>
+<div class="h3c" style="color:#f59e0b"><strong>公式四：</strong>x = (v₀ + v)t / 2   （仅匀变速适用）</div>
+<div class="h3c" style="color:#f59e0b"><strong>公式五：</strong>Δx = aT²   （连续相等时间间隔内的位移差） </div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>使用技巧：已知v₀、a、t求v公式一；已知v₀、a、t求x公→→式二；已知v₀、a、x求v公式三；已知v₀、v、t求x公式→→四。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】1一辆汽车以20m/s的速度行驶，司机发现前方有障碍物，以5m/s²的加速度刹车。求：(1)刹车后3s末的速度；(2)刹车距离。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>取初速度方向为正，则 v₀ = 20 m/s，a = -5 m/s²。</p>
+<p><strong>(1) 3 s</strong><strong>末速度：</strong>v = v₀ + at = 20 + (-5) × 3 = 20 - 15 = <strong>5</strong></p>
+<div class="h3c"><strong>m/s</strong></div>
+<div class="h3c"><strong>(2) 刹车距离：</strong>刹车到停止时 v = 0，由 v² - v₀² = 2ax 得：</div>
+<p>0 - 20² = 2 × (-5) × x ⇒ -400 = -10x ⇒ x = <strong>40 m</strong>（也可用公式二：x = 20×4 + ½×(-5)×16 = 80 - 40 = 40m，其中刹车时间 t = v₀/|a| = 4 s） </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>物体从静止开始做匀加速直线运动，第3 s内通过的位移为5 m。</p>
+<p>求加速度。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>第3 s内即从 t = 2 s 到 t = 3 s 的位移。</p>
+<p>前3 s位移：x₃ = ½a × 3² = 4.5a前2 s位移：x₂ = ½a × 2² = 2a第3 s内位移：x₃ - x₂ = 4.5a - 2a = 2.5a = 5</p>
+<div class="h3c">a = 5 / 2.5 = <strong>2 m/s²</strong></div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>物体做匀加速直线运动，通过连续两段相等的位移各用时2 s，第一段位移为6 m，第二段位移为10 m。求加速度和初速度。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>由 Δx = aT²（公式五）：Δx = 10 - 6 = 4 m，T = 2 s</p>
+<div class="h3c">4 = a × 4 ⇒ a = <strong>1 m/s²</strong></div>
+<p>再由第一段位移求初速度：</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>x₁ = v₀T + ½aT²6 = v₀ × 2 + ½ × 1 × 4 = 2v₀ + 2</p>
+<div class="h3c">2v₀ = 4 ⇒ v₀ = <strong>2 m/s</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📈考点3：v-t图像</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<p style="color:#b45309"><strong>关键：</strong>v-t图像中，斜率 = 加速度，图线与t轴围成的面积 = 位移。</p>
+<p>图线在t轴上方表示正方向运动，下方表示反方向运动。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>某物体的v-t图像为一条直线，t=0时v=4 m/s，t=6 s时v=16m/s。求：(1) 加速度；(2) 6 s内的位移；(3) 平均速度。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p><strong>(1) 加速度：</strong>a = (v - v₀) / t = (16 - 4) / 6 = 12 / 6 = <strong>2 m/s²</strong></p>
+<div class="h3c"><strong>(2) 位移：</strong>v-t图像围成梯形面积</div>
+<p>x = (v₀ + v) × t / 2 = (4 + 16) × 6 / 2 = 20 × 3 = <strong>60 m</strong></p>
+<div class="h3c"><strong>(3) 平均速度：</strong>v̅ = x / t = 60 / 6 = <strong>10 m/s</strong></div></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2物体做直线运动，v-t图像如图所示：0~2s内v=3m/s，2~5s内v=6s内v从6m/s匀减速到0。求全程位移。m/s，5~8</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>用面积法分段计算：</p>
+<div class="h3c"><strong>0~2 s</strong><strong>：</strong>x₁ = 3 × 2 = 6 m（矩形）</div>
+<div class="h3c"><strong>2~5 s</strong><strong>：</strong>x₂ = 6 × 3 = 18 m（矩形）</div>
+<div class="h3c"><strong>5~8 s</strong><strong>：</strong>x₃ = (6 + 0) × 3 / 2 = 9 m（三角形）</div>
+<div class="h3c">全程位移：x = 6 + 18 + 9 = <strong>33 m</strong></div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>在v-t图像中，下列说法正确的是：A. 图线斜率表示位移   B. 图线与t轴围成面积表示路程   C. 图线在t轴下方表示加速度为负   D. 图线斜率表示加速度，面积表示位移</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. 错误，斜率表示加速度。</p>
+<p>B. 错误，面积表示位移（有正负），不是路程。</p>
+<p>C. 错误，图线在t轴下方表示速度方向与正方向相反，不能直接判断加速度正负。</p>
+<p>D. <strong>正确</strong>。斜率 = Δv/Δt = a，面积 = ∫vdt = x。</p>
+<div class="h3c"><strong>答案：</strong><strong>D</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点4：追及相遇问题</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>解题思路：</strong>(1) 画运动示意图；(2) 找位移关系（追及条件：x₁ =</div>
+<p>x₂ + d₀）；(3) 列方程求解；(4) 讨论结果的物理意义。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div></div>
+<table class="ptable"><tr><th>&#160;</th><th>A车以10m/s匀速行驶，B车在A车后方100m处以20m/s匀速追A车。问B车能否追上？若能，需要多长时间？</th><th>&#160;</th></tr><tr><td>&#160;</td><td>详细解析设在t时刻B追上A：A的位移：xA=10tB的位移：xB=20t追及条件：xB+100=xA20t=10t+100⇒10t=100⇒t=10sB车能追上A车，需要s。10</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>一辆汽车以10 m/s的速度行驶，此时一辆摩托车从静止开始以2m/s²的加速度从同一点出发追赶汽车。求摩托车追上汽车所需时间和此时摩托车的速度。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>汽车（匀速）：x汽 = 10t摩托车（匀加速）：x摩 = ½ × 2 × t² = t²追及：t² = 10t ⇒ t(t - 10) = 0</p>
+<div class="h3c">t = 0（舍去）或 t = <strong>10 s</strong></div>
+<div class="h3c">摩托车速度：v = at = 2 × 10 = <strong>20 m/s</strong></div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>公路上，一辆汽车以15 m/s匀速行驶，突然发现前方30 m处有一辆自行车以5 m/s同向匀速行驶。汽车立即以2 m/s²的加速度刹车。问两车是否会相撞？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>方法一：临界条件法</strong></div>
+<p>设汽车速度减到与自行车相同（5 m/s）时用时 t：v = v₀ + at ⇒ 5 = 15 + (-2)t ⇒ t = 5 s此时汽车位移：x汽 = 15 × 5 + ½ × (-2) × 25 = 75 - 25 =50 m自行车位移：x自 = 5 × 5 = 25 mΔx = 50 - 25 = 25 m &lt; 30 m</p>
+<div class="h3c"><strong>不会相撞。</strong>（两车最近距离为 30 - 25 = 5 m） </div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">🪨考点5：自由落体运动</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>定义：</strong>物体只在重力作用下从静止开始下落的运动。v₀=0，a=g</div>
+<p>（取9.8或10 m/s²）。</p>
+<p style="color:#b45309"><strong>公式：</strong>v = gt，h = ½gt²，v² = 2gh。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>一物体从离地面80 m高处自由落下（g取10 m/s²）。求：(1) 落地时间；(2) 落地速度；(3) 最后1 s内的位移。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p><strong>(1) 落地时间：</strong>h = ½gt² ⇒ 80 = ½ × 10 × t² ⇒ t² = 16 ⇒ t</p>
+<div class="h3c">= <strong>4 s</strong></div>
+<div class="h3c"><strong>(2) 落地速度：</strong>v = gt = 10 × 4 = <strong>40 m/s</strong></div>
+<div class="h3c"><strong>(3) 最后1 </strong><strong>s</strong><strong>位移：</strong></div></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>前3s位移：h₃=½×10×9=45m最后1s位移：h₄-h₃=80-45=35m</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2自由落体运动中，物体经过某窗户的时间为0.2s，窗户高2m，窗户上沿距释放点多高？（g取10m/s²）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析设窗户上沿距释放点高度为h，则：到达窗户上沿时速度：v₁=√(2gh)通过窗户：h₂=v₁t+½gt²2=v₁×0.2+½×10×0.042=0.2v₁+0.20.2v₁=1.8⇒v₁=9m/sv₁²=2gh⇒81=20h⇒h=4.05m</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>从足够高处每隔1 s释放一个小球，当第5个小球刚释放时，第1个小球和第3个小球之间的距离是多少？（g取10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>第5个小球刚释放时：第1个小球已下落 4 s，位移：h₁ = ½ × 10 × 16 = 80 m第3个小球已下落 2 s，位移：h₃ = ½ × 10 × 4 = 20 m</p>
+<div class="h3c">距离：Δh = 80 - 20 = <strong>60 m</strong></div></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="box-t" style="color:#92400e"><strong>⚠ 专题01 易错警示</strong></div><div class="h3c" style="color:#92400e"><strong>1. 刹车问题陷阱：</strong>必须先判断刹车时间！例如初速度20 m/s，加速度-5</div>
+<p style="color:#92400e">m/s²，刹车时间 t = 4 s。若问&quot;6 s后位移&quot;，则只能用4 s代入公式，因为4 s后车已静止。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 平均速度公式：</strong>v̅ = (v₀+v)/2 仅适用于<strong>匀变速</strong>直线运动，非匀变速</div>
+<p style="color:#92400e">不能用。</p>
+<p style="color:#92400e"><strong>3. 加速度方向：</strong>减速运动中 a 与 v₀ 方向相反，代入公式时 a 取负值。</p>
+<div class="h3c" style="color:#92400e"><strong>4. 自由落体：</strong>自由落体的初速度必须为0！竖直下抛运动不是自由落</div>
+<p style="color:#92400e">体。</p>
+<div class="h3c" style="color:#92400e"><strong>5. 位移与路程：</strong>v-t图像面积表示位移（有正负），不是路程。往返运</div>
+<p style="color:#92400e">动时位移和路程不同。 </p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

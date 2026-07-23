@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 地球运动 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+<style>.hero-illu{width:100%;border-radius:12px;margin:0 0 16px;display:block;box-shadow:0 4px 16px rgba(15,23,42,.15)}</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 地球运动</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero" style="padding-top:16px"><img class="hero-illu" src="../img/topic-geography-01.jpg" alt=""><div class="hero-tag">精编讲练</div><h2>地球运动</h2><div class="hero-sub">地理暑假衔接 · 第 2-12 页</div><div class="hero-meta"><span>📄 11 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>地球运动是自然地理的基础，也是全卷中最考验空间思维和计算能力的部分。本专题涵盖<strong>地方时与区时计算、正午太阳高度、昼夜长短变化、日界线、日照图判读</strong>五大考点。计算题需掌握&quot;东加西减&quot;原则，日照图判读需要空间想象能力。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">①</span><strong>考点一：地方时与区时计算</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">概念</th><th style="background:#0ea5e9">定义</th><th style="background:#0ea5e9">关键公式/规则</th></tr><tr><td>地方时</td><td>因经度不同而不同的时刻。经度每隔15°，地方时相差1小时；每1°相差4分钟。</td><td>所求地方时=已知地方时±4分钟/度×经度差</td></tr><tr><td>区时</td><td>各时区中央经线的地方时。全球共24个时区，每时区跨15°。</td><td>时区号=经度÷15°（余数&gt;7.5°则进一）</td></tr><tr><td>北京时间</td><td>东八区的区时，即120°E的地方时（非北京地方时116°E）。</td><td>全国统一使用</td></tr><tr><td>计算原则</td><td>东加西减：向东每跨一个时区加1小时，向西减1小时。</td><td>过日界线需注意日期变更</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】已知北京（120°</strong><strong>E</strong><strong>）为2024年6月21日12:00，求纽约</strong>（<strong>75°W</strong>）<strong>的区时和地方时。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>解题步骤：</strong></div><p><span class="nno">①</span> 确定时区：北京在东八区（120°E÷15=8），纽约在西五区（75°W÷15=5）。</p>
+<p><span class="nno">②</span> 计算时区差：8 + 5 = 13个时区（一东一西，时区号相加）。</p>
+<p><span class="nno">③</span> 纽约区时 = 12:00 - 13:00 = 6月20日 23:00（向西减，过0点日期减一天）。</p>
+<p><span class="nno">④</span> 纽约地方时：经度差 = 120° + 75° = 195°，时间差 = 195 × 4 = 780分钟 = 13小时。</p>
+<p><span class="nno">⑤</span> 纽约地方时 = 6月21日12:00 - 13h = 6月20日 23:00。</p>
+<p style="color:#16a34a"><strong>答案：</strong>纽约区时 6月20日23:00；纽约地方时 6月20日23:00。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.当东京（139°E）地方时为2024年7月1日8:00时，求伦敦（0°）的区时和地方时。</td></tr><tr><td>&#160;</td><td>答案：步骤：①东京在139°E，时区=139÷15≈9.27，余数1.27&lt;7.5，属东九区（135°E中央经线）。②伦敦在0°经线，属中时区（零时区）。③区时差=9-0=9小时。④伦敦区时=8:00-9:00=6月30日23:00。⑤地方时差=(139°-0°)×4=556分钟≈9h16min。⑥伦敦地方时=8:00-9h16min=6月30日22:44。答：伦敦区时6月30日23:00；伦敦地方时6月30日22:44。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 当纽约（西五区）为2024年3月15日20:00时，求北京时间和东京</strong><strong>（东九区）区时。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong>①纽约西五区→北京东八区，时区差=5+8=13小时。②北京时间</div>
+<p style="color:#166534">=3月15日20:00+13:00=3月16日9:00。③东京东九区→纽约西五区，时区差=9+5=14小时。④东京区时=3月15日20:00+14:00=3月16日10:00。</p>
+<p style="color:#166534"><strong>答：北京时间3月16日9:00；东京区时3月16日10:00。</strong></p></div>
+<p><strong>3. 已知某地经度为98°</strong><strong>E</strong>，<strong>当该地地方时为正午12:00时，求此时北京时</strong><strong>间（120°</strong><strong>E</strong><strong>地方时）。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong>①经度差=120°-98°=22°。②时间差=22×4=88分钟=1小时28分</div>
+<p style="color:#166534">钟。③北京在98°E以东，东加：北京时间=12:00+1h28min=13:28。</p>
+<p style="color:#166534"><strong>答：北京时间为13:28。</strong></p></div>
+<p><strong>4. 一架飞机于北京时间2024年7月10日8:00从上海（东八区）起飞，</strong><strong>飞行12小时后到达洛杉矶（西八区）。求到达时洛杉矶的区时。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong>①起飞时洛杉矶区时：北京时间8:00，洛杉矶在西八区，时差</div>
+<p style="color:#166534">=8+8=16h，洛杉矶区时=7月10日8:00-16:00=7月9日16:00。②飞行12小时后：7月9日16:00+12:00=7月10日4:00。</p>
+<p style="color:#166534"><strong>答：到达时洛杉矶区时为7月10日4:00。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. &quot;东加西减&quot;中的&quot;东西&quot;是相对方向，不是绝对的东西经：</strong>若两地同为东</div>
+<p style="color:#92400e">经，度数大的在东；同为西经，度数小的在东；一东一西则东经在东、西经在西。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 计算结果超过24:00要加一天，减去24:00；结果为负数要加24:00，日期</strong></div>
+<p style="color:#92400e"><strong>减一天。</strong></p>
+<p style="color:#92400e"><strong>3. 区时计算用中央经线，地方时计算用实际经度。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>考点二：正午太阳高度——2H=90°-|φ-δ|</td></tr><tr><td>&#160;</td><td>知识精讲正午太阳高度角（H）是指一天中太阳升到最高位置时（地方时12:00），太阳光线与地平面的夹角。</td></tr></table>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>H = 90° - |φ - δ|</strong></div><div class="h3c" style="color:#0369a1"><strong>φ</strong><strong>：</strong><strong>所求地点的纬度（北纬为正，南纬为负） | </strong><strong>δ</strong><strong>：</strong><strong>太阳直射点的纬</strong></div>
+<div class="h3c" style="color:#0369a1"><strong>度</strong></div>
+<table class="ptable"><tr><th style="background:#0ea5e9">日期</th><th style="background:#0ea5e9">太阳直射点纬度(δ)</th><th style="background:#0ea5e9">北半球正午太阳高度变化</th></tr><tr><td>春分（3月21日前后）</td><td>0°（赤道）</td><td>从赤道向南北递减</td></tr><tr><td>夏至（6月22日前后）</td><td>23°26&#x27;N（北回归线）</td><td>从北回归线向南北递减</td></tr><tr><td>秋分（9月23日前后）</td><td>0°（赤道）</td><td>从赤道向南北递减</td></tr><tr><td>冬至（12月22日前后）</td><td>23°26&#x27;S（南回归线）</td><td>从南回归线向南北递减</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】计算北京（40°</strong><strong>N</strong><strong>）在夏至日（</strong><strong>δ=23°26&#x27;N</strong><strong>）的正午太</strong><strong>阳高度角。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>解题步骤：</strong></div><p><span class="nno">①</span> 代入公式：H = 90° - |40° - 23°26&#x27;|。</p>
+<p><span class="nno">②</span> 计算差值：40° - 23°26&#x27; = 16°34&#x27;。</p>
+<p><span class="nno">③</span> H = 90° - 16°34&#x27; = 73°26&#x27;。</p>
+<p style="color:#16a34a"><strong>答案：</strong>北京夏至日正午太阳高度角为73°26&#x27;。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td><td>&#160;</td></tr><tr><td>&#160;</td><td>1.计算海口（20°N）在夏至日（δ=23°26&#x27;N）的正午太阳高度角，并说明太阳在正午时位于天顶的哪一侧。</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th>&#160;</th><th>答案：步骤：①H=90°-|20°-23°26&#x27;|=90°-3°26&#x27;=86°34&#x27;。②由于δ&gt;φ（23°26&#x27;&gt;20°），太阳直射点在海口以北，正午太阳位于天顶的北侧。答：正午太阳高度角86°34&#x27;，太阳位于天顶北侧。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>2.某地冬至日正午太阳高度角为30°，求该地的纬度（假设在北半球）。</td><td>&#160;</td></tr><tr><td>&#160;</td><td>答案：步骤：①冬至日δ=23°26&#x27;S，代入公式：30°=90°-|φ-(-23°26&#x27;)|。②|φ+23°26&#x27;|=60°。③φ+23°26&#x27;=60°φ=36°34&#x27;N。→答：该地纬度为36°34&#x27;N。</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>3. 比较哈尔滨（45°</strong><strong>N</strong><strong>）和广州（23°</strong><strong>N</strong><strong>）在夏至日和冬至日的正午太阳</strong><strong>高度角大小。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong></div><p style="color:#166534">夏至日(δ=23°26&#x27;N)：哈尔滨：H=90°-|45°-23°26&#x27;|=90°-21°34&#x27;=68°26&#x27;。</p>
+<p style="color:#166534">广州：H=90°-|23°-23°26&#x27;|=90°-0°26&#x27;=89°34&#x27;。</p>
+<p style="color:#166534">广州 &gt; 哈尔滨。</p>
+<p style="color:#166534">冬至日(δ=23°26&#x27;S)：哈尔滨：H=90°-|45°-(-23°26&#x27;)|=90°-68°26&#x27;=21°34&#x27;。</p>
+<p style="color:#166534">广州：H=90°-|23°-(-23°26&#x27;)|=90°-46°26&#x27;=43°34&#x27;。</p>
+<p style="color:#166534">广州 &gt; 哈尔滨。</p>
+<p style="color:#166534"><strong>总结：纬度越低，正午太阳高度角越大。</strong></p></div>
+<p><strong>4. 已知某地春分日正午太阳高度角为50°，求该地纬度。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong>①春分日δ=0°。②50°=90°-|φ-0°| → |φ|=40°。③该地可能为40°N或40°S。</p>
+<p style="color:#166534"><strong>答：该地纬度为40°</strong><strong>N</strong><strong>或40°</strong><strong>S</strong><strong>。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 注意区分&quot;正午太阳高度&quot;和&quot;太阳高度&quot;：</strong>正午太阳高度是一天中的最大</div>
+<p style="color:#92400e">值，出现在地方时12:00。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 公式中|</strong><strong>φ-δ|</strong><strong>是两个纬度的绝对值之差，不是简单相减。</strong>当φ和δ同半球时，</div>
+<p style="color:#92400e">直接相减取绝对值；异半球时，两数绝对值相加。</p></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>3. 太阳直射点纬度</strong><strong>δ</strong><strong>在南北回归线之间（23°26&#x27;</strong><strong>N~23°26&#x27;S</strong><strong>）往返移动，必</strong></div>
+<p style="color:#92400e"><strong>须准确记忆各节气</strong><strong>δ</strong><strong>值。</strong></p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">③</span><strong>考点三：昼夜长短变化规律</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">规律</th><th style="background:#0ea5e9">内容</th></tr><tr><td>根本原因</td><td>黄赤交角的存在导致太阳直射点在南北回归线之间往返移动。</td></tr><tr><td>直射点北移</td><td>北半球各地昼长增加，夜长缩短；南半球反之。</td></tr></table>
+<p>北半球昼最长、夜最短；北极圈以内出现极昼；南半球相夏至日反。</p>
+<p>北半球昼最短、夜最长；北极圈以内出现极夜；南半球相冬至日反。</p>
+<p>春秋分　全球昼夜等长（各12小时）。</p>
+<p>特殊纬度　赤道上全年昼夜等长；极圈以内有极昼极夜现象。</p></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】北半球某地，从春分到夏至，该地昼夜长短如何变化？</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong>春分日全球昼夜等长（各12小时）。此后太阳直射点从赤道向北</div>
+<p>移动，北半球昼长逐渐增加、夜长逐渐缩短。到夏至日，北半球昼长达一年中最长，夜长达一年中最短。 </p></div>
+<div class="h3c" style="color:#0369a1"><strong>巩固提升</strong></div>
+<p><strong>1. 比较北京（40°</strong><strong>N</strong><strong>）和悉尼（34°</strong><strong>S</strong><strong>）在夏至日（6月22日）的昼夜长</strong><strong>短状况。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> 夏至日太阳直射北回归线（23°26&#x27;N）。</p>
+<p style="color:#166534">北京（40°N）：昼长&gt;12小时，夜长&lt;12小时，北半球昼最长夜最短的一天。</p>
+<p style="color:#166534">悉尼（34°S）：昼长&lt;12小时，夜长&gt;12小时，南半球昼最短夜最长的一天。</p>
+<p style="color:#166534"><strong>答：北京昼长夜短，悉尼昼短夜长。</strong></p></div>
+<p><strong>2. 某地一年中有两天正午太阳高度角达到90°，且该地冬至日昼长大于</strong><strong>夏至日昼长。判断该地所处的半球和纬度范围。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①一年中有两次太阳直射（H=90°），说明该地位于南北回归线之间</div>
+<p style="color:#166534">（23°26&#x27;S~23°26&#x27;N）。</p>
+<p style="color:#166534">②冬至日昼长&gt;夏至日昼长，说明该地冬至日白昼更长，冬至日太阳直射南回归线，南半球昼长夜短。</p>
+<p style="color:#166534">③综上，该地位于<strong>南半球的热带地区（0°~23°26&#x27;</strong><strong>S</strong><strong>）</strong>。</p>
+<p style="color:#166534"><strong>答：该地位于南半球，纬度在0°~23°26&#x27;</strong><strong>S</strong><strong>之间。</strong></p></div>
+<p><strong>3. 北极圈（66°34&#x27;</strong><strong>N</strong><strong>）在夏至日会出现什么现象？在冬至日呢？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 夏至日（6月22日前后）：太阳直射23°26&#x27;N，北极圈（66°34&#x27;N）及其</div>
+<p style="color:#166534">以北区域出现<strong>极昼</strong>现象（24小时太阳不落）。</p>
+<div class="h3c" style="color:#166534">冬至日（12月22日前后）：太阳直射23°26&#x27;S，北极圈及其以北出现<strong>极夜</strong>现象</div>
+<p style="color:#166534">（24小时不见太阳）。</p>
+<p style="color:#166534"><strong>答：夏至日极昼，冬至日极夜。</strong></p></div>
+<p><strong>4. 简述&quot;昼长=日落时间-日出时间&quot;的计算方法，并推导北半球某地昼长</strong><strong>与夜长的关系。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> 昼长=日落时刻-日出时刻（以地方时计算）。</p>
+<p style="color:#166534">若日出为6:00，日落为18:00，则昼长=12小时（春秋分）。</p>
+<p style="color:#166534">若日出为5:00，日落为19:00，则昼长=14小时，夜长=24-14=10小时。</p>
+<div class="h3c" style="color:#166534">北半球一般规律：<strong>夏半年（春分→秋分）昼长&gt;夜长；冬半年（秋分→春分）昼</strong></div></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>长&lt;夜长。关系：昼长+夜长=24小时。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>⚠易错警示1.&quot;昼长&quot;是以地方时计算的，不是区时：同一时区内东西两侧的地方时不同，日出日落时间也不同。2.昼夜长短的变化方向由太阳直射点的移动方向决定：直射点北移→北半球昼变长；直射点南移→北半球昼变短。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">④</span><strong>考点四：日界线</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">日界线类型</th><th style="background:#0ea5e9">位置</th><th style="background:#0ea5e9">日期变更规则</th></tr><tr><td>国际日期变更线（人为日界线）</td><td>大致沿180°经线（有折弯）</td><td>自东向西越过加一天；自西向东越过减一天</td></tr><tr><td>自然日界线（0时日界线）</td><td>地方时为0时（或24时）的经线</td><td>自东向西越过加一天；自西向东越过减一天</td></tr><tr><td>东），从0时经线到180°经线为&quot;今天&quot;的范围。</td><td>两条日界线将全球分为&quot;今天&quot;和&quot;昨天&quot;两个区域。顺着地球自转方向（自西向</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】当北京时间为2024年6月21日8:00时，全球属于6月21日</strong><strong>的范围占全球的比例是多少？</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>解题步骤：</strong></div><p><span class="nno">①</span> 北京时间8:00即120°E为8:00。</p>
+<p><span class="nno">②</span> 求0时经线：120°E-8h×15°/h=120°E-120°=0°（即0°经线为0时）。</p>
+<p><span class="nno">③</span> 6月21日的范围：从0°经线（0时）向东到180°经线，跨180个经</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>度。比例：180°/360°=1/2。4答案：全球属于6月21日的范围占1/2。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>1.</td><td>&#160;</td><td>当北京时间为2024年1月1日20:00时，全球属于1月1日的范围占全球的比例？</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：步骤：①120°E为20:00。②0时经线：120°E-20h×15°=120°E-300°=180°W（即180°经线为0时）。③1月1日范围：从180°经线（0时）向东到180°经线（国际日界线），即全球。答：全球都属于1月1日，比例为100%（即1）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 一艘轮船于2024年5月1日12:00从东十二区出发，向东越过国际日</strong><strong>期变更线进入西十二区，此时西十二区的日期和时间是多少？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 自东十二区向东越过国际日期变更线到西十二区，<strong>日期减一天</strong>，时间不</div>
+<p style="color:#166534">变。</p>
+<p style="color:#166534">东十二区：5月1日12:00，越过日界线后→西十二区：<strong>4月30日12:00</strong>。</p>
+<p style="color:#166534"><strong>答：西十二区为4月30日12:00。</strong></p></div>
+<p><strong>3. 当东经30°为0:00时，求&quot;今天&quot;和&quot;昨天&quot;的范围各占多少经度。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong>①自然日界线：30°E为0:00。②&quot;今天&quot;范围：从30°E向东到</div>
+<p style="color:#166534">180°经线，跨150°经度。③&quot;昨天&quot;范围：从180°经线向东到30°E（即向西绕地球），跨210°经度。</p>
+<p style="color:#166534"><strong>答：&quot;今天&quot;占150°经度，&quot;昨天&quot;占210°经度。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 国际日期变更线不完全沿180°经线：</strong>在阿留申群岛、斐济群岛等处有折</div>
+<p style="color:#92400e">弯，目的是避免同一国家/地区出现两个日期。</p>
+<div class="h3c" style="color:#92400e"><strong>2. &quot;东十二区&quot;和&quot;西十二区&quot;合用一个时区（东西十二区），区时相同但日期</strong></div>
+<p style="color:#92400e"><strong>差一天。</strong></p></div>
+<table class="ptable"></table>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">⑤</span><strong>考点五：日照图判读</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><p>日照图（太阳光照图）是地球运动的核心考查形式。判读要点：</p>
+<table class="ptable"><tr><th style="background:#0ea5e9">判读内容</th><th style="background:#0ea5e9">方法</th></tr><tr><td>判断南北半球</td><td>自转方向：逆时针（北半球俯视图）/顺时针（南半球俯视图）</td></tr><tr><td>判断节气</td><td>晨昏线与极圈相切：北极圈内极昼→夏至；北极圈内极夜→冬至；晨昏线过极点→春秋分</td></tr></table>
+<p>判断晨昏顺自转方向由夜入昼→晨线；由昼入夜→昏线线晨线与赤道交点→6:00；昏线与赤道交点→18:00；太阳直判断时间射点所在经线→12:00判断昼夜某纬线昼弧所跨经度÷15°=昼长（小时）长短</p></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】读北极俯视日照图，北极圈内全部为极昼，判断此时节</strong><strong>气、太阳直射点纬度、北京昼夜长短状况。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><p><span class="nno">①</span> 北极圈内全部极昼 → 太阳直射北回归线（23°26&#x27;N）。</p>
+<p><span class="nno">②</span> 节气为夏至（6月22日前后）。</p>
+<p><span class="nno">③</span> 北京（40°N）在北半球，夏至日昼最长、夜最短。</p>
+<div class="h3c" style="color:#16a34a"><strong>答案：</strong>夏至；太阳直射23°26&#x27;N；北京昼长夜短，是一年中昼最长的一</div>
+<p>天。 </p></div>
+<table class="ptable"></table>
+<div class="h3c" style="color:#0369a1"><strong>巩固提升</strong></div>
+<p><strong>1. 在北极俯视日照图中，晨昏线恰好经过北极点。判断此时节气，并说</strong><strong>明全球昼夜长短状况。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> 晨昏线经过北极点，说明晨昏线与经线重合，太阳直射赤道（0°）。</p>
+<p style="color:#166534">节气为<strong>春分或秋分</strong>。</p>
+<p style="color:#166534">全球昼夜等长，各为12小时。</p>
+<p style="color:#166534"><strong>答：春分或秋分；全球昼夜等长。</strong></p></div>
+<p><strong>2. 在南极俯视日照图中，南极圈以南为极昼。判断此时北半球的节气及</strong><strong>北京昼夜长短。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> 南极圈以南为极昼 → 太阳直射南回归线（23°26&#x27;S）。</p>
+<p style="color:#166534">北半球节气为<strong>冬至</strong>（12月22日前后）。</p>
+<p style="color:#166534">北京（40°N）：<strong>昼最短、夜最长</strong>，昼长&lt;12小时。</p>
+<p style="color:#166534"><strong>答：冬至；北京昼短夜长，昼长一年中最短。</strong></p></div>
+<p><strong>3. 某日照图中，图中</strong><strong>A</strong><strong>点位于晨线上且刚好在赤道上。已知</strong><strong>A</strong><strong>点所在经</strong><strong>线为90°</strong><strong>E</strong>，<strong>求此时太阳直射点的经度。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>步骤：</strong>①晨线与赤道交点为6:00（地方时），A点（90°E）为6:00。②</div>
+<p style="color:#166534">太阳直射点所在经线为12:00，经度差=6h×15°/h=90°。③直射点经度=90°E+90°=180°（即180°经线）。</p>
+<p style="color:#166534"><strong>答：太阳直射点经度为180°。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>⚠易错警示1.俯视图的旋转方向判断南北半球：北逆南顺（北半球逆时针转，南半球顺时针转）。2.晨线上的点正经历日出，昏线上的点正经历日落。不要混淆。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

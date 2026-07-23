@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 静电场预习 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 静电场预习</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>静电场预习</h2><div class="hero-sub">物理暑假衔接 · 第 57-63 页</div><div class="hero-meta"><span>📄 7 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><div class="h3c" style="color:#1e40af"><strong>预习提示：</strong>静电场是高二上学期的重要内容，也是高中物理的难点之</div>
+<p style="color:#1e40af">一。它与力学中的重力场有类比关系，建议在理解力学的基础上进行预习。以下内容为入门级，重点建立基本概念。 </p></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">⚡考点1：库仑定律</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>库仑定律：</strong>F = k Q₁Q₂ / r²</div>
+<div class="h3c" style="color:#f59e0b"><strong>静电力常量：</strong>k = 9.0 × 109 N·m²/C²</div>
+<p style="color:#f59e0b"><strong>与万有引力的类比：</strong>形式完全相同，都是平方反比律！</p>
+<div class="h3c" style="color:#f59e0b"><strong>方向：</strong>同种电荷相斥，异种电荷相吸 </div>
+<div class="h3c" style="color:#b45309"><strong>类比：</strong>库仑力 F = kQ1Q2/r2 与万有引力 F = Gm1m2/r2 形式相</div>
+<p>同。区别在于：万有引力只有引力，库仑力有引力和斥力；k 远大于 G（静电力 &gt;&gt; 万有引力）。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>两个点电荷，电荷量分别为+2 μC和-3 μC，相距0.1 m。求它们之间的库仑力的大小和方向。（k=9.0×109）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>F = k Q₁Q₂ / r²F = 9.0×109 × (2×10-6) × (3×10-6) / (0.1)²</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>9.0×1096×10-12×/0.01F=54×10-3/0.01=F=5.4N方向：异种电荷，相互吸引。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【巩固题】2两个完全相同的小球，分别带电荷量+q和-q，接触后再分开到原来距离。求前后库仑力之比。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>详细解析接触前：F₁kq²/r²（引力）=接触后：两球完全相同，电荷中和后均分。总电荷q+(-q)=0，每个球带电0。F₂=0前后力之比：F₁0（不再有力的作用）:F₂=1:注意：若两球带同种电荷，接触后每个球带(q₁+q₂)/2的电荷量。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>比较两个电子之间的库仑力与万有引力的大小。已知电子质量m=9.1×10-31 kg，电子电荷量e=1.6×10-19 C，G=6.67×10-11，k=9.0×109。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>F电 / F引 = (ke²/r²) / (Gm²/r²) = ke² / (Gm²)= 9.0×109 × (1.6×10-19)² / [6.67×10-11 × (9.1×10-31)²]= 9.0×109 × 2.56×10-38 / (6.67×10-11 × 8.28×10-61)</p>
+<div class="h3c">≈ 2.30×10-28 / 5.52×10-71 ≈ <strong>4.2 × 10</strong><strong>42</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>库仑力是万有引力的约1042倍！微观粒子间万有引力完全可以忽略。 </p></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点2：电场强度</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>电场强度定义：</strong>E = F / q（检验电荷所受电场力与电荷量</div>
+<p style="color:#e2e8f0">之比）</p>
+<div class="h3c" style="color:#f59e0b"><strong>点电荷的电场：</strong>E = kQ / r²</div>
+<div class="h3c" style="color:#f59e0b"><strong>方向：</strong>正电荷受电场力方向与E相同，负电荷相反</div>
+<div class="h3c" style="color:#f59e0b"><strong>电场叠加：</strong>E合 = E₁ + E₂ + ...（矢量叠加） </div>
+<div class="h3c" style="color:#b45309"><strong>与重力场的类比：</strong>重力场强度 g = G/m（即重力加速度），电场</div>
+<p>强度 E = F/q。两者都是描述场的性质的物理量，与放入场中的物体（检验电荷）无关。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>在电场中某点放入电荷量为2×10-8 C的检验电荷，受到4×10-4N的电场力。求该点的电场强度。若改放电荷量为-4×10-8 C的检验电荷，该点电场强度是多少？该电荷受力多大？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>电场强度：</strong>E = F/q = 4×10-4 / (2×10-8) = <strong>2×10</strong><strong>4</strong><strong> N/C</strong></div>
+<p>电场强度是场的性质，与检验电荷无关，所以改放后 E 仍为 <strong>2×10</strong><strong>4</strong><strong> N/C</strong>。</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>(-4×10-8)(2×104)-8×10-4受力：F×==qE=N负号表示力方向与电场方向相反。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【巩固题】2两个点电荷Q₁=+4×10-8C和Q₂=-4×10-8C相距0.2m。求它们连线中点的电场强度。（k=9.0×109）</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>中点距两电荷均为 r = 0.1 m。</p>
+<p>Q₁在中点产生的电场：E₁ = kQ₁/r² = 9×109×4×10-8/0.01 = </p>
+<div class="h3c"><strong>3.6×10</strong><strong>4</strong><strong> N/C</strong>（方向背离Q₁，指向Q₂）</div>
+<div class="h3c">Q₂在中点产生的电场：E₂ = k|Q₂|/r² = 同样大小 = <strong>3.6×10</strong><strong>4</strong><strong> N/</strong></div>
+<div class="h3c"><strong>C</strong>（方向指向Q₂，即与E₁同向）</div>
+<div class="h3c">E合 = E₁ + E₂ = <strong>7.2×10</strong><strong>4</strong><strong> N/C</strong>（方向由Q₁指向Q₂） </div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>关于电场强度，下列说法正确的是：A. 由E=F/q可知，E与F成正比   B. E的方向与检验电荷受力方向相同   C. 电场中某点不放检验电荷时E=0   D. E是描述电场本身性质的物理量，与检验电荷无关</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. 错误，E由场源电荷决定，与检验电荷的F和q无关。E=F/q是定义式，不是决定式。</p>
+<p>B. 错误，E的方向是正电荷受力方向，负电荷受力方向与E相反。</p>
+<p>C. 错误，电场强度是场的固有属性，与是否放入检验电荷无关。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>D. <strong>正确</strong>。</p>
+<div class="h3c"><strong>答案：</strong><strong>D</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点3：电势能与电势差</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>电势能：</strong>Ep = qφ（类比重力势能 Ep = mgh）</div>
+<div class="h3c" style="color:#f59e0b"><strong>电势：</strong>φ = Ep/q（类比重力势中的&quot;高度&quot;h）</div>
+<div class="h3c" style="color:#f59e0b"><strong>电势差（电压）：</strong>UAB = φA - φB = WAB/q</div>
+<div class="h3c" style="color:#f59e0b"><strong>电场力做功：</strong>WAB = qUAB = -ΔEp</div>
+<div class="h3c" style="color:#b45309"><strong>类比表：</strong></div>
+<p>重力场：重力mg ↔ 电场力qE高度h ↔ 电势φ重力势能mgh ↔ 电势能qφ重力做功 = -ΔEp ↔ 电场力做功 = -ΔEp电</p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>将电荷量为2×10-8 C的正电荷从电场中的A点移到B点，电场力做功4×10-6 J。求：(1) A、B两点间的电势差UAB；(2) 若将电荷量改为-3×10-8 C的负电荷从A移到B，电场力做多少功？</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><th>&#160;</th><th>4×10-6(2×10-8)(1)电势差：UAB/==WAB/q=200V(-3×10-8)-6×10-6(2)负电荷：WAB=×200==qUABJ负号表示电场力做负功（外力需要克服电场力做功）。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【巩固题】2在匀强电场中，将电荷量为q的正电荷沿电场线方向移动距离d，电场强度为E。求：(1)电场力做的功；(2)电势能的变化量。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>详细解析(1)电场力做功：FqE，沿电场线方向移动=qEd（正功）W=Fd=(2)电势能变化：ΔEp=-W=-qEd电势能减少了qEd（类比重力场中物体下降，重力势能减少）。注意：正电荷沿电场线方向移动，电势能减小；负电荷沿电场线方向移动，电势能增大。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>关于电势和电势能，下列说法正确的是：A. 电势高的地方电势能一定大   B. 正电荷在电势高的地方电势能大   C. 电势为零的地方电势能一定为零   D. 电势能是标量，没有正负之分</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. 错误，电势能 Ep = qφ，与电荷正负有关。负电荷在电势高的地方电势能反而小。</p>
+<p>B. <strong>正确</strong>，正电荷 q &gt; 0，Ep = qφ，φ越大Ep越大。</p>
+<p>C. 正确（电势零点处，Ep=q×0=0），但电势零点是人为选取的，不是客观存在的物理事实。通常题目中C选项的判断需要结合</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>具体语境。</p>
+<p>D. 错误，电势能是标量，但有正负之分（正电荷在正电势处电势能为正，在负电势处电势能为负）。</p>
+<p>综合来看，<strong>B</strong>是最准确无误的选项。</p>
+<div class="h3c"><strong>答案：</strong><strong>B</strong></div></div>
+<table class="ptable"><tr><td>&#160;</td><td>专题08易错警示库仑定律适用条件：适用于真空中的点电荷。两个带电体距离远大于自身大</td></tr><tr><td>&#160;</td><td>E=F/q是定义式：E不由F和q决定，而是由场源电荷和位置决定。与&quot;密度</td></tr><tr><td>&#160;</td><td>电场叠加：电场强度是矢量，叠加遵循平行四边形定则，不是代数相加。电势能的正负：与零势能点的选取有关，但电势能的变化量（电场力做功的</td></tr><tr><td>&#160;</td><td>电场与重力场类比：重力场中物体总是下落（势能减小），但电场中电荷运</td></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><p style="color:#92400e">动方向取决于电荷正负和电场方向。 </p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

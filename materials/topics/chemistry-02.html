@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题02 · 氧化还原反应 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题02 · 氧化还原反应</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题02 · 氧化还原反应</h2><div class="hero-sub">化学暑假衔接 · 第 12-20 页</div><div class="hero-meta"><span>📄 9 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题02 · 氧化还原反应</strong></div><p style="color:#6b7280">氧化还原反应是贯穿高中化学的核心反应类型，从化合价变化角度理解&quot;氧化&quot;与&quot;还原&quot;的本质——电子转移。本专题从概念辨析到配平方法，循序渐进。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：核心概念辨析</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">概念</th><th style="background:#10b981">定义</th><th style="background:#10b981">化合价</th><th style="background:#10b981">电子</th><th style="background:#10b981">实例（CuO+H2→Cu+H2O）</th></tr><tr><td>氧化反应</td><td>失电子（或电子对偏离）的反应</td><td>升高</td><td>失电子</td><td>化合价升高（H2H2→H2O，H被氧化）</td></tr><tr><td>还原反应</td><td>得电子（或电子对偏向）的反应</td><td>降低</td><td>得电子</td><td>化合价降低CuO→Cu，Cu被还原）（CuO</td></tr><tr><td>氧化剂</td><td>得电子的物质（含化合价降低元素）</td><td>降低</td><td>得电子</td><td>CuO（氧化剂）</td></tr><tr><td>还原剂</td><td>失电子的物质（含化合价升高元素）</td><td>升高</td><td>失电子</td><td>H2（还原剂）</td></tr><tr><td>氧化产物</td><td>还原剂被氧化后的产物</td><td>—</td><td>—</td><td>H2O（氧化产物）</td></tr><tr><td>还原产物</td><td>氧化剂被还原后的产物</td><td>—</td><td>—</td><td>Cu（还原产物）</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>记忆口诀&quot;升失氧，降得还&quot;——化合价升高，失电子，发生氧化反应（还原剂）；化合价降低，得电子，发生还原反应（氧化剂）。&quot;氧氧还还&quot;——氧化剂被还原（发生还原反应），还原剂被氧化（发生氧化反应）。</td><td>&#160;</td></tr><tr><td>&#160;</td><td>考点2：双线桥与单线桥</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">方法</th><th style="background:#10b981">连接方式</th><th style="background:#10b981">箭头含义</th><th style="background:#10b981">标注内容</th></tr><tr><td>双线桥</td><td>反应物→产物（同元素）</td><td>电子转移方向</td><td>ne−&quot;，化合价&quot;得/失升降</td></tr><tr><td>单线桥</td><td>还原剂→氧化剂（反应物之间）</td><td>电子转移方向</td><td>&quot;ne−&quot;</td></tr></table>
+<div class="h3c" style="color:#2563eb"><strong>【示例】</strong><strong>MnO</strong><strong>2</strong><strong> + 4HCl(</strong><strong>浓</strong><strong>) → MnCl</strong><strong>2</strong><strong> + Cl</strong><strong>2</strong><strong>↑ + 2H</strong><strong>2</strong><strong>O</strong></div>
+<p><strong>双线桥：</strong>Mn 从 +4 降到 +2，&quot;得 2e−&quot;；Cl 从 −1 升到 0，&quot;失 2×e−&quot;（注意：4 个 HCl 中只有 2 个 Cl− 被氧化）。</p>
+<p><strong>单线桥：</strong>从 HCl 中 Cl 指向 MnO2 中 Mn，标&quot;2e−&quot;。</p>
+<div class="h3c" style="color:#047857"><strong>考点3：化合价升降法配平</strong></div>
+<div class="h3c" style="color:#10b981"><strong>配平口诀</strong></div>
+<p><strong>&quot;一标变价，二列升降，三求最小公倍数，四配系数，五查守恒&quot;</strong><strong>步骤：</strong>(1) 标出所有元素化合价，找出变价元素。</p>
+<p>(2) 列出化合价升降数（升价数/降价数）。</p>
+<p>(3) 求升降数的最小公倍数，确定氧化剂和还原剂的系数。</p>
+<p>(4) 用观察法配平其余元素。</p>
+<p>(5) 检查：原子守恒 + 电荷守恒（离子方程式）。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点4：常见氧化剂和还原剂整理</strong></div><table class="ptable"><tr><th style="background:#10b981">类别</th><th style="background:#10b981">常见物质</th><th style="background:#10b981">还原产物/氧化产物</th></tr><tr><td>强氧化剂</td><td>KMnO4(H+)、浓HNO3、浓H2SO4、Cl2、O2、H2O2、Fe3+</td><td>Mn2+、NO2/NO、SO2、Cl−、O2−/H2O、H2O、Fe2+</td></tr><tr><td>强还原剂</td><td>活泼金属(Na/Mg/Al)、H2、C、CO、Fe2+、SO2、I−、S2−</td><td>金属离子、H+、CO2、CO2、Fe3+、SO42−、I2、S</td></tr><tr><td>既氧化又还原</td><td>H2O2、Na2O2、SO2、Fe2+</td><td>视反应条件而定</td></tr></table>
+<div class="h3c"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#2563eb"><strong>【典例1】氧化还原概念辨析</strong></div>
+<p>在反应 3Cl2 + 6KOH = 5KCl + KClO3 + 3H2O 中，被氧化的氯原子与被还原的氯原子的物质的量之比为（ ）A. 1:5   B. 5:1   C. 1:3   D. 3:1</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>A</strong></div>
+<p>Cl2 中 Cl 为 0 价。产物中 KCl 的 Cl 为 −1 价（被还原），KClO3 的 Cl 为 +5 价（被氧化）。</p>
+<p>每生成 1 个 KClO3（1 个 Cl 被氧化），同时生成 5 个 KCl（5 个 Cl 被还原）。</p>
+<p>被氧化 : 被还原 = <strong>1 : 5</strong>，选 A。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【典例2】化合价升降法配平——详细步骤配平：KMnO4+HCl→KCl+MnCl2+Cl2↑+H2O</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与配平步骤】第一步：标化合价KMnO4：K(+1)，Mn(+7)，O(−2)；HCl：H(+1)，Cl(−1)</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>产物：MnCl2：Mn(+2)；Cl2：Cl(0)<strong>第二步：确定变价元素</strong> Mn: +7→+2（降5），Cl: −1→0（升1）<strong>第三步：最小公倍数</strong> 5 和 1 的最小公倍数 = 5KMnO4 系数 = 5/5 = 1，被氧化的 Cl 原子数 = 5/1 = 5<strong>第四步：初步配平</strong>2KMnO4 + 10HCl(被氧化) + ?HCl(起酸作用) → 2KCl + 2MnCl2 + 5Cl2↑ + ?H2O实际上，KMnO4 系数应为 2（因为右边有 2 个 MnCl2 需要和 2 个 KCl 对应 2 个K）：2KMnO4 + 16HCl → 2KCl + 2MnCl2 + 5Cl2↑ + 8H2O<strong>第五步：检查</strong>K: 2=2 √；Mn: 2=2 √；O: 8=8 √；H: 16=16 √；Cl: 16=2+4+10=16 √最终：<strong>2KMnO</strong><strong>4</strong><strong> + 16HCl = 2KCl + 2MnCl</strong><strong>2</strong><strong> + 5Cl</strong><strong>2</strong><strong>↑ + 8H</strong><strong>2</strong><strong>O</strong></p>
+<div class="h3c" style="color:#2563eb"><strong>【典例3】陌生方程式配平</strong></div>
+<p>− + Fe2+ + H+ → Mn2+ + Fe3+ + H2O配平离子方程式：MnO4</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与步骤】</strong></div>
+<p>Mn: +7→+2，降5；Fe: +2→+3，升1− 系数=1，Fe2+ 系数=5最小公倍数=5，MnO4− + 5Fe2+ + ?H+ → Mn2+ + 5Fe3+ + ?H2OMnO4左边 O 原子 4 个，右边 H2O 需要 4 个 O → 4H2O，需要 8H+检查电荷：左边 −1+5×(+2)+8×(+1)=−1+10+8=+17；右边 +2+5×(+3)=+2+15=+17√<strong>−</strong><strong> + 5Fe</strong><strong>2+</strong><strong> + 8H</strong><strong>+</strong><strong> = Mn</strong><strong>2+</strong><strong> + 5Fe</strong><strong>3+</strong><strong> + 4H</strong><strong>2</strong><strong>O</strong>最终：<strong>MnO</strong><strong>4</strong></p>
+<div class="h3c"><strong>三、巩固提升</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1 巩固题</strong></div>
+<p><strong>Q2-1</strong>下列反应中，水既不作氧化剂又不作还原剂的是（ ）A. 2Na + 2H2O = 2NaOH + H2↑B. 2F2 + 2H2O = 4HF + O2↑C. Cl2 + H2O = HCl + HClOD. 2H2O = 2H2↑ + O2↑</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>【答案】</strong><strong>C</strong></div><p>A: H2O 中 H 从 +1 降到 0（被还原→氧化剂），×B: H2O 中 O 从 −2 升到 0（被氧化→还原剂），×C: Cl2 自身歧化（0→+1 和 0→−1），H2O 中 H 和 O 化合价均未变，√D: 水电解，H 被还原，O 被氧化，×<strong>Q2-2</strong>在反应 2KClO3 = 2KCl + 3O2↑ 中，氧化剂是______，还原剂是______，氧化产物是______，还原产物是______。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>KClO3 中 Cl(+5)→KCl 中 Cl(−1)，降 6，得电子→<strong>氧化剂</strong>KClO3 中 O(−2)→O2 中 O(0)，升 2，失电子→<strong>还原剂</strong>氧化剂和还原剂均为 <strong>KClO</strong><strong>3</strong>（自身氧化还原反应）。</p>
+<p>氧化产物：<strong>O</strong><strong>2</strong>；还原产物：<strong>KCl</strong><strong>Q2-3</strong>已知反应：2Fe3+ + 2I− = 2Fe2+ + I2，判断氧化性强弱顺序。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>根据&quot;氧化剂的氧化性 &gt; 氧化产物的氧化性&quot;：氧化剂为 Fe3+，氧化产物为 I2氧化性：<strong>Fe</strong><strong>3+</strong><strong> &gt; I</strong><strong>2</strong>同理，还原性：<strong>I</strong><strong>−</strong><strong> &gt; Fe</strong><strong>2+</strong></p>
+<table class="ptable"><tr><td>&#160;</td><td>考点2</td><td>&#160;</td><td>巩固题（双线桥/单线桥）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q2-4用双线桥法表示反应2Al中的电子转移。+Fe2O3=Al2O3+2Fe</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】2×3e−&quot;0→+3，升3，2个共升6，&quot;失Al:Al2×3e−&quot;+3→0，降3，2个共降6，&quot;得Fe:Fe</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点3 巩固题（配平）</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>2×3e−，化合价升高&quot;；另一条从双线桥：一条从指向中Al，标&quot;失AlAl2O32×3e−，化合价降低&quot;。转移电子总数6e−。中指向Fe，标&quot;得=Fe2O3Fe</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q2-5用单线桥法表示反应2Na中的电子转移。+Cl2=2NaCl</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】2e−箭头从指向Cl2，标注Na2e−。从0→+1，失去电子；Cl2中每个从0→−1，共得NaCl</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q2-6在反应3Cu8HNO3(稀)=3Cu(NO3)2中，用双线桥标出电子转移，++2NO↑+4H2O并指出被还原的占参加反应的物质的量分数。HNO3HNO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】6e−（被氧化）个共失0→+2，3Cu:Cu6e−（被还原）+5→+2（NO），降3，2个共得N:N中只有2被还原（生成NO），其余6起酸的作用（生成8molHNO3molmolCu(NO3)2）。被还原的占比=2/8=1/4=25%HNO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q2-7</strong>配平：C + HNO3(浓) → CO2↑ + NO2↑ + H2O</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>C: 0→+4，升 4；N: +5→+4（NO2），降 1最小公倍数 4，C 系数 1，HNO3 系数 4C + 4HNO3 = CO2↑ + 4NO2↑ + 2H2O检查：C:1=1，H:4=4，N:4=4，O:12=2+8+2=12 √</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>最终：C4HNO3(浓)=+CO2↑+4NO2↑+2H2O</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q2-82−I−H+Cr3+配平离子方程式：Cr2O7++→+I2+H2O</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】+6→+3，降3，2个共降6Cr:Cr−1→0，升1，2个共升2（以计）I:II22−I−（生成最小公倍数=6，Cr2O7系数=1，需要6个3I2）2−6I−14H+2Cr3+Cr2O7++→+3I2+7H2O电荷检查：左−2+6×(−1)+14=+6，右2×(+3)=+6√2−6I−14H+2Cr3+最终：Cr2O7++=+3I2+7H2O</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q2-9</strong>配平：H2O2 + KMnO4 + H2SO4 → K2SO4 + MnSO4 + O2↑ + H2O</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>Mn: +7→+2，降 5；O(H2O2): −1→0，升 1×2=2最小公倍数 = 10，KMnO4 系数 = 2，H2O2 系数 = 52KMnO4 + 5H2O2 + 3H2SO4 = K2SO4 + 2MnSO4 + 5O2↑ + 8H2O检查：K:2=2，Mn:2=2，S:3=1+2=3，O:8+10+12=30，右:4+8+10+8=30，H:10+6=16，右:16 √最终：<strong>2KMnO</strong><strong>4</strong><strong> + 5H</strong><strong>2</strong><strong>O</strong><strong>2</strong><strong> + 3H</strong><strong>2</strong><strong>SO</strong><strong>4</strong><strong> = K</strong><strong>2</strong><strong>SO</strong><strong>4</strong><strong> + 2MnSO</strong><strong>4</strong><strong> + 5O</strong><strong>2</strong><strong>↑ +</strong><strong>8H</strong><strong>2</strong><strong>O</strong></p>
+<table class="ptable"><tr><td>&#160;</td><td>考点4</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>A.</td><td>Q2-10下列物质中，通常只作氧化剂的是（）Cl2B.HNO3C.FeSO4D.SO2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】B可歧化（Cl2+2NaOH=NaCl+NaClO+H2O），既作氧化剂又作还原剂。A:Cl2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>中为+5价（最高价），只能得电子→只作氧化剂（在氧化还原反应B:HNO3N中）。Fe2+中可升可降（中间价态），既可作氧化剂也可作还原剂。C:FeSO4中为+4价（中间价态），既可作氧化剂也可作还原剂。D:SO2S</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q2-112Fe3+2I−2Fe2+2Fe2+2Fe3+2Br−，判断氧化性根据反应：①I2；②+=++Br2=+由强到弱的顺序。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】Fe3+由①：氧化性I2（氧化剂&gt;氧化产物）&gt;Fe3+（氧化剂由②：氧化性&gt;氧化产物）Br2&gt;Fe3+综合：Br2&gt;&gt;I2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q2-12写出实验室制的化学方程式（MnO2+浓HCl），并指出氧化剂、还原剂、氧化产物、Cl2还原产物。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】4HCl(浓)MnO2+=MnCl2+Cl2↑+2H2O氧化剂：MnO2（Mn从+4降到+2）还原剂：HCl（Cl从−1升到0）氧化产物：Cl2还原产物：MnCl2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c"><strong>四、易错警示</strong></div>
+<div class="h3c" style="color:#d97706"><strong>⚠ 专题02 易错点警示</strong></div>
+<div class="h3c" style="color:#92400e">· <strong>概念混淆：</strong>&quot;氧化剂被还原，还原剂被氧化&quot;——氧化剂发生的是还原反应，还原剂发生</div>
+<p style="color:#92400e">的是氧化反应。</p>
+<p style="color:#92400e">· <strong>歧化反应：</strong>同一元素既升高又降低（如 Cl2+2NaOH→NaCl+NaClO+H2O），该物质既作氧化剂又作还原剂。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#92400e"><strong>部分氧化还原：</strong>如 MnO2+4HCl 中，4 个 HCl 只有 2 个 Cl− 被氧化，另外 2 个起酸的作· 用。</p>
+<p style="color:#92400e">· <strong>最高/最低价态：</strong>最高价态只能作氧化剂（如 HNO3 中 N(+5)），最低价态只能作还原剂（如 HCl 中 Cl(−1)），中间价态既可作氧化剂又可作还原剂。</p>
+<div class="h3c" style="color:#92400e">· <strong>配平顺序：</strong>先配变价元素，再配其他元素，最后用 H2O 配平 H 和 O，离子方程式还需</div>
+<p style="color:#92400e">检查电荷守恒。</p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

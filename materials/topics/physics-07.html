@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 功和能 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 功和能</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>功和能</h2><div class="hero-sub">物理暑假衔接 · 第 47-56 页</div><div class="hero-meta"><span>📄 10 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">⚙考点1：功的计算</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>恒力做功：</strong>W = F s cosθ</div>
+<div class="h3c" style="color:#f59e0b"><strong>θ = 0°</strong><strong>：</strong>W = Fs（力与位移同向，正功）</div>
+<div class="h3c" style="color:#f59e0b"><strong>θ = 90°</strong><strong>：</strong>W = 0（力与位移垂直，不做功）</div>
+<div class="h3c" style="color:#f59e0b"><strong>θ = 180°</strong><strong>：</strong>W = -Fs（力与位移反向，负功）</div>
+<div class="h3c" style="color:#f59e0b"><strong>总功：</strong>W总 = ΣWi = F合 s cosθ </div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>用50 N的水平力推一个箱子在水平地面上匀速前进10 m。求：(1)推力做的功；(2) 摩擦力做的功；(3) 合力做的功。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 推力做功：</strong>WF = Fs cos0° = 50 × 10 × 1 = <strong>500 J</strong></div>
+<div class="h3c"><strong>(2) 摩擦力做功：</strong>匀速，f = F = 50 N，方向与位移相反</div>
+<div class="h3c">Wf = fs cos180° = 50 × 10 × (-1) = <strong>-500 J</strong></div>
+<div class="h3c"><strong>(3) 合力做功：</strong>W合 = 500 + (-500) = <strong>0 J</strong></div>
+<p>合力为零，总功为零，动能不变，符合动能定理。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2质量为2kg的物体在倾角为37°的斜面上，在平行于斜面向上的拉力F=20N作用下沿斜面向上移动5m。物体与斜面间的动摩擦因</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>数μ=0.25。求：(1)拉力做的功；(2)重力做的功；(3)摩擦力做的功。（sin37°=0.6，cos37°=0.8，g=10m/s²）</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析(1)拉力做功：WF=20×5=100J(2)重力做功：WG-60=-mgsin37°×s=-2×10×0.6×5=J（重力做负功，因为物体向上运动）(3)摩擦力做功：N=mgcos37°=2×10×0.8=16Nf=μN=0.25×16=4NWf=-fs=-4×5=-20J</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>关于功，下列说法正确的是：A. 力越大，做功一定越多   B. 位移越大，做功一定越多   C. 摩擦力一定做负功   D. 作用力与反作用力做功的代数和不一定为零</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. 错误，功还与位移和夹角有关，力大但位移为零则功为零。</p>
+<p>B. 错误，同样与力和夹角有关。</p>
+<p>C. 错误，摩擦力可以做正功，例如传送带上的物体被摩擦力加速。</p>
+<div class="h3c">D. <strong>正确</strong>，例如两块磁铁相互吸引靠近，作用力与反作用力都做正</div>
+<p>功，代数和不为零。</p>
+<div class="h3c"><strong>答案：</strong><strong>D</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"></table></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">⚡考点2：功率</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>平均功率：</strong>P = W / t</div>
+<div class="h3c" style="color:#f59e0b"><strong>瞬时功率：</strong>P = F v cosθ</div>
+<div class="h3c" style="color:#f59e0b"><strong>额定功率：</strong>发动机长时间正常工作的最大功率 </div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>一台起重机在10 s内将质量为500 kg的重物匀速提升20 m。求：(1) 起重机做的功；(2) 起重机的功率。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 匀速提升，拉力 </strong><strong>F = mg = 5000 N</strong></div>
+<div class="h3c">W = Fh = 5000 × 20 = <strong>100000 J = 1.0 × 10</strong><strong>5</strong><strong> J</strong></div>
+<p><strong>(2) 平均功率：</strong>P = W/t = 100000/10 = <strong>10000 W = 10 kW</strong></p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>汽车发动机的额定功率为60 kW，汽车质量为2 t。当汽车以额定功率行驶时，速度为10 m/s时的牵引力为多少？若阻力恒为2000N，最大速度是多少？（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>v=10 m/s</strong><strong>时的牵引力：</strong>P = Fv ⇒ F = P/v = 60000/10 = </div>
+<div class="h3c"><strong>6000 N</strong></div>
+<div class="h3c"><strong>最大速度：</strong>当 F = f 时，速度最大</div>
+<div class="h3c">vmax = P/f = 60000/2000 = <strong>30 m/s</strong></div></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>注意：汽车以额定功率行驶时，牵引力随速度增大而减小，速度增大过程是变加速运动。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】3质量为m的物体从静止开始自由下落，求：(1)t时刻重力的瞬时功率；(2)t时间内重力的平均功率。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析(1)瞬时功率：t时刻速度v=gtP瞬=mg×v=mg²t(2)平均功率：t时间内下落高度h=½gt²W=mgh=½mg²t²P均=W/t=½mg²t注意：瞬时功率是平均功率的2倍，因为速度均匀增大。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点3：动能定理</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>动能：</strong>Ek = ½mv²</div>
+<div class="h3c" style="color:#f59e0b"><strong>动能定理：</strong>W合 = ΔEk = ½mv² - ½mv₀²</div>
+<div class="h3c" style="color:#f59e0b"><strong>适用范围：</strong>适用于恒力、变力，直线、曲线运动（力学中最</div>
+<p style="color:#e2e8f0">重要定理之一） </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】1</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>质量为2kg的物体，初速度为5m/s，在水平面上受到10N的恒定拉力作用，运动了8m，速度变为9m/s。求摩擦力做的功和摩擦力大小。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>详细解析由动能定理：W合=ΔEkWF+Wf=½mv²-½mv₀²=½×2×81-½×2×2510×8+Wf=81-25=5680+Wf=56-80=Wf-24J摩擦力大小：f=|Wf|/s=24/8=3N</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>质量为0.5 kg的小球从离地20 m高处自由落下，落地时速度为18m/s。求空气阻力做的功。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>由动能定理：WG + Wf = ΔEkmgh + Wf = ½mv² - 0</p>
+<p>0.5×10×20 + Wf = ½×0.5×18²100 + Wf = 0.25×324 = 81</p>
+<div class="h3c">Wf = 81 - 100 = <strong>-19 J</strong></div>
+<p>空气阻力做负功19 J，消耗了机械能。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>【巩固题】3</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>质量为m的物体，在距地面H高处由静止释放，落入地面下深度为h的沙坑中。求沙坑对物体的平均阻力F。（空气阻力不计）</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析全程用动能定理：初速度为零，末速度为零=0WG+Wfmg(H+h)-Fh=0F=mg(H+h)/h注意：重力全程做正功（下落H+h），阻力只在沙坑中做负功（位移h）。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点4：机械能守恒定律</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>机械能：</strong>E = Ek + Ep（动能 + 势能）</div>
+<div class="h3c" style="color:#f59e0b"><strong>重力势能：</strong>Ep = mgh（h为相对于零势能面的高度）</div>
+<div class="h3c" style="color:#f59e0b"><strong>机械能守恒条件：</strong>只有重力（或弹力）做功</div>
+<div class="h3c" style="color:#f59e0b"><strong>表达式：</strong>½mv₁² + mgh₁ = ½mv₂² + mgh₂ </div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】1小球从高为h的光滑斜面顶端由静止滑下，到达斜面底端时的速度是多少？（用机械能守恒求解）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析只有重力做功，机械能守恒。初始：E₁=mgh+0=mgh</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>末态：E₂=0+½mv²mgh=½mv²⇒v=√(2gh)与自由落体结果相同！斜面只是改变了运动方向，不改变末速度大小。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2用长L=1m的绳子系着质量为0.2kg的小球，从水平位置释放。求小球到达最低点时的速度和绳子的拉力。（g=10m/s²）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析机械能守恒：mgL=½mv²v=√(2gL)=√(2×10×1)=√20≈4.47m/s最低点受力：T-mg=mv²/LT=mg+mv²/L=2+0.2×20/1=2+4=6N</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>判断下列过程中机械能是否守恒：A. 物体沿粗糙斜面下滑   B. 物体自由下落   C. 跳伞运动员匀速下降   D. 弹簧振子在光滑水平面上振动</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. <strong>不守恒</strong>，摩擦力做功，机械能转化为内能。</p>
+<p>B. <strong>守恒</strong>（忽略空气阻力），只有重力做功。</p>
+<div class="h3c">C. <strong>不守恒</strong>，匀速下降动能不变，重力势能减小，空气阻力做负</div>
+<p>功，机械能减小。</p>
+<p>D. <strong>守恒</strong>，只有弹簧弹力做功，动能和弹性势能相互转化。</p>
+<p>关键：判断是否有除重力（弹力）以外的力做功。 </p></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📈考点5：功能关系综合</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>核心功能关系：</strong></div>
+<p>(1) W合 = ΔEk（动能定理）(2) WG = -ΔEp（重力做功等于重力势能减少量）(3) W其他 = ΔE（除重力、弹力外的力做功等于机械能变化量）(4) 摩擦生热：Q = f · s相对</p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>质量为m的物体从高为h的粗糙斜面顶端由静止滑下，到达底端的速度为v。求：(1) 摩擦力做的功；(2) 摩擦产生的热量。（斜面倾角为θ，动摩擦因数为μ）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 由动能定理：</strong>mgh + Wf = ½mv²</div>
+<div class="h3c">Wf = <strong>½mv² - mgh</strong>（负值，因为摩擦力做负功）</div>
+<div class="h3c"><strong>(2) 摩擦生热：</strong>Q = -Wf = <strong>mgh - ½mv²</strong></div>
+<p>也可用 Q = f · s = μmg cosθ × (h/sinθ) = μmgh/tanθ两种方法结果应一致。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2子弹以速度v₀射入固定在水平面上的木块，深度为d。若同样的子弹以速度2v₀射入同样的木块，射入深度为多少？（设阻力恒定）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>由动能定理，阻力做负功使子弹动能全部转化为内能：</p>
+<p>-fd = 0 - ½mv₀² ⇒ fd = ½mv₀²速度变为2v₀时：-fd&#x27; = 0 - ½m(2v₀)² = -2mv₀²fd&#x27; = 2mv₀² = 4 × (½mv₀²) = 4fd</p>
+<div class="h3c">d&#x27; = <strong>4d</strong></div>
+<p>速度变为2倍，穿透深度变为4倍（动能与速度平方成正比）。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>一质量为m的滑块以初速度v₀冲上质量为M的静止木板（放在光滑水平面上），滑块与木板间动摩擦因数为μ，木板足够长。求系统产生的热量。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>方法一：能量守恒</strong></div>
+<p>系统最终以共同速度v运动：mv₀ = (m+M)v ⇒ v = mv₀/(m+M)初始动能：Ek0 = ½mv₀²末动能：Ek = ½(m+M)v² = ½(m+M)[mv₀/(m+M)]² =½m²v₀²/(m+M)</p>
+<div class="h3c">Q = Ek0 - Ek = ½mv₀² - ½m²v₀²/(m+M) = <strong>½mMv₀²/</strong></div>
+<div class="h3c"><strong>(m+M)</strong></div>
+<div class="h3c"><strong>方法二：</strong>Q = f · s相对 = μmg × s相对（需要先求s相对） </div></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="box-t" style="color:#92400e"><strong>⚠ 专题07 易错警示</strong></div><div class="h3c" style="color:#92400e"><strong>1. 功的正负：</strong>W = Fs cosθ，θ为力与位移的夹角。注意&quot;位移&quot;是物体</div>
+<p style="color:#92400e">的位移，不是力的作用点的位移。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 机械能守恒的条件：</strong>只有重力（或弹力）做功，不是&quot;只受重力（或</div></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><p style="color:#92400e">弹力）&quot;。可以有其他力，只要其他力不做功即可。</p>
+<div class="h3c" style="color:#92400e"><strong>3. 动能定理：</strong>W合是所有力做功的代数和，包括重力做功。不要漏掉重</div>
+<p style="color:#92400e">力！</p>
+<div class="h3c" style="color:#92400e"><strong>4. 重力势能：</strong>与零势能面的选取有关，但重力势能的变化与零势能面的</div>
+<p style="color:#92400e">选取无关。</p>
+<div class="h3c" style="color:#92400e"><strong>5. 摩擦生热：</strong>Q = f · s相对，s相对是两接触面间的相对位移，不是对地</div>
+<p style="color:#92400e">位移。 </p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

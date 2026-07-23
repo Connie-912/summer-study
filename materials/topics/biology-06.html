@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题六：细胞的生命历程——增殖、分化、衰老、凋亡、癌 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题六：细胞的生命历程——增殖、分化、衰老、凋亡、癌</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题六：细胞的生命历程——增殖、分化、衰老、凋亡、癌</h2><div class="hero-sub">生物暑假衔接 · 第 30-35 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>专题六：细胞的生命历程——增殖、分化、衰老、凋亡、癌变</td></tr><tr><td>&#160;</td><td>一、知识精讲细胞的增殖——有丝分裂1.</td></tr><tr><td>&#160;</td><td>细胞周期：连续分裂的细胞，从一次分裂完成时开始，到下一次分裂完成时为止。包括分裂间期（G₁期、S期、G₂期）和分裂期（M期：前期、中期、后期、末期）。分裂间期特点：完成DNA分子的复制和有关蛋白质的合成（染色体复制），细胞有适度的生长。S期进行DNA复制。</td></tr><tr><td>&#160;</td><td>有丝分裂各时期特点（以植物细胞为例）</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">时期</th><th style="background:#dcfce7;color:#166534">主要特点</th><th style="background:#dcfce7;color:#166534">染色体行为</th></tr><tr><td>前期</td><td>核膜、核仁消失；染色体、纺锤体出现</td><td>染色质螺旋化成染色体，每条染色体含两条姐妹染色单体</td></tr><tr><td>中期</td><td>染色体的着丝粒排列在赤道板上</td><td>染色体形态最稳定、数目最清晰，是观察染色体的最佳时期</td></tr><tr><td>后期</td><td>着丝粒分裂，姐妹染色单体分开</td><td>染色体数目加倍，染色体向两极移动</td></tr><tr><td>末期</td><td>核膜、核仁重新出现；染色体、纺锤体消失；细胞板形成细胞壁</td><td>染色体解螺旋成染色质</td></tr></table>
+<div class="h3c" style="color:#15803d"><strong>有丝分裂过程中染色体、</strong><strong>DNA</strong><strong>、</strong><strong>染色单体数量变化（设体细胞</strong><strong>2N</strong><strong>）</strong></div>
+<p style="color:#15803d">间期：染色体 2N，DNA 2N→4N，染色单体 0→4N前期：染色体 2N，DNA 4N，染色单体 4N中期：染色体 2N，DNA 4N，染色单体 4N</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#15803d">后期：染色体 4N，DNA 4N，染色单体 0（着丝粒分裂）末期：染色体 2N，DNA 2N，染色单体 0关键转折点：DNA复制发生在间期；着丝粒分裂发生在后期；细胞分裂成两个发生在末期结束</p>
+<div class="h3c" style="color:#15803d"><strong>动物细胞与植物细胞有丝分裂的区别：</strong>①前期纺锤体形成方式不同（植物由细胞两</div>
+<p>极发出纺锤丝，动物由中心体发出星射线）；②末期细胞质分裂方式不同（植物形成细胞板，动物细胞膜向内凹陷缢裂）。</p>
+<div class="h3c" style="color:#15803d"><strong>有丝分裂的意义：</strong>将亲代细胞的染色体经复制后，精确地平均分配到两个子细胞</div>
+<p>中，保持了亲代和子代之间遗传的稳定性。</p>
+<div class="h3c" style="color:#15803d"><strong>2. </strong><strong>细胞分化</strong></div>
+<div class="h3c" style="color:#15803d"><strong>概念：</strong>在个体发育中，由一个或一种细胞增殖产生的后代，在形态、结构和</div>
+<p>生理功能上发生稳定性差异的过程。</p>
+<p style="color:#15803d"><strong>特点：</strong>持久性、普遍性、稳定性、不可逆性（自然条件下）。</p>
+<div class="h3c" style="color:#15803d"><strong>实质（根本原因）：基因的选择性表达</strong>。不同细胞中遗传信息的执行情况不</div>
+<p>同，即表达的基因不同。</p>
+<div class="h3c" style="color:#15803d"><strong>意义：</strong>使多细胞生物体中的细胞趋向专门化，有利于提高各种生理功能的效</div>
+<p>率。</p>
+<div class="h3c" style="color:#15803d"><strong>细胞全能性：</strong>细胞经分裂和分化后，仍具有发育成完整个体或其他各种细胞</div>
+<p>的潜能和特性。植物细胞具有全能性（如植物组织培养），动物细胞的细胞核具有全能性（如克隆技术）。</p>
+<div class="h3c" style="color:#15803d"><strong>3. </strong><strong>细胞衰老</strong></div>
+<p>细胞内水分减少，细胞萎缩，体积变小• 细胞核体积增大，核膜内折，染色质收缩、染色加深• 细胞膜通透性改变，物质运输功能降低• 细胞内多种酶活性降低，代谢速率减慢• 细胞内色素逐渐积累（如老年斑）• </p>
+<div class="h3c" style="color:#15803d"><strong>4. </strong><strong>细胞凋亡</strong></div>
+<table class="ptable"><tr><th style="background:#f8fafc;color:#334155">概念：由基因所决定的细胞自动结束生命的过程，又称细胞编程性死亡。</th><th style="background:#f8fafc;color:#334155">&#160;</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>二、典例破题</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>实例：蝌蚪尾巴消失、胎儿手指间蹼的消失、被病原体感染细胞的清除。意义：对于多细胞生物体完成正常发育、维持内部环境稳定、抵御外界各种因素干扰非常关键。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>细胞癌变5.</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>癌细胞特征：能够无限增殖•形态结构发生显著变化•细胞膜上糖蛋白等物质减少，细胞间黏着性显著降低，容易分散和转移•</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>致癌因子：物理致癌因子（如紫外线、X射线）、化学致癌因子（如亚硝胺、黄曲霉素）、病毒致癌因子（如HPV病毒）。癌变机理：原癌基因和抑癌基因发生突变。原癌基因主要负责调节细胞周期，控制细胞生长和分裂的进程；抑癌基因主要是阻止细胞不正常的增殖。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>细胞坏死与细胞凋亡的区别6.</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">比较项目</th><th style="background:#dcfce7;color:#166534">细胞凋亡</th><th style="background:#dcfce7;color:#166534">细胞坏死</th></tr><tr><td>诱因</td><td>基因控制，正常生理过程</td><td>外界不利因素（如损伤、缺氧、中毒）</td></tr><tr><td>过程</td><td>细胞变圆，与周围细胞脱离，形成凋亡小体</td><td>细胞膜破裂，细胞内容物释放</td></tr><tr><td>结果</td><td>被吞噬细胞吞噬清除，不引起炎症</td><td>引起周围组织炎症反应</td></tr><tr><td>性质</td><td>主动的、有利的</td><td>被动的、有害的</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#92400e"><strong>典例</strong><strong>3</strong><strong>（细胞癌变）</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>典例1（有丝分裂过程）在细胞有丝分裂过程中，DNA分子数目相同而染色体数目不同的时期是（　）间期和前期　B.前期和中期　C.前期和后期　D.后期和末期A.</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：C解析：前期DNA=4N，染色体=2N；后期DNA=4N，染色体=4N。这两个时期DNA分子数目相同（都是4N），但染色体数目不同（2N4N）。vs因为后期着丝粒分裂，染色体数目加倍，但DNA数目不变。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>典例2（细胞分化）下列关于细胞分化的叙述，正确的是（　）细胞分化导致细胞中遗传物质发生改变A.细胞分化使细胞数目增加B.细胞分化的实质是基因的选择性表达C.细胞分化是不可逆的，一旦分化就不能再分裂D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：C解析：A错误，分化过程中遗传物质不变。B错误，细胞数目增加是细胞分裂的结果。C正确。D错误，分化后的细胞有些仍可分裂（如造血干细胞分化成的细胞），且自然条件下不可逆不代表完全不能逆转（如植物组织培养）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p style="color:#78350f">下列关于癌细胞的叙述，错误的是（　）A. 癌细胞能够无限增殖B. 癌细胞的形态结构发生显著变化C. 癌细胞膜上糖蛋白增多，黏着性增强D. 原癌基因和抑癌基因的突变可导致细胞癌变 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：C解析：癌细胞膜上糖蛋白减少，导致细胞间黏着性降低，容易分散和转移。这是癌细胞容易扩散的重要原因。</th><th>&#160;</th><th>&#160;</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>4</strong></div><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习1在植物细胞有丝分裂的末期，赤道板位置出现的结构是（　）细胞板　B.纺锤体　C.染色体　D.核膜A.</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：A</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习2观察洋葱根尖细胞有丝分裂时，视野中大多数细胞处于（　）前期　B.中期　C.间期　D.后期A.</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：C（间期占细胞周期的大部分时间）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习3下列关于细胞衰老和凋亡的叙述，正确的是（　）细胞衰老等同于个体衰老A.细胞凋亡是细胞坏死的一种形式B.细胞凋亡是由基因决定的编程性死亡C.衰老细胞的细胞核体积变小D.</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>下列关于细胞全能性的叙述，正确的是（　）A. 高度分化的植物细胞不具有全能性B. 动物细胞都具有全能性C. 细胞全能性是指细胞具有发育成完整个体的潜能D. 细胞分化程度越高，全能性越容易表现 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答案：C</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>5</strong></div><p>下列过程中，属于细胞凋亡的是（　）A. 烫伤引起的皮肤溃烂B. 骨折造成的细胞死亡C. 被病原体感染的细胞的清除D. 缺氧导致的脑细胞死亡 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：C</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>四、易错警示</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>常见错误与混淆点赤道板细胞板：赤道板是位置概念（不是真实结构），细胞板是植物•vs细胞末期出现的真实结构，最终发育成细胞壁。姐妹染色单体分开≠DNA减半：后期着丝粒分裂，姐妹染色单体分开成为•两条染色体，但DNA数目不变（直到末期细胞分裂成两个）。细胞分化遗传物质不变：细胞分化是基因选择性表达的结果，细胞中DNA•完全相同，但mRNA和蛋白质不同。细胞凋亡≠细胞坏死：凋亡是基因控制的主动死亡（有利），坏死是外界•因素导致的被动死亡（有害）。癌细胞糖蛋白减少：不是增多！糖蛋白减少导致黏着性降低，容易转移。•原癌基因不是坏基因：原癌基因负责正常调节细胞周期，只有发生突变后•才可能导致癌变。细胞全能性大小：受精卵生殖细胞体细胞；植物细胞动物细胞。•&gt;&gt;&gt;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

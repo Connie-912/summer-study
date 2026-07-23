@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 人口与城市 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 人口与城市</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>人口与城市</h2><div class="hero-sub">地理暑假衔接 · 第 36-41 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="chip" style="background:#f59e0b">预习新知</div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>本专题为<strong>人文地理预习</strong>内容，重点理解人口增长模式转变、人口迁移的推拉理论和城市化进程。人文地理侧重理解规律和影响因素，记忆量较大，建议配合图表理解。</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>考点一：人口增长模式1</td></tr><tr><td>&#160;</td><td>知识精讲</td></tr></table>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><table class="ptable"><tr><th style="background:#0ea5e9">模式</th><th style="background:#0ea5e9">特征</th><th style="background:#0ea5e9">典型国家/地区</th><th style="background:#0ea5e9">出生率</th><th style="background:#0ea5e9">死亡率</th><th style="background:#0ea5e9">自然增长率</th></tr><tr><td>原始型（高-高-低）</td><td>高出生率、高死亡率、低自然增长率</td><td>原始社会</td><td>极高</td><td>极高</td><td>极低</td></tr><tr><td>传统型（高-低-高）</td><td>高出生率、低死亡率、高自然增长率</td><td>多数发展中国家</td><td>高</td><td>低</td><td>高</td></tr><tr><td>现代型（低-低-低）</td><td>低出生率、低死亡率、低自然增长率</td><td>发达国家、中国</td><td>低</td><td>低</td><td>低/负</td></tr><tr><td>&#160;</td><td>人口增长模式转变的根本原因：社会生产力水平的提高。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】中国目前属于哪种人口增长模式？为什么？</strong></p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答案：中国目前属于现代型（低-低-低）。原因：①经济发展，生活水平提高，育儿成本上升。②计划生育政策的长期影响。③女性受教育程度提高、生育观念转变。④出生率低（约6~7‰），死亡率低（约7‰），自然增长率接近零甚至为负。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>1.</td><td>&#160;</td><td>比较发达国家和发展中国家人口增长模式的差异。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：发达国家：现代型（低-低-低），出生率低、死亡率低，自然增长率低甚至为负，人口老龄化严重。发展中国家：传统型（高-低-高），出生率高、死亡率降低（医疗进步），自然增长率高，人口增长快。答：发达国家现代型，增长慢、老龄化；发展中国家传统型，增长快、年轻化。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 人口老龄化带来哪些社会问题？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①<strong>劳动力短缺</strong>，制约经济发展。②<strong>养老负担加重</strong>，社会保障压力增大。</p>
+<p style="color:#166534">③<strong>国防兵源不足</strong>。④社会需求结构变化（医疗、护理需求增加）。</p>
+<p style="color:#166534"><strong>答：劳动力不足、养老负担重、兵源不足、社会需求结构变化。</strong></p></div>
+<p><strong>3. 简述人口增长模式从传统型向现代型转变的一般过程。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 第一阶段：死亡率首先下降（医疗进步、生活改善），出生率仍高 →</div>
+<p style="color:#166534">自然增长率上升。</p>
+<p style="color:#166534">第二阶段：出生率开始下降（经济发展、观念转变、政策调控）→ 自然增长率下降。</p>
+<p style="color:#166534">第三阶段：出生率和死亡率均降至低水平 → 现代型。</p>
+<p style="color:#166534"><strong>答：死亡率先降→出生率后降→两者均降至低水平。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>⚠易错警示1.人口增长模式不能简单等同于经济发展水平：中国是发展中国家，但人口增长模式已进入现代型。</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>2. &quot;人口自然增长率&quot;不是&quot;人口增长率&quot;：</strong>人口增长率还包括机械增长（人口</div>
+<p style="color:#92400e">迁移）。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">②</span><strong>考点二：人口迁移</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><p><strong>推拉理论：</strong>人口迁移受迁出地的&quot;推力&quot;和迁入地的&quot;拉力&quot;共同作用。</p>
+<table class="ptable"><tr><th style="background:#0ea5e9">类型</th><th style="background:#0ea5e9">推力因素（迁出地）</th><th style="background:#0ea5e9">拉力因素（迁入地）</th></tr><tr><td>经济因素</td><td>经济落后、就业机会少、收入低</td><td>经济发达、就业机会多、收入高</td></tr><tr><td>社会因素</td><td>战争、政治迫害、宗教冲突</td><td>社会安定、政治自由、教育医疗好</td></tr><tr><td>环境因素</td><td>自然灾害、环境污染、资源枯竭</td><td>环境优美、气候宜人、资源丰富</td></tr><tr><td>向城市（农民工潮）。</td><td>我国人口迁移特点：改革开放后，大量人口从中西部流向东部沿海，从农村流</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0369a1"><strong>巩固提升</strong></div>
+<p><strong>1. 分析我国&quot;孔雀东南飞&quot;（人口从内陆向东南沿海迁移）的主要原因。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong><strong>推力（内陆）：</strong>经济欠发达、就业机会少、收入低、基础设施落后。</p>
+<div class="h3c" style="color:#166534"><strong>拉力（东南沿海）：</strong>经济发达、就业机会多（制造业、服务业）、收入高、基</div>
+<p style="color:#166534">础设施完善、教育医疗条件好。</p>
+<p style="color:#166534"><strong>答：经济因素是主导因素，追求更好的就业机会和经济收入。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>2.人口迁移对迁入地和迁出地分别产生什么影响？</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong><strong>对迁入地（积极）：</strong>提供廉价劳动力，促进经济发展；缓解老龄化。</p>
+<div class="h3c" style="color:#166534"><strong>对迁入地（消极）：</strong>增加城市管理压力（住房、交通、治安），可能引发社会</div>
+<p style="color:#166534">矛盾。</p>
+<p style="color:#166534"><strong>对迁出地（积极）：</strong>缓解人地矛盾，外出务工收入回流促进当地消费。</p>
+<p style="color:#166534"><strong>对迁出地（消极）：</strong>劳动力流失，人才外流（&quot;空心村&quot;问题），老龄化加剧。</p>
+<p style="color:#166534"><strong>答：迁入地获得劳动力但管理压力增大；迁出地缓解人地矛盾但人才流失。</strong></p></div>
+<p><strong>3. 什么是&quot;环境难民&quot;？举例说明。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> &quot;环境难民&quot;指因<strong>环境恶化或自然灾害</strong>而被迫迁移的人口。</p>
+<p style="color:#166534">例子：①海平面上升导致岛国居民迁移（如马尔代夫、图瓦卢）。②沙漠化导致撒哈拉以南非洲居民迁移。③极端干旱导致农牧民迁移。</p>
+<div class="h3c" style="color:#166534"><strong>答：因环境恶化被迫迁移的人口，如海平面上升、沙漠化、极端气候导致的迁</strong></div>
+<p style="color:#166534"><strong>移。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 人口迁移的根本原因是区域经济发展不平衡。</strong>经济因素是人口迁移最主</div>
+<p style="color:#92400e">要、最经常起作用的因素。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 注意区分&quot;人口迁移&quot;和&quot;人口流动&quot;：</strong>迁移是改变常住地（长期），流动是</div>
+<p style="color:#92400e">短期往返（如春运）。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">③</span><strong>考点三：城市化与城市问题</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">城市化阶段</th><th style="background:#0ea5e9">特征</th><th style="background:#0ea5e9">城市化水平</th></tr><tr><td>初期阶段</td><td>城市化水平低，发展缓慢</td><td>&lt;30%</td></tr><tr><td>加速阶段</td><td>人口和产业向城市迅速集聚，城市规模扩大</td><td>30%~70%</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&gt;70%</td></tr></table></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>后期阶段（成熟阶段）</th><th>城市化水平高，发展趋缓，出现逆城市化</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>困难、社会秩序混乱。镇化率约66%）。</td><td>城市问题：交通拥堵、住房紧张、环境污染（大气、水、垃圾、噪声）、就业我国城市化特点：起步晚、发展快、规模大，目前处于加速阶段（2023年城</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>1.</td><td>&#160;</td><td>什么是&quot;逆城市化&quot;？分析其产生的原因。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>断完善。</td><td>答案：逆城市化：城市人口向郊区或乡村迁移，城市中心区人口减少的现象。原因：①城市中心区环境恶化（污染、拥挤）。②交通改善，郊区通勤成为可能。③人们追求更好的居住环境（空气清新、空间宽敞）。④郊区基础设施不答：城市人口向郊区迁移，因城市环境恶化和追求更好的居住条件。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 城市化对地理环境有哪些负面影响？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①<strong>热岛效应</strong>：城市气温高于郊区（硬化地面多、绿地少、人为热排放</div>
+<p style="color:#166534">多）。</p>
+<p style="color:#166534">②<strong>水污染和大气污染</strong>：工业和生活污染物排放。</p>
+<p style="color:#166534">③<strong>改变水循环</strong>：地面硬化减少下渗，增加地表径流（城市内涝）。</p>
+<p style="color:#166534">④<strong>生物多样性减少</strong>：自然栖息地被破坏。</p>
+<p style="color:#166534"><strong>答：热岛效应、环境污染、水循环改变、生物多样性减少。</strong></p></div>
+<p><strong>3. 如何建设&quot;生态城市&quot;？提出至少三条措施。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①<strong>绿色交通</strong>：发展公共交通、自行车道、步行系统，减少私家车使用。</p>
+<p style="color:#166534">②<strong>绿色建筑</strong>：推广节能建筑、屋顶绿化、太阳能利用。</p>
+<p style="color:#166534">③<strong>增加绿地</strong>：建设公园、绿道、湿地，提高城市绿化覆盖率。</p>
+<p style="color:#166534">④<strong>循环经济</strong>：垃圾分类回收、污水再生利用、雨水收集。</p>
+<p style="color:#166534">⑤<strong>合理规划</strong>：控制城市规模，发展卫星城镇，疏解中心城区功能。</p>
+<div class="h3c" style="color:#166534"><strong>答：发展绿色交通、推广绿色建筑、增加绿地、循环利用资源、合理规划城市</strong></div>
+<p style="color:#166534"><strong>布局。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. &quot;城市化&quot;不等于&quot;城市问题&quot;：</strong>城市化是现代化的必然趋势，关键是要走可</div>
+<p style="color:#92400e">持续发展道路。</p>
+<div class="h3c" style="color:#92400e"><strong>2. &quot;逆城市化&quot;不是&quot;反城市化&quot;：</strong>而是城市化发展到高级阶段的表现，城市人</div>
+<p style="color:#92400e">口向郊区扩散。</p></div>
+<table class="ptable"></table>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

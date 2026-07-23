@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题01 · 物质的量 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题01 · 物质的量</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题01 · 物质的量</h2><div class="hero-sub">化学暑假衔接 · 第 2-11 页</div><div class="hero-meta"><span>📄 10 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题01 · 物质的量</strong></div><p style="color:#6b7280">物质的量是高中化学计算的核心，串联起宏观与微观世界。本专题涵盖5大考点，基础薄弱者务必从概念关系网络图入手，逐步建立&quot;物质的量中心&quot;思维。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：</strong><strong>n / N / N</strong><strong>A</strong><strong> / m / M / V / V</strong><strong>m</strong><strong> / c </strong><strong>的关系网络</strong></div>
+<div class="h3c" style="color:#10b981"><strong>核心关系网络（以物质的量 </strong><strong>n </strong><strong>为中心）</strong></div>
+<div class="h3c"><strong>÷N</strong><strong>A</strong><strong> ↓ ↑ ×N</strong><strong>A</strong><strong>N</strong><strong>（</strong><strong>粒子数</strong><strong>）</strong></div>
+<table class="ptable"><tr><th style="background:#059669">n（物质的量）</th><th style="background:#059669">×M↓↑÷Mm（质量）</th></tr></table>
+<div class="h3c"><strong>÷V</strong><strong>m</strong><strong> ↓ ↑ ×V</strong><strong>m</strong><strong>V</strong><strong>（</strong><strong>气体体积</strong><strong>）</strong></div>
+<div class="h3c"><strong>×V</strong><strong>aq</strong><strong> ↓ ↑ ÷V</strong><strong>aq</strong><strong>n</strong><strong>（</strong><strong>物质的量</strong><strong>）</strong></div>
+<div class="chip" style="background:#10b981">c（物质的量浓度）</div>
+<p>n = N / NA   |   n = m / M   |   n = V / Vm（标况 Vm=22.4 L/mol）  |   n = c · VaqNA ≈ 6.02 × 1023 mol−1</p>
+<table class="ptable"></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点2：阿伏伽德罗常数（</strong><strong>N</strong><strong>A</strong><strong>）的常见陷阱</strong></div><p>标常温常压下用况只有 0°C、101 kPa 时 Vm=22.4 L/mol条　22.4 L/mol件物标况下 H2O、　标况下 H2O 为液态/固态，SO3 为固态，HF 为质状　SO3、HF 为气体　液态（沸点19.5°C）态粒　混淆原子、分如 1 mol D2O 含 10NA 质子，10NA 中子，子　子、离子、质种　子、中子、电子　10NA 电子类　数可逆　认为反应完全进N2+3H2⇌2NH3 为可逆反应，不能完全转化反　行应2− 数 &lt; NA（水解1 L 1 mol/L Na2CO3 中 CO3水忽略弱离子的水解　解消耗）电Na2O2 与 CO22Na2O2+2CO2=2Na2CO3+O2，每2 mol子反应转移电子错Na2O2 转移 2 mol e−（自身歧化）转误移</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点3：一定物质的量浓度溶液的配制与误差分析</strong></div><div class="h3c" style="color:#10b981"><strong>配制步骤（以配制 100 </strong><strong>mL 1.00 mol/L NaCl </strong><strong>溶液为例）</strong></div>
+<p>计算 → 称量 → 溶解 → 转移（至100 mL容量瓶）→ 洗涤（烧杯和玻璃棒2~3次）→ 定容（距刻度线1~2 cm改用胶头滴管）→ 摇匀 → 装瓶贴签</p>
+<table class="ptable"><tr><th style="background:#10b981">操作</th><th style="background:#10b981">的变化c</th><th style="background:#10b981">原因</th></tr><tr><td>未洗涤烧杯和玻璃棒</td><td>偏小</td><td>溶质损失，n减小</td></tr><tr><td>定容时俯视刻度线</td><td>偏大</td><td>实际偏小V</td></tr><tr><td>定容时仰视刻度线</td><td>偏小</td><td>实际偏大V</td></tr><tr><td>定容摇匀后液面下降再加水</td><td>偏小</td><td>偏大V</td></tr><tr><td>容量瓶未干燥</td><td>无影响</td><td>定容时仍加水至刻度</td></tr><tr><td>砝码生锈</td><td>偏大</td><td>称量质量偏大，n偏大</td></tr><tr><td>考点4：平均摩尔质量</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>M平 = m总 / n总 = (M1·n1 + M2·n2) / (n1+n2)对气体：M平 = M1·φ1 + M2·φ2（φ为体积分数）相对密度法：M平 = D × M参（D为相对密度，M参为参考气体摩尔质量）</p>
+<div class="h3c" style="color:#047857"><strong>考点5：十字交叉法</strong></div>
+<div class="h3c" style="color:#10b981"><strong>十字交叉法原理</strong></div>
+<p>用于两组分混合物的快速计算。设两组分 A、B 的某物理量分别为 a、b，混合后为 c，则：</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#2563eb"><strong>【典例2】溶液配制误差分析</strong></div><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>nA/nB=(c−b)/(a−c)</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>适用场景：平均摩尔质量、平均相对原子质量、溶液混合浓度计算等。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>二、典例破题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【典例1】NA陷阱综合为阿伏伽德罗常数的值。下列说法正确的是（）NA标准状况下，22.4含有的分子数为A.LH2ONA与足量充分反应，转移电子数为B.1molNa2O2CO2NA常温常压下，22.4含有的分子数为C.LN2NA2−溶液中含数为D.1L1mol/LNa2CO3CO3NA</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】B标况下为液态，不能用22.4L/mol。A×H2O中为−1价，发生歧化：一半升为2Na2O2+2CO2=2Na2CO3+O2，Na2O2B√Oe−，故0价（O2），一半降为−2价（Na2CO3）。每2转移21molNa2O2mole−，即转移1NA。molNa2O2mol常温常压不是标况，22.4气体物质的量≠1mol。C×L2−2−+H2O⇌HCO3−+OH−，故2−水解：CO3数&lt;NA。D×CO3CO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>配制 100 mL 0.10 mol/L Na2CO3 溶液，下列操作会使浓度偏低的是（ ）A. 用托盘天平称量时，药品与砝码放反（使用游码）B. 定容时俯视刻度线C. 未用蒸馏水洗涤烧杯内壁D. 容量瓶使用前用 0.10 mol/L Na2CO3 溶液润洗</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>AC</strong></div>
+<p><strong>A √ </strong><strong>偏低</strong> 左物右码放反后，实际称取质量 = 砝码质量 − 游码质量，偏小，n 偏小，c 偏低。</p>
+<p><strong>B × </strong><strong>偏高</strong> 俯视使液面未达刻度线就已停止，V 偏小，c 偏高。</p>
+<p><strong>C √ </strong><strong>偏低</strong> 烧杯内壁残留溶质未转移，n 偏小，c 偏低。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#2563eb"><strong>【典例3】十字交叉法</strong></div><table class="ptable"><tr><th style="background:#3b82f6">偏高润洗使容量瓶内壁残留溶质，n偏大，c偏高。D×</th><th style="background:#3b82f6">&#160;</th><th style="background:#3b82f6">&#160;</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<p>已知 N2 和 CO2 混合气体的平均摩尔质量为 36 g/mol，求混合气体中 N2 与 CO2 的物质的量之比。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>n(N</strong><strong>2</strong><strong>) : n(CO</strong><strong>2</strong><strong>) = 2 : 1</strong></div>
+<p>M(N2)=28，M(CO2)=44，M平=36十字交叉法：N2:  28 ──────────── 44−36=8            ╲         ╱            ╱         ╲CO2: 44 ──────────── 36−28=8n(N2) : n(CO2) = 8 : 4 = <strong>2 : 1</strong>验证：M平 = (2×28 + 1×44) / 3 = 100/3 ≈ 33.3... 不对，重新计算。</p>
+<p>n(N2) : n(CO2) = (44−36) : (36−28) = 8 : 8 = <strong>1 : 1</strong>验证：M平 = (28+44)/2 = 36 √</p>
+<table class="ptable"><tr><td>&#160;</td><td>考点1</td><td>&#160;</td><td>三、巩固提升巩固题（n/N/NA/m/M/V/Vm/c关系）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-1中含原子的物质的量为多少？含原子的个数为多少？（NA表示）0.5molH2SO4HO</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】1个含2个个H，4O。H2SO4n(H)=0.5mol×2=1mol=N(O)=0.5mol×4×NA2NA</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>标准状况下，11.2的质量是多少？含有多少个原子？LCO2</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】n(CO2)=11.2L/22.4L/mol=0.5molm(CO2)=0.5mol×44g/mol=22g1个含3个原子（1C+2O），N(原子)=CO2=0.5×3×NA1.5NA</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>将</td><td>Q1-3Na+5.85溶于水配成500溶液，求溶液中的物质的量浓度。gNaClmL</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】M(NaCl)=23+35.5=58.5g/moln(NaCl)=5.85g/58.5g/mol=0.1molc(NaCl)=0.1mol/0.5L=0.2mol/LNa+Cl−，c(Na+)NaCl=+=c(NaCl)=0.2mol/L</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>考点2</td><td>&#160;</td><td>巩固题（NA陷阱）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-4判断正误：标准状况下，22.4己烷（C6H14）含有的共价键数目为19NA。L</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】错误。标况下己烷为液态（含6个碳的烷烃在标况下为液体），不能用22.4L/mol计算。即使强行计算，22.4也不等于1mol。L</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-5为阿伏伽德罗常数的值。判断：1与足量稀反应，转移电子数为3NA。NAmolFeHNO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>Fe3+，转移e−；若不一定。若稀过量，Fe被氧化为3NA过量，可能生HNO3FeFe2+（Fe+2Fe3+=3Fe2+），需结合具体条件分析。此题表述不严谨，按&quot;足量稀成Fe3+，转移HNO3&quot;应认为氧化为3NA，正确。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-6−2−判断：1溶液中和离子数之和为0.1NA。L0.1mol/LNaHCO3HCO3CO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】−)2−)−错误。根据物料守恒，n(HCO3既mol。HCO3+n(CO3+n(H2CO3)=0.1−⇌H++CO32−）也可水解（HCO3−+H2O⇌H2CO3+OH−），故可电离（HCO3−+CO32−0.1NA。HCO3&lt;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>考点3</td><td>&#160;</td><td>巩固题（溶液配制）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-7配制250溶液，需要称取固体多少克？mL0.20mol/LNaOHNaOH</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】n(NaOH)=0.20mol/L×0.250L=0.05molM(NaOH)=23+16+1=40g/molm(NaOH)=0.05mol×40g/mol=2.0g</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-8配制一定物质的量浓度溶液时，下列操作对浓度有何影响（填&quot;偏大&quot;&quot;偏小&quot;&quot;无影响&quot;）：(1)溶解后未冷却即转移至容量瓶中______(2)定容时液面超过刻度线，用胶头滴管吸出多余部分______(3)转移时有少量溶液溅出______</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】(1)偏大——热溶液体积膨胀，冷却后液面下降，实际偏小，c偏大。V(2)偏小——吸出多余部分时也吸走了溶质，n偏小，c偏小。(3)偏小——溶质损失，n偏小，c偏小。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p><strong>Q1-9</strong>实验室需用 480 mL 0.10 mol/L 的 CuSO4 溶液，应选用容量瓶的规格和称取胆矾（CuSO4·5H2O）的质量分别是？</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>容量瓶规格只有 500 mL，没有 480 mL，应选用 <strong>500 mL</strong> 容量瓶。</p>
+<p>n(CuSO4) = 0.10 mol/L × 0.500 L = 0.05 molM(CuSO4·5H2O) = 64 + 32 + 16×4 + 5×18 = 250 g/molm = 0.05 mol × 250 g/mol = <strong>12.5 g</strong></p>
+<div class="h3c" style="color:#047857"><strong>考点4 巩固题（平均摩尔质量）</strong></div>
+<p><strong>Q1-10</strong>某混合气体由 CH4 和 C2H6 组成，其对 H2 的相对密度为 12.5，求 CH4 与 C2H6 的物质的量之比。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>M平 = D × M(H2) = 12.5 × 2 = 25 g/molM(CH4)=16，M(C2H6)=30设 n(CH4)=x，n(C2H6)=y16x + 30y = 25(x+y) → 16x+30y = 25x+25y → 5y = 9x → x : y = 5 : 9n(CH4) : n(C2H6) = <strong>5 : 9</strong></p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-11标准状况下，测得0.50某气体的体积为0.28L，求该气体的摩尔质量。g</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】n=V/Vm=0.28L/22.4L/mol=0.0125molM=m/n=0.50g/0.0125mol=40g/mol</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-12</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点5 巩固题（十字交叉法）</strong></div><table class="ptable"><tr><th>&#160;</th><th>和的混合气体18g，完全燃烧后测得体积为11.2L（标况），求原混合气体COCO2CO2的平均摩尔质量。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【答案与解析】燃烧反应：2CO+O2=2CO2最终总量CO2n=11.2/22.4=0.5mol设原为为mol，则0.5（碳守恒），28xmol，CO2COxyx+y=+44y=18解：28x+44(0.5−x)=18→28x+22−44x=18→−16x=−4→x=0.25,y=0.25=18/0.5=M平36g/mol</td><td>&#160;</td></tr></table>
+<p><strong>Q1-13</strong>用 65% 的浓 HNO3（密度 1.4 g/mL）和 10% 的稀 HNO3（密度 1.05 g/mL）配制 30% 的HNO3 溶液，求两种溶液的质量比。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>十字交叉法：65% → 30−10=20      ╲╱      30%      ╱╲10% → 65−30=35m(浓) : m(稀) = 20 : 35 = <strong>4 : 7</strong><strong>Q1-14</strong>O2 和 O3 的混合气体中氧元素的质量分数为 90%，求 O2 与 O3 的物质的量之比。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>O2 中 O%=100%，O3 中 O%=100%——两者都是纯氧元素，质量分数均为100%，无法用十字交叉法根据氧元素质量分数区分。</p>
+<p>正确思路：设 O2 x mol，O3 y mol，总质量 = 32x + 48y，氧元素质量 = 32x +48y</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>此数据不足以求解。题目可能想考察的是平均摩尔质量：M平32x+48y/(x+y)。=此题数据有误，不适用十字交叉法。（说明：此题旨在让学生意识到十字交叉法需满足&quot;可加和性&quot;前提。）</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q1-15已知空气中和的体积比约为4:1，求空气的平均摩尔质量。N2O2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】对气体，体积比=物质的量比。=(4×28+1×32)/5=(112+32)/5=144/5=M平28.8g/mol（通常取29作为空气的平均摩尔质量。）g/mol</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>四、易错警示</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>⚠</td><td>专题01易错点警示·标况条件：必须同时满足0°C和101kPa，只提&quot;标准状况&quot;才可用L/mol。Vm=22.4·物质状态：标况下H2O、SO3、CCl4、酒精、苯、碳原子数≥5的烷烃均为非气态。·粒子种类：注意问的是&quot;原子数&quot;还是&quot;分子数&quot;，是&quot;质子数&quot;还是&quot;电子数&quot;。·容量瓶规格：常见规格为50mL，配制时选mL、100mL、250mL、500mL、1000择&quot;大于且最接近&quot;所需体积的规格。·定容操作：距刻度线1~2处必须改用胶头滴管，不能直接倾倒。cm·十字交叉法注意：仅适用于两组分混合、可加和的物理量（如质量、物质的量、摩尔质量），不适用于体积（非理想混合）或不可加和的量。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

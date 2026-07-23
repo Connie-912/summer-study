@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题04 · 钠及其化合物 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题04 · 钠及其化合物</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题04 · 钠及其化合物</h2><div class="hero-sub">化学暑假衔接 · 第 32-39 页</div><div class="hero-meta"><span>📄 8 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题04 · 钠及其化合物</strong></div><p style="color:#6b7280">钠是典型的活泼金属，其化合物之间存在清晰完整的转化关系网络。掌握化学方程式书写和物质性质对比是学习本专题的关键。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：</strong><strong>Na / Na</strong><strong>2</strong><strong>O / Na</strong><strong>2</strong><strong>O</strong><strong>2</strong><strong> / Na</strong><strong>2</strong><strong>CO</strong><strong>3</strong><strong> / NaHCO</strong><strong>3</strong><strong> 的</strong></div>
+<div class="h3c" style="color:#047857"><strong>转化关系</strong></div>
+<div class="h3c" style="color:#10b981"><strong>钠及其化合物转化关系图</strong></div>
+<table class="ptable"><tr><th style="background:#047857">转化</th><th style="background:#047857">化学方程式</th><th style="background:#047857">条件/备注</th></tr><tr><td>Na→Na2O</td><td>4Na+O2=2Na2O</td><td>常温，缓慢氧化</td></tr><tr><td>Na→Na2O2</td><td>2Na+O2=Na2O2</td><td>点燃/加热</td></tr><tr><td>Na→NaOH</td><td>2Na+2H2O=H2↑2NaOH+</td><td>常温，剧烈反应</td></tr><tr><td>Na2O→NaOH</td><td>Na2O+H2O=2NaOH</td><td>—</td></tr><tr><td>Na2O2→NaOH</td><td>2Na2O2+2H2O=O2↑4NaOH+</td><td>—</td></tr><tr><td>NaOH→Na2CO3</td><td>=2NaOH+CO2Na2CO3+H2O</td><td>少量CO2</td></tr><tr><td>NaOH→NaHCO3</td><td>=NaOH+CO2NaHCO3</td><td>过量CO2</td></tr><tr><td>Na2CO3→NaHCO3</td><td>&#160;</td><td>—</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="chip" style="background:#16a34a;margin-top:0">性</div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>Na2CO3+CO2+H2O=2NaHCO3</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>NaHCO3→Na2CO3</td><td>2NaHCO3=Na2CO3+CO2↑+H2O</td><td>加热</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>Na2O2→Na2CO3</td><td>=2Na2O2+2CO22Na2CO3+O2</td><td>—</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>与Na2CO3NaHCO3</td><td>对比</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">Na2CO3</th><th style="background:#10b981">NaHCO3</th></tr><tr><td>纯碱、苏打</td><td>小苏打</td></tr><tr><td>易溶</td><td>可溶（溶解度较小）</td></tr><tr><td>稳定，加热不分解</td><td>不稳定，加热分解</td></tr><tr><td>2−+2H+=H2O+CO2↑CO3（分步）</td><td>−+H+=H2O+CO2↑HCO3（立即）</td></tr><tr><td>与产生Ca(OH)2/Ba(OH)2沉淀</td><td>−+OH−=CO32−+H2OHCO3</td></tr></table>
+<p>俗名溶解　易溶　可溶（溶解度较小）性热稳定性与酸　CO3　HCO3反应与反　沉淀应</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点2：焰色反应</strong></div><div class="h3c" style="color:#10b981"><strong>焰色反应要点</strong></div>
+<p>焰色反应是<strong>物理变化</strong>（不是化学变化），是金属元素的性质。</p>
+<table class="ptable"><tr><th style="background:#10b981">元素</th><th style="background:#10b981">Na</th><th style="background:#10b981">K</th><th style="background:#10b981">Ca</th><th style="background:#10b981">Sr</th><th style="background:#10b981">Ba</th><th style="background:#10b981">Cu</th></tr><tr><td>焰色</td><td>黄色</td><td>紫色（需透过蓝色钴玻璃）</td><td>砖红色</td><td>洋红色</td><td>黄绿色</td><td>绿色</td></tr><tr><td>&#160;</td><td>&#160;</td><td>操作：用铂丝（或铁丝）蘸取样品，在酒精灯火焰上灼烧。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#047857"><strong>考点3：侯氏制碱法（联合制碱法）</strong></div>
+<div class="h3c" style="color:#10b981"><strong>侯德榜制碱法原理</strong></div>
+<p>NH3 + CO2 + H2O + NaCl = NaHCO3↓ +NH4Cl2NaHCO3 = Na2CO3 + CO2↑ + H2O（煅烧）</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>关键：先通使溶液呈碱性，再通CO2，利用溶解度较小而析NH3NaHCO3出。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>二、典例破题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>将A.</td><td>【典例1】Na2O2的性质投入含有酚酞的水中，观察到的现象是（）Na2O2溶液变红，无气泡溶液变红，有气泡，后褪色溶液不变色溶B.C.D.液变蓝</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】B</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#2563eb"><strong>【典例3】侯氏制碱法</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>O2↑2Na2O2+2H2O=4NaOH+生成使酚酞变红，同时产生气泡。Na2O2具有强氧化性NaOHO2和漂白性，会使红色褪去。故现象为：先变红，有气泡，后褪色。选B。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>A.B.C.D.</td><td>【典例2】Na2CO3与鉴别NaHCO3鉴别和两种白色固体的方法中，不可行的是（）Na2CO3NaHCO3分别加热，观察是否产生使澄清石灰水变浑浊的气体分别溶于水，比较溶解度分别滴加同浓度盐酸，比较反应速率分别加入溶液，观察是否产生沉淀BaCl2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】D加热分解产生不分解。CO2，Na2CO3A√NaHCO3溶解度大于NaHCO3。B√Na2CO3与盐酸反应立即产生气泡，Na2CO3先无气泡后产生C√NaHCO32−+H+=HCO3−，HCO3−+H+=H2O+CO2↑）。（分步反应：CO3Na2CO3+BaCl2=BaCO3↓+2NaCl，但与不D×NaHCO3BaCl2反应。看似可行，但题目要求选&quot;不可行&quot;的——实际上也可行，但D若溶液中加再加碱也会产生BaCO3。不过单纯加NaHCO3BaCl2确实可以区分：Na2CO3产生沉淀，NaHCO3不产生。所以这BaCl2道题四个方法都可行。重新审视：实际上是可行的（Na2CO3产生D沉淀，NaHCO3不产生），所以此题四个都可行，但有时BaCO3D−被误认为不可行，因为溶液中浓度不够大。NaHCO3HCO3（注：此题四个选项均可行，常见争议在D。严格来说直接加BaCl2可以区分。）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>侯氏制碱法中，先向饱和食盐水中通入的气体是______，后通入的气体是______，析出的晶体是______，煅烧该晶体得到的产物是______。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>先通 <strong>NH</strong><strong>3</strong>，后通 <strong>CO</strong><strong>2</strong>。</p>
+<p>原因：NH3 溶解度极大（1 体积水溶解约 700 体积 NH3），先通NH3 使溶液呈碱性，有利于 CO2 的吸收（CO2 在水中溶解度小，在碱性溶液中溶解度大）。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th style="background:#3b82f6">析出晶体：NaHCO3（溶解度较小）煅烧产物：Na2CO3（纯碱）</th><th style="background:#3b82f6">&#160;</th><th style="background:#3b82f6">&#160;</th><th style="background:#3b82f6">&#160;</th></tr><tr><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>考点1巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q4-1</strong>写出下列反应的化学方程式：(1) Na 与 CuSO4 溶液反应(2) Na2O2 与 CO2 反应(3) NaHCO3 溶液与 NaOH 溶液反应</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) Na 先与水反应，生成的 NaOH 再与 CuSO4 反应：2Na + 2H2O = 2NaOH + H2↑2NaOH + CuSO4 = Cu(OH)2↓ + Na2SO4总：<strong>2Na + 2H</strong><strong>2</strong><strong>O + CuSO</strong><strong>4</strong><strong> = Cu(OH)</strong><strong>2</strong><strong>↓ + Na</strong><strong>2</strong><strong>SO</strong><strong>4</strong><strong> + H</strong><strong>2</strong><strong>↑</strong>(2) <strong>2Na</strong><strong>2</strong><strong>O</strong><strong>2</strong><strong> + 2CO</strong><strong>2</strong><strong> = 2Na</strong><strong>2</strong><strong>CO</strong><strong>3</strong><strong> + O</strong><strong>2</strong>（Na2O2 既是氧化剂又是还原剂）−(3) <strong>NaHCO</strong><strong>3</strong><strong> + NaOH = Na</strong><strong>2</strong><strong>CO</strong><strong>3</strong><strong> + H</strong><strong>2</strong><strong>O</strong>（离子：HCO3+OH−=CO32−+H2O）<strong>Q4-2</strong>将 2.3 g 金属钠投入 100 g 水中，求反应后溶液中溶质的质量分数。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>n(Na) = 2.3 / 23 = 0.1 mol2Na + 2H2O = 2NaOH + H2↑n(NaOH) = 0.1 mol，m(NaOH) = 0.1 × 40 = 4 gn(H2) = 0.05 mol，m(H2) = 0.05 × 2 = 0.1 g溶液质量 = 2.3 + 100 − 0.1 = 102.2 gw(NaOH) = 4 / 102.2 × 100% = <strong>3.91%</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p><strong>Q4-3</strong>Na2O2 与 H2O 反应中，氧化剂是______，还原剂是______，每生成 1 molO2 转移电子______mol。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>2Na2O2 + 2H2O = 4NaOH + O2↑Na2O2 中 O 为 −1 价，发生歧化反应：一半 O 升到 0 价（O2），一半降到 −2 价（NaOH）。</p>
+<p>氧化剂：<strong>Na</strong><strong>2</strong><strong>O</strong><strong>2</strong>（含降价 O）；还原剂：<strong>Na</strong><strong>2</strong><strong>O</strong><strong>2</strong>（含升价 O）每生成 1 mol O2（2 mol O 原子从 −1→0，失 2 mol e−），同时有2 mol O 从 −1→−2，得 2 mol e−。转移电子：<strong>2 mol</strong>。</p>
+<div class="h3c" style="color:#047857"><strong>考点2 巩固题</strong></div>
+<p><strong>Q4-4</strong>下列关于焰色反应的说法正确的是（ ）A. 焰色反应是化学变化B. 所有金属元素都有焰色反应C. 观察钾的焰色需透过蓝色钴玻璃D. 焰色反应可用于鉴别所有金属元素</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>C</strong></div>
+<p>A × 焰色反应是物理变化（电子跃迁发光）。</p>
+<p>B × 不是所有金属都有特征焰色（如 Fe、Pt 等无明显焰色）。</p>
+<p>C √ K 的紫色焰色易被 Na 的黄色干扰，需透过蓝色钴玻璃滤去黄光。</p>
+<p>D × 只能鉴别部分金属元素。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q4-5某物质焰色反应呈黄色，说明该物质中一定含有______元素，可能含有______元素。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】一定含有元素（黄色焰色是钠的特征焰色）。Na</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>可能含有元素（K的紫色焰色可能被的黄色掩盖，需透过蓝色KNa钴玻璃观察确认）。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q4-6做焰色反应实验时，铂丝在使用前需用______清洗，并在火焰上灼烧至______。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】用稀盐酸清洗，灼烧至火焰无色（与原来火焰颜色相同）。原因：稀盐酸可溶解金属氧化物和盐类，且盐酸易挥发，灼烧后不残留。不能用稀硫酸（生成难挥发的硫酸盐残留）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>考点3</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q4-7侯氏制碱法中，母液中可回收的副产品是______，循环使用的物质是______。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】副产品：NH4Cl（可作氮肥）循环使用：CO2（NaHCO3煅烧产生的可回收利用）CO2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>53</td><td>Q4-8写出侯氏制碱法中由制取的化学方程式，并计算：若制取NaHCO3Na2CO3Na2CO3，需要多少克？gNaHCO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】2NaHCO3=Na2CO3+CO2↑+H2On(Na2CO3)=53/106=0.5moln(NaHCO3)=2×0.5=1molm(NaHCO3)=1×84=84g</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q4-9将通入溶液中，可能发生的反应有哪两个？如何判断产物是CO2NaOH还是NaHCO3？Na2CO3</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】反应①：CO2H2O（n(CO2):n(NaOH)+2NaOH=Na2CO3+≤1:2）反应②：CO2NaHCO3（n(CO2):n(NaOH)1:1）+NaOH=≥判断方法：当时，产物为Na2CO3；n(CO2)/n(NaOH)≤1/2当1/2&lt;时，产物为和的n(CO2)/n(NaOH)&lt;1Na2CO3NaHCO3混合物；当时，产物为NaHCO3。n(CO2)/n(NaOH)≥1</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c"><strong>四、易错警示</strong></div>
+<div class="h3c" style="color:#d97706"><strong>⚠ 专题04 易错点警示</strong></div>
+<div class="h3c" style="color:#92400e">· <strong>Na </strong><strong>与盐溶液反应：</strong>Na 先与水反应，不能直接置换出金属（如 Na 投入</div>
+<p style="color:#92400e">CuSO4 溶液生成 Cu(OH)2 沉淀而非 Cu）。</p>
+<div class="h3c" style="color:#92400e">· <strong>Na</strong><strong>2</strong><strong>O</strong><strong>2</strong><strong> 不是碱性氧化物：</strong>Na2O2 与 H2O/CO2 反应除生成碱/盐外还生成</div>
+<p style="color:#92400e">O2，属于过氧化物，不是碱性氧化物。Na2O 才是碱性氧化物。</p>
+<div class="h3c" style="color:#92400e">2−· <strong>Na</strong><strong>2</strong><strong>CO</strong><strong>3</strong><strong> 与盐酸反应：</strong>分步进行，刚开始无明显现象（CO3</div>
+<p style="color:#92400e">+H+=HCO3−），继续加酸才产生气泡（HCO3−+H+=H2O+CO2↑）。</p>
+<div class="h3c" style="color:#92400e">− 浓度· <strong>侯氏制碱法先通 </strong><strong>NH</strong><strong>3</strong><strong>：</strong>若先通 CO2，CO2 溶解度小，溶液中 HCO3</div>
+<p style="color:#92400e">太低，无法析出 NaHCO3。</p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

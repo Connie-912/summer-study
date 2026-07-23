@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新高二暑假智能学习系统</title>
 <style>
 /* ========== CSS 变量 ========== */
@@ -2242,63 +2242,63 @@ const SUBJECTS = [
     materialPath: 'materials/chinese.html',
     teacher: { name: '\u82CF\u8001\u5E08', title: '\u9AD8\u7EA7\u8BED\u6587\u6559\u5E08\u00B720\u5E74\u6559\u9F84', avatar: '\u{1F469}\u{200D}\u{1F3EB}', style: '\u6E29\u6587\u5C14\u96C5\uFF0C\u8BF4\u8BDD\u5E38\u5F15\u7528\u53E4\u8BD7\u6587\uFF0C\u6CE8\u91CD\u9605\u8BFB\u7406\u89E3\u548C\u5199\u4F5C\u65B9\u6CD5' },
     topics: ['现代文阅读基础', '文言文实词虚词', '古诗词鉴赏', '名篇名句默写', '语言文字运用', '作文审题立意', '作文结构布局', '传统文化常识'],
-    score: 80, priority: 3, group: 'core'
+    score: null, priority: 3, group: 'core'
   },
   {
     id: 'math', name: '数学', icon: '\u{1F4D0}', color: '#2563eb',
     materialPath: 'materials/math.html',
     teacher: { name: '\u9648\u8001\u5E08', title: '\u6570\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u5965\u8D5B\u6559\u7EC3', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u4E25\u8C28\u8010\u5FC3\uFF0C\u5F3A\u8C03\u6BCF\u4E00\u6B65\u90FD\u8981\u6709\u4F9D\u636E\uFF0C\u6CE8\u91CD\u89E3\u9898\u65B9\u6CD5\u548C\u601D\u7EF4\u8BAD\u7EC3' },
     topics: ['平面向量', '解三角形', '等差与等比数列', '数列求通项与求和', '函数概念与基本性质', '指数与对数函数', '函数零点与方程', '不等式基础'],
-    score: 41, priority: 0, group: 'core'
+    score: null, priority: 0, group: 'core'
   },
   {
     id: 'english', name: '英语', icon: '\u{1F524}', color: '#8b5cf6',
     materialPath: 'materials/english.html',
     teacher: { name: 'Lily\u8001\u5E08', title: '\u82F1\u8BED\u9AA8\u5E72\u6559\u5E08\u00B7\u96C5\u601D8\u5206', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6D3B\u6CFC\u9F13\u52B1\uFF0C\u4E2D\u82F1\u5939\u6742\uFF0C\u6CE8\u91CD\u8BED\u611F\u548C\u505A\u9898\u6280\u5DE7\uFF0C\u9F13\u52B1\u5B66\u751F\u5927\u80C6\u5C1D\u8BD5' },
     topics: ['时态语态', '非谓语动词', '定语从句', '名词性从句', '状语从句', '完形填空', '阅读理解', '书面表达'],
-    score: 42, priority: 0, group: 'core'
+    score: null, priority: 0, group: 'core'
   },
   {
     id: 'physics', name: '物理', icon: '\u269B\uFE0F', color: '#f59e0b',
     materialPath: 'materials/physics.html',
     teacher: { name: '\u738B\u8001\u5E08', title: '\u7269\u7406\u9AD8\u7EA7\u6559\u5E08\u00B7\u5B9E\u9A8C\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F52C}', style: '\u70ED\u7231\u5B9E\u9A8C\uFF0C\u559C\u6B22\u7528\u751F\u6D3B\u4F8B\u5B50\u89E3\u91CA\u6982\u5FF5\uFF0C\u6CE8\u91CD\u7269\u7406\u6A21\u578B\u5EFA\u7ACB' },
     topics: ['匀变速直线运动', '相互作用与平衡', '牛顿运动定律', '曲线运动', '万有引力与航天', '功和能', '动量与动量守恒', '电场基础'],
-    score: 0, priority: 1, group: 'core'
+    score: null, priority: 1, group: 'core'
   },
   {
     id: 'chemistry', name: '化学', icon: '\u{1F9EA}', color: '#10b981',
     materialPath: 'materials/chemistry.html',
     teacher: { name: '\u674E\u8001\u5E08', title: '\u5316\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u547D\u9898\u4E13\u5BB6', avatar: '\u{1F469}\u{200D}\u{1F52C}', style: '\u7EC6\u81F4\u4E25\u8C28\uFF0C\u5F3A\u8C03\u5316\u5B66\u65B9\u7A0B\u5F0F\u89C4\u8303\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u4E4B\u95F4\u7684\u8054\u7CFB' },
     topics: ['物质的分类与转化', '离子反应', '氧化还原反应', '钠及其化合物', '氯及其化合物', '物质的量', '铁及其化合物', '原子结构与元素周期律'],
-    score: 0, priority: 1, group: 'core'
+    score: null, priority: 1, group: 'core'
   },
   {
     id: 'biology', name: '生物', icon: '\u{1F9EC}', color: '#16a34a',
     materialPath: 'materials/biology.html',
     teacher: { name: '\u5468\u8001\u5E08', title: '\u751F\u7269\u9AA8\u5E72\u6559\u5E08\u00B7\u5E7D\u9ED8\u98CE\u8DA3', avatar: '\u{1F469}\u{200D}\u{1F393}', style: '\u6E29\u548C\u4EB2\u5207\uFF0C\u559C\u6B22\u7528\u56FE\u89E3\u548C\u7C7B\u6BD4\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u7406\u89E3\u548C\u8BB0\u5FC6\u7ED3\u5408' },
     topics: ['走近细胞', '组成细胞的分子', '细胞的基本结构', '细胞的物质输入和输出', '细胞的能量供应和利用', '细胞的生命历程', '遗传的细胞基础', '遗传的分子基础'],
-    score: 0, priority: 3, group: 'extra'
+    score: null, priority: 3, group: 'extra'
   },
   {
     id: 'history', name: '历史', icon: '\u{1F4DC}', color: '#991b1b',
     materialPath: 'materials/history.html',
     teacher: { name: '\u5F20\u8001\u5E08', title: '\u5386\u53F2\u9AD8\u7EA7\u6559\u5E08\u00B7\u6587\u53F2\u5B66\u8005', avatar: '\u{1F468}\u{200D}\u{1F393}', style: '\u77E5\u8BC6\u6E0A\u535A\uFF0C\u64C5\u957F\u8BB2\u6545\u4E8B\u548C\u6A2A\u5411\u5BF9\u6BD4\uFF0C\u6CE8\u91CD\u5386\u53F2\u601D\u7EF4\u548C\u65F6\u95F4\u7EBF' },
     topics: ['先秦时期', '秦汉时期', '魏晋南北朝', '隋唐时期', '辽宋夏金元', '明清时期', '中国近代史', '中国现代史'],
-    score: 46, priority: 2, group: 'core'
+    score: null, priority: 2, group: 'core'
   },
   {
     id: 'politics', name: '政治', icon: '\u2696\uFE0F', color: '#dc2626',
     materialPath: 'materials/politics.html',
     teacher: { name: '\u5218\u8001\u5E08', title: '\u653F\u6CBB\u9AA8\u5E72\u6559\u5E08\u00B7\u65F6\u653F\u8BC4\u8BBA\u5458', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6761\u7406\u6E05\u6670\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u70B9\u4E0E\u70ED\u70B9\u7ED3\u5408\uFF0C\u5F3A\u8C03\u7B54\u9898\u89C4\u8303' },
     topics: ['生活与消费', '生产劳动与经营', '收入与分配', '社会主义市场经济', '公民的政治生活', '为人民服务的政府', '社会主义民主政治', '哲学基础'],
-    score: 56, priority: 2, group: 'core'
+    score: null, priority: 2, group: 'core'
   },
   {
     id: 'geography', name: '地理', icon: '\u{1F30D}', color: '#0ea5e9',
     materialPath: 'materials/geography.html',
     teacher: { name: '\u8D75\u8001\u5E08', title: '\u5730\u7406\u7279\u7EA7\u6559\u5E08\u00B7\u91CE\u5916\u8003\u5BDF\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u7A7A\u95F4\u601D\u7EF4\u5F3A\uFF0C\u559C\u6B22\u753B\u56FE\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u5730\u56FE\u548C\u6570\u636E\u5206\u6790' },
     topics: ['地球与地图', '地球上的大气', '地球上的水', '地表形态的塑造', '自然地理环境的整体性与差异性', '人口与城市', '农业与工业区位', '交通运输与可持续发展'],
-    score: 50, priority: 2, group: 'core'
+    score: null, priority: 2, group: 'core'
   }
 ];
 
@@ -2365,6 +2365,7 @@ const DEFAULT_STATE = {
   currentSubject: null,
   currentTeacher: null,
   progress: {},
+  foundation: {},
   chatHistory: {},
   config: {
     apiEndpoint: 'https://api.deepseek.com/v1/chat/completions',
@@ -2373,11 +2374,7 @@ const DEFAULT_STATE = {
     nickname: '同学',
     goal: '未定'
   },
-  scores: {
-    chinese: 80, math: 41, english: 42,
-    physics: 0, chemistry: 0, biology: 0,
-    history: 46, politics: 56, geography: 50
-  },
+  scores: {},
   studyDays: [],
   examSettings: {
     subjects: [],
@@ -2419,17 +2416,70 @@ function saveState() {
   }
 }
 
+/* 基础补漏清单：每科最核心的地基知识，分数低的科目建议先补完再学衔接专题 */
+const FOUNDATION = {
+  math: [
+    ['方程与不等式基本功', '一元二次方程求根、因式分解、不等式解法'],
+    ['函数到底是什么', '自变量与因变量、图像、定义域值域，一次二次函数'],
+    ['指数与对数运算', '指数运算法则、对数的定义与换底公式'],
+    ['三角函数入门', '正弦余弦正切的定义、特殊角数值'],
+    ['直线与圆', '斜率、直线方程、点到直线距离、圆的方程']
+  ],
+  english: [
+    ['句子成分与五大句型', '主谓宾定状补，看懂长难句的第一步'],
+    ['八大时态一网打尽', '一般/进行/完成/完成进行，用时间轴理解'],
+    ['核心词汇1600', '高考最高频词，每天40个滚动背'],
+    ['音标与自然拼读', '会读才会背，背单词效率翻倍']
+  ],
+  chinese: [
+    ['现代汉语语法速成', '主谓宾定状补，病句题的理论基础'],
+    ['常见病句六大类型', '搭配不当、成分残缺、语序不当等'],
+    ['文言文入门方法', '实词怎么积累、怎么猜词义、特殊句式']
+  ],
+  physics: [
+    ['运动学基本概念', '位移vs路程、速度vs速率、加速度到底是什么'],
+    ['受力分析第一步', '重力弹力摩擦力，画图的基本规矩'],
+    ['单位与估算', '国际单位制与数量级感觉']
+  ],
+  chemistry: [
+    ['化学式与化合价', '会写化学式是一切的基础'],
+    ['物质的量入门', '摩尔是什么、为什么需要它'],
+    ['化学方程式书写', '配平方法与高频方程式']
+  ],
+  biology: [
+    ['认识细胞', '细胞膜与细胞器各自干什么'],
+    ['生物术语扫盲', '必修一最高频的30个名词']
+  ],
+  history: [
+    ['中国历史时间轴', '朝代顺序与重大节点，先搭骨架'],
+    ['历史因果分析法', '背景-经过-影响三步拆解任何事件']
+  ],
+  politics: [
+    ['经济生活关键词', '商品、货币、价值规律，用最生活的方式理解'],
+    ['政治答题三段式', '材料+原理+分析的答题套路']
+  ],
+  geography: [
+    ['地图三要素与经纬网', '方向、比例尺、图例，经纬度定位'],
+    ['地球运动基础', '自转与公转带来的昼夜、四季']
+  ]
+};
+
+/* 历史默认成绩（仅管理员账号首次登录时播种，普通新用户保持空白自己填） */
+const LEGACY_SCORES = { chinese: 80, math: 41, english: 42, history: 46, politics: 56, geography: 50 };
+
 /* ========== 工具函数 ========== */
 
 /* 获取科目分数（优先从 state 读取，兼容旧数据回退到 SUBJECTS 硬编码） */
 function getScore(subjectId) {
-  const s = SUBJECTS.find(sub => sub.id === subjectId);
-  const val = state.scores && state.scores[subjectId] !== undefined ? state.scores[subjectId] : (s ? s.score : 0);
-  return val;
+  if (state.scores && state.scores[subjectId] !== undefined && state.scores[subjectId] !== null) return state.scores[subjectId];
+  return null; // null = 未填写
+}
+function hasAnyScore() {
+  return !!(state.scores && Object.values(state.scores).some(v => v !== undefined && v !== null));
 }
 function getTotalScore() {
-  if (!state.scores) return 0;
-  return Object.values(state.scores).reduce((a, b) => a + b, 0);
+  if (!hasAnyScore()) return null;
+  return Object.values(state.scores).filter(v => v !== undefined && v !== null).reduce((a, b) => a + b, 0);
 }
 
 /* 获取问候语 */
@@ -2544,7 +2594,30 @@ function getSystemPrompt(subjectId) {
   const subject = SUBJECTS.find(s => s.id === subjectId);
   if (!subject) return '';
   const { completed, remaining } = getCompletedTopics(subjectId);
-  return `你是${subject.teacher.name}，${subject.teacher.title}。\n你的教学风格：${subject.teacher.style}\n\n你现在在辅导一名高一升高二的学生暑假复习${subject.name}。这名学生的情况：\n- 高一下学期转去学音乐（竹笛），文化课基础薄弱\n- 现在暑假正在系统补课\n- 已完成的专题：${completed.length > 0 ? completed.join('、') : '暂无'}\n- 未完成的专题：${remaining.length > 0 ? remaining.join('、') : '暂无'}\n\n请以你的教学风格回答学生的问题。要求：\n1. 回答要通俗易懂，适合基础薄弱的学生\n2. 多用例子和类比帮助理解\n3. 如果学生问的内容超出已学范围，可以先简单介绍，但建议先打好基础\n4. 适当鼓励学生，建立信心\n5. 回答要简洁，不要太长（每次回复控制在300字以内）\n6. 紧扣高考考点`;
+  const sc = getScore(subjectId);
+  const scoreLine = (sc !== null && sc > 0)
+    ? `期末${subject.name}${sc}分（满分150），基础比较薄弱，讲课要从最基本的概念入手，别默认她学过`
+    : `还没有${subject.name}成绩数据，先按基础薄弱来教，讲慢一点、细一点`;
+  return `你是${subject.teacher.name}，${subject.teacher.title}。
+你的教学风格：${subject.teacher.style}
+
+你正在给一名高一升高二的学生上${subject.name}暑假一对一私教课。学生情况：
+- ${scoreLine}
+- 已完成专题：${completed.length > 0 ? completed.join('、') : '暂无'}
+- 未完成专题：${remaining.length > 0 ? remaining.join('、') : '暂无'}
+
+【你的角色：主动主讲的老师，不是等学生提问的问答机器人】
+1. 每一轮回复都是"讲课"：先点明今天要解决的问题，再用生活化的例子把知识点讲透，最后留一个小问题或小练习让学生回想
+2. 学生没有明确提问时，顺着当前专题主动往下推进；学生提问时，回答完自然接回主线继续讲
+3. 适当鼓励学生，建立信心，但鼓励要具体，不空喊
+4. 每次回复控制在300字以内，紧扣高考考点
+
+【输出纪律，必须严格遵守】
+- 只写"说给学生听的话"，严禁任何动作、神态、语气的描写
+- 禁止使用括号描述动作神态，例如（微笑）（轻叩桌面）（语重心长）等一律不得出现
+- 不要用星号包裹动作描写
+- 直接以讲课内容开头，不要"好的""嗯""让我想想"这类口头禅
+`;
 }
 
 /* 获取离线回复 */
@@ -2592,7 +2665,7 @@ function selectTeacher(subjectId) {
   if (h.length === 0 && window.autoSpeakReply) {
     const teacher = SUBJECTS.find(s => s.id === subjectId);
     const { completed, remaining } = getCompletedTopics(subjectId);
-    window.autoSpeakReply(`你好！我是${teacher.teacher.name}，很高兴能帮助你复习${teacher.name}。你已经完成了${completed.length}个专题，还有${remaining.length}个专题待完成。有什么不懂的尽管问我！`);
+    window.autoSpeakReply(`你好！我是${teacher.teacher.name}。你的${teacher.name}课由我来带——不用等你想好问题，我会按专题主动往下讲，你随时打断我。已完成${completed.length}个专题，还有${remaining.length}个待完成。正在为你准备第一节课…`);
   }
 }
 
@@ -2767,7 +2840,7 @@ function getNextTopicInfo(subjectId) {
 /* 获取进度最落后的科目（P0-3，用于"下一步建议"） */
 function getWeakestSubject() {
   // 成绩优先：有分数记录时，优先补分数最低的科目（缺啥补啥）
-  const scored = SUBJECTS.filter(s => getScore(s.id) > 0);
+  const scored = SUBJECTS.filter(s => { const v = getScore(s.id); return v !== null && v > 0; });
   if (scored.length > 0) {
     let weakest = scored[0];
     scored.forEach(s => { if (getScore(s.id) < getScore(weakest.id)) weakest = s; });
@@ -2785,6 +2858,68 @@ function getWeakestSubject() {
     }
   });
   return weakest;
+}
+
+/* ========== 基础补漏 ========== */
+function renderFoundationCard(subject) {
+  const items = FOUNDATION[subject.id];
+  if (!items) return '';
+  if (!state.foundation) state.foundation = {};
+  const done = items.filter((_, i) => state.foundation[subject.id + '_f' + i]).length;
+  const sc = getScore(subject.id);
+  const lowScore = sc !== null && sc < 60;
+  const banner = lowScore
+    ? `<div style="font-size:12px;color:#b45309;background:#fef3c7;border:1px solid #fde68a;border-radius:8px;padding:8px 10px;margin-bottom:10px;">⚠️ 这科目前 <b>${sc}分</b>，直接学衔接专题会听不懂——<b>强烈建议先把下面的基础补漏过完</b>，再回来学专题。</div>`
+    : (sc === null ? `<div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">地基不牢，地动山摇。先把基础补漏过完，再学衔接专题会轻松很多。</div>` : '');
+  const rows = items.map((it, i) => {
+    const checked = state.foundation[subject.id + '_f' + i] ? 'checked' : '';
+    const completedClass = checked ? 'completed-text' : '';
+    return `
+      <div class="topic-list-item">
+        <div class="topic-checkbox ${checked}" onclick="event.stopPropagation();toggleFoundation('${subject.id}', ${i})">${checked ? '&#10003;' : ''}</div>
+        <div class="topic-info">
+          <div class="t-num">补漏 ${i + 1}</div>
+          <div class="t-name ${completedClass}">${it[0]}</div>
+          <div style="font-size:11px;color:var(--text-light);margin-top:2px;">${it[1]}</div>
+        </div>
+        <div class="topic-actions">
+          <button class="btn btn-primary btn-sm" onclick="event.stopPropagation();startFoundationLesson('${subject.id}', ${i})">补漏</button>
+        </div>
+      </div>`;
+  }).join('');
+  return `
+    <div class="card" style="margin-top:0;border-left:4px solid #f59e0b;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-size:14px;font-weight:600;">🧱 基础补漏（${done}/${items.length}）</span>
+        <span style="font-size:11px;color:var(--text-light);">先补地基，再盖高楼</span>
+      </div>
+      ${banner}
+      ${rows}
+    </div>`;
+}
+
+function toggleFoundation(subjectId, idx) {
+  if (!state.foundation) state.foundation = {};
+  const key = subjectId + '_f' + idx;
+  state.foundation[key] = !state.foundation[key];
+  saveState();
+  renderSubjects();
+}
+
+function startFoundationLesson(subjectId, idx) {
+  const subject = SUBJECTS.find(s => s.id === subjectId);
+  const item = (FOUNDATION[subjectId] || [])[idx];
+  if (!subject || !item) return;
+  state.currentTab = 'chat';
+  state.currentTeacher = subjectId;
+  saveState();
+  render();
+  setTimeout(() => {
+    const input = document.getElementById('chatInput');
+    if (!input) return;
+    input.value = `老师，我基础比较差，想从头补「${item[0]}」（${item[1]}）。请当我完全零基础，用最通俗的方式从头讲起，多举生活中的例子，讲完带我练一道最基础的题。`;
+    sendMessage();
+  }, 400);
 }
 
 /* ========== 渲染首页 ========== */
@@ -2942,9 +3077,9 @@ function renderHome() {
     <!-- 成绩概览 -->
     <div class="card">
       <div class="card-title">📝 高一期末成绩概览</div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">总分${getTotalScore()} · 找准薄弱点，暑假重点突破</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">${hasAnyScore() ? '总分' + getTotalScore() + ' · 找准薄弱点，暑假重点突破' : '还没有成绩数据——点右下角「我的」→ 成绩管理，填入期末分数，系统才能帮你找准薄弱点'}</div>
       <div class="score-grid">
-        ${SUBJECTS.filter(s => s.group === 'core').sort((a,b) => getScore(a.id) - getScore(b.id)).map(s => {
+        ${SUBJECTS.filter(s => s.group === 'core').sort((a,b) => { const sa = getScore(a.id), sb = getScore(b.id); return (sa === null ? 999 : sa) - (sb === null ? 999 : sb); }).map(s => {
           const sc = getScore(s.id);
           return `
           <div class="score-item">
@@ -2953,7 +3088,9 @@ function renderHome() {
               <span>${s.icon} ${s.name}</span>
             </div>
             <div class="score-bar-track">
-              <div class="score-bar-fill" style="width:${Math.max(sc, 5)}%;background:${s.color};">${sc > 0 ? sc + '分' : '未考'}</div>
+              ${sc === null
+                ? '<div class="score-bar-fill" style="width:100%;background:#e2e8f0;color:#94a3b8;">未填</div>'
+                : '<div class="score-bar-fill" style="width:' + Math.max(sc, 5) + '%;background:' + s.color + ';">' + sc + '分</div>'}
             </div>
           </div>`;
         }).join('')}
@@ -2997,7 +3134,7 @@ function renderSubjects() {
         const checked = state.progress[`${s.id}_${i}`] ? 'completed' : '';
         return `<div class="topic-dot ${checked}"></div>`;
       }).join('');
-      const scoreTag = getScore(s.id) > 0 ? `<span style="font-size:11px;color:${s.color};background:${s.color}15;padding:2px 6px;border-radius:4px;margin-left:6px;">${getScore(s.id)}分</span>` : '';
+      const __sc = getScore(s.id); const scoreTag = (__sc !== null && __sc > 0) ? `<span style="font-size:11px;color:${s.color};background:${s.color}15;padding:2px 6px;border-radius:4px;margin-left:6px;">${__sc}分</span>` : '';
       const priorityTag = s.priority <= 1 ? `<span style="font-size:10px;color:var(--danger);margin-left:4px;">●</span>` : '';
 
       html += `
@@ -3064,7 +3201,7 @@ function renderSubjects() {
           </div>
           <div class="topic-actions">
             <button class="btn btn-primary btn-sm" onclick="event.stopPropagation();startLecture('${subject.id}', ${i})">讲课</button>
-            <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();window.open('${topicPage}','_blank')">资料</button>
+            <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();location.href='${topicPage}'">资料</button>
             <button class="btn btn-outline btn-sm quiz-entry" onclick="event.stopPropagation();startPracticeQuiz('${subject.id}', ${i})">练习</button>
           </div>
         </div>`;
@@ -3083,6 +3220,7 @@ function renderSubjects() {
         <button class="btn btn-primary btn-block btn-ask" style="margin-bottom:10px;" onclick="switchTab('chat');selectTeacher('${subject.id}')">💬 向${subject.teacher.name}提问</button>
         <button class="btn btn-outline btn-block" style="margin-bottom:12px;" onclick="startPracticeQuiz('${subject.id}', null)">📝 课后练习（5道精选题 · 做完出答案）</button>
       </div>
+      ${renderFoundationCard(subject)}
       <div class="card" style="margin-top:0;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
           <span style="font-size:14px;font-weight:600;">学习专题 (${p.completed}/8)</span>
@@ -3972,7 +4110,7 @@ function renderChat() {
       return `
       <div class="chat-msg ${msg.role}">
         <div class="msg-avatar">${avatar}</div>
-        <div class="msg-bubble" id="${msgId}">${renderMarkdown(msg.content)}
+        <div class="msg-bubble" id="${msgId}">${renderMarkdown((window.cleanStageText || function(x){return x;})(msg.content))}
           <div class="tts-bar" onclick="speakMessage('${msgId}', this)">
             <span class="tts-btn">&#128264;</span> <span class="tts-label">朗读</span>
           </div>
@@ -4012,6 +4150,19 @@ function renderChat() {
   const chatArea = document.getElementById('chatArea');
   if (chatArea) {
     chatArea.scrollTop = chatArea.scrollHeight;
+  }
+
+  // 主动主讲：第一次进入某位老师的课堂且在线时，老师自动开讲第一节课
+  if (history.length === 0 && ONLINE && typeof getToken === 'function' && getToken() && !window.__kickoffBusy) {
+    window.__kickoffBusy = true;
+    setTimeout(function () {
+      try {
+        var input = document.getElementById('chatInput');
+        if (!input || (state.chatHistory[state.currentTeacher] || []).length > 0) { window.__kickoffBusy = false; return; }
+        input.value = '老师好，我来了，我们开始上课吧。';
+        sendMessage().finally(function () { window.__kickoffBusy = false; });
+      } catch (e) { window.__kickoffBusy = false; }
+    }, 600);
   }
 
   // 自适应输入框高度
@@ -4177,6 +4328,7 @@ async function sendMessage() {
     ttsBuf = '';
 
     // 保存完整回复
+    content = (typeof window.cleanStageText === 'function') ? window.cleanStageText(content) : content;
     state.chatHistory[subjectId].push({ role: 'assistant', content: content, timestamp: Date.now() });
     saveState();
 
@@ -4370,14 +4522,14 @@ function renderMe() {
 
     <div class="card">
       <div class="card-title">📝 成绩录入</div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">修改各科期末成绩，首页概览会自动更新</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">填入各科期末成绩（没考的科目留空），首页概览和薄弱科推荐会自动更新</div>
       <div class="score-edit-grid">
         ${SUBJECTS.filter(s => s.group === 'core').map(s => `
           <div class="score-edit-item">
             <label>${s.icon} ${s.name}</label>
-            <input type="number" min="0" max="150" class="score-input"
-              value="${getScore(s.id)}"
-              onchange="updateScore('${s.id}', parseInt(this.value) || 0)">
+            <input type="number" min="0" max="150" class="score-input" placeholder="未填"
+              value="${getScore(s.id) === null ? '' : getScore(s.id)}"
+              onchange="updateScore('${s.id}', this.value === '' ? null : (parseInt(this.value) || 0))">
           </div>
         `).join('')}
       </div>
@@ -4411,7 +4563,11 @@ function updateNickname(name) {
 /* 更新分数 */
 function updateScore(subjectId, val) {
   if (!state.scores) state.scores = {};
-  state.scores[subjectId] = Math.max(0, Math.min(150, val || 0));
+  if (val === null || val === undefined || isNaN(val)) {
+    delete state.scores[subjectId];
+  } else {
+    state.scores[subjectId] = Math.max(0, Math.min(150, val));
+  }
   saveState();
   render();
   showEncourage('📝 成绩已更新，首页概览已自动调整');
@@ -4994,9 +5150,15 @@ render();
   /* ---------- 句子队列朗读：边出字边讲（流式跟读） ---------- */
   var ttsQueue = [];
 
-  function cleanTTSText(s) {
-    return String(s).replace(/[#*>`|\[\]]/g, '').replace(/【|】/g, '').replace(/\s+/g, ' ').trim();
+  // 舞台指示（动作/神态描写）只留在后台，不朗读也不显示
+  const STAGE_RE = /[（(][^（）()]{0,30}(?:含笑|轻叩|微笑|点头|摇头|皱眉|眨眼|叹气|挥手|转身|停顿|沉吟|语重心长|忍俊不禁|轻笑|笑着说|说道|想了想|看着|拿起|放下|敲了敲|拍了拍|神秘一笑|欣慰|鼓励地|温柔地|严肃地|认真地)[^（）()]{0,30}[)）]/g;
+  function cleanStageText(s) {
+    return String(s).replace(STAGE_RE, '').replace(/\*[^*]{2,40}\*/g, '').replace(/ {2,}/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
   }
+  function cleanTTSText(s) {
+    return cleanStageText(s).replace(/[#*>`|\[\]]/g, '').replace(/【|】/g, '').replace(/\s+/g, ' ').trim();
+  }
+  window.cleanStageText = cleanStageText;
 
   function pumpTTS() {
     if (ttsSpeaking || !ttsQueue.length) return;
@@ -5076,6 +5238,10 @@ render();
     if (!t) return;
     state.config.apiEndpoint = location.origin + '/api/ai';
     state.config.apiKey = t;
+    // 老设备兜底：管理员令牌且从未播种成绩时，补种历史默认成绩
+    if ((t === '9104c1a9c10083691d3733d5247a368f7c4d4cd6ad03a84e' || localStorage.getItem('studyAdmin') === '1') && !hasAnyScore()) {
+      state.scores = Object.assign({}, LEGACY_SCORES);
+    }
     try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
   }
 
@@ -5133,6 +5299,12 @@ render();
 
     function afterAuth(d) {
       setToken(d.token);
+      if (d.admin) {
+        try { localStorage.setItem('studyAdmin', '1'); } catch (e) {}
+        if (!hasAnyScore()) { state.scores = Object.assign({}, LEGACY_SCORES); }
+      } else {
+        try { localStorage.removeItem('studyAdmin'); } catch (e) {}
+      }
       if (d.name) {
         if (!state.config) state.config = {};
         state.config.nickname = d.name;

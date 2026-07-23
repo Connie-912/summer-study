@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题二：组成细胞的分子——糖类、脂质、蛋白质、核酸 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题二：组成细胞的分子——糖类、脂质、蛋白质、核酸</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题二：组成细胞的分子——糖类、脂质、蛋白质、核酸</h2><div class="hero-sub">生物暑假衔接 · 第 7-12 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>专题二：组成细胞的分子——糖类、脂质、蛋白质、核酸</td></tr><tr><td>&#160;</td><td>一、知识精讲组成细胞的元素和化合物1.</td></tr><tr><td>&#160;</td><td>大量元素：C、H、O、N、P、S、K、Ca、Mg等（含量占生物体总重量万分之一以上）微量元素：Fe、Mn、Zn、Cu、B、Mo等（含量很少，但必不可少）最基本元素：C（碳是生命系统的核心元素）基本元素：C、H、O、N鲜重最多的元素：O；干重最多的元素：C</td></tr><tr><td>&#160;</td><td>水的存在形式和功能2.</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">存在形式</th><th style="background:#dcfce7;color:#166534">自由水</th><th style="background:#dcfce7;color:#166534">结合水</th></tr><tr><td>定义</td><td>以游离形式存在，可自由流动</td><td>与细胞内其他物质相结合</td></tr><tr><td>功能</td><td>良好溶剂、参与代谢反应、运输物质、调节体温</td><td>细胞结构的重要组成部分</td></tr><tr><td>比例变化</td><td>代谢旺盛时比例高</td><td>抗逆性（抗旱、抗寒）强时比例高</td></tr><tr><td>3.</td><td>糖类——主要的能源物质</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">分类</th><th style="background:#dcfce7;color:#166534">代表物质</th><th style="background:#dcfce7;color:#166534">特点/分布</th></tr><tr><td>单糖</td><td>葡萄糖、果糖、半乳糖、核糖、脱氧核糖</td><td>不能水解，可直接吸收；核糖和脱氧核糖构成核酸</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>蔗糖（葡萄糖+果糖）、麦二　蔗糖：植物；麦芽糖：植物（发芽小芽糖（葡萄糖+葡萄糖）、糖　麦）；乳糖：动物乳汁乳糖淀粉：植物储能；纤维素：植物细胞多　淀粉、纤维素、糖原、几丁壁；糖原：动物储能（肝糖原、肌糖糖　质原）</p>
+<div class="h3c" style="color:#15803d"><strong>特别提醒：</strong>纤维素是植物细胞壁的主要成分，但人和大多数动物体内没有分解纤维</div>
+<p>素的酶（某些微生物可以）。几丁质存在于真菌细胞壁和昆虫外骨骼中。</p>
+<div class="h3c" style="color:#15803d"><strong>4. </strong><strong>脂质</strong></div>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">种类</th><th style="background:#dcfce7;color:#166534">功能</th><th style="background:#dcfce7;color:#166534">特点</th></tr><tr><td>脂肪</td><td>储能、保温、缓冲和减压</td><td>相同质量下，脂肪氧化分解释放能量比糖类多</td></tr><tr><td>磷脂</td><td>构成生物膜的重要成分</td><td>由甘油、脂肪酸和磷酸等组成</td></tr></table>
+<p>胆固醇：构成动物细胞膜，参与脂质运输；</p>
+<p>固　属于脂质，但不是脂性激素：促进生殖器官发育；维生素D：促醇　肪进钙和磷的吸收</p>
+<div class="h3c" style="color:#15803d"><strong>5. </strong><strong>蛋白质</strong><strong>——</strong><strong>生命活动的主要承担者</strong></div>
+<div class="h3c" style="color:#15803d"><strong>基本单位：</strong>氨基酸（约21种）。每个氨基酸至少含有一个氨基（-NH₂）和一</div>
+<p>个羧基（-COOH），并且都有一个氨基和一个羧基连接在<strong>同一个碳原子</strong>上。</p>
+<p style="color:#15803d"><strong>结构通式：</strong> R基不同，氨基酸种类不同。</p>
+<div class="h3c" style="color:#15803d"><strong>脱水缩合：</strong>一个氨基酸的羧基与另一个氨基酸的氨基相连接，脱去一分子</div>
+<p>水，形成肽键（-CO-NH-）。</p>
+<div class="h3c" style="color:#15803d"><strong>计算规律：</strong></div>
+<p>肽键数 = 脱去水分子数 = 氨基酸数 - 肽链数• 蛋白质相对分子质量 = 氨基酸平均分子量 × 氨基酸数 - 18 × 脱去水分子• 数</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>至少含有的游离氨基/羧基数 = 肽链数• </p>
+<div class="h3c" style="color:#15803d"><strong>蛋白质多样性原因：</strong>氨基酸的种类、数目、排列顺序不同，以及肽链的空间</div>
+<p>结构不同。</p>
+<div class="h3c" style="color:#15803d"><strong>蛋白质功能：</strong>结构蛋白（如肌肉蛋白）、催化（酶）、运输（血红蛋白）、</div>
+<p>免疫（抗体）、调节（胰岛素）等。</p>
+<div class="h3c" style="color:#15803d"><strong>6. </strong><strong>核酸</strong><strong>——</strong><strong>遗传信息的携带者</strong></div>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">比较项目</th><th style="background:#dcfce7;color:#166534">DNA（脱氧核糖核酸）</th><th style="background:#dcfce7;color:#166534">RNA（核糖核酸）</th></tr><tr><td>五碳糖</td><td>脱氧核糖</td><td>核糖</td></tr><tr><td>含氮碱基</td><td>A、T、G、C</td><td>A、U、G、C</td></tr><tr><td>基本单位</td><td>脱氧核苷酸（4种）</td><td>核糖核苷酸（4种）</td></tr><tr><td>结构</td><td>双螺旋结构</td><td>通常为单链</td></tr><tr><td>分布</td><td>主要在细胞核，线粒体和叶绿体中也有少量</td><td>主要在细胞质（细胞核、线粒体、叶绿体、核糖体）</td></tr><tr><td>功能</td><td>储存遗传信息</td><td>参与蛋白质合成（mRNA、tRNA、rRNA）</td></tr><tr><td>&#160;</td><td>特别提醒：DNA特有碱基是T（胸腺嘧啶），RNA特有碱基是U（尿嘧啶）。细胞生物（原核和真核）都同时含有DNA和RNA，但遗传物质只有DNA。病毒只含一种核酸（DNA或RNA）。</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#15803d"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（蛋白质计算）</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#92400e"><strong>典例</strong><strong>3</strong><strong>（糖类和脂质）</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>某蛋白质由n条肽链组成，氨基酸的平均分子质量为a，该蛋白质所含的氨基酸数为b，则该蛋白质的相对分子质量约为（　）A.ab-18(n-b)B.ab-18(b-n)C.ab+18(b-n)D.ab+6n</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：蛋白质相对分子质量氨基酸总分子量脱去水分子的总分子量=-=18×(b-n)。因为脱去水分子数氨基酸数肽链数n。故选B。a×b-=-=b-</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>典例2（核酸辨析）下列关于DNA和RNA的叙述，正确的是（　）DNA和RNA中的五碳糖相同A.组成DNA的碱基有A、T、G、C，组成RNA的碱基有A、U、G、CB.DNA只分布在细胞核中，RNA只分布在细胞质中C.病毒同时含有DNA和RNAD.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：A错误，DNA含脱氧核糖，RNA含核糖。B正确。C错误，DNA主要在细胞核，线粒体和叶绿体中也有；RNA主要在细胞质，细胞核中也有（如mRNA在核内合成）。D错误，病毒只含一种核酸，DNA或RNA。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p style="color:#78350f">下列关于糖类和脂质的叙述，错误的是（　）A. 糖类是细胞主要的能源物质B. 脂肪是细胞内良好的储能物质C. 磷脂是所有细胞必不可少的脂质D. 胆固醇对人体有害，应该避免摄入 </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：D解析：胆固醇是构成动物细胞膜的重要成分，还参与血液中脂质的运输，是人体必需的。但过量摄入会导致心血管疾病，不是完全有害。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>5</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>练习1下列化合物中，属于脂质的是（　）淀粉　B.脂肪　C.胰岛素　D.纤维素A.</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习2由100个氨基酸形成两条肽链的蛋白质，该蛋白质中肽键数为（　）A.98B.99C.100D.101</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：A（肽键数98）=100-2=</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习3植物细胞和动物细胞中储存能量的多糖分别是（　）纤维素和糖原　B.淀粉和糖原　C.麦芽糖和乳糖　D.葡萄糖和糖原A.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习4下列关于水的叙述，错误的是（　）自由水是细胞内良好的溶剂A.结合水是细胞结构的重要组成成分B.自由水含量越高，细胞抗逆性越强C.结合水与自由水的比值，在抗旱植物中较高D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td></tr></table>
+<p>下列关于核酸的叙述，正确的是（　）A. 所有生物的遗传物质都是DNAB. DNA和RNA的基本单位都是核苷酸C. 细胞中的DNA只分布在细胞核内D. 病毒的遗传物质是DNA或RNA，也可以是蛋白质 </p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>四、易错警示</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：B</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<div class="h3c" style="color:#991b1b"><strong>常见错误与混淆点</strong></div>
+<div class="h3c" style="color:#15803d"><strong>混淆</strong><strong>&quot;</strong><strong>主要能源物质</strong><strong>&quot;</strong><strong>和</strong><strong>&quot;</strong><strong>主要储能物质</strong><strong>&quot;</strong><strong>：</strong>糖类是主要能源物质，脂肪是主• </div>
+<p>要储能物质，ATP是直接能源物质。</p>
+<div class="h3c" style="color:#15803d"><strong>纤维素</strong><strong>≠</strong><strong>能源物质：</strong>纤维素是植物细胞壁成分，人和动物一般不能消化利• </div>
+<p>用（不是能源物质）。</p>
+<div class="h3c" style="color:#15803d"><strong>蛋白质计算常见错误：</strong>不要忘记减去脱去的水分子质量；环肽的肽键数 =• </div>
+<p>氨基酸数。</p>
+<div class="h3c" style="color:#15803d"><strong>DNA</strong><strong>和</strong><strong>RNA</strong><strong>的碱基：</strong>DNA含T不含U，RNA含U不含T。这是判断核酸类型• </div>
+<p>的关键。</p>
+<div class="h3c" style="color:#15803d"><strong>脂质包括脂肪、磷脂和固醇：</strong>不要把脂质和脂肪混为一谈，固醇（如胆固• </div>
+<p>醇、性激素）属于脂质但不是脂肪。</p>
+<div class="h3c" style="color:#15803d"><strong>氨基酸通式：</strong>氨基和羧基必须连在同一个碳原子上，R基中也可能有氨基• </div>
+<p>或羧基。</p>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

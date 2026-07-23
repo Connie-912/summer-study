@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题08 · 化学键与分子结构（预习型） · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题08 · 化学键与分子结构（预习型）</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题08 · 化学键与分子结构（预习型）</h2><div class="hero-sub">化学暑假衔接 · 第 63-70 页</div><div class="hero-meta"><span>📄 8 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题08 · 化学键与分子结构（预习</strong></div><div class="h3c" style="color:#10b981"><strong>型）</strong></div>
+<p style="color:#6b7280">本专题为高二上学期预习内容，从微观角度理解原子如何结合成分子。掌握离子键与共价键的本质区别、电子式的书写以及分子间作用力。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：离子键与共价键</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">比较</th><th style="background:#10b981">离子键</th><th style="background:#10b981">共价键</th></tr><tr><td>定义</td><td>阴阳离子间的静电作用</td><td>原子间通过共用电子对形成的相互作用</td></tr><tr><td>成键微粒</td><td>阳离子+阴离子</td><td>原子（非金属原子之间）</td></tr><tr><td>成键本质</td><td>静电作用（得失电子）</td><td>共用电子对</td></tr><tr><td>存在</td><td>离子化合物（大多数盐、强碱、活泼金属氧化物）</td><td>共价化合物（非金属氧化物、酸、有机物）、非金属单质</td></tr><tr><td>举例</td><td>NaCl、NaOH、Na2O、NH4Cl</td><td>HCl、H2O、CO2、Cl2</td></tr></table>
+<div class="h3c" style="color:#10b981"><strong>离子化合物 </strong><strong>vs </strong><strong>共价化合物</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">类型</th><th style="background:#10b981">定义</th><th style="background:#10b981">所含化学键</th><th style="background:#10b981">举例</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>离NaCl（仅离子键）、含离子　离子键NaOH（离子键+共价子键化　（可能含键）、NH4Cl（离子键的化合　共价键）合物　+共价键）物共　只含价　共价HCl、CO2、H2SO4、化　键的　仅共价键CH4合　化合物　物</p>
+<table class="ptable"><tr><td>考点2：电子式书写</td><td>&#160;</td></tr><tr><td>电子式书写规则原子：在元素符号周围用&quot;·&quot;或&quot;×&quot;表示最外层电子。如Na·、·Cl·Na+）；阴离子在元素符号周围标出最外层离子：阳离子直接用离子符号（如[∶Cl∶]−）8电子并加方括号和电荷（如Na+[∶Cl∶]−离子化合物：阴阳离子分别写出，如共价化合物：用共用电子对表示，如H∶Cl（或用表示）H—Cl</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">物质</th><th style="background:#10b981">电子式</th><th style="background:#10b981">结构式</th></tr><tr><td>NaCl</td><td>Na+[∶Cl∶]−</td><td>—（离子化合物无结构式）</td></tr><tr><td>HCl</td><td>H∶Cl∶</td><td>H—Cl</td></tr><tr><td>H2O</td><td>H∶O∶H</td><td>H—O—H</td></tr><tr><td>CO2</td><td>∶O∶∶C∶∶O∶</td><td>O=C=O</td></tr><tr><td>N2</td><td>∶N⋮⋮N∶</td><td>N≡N</td></tr><tr><td>NaOH</td><td>Na+[∶O∶H]−</td><td>Na+[O—H]−</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点3：分子间作用力与氢键</strong></div><table class="ptable"><tr><th style="background:#10b981">类型</th><th style="background:#10b981">本质</th><th style="background:#10b981">强度</th><th style="background:#10b981">对物理性质的影响</th></tr><tr><td>分子间作用力（范德华力）</td><td>分子间微弱的静电引力</td><td>很弱</td><td>影响熔沸点：相对分子质量越大，分子间作用力越大，熔沸点越高</td></tr><tr><td>氢键</td><td>特殊分子间作用力（X—H···Y，X、Y为N、O、F）</td><td>比分子间作用力强，比化学键弱</td><td>使熔沸点异常升高（如HF、H2O、NH3）；影响溶解性</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>氢键存在的条件分子中必须含有与电负性强的原子（N、O、F）相连的原子。如H2O、H等。HF、NH3、CH3CH2OH</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>二、典例破题</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>【典例1】化学键类型判断下列物质中，只含有离子键的是______，只含有共价键的是______，既含有离子键又含有共价键的是______。①NaCl②HCl③NaOH④Cl2⑤NH4Cl⑥H2O</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>【答案与解析】只含离子键：①NaCl只含共价键：②HCl、④Cl2、⑥H2ONaOH（Na+OH−既含离子键又含共价键：③与之间为离子键，O+Cl−之间为共价键）、⑤与之间为离子键，N—NH4Cl（NH4—H之间为共价键）H</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>【典例2】电子式正误判断下列电子式书写正确的是（）</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#2563eb"><strong>【典例3】氢键与沸点</strong></div><table class="ptable"><tr><th>&#160;</th><th>H2O：H∶O∶HCO2：∶O∶C∶O∶NaCl：Na∶Cl∶NH3：H∶N∶HA.B.C.D.（H在上方）</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【答案】A中有2对成键电子和2对孤对电子（共8电子），H为A√H2OO2电子稳定。中与每个形成双键，电子式为∶O∶∶C∶∶O∶（C和均B×CO2COO满足8电子）。Na+[∶Cl∶]−。是离子化合物，电子式应为C×NaCl中有3对成键电子和1对孤对电子（共8电子），每个D×NH3N为2电子。H</td><td>&#160;</td></tr></table>
+<p>解释：为什么 H2O 的沸点（100°C）比 H2S 的沸点（−60°C）高得多？</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>H2O 分子间存在 <strong>氢键</strong>（O—H···O），而 H2S 分子间只有分子间作用力（范德华力）。</p>
+<p>氢键的强度远大于分子间作用力，破坏氢键需要更多能量，因此 H2O的沸点远高于 H2S。</p>
+<p>同理：HF 沸点 &gt; HCl，NH3 沸点 &gt; PH3。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>考点1</td><td>&#160;</td><td>三、巩固提升巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q8-1判断下列物质中化学键的类型：______(1)KBr______(2)CO2______(3)Na2O2______(4)H2SO4</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】KBr：离子键（活泼金属+活泼非金属）(1)CO2：共价键（非金属+非金属）(2)Na2O2：离子键（Na+与O22−）+共价键（O—O）(3)</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>H2SO4：共价键（仅含共价键，是共价化合物）(4)</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>A.B.C.D.</td><td>Q8-2下列说法正确的是（）含有离子键的化合物一定是离子化合物含有共价键的化合物一定是共价化合物离子化合物中一定不含共价键共价化合物中可能含离子键</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】A含离子键必为离子化合物（定义）。A√如含共价键（O—H），但是离子化合物。B×NaOHNaOH离子化合物可含共价键，如NaOH、NH4Cl、Na2O2。C×共价化合物只含共价键，不含离子键。D×</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q8-3</strong>从化学键的角度解释：为什么 NaCl 在熔融状态下能导电，而 HCl 在液态时不导电？</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>NaCl 是离子化合物，由 Na+ 和 Cl− 通过离子键结合。熔融状态下离子键被破坏，产生自由移动的 Na+ 和 Cl−，故能导电。</p>
+<p>HCl 是共价化合物，液态 HCl 由 HCl 分子组成，分子间只有分子间作用力，没有自由移动的离子，故不导电。HCl 溶于水后才电离出 H+和 Cl− 而导电。</p>
+<table class="ptable"><tr><td>&#160;</td><td>考点2</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q8-4写出下列物质的电子式：(1)MgCl2(2)N2(3)H2O2(4)Ca(OH)2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】MgCl2：[∶Cl∶]−Mg2+[∶Cl∶]−（离子化合物）(1)N2：∶N⋮⋮N∶（N≡N，三键，每个还有1对孤对电子）(2)N</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点3 巩固题</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>单键，每个有2对孤对电子）H2O2：H∶O∶O∶H（O—O(3)OCa(OH)2：[H∶O∶]−Ca2+[∶O∶H]−（离子化合物）(4)</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q8-5写出下列物质的结构式：(1)CH4(2)C2H4(3)CO2(4)HClO</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】CH4：四面体结构，4个单键(1)C—HC2H4：H2C=CH2（碳碳双键）(2)CO2：O=C=O（碳氧双键，直线形）(3)HClO：H—O—Cl（注意：H连在上，不是连在上）(4)OCl</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>Q8-6用电子式表示下列物质的形成过程：(1)Na2S(2)H2O</td><td>&#160;</td></tr><tr><td>&#160;</td><td>【答案与解析】Na+[∶S∶]2−Na+（Na失电子，S得电子）Na2S：2Na·(1)+·S·→和共用电子对）H2O：2H·H∶O∶H（H(2)+·O·→O</td><td>&#160;</td></tr><tr><td>&#160;</td><td>巩固题</td><td>&#160;</td></tr><tr><td>&#160;</td><td>Q8-7比较下列各组物质的沸点高低，并说明理由：(1)F2______Cl2______Br2______I2(2)H2O______H2S______H2Se______H2Te</td><td>&#160;</td></tr><tr><td>&#160;</td><td>【答案与解析】&lt;&lt;&lt;(1)F2Cl2Br2I2同主族单质，相对分子质量增大，分子间作用力增大，沸点升高。&lt;&lt;&lt;(2)H2SH2SeH2TeH2O</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>分子间存在氢键，沸点异常高，是最高值。其余三种按分子间作H2O用力规律，H2SH2Te。&lt;H2Se&lt;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>A.</td><td>Q8-8下列物质中，分子间存在氢键的是（）HClB.CH4C.NH3D.H2S</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案】C中电负性不够强，一般不形成显著氢键。A×HClCl中键极性很弱，不形成氢键。B×CH4C—H中键极性较强，N有孤对电子，可形成氢C√NH3N—HN—H···N键。中电负性不够强，不形成氢键。D×H2SS能形成氢键的元素：N、O、F与相连的化合物。H</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q8-9</strong>解释为什么 NH3 极易溶于水（1 体积水可溶解约 700 体积 NH3）。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>原因一：NH3 与 H2O 分子间可形成 <strong>氢键</strong>（N—H···O 和 O—H···N），增强了 NH3 与 H2O 的分子间作用力。</p>
+<p>+原因二：NH3 与 H2O 发生化学反应：NH3+H2O⇌NH3·H2O⇌NH4+OH−。</p>
+<p>物理溶解（氢键）+ 化学溶解（反应）共同导致 NH3 溶解度极大。</p>
+<div class="h3c"><strong>四、易错警示</strong></div>
+<div class="h3c" style="color:#d97706"><strong>⚠ 专题08 易错点警示</strong></div>
+<div class="h3c" style="color:#92400e">· <strong>离子化合物 </strong><strong>vs </strong><strong>共价化合物：</strong>含离子键的一定是离子化合物；但离子化合</div>
+<p style="color:#92400e">物中可能同时含共价键（如 NaOH、NH4Cl）。</p>
+<div class="h3c" style="color:#92400e">· <strong>电子式书写：</strong>离子化合物的电子式中，阴离子必须加方括号和电荷，阳离</div>
+<p style="color:#92400e">子直接用离子符号。共价化合物不加方括号。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#92400e">· <strong>HClO </strong><strong>的结构：</strong>H—O—Cl（H 连在 O 上），不是 H—Cl—O。因为 O 原</div>
+<p style="color:#92400e">子形成 2 个共价键，Cl 原子形成 1 个共价键。</p>
+<div class="h3c" style="color:#92400e">· <strong>氢键不是化学键：</strong>氢键是分子间作用力的一种，比化学键弱得多，但比普</div>
+<p style="color:#92400e">通分子间作用力强。</p>
+<div class="h3c" style="color:#92400e">· <strong>氢键存在的条件：</strong>只有 N、O、F 这三种元素与 H 相连的分子才可能形成</div>
+<p style="color:#92400e">氢键。</p>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

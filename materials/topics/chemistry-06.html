@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题06 · 铁和铝及其化合物 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+<style>.hero-illu{width:100%;border-radius:12px;margin:0 0 16px;display:block;box-shadow:0 4px 16px rgba(15,23,42,.15)}</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题06 · 铁和铝及其化合物</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero" style="padding-top:16px"><img class="hero-illu" src="../img/topic-chemistry-06.jpg" alt=""><div class="hero-tag">精编讲练</div><h2>专题06 · 铁和铝及其化合物</h2><div class="hero-sub">化学暑假衔接 · 第 47-54 页</div><div class="hero-meta"><span>📄 8 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题06 · 铁和铝及其化合物</strong></div><p style="color:#6b7280">铁和铝是两种最重要的金属元素，Fe 的变价特性（+2/+3）和 Al的两性（既溶于酸又溶于碱）是高考的核心考点。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：</strong><strong>Fe/Fe</strong><strong>2+</strong><strong>/Fe</strong><strong>3+</strong><strong> 三角转化</strong></div>
+<div class="h3c" style="color:#10b981"><strong>铁三角转化关系</strong></div>
+<table class="ptable"><tr><th style="background:#047857">转化</th><th style="background:#047857">化学方程式</th><th style="background:#047857">条件</th></tr><tr><td>Fe→Fe2+</td><td>2H+Fe2++Fe+=Cu2+=H2↑；Fe+Fe2++Cu</td><td>弱氧化剂（H+、Cu2+、S、I2）</td></tr><tr><td>Fe→Fe3+Fe2+→Fe3+Fe3+→Fe2+</td><td>=2Fe+3Cl22FeCl32Fe2+=+Cl22Fe3+2Cl−+2Fe3++Fe=3Fe2+；2Fe3++Cu2Fe2+Cu2+=+</td><td>强氧化剂（Cl2、Br2、浓HNO3）氧化剂（Cl2、O2、H2O2、HNO3、KMnO4）还原剂（Fe、Cu、I−、S2−）</td></tr><tr><td>Fe3+→Fe</td><td>Fe2O3+3CO=2Fe+3CO2</td><td>高温还原（铝热反应、CO还原）</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点2：</strong><strong>Al/Al</strong><strong>2</strong><strong>O</strong><strong>3</strong><strong>/Al(OH)</strong><strong>3</strong><strong> 两性</strong></div><div class="h3c" style="color:#10b981"><strong>铝的两性表现</strong></div>
+<table class="ptable"><tr><th style="background:#047857">物质</th><th style="background:#047857">与强酸反应</th><th style="background:#047857">与强碱反应</th></tr><tr><td>AlAl2O3Al(OH)3</td><td>6H+2Al3+2Al+=3H2↑+6H+=Al2O3+2Al3++3H2O3H+=Al(OH)3+Al3++3H2O</td><td>2OH−2Al++2H2O=−3H2↑2AlO2+2OH−=Al2O3+−2AlO2+H2OOH−=Al(OH)3+−AlO2+2H2O</td></tr></table>
+<div class="h3c" style="color:#047857"><strong>考点3：金属冶炼</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">方法</th><th style="background:#10b981">适用范围</th><th style="background:#10b981">举例</th></tr><tr><td>电解法</td><td>活泼金属（K~Al）</td><td>2Al2O3(熔融)=4Al+3O2↑；2NaCl(熔融)=2Na+Cl2↑</td></tr><tr><td>热还原法</td><td>中等活泼金属（Zn~Cu）</td><td>Fe2O3+3CO=2Fe+3CO2；铝热反应：2Al+Fe2O3=Al2O3+2Fe</td></tr></table>
+<p>热2HgO=2Hg+O2↑；</p>
+<p>不活泼金属分解　2Ag2O=4Ag+O2↑（Hg、Ag）法</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点4：离子的检验</strong></div><table class="ptable"><tr><th style="background:#10b981">离子</th><th style="background:#10b981">检验方法</th><th style="background:#10b981">现象</th></tr><tr><td>Fe3+</td><td>加KSCN溶液</td><td>溶液变血红色：Fe3++3SCN−=Fe(SCN)3</td></tr><tr><td>Fe3+</td><td>加NaOH溶液</td><td>红褐色沉淀：Fe3++3OH−=Fe(OH)3↓</td></tr></table>
+<p>白色沉淀→灰绿色→红褐色：Fe2+加 NaOH+2OH−=Fe(OH)2↓，Fe2+溶液4Fe(OH)2+O2+2H2O=4Fe(OH)3先加KSCN 不Fe2+加氯水后变血红色变色，再加氯水先产生白色沉淀，后沉淀溶解：Al3+加过量+3OH−=Al(OH)3↓，Al3+NaOHAl(OH)3+OH−=AlO2−+2H2O溶液</p>
+<div class="h3c"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#2563eb"><strong>【典例1】铁三角</strong></div>
+<p>下列试剂中，不能使 Fe2+ 转化为 Fe3+ 的是（ ）A. 氯水   B. KMnO4(H+)   C. 稀硝酸   D. Fe 粉</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>D</strong></div>
+<p>A √ Cl2 + 2Fe2+ = 2Fe3+ + 2Cl−− + 5Fe2+ + 8H+ = Mn2+ + 5Fe3+ + 4H2OB √ MnO4C √ 3Fe2+ + 4H+ + NO3− = 3Fe3+ + NO↑ + 2H2OD × Fe 粉使 Fe3+→Fe2+：2Fe3++Fe=3Fe2+，不能使 Fe2+→Fe3+。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#2563eb"><strong>【典例2】铝的两性</strong></div><p>下列物质中，既能与盐酸反应又能与 NaOH 溶液反应的是（ ）</p>
+<p>① Al ② Al2O3 ③ Al(OH)3 ④ NaHCO3 ⑤ (NH4)2CO3A. ①②③   B. ①②③④   C. ①②③⑤   D. 全部</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>D</strong></div>
+<p>①②③ 铝及其氧化物/氢氧化物具有两性，均能与酸和碱反应。</p>
+<p>−+H+=H2O+CO2↑；与 NaOH 反④ NaHCO3：与 HCl 反应 HCO3−+OH−=CO32−+H2O。应 HCO32−+2H+=H2O+CO2↑；与 NaOH⑤ (NH4)2CO3：与 HCl 反应 CO3++OH−=NH3↑+H2O。反应 NH4全部都能与酸和碱反应，选 <strong>D</strong>。</p>
+<div class="h3c" style="color:#2563eb"><strong>【典例3】离子检验</strong></div>
+<p>要证明某溶液中不含 Fe3+ 而含有 Fe2+，正确的操作是（ ）A. 滴加 KSCN 溶液B. 滴加 NaOH 溶液C. 先滴加 KSCN 溶液，不变色，再滴加氯水D. 先滴加氯水，再滴加 KSCN 溶液</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>C</strong></div>
+<p>A: 只加 KSCN，若不变色只能说明无 Fe3+，不能证明含 Fe2+。</p>
+<p>B: 加 NaOH，Fe2+ 产生白色沉淀后变灰绿色再变红褐色，但现象不敏感。</p>
+<p>C √: 先加 KSCN 不变色→无 Fe3+；再加氯水将 Fe2+ 氧化为 Fe3+，溶液变血红色→证明含 Fe2+。</p>
+<p>D: 先加氯水已将 Fe2+ 氧化为 Fe3+，再加 KSCN 变红，但不能说明原溶液中是否含 Fe3+。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>三、巩固提升考点1巩固题</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>Q6-1</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>(1)</th><th>写出与下列物质反应的化学方程式，并注明反应类型：Fe稀H2SO4Cl2（点燃）(2)溶液(3)CuSO4</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】H2↑（置换反应，Fe→Fe2+）(1)Fe+H2SO4=FeSO4+2FeCl3（化合反应，Fe→Fe3+）(2)2Fe+3Cl2=Cu（置换反应，Fe→Fe2+）(3)Fe+CuSO4=FeSO4+</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q6-2如何除去溶液中混有的少量FeCl3？写出相关离子方程式。FeCl2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】加入足量铁粉，充分反应后过滤。离子方程式：2Fe3+3Fe2++Fe=</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>将</td><td>Q6-3Fe2+Fe3+粉加入溶液中，充分反应后，溶液中与的物质的量相FeFeCl3Fe3+Fe3+等，则已反应的与未反应的的物质的量之比是多少？</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】Fe3+Fe2+Fe2+设未反应的为1mol，则反应后也为1mol（因为与Fe3+相等）。反应：2Fe3+3Fe2++Fe=Fe2+Fe3+：2/3生成1需要消耗molmolFe3+Fe3+已反应:未反应=2/3:1=2:3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>考点2</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q6-4写出分别与盐酸和溶液反应的离子方程式。Al2O3NaOH</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>6H+2Al3+与盐酸：Al2O3+=+3H2O2OH−−与NaOH：Al2O3+=2AlO2+H2O</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>向</td><td>Q6-5溶液中逐滴加入溶液至过量，描述实验现象并写出相关离子AlCl3NaOH方程式。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】现象：先产生白色沉淀，后沉淀逐渐溶解，最终得到无色澄清溶液。先：Al3+3OH−Al(OH)3↓（白色胶状沉淀）+=OH−−后：Al(OH)32H2O（沉淀溶解）+=AlO2+</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>向</td><td>Q6-6溶液中逐滴加入盐酸至过量，描述实验现象并写出相关离子方程NaAlO2式。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】现象：先产生白色沉淀，后沉淀逐渐溶解，最终得到无色澄清溶液。−H+先：AlO2Al(OH)3↓++H2O=3H+Al3+后：Al(OH)3+=+3H2O</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>考点3</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q6-7工业上冶炼铝的方法是______，写出化学方程式，并说明为什么不用热还原法。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】方法：电解熔融Al2O3（冰晶石作助熔剂）化学方程式：2Al2O3(熔融)=4Al3O2↑+原因：Al是活泼金属，与氧结合力很强，不能用等还原C、CO、H2剂还原。只能用电解法。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>Q6-8铝热反应可用于焊接钢轨，写出铝热反应的化学方程式，并指出该反应中氧化剂和还原剂。</td><td>&#160;</td></tr><tr><td>&#160;</td><td>【答案与解析】2Al+Fe2O3=Al2O3+2Fe氧化剂：Fe2O3（Fe从+3降到0）还原剂：Al（Al从0升到+3）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>Q6-9写出工业上用还原炼铁的化学方程式，并计算：若要得到56COFe2O3t铁，理论上需要含80%的赤铁矿多少吨？Fe2O3</td><td>&#160;</td></tr><tr><td>&#160;</td><td>【答案与解析】Fe2O3+3CO=2Fe+3CO256×106106/56=n(Fe)=mol0.5×106n(Fe2O3)=mol0.5×10680×106m(Fe2O3)=×160=g=80tm(赤铁矿)=80/80%=100t</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>考点4</td><td>&#160;</td><td>巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q6-10Fe3+检验溶液中存在的最灵敏试剂是______，现象是______，离子方程式为______。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】试剂：KSCN溶液现象：溶液变为血红色离子方程式：Fe3+3SCN−+=Fe(SCN)3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q6-11Fe2+Fe3+如何鉴别和溶液？写出两种方法。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>【答案与解析】</strong></div><p>方法一：加 KSCN 溶液——变血红色的是 Fe3+，不变色的是 Fe2+。</p>
+<p>方法二：加 NaOH 溶液——产生红褐色沉淀的是 Fe3+；产生白色沉淀并迅速变为灰绿色、最终变为红褐色的是 Fe2+。</p>
+<p>方法三：观察颜色——Fe3+ 溶液棕黄色，Fe2+ 溶液浅绿色。</p>
+<p><strong>Q6-12</strong>某溶液中可能含有 Fe3+、Fe2+、Al3+。设计实验方案一一检验。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>① 取少量溶液，加 KSCN 溶液，若变血红色，则含 Fe3+。</p>
+<p>② 另取少量溶液，加少量酸性 KMnO4 溶液，若紫色褪去，则含 Fe2+（Fe2+ 被氧化为 Fe3+）。</p>
+<p>③ 另取少量溶液，加过量 NaOH 溶液：先产生沉淀，后沉淀部分溶解（Al(OH)3 溶于过量 NaOH），则含 Al3+；不溶解的沉淀若为红褐色（Fe(OH)3），验证了 Fe3+。</p>
+<div class="h3c"><strong>四、易错警示</strong></div>
+<div class="h3c" style="color:#d97706"><strong>⚠ 专题06 易错点警示</strong></div>
+<div class="h3c" style="color:#92400e"><strong>Fe </strong><strong>与氧化剂反应：</strong>弱氧化剂（H+、Cu2+、S）→ Fe2+；强氧化剂· </div>
+<p style="color:#92400e">（Cl2、Br2、浓HNO3）→ Fe3+。</p>
+<div class="h3c" style="color:#92400e"><strong>Fe(OH)</strong><strong>2</strong><strong> 的颜色变化：</strong>白色→灰绿色→红褐色，是 Fe2+ 的特征现象。· </div>
+<div class="h3c" style="color:#92400e">· <strong>Al(OH)</strong><strong>3</strong><strong> 不溶于弱碱：</strong>Al(OH)3 只溶于强碱（如 NaOH），不溶于</div>
+<p style="color:#92400e">NH3·H2O。因此实验室用氨水制 Al(OH)3 而不用 NaOH。</p>
+<p style="color:#92400e">· <strong>铝热反应条件：</strong>需要高温引发（用镁条引燃），但反应本身是放热反应。</p>
+<p style="color:#92400e"><strong>Fe</strong><strong>3+</strong><strong> 与 </strong><strong>Fe</strong><strong>2+</strong><strong> 的检验：</strong>KSCN 法只能检验 Fe3+；检验 Fe2+ 需先加 KSCN· 不变色，再加氯水变红。</p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

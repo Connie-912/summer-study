@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题八：遗传的分子基础——DNA结构、复制、基因表达 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题八：遗传的分子基础——DNA结构、复制、基因表达</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题八：遗传的分子基础——DNA结构、复制、基因表达</h2><div class="hero-sub">生物暑假衔接 · 第 42-49 页</div><div class="hero-meta"><span>📄 8 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c"><strong>专题八：遗传的分子基础</strong><strong>——DNA</strong><strong>结构、复制、基因表达</strong></div>
+<div class="h3c" style="color:#15803d"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#15803d"><strong>1. DNA</strong><strong>是主要的遗传物质</strong><strong>——</strong><strong>经典实验</strong></div>
+<div class="h3c"><strong>（</strong><strong>1</strong><strong>）格里菲思的肺炎链球菌转化实验（体内转化）</strong></div>
+<div class="h3c" style="color:#15803d"><strong>R</strong><strong>型菌：</strong>无荚膜，菌落粗糙，无毒性</div>
+<div class="h3c" style="color:#15803d"><strong>S</strong><strong>型菌：</strong>有荚膜，菌落光滑，有毒性</div>
+<div class="h3c" style="color:#15803d"><strong>实验结论：</strong>加热杀死的S型菌中含有某种&quot;转化因子&quot;，能将R型活细菌转化为</div>
+<p>S型活细菌。</p>
+<div class="h3c"><strong>（</strong><strong>2</strong><strong>）艾弗里的肺炎链球菌转化实验（体外转化）</strong></div>
+<div class="h3c" style="color:#15803d"><strong>设计思路：</strong>将S型菌的各种成分（DNA、蛋白质、多糖等）分开，单独观察</div>
+<p>每种成分的作用。</p>
+<div class="h3c" style="color:#15803d"><strong>实验结论：</strong><strong>DNA</strong><strong>是使</strong><strong>R</strong><strong>型菌产生稳定遗传变化的物质</strong>，即DNA是遗传物质，</div>
+<p>蛋白质不是遗传物质。</p>
+<div class="h3c"><strong>（</strong><strong>3</strong><strong>）噬菌体侵染细菌实验（赫尔希和蔡斯）</strong></div>
+<div class="h3c" style="color:#15803d"><strong>设计思路：</strong>用放射性同位素标记法，分别标记噬菌体的蛋白质（³⁵S）和DNA</div>
+<p>（³²P），单独观察它们的作用。</p>
+<div class="h3c" style="color:#15803d"><strong>实验过程：</strong>噬菌体侵染大肠杆菌 → 搅拌（使吸附在细菌上的噬菌体与细菌</div>
+<p>分离）→ 离心（让上清液中析出重量较轻的噬菌体颗粒，沉淀物中留下被感染的细菌）→ 检测放射性。</p>
+<p style="color:#15803d"><strong>实验结果：</strong>³²P标记的DNA进入细菌体内，³⁵S标记的蛋白质留在外面。</p>
+<p style="color:#15803d"><strong>实验结论：</strong><strong>DNA</strong><strong>是噬菌体的遗传物质。</strong></p>
+<table class="ptable"></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#15803d"><strong>特别提醒：</strong>这两个实验都证明了DNA是遗传物质，但没有证明DNA是&quot;主要&quot;遗传物</div>
+<p>质。&quot;DNA是主要遗传物质&quot;是针对整个生物界而言（因为绝大多数生物的遗传物质是DNA，少数病毒的遗传物质是RNA）。</p>
+<div class="h3c" style="color:#15803d"><strong>2. DNA</strong><strong>的结构</strong></div>
+<div class="h3c" style="color:#15803d"><strong>DNA</strong><strong>双螺旋结构特点（沃森和克里克提出）：</strong></div>
+<p>DNA由<strong>两条反向平行</strong>的脱氧核苷酸链盘旋成双螺旋结构• </p>
+<div class="h3c" style="color:#15803d"><strong>外侧：</strong>脱氧核糖和磷酸交替连接，构成基本骨架• </div>
+<div class="h3c" style="color:#15803d"><strong>内侧：</strong>两条链上的碱基通过氢键连接成碱基对• </div>
+<div class="h3c" style="color:#15803d"><strong>碱基互补配对原则：</strong>A（腺嘌呤）与T（胸腺嘧啶）配对，形成2个氢键；• </div>
+<p>G（鸟嘌呤）与C（胞嘧啶）配对，形成3个氢键</p>
+<div class="h3c" style="color:#15803d"><strong>DNA</strong><strong>平面结构示意图（文字描述）</strong></div>
+<p style="color:#15803d">5&#x27;-磷酸-脱氧核糖-碱基-3&#x27;（一条链）      ↑↓氢键3&#x27;-脱氧核糖-磷酸-碱基-5&#x27;（互补链）碱基配对：A=T（双氢键），G≡C（三氢键）规律：在双链DNA中，A=T，G=C，因此A+G=T+C=A+C=T+G=总碱基数的一半DNA两条链反向平行：一条链从5&#x27;端到3&#x27;端，另一条从3&#x27;端到5&#x27;端</p>
+<div class="h3c" style="color:#15803d"><strong>3. DNA</strong><strong>的复制</strong></div>
+<p style="color:#15803d"><strong>复制时间：</strong>有丝分裂间期和减数第一次分裂前的间期。</p>
+<div class="h3c" style="color:#15803d"><strong>复制条件：</strong>模板（DNA两条链）、原料（4种游离的脱氧核苷酸）、能量</div>
+<p>（ATP）、酶（解旋酶、DNA聚合酶等）。</p>
+<div class="h3c" style="color:#15803d"><strong>复制过程：</strong>解旋（解旋酶断开氢键）→ 合成子链（DNA聚合酶以母链为模</div>
+<p>板，按碱基互补配对原则合成）→ 形成子代DNA分子。</p>
+<div class="h3c" style="color:#15803d"><strong>复制特点：半保留复制</strong>（新合成的每个DNA分子中，都保留了原来DNA分子</div>
+<p>中的一条链）。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>复制结果：1个DNA分子复制n次后，产生2ⁿ个DNA分子，其中含亲代链的DNA分子有2个。复制意义：将遗传信息从亲代传递给子代，保持遗传信息的连续性。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>基因的表达4.（1）转录</td><td>&#160;</td></tr><tr><td>&#160;</td><td>场所：主要在细胞核（线粒体、叶绿体中也可进行）模板：DNA的一条链（模板链/反义链）原料：4种核糖核苷酸酶：RNA聚合酶产物：mRNA（信使RNA）碱基配对：A-U、T-A、G-C、C-G</td><td>&#160;</td></tr><tr><td>&#160;</td><td>（2）翻译</td><td>&#160;</td></tr><tr><td>&#160;</td><td>场所：核糖体模板：mRNA原料：21种氨基酸转运工具：tRNA（反密码子与mRNA上的密码子互补配对）产物：多肽（蛋白质）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>翻译过程示意（文字描述）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>mRNA：5&#x27;-AUGGGCUCUAAA...-3&#x27;↑↑↑↑tRNA：反密码子UACCCGAGAUUU...↓↓↓↓氨基酸：甲硫氨酸-甘氨酸-丝氨酸-赖氨酸...</td><td>&#160;</td></tr><tr><td>&#160;</td><td>核糖体沿mRNA移动，每次读取一个密码子，tRNA将相应氨基酸运来，氨基酸之间脱水缩合形成肽链</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>二、典例破题</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>起始密码子AUG编码甲硫氨酸，同时也是翻译起始信号；终止密码子（UAA、UAG、UGA）不编码氨基酸</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>（3）中心法则</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>中心法则图解（文字描述）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>→（复制）→DNADNA→（转录）→→（翻译）→蛋白质DNARNA某些病毒中：→（逆转录）→RNADNA→...→（复制）→RNARNA</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>实线表示普遍存在的遗传信息流动方向，虚线表示仅在某些病毒中存在的方向克里克提出的中心法则包括：DNA复制、DNA→RNA（转录）、RNA→蛋白质（翻译）。后来补充了逆转录和RNA复制</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>基因对性状的控制5.间接控制：基因通过控制酶的合成来控制代谢过程，进而控制生物性状。如白•化病（酪氨酸酶缺乏）、豌豆的圆粒和皱粒。直接控制：基因通过控制蛋白质的结构直接控制生物性状。如囊性纤维化、镰•刀型细胞贫血症。重要认识：生物的性状不仅仅由基因决定，还受环境因素的影响。基因与性状之间并不是简单的一一对应关系。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（</strong><strong>DNA</strong><strong>结构计算）</strong></div>
+<p style="color:#78350f">某DNA分子中，腺嘌呤（A）占全部碱基的20%，则该DNA分子中鸟嘌呤（G）占（　）A. 20% B. 30% C. 40% D. 60% </p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>三、巩固提升</strong></div><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：根据碱基互补配对原则，A=T=20%，则A+T=40%。因此G+C=60%，又G=C，所以G=30%。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>典例2（DNA复制计算）一个DNA分子连续复制3次后，含有亲代链的DNA分子占全部DNA分子的比例是（　）A.1/2B.1/4C.1/8D.1/16</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：DNA复制为半保留复制，复制3次后共产生2³=8个DNA分子。其中含有亲代链的DNA分子始终只有2个（每个含一条亲代链），因此比例为2/8=1/4。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>典例3（基因表达）下列关于转录和翻译的叙述，正确的是（　）转录和翻译都主要在细胞核中进行A.转录的原料是脱氧核苷酸，翻译的原料是氨基酸B.转录时DNA两条链都作为模板C.mRNA上的终止密码子不编码氨基酸D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：D解析：A错误，翻译在核糖体上进行。B错误，转录的原料是核糖核苷酸。C错误，转录时以DNA的一条链为模板。D正确，终止密码子（UAA、UAG、UGA）只起终止信号作用，不编码氨基酸。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>1</strong></div>
+<p>在DNA双链中，一条链上（A+T）/（G+C）=0.4，那么互补链中该比值是（　）A. 0.4 B. 0.6 C. 1.0 D. 2.5 </p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>2</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：A（双链DNA中，互补链的（A+T）/（G+C）比值相同）</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<p>赫尔希和蔡斯用³²P标记的噬菌体侵染未被标记的大肠杆菌，实验结果是（　）A. 上清液中放射性高，沉淀物中放射性低B. 上清液中放射性低，沉淀物中放射性高C. 上清液和沉淀物中放射性都高D. 上清液和沉淀物中放射性都低 </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>答案：B（³²P标记DNA，DNA进入细菌体内，离心后细菌在沉淀物中）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习3DNA复制过程中，保证复制准确进行的关键是（　）解旋酶破坏氢键使DNA双链分开A.游离的脱氧核苷酸与母链碱基互补配对B.模板链与互补链形成双螺旋结构C.DNA分布在染色体上D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>4</strong></div>
+<p>下列关于基因的叙述，正确的是（　）A. 基因是有遗传效应的DNA片段B. 一个DNA分子上只有一个基因C. 基因的基本单位是核糖核苷酸D. 基因只存在于细胞核中 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：A</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>练习5已知某mRNA分子中，U占25%，A占15%，则转录该mRNA的DNA分子中，C+T占（　）A.20%B.40%C.50%D.60%</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>四、易错警示</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：C（双链DNA中，C+T=A+G=50%）</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<div class="h3c" style="color:#991b1b"><strong>常见错误与混淆点</strong></div>
+<div class="h3c" style="color:#15803d"><strong>肺炎链球菌转化实验的结论：</strong>格里菲思只证明存在&quot;转化因子&quot;，艾弗里才• </div>
+<p>证明转化因子是DNA。两个实验结论不要混淆。</p>
+<div class="h3c" style="color:#15803d"><strong>噬菌体实验的标记选择：</strong>必须分别标记（³⁵S标记蛋白质外壳，³²P标记• </div>
+<p>DNA），不能同时标记。因为同时标记无法区分是哪种物质进入细菌。</p>
+<div class="h3c" style="color:#15803d"><strong>&quot;DNA</strong><strong>是主要遗传物质</strong><strong>&quot;</strong><strong>的理解：</strong>这是针对整个生物界而言的，对某一具体• </div>
+<p>生物来说，遗传物质只能是DNA或RNA中的一种。</p>
+<div class="h3c" style="color:#15803d"><strong>碱基计算规律：</strong>双链DNA中A=T、G=C，但单链中不一定成立。（A+T）/• </div>
+<p>（G+C）在两条互补链和整个DNA分子中相等。</p>
+<div class="h3c" style="color:#15803d"><strong>DNA</strong><strong>复制计算：</strong>n次复制后：DNA总数=2ⁿ；含亲代链的DNA=2个；所需• </div>
+<p>游离脱氧核苷酸数=a×(2ⁿ-1)（a为原DNA中该核苷酸数）。</p>
+<div class="h3c" style="color:#15803d"><strong>转录与</strong><strong>DNA</strong><strong>复制的区别：</strong>转录以DNA一条链为模板，原料是核糖核苷酸，• </div>
+<p>产物是RNA；复制以两条链为模板，原料是脱氧核苷酸，产物是DNA。</p>
+<div class="h3c" style="color:#15803d"><strong>密码子与反密码子：</strong>密码子在mRNA上，反密码子在tRNA上，两者互补配• </div>
+<p>对。</p>
+<div class="h3c" style="color:#15803d"><strong>终止密码子不编码氨基酸：</strong>遇到终止密码子时翻译停止，没有对应的• </div>
+<p>tRNA。</p>
+<div class="h3c" style="color:#15803d"><strong>中心法则的补充：</strong>逆转录和RNA复制只发生在某些RNA病毒中，正常细胞• </div>
+<p>中不发生。</p>
+<table class="ptable"></table></div>
+<p>新高二生物暑假衔接讲练资料祝愿你在暑假里夯实基础，迎接高二新挑战！</p>
+<p style="color:#9ca3af">本资料仅供学习使用 | 建议配合教材和课堂笔记系统复习</p>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

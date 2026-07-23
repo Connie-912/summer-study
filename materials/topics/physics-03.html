@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 牛顿运动定律 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 牛顿运动定律</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>牛顿运动定律</h2><div class="hero-sub">物理暑假衔接 · 第 19-28 页</div><div class="hero-meta"><span>📄 10 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<table class="ptable"><tr><th style="background:#fef3c7">📖考点1：牛顿三定律理解</th><th style="background:#fef3c7">&#160;</th></tr></table>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"></div>
+<table class="ptable"><tr><th style="background:#f59e0b">定律</th><th style="background:#f59e0b">内容</th><th style="background:#f59e0b">关键理解</th></tr><tr><td>牛顿第一定律</td><td>一切物体在不受外力作用时，总保持匀速直线运动状态或静止状态</td><td>惯性定律：质量是惯性大小的量度</td></tr><tr><td>牛顿第二定律</td><td>ma（F为合外力）F=</td><td>瞬时性：a与F同时产生、同时变化、同时消失</td></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">牛顿第三定律</th><th style="background:#fffbeb;color:#92400e">作用力与反作用力大小相等、方向相反、作用在同一直线上</th><th style="background:#fffbeb;color:#92400e">同性质、同存亡、作用在不同物体上</th></tr></table>
+<div class="h3c" style="color:#b45309"><strong>易混淆点：</strong>一对平衡力（作用在同一物体上）vs 一对作用力与反</div>
+<p>作用力（作用在不同物体上）。一对平衡力可以不同性质，作用力与反作用力必须同性质。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>关于惯性的说法，正确的是：A. 速度大的物体惯性大   B. 物体受力时惯性减小   C. 质量是惯性大小的唯一量度   D. 物体在太空中没有惯性</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>惯性只与质量有关，质量越大惯性越大，与速度、受力、位置无关。答案：C</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2人站在地面上，人对地面的压力和地面对人的支持力是：一对平衡力一对作用力与反作用力不能确定A.B.C.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析人对地面的压力作用在地面上，地面对人的支持力作用在人身上。两者作用在不同物体上，大小相等、方向相反、性质相同（都是弹力），是一对作用力与反作用力。而人的重力与地面对人的支持力才是一对平衡力（作用在同一物体——人上）。答案：B</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>关于牛顿第二定律 F=ma，下列说法正确的是：A. 由F=ma可知，m与F成正比   B. F=ma中F是某一个力   C. a的方向与F的方向相同   D. 物体加速度为零时，一定不受力</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. 错误，质量是物体的固有属性，与力无关。</p>
+<p>B. 错误，F是<strong>合外力</strong>，不是某一个力。</p>
+<p>C. <strong>正确</strong>，加速度方向与合外力方向相同。</p>
+<p>D. 错误，加速度为零时合外力为零，但可以受多个力（平衡力）。</p>
+<div class="h3c"><strong>答案：</strong><strong>C</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点2：F=ma应用</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>解题步骤：</strong>(1) 确定研究对象；(2) 受力分析，求合外力；(3) 由 F合</div>
+<p>= ma 求加速度；(4) 由运动学公式求速度、位移等。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>质量为2 kg的物体，在水平面上受到10 N的水平拉力，物体与地面间的动摩擦因数为0.2。求：(1) 物体的加速度；(2) 4 s末的速度和位移。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 求加速度：</strong></div>
+<p>N = mg = 2 × 10 = 20 Nf = μN = 0.2 × 20 = 4 NF合 = F - f = 10 - 4 = 6 N</p>
+<div class="h3c">a = F合 / m = 6 / 2 = <strong>3 m/s²</strong></div>
+<div class="h3c"><strong>(2) 4 s</strong><strong>末：</strong></div>
+<div class="h3c">v = at = 3 × 4 = <strong>12 m/s</strong></div>
+<div class="h3c">x = ½at² = ½ × 3 × 16 = <strong>24 m</strong></div></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2质量为1kg的物体放在倾角为37°的光滑斜面上，求物体下滑的加速度。（sin37°=0.6，cos37°=0.8，g=10m/s²）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>物体受重力mg和支持力N，斜面光滑无摩擦。</p>
+<p>沿斜面方向：F合 = mg sinθ = 1 × 10 × 0.6 = 6 N</p>
+<div class="h3c">a = F合 / m = 6 / 1 = <strong>6 m/s²</strong>（沿斜面向下）</div>
+<p>注意：光滑斜面上物体的加速度 a = g sinθ，与质量无关。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>质量为3 kg的物体在水平力F作用下沿粗糙水平面做匀加速运动。</p>
+<p>已知物体初速度为2 m/s，经过5 s后速度变为12 m/s，物体与地面间的动摩擦因数为0.3。求水平力F的大小。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>先求加速度：a = (v - v₀) / t = (12 - 2) / 5 = <strong>2 m/s²</strong>N = mg = 3 × 10 = 30 Nf = μN = 0.3 × 30 = 9 NF合 = ma = 3 × 2 = 6 N</p>
+<div class="h3c">F合 = F - f ⇒ F = F合 + f = 6 + 9 = <strong>15 N</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">⚖考点3：超重与失重</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>超重：</strong>视重大于实重，加速度向上（加速上升或减速下降）。N -</div>
+<p>mg = ma ⇒ N = m(g+a) &gt; mg。</p>
+<div class="h3c" style="color:#b45309"><strong>失重：</strong>视重小于实重，加速度向下（加速下降或减速上升）。mg</div>
+<p>- N = ma ⇒ N = m(g-a) &lt; mg。</p>
+<p style="color:#b45309"><strong>完全失重：</strong>a = g，N = 0（如自由落体中的物体）。 </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】1</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>质量为50kg的人站在电梯的体重计上。电梯以2m/s²的加速度匀加速上升时，体重计示数是多少？以2m/s²匀减速上升呢？（g=10m/s²）</th><th>&#160;</th></tr><tr><td>&#160;</td><td>详细解析加速上升：加速度向上，超重N-mg=ma⇒N=m(g+a)=50×(10+2)=50×12=600N（相当于60kg的示数）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>减速上升：加速度向下，失重mg-N=ma⇒N=m(g-a)=50×(10-2)=50×8=400N（相当于40kg的示数）</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>电梯内有一弹簧秤，下面挂一个质量为1 kg的物体。当电梯以g/2的加速度加速下降时，弹簧秤的读数是多少？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>加速度向下，物体失重：mg - T = ma ⇒ T = m(g-a) = 1 × (g - 0.5g) = <strong>0.5mg = 5</strong></p>
+<div class="h3c"><strong>N</strong>（g=10时）</div>
+<p>弹簧秤读数 = 5 N，相当于0.5 kg物体的重量。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>在绕地球做匀速圆周运动的宇宙飞船中，宇航员处于什么状态？</p>
+<p>为什么？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>宇航员处于<strong>完全失重</strong>状态。</p>
+<p>因为飞船和宇航员都以相同的向心加速度（等于该处的重力加速度g&#x27;）做圆周运动。</p>
+<p>以飞船为参考系（非惯性系），宇航员受到的万有引力全部用于提供向心力，对飞船底部的压力为零。</p>
+<p>注意：宇航员仍然受到万有引力（重力），只是视重为零，并非真的&quot;没有重力&quot;。 </p></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点4：连接体问题</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>整体法：</strong>当各物体加速度相同时，将系统视为整体，F合外 =</div>
+<p>(m₁+m₂+...)a。</p>
+<p style="color:#b45309"><strong>隔离法：</strong>分析单个物体，F合 = ma。</p>
+<p style="color:#b45309"><strong>策略：</strong>先整体求加速度，再隔离求内力。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>质量分别为m₁=2 kg和m₂=3 kg的两个物体用轻绳连接，放在光滑水平面上。用F=10 N的水平力拉m₁。求：(1) 整体加速度；(2)绳的拉力。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 整体法：</strong>F = (m₁+m₂)a</div>
+<div class="h3c">a = F / (m₁+m₂) = 10 / 5 = <strong>2 m/s²</strong></div>
+<div class="h3c"><strong>(2) 隔离法：</strong>分析m₂</div></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>m₂只受绳的拉力TT=m₂a=3×2=6N</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2kg（放在桌面上，μ=0.2）和m₂=2kg（悬挂）通过定滑m₁=1轮由轻绳连接。求加速度和绳的拉力。（g=10m/s²）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析整体法：m₂的重力是动力，m₁的摩擦力是阻力m₂g-μm₁g=(m₁+m₂)a2×10-0.2×1×10=(1+2)a20-2=3a⇒a=6m/s²隔离m₂：m₂g-T=m₂a20-T=2×6⇒T=8N</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>A、B两物体质量分别为m和2m，叠放在光滑水平面上，A在上B在下。用水平力F拉B，A和B一起加速。A与B之间的动摩擦因数为μ。求：(1) 整体加速度；(2) A受到的摩擦力。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 整体法：</strong>F = (m+2m)a = 3ma ⇒ a = <strong>F/(3m)</strong></div>
+<div class="h3c"><strong>(2) 隔离</strong><strong>A</strong><strong>：</strong>A只受B对A的静摩擦力（水平方向）</div>
+<div class="h3c">f = ma = m × F/(3m) = <strong>F/3</strong></div>
+<p>若使A不发生相对滑动，需 f ≤ μmg，即 F/3 ≤ μmg ⇒ F ≤3μmg。 </p></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点5：滑板滑块模型</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>核心：</strong>分析滑板（木板）和滑块各自的受力，判断是否发生相对滑</div>
+<p>动。</p>
+<div class="h3c" style="color:#b45309"><strong>关键步骤：</strong>(1) 假设无相对滑动，先用整体法求临界加速度；(2) 比</div>
+<p>较所需摩擦力与最大静摩擦力；(3) 若有相对滑动，分别对两物体用牛顿第二定律。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>质量为M=4 kg的木板放在光滑水平面上，木板右端放质量为m=1 kg的滑块，滑块与木板间动摩擦因数μ=0.4。用F=6 N的水平力拉木板。判断滑块与木板是否发生相对滑动，并求各自的加速度。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>先假设无相对滑动：</strong></div>
+<p>整体加速度 a = F/(M+m) = 6/5 = 1.2 m/s²滑块所需摩擦力 f = ma = 1 × 1.2 = 1.2 N最大静摩擦力 fmax = μmg = 0.4 × 1 × 10 = 4 N</p>
+<div class="h3c">f = 1.2 N &lt; 4 N，<strong>无相对滑动</strong></div>
+<div class="h3c">am = aM = <strong>1.2 m/s²</strong></div></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2上题中，若F=25N，判断是否发生相对滑动。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>假设无相对滑动：a = 25/5 = 5 m/s²滑块所需摩擦力 f = m × 5 = 5 N &gt; fmax = 4 N<strong>发生相对滑动。</strong></p>
+<div class="h3c"><strong>分别分析：</strong></div>
+<div class="h3c">滑块：f = μmg = 4 N，am = f/m = 4/1 = <strong>4 m/s²</strong></div>
+<p>木板：F - f = MaM ⇒ 25 - 4 = 4aM ⇒ aM = <strong>5.25 m/s²</strong>木板加速度大于滑块，滑块相对木板向后滑动。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>质量为m=1 kg的滑块以初速度v₀=4 m/s滑上静止在光滑水平面上的质量为M=3 kg的木板左端，滑块与木板间μ=0.2。求滑块在木板上滑动的距离（木板足够长）。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>滑块滑上木板后，滑块受到向左的摩擦力减速，木板受到向右的摩擦力加速。</p>
+<div class="h3c"><strong>滑块：</strong>am = μg = 0.2 × 10 = 2 m/s²（向左，减速）</div>
+<div class="h3c"><strong>木板：</strong>aM = μmg / M = 0.2×1×10 / 3 = 2/3 m/s²（向右，</div>
+<p>加速）</p>
+<div class="h3c"><strong>共速时：</strong>vm = v₀ - amt = 4 - 2t，vM = aMt = (2/3)t</div>
+<p>4 - 2t = (2/3)t ⇒ 4 = (8/3)t ⇒ t = 1.5 s共速 v = (2/3) × 1.5 = 1 m/s<strong>滑块位移：</strong>xm = v₀t - ½amt² = 4×1.5 - ½×2×2.25 = 6 -</p>
+<p>2.25 = 3.75 m</p>
+<div class="h3c"><strong>木板位移：</strong>xM = ½aMt² = ½×(2/3)×2.25 = 0.75 m</div>
+<div class="h3c"><strong>相对位移：</strong>Δx = xm - xM = 3.75 - 0.75 = <strong>3 m</strong></div></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="box-t" style="color:#92400e"><strong>⚠ 专题03 易错警示</strong></div><div class="h3c" style="color:#92400e"><strong>1. 超重失重不等于重力变化：</strong>超重和失重是&quot;视重&quot;变化，物体实际重力</div>
+<p style="color:#92400e">mg 不变。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 合外力才是</strong><strong>F=ma</strong><strong>的</strong><strong>F</strong><strong>：</strong>不是某一个力，是所有力的合力。先受力分</div>
+<p style="color:#92400e">析求合力，再代入。</p>
+<p style="color:#92400e"><strong>3. 连接体问题：</strong>整体法求加速度时，内力不出现。求内力时用隔离法。</p>
+<div class="h3c" style="color:#92400e"><strong>4. 滑板滑块：</strong>必须判断是否发生相对滑动，再决定用整体法还是隔离</div>
+<p style="color:#92400e">法。</p>
+<p style="color:#92400e"><strong>5. 加速度方向：</strong>a的方向与F合方向相同，由受力决定，不要想当然。 </p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

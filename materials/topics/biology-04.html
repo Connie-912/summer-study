@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题四：细胞的物质输入和输出——跨膜运输、渗透作用 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题四：细胞的物质输入和输出——跨膜运输、渗透作用</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题四：细胞的物质输入和输出——跨膜运输、渗透作用</h2><div class="hero-sub">生物暑假衔接 · 第 18-22 页</div><div class="hero-meta"><span>📄 5 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>专题四：细胞的物质输入和输出——跨膜运输、渗透作用</td></tr><tr><td>&#160;</td><td>一、知识精讲渗透作用与细胞的吸水和失水1.</td></tr><tr><td>&#160;</td><td>渗透作用条件：①具有半透膜；②半透膜两侧溶液具有浓度差。渗透方向：水分子从低浓度溶液向高浓度溶液扩散（即从水多的一侧向水少的一侧移动）。动物细胞：细胞膜相当于半透膜。外界溶液浓度细胞质浓度细胞吸水&lt;→膨胀；外界溶液浓度细胞质浓度细胞失水皱缩；外界溶液浓度细胞&gt;→=质浓度形态不变。→植物细胞：原生质层（细胞膜+液泡膜+两层膜之间的细胞质）相当于半透膜。外界溶液浓度细胞液浓度质壁分离（细胞壁与原生质层分离）•&gt;→外界溶液浓度细胞液浓度质壁分离复原•&lt;→</td></tr><tr><td>&#160;</td><td>质壁分离的原因：外因——外界溶液浓度大于细胞液浓度；内因——原生质层的伸缩性大于细胞壁的伸缩性。</td></tr><tr><td>&#160;</td><td>物质跨膜运输的方式2.</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">运输方式</th><th style="background:#dcfce7;color:#166534">方向</th><th style="background:#dcfce7;color:#166534">是否需要载体</th><th style="background:#dcfce7;color:#166534">是否耗能</th><th style="background:#dcfce7;color:#166534">实例</th></tr><tr><td>自由扩散</td><td>高浓度→低浓度</td><td>不需要</td><td>不消耗</td><td>O₂、CO₂、水、甘油、乙醇、苯等</td></tr><tr><td>协助扩散</td><td>高浓度→低浓度</td><td>需要</td><td>不消耗</td><td>红细胞吸收葡萄糖、离子通道</td></tr><tr><td>主动运输</td><td>低浓度→高浓度（一般）</td><td>需要</td><td>消耗ATP</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>二、典例破题</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>小肠上皮细胞吸收葡萄糖、氨基酸、无机盐离子等</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>胞吞和胞吐3.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>胞吞：细胞摄取大分子时，大分子附着在细胞膜表面，细胞膜内陷形成小囊，小囊从细胞膜上分离下来形成囊泡进入细胞内部。如白细胞吞噬细菌。胞吐：细胞需要外排的大分子，先在细胞内形成囊泡，囊泡移动到细胞膜处与细胞膜融合，将大分子排出细胞。如分泌蛋白的释放、神经递质的释放。特点：都消耗能量，都体现细胞膜的流动性，都不穿过磷脂双分子层。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>4.•••能）影响</td><td>影响跨膜运输的因素自由扩散：主要受浓度差影响协助扩散：受浓度差和载体蛋白数量影响</td><td>&#160;</td><td>主动运输：受载体蛋白数量、能量（ATP）供应、氧气浓度（影响有氧呼吸供</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（渗透作用与质壁分离）</strong></div>
+<p style="color:#78350f">将紫色洋葱鳞片叶外表皮细胞置于0.3g/mL蔗糖溶液中，观察质壁分离现象。</p>
+<p style="color:#78350f">下列叙述正确的是（　）A. 中央液泡逐渐变大，颜色变浅B. 细胞壁与原生质层逐渐分离C. 水分子只能从细胞内向细胞外运输D. 蔗糖分子可以通过原生质层进入细胞液 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答案：B解析：A错误，细胞失水，液泡变小，颜色变深。B正确，质壁分离即细胞壁与原生质层分离。C错误，水分子是双向移动的，只是出去的比进的多。D错误，原生质层具有选择透过性，蔗糖分子不能进入细胞。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#92400e"><strong>典例</strong><strong>2</strong><strong>（跨膜运输方式判断）</strong></div><p style="color:#78350f">下列物质进入细胞的方式中，必须消耗能量的是（　）A. 水分子进入根毛细胞B. 葡萄糖进入红细胞C. K⁺进入小肠上皮细胞D. 氧气进入肺泡细胞 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：C解析：A是自由扩散（或协助扩散通过水通道），B是协助扩散，D是自由扩散，三者都不消耗能量。C中K⁺进入小肠上皮细胞是逆浓度梯度的主动运输，需要消耗ATP。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>典例3（综合应用）下列关于物质跨膜运输的叙述，正确的是（　）主动运输只能逆浓度梯度进行A.协助扩散的速率只与浓度差有关B.胞吞和胞吐也需要载体蛋白的协助C.温度变化会影响所有跨膜运输方式的速率D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：D解析：A错误，主动运输一般是逆浓度梯度，但顺浓度梯度时也可进行（只是不需要能量）。B错误，协助扩散还受载体数量限制。C错误，胞吞胞吐不需要载体，依赖膜的流动性。D正确，温度影响分子运动速率、膜的流动性以及酶活性（影响主动运输供能）。</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>三、巩固提升</td></tr><tr><td>&#160;</td><td>练习1下列关于质壁分离及复原实验的叙述，错误的是（　）选用紫色洋葱鳞片叶外表皮细胞是因为其液泡有颜色，便于观察A.质壁分离过程中，细胞失水能力逐渐增强B.质壁分离的细胞放入清水中可发生复原C.该实验可证明原生质层相当于半透膜D.</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>2</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：B</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<p>葡萄糖进入红细胞的方式是（　）A. 自由扩散　B. 协助扩散　C. 主动运输　D. 胞吞 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>B</strong></div>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>3</strong></div>
+<p>下列过程中，不属于胞吐作用的是（　）A. 胰岛B细胞分泌胰岛素B. 神经细胞释放神经递质C. 吞噬细胞吞噬细菌D. 浆细胞分泌抗体 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：C（吞噬细菌属于胞吞）</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>练习4将发生质壁分离的洋葱表皮细胞置于清水中，不能复原的原因是（　）细胞壁失去活性　B.原生质层失去选择透过性A.细胞液浓度过高　D.细胞膜被破坏C.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习5下列关于主动运输的叙述，错误的是（　）需要载体蛋白的协助A.需要消耗细胞代谢产生的能量B.只能逆浓度梯度运输C.小肠上皮细胞吸收葡萄糖属于主动运输D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>四、易错警示</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>常见错误与混淆点质壁分离的&quot;质&quot;和&quot;壁&quot;：&quot;质&quot;指原生质层，不是细胞质；&quot;壁&quot;指细胞壁。•水分子移动方向：水分子是双向移动的，只是净移动方向是从低浓度溶液•向高浓度溶液。原生质层≠原生质体：原生质层是细胞膜+液泡膜+细胞质；原生质体是去•壁后的植物细胞。主动运输的误解：主动运输的特点是&quot;需要载体和能量&quot;，不是&quot;必须逆浓•度&quot;。顺浓度时也可进行主动运输（只是此时不耗能）。胞吞胞吐：运输的是大分子，穿过0层膜（通过膜融合实现），需要能•量，体现膜的流动性。氧气浓度影响：自由扩散和协助扩散不受氧气浓度影响，主动运输和胞吞•胞吐会受影响（因为它们消耗能量）。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

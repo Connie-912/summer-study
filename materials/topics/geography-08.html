@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 地理综合题答题模板 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 地理综合题答题模板</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>地理综合题答题模板</h2><div class="hero-sub">地理暑假衔接 · 第 54-56 页</div><div class="hero-meta"><span>📄 3 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>地理综合题（大题）往往是拉开分差的关键。很多同学知识点都懂，但答题时丢三落四、逻辑不清。本专题整理了<strong>四大类综合题型的答题模板</strong>，每种模板都配有真题示例，帮助建立&quot;看到题目→套模板→组织答案&quot;的答题思维。</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>类型一：特征描述类</td></tr><tr><td>&#160;</td><td>答题模板：1.位置特征：纬度位置（高/中/低纬）+海陆位置（沿海/内陆）+相对位置2.地形特征：地形类型（平原/高原/山地/盆地/丘陵）+地势高低（哪高哪低）+起伏大小3.气候特征：气温（全年/季节）+降水（总量/季节分配）+水热配合4.河流特征：水文特征（流量/水位变化/含沙量/结冰期）+水系特征（流向/流域面积/支流多少）</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>真题示例（2023全国卷）：描述青藏高原的地形特征。参考答案：①青藏高原以高原地形为主（平均海拔4000m以上），地势西北高、东南低。②高原面起伏和缓，但边缘被高山环绕，地势起伏大。③高原上分布有众多山脉（如喜马拉雅山、昆仑山）和宽谷盆地。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>类型二：原因分析类</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答题模板：1.自然原因：气候（气温+降水+光照+温差）+地形（类型+地势）+土壤（肥力+质地）+水源（河流+湖泊+地下水）2.人文原因：人口（数量+素质）+经济（发展水平+产业结构）+交通（便利程度）+政策（国家/地方政策）+科技（技术水平）+历史（历史基础）</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<p><strong>真题示例：</strong>分析我国西北地区土地荒漠化的原因。</p>
+<p><strong>参考答案：</strong><strong>自然原因：</strong>①<strong>气候干旱</strong>（深居内陆，降水稀少，蒸发旺盛）。②<strong>风力强劲</strong>（靠近冬季风源地）。③<strong>地表物质疏松</strong>（沙质土壤为主）。④<strong>植被稀少</strong>（覆盖度低）。</p>
+<p><strong>人为原因：</strong>①<strong>过度放牧</strong>（草场退化）。②<strong>过度开垦</strong>（破坏植被）。③<strong>过度樵采</strong>（砍伐薪柴）。④<strong>水资源不合理利用</strong>（下游断流，绿洲退化）。 </p>
+<table class="ptable"><tr><td>&#160;</td><td>类型三：影响评价类</td></tr><tr><td>&#160;</td><td>答题模板：1.有利影响（积极）：经济（促进发展/增加收入/优化结构）+社会（增加就业/改善生活/促进交流）+生态（改善环境/保持水土）2.不利影响（消极）：经济（成本上升/资源消耗）+社会（搬迁安置/社会矛盾）+生态（环境污染/生态破坏/资源枯竭）</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<p><strong>真题示例：</strong>评价南水北调工程对华北地区的有利影响。</p>
+<p><strong>参考答案：</strong><strong>有利影响：</strong>①<strong>缓解水资源短缺</strong>，满足工农业生产和居民生活用水需求。②<strong>改善生</strong><strong>态环境</strong>，回补地下水，缓解地面沉降。③<strong>促进经济发展</strong>，为工业发展提供水资源保障。④<strong>改善水质</strong>，替换超采的地下水。</p>
+<p><strong>不利影响：</strong>①工程投资巨大。②可能引起土壤次生盐碱化（不合理灌溉）。③对水源区（长江流域）有一定生态影响。 </p>
+<table class="ptable"><tr><td>&#160;</td><td>类型四：措施建议类</td></tr><tr><td>&#160;</td><td>答题模板：1.工程措施：修建水利工程/防护林/交通设施/环保设施等2.生物措施：植树造林/退耕还林还草/保护湿地/恢复植被3.技术措施：改良技术/节水灌溉/清洁生产/节能减排4.管理措施：制定法规/加强监管/宣传教育/经济手段（补贴/征税）</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>真题示例：针对我国华北地区水资源短缺问题，提出解决措施。参考答案：工程措施：①跨流域调水（南水北调）。②修建水库，调节径流季节分配。③海</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>水淡化（沿海地区）。</p>
+<p><strong>生物措施：</strong>①植树造林，增加水源涵养能力。②保护湿地。</p>
+<p><strong>技术措施：</strong>①推广<strong>节水灌溉</strong>（滴灌、喷灌）。②提高工业用水<strong>循环利用率</strong>。</p>
+<p><strong>管理措施：</strong>①制定<strong>水资源管理法规</strong>。②实行<strong>阶梯水价</strong>，促进节约用水。③加强宣传教育，提高公众节水意识。 </p>
+<table class="ptable"><tr><td>&#160;</td><td>⚠易错警示1.综合题答题三原则：①分点作答（用序号标注），条理清晰；②先自然后人文（原因分析类）；③先有利后不利（影响评价类）。2.不要生搬硬套模板：模板是框架，具体内容要结合题目给定的材料和区域背景来填充。脱离材料的空洞答案不得分。3.综合题的字数控制：一般每道题4-6个要点，每个要点1-2句话，总分值对应答题要点数（通常每点1-2分）。</td></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

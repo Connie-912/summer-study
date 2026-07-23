@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题五：细胞的能量供应和利用——酶与ATP、呼吸作用、 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题五：细胞的能量供应和利用——酶与ATP、呼吸作用、</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题五：细胞的能量供应和利用——酶与ATP、呼吸作用、</h2><div class="hero-sub">生物暑假衔接 · 第 23-29 页</div><div class="hero-meta"><span>📄 7 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>专题五：细胞的能量供应和利用——酶与ATP、呼吸作用、光合作用</td></tr><tr><td>&#160;</td><td>一、知识精讲酶——降低化学反应活化能1.</td></tr><tr><td>&#160;</td><td>概念：酶是活细胞产生的具有催化作用的有机物，其中绝大多数是蛋白质，少数是RNA。酶的特性：高效性：酶的催化效率远高于无机催化剂（约10⁷~10¹³倍）•专一性：一种酶只能催化一种或一类化学反应•作用条件温和：需要适宜的温度和pH•</td></tr><tr><td>&#160;</td><td>影响酶活性的因素：温度：低温抑制酶活性（可恢复），高温使酶变性失活（不可恢复）。•最适温度：动物酶约35~40℃，植物酶约40~50℃。pH：过酸或过碱都会使酶变性失活。胃蛋白酶最适pH约1.5，胰蛋白酶•最适pH约8.0。</td></tr><tr><td>&#160;</td><td>ATP——细胞的能量&quot;货币&quot;2.</td></tr><tr><td>&#160;</td><td>全称：腺苷三磷酸（AdenosineTriphosphate）结构简式：A-P~P~P（A：腺苷；P：磷酸基团；~：高能磷酸键）特点：ATP在细胞中含量很少，但转化十分迅速。ATP与ADP之间的相互转化处于动态平衡中。ATP的形成途径：光合作用：光反应阶段（叶绿体类囊体薄膜）•细胞呼吸：有氧呼吸的三个阶段和无氧呼吸的第一阶段•</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>有氧呼吸三阶段</strong></div><table class="ptable"><tr><th style="background:#f8fafc;color:#334155">ATP的功能：为各种生命活动直接供能（肌肉收缩、主动运输、物质合成、神经传导等）。</th><th style="background:#f8fafc;color:#334155">&#160;</th></tr><tr><td>细胞呼吸3.（1）有氧呼吸</td><td>&#160;</td></tr></table>
+<p style="color:#15803d">第一阶段（细胞质基质）：C₆H₁₂O₆ → 2丙酮酸 + 4[H] + 少量ATP第二阶段（线粒体基质）：2丙酮酸 + 6H₂O → 6CO₂ + 20[H] + 少量ATP第三阶段（线粒体内膜）：24[H] + 6O₂ → 12H₂O + 大量ATP总反应式：C₆H₁₂O₆ + 6H₂O + 6O₂ → 6CO₂ + 12H₂O + 能量1mol葡萄糖彻底氧化分解可产生约30或32mol ATP（大部分以热能形式散失）</p>
+<div class="h3c"><strong>（</strong><strong>2</strong><strong>）无氧呼吸</strong></div>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">类型</th><th style="background:#dcfce7;color:#166534">场所</th><th style="background:#dcfce7;color:#166534">反应式</th><th style="background:#dcfce7;color:#166534">产物</th><th style="background:#dcfce7;color:#166534">代表生物</th></tr><tr><td>产生酒精</td><td>细胞质基质</td><td>C₆H₁₂O₆→2C₂H₅OH少量能量+2CO₂+</td><td>酒精和CO₂</td><td>大多数植物、酵母菌</td></tr><tr><td>产生乳酸</td><td>细胞质基质</td><td>C₆H₁₂O₆→2C₃H₆O₃+少量能量</td><td>乳酸</td><td>动物、乳酸菌、马铃薯块茎、甜菜块根</td></tr><tr><td>&#160;</td><td>&#160;</td><td>关键点：无氧呼吸只在第一阶段释放少量能量，生成少量ATP；第二阶段不释放能量。无氧呼吸的全过程都在细胞质基质中进行。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>光合作用4.</td><td>（1）捕获光能的色素</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">色素种类</th><th style="background:#dcfce7;color:#166534">颜色</th><th style="background:#dcfce7;color:#166534">吸收光谱</th><th style="background:#dcfce7;color:#166534">分布</th></tr><tr><td>叶绿素a</td><td>蓝绿色</td><td>红光和蓝紫光</td><td>类囊体薄膜</td></tr><tr><td>叶绿素b</td><td>黄绿色</td><td>红光和蓝紫光</td><td>类囊体薄膜</td></tr><tr><td>胡萝卜素</td><td>橙黄色</td><td>蓝紫光</td><td>类囊体薄膜</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>叶黄素</th><th>黄色</th><th>蓝紫光</th><th>类囊体薄膜</th></tr><tr><td>（2）光合作用过程</td><td>次为：胡萝卜素、叶黄素、叶绿素a、叶绿素b。</td><td>色素提取与分离实验：用无水乙醇提取色素，用层析液分离色素（原理：不同色素在层析液中溶解度不同，随层析液在滤纸上扩散速度不同）。滤纸条上从上到下依</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>光合作用两阶段</td><td>&#160;</td></tr><tr><td>&#160;</td><td>水的光解：2H₂OATP合成：ADP</td><td>光反应（类囊体薄膜）：→4[H]+O₂光能+Pi+→ATP</td><td>&#160;</td></tr><tr><td>&#160;</td><td>CO₂固定：CO₂C₃还原：2C₃+</td><td>暗反应（叶绿体基质）：+C₅→2C₃[H]+ATP→(CH₂O)+C₅</td><td>&#160;</td></tr><tr><td>总反应式：CO₂</td><td>+H₂O→</td><td>O₂（条件：光能、叶绿体）(CH₂O)+光反应为暗反应提供ATP和[H]（NADPH）；暗反应为光反应提供ADP、Pi和NADP⁺</td><td>&#160;</td></tr><tr><td>（3）影响光合作用的因素•再增加。•再增加。••</td><td>温度：通过影响酶活性影响光合速率，有最适温度。水分：水分是光合作用的原料，也是植物体内物质运输的介质。</td><td>光照强度：一定范围内，随光照强度增加，光合速率增大；达到光饱和点后不CO₂浓度：一定范围内，随CO₂浓度增加，光合速率增大；达到CO₂饱和点后不</td><td>&#160;</td></tr><tr><td>光合速率与呼吸速率的关系5.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>净光合速率=表示方法：O₂产生量（总光合）=•CO₂固定量（总光合）=•</td><td>总（真正）光合速率</td><td>呼吸速率-O₂释放量（净光合）+O₂呼吸消耗量CO₂吸收量（净光合）+</td><td>CO₂呼吸释放量</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>二、典例破题</strong></div><table class="ptable"><tr><th style="background:#f8fafc;color:#334155">有机物产生量（总光合）=有机物积累量（净光合）+有机物呼吸消耗量•</th><th style="background:#f8fafc;color:#334155">&#160;</th></tr></table>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（酶的特性）</strong></div>
+<p style="color:#78350f">下列关于酶的叙述，正确的是（　）A. 酶只能在细胞内发挥催化作用B. 酶的化学本质都是蛋白质C. 低温会破坏酶的空间结构D. 一种酶只能催化一种或一类化学反应 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：D解析：A错误，酶在适宜条件下可在细胞外发挥作用（如消化酶）。B错误，少数酶是RNA。C错误，低温只抑制酶活性，不破坏空间结构；高温才会破坏。D正确，体现了酶的专一性。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>典例2（细胞呼吸）酵母菌在有氧和无氧条件下都能进行细胞呼吸。下列叙述正确的是（　）有氧呼吸和无氧呼吸的第一阶段完全相同A.有氧呼吸的产物是CO₂和酒精B.无氧呼吸能产生大量ATPC.酵母菌无氧呼吸的产物是乳酸D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：A解析：A正确，第一阶段都是葡萄糖分解为丙酮酸和[H]，在细胞质基质中进行。B错误，有氧呼吸产物是CO₂和H₂O。C错误，无氧呼吸只在第一阶段产生少量ATP。D错误，酵母菌无氧呼吸产生酒精和CO₂，不产生乳酸。</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>典例3（光合作用）在光合作用的暗反应中，CO₂首先被固定形成（　）葡萄糖　D.丙酮酸A.C₃B.C₅C.</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>4</strong></div><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：A解析：暗反应中CO₂的固定过程是：CO₂与C₅结合生成两个C₃分子。因此CO₂首先被固定形成C₃，然后C₃再被还原成糖类和C₅。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习1ATP的结构简式是（　）A.A-P-P~PB.A~P~P~PC.A-P~P~PD.A~P-P-P</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习2人体细胞进行有氧呼吸的主要场所是（　）细胞质基质　B.线粒体　C.叶绿体　D.核糖体A.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习3下列关于光合作用和细胞呼吸的叙述，正确的是（　）光合作用只在白天进行，细胞呼吸只在夜晚进行A.光合作用的产物是细胞呼吸的原料B.光合作用在线粒体中进行，细胞呼吸在叶绿体中进行C.光合作用和细胞呼吸是可逆反应D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>在温度、pH等条件适宜的情况下，下图表示酶促反应速率与底物浓度的关系。当底物浓度超过某一值后，反应速率不再增加的原因是（　）A. 酶的数量有限</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>四、易错警示</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>底物浓度过高抑制了酶的活性B.温度不适宜C.pH不适宜D.</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：A（底物足量时，酶全部参与反应，反应速率达最大，此时限制因素是酶的数量）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习5下列关于叶绿体中色素的叙述，错误的是（　）叶绿素a和叶绿素b主要吸收红光和蓝紫光A.胡萝卜素主要吸收蓝紫光B.色素分布在类囊体薄膜上C.叶绿素对绿光吸收最多，所以叶片呈绿色D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：D（叶绿素对绿光吸收最少，反射绿光，所以叶片呈绿色）</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#991b1b"><strong>常见错误与混淆点</strong></div>
+<div class="h3c" style="color:#15803d"><strong>酶的本质：</strong>大多数是蛋白质，少数是RNA。酶的合成场所主要是核糖体• </div>
+<p>（蛋白质类酶），少数在细胞核（RNA类酶）。</p>
+<div class="h3c" style="color:#15803d"><strong>低温 </strong><strong>vs </strong><strong>高温：</strong>低温降低活性但空间结构不变（可恢复）；高温、过酸、• </div>
+<p>过碱破坏空间结构（不可逆失活）。</p>
+<div class="h3c" style="color:#15803d"><strong>有氧呼吸的场所：</strong>第一阶段在细胞质基质，第二、三阶段在线粒体。不要• </div>
+<p>误以为全在线粒体。</p>
+<div class="h3c" style="color:#15803d"><strong>无氧呼吸的产物：</strong>植物和酵母菌产生酒精和CO₂；动物和乳酸菌产生乳• </div>
+<p>酸。不同生物产物不同。</p>
+<div class="h3c" style="color:#15803d"><strong>光合作用的总反应式：</strong>产物中的O₂来自水的光解，不是来自CO₂。• </div>
+<div class="h3c" style="color:#15803d"><strong>光反应与暗反应的关系：</strong>光反应为暗反应提供[H]和ATP；暗反应为光反应• </div>
+<p>提供ADP、Pi和NADP⁺。两者缺一不可。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>净光合总光合：净光合总光合呼吸。测得的O₂释放量或CO₂吸收•vs=-量通常是净光合速率。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 地质作用与地貌 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 地质作用与地貌</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>地质作用与地貌</h2><div class="hero-sub">地理暑假衔接 · 第 28-35 页</div><div class="hero-meta"><span>📄 8 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>地质作用是塑造地表形态的&quot;雕刻刀&quot;。本专题从<strong>内力作用</strong>（板块运动、地壳运动、岩浆活动）和<strong>外力作用</strong>（风化、侵蚀、搬运、沉积）两个维度，系统讲解地貌成因，并深入<strong>岩石圈物质循环</strong>和<strong>地质剖面图判读</strong>。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">①</span><strong>考点一：内力作用与地貌</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">内力作用形式</th><th style="background:#0ea5e9">表现形式</th><th style="background:#0ea5e9">形成的地貌</th></tr><tr><td>地壳运动（水平运动）</td><td>板块碰撞挤压、张裂</td><td>褶皱山脉（喜马拉雅山）、裂谷（东非大裂谷）</td></tr><tr><td>地壳运动（垂直运动）</td><td>地壳抬升或沉降</td><td>高原隆起、盆地沉降</td></tr><tr><td>岩浆活动</td><td>火山喷发</td><td>火山锥、熔岩高原</td></tr><tr><td>变质作用</td><td>高温高压下岩石变质</td><td>片麻岩、大理岩等变质岩</td></tr><tr><td>地震</td><td>地壳快速释放能量</td><td>地表断裂、滑坡</td></tr><tr><td>&#160;</td><td>板块构造学说核心：全球分为六大板块（亚欧、非洲、美洲、南极洲、印度洋、太平洋板块）。板块交界处地壳活跃，多火山地震；板块内部稳定。</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】用板块构造学说解释喜马拉雅山脉和东非大裂谷的形成。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><p><span class="nno">①</span> 喜马拉雅山脉：<strong>亚欧板块与印度洋板块碰撞挤压</strong>，地壳褶皱隆起，形成世界最高山脉。</p>
+<p><span class="nno">②</span> 东非大裂谷：<strong>非洲板块内部张裂</strong>（板块生长边界），地壳断裂下陷，形成裂谷。</p>
+<div class="h3c" style="color:#16a34a"><strong>答案：</strong>喜马拉雅山是碰撞挤压（消亡边界）形成；东非大裂谷是板块张</div>
+<p>裂（生长边界）形成。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.说明日本多火山地震的原因。</td></tr><tr><td>&#160;</td><td>答案：日本位于亚欧板块与太平洋板块的消亡边界（环太平洋火山地震带）。太平洋板块向亚欧板块下方俯冲，地壳极不稳定，因此多火山地震。答：日本位于板块消亡边界，地壳活动剧烈，多火山地震。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 褶皱有哪两种基本形态？分别形成什么地貌？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>背斜</strong>：岩层向上拱起，中心老、两翼新。原始地貌为山岭，但顶部受张</div>
+<p style="color:#166534">力易被侵蚀，可能形成谷地（&quot;背斜成谷&quot;）。</p>
+<div class="h3c" style="color:#166534"><strong>向斜</strong>：岩层向下弯曲，中心新、两翼老。原始地貌为谷地，但槽部受挤压坚</div>
+<p style="color:#166534">实，不易被侵蚀，可能形成山岭（&quot;向斜成山&quot;）。</p>
+<div class="h3c" style="color:#166534"><strong>答：背斜（岩层上拱）和向斜（岩层下弯），实际地貌可能因差异侵蚀而反</strong></div>
+<p style="color:#166534"><strong>转。</strong></p></div>
+<p><strong>3. 简述断层形成的地貌类型。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> 断层是岩层受力断裂并沿断裂面发生位移的地质构造。</p>
+<p style="color:#166534">①<strong>地垒</strong>（两条断层之间岩块上升）：形成块状山地，如华山、庐山。</p>
+<p style="color:#166534">②<strong>地堑</strong>（两条断层之间岩块下降）：形成狭长谷地，如渭河平原、汾河谷地。</p>
+<p style="color:#166534"><strong>答：地垒形成块状山，地堑形成谷地或平原。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>⚠易错警示1.&quot;背斜成谷、向斜成山&quot;的成因：背斜顶部受张力，岩石破碎易被侵蚀；向斜槽部受挤压，岩石坚硬不易被侵蚀。这是考试的高频考点。</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><p style="color:#92400e"><strong>2. 区分&quot;构造&quot;和&quot;地貌&quot;：</strong>背斜和向斜是地质构造，山岭和谷地是地貌形态。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">②</span><strong>考点二：外力作用与地貌</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">外力作用</th><th style="background:#0ea5e9">主要形式</th><th style="background:#0ea5e9">典型地貌</th><th style="background:#0ea5e9">主要分布区</th></tr><tr><td>风化作用</td><td>物理风化、化学风化、生物风化</td><td>风化壳、球状风化</td><td>干旱区、高寒区</td></tr><tr><td>流水侵蚀</td><td>下蚀、侧蚀、溯源侵蚀</td><td>V形谷（上游）、U形谷（中游）、喀斯特地貌</td><td>湿润区</td></tr><tr><td>流水沉积</td><td>流速减慢→泥沙沉积</td><td>冲积扇（出山口）、三角洲（入海口）、冲积平原</td><td>河流中下游</td></tr><tr><td>风力侵蚀</td><td>风蚀作用</td><td>风蚀蘑菇、雅丹地貌、风蚀城堡</td><td>干旱区</td></tr><tr><td>风力沉积</td><td>风力减弱→沙粒沉积</td><td>沙丘、黄土堆积</td><td>干旱区、半干旱区</td></tr><tr><td>冰川作用</td><td>冰川侵蚀、搬运、堆积</td><td>U形谷、角峰、冰碛丘陵</td><td>高纬区、高山区</td></tr><tr><td>海浪作用</td><td>海浪侵蚀、搬运、堆积</td><td>海蚀崖、海蚀柱、沙滩</td><td>沿海地区</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】比较长江三峡（</strong><strong>V</strong><strong>形谷）和长江中下游平原的成因差异。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><p>长江三峡：位于上游，落差大，流速快，以<strong>流水下蚀</strong>为主，形成V形峡谷。</p>
+<p>长江中下游平原：位于中下游，流速减慢，以<strong>流水沉积</strong>为主，泥沙堆积形成冲积平原。</p>
+<p style="color:#16a34a"><strong>答案：</strong>三峡是流水侵蚀（下蚀）形成，中下游平原是流水沉积形成。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.喀斯特地貌（岩溶地貌）的形成条件是什么？我国主要分布在哪里？</td></tr><tr><td>&#160;</td><td>答案：形成条件：①可溶性岩石（石灰岩、白云岩）广泛分布。②温暖湿润的气候（流水溶蚀作用强）。③地下水丰富。主要分布：我国西南地区（云南、贵州、广西），以桂林山水、云南石林为典型代表。答：需要石灰岩+湿润气候+丰富地下水；主要分布在云贵桂。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 黄河三角洲不断向海洋扩展的原因是什么？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①黄河含沙量极大（世界第一），每年输送约16亿吨泥沙入海。②入海</div>
+<div class="h3c" style="color:#166534">口处流速减慢，泥沙大量<strong>沉积</strong>。③沉积速度&gt;海浪侵蚀速度，三角洲不断向海推</div>
+<p style="color:#166534">进。</p>
+<p style="color:#166534"><strong>答：黄河含沙量大，入海口流速减慢，泥沙沉积速度大于海浪侵蚀速度。</strong></p></div>
+<p><strong>3. 我国西北地区为何多风蚀地貌（雅丹地貌）？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①西北地区<strong>气候干旱</strong>，植被稀少，地表裸露。②<strong>风力强劲</strong>（靠近冬季风</div>
+<p style="color:#166534">源地）。③地表物质疏松（砂土、干涸湖底沉积物），容易被风力侵蚀搬运。</p>
+<p style="color:#166534"><strong>答：干旱少雨、植被稀少、风力强劲、地表物质疏松，风力侵蚀作用强烈。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 外力作用的表现具有明显的地域性：</strong>湿润区以流水作用为主，干旱区以风</div>
+<p style="color:#92400e">力作用为主，高寒区以冰川作用为主。</p>
+<div class="h3c" style="color:#92400e"><strong>2. &quot;侵蚀&quot;和&quot;风化&quot;的区别：</strong>风化是岩石在原地破坏，不涉及搬运；侵蚀是外</div>
+<p style="color:#92400e">力将物质剥离并搬运走。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">③</span><strong>考点三：岩石圈物质循环</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">岩石类型</th><th style="background:#0ea5e9">形成过程</th><th style="background:#0ea5e9">典型岩石</th></tr><tr><td>岩浆岩（火成岩）</td><td>岩浆冷却凝固</td><td>侵入岩：花岗岩；喷出岩：玄武岩</td></tr><tr><td>沉积岩</td><td>外力作用（风化→侵蚀→搬运→沉积→固结成岩）</td><td>砂岩、石灰岩、页岩</td></tr><tr><td>变质岩</td><td>高温高压下原岩石变质</td><td>大理岩（石灰岩变质）、片麻岩（花岗岩变质）</td></tr></table>
+<div class="h3c" style="color:#0369a1"><strong>岩石圈物质循环路径：</strong></div>
+<div class="h3c" style="color:#0369a1"><strong>岩浆 →（冷却凝固）→ 岩浆岩 →（外力作用）→ 沉积岩 →</strong></div>
+<div class="h3c" style="color:#0369a1"><strong>（变质作用）→ 变质岩 →（重熔再生）→ 岩浆 </strong></div></div>
+<div class="h3c" style="color:#0369a1"><strong>巩固提升</strong></div>
+<p><strong>1. 花岗岩和玄武岩有何区别？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>花岗岩</strong>：侵入岩，岩浆在地下深处缓慢冷却，<strong>结晶颗粒大</strong>，质地坚硬，</div>
+<p style="color:#166534">是良好的建筑材料。</p>
+<div class="h3c" style="color:#166534"><strong>玄武岩</strong>：喷出岩，岩浆喷出地表快速冷却，<strong>结晶颗粒小（甚至无结晶）</strong>，常有</div>
+<p style="color:#166534">气孔构造。</p>
+<p style="color:#166534"><strong>答：花岗岩是侵入岩（颗粒粗大），玄武岩是喷出岩（颗粒细小、有气孔）。</strong></p></div>
+<p><strong>2. 沉积岩的两大特征是什么？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①<strong>层理构造</strong>：沉积岩具有明显的层状结构，反映了沉积环境的周期性变</div>
+<p style="color:#166534">化。</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>②含有化石：沉积岩中常保存古生物化石，是研究地球历史的重要依据。答：层理构造和含有化石是沉积岩的两大特征。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>3.说明石灰岩变为大理岩的地质过程。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：石灰岩（沉积岩）在高温高压条件下（如岩浆侵入接触或区域变质作用），发生变质作用，方解石重新结晶，形成大理岩（变质岩）。答：石灰岩在高温高压下变质重结晶形成大理岩。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>⚠易错警示1.岩浆岩不能直接变成岩浆岩：必须经过重熔再生变成岩浆后再冷却凝固。沉积岩和变质岩也不能直接变成自己。2.只有沉积岩含有化石，岩浆岩和变质岩不含化石。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">④</span><strong>考点四：地质剖面图判读</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><p>地质剖面图判读是综合考查地质作用的核心题型。判读步骤：</p>
+<table class="ptable"><tr><th style="background:#0ea5e9">判读步骤</th><th style="background:#0ea5e9">方法</th></tr><tr><td>1.判读岩层新老关系</td><td>沉积岩：下老上新；岩浆岩侵入体：晚于被侵入岩层；断层：晚于被切断的岩层</td></tr><tr><td>2.识别地质构造</td><td>背斜（岩层上拱）、向斜（岩层下弯）、断层（岩层断裂错位）</td></tr></table>
+<p>3. 判断地质事　原则：被切断的岩层先形成，切断别的岩层后形成；</p>
+<p>件顺序　侵入岩晚于围岩</p>
+<p>4. 分析地貌成内力作用（构造运动）+ 外力作用（侵蚀、沉积）因</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>典例破题【例题】某地质剖面图显示：砂岩层在下，石灰岩层在上，中间有一花岗岩侵入体切穿了两层。判断各地质事件的先后顺序。</td></tr><tr><td>&#160;</td><td>分析：砂岩最先沉积（在下层）。1石灰岩后沉积（在砂岩之上）。2花岗岩侵入体切穿了砂岩和石灰岩，说明岩浆活动晚于沉积岩形3成。答案：先后顺序：砂岩沉积→石灰岩沉积→岩浆侵入（花岗岩形成）。</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.地质剖面图中，如何判断断层的形成时间？</td></tr><tr><td>&#160;</td><td>答案：断层晚于它所切断的所有岩层，早于覆盖在它上面的未受影响的岩层。例如：断层切断了A、B、C三层，但D层水平覆盖在断层之上且未被切断，则断层形成于C层沉积之后、D层沉积之前。答：断层晚于被切断岩层，早于覆盖其上的未受影响的岩层。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 地质剖面图中，如何区分背斜和向斜？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong><strong>背斜</strong>：岩层<strong>向上拱起</strong>，核部为老岩层，两翼为新岩层。</p>
+<p style="color:#166534"><strong>向斜</strong>：岩层<strong>向下弯曲</strong>，核部为新岩层，两翼为老岩层。</p>
+<p style="color:#166534">核心口诀：<strong>&quot;背斜核老翼新，向斜核新翼老&quot;</strong>。</p>
+<p style="color:#166534"><strong>答：根据岩层弯曲方向和核部/两翼的岩层新老关系判断。</strong></p></div>
+<p><strong>3. 某地质剖面从上到下依次为：黄土层→玄武岩层→砂岩层→花岗岩</strong><strong>体。判断各地质事件的顺序。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①花岗岩体最先形成（岩浆侵入，位于最底部）。</p>
+<p style="color:#166534">②砂岩层沉积覆盖在花岗岩之上。</p>
+<p style="color:#166534">③玄武岩喷出覆盖在砂岩之上（玄武岩层在上，为喷出岩）。</p>
+<p style="color:#166534">④黄土层最后沉积覆盖在最顶部。</p>
+<p style="color:#166534"><strong>答：花岗岩侵入 → 砂岩沉积 → 玄武岩喷出 → 黄土沉积。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 地质剖面图判读的核心原则：</strong>被切断者先形成，切断者后形成；下层的岩</div>
+<p style="color:#92400e">层先形成，上层的岩层后形成（沉积岩）。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 注意区分&quot;侵入岩&quot;和&quot;喷出岩&quot;：</strong>侵入岩在剖面图中表现为穿插关系，喷出</div>
+<p style="color:#92400e">岩表现为层状覆盖。</p></div>
+<table class="ptable"></table>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

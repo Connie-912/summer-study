@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 万有引力与航天 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 万有引力与航天</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>万有引力与航天</h2><div class="hero-sub">物理暑假衔接 · 第 41-46 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">🌍考点1：万有引力定律</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>万有引力定律：</strong>F = G m₁m₂ / r²</div>
+<div class="h3c" style="color:#f59e0b"><strong>引力常量：</strong>G = 6.67 × 10-11 N·m²/kg²</div>
+<div class="h3c" style="color:#f59e0b"><strong>黄金代换：</strong>GM = gR²（地表重力加速度g与地球质量M、半</div>
+<p style="color:#e2e8f0">径R的关系） </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>两个质量均为100 kg的人相距1 m，求他们之间的万有引力大小。</p>
+<p>（G=6.67×10-11）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>F = G m₁m₂ / r² = 6.67 × 10-11 × 100 × 100 / 1²F = 6.67 × 10-7 N这个力非常小，人与人之间的万有引力完全可以忽略不计。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>已知地球质量M=6.0×1024 kg，半径R=6400 km。求：(1) 地球表面的重力加速度g；(2) 距地面高度等于地球半径处的重力加速度。（G=6.67×10-11）</p></div>
+<table class="ptable"></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 地球表面：</strong>mg = GMm/R² ⇒ g = GM/R²</div>
+<p>g = 6.67×10-11 × 6.0×1024 / (6.4×106)²g ≈ 40.02×1013 / 40.96×1012 ≈ <strong>9.77 m/s²</strong>（约等于10）</p>
+<div class="h3c"><strong>(2) 距地面高度</strong><strong>h=R</strong><strong>处：</strong>r = R + h = 2R</div>
+<div class="h3c">g&#x27; = GM/(2R)² = g/4 ≈ <strong>2.44 m/s²</strong></div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>已知月球绕地球运转的周期T=27.3天，轨道半径r=3.84×108m。估算地球的质量。（G=6.67×10-11）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>月球绕地球运动，万有引力提供向心力：GMm/r² = m × 4π²r/T²M = 4π²r³/(GT²)T = 27.3 × 24 × 3600 ≈ 2.36 × 106 sM = 4 × 3.14² × (3.84×108)³ / [6.67×10-11 × (2.36×106)²]</p>
+<div class="h3c">M ≈ <strong>6.0 × 10</strong><strong>24</strong><strong> kg</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">🛰考点2：卫星运动</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<p style="color:#b45309"><strong>卫星运动的向心力来源：</strong>万有引力。</p>
+<p>GMa/r2 = mv2/r = mω2r = m·4π2r/T2</p>
+<table class="ptable"><tr><th>&#160;</th><th>结论：轨道越高（r越大），v越小，ω越小，T越大（&quot;高轨低速大周期&quot;）。</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【巩固题】1已知地球半径为R，地球表面重力加速度为g。求近地卫星（轨道半径≈R）的线速度。</td><td>&#160;</td></tr><tr><td>&#160;</td><td>详细解析近地卫星：万有引力提供向心力mv2/RGMm/R²=v=√(GM/R)由黄金代换gR²：GM=v=√(gR²/R)=√(gR)6.4×106)代入数值：v≈km/s（即第一宇宙速=√(10×8度）</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>同步卫星的轨道半径约为地球半径的6.6倍。求同步卫星的线速度与近地卫星线速度的比值。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>v = √(GM/r)，所以 v ∝ 1/√r</p>
+<div class="h3c">v同步 / v近地 = √(R / 6.6R) = √(1/6.6) ≈ <strong>0.39</strong></div>
+<p>同步卫星线速度约为近地卫星的39%，约为3.1 km/s。 </p></div>
+<table class="ptable"><tr><td>&#160;</td><td>【巩固题】3</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>为什么同步卫星的轨道平面必须与赤道平面重合，且高度固定？</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析轨道平面与赤道平面重合：同步卫星的角速度与地球自转角速度相同，万有引力需指向地心。若轨道平面不与赤道重合，万有引力的一个分力将使卫星向赤道面运动。高度固定：由4π²r/T²，T固定为24h，解得GMm/r²=m×r≈1071074.2×m（距地面约3.6×m），高度是唯一的。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><th style="background:#fef3c7">📖考点3：三大宇宙速度</th><th style="background:#fef3c7">&#160;</th></tr></table>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"></div>
+<table class="ptable"><tr><th style="background:#f59e0b">宇宙速度</th><th style="background:#f59e0b">数值</th><th style="background:#f59e0b">含义</th></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">第一宇宙速度</th><th style="background:#fffbeb;color:#92400e">7.9km/s</th><th style="background:#fffbeb;color:#92400e">最小发射速度（近地卫星环绕速度），v₁=√(gR)</th></tr><tr><td>第二宇宙速度</td><td>11.2km/s</td><td>脱离地球引力束缚的最小速度（逃逸速度），v₂=√2v₁</td></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">第三宇宙速度</th><th style="background:#fffbeb;color:#92400e">16.7km/s</th><th style="background:#fffbeb;color:#92400e">脱离太阳引力束缚的最小速度</th></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>说明第一宇宙速度7.9 km/s的含义。为什么它既是&quot;最小发射速度&quot;又是&quot;最大环绕速度&quot;？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c"><strong>最小发射速度：</strong>发射卫星时，至少要达到7.9 km/s才能使卫星绕</div>
+<p>地球做圆周运动而不落回地面。低于此速度，卫星会落回地面。</p>
+<div class="h3c"><strong>最大环绕速度：</strong>由 v = √(GM/r)，r越小v越大。近地卫星轨道半</div>
+<p>径最小（r=R），所以环绕速度最大。轨道越高，速度越小。</p>
+<p>因此7.9 km/s是近地卫星的速度，也是所有卫星环绕速度中的最大值。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>某星球的质量是地球的2倍，半径是地球的一半。求该星球的第一宇宙速度。（已知地球第一宇宙速度为7.9 km/s）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>v₁ = √(GM/R)v₁&#x27; / v₁ = √(M&#x27;R / MR&#x27;) = √(2M × R / (M × 0.5R)) =√(2/0.5) = √4 = 2</p>
+<div class="h3c">v₁&#x27; = 2 × 7.9 = <strong>15.8 km/s</strong></div></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>如果发射一颗卫星，发射速度在7.9 km/s和11.2 km/s之间，卫星将做什么运动？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>发射速度在7.9 km/s（第一宇宙速度）和11.2 km/s（第二宇宙速度）之间时：卫星将做<strong>椭圆轨道运动</strong>。地球位于椭圆的一个焦点上。</p>
+<p>7.9 km/s &lt; v &lt; 11.2 km/s → 椭圆轨道v = 7.9 km/s → 圆形轨道（近地）v ≥ 11.2 km/s → 脱离地球，进入绕太阳运动的轨道 </p></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="box-t" style="color:#92400e"><strong>⚠ 专题06 易错警示</strong></div><div class="h3c" style="color:#92400e"><strong>1. 万有引力与重力的区别：</strong>在地球表面，重力是万有引力的一个分力</div>
+<p style="color:#92400e">（另一个分力提供随地球自转的向心力）。在赤道处两者差别最大，在两极两者相等。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 黄金代换的使用条件：</strong>GM = gR² 仅适用于天体表面（或忽略天体自</div>
+<p style="color:#92400e">转时）。</p>
+<div class="h3c" style="color:#92400e"><strong>3. 卫星变轨：</strong>从低轨道到高轨道，需要先加速（离心）再减速（稳</div>
+<p style="color:#92400e">定），总机械能增加。</p>
+<div class="h3c" style="color:#92400e"><strong>4. 同步卫星：</strong>只能在赤道正上方，高度、周期、角速度都是定值。周期</div>
+<p style="color:#92400e">=24h。</p>
+<div class="h3c" style="color:#92400e"><strong>5. &quot;高轨低速大周期&quot;：</strong>轨道越高，线速度越小，角速度越小，但周期越</div>
+<p style="color:#92400e">大。注意&quot;低速&quot;指线速度，不是角速度。 </p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题一：走近细胞——细胞学说、显微镜、原核与真核细胞 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题一：走近细胞——细胞学说、显微镜、原核与真核细胞</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题一：走近细胞——细胞学说、显微镜、原核与真核细胞</h2><div class="hero-sub">生物暑假衔接 · 第 2-6 页</div><div class="hero-meta"><span>📄 5 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th>&#160;</th><th>专题一：走近细胞——细胞学说、显微镜、原核与真核细胞</th></tr><tr><td>&#160;</td><td>一、知识精讲细胞学说1.</td></tr><tr><td>&#160;</td><td>建立者：施莱登（植物学家）和施旺（动物学家），19世纪30年代提出。主要内容：细胞是一个有机体，一切动植物都由细胞发育而来，并由细胞和细胞产•物所构成。细胞是一个相对独立的单位，既有它自己的生命，又对与其他细胞共同•组成的整体生命起作用。新细胞是由老细胞分裂产生的。•</td></tr><tr><td>&#160;</td><td>意义：揭示了动物和植物的统一性，从而阐明了生物界的统一性。</td></tr><tr><td>&#160;</td><td>显微镜的使用2.</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">项目</th><th style="background:#dcfce7;color:#166534">低倍镜</th><th style="background:#dcfce7;color:#166534">高倍镜</th></tr><tr><td>视野亮度</td><td>亮</td><td>暗</td></tr><tr><td>视野范围</td><td>大</td><td>小</td></tr><tr><td>细胞数目</td><td>多</td><td>少</td></tr><tr><td>细胞大小</td><td>小</td><td>大</td></tr><tr><td>物镜与装片距离</td><td>远</td><td>近</td></tr><tr><td>高倍镜使用步骤：找（低倍镜下找到目标）→（转动转换器换高倍物镜）→重要：显微镜成倒像（上下颠倒、左右相反），物像移动方向与装片移动方向相反。</td><td>移（将目标移至视野中央）→调（调细准焦螺旋和光圈/反光镜）。</td><td>转</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>3. </strong><strong>原核细胞与真核细胞的比较</strong></div><table class="ptable"><tr><th style="background:#dcfce7;color:#166534">比较项目</th><th style="background:#dcfce7;color:#166534">原核细胞</th><th style="background:#dcfce7;color:#166534">真核细胞</th></tr><tr><td>细胞核</td><td>无核膜包被，无成形细胞核（拟核）</td><td>有核膜包被的成形细胞核</td></tr><tr><td>染色体</td><td>无</td><td>有（由DNA和蛋白质组成）</td></tr><tr><td>细胞器</td><td>只有核糖体</td><td>有多种复杂细胞器</td></tr><tr><td>代表生物</td><td>细菌、蓝细菌（蓝藻）、支原体、衣原体</td><td>动物、植物、真菌</td></tr><tr><td>细胞壁</td><td>有（肽聚糖，支原体除外）</td><td>植物有（纤维素和果胶），真菌有（几丁质），动物无</td></tr><tr><td>&#160;</td><td>蓝细菌（蓝藻）特别提示：能进行光合作用（含叶绿素和藻蓝素），但没有叶绿体，属于原核生物。常见类型：颤蓝细菌、色球蓝细菌、念珠蓝细菌、发菜。</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#15803d"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（细胞学说理解）</strong></div>
+<p style="color:#78350f">下列关于细胞学说的叙述，正确的是（　）A. 细胞学说认为一切生物都是由细胞构成的B. 细胞学说揭示了动物和植物的统一性和差异性C. 细胞学说认为细胞是一个相对独立的单位D. 细胞学说认为新细胞可以从老细胞的细胞核中产生 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>C</strong></div>
+<div class="h3c" style="color:#15803d"><strong>解析：</strong>A错误，细胞学说针对的是动植物，不是一切生物（病毒没有细胞</div>
+<p style="color:#451a03">结构）。B错误，细胞学说揭示的是统一性，不是差异性。C正确，这是</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#92400e"><strong>典例</strong><strong>2</strong><strong>（原核与真核辨析）</strong></div><table class="ptable"><tr><th style="background:#f59e0b">细胞学说的核心内容之一。D错误，新细胞是由老细胞分裂产生的，不是从细胞核中产生。</th><th style="background:#f59e0b">&#160;</th></tr></table>
+<p style="color:#78350f">下列生物中，属于原核生物的是（　）</p>
+<p style="color:#78350f">①酵母菌　②发菜　③草履虫　④乳酸菌　⑤噬菌体　⑥青霉菌A. ①②④ B. ②④ C. ②④⑥ D. ①③⑤ </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>B</strong></div>
+<div class="h3c" style="color:#15803d"><strong>解析：</strong>②发菜属于蓝细菌（蓝藻），是原核生物；④乳酸菌属于细菌，是</div>
+<p style="color:#451a03">原核生物。①酵母菌、⑥青霉菌属于真菌，是真核生物；③草履虫是原生动物，真核生物；⑤噬菌体是病毒，没有细胞结构，既不属于原核也不属于真核。 </p>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>3</strong><strong>（显微镜操作）</strong></div>
+<p style="color:#78350f">用显微镜观察某标本时，已知目镜的放大倍数为10×，物镜的放大倍数为40×，则物象的放大倍数为（　）A. 长度、宽度均放大400倍　B. 面积放大400倍　C. 长度或宽度放大40倍　D. 标本的体积放大400倍 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：A解析：显微镜的放大倍数目镜放大倍数物镜放大倍数=×=10×40=400倍。这里的放大倍数指的是长度和宽度的放大倍数，不是面积或体积。面积放大倍数应为400²160000倍。=</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习1下列有关蓝细菌的叙述，正确的是（　）蓝细菌有叶绿体，能进行光合作用A.蓝细菌属于真核生物B.蓝细菌没有核膜包被的细胞核C.蓝细菌无线粒体，不能进行有氧呼吸D.</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>2</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：C</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<p>在显微镜下观察洋葱表皮细胞时，若要将视野左上方的细胞移至视野中央，应向哪个方向移动装片？（　）A. 左上方　B. 右上方　C. 左下方　D. 右下方 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>A</strong></div>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>3</strong></div>
+<p>下列关于真核生物和原核生物的叙述，错误的是（　）A. 真核生物和原核生物都以DNA作为遗传物质B. 酵母菌、霉菌都是真核生物C. 原核生物的细胞中都没有核糖体D. 发菜、颤蓝细菌、念珠蓝细菌都属于原核生物 </p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：C</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>练习4细胞学说主要阐明了（　）细胞的多样性　B.动物和植物的统一性　C.细胞的差异性　D.病毒没有细A.胞结构</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：B</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>练习5用光学显微镜观察装片时，下列操作正确的是（　）将物镜由10×换成40×后，视野会变亮A.换成高倍镜后，应用粗准焦螺旋调焦B.低倍镜下找到目标后，直接转高倍镜观察C.观察时先用低倍镜，再用高倍镜D.</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>四、易错警示</strong></div><table class="ptable"><tr><th style="background:#3b82f6">答案：D</th><th style="background:#3b82f6">&#160;</th></tr></table>
+<div class="h3c" style="color:#991b1b"><strong>常见错误与混淆点</strong></div>
+<div class="h3c" style="color:#15803d"><strong>混淆</strong><strong>&quot;</strong><strong>一切动植物</strong><strong>&quot;</strong><strong>与</strong><strong>&quot;</strong><strong>一切生物</strong><strong>&quot;</strong><strong>：</strong>细胞学说只适用于动植物，病毒没有细• </div>
+<p>胞结构。</p>
+<div class="h3c" style="color:#15803d"><strong>蓝细菌不是细菌吗？</strong>蓝细菌旧称&quot;蓝藻&quot;，属于原核生物，能光合作用但没• </div>
+<p>有叶绿体，含有叶绿素和藻蓝素。</p>
+<div class="h3c" style="color:#15803d"><strong>原核生物</strong><strong>≠</strong><strong>没有细胞器：</strong>原核生物有核糖体，只是没有其他膜结构细胞• </div>
+<p>器。</p>
+<div class="h3c" style="color:#15803d"><strong>病毒的定位：</strong>病毒没有细胞结构，既不属于原核生物，也不属于真核生• </div>
+<p>物。</p>
+<div class="h3c" style="color:#15803d"><strong>放大倍数的理解：</strong>显微镜放大的是长度和宽度，不是面积或体积。• </div>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

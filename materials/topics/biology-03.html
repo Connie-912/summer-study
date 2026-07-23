@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 专题三：细胞的基本结构——细胞膜、细胞器、细胞核 · 精编讲练</title>
+<style>
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../biology.html">‹ 返回</a><h1>生物暑假衔接 · 专题三：细胞的基本结构——细胞膜、细胞器、细胞核</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题三：细胞的基本结构——细胞膜、细胞器、细胞核</h2><div class="hero-sub">生物暑假衔接 · 第 13-17 页</div><div class="hero-meta"><span>📄 5 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>专题三：细胞的基本结构——细胞膜、细胞器、细胞核</td></tr><tr><td>&#160;</td><td>一、知识精讲细胞膜——系统的边界1.</td></tr><tr><td>&#160;</td><td>成分：主要由脂质（磷脂最丰富）和蛋白质组成，还有少量糖类。结构：流动镶嵌模型磷脂双分子层构成膜的基本支架（具有流动性）•蛋白质分子镶嵌、嵌入或贯穿于磷脂双分子层中（大多数蛋白质可以运•动）糖类与蛋白质或脂质结合形成糖蛋白或糖脂，分布在细胞膜外表面•</td></tr><tr><td>&#160;</td><td>功能：将细胞与外界环境分隔开•控制物质进出细胞（选择透过性）•进行细胞间的信息交流（通过激素、细胞膜接触、胞间连丝等）•</td></tr><tr><td>&#160;</td><td>细胞膜的功能特性：选择透过性；结构特点：具有一定的流动性。</td></tr><tr><td>&#160;</td><td>细胞器——分工合作2.</td></tr></table>
+<table class="ptable"><tr><th style="background:#dcfce7;color:#166534">细胞器</th><th style="background:#dcfce7;color:#166534">结构特点</th><th style="background:#dcfce7;color:#166534">主要功能</th><th style="background:#dcfce7;color:#166534">分布</th></tr><tr><td>线粒体</td><td>双层膜，内膜向内折叠形成嵴，含少量DNA</td><td>有氧呼吸的主要场所，&quot;动力车间&quot;</td><td>动植物细胞</td></tr><tr><td>叶绿体</td><td>双层膜，内有类囊体和基质，含少量DNA、色素</td><td>光合作用的场所，&quot;养料制造车间&quot;和&quot;能量转换站&quot;</td><td>植物绿色部分细胞</td></tr><tr><td>内质网</td><td>单层膜，网状结构</td><td>蛋白质合成和加工、脂质合成（粗面/光面）</td><td>动植物细胞</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>4. </strong><strong>细胞核</strong><strong>——</strong><strong>系统的控制中心</strong></div><table class="ptable"><tr><th>高尔基体</th><th>单层膜，扁平囊状结构</th><th>对蛋白质加工、分类、包装；植物中与细胞壁形成有关</th><th>动植物细胞</th></tr><tr><td>核糖体</td><td>无膜结构</td><td>合成蛋白质的场所，&quot;生产蛋白质的机器&quot;</td><td>所有细胞</td></tr><tr><td>溶酶体</td><td>单层膜，含水解酶</td><td>分解衰老损伤的细胞器，吞噬并杀死入侵的病毒或细菌</td><td>主要动物细胞</td></tr><tr><td>液泡</td><td>单层膜，内有细胞液</td><td>调节细胞内部环境，维持细胞形态，储存物质</td><td>成熟植物细胞明显</td></tr><tr><td>中心体</td><td>无膜，由两个中心粒组成</td><td>与细胞有丝分裂有关</td><td>动物细胞和低等植物细胞</td></tr><tr><td>3.</td><td>分泌蛋白的合成与运输（细胞器协调配合）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>核糖体（合成肽链）→工、包装）→囊泡</td><td>分泌蛋白合成运输路线内质网（加工折叠）→囊泡→细胞膜（胞吐释放）→整个过程需要线粒体提供能量图示说明：用放射性同位素³H标记亮氨酸可追踪该过程，放射性依次出现在核糖体→内质网→高尔基体→细胞膜</td><td>高尔基体（进一步加</td></tr></table>
+<div class="h3c" style="color:#15803d"><strong>核膜：</strong>双层膜，把核内物质与细胞质分开，上有核孔（实现核质之间物质交</div>
+<p>换和信息交流）。</p>
+<p style="color:#15803d"><strong>核仁：</strong>与某种RNA的合成以及核糖体的形成有关。</p>
+<div class="h3c" style="color:#15803d"><strong>染色质：</strong>由DNA和蛋白质组成，DNA是遗传信息的载体。染色质和染色体是</div>
+<p style="color:#15803d"><strong>同一种物质在细胞不同时期的两种存在状态</strong>。</p>
+<p style="color:#15803d"><strong>功能：</strong>细胞核是遗传信息库，是细胞代谢和遗传的<strong>控制中心</strong>。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#15803d"><strong>实验验证：</strong>伞藻嫁接实验和核移植实验证明，细胞核控制细胞的遗传和代谢。</p>
+<div class="h3c" style="color:#15803d"><strong>5. </strong><strong>原核细胞与真核细胞的结构对比</strong></div>
+<p>原核细胞只有<strong>核糖体</strong>一种细胞器，没有核膜包被的细胞核，没有染色体，有环状DNA（拟核）。</p>
+<div class="h3c" style="color:#15803d"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#92400e"><strong>典例</strong><strong>1</strong><strong>（细胞膜结构）</strong></div>
+<p style="color:#78350f">下列关于细胞膜的叙述，错误的是（　）A. 细胞膜的主要成分是脂质和蛋白质B. 细胞膜上的大多数蛋白质是可以运动的C. 糖蛋白只分布在细胞膜的内表面D. 细胞膜的功能特性是选择透过性 </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>答案：C解析：糖蛋白（糖类+蛋白质）只分布在细胞膜的外表面，与细胞识别、信息交流有关，不在内表面。</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>典例2（细胞器功能）下列细胞器中，不含磷脂分子的是（　）①线粒体　②核糖体　③叶绿体　④内质网　⑤中心体　⑥高尔基体①③②⑤④⑥②④A.B.C.D.</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：B解析：磷脂是构成生物膜的主要成分。核糖体和中心体都是无膜结构的细胞器，因此不含磷脂。其余都是膜结构细胞器，含有磷脂。</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>典例3（分泌蛋白）用³H标记的亮氨酸培养胰腺腺泡细胞，下列结构中放射性强度最高的依次是（　）高尔基体、内质网、核糖体　B.核糖体、内质网、高尔基体A.内质网、高尔基体、核糖体　D.核糖体、高尔基体、内质网C.</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#1e40af"><strong>练习</strong><strong>2</strong></div><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：分泌蛋白的合成顺序是：核糖体合成肽链内质网加工高尔基→→体进一步加工包装。随着时间推移，放射性依次出现，但在短时间内，核糖体最先出现放射性，随后内质网，最后高尔基体。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习1下列关于细胞核的叙述，正确的是（　）核膜是单层膜，把核内物质与细胞质分开A.核仁与DNA的合成有关B.染色质和染色体是同一种物质的不同形态C.细胞核是细胞代谢的主要场所D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：C</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p>植物细胞特有的细胞器是（　）A. 线粒体和叶绿体　B. 叶绿体和液泡　C. 中心体和液泡　D. 内质网和高尔基体 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>B</strong></div>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>3</strong></div>
+<p>下列细胞器中，与细胞壁形成有关的是（　）A. 核糖体　B. 内质网　C. 高尔基体　D. 中心体 </p>
+<div class="h3c" style="color:#15803d"><strong>答案：</strong><strong>C</strong></div>
+<div class="h3c" style="color:#1e40af"><strong>练习</strong><strong>4</strong></div></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#15803d"><strong>四、易错警示</strong></div><table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>下列关于线粒体和叶绿体的叙述，错误的是（　）两者都具有双层膜结构A.两者都含有少量DNAB.两者都与能量转换有关C.两者都存在于所有植物细胞中D.</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：D</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习5细胞膜在细胞生命活动中的作用不包括（　）将细胞与外界环境分隔开A.控制物质进出细胞B.进行细胞间的信息交流C.为细胞提供能量D.</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：D</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="h3c" style="color:#991b1b"><strong>常见错误与混淆点</strong></div>
+<div class="h3c" style="color:#15803d"><strong>糖蛋白位置：</strong>只分布在细胞膜外表面，参与细胞识别，不在内表面。• </div>
+<div class="h3c" style="color:#15803d"><strong>原核细胞的细胞器：</strong>只有核糖体，没有线粒体、叶绿体等，但部分原核生• </div>
+<p>物可以进行有氧呼吸或光合作用（在细胞膜上进行）。</p>
+<div class="h3c" style="color:#15803d"><strong>分泌蛋白 </strong><strong>vs </strong><strong>胞内蛋白：</strong>分泌蛋白在附着于内质网上的核糖体合成，胞内• </div>
+<p>蛋白在游离核糖体合成。</p>
+<div class="h3c" style="color:#15803d"><strong>叶绿体不是植物细胞都有：</strong>根尖细胞、表皮细胞（除保卫细胞）等没有叶• </div>
+<p>绿体。</p>
+<div class="h3c" style="color:#15803d"><strong>中心体分布：</strong>动物细胞和低等植物细胞有中心体，高等植物细胞没有。• </div>
+<div class="h3c" style="color:#15803d"><strong>核孔不是简单孔洞：</strong>核孔具有选择性，DNA不能通过核孔出细胞核。• </div>
+<table class="ptable"></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

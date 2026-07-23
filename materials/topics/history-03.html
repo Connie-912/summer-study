@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>历史暑假衔接 · 专题三：魏晋南北朝 · 精编讲练</title>
+<style>
+:root{--accent:#92400e;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../history.html">‹ 返回</a><h1>历史暑假衔接 · 专题三：魏晋南北朝</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题三：魏晋南北朝</h2><div class="hero-sub">历史暑假衔接 · 第 12-16 页</div><div class="hero-meta"><span>📄 5 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="h3c" style="color:#7f1d1d"><span class="nno">①</span><strong>知识精讲</strong></div>
+<div class="h3c" style="color:#7f1d1d"><strong>核心概念</strong></div>
+<div class="h3c" style="color:#7f1d1d"><strong>魏晋南北朝</strong>（220-589年）是中国历史上的分裂动荡时期，但也是民族</div>
+<p style="color:#1f1f1f">大融合、江南开发、思想文化多元发展的重要阶段。</p>
+<div class="h3c" style="color:#1f1f1f"><strong>一、政权更迭脉络</strong></div>
+<div class="h3c" style="color:#7f1d1d"><strong>220年</strong>曹丕建魏，东汉灭亡——<strong>三国时代</strong>开始</div>
+<div class="h3c" style="color:#7f1d1d"><strong>280年</strong>西晋灭吴，短暂统一</div>
+<div class="h3c" style="color:#7f1d1d"><strong>316年</strong>西晋灭亡，<strong>东晋</strong>建立（偏安江南）</div>
+<div class="h3c" style="color:#7f1d1d"><strong>420年</strong>东晋灭亡，<strong>南朝</strong>开始（宋、齐、梁、陈）</div>
+<div class="h3c" style="color:#7f1d1d"><strong>439年</strong>北魏统一北方，<strong>北朝</strong>开始</div>
+<div class="h3c" style="color:#7f1d1d"><strong>589年</strong>隋灭陈，统一全国</div>
+<div class="h3c" style="color:#1f1f1f"><strong>二、政治特征</strong></div>
+<div class="h3c" style="color:#1f1f1f">• <strong>门阀政治：</strong>士族门阀垄断高官，皇权衰弱，&quot;上品无寒门，下品无士族&quot;</div>
+<div class="h3c" style="color:#1f1f1f">• <strong>九品中正制：</strong>曹魏创立的选官制度，后期被士族把持，成为维护门阀统治</div>
+<p style="color:#1f1f1f">的工具</p>
+<div class="h3c" style="color:#1f1f1f">• <strong>三省制萌芽：</strong>魏晋时期尚书省、中书省、门下省的分工初步形成</div>
+<div class="h3c" style="color:#1f1f1f"><strong>三、经济发展</strong></div>
+<div class="h3c" style="color:#1f1f1f">• <strong>江南开发：</strong>北方战乱，大量人口南迁，带去劳动力和先进技术，江南经济</div>
+<p style="color:#1f1f1f">迅速发展，为经济重心南移奠定基础</p>
+<div class="h3c" style="color:#1f1f1f">• <strong>北方恢复：</strong>北魏孝文帝改革后，北方经济逐渐恢复</div>
+<div class="h3c" style="color:#1f1f1f">• <strong>庄园经济：</strong>士族广占田地，建立庄园，荫庇人口</div>
+<div class="h3c" style="color:#1f1f1f"><strong>四、北魏孝文帝改革（重点）</strong></div>
+<div class="h3c" style="color:#7f1d1d"><strong>改革背景与内容</strong></div>
+<p style="color:#7f1d1d"><strong>背景：</strong>北魏统一北方后，民族矛盾尖锐，统治面临危机。</p>
+<div class="h3c" style="color:#7f1d1d"><strong>主要内容：</strong></div>
+<p style="color:#1f1f1f">• 迁都洛阳（从平城迁到洛阳）</p>
+<p style="color:#1f1f1f">• 推行汉化政策：改汉姓、穿汉服、说汉语、与汉族通婚</p>
+<p style="color:#1f1f1f">• 仿照汉族典章制度，改革官制</p>
+<p style="color:#1f1f1f">• 推行均田制（影响深远）</p>
+<div class="h3c" style="color:#7f1d1d"><strong>意义：</strong>促进了北方民族大融合，推动了北方经济文化发展，为隋唐统一</div>
+<p style="color:#1f1f1f">奠定了基础。</p>
+<div class="h3c" style="color:#1f1f1f"><strong>五、思想文化</strong></div>
+<div class="h3c" style="color:#1f1f1f">• <strong>佛教盛行：</strong>社会动荡，佛教传播迅速，石窟艺术兴盛（云冈、龙门）</div>
+<div class="h3c" style="color:#1f1f1f">• <strong>道教发展：</strong>道教逐渐官方化、理论化</div>
+<div class="h3c" style="color:#1f1f1f">• <strong>玄学兴起：</strong>以老庄思想解释儒家经典，代表有竹林七贤</div>
+<div class="h3c" style="color:#1f1f1f">• <strong>文学艺术：</strong>书法（王羲之&quot;书圣&quot;）、绘画（顾恺之）、文学（田园诗陶渊</div>
+<p style="color:#1f1f1f">明）</p>
+<div class="h3c" style="color:#7f1d1d"><span class="nno">②</span><strong>典例破题</strong></div>
+<div class="h3c" style="color:#92400e"><strong>【例题1】选择题</strong></div>
+<p style="color:#1f1f1f">北魏孝文帝改革中，移风易俗的措施不包括（　　）</p>
+<p style="color:#1f1f1f">• A. 迁都洛阳</p>
+<p style="color:#1f1f1f">• B. 改穿汉服</p>
+<p style="color:#1f1f1f">• C. 实行均田制</p>
+<p style="color:#1f1f1f">• D. 改说汉话</p>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>解析：注意题干限定&quot;移风易俗&quot;。迁都洛阳、穿汉服、说汉话都是改变风俗习惯的措施；均田制是土地制度和经济政策，不属于移风易俗范畴。故选C。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【例题2】材料分析题</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&quot;自晋宋以来，号洛阳为荒土……昨至洛阳，始知衣冠士族，并在中原，礼仪富盛，人物殷阜。&quot;——《洛阳伽蓝记》（北魏·杨衒之）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>问题：（1）材料反映了什么历史现象？（2分）（2）结合所学，分析出现这一现象的主要原因。（4分）（3）这一现象对当时及后世产生了什么影响？（4分）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>解析：（1）材料反映了北魏后期洛阳的繁荣景象，以及北方民族融合、经济恢复发展的历史现象。（2分）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>（2）主要原因：北魏孝文帝迁都洛阳并推行汉化改革，促进了北方经济的恢复和发展；北方各族人民的辛勤劳动；黄河流域农业基础较好。（答出2点即可，4分）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>（3）影响：促进了北方民族大融合，推动了北方经济文化的发展，为隋唐时期的统一和繁荣奠定了基础。（4分）</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>3</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习1三国两晋南北朝时期，江南地区得以开发的最主要原因是（　　）江南自然条件优越AA.</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f1f5f9;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>北方人口大量南迁BB.南方统治者重视农业CC.南方战乱较少DD.</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B。北方战乱导致大量人口南迁，带来了劳动力和先进生产技术，这是江南开发的最主要原因。自然条件是客观因素，不是最主要原因。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习2九品中正制后期，选官标准主要看重（　　）才能品德AA.家世门第BB.考试成绩CC.皇帝喜好DD.</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B。九品中正制初期重视才能品德，后期被门阀士族把持，选官标准主要看家世门第，形成&quot;上品无寒门，下品无士族&quot;的局面。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="box-t" style="color:#7f1d1d"><strong>练习3</strong></div><p style="color:#1f1f1f">下列关于北魏孝文帝改革的评价，正确的是（　　）</p>
+<div class="h3c" style="color:#991b1b"><strong>A</strong>A. 彻底消除了民族矛盾</div>
+<div class="h3c" style="color:#991b1b"><strong>B</strong>B. 加速了北方各族封建化进程</div>
+<div class="h3c" style="color:#991b1b"><strong>C</strong>C. 使北魏立即强大并统一全国</div>
+<div class="h3c" style="color:#991b1b"><strong>D</strong>D. 遭到鲜卑贵族的一致拥护</div></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答案：B。孝文帝改革加速了北方各族的封建化和民族融合，但不可能彻底消除民族矛盾；北魏后来分裂为东魏、西魏，没有统一全国；改革遭到部分保守贵族反对。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>练习4</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p style="color:#1f1f1f">魏晋南北朝时期，佛教迅速传播的社会根源是（　　）</p>
+<div class="h3c" style="color:#991b1b"><strong>A</strong>A. 佛教教义本身具有吸引力</div>
+<div class="h3c" style="color:#991b1b"><strong>B</strong>B. 统治者的提倡和推崇</div>
+<div class="h3c" style="color:#991b1b"><strong>C</strong>C. 社会动荡，人民苦难，寻求精神寄托</div>
+<div class="h3c" style="color:#991b1b"><strong>D</strong>D. 寺院经济发达</div></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>答案：C。社会根源要从社会现实找。魏晋南北朝战乱频繁，人民生活困苦，佛教的来世观念和解脱思想为人们提供了精神寄托，这是佛教盛行的根本原因。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>4</td><td>&#160;</td><td>易错警示</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>•••••</td><td>⚠魏晋南北朝常见错误江南开发与重心南移：魏晋南北朝时期江南开始开发，为经济重心南移奠定基础；经济重心南移完成是在南宋，不是这一时期。北魏孝文帝的姓氏：孝文帝原姓拓跋，改汉姓为元，所以又称元宏。三国鼎立：220年曹丕建魏，221年刘备建蜀，229年孙权建吴（不是222年，222年孙权称吴王，229年才称帝建吴）。士族与庶族：士族是世代做官的家族，享有特权；庶族是普通地主和农民。士族制度在隋唐科举制兴起后逐渐衰落。均田制：北魏开始推行，隋唐继承，是国家把无主荒地分配给农民耕种的土地制度，不是土地私有制。</td><td>&#160;</td><td>&#160;</td></tr></table>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

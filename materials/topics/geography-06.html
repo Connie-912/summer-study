@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 农业与工业 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 农业与工业</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>农业与工业</h2><div class="hero-sub">地理暑假衔接 · 第 42-47 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="chip" style="background:#f59e0b">预习新知</div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>农业和工业是人文地理的核心内容。本专题围绕<strong>区位因素分析</strong>展开，掌握&quot;自然因素+社会经济因素&quot;的分析框架，理解主要农业地域类型的分布和特征。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">①</span><strong>考点一：农业区位因素</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">因素类别</th><th style="background:#0ea5e9">具体因素</th><th style="background:#0ea5e9">影响</th></tr><tr><td>&#160;</td><td>气候（光照、热量、降水）</td><td>决定作物种类和熟制</td></tr><tr><td>自然因素</td><td>地形土壤</td><td>平原宜耕作，山地宜林牧肥力、酸碱度影响作物生长</td></tr><tr><td>&#160;</td><td>水源</td><td>灌溉条件（干旱区制约因素）</td></tr><tr><td>&#160;</td><td>市场</td><td>决定农业生产的类型和规模</td></tr><tr><td>社会经济因素</td><td>交通政策</td><td>影响农产品运输和保鲜引导和调控农业生产</td></tr><tr><td>&#160;</td><td>科技</td><td>良种、化肥、机械化提高产量</td></tr></table></div>
+<table class="ptable"><tr><td>&#160;</td><td>典例破题【例题】分析我国南方地区成为水稻主产区的区位条件。</td></tr><tr><td>&#160;</td><td>分析：自然因素：①亚热带/热带季风气候，雨热同期，水热条件优越。②地形以平原和丘陵为主，利于耕作。③河流众多，灌溉水源充足。④水稻土肥沃。社会经济因素：①人口稠密，劳动力丰富。②南方人喜食米饭，市场广阔。③水稻种植历史悠久，经验丰富。答案：优越的水热条件+雨热同期的季风气候+丰富劳动力+广阔市场。</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.为什么我国东北大米品质优良？从自然因素分析。</td></tr><tr><td>&#160;</td><td>答案：①光照充足：东北纬度高，夏季日照时间长，光合作用充分。②昼夜温差大：有利于有机质积累，米质好。③生长周期长：一年一熟，养分积累充分。④黑土肥沃：有机质含量高。⑤水源优质：冰雪融水灌溉，水质好。答：光照足、温差大、生长周期长、黑土肥沃、水源优质。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 城郊农业（如蔬菜、花卉、乳畜业）的区位选择有何特点？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 城郊农业布局在<strong>城市近郊</strong>，主要受<strong>市场</strong>和<strong>交通</strong>因素影响：</div>
+<div class="h3c" style="color:#166534">①产品（蔬菜、鲜奶、花卉）<strong>不易保鲜和长途运输</strong>，需要靠近市场。②交通便</div>
+<p style="color:#166534">利，能快速将产品运抵城市。③单位面积产值高，可承受较高的地租。</p>
+<p style="color:#166534"><strong>答：靠近城市（市场导向），交通便利，产品鲜活易腐。</strong></p></div>
+<p><strong>3. 举例说明科技进步对农业区位因素的影响。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①<strong>温室大棚</strong>：突破了热量限制，使北方冬季也能种植蔬菜。</p>
+<p style="color:#166534">②<strong>滴灌技术</strong>：突破了水源限制，使干旱区（如以色列）发展高效农业。</p>
+<p style="color:#166534">③<strong>良种培育</strong>：提高了作物产量和抗逆性（如杂交水稻）。</p>
+<p style="color:#166534">④<strong>冷藏保鲜技术</strong>：扩大了农产品市场范围，如南美水果可运往全球。</p>
+<p style="color:#166534"><strong>答：温室突破热量限制、滴灌突破水源限制、良种提高产量、冷藏扩大市场。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 农业区位分析要&quot;先自然后社会&quot;：</strong>自然因素是基础，但在现代农业生产</div>
+<p style="color:#92400e">中，社会经济因素的影响越来越大。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 市场最终决定农业生产的类型和规模。</strong>即使自然条件不适合，如果有足够</div>
+<p style="color:#92400e">市场需求和技术支撑，也可能发展某种农业。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">②</span><strong>考点二：工业区位因素</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">导向类型</th><th style="background:#0ea5e9">主导因素</th><th style="background:#0ea5e9">典型工业</th></tr><tr><td>原料导向型</td><td>原料（原料不便运输或运输成本高）</td><td>制糖厂、水产品加工厂、水果罐头厂</td></tr><tr><td>市场导向型</td><td>市场（产品不便运输或运输成本高）</td><td>啤酒厂、家具厂、印刷厂</td></tr><tr><td>动力导向型</td><td>能源（耗能大）</td><td>电解铝厂、有色金属冶炼</td></tr><tr><td>劳动力导向型</td><td>廉价劳动力</td><td>服装厂、电子装配厂、玩具厂</td></tr><tr><td>技术导向型</td><td>科技与人才</td><td>集成电路、航空航天、生物制药</td></tr></table></div>
+<div class="h3c" style="color:#0369a1"><strong>巩固提升</strong></div>
+<p><strong>1. 钢铁工业的区位选择经历了怎样的变化？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p style="color:#16a34a"><strong>答案：</strong> ①早期：<strong>近煤铁资源</strong>（原料导向型），如英国伯明翰。</p>
+<p style="color:#166534">②中期：<strong>近沿海港口</strong>（交通导向型），利用廉价海运进口铁矿石，如日本。</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>③现代：近消费市场（市场导向型），综合考虑原料、能源、市场和环境。答：从近资源→近港口→近市场的演变，区位因素日趋多元化。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>2.为什么电子装配厂属于劳动力导向型，而集成电路制造属于技术导向型？</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：电子装配：技术要求低，主要是重复性手工操作，劳动力成本占比大，因此布局在劳动力廉价的地区。集成电路制造：需要高精尖技术和大量研发投入，对科技人才、洁净环境要求极高，因此布局在科技发达地区（如硅谷）。答：装配是劳动密集型，制造是技术密集型，两者主导因素不同。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>3. 为什么许多工业区布局在沿海港口附近？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> ①<strong>交通便利</strong>：便于进口原料（如铁矿石、原油）和出口产品。②<strong>海运成</strong></div>
+<div class="h3c" style="color:#166534"><strong>本低</strong>：适合大宗货物运输。③<strong>水源充足</strong>：沿海地区水资源丰富，满足工业用水</div>
+<p style="color:#166534">需求。④<strong>市场接近</strong>：沿海地区人口密集、经济发达，市场广阔。</p>
+<p style="color:#166534"><strong>答：交通便利、海运成本低、水源充足、近市场。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 工业区位选择不是单一因素决定的，而是多因素综合权衡的结果。</strong>考试中</div>
+<p style="color:#92400e">常要求分析&quot;主导因素&quot;。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 随着技术进步，原料和能源对工业区位的限制越来越弱，市场和科技的影</strong></div>
+<p style="color:#92400e"><strong>响越来越强。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>考点三：主要农业地域类型3</td></tr><tr><td>&#160;</td><td>知识精讲</td></tr></table>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><table class="ptable"><tr><th style="background:#0ea5e9">农业地域类型</th><th style="background:#0ea5e9">主要分布</th><th style="background:#0ea5e9">特点</th><th style="background:#0ea5e9">区位条件</th></tr></table></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>季风水田农业</td><td>东亚、东南亚、南亚</td><td>小农经营、精耕细作、单产高、商品率低</td><td>雨热同期、劳动力丰富、历史悠久</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>商品谷物农业</td><td>美国中部平原、中国东北</td><td>规模大、机械化程度高、商品率高</td><td>地广人稀、自然条件优越、交通便利</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>大牧场放牧业</td><td>阿根廷潘帕斯草原、澳大利亚</td><td>大规模放牧、商品率高</td><td>草场广阔、气候温和、地广人稀</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>乳畜业</td><td>西欧、北美五大湖区、新西兰</td><td>面向城市市场、集约化程度高</td><td>温带海洋性气候（多汁牧草）、近市场</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>混合农业</td><td>澳大利亚墨累-达令盆地</td><td>种植+畜牧结合、灵活高效</td><td>自然条件适合、市场适应性强</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>1.</td><td>&#160;</td><td>比较季风水田农业和商品谷物农业的主要差异。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>答案：</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th style="background:#0ea5e9">比较项</th><th style="background:#0ea5e9">季风水田农业</th><th style="background:#0ea5e9">商品谷物农业</th></tr><tr><td>经营规模</td><td>小（家庭经营）</td><td>大（农场经营）</td></tr><tr><td>机械化水平</td><td>低</td><td>高</td></tr><tr><td>科技水平</td><td>较低</td><td>高</td></tr><tr><td>商品率</td><td>低（自给为主）</td><td>高（面向市场）</td></tr><tr><td>主要作物</td><td>水稻</td><td>小麦、玉米</td></tr><tr><td>分布区人口</td><td>稠密</td><td>稀疏</td></tr></table></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答：核心差异在于经营规模、机械化程度和商品率。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>2.澳大利亚混合农业（小麦-牧羊）有什么优点？</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：①灵活应对市场：可根据市场价格调整种植和畜牧的比例。②形成良性农业生态系统：小麦秸秆作饲料，羊粪肥田。③合理安排农时：小麦种植和牧羊活动季节互补。④风险分散：种植和畜牧结合，降低单一经营风险。答：市场灵活、生态循环、农时互补、风险分散。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>3. 西欧乳畜业发达的原因是什么？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>自然条件：</strong>①温带海洋性气候，全年温和湿润，<strong>多汁牧草</strong>生长良好。②</div>
+<p style="color:#166534">平原地形，适合放牧。</p>
+<div class="h3c" style="color:#166534"><strong>社会经济条件：</strong>①西欧人口密集，城市化水平高，<strong>市场需求大</strong>（鲜奶及乳制</div>
+<p style="color:#166534">品）。②交通发达，冷链物流完善。③饮食习惯（乳制品消费量大）。</p>
+<p style="color:#166534"><strong>答：多汁牧草+广阔市场+发达交通+饮食习惯。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 农业地域类型的形成是自然条件和人文条件综合作用的结果。</strong>不能只看自</div>
+<p style="color:#92400e">然条件。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 注意区分&quot;季风水田农业&quot;和&quot;水稻种植业&quot;：</strong>两者本质相同，但&quot;季风水田农</div>
+<p style="color:#92400e">业&quot;强调季风气候区的水稻种植。</p></div>
+<table class="ptable"></table>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

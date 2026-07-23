@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>语文暑假衔接 · 08 议论文写作结构 · 3大结构精讲 · 精编讲练</title>
+<style>
+:root{--accent:#dc2626;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chinese.html">‹ 返回</a><h1>语文暑假衔接 · 08 议论文写作结构 · 3大结构精讲</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>08 议论文写作结构 · 3大结构精讲</h2><div class="hero-sub">语文暑假衔接 · 第 46-48 页</div><div class="hero-meta"><span>📄 3 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="h3c" style="color:#b91c1c"><strong>考点一：总分总结构（最稳妥的基础结构）</strong></div>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><div class="box-t" style="color:#3b82f6"><strong>结构说明</strong></div><p><strong>总——</strong>开头提出中心论点（100-150字）<strong>分——</strong>2-3个分论点，每个分论点一段（每段200-250字）<strong>总——</strong>结尾总结升华，呼应开头（100-150字）</p></div>
+<div class="h3c" style="color:#ef4444"><strong>范文框架示例：以&quot;奋斗&quot;为话题</strong></div>
+<p><strong>【开头·总】</strong>引用名言+提出中心论点：奋斗是青春最亮丽的底色，唯有奋斗方能不负韶华。</p>
+<p><strong>【分论点1】</strong>奋斗需要明确的目标。事例：周恩来&quot;为中华之崛起而读书&quot;。</p>
+<p><strong>【分论点2】</strong>奋斗需要持之以恒的毅力。事例：屠呦呦历经190次失败终获成功。</p>
+<p><strong>【分论点3】</strong>奋斗需要勇于创新的精神。事例：华为面对封锁坚持自主研发。</p>
+<p><strong>【结尾·总】</strong>扣题升华：新时代青年当以奋斗之姿，书写无愧于时代的华章。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>考点二：并列式结构</td></tr><tr><td>&#160;</td><td>&#160;</td><td>结构说明围绕中心论点，从不同角度、不同层面设置2-3个并列的分论点。分论点之间是并列关系，没有主次之分，共同支撑中心论点。</td></tr><tr><td>&#160;</td><td>&#160;</td><td>范文框架示例：以&quot;阅读的意义&quot;为话题【中心论点】阅读，让人生更丰盈。</td></tr></table>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"></div>
+<p><strong>【并列分论点1】</strong>阅读可以增长知识，拓宽视野。（角度：知识层面）<strong>【并列分论点2】</strong>阅读可以陶冶情操，净化心灵。（角度：精神层面）<strong>【并列分论点3】</strong>阅读可以启迪智慧，指导实践。（角度：实践层面）<strong>【结尾】</strong>总结三个分论点，回归中心论点，呼吁多读书、读好书。</p>
+<div class="h3c" style="color:#b91c1c"><strong>考点三：对比式结构</strong></div>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><div class="box-t" style="color:#3b82f6"><strong>结构说明</strong></div><p>将<strong>正反两方面</strong>进行对比论证，通过对比凸显观点。常用&quot;正反对比&quot;或&quot;古今对比&quot;。</p></div>
+<div class="h3c" style="color:#ef4444"><strong>范文框架示例：以&quot;诚信&quot;为话题</strong></div>
+<p><strong>【开头】</strong>提出中心论点：诚信是立身之本，立业之基。</p>
+<p><strong>【正面论证】</strong>有诚信的人/企业获得长远发展。事例：海尔砸冰箱保质量、同仁堂&quot;炮制虽繁必不敢省人工&quot;。</p>
+<p><strong>【反面论证】</strong>失去诚信的后果。事例：三鹿奶粉事件、某些网红虚假宣传翻车。</p>
+<p><strong>【分析对比】</strong>正反对比得出结论：诚信者长远，失信者短命。</p>
+<p><strong>【结尾】</strong>呼吁坚守诚信，从我做起。</p>
+<table class="ptable"><tr><td>&#160;</td><td>巩固提升</td></tr><tr><td>&#160;</td><td>1.以&quot;坚持&quot;为话题，写一个总分总结构的提纲（分论点+事例）。</td></tr><tr><td>&#160;</td><td>参考提纲中心论点：坚持是通往成功的必经之路。分论点1：坚持需要信念的支撑——事例：司马迁忍辱负重著《史记》。分论点2：坚持需要行动的力量——事例：中国女排从低谷到冠军的拼搏。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>分论点3：坚持需要时间的积淀——事例：南仁东22年建成&quot;中国天眼&quot;。结尾：以坚持为舟，渡向梦想的彼岸。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>2.下列哪种情况最适合使用对比式结构？论证&quot;读书的好处&quot;论证&quot;网络利与弊&quot;论证&quot;青春的价值&quot;论证&quot;友谊A.B.C.D.的重要性&quot;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：B解析：对比式结构最适合论证一个事物的两面性。&quot;网络利与弊&quot;天然具有正反对比的论证空间，适合用对比式结构先论述利的方面，再论述弊的方面，最后辩证总结。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<table class="ptable"><tr><td>&#160;</td><td>3.一个好的分论点应该具备什么特点？</td></tr><tr><td>&#160;</td><td>答案一个好的分论点应具备三个特点：①扣得住——紧扣中心论点，不偏离；②分得开——各分论点之间角度不同，不重复；③排得顺——分论点之间有一定逻辑顺序（如由浅入深、由个人到社会）。</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#eff6ff;border-color:#0ea5e9"><div class="box-t" style="color:#3b82f6"><strong>暑假写作练习建议</strong></div><p>① 每周完成一篇完整的议论文（800字以上），严格按结构写作。</p>
+<p>② 写前列提纲（中心论点+分论点+事例），写后对照结构检查。</p>
+<p>③ 积累素材的同时训练&quot;一材多用&quot;——同一个素材在不同主题下如何灵活运用。</p>
+<p>④ 阅读优秀范文，关注其结构布局和论证方法。</p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

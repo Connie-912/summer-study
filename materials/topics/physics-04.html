@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 曲线运动与平抛运动 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 曲线运动与平抛运动</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>曲线运动与平抛运动</h2><div class="hero-sub">物理暑假衔接 · 第 29-34 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点1：运动的合成与分解</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>核心原理：</strong>运动的合成与分解遵循<strong>平行四边形定则</strong>。合运动与分运</div>
+<p>动具有<strong>等时性</strong>、<strong>独立性</strong>、<strong>等效性</strong>。</p>
+<div class="h3c" style="color:#b45309"><strong>常见模型：</strong>小船过河（最短时间：船头垂直对岸，t = d/v船；最</div>
+<p>短航程：合速度垂直对岸）。 </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>河宽200 m，水流速度v水=3 m/s，船在静水中速度v船=5 m/s。求：(1) 船头垂直对岸时的过河时间和登陆点位置；(2) 最短航程过河时船头方向和时间。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>(1) 最短时间：</strong>船头垂直对岸</div>
+<div class="h3c">t = d / v船 = 200 / 5 = <strong>40 s</strong></div>
+<div class="h3c">下游漂移：x = v水 × t = 3 × 40 = <strong>120 m</strong></div>
+<div class="h3c"><strong>(2) 最短航程：</strong>合速度垂直对岸</div>
+<p>cosθ = v水/v船 = 3/5，θ ≈ 53°（船头向上游偏53°）合速度：v合 = √(v船² - v水²) = √(25-9) = 4 m/s</p>
+<div class="h3c">t = d / v合 = 200 / 4 = <strong>50 s</strong></div></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>物体同时参与两个互相垂直的匀速直线运动，速度分别为vx=3m/s和vy=4m/s。求合速度的大小和方向。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析vy²)=√(9+16)=√25=v=√(vx²+5m/s53°（与x轴方向夹角）tanθ=vy/vx=4/3⇒θ≈</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>关于运动的合成，下列说法正确的是：A. 合运动的速度一定大于分运动的速度   B. 两个直线运动的合运动一定是直线运动   C. 合运动与分运动的时间一定相等   D. 两个匀变速直线运动的合运动一定是曲线运动</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>A. 错误，合速度可能小于分速度（如反向合成）。</p>
+<p>B. 错误，如平抛运动（水平匀速+竖直匀加速 → 曲线）。</p>
+<p>C. <strong>正确</strong>，分运动与合运动等时。</p>
+<p>D. 错误，若两个匀变速直线运动的合初速度方向与合加速度方向共线，则为直线运动。</p>
+<div class="h3c"><strong>答案：</strong><strong>C</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点2：平抛运动规律</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>水平方向（匀速）：</strong>x = v₀t，vx = v₀</div>
+<div class="h3c" style="color:#f59e0b"><strong>竖直方向（自由落体）：</strong>y = ½gt²，vy = gt</div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>合速度：v(gt)²)，tanθ=√(v₀²+=gt/v₀轨迹方程：yx²（抛物线）=(g/2v₀²)</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>【巩固题】1从离地80m高处水平抛出一个小球，初速度为20m/s。求：(1)飞行时间；(2)水平射程；(3)落地速度大小。（g=10m/s²）</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>详细解析(1)飞行时间：由竖直方向h=½gt²80=½×10×t²⇒t²=16⇒t=4s(2)水平射程：x=v₀t=20×4=80m(3)落地速度：vy=gt=10×4=40m/svy²)=√(400+1600)=√2000≈v=√(v₀²+44.7m/s</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>平抛运动中，物体落地时速度方向与水平方向成60°角。已知初速度v₀=10 m/s，求抛出点的高度。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>落地时：tan60° = vy / v₀ = vy / 10vy = 10 × tan60° = 10 × √3 ≈ 17.32 m/svy² = 2gh ⇒ h = vy² / (2g) = (10√3)² / 20 = 300 / 20 = </p>
+<div class="h3c"><strong>15 m</strong></div></div>
+<table class="ptable"><tr><td>&#160;</td><td>【巩固题】3</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>在距离地面45m的高处，以10m/s的速度水平抛出一物体。物体落在倾角为45°的斜面上（斜面底端在抛出点正下方）。求物体落在斜面上的位置距抛出点的水平距离。（g=10m/s²）</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析斜面方程（以抛出点为原点，向下为y轴正方向）：yx（因为=45°斜面）平抛轨迹：y=(g/2v₀²)x²=(10/200)x²=0.05x²联立：x=0.05x²⇒x(0.05x-1)=00（舍去）或x=x=20m此时m，距地面高度=45-20=25m（仍在空中，合y=20理）。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点3：运动的独立性原理</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>运动的独立性：</strong>一个物体同时参与多个运动时，各分运动独立进</div>
+<p>行，互不影响。</p>
+<div class="h3c" style="color:#b45309"><strong>应用：</strong>平抛运动可分解为水平方向的匀速直线运动和竖直方向的自</div>
+<p>由落体运动，两者互不影响。 </p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】1在匀速行驶的火车车厢内，一人竖直向上抛出一小球。小球将落在抛出点的前方、后方还是原处？说明理由。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>详细解析</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><p>小球将落在<strong>原处</strong>。</p>
+<p>因为小球具有与火车相同的水平速度（惯性），水平方向做匀速运动。竖直方向做竖直上抛运动。两个方向运动独立，水平方向小球与火车保持同步，所以落回原处。</p>
+<p>（这类似于地球上的竖直上抛，不会因为地球自转而偏离。） </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>从同一高度以不同初速度水平抛出两个小球，比较它们的飞行时间和水平射程。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>飞行时间：</strong>由竖直方向的自由落体决定，t = √(2h/g)，与水平初</div>
+<p>速度无关。所以两个小球<strong>同时落地</strong>。</p>
+<p><strong>水平射程：</strong>x = v₀t，初速度越大，射程越远。</p>
+<p>这体现了运动的独立性：竖直运动不受水平运动影响。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>在水平匀速飞行的飞机上，每隔1 s投放一颗炸弹。这些炸弹在空中排列成什么形状？落地后的弹坑分布如何？（忽略空气阻力）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c"><strong>空中排列：</strong>炸弹在竖直方向排列成一条<strong>竖直线</strong>（在飞机正下</div>
+<p>方）。因为每颗炸弹水平速度相同，水平位移相同，竖直方向因释放时间不同而高度不同。</p>
+<div class="h3c"><strong>落地弹坑：</strong>炸弹落地后弹坑<strong>等间距分布</strong>。因为飞机匀速飞行，相</div>
+<p>邻炸弹释放时间间隔1 s，飞机飞行距离 = v₀ × 1 s，炸弹水平射程也相同，弹坑间距 = v₀ × 1 s。 </p></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="box-t" style="color:#92400e"><strong>⚠ 专题04 易错警示</strong></div><div class="h3c" style="color:#92400e"><strong>1. 曲线运动的条件：</strong>合外力方向与速度方向不共线，不是看加速度大</div>
+<p style="color:#92400e">小。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 平抛运动时间：</strong>只由高度决定（t = √(2h/g)），与初速度无关。初</div>
+<p style="color:#92400e">速度只影响水平射程。</p>
+<div class="h3c" style="color:#92400e"><strong>3. 速度分解：</strong>平抛运动中任意时刻的速度方向是轨迹的切线方向，不是</div>
+<p style="color:#92400e">初速度方向。</p>
+<div class="h3c" style="color:#92400e"><strong>4. 小船过河：</strong>最短时间时船头必须垂直对岸，与水流速度无关。最短航</div>
+<p style="color:#92400e">程需要合速度垂直对岸。</p>
+<div class="h3c" style="color:#92400e"><strong>5. 运动的独立性：</strong>各分运动是真实的运动，合运动是等效替代，不</div>
+<p style="color:#92400e">是&quot;叠加&quot;。 </p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>数学暑假衔接 · 专题07：直线与圆的方程 预习 · 精编讲练</title>
+<style>
+:root{--accent:#2563eb;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../math.html">‹ 返回</a><h1>数学暑假衔接 · 专题07：直线与圆的方程 预习</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题07：直线与圆的方程 预习</h2><div class="hero-sub">数学暑假衔接 · 第 36-40 页</div><div class="hero-meta"><span>📄 5 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="chip" style="background:#cbd5e1;margin-top:0">专题07：直线与圆的方程</div><div class="h3c" style="color:#b45309"><strong>预习</strong></div>
+<div class="h3c" style="color:#1e40af"><strong>预习说明</strong></div>
+<p>本专题为高二上学期解析几何的预备内容。解析几何的核心思想是用代数方法研究几何问题，即&quot;建系——设点——列方程——求解&quot;。直线与圆是最基础的解析几何对象。</p>
+<div class="h3c" style="color:#2563eb"><strong>知识精讲</strong></div>
+<table class="ptable"><tr><th style="background:#2563eb">知识模块</th><th style="background:#2563eb">核心公式</th><th style="background:#2563eb">要点</th></tr></table>
+<table class="ptable"><tr><th style="background:#f8fafc;color:#334155">斜率公式</th><th style="background:#f8fafc;color:#334155">(y2−y1)/(x2−x1)=k=tanα</th><th style="background:#f8fafc;color:#334155">倾斜角π)，x1≠x2α∈[0,</th></tr><tr><td>点斜式</td><td>x0)y−y0=k(x−</td><td>不适用于斜率不存在的直线（竖直线）</td></tr></table>
+<table class="ptable"><tr><th style="background:#f8fafc;color:#334155">一般式</th><th style="background:#f8fafc;color:#334155">Ax+By+C=0</th><th style="background:#f8fafc;color:#334155">不同时为0；斜率A,Bk=−A/B（B≠0）</th></tr><tr><td>两点间距离</td><td>√[(x2−x1)2+d=(y2−y1)2]</td><td>即勾股定理的坐标形式</td></tr></table>
+<table class="ptable"><tr><th style="background:#f8fafc;color:#334155">点到直线距离</th><th style="background:#f8fafc;color:#334155">d=|Ax0+By0+C|/√(A2+B2)</th><th style="background:#f8fafc;color:#334155">分母是法向量的模长</th></tr><tr><td>圆的标准方程</td><td>(x−a)2+(y−b)2r2=</td><td>圆心(a,b)，半径r</td></tr></table>
+<table class="ptable"><tr><th style="background:#f8fafc;color:#334155">&#160;</th><th style="background:#f8fafc;color:#334155">x2+y2+Dx+Ey+F=0</th><th style="background:#f8fafc;color:#334155">D2+E2−4F时表示圆&gt;0</th></tr></table></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="box-t" style="color:#2563eb"><strong>典例破题</strong></div><table class="ptable"><tr><th style="background:#f8fafc;color:#334155">圆的一般方程</th><th style="background:#f8fafc;color:#334155">&#160;</th><th style="background:#f8fafc;color:#334155">&#160;</th></tr><tr><td>考点1：直线方程</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>例1：</strong>求过点 A(2, 3) 且斜率为 4 的直线方程。</p>
+<p style="color:#1e40af"><strong>解：用点斜式：</strong><strong>y − 3 = 4(x − 2)</strong>，<strong>即 </strong><strong>y = 4x − 5</strong>，<strong>化为一般式：4</strong><strong>x −</strong><strong>y − 5 = 0</strong>。</p>
+<div class="h3c" style="color:#16a34a"><strong>巩固1</strong></div>
+<p>求过点 A(1, 2) 和 B(3, 6) 的直线方程。</p>
+<p><strong>答案：</strong>y = 2x。k = (6−2)/(3−1) = 2，用点斜式：y−2 = 2(x−1)，即 y =2x。</p>
+<div class="h3c" style="color:#16a34a"><strong>巩固2</strong></div>
+<p>求过点 (2, −1) 且与直线 3x + 4y − 5 = 0 平行的直线方程。</p>
+<p><strong>答案：</strong>3x + 4y − 2 = 0。平行直线斜率相同，设方程为 3x+4y+C=0，代入点(2,−1)：6−4+C=0，∴ C=−2。方程为 3x+4y−2=0。</p>
+<div class="h3c" style="color:#16a34a"><strong>巩固3</strong></div>
+<p>求过点 (1, 1) 且与直线 2x − y + 3 = 0 垂直的直线方程。</p>
+<p><strong>答案：</strong></p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="box-t" style="color:#b45309"><strong>易错警示</strong></div><table class="ptable"><tr><th style="background:#16a34a">0。原直线斜率k1=2，垂直直线斜率k2=−1/2。用点斜式：x+2y−3=(−1/2)(x−1)，即2y−2−x+1，x+2y−3=0。y−1==</th><th style="background:#16a34a">&#160;</th></tr></table>
+<p style="color:#92400e">· 点斜式 y−y0=k(x−x0) 不能表示斜率不存在的直线（竖直线 x=x0）。</p>
+<p style="color:#92400e">· 两直线平行 ⇔ 斜率相等（k1=k2）或都不存在。</p>
+<p style="color:#92400e">· 两直线垂直 ⇔ 斜率乘积为 −1（k1k2=−1）或一个为0一个不存在。</p>
+<div class="h3c" style="color:#1e40af"><strong>考点2：圆的方程</strong></div>
+<div class="h3c" style="color:#2563eb"><strong>典例破题</strong></div>
+<p><strong>例1：</strong>求圆心为 (3, −2)，半径为 4 的圆的标准方程。</p>
+<p style="color:#1e40af"><strong>解：(</strong><strong>x−3</strong><strong>)</strong><strong>2</strong><strong> + (y+2)</strong><strong>2</strong><strong> = 16。</strong></p>
+<div class="h3c" style="color:#16a34a"><strong>巩固1</strong></div>
+<p>将 x2 + y2 − 4x + 6y − 3 = 0 化为标准方程。</p>
+<p><strong>答案：</strong>(x−2)2 + (y+3)2 = 16。配方：(x2−4x+4)+(y2+6y+9) = 3+4+9，即(x−2)2+(y+3)2 = 16。圆心 (2,−3)，半径 4。</p>
+<div class="h3c" style="color:#16a34a"><strong>巩固2</strong></div>
+<p>求以 A(1, 2) 和 B(5, 4) 为直径端点的圆的方程。</p>
+<p><strong>答案：</strong></p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="box-t" style="color:#16a34a"><strong>巩固3</strong></div><table class="ptable"><tr><th style="background:#16a34a">(x−3)2+(y−3)2=5。圆心为中点(3,3)，半径ABr=|AB|/2=√[(5−1)2+(4−2)2]/2=√20/2=√5。</th><th style="background:#16a34a">&#160;</th></tr></table>
+<p>判断方程 x2 + y2 + 2x − 4y + 6 = 0 是否表示圆。</p>
+<p><strong>答案：</strong>不表示圆。D=2, E=−4, F=6。D2+E2−4F = 4+16−24 = −4 &lt; 0，不满足圆的判别条件，方程表示一个虚圆（无实数解）。</p>
+<div class="h3c" style="color:#b45309"><strong>易错警示</strong></div>
+<p style="color:#92400e">一般方程 x2+y2+Dx+Ey+F=0 表示圆的充要条件：D2+E2−4F &gt; 0。· · 配方时注意常数项移到右边，记得加到等式两边。</p>
+<p style="color:#92400e">圆的标准方程中，右边是 r2（不是 r）。· </p>
+<div class="h3c" style="color:#1e40af"><strong>考点3：位置关系</strong></div>
+<div class="h3c" style="color:#2563eb"><strong>典例破题</strong></div>
+<p><strong>例1：</strong>判断直线 3x + 4y − 10 = 0 与圆 x2 + y2 = 4 的位置关系。</p>
+<p style="color:#1e40af"><strong>解：圆心 (0,0)，半径 </strong><strong>r=2</strong>。<strong>圆心到直线距离 </strong><strong>d = |0+0−10|/√(3</strong><strong>2</strong><strong>+4</strong><strong>2</strong><strong>) =</strong><strong>10/5 = 2 = r</strong>。<strong>d = r</strong>，<strong>∴ </strong><strong>直线与圆相切。</strong></p>
+<div class="h3c" style="color:#16a34a"><strong>巩固1</strong></div>
+<p>判断直线 y = x + 1 与圆 x2 + y2 = 1 的位置关系。</p>
+<p><strong>答案：</strong></p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="box-t" style="color:#16a34a"><strong>巩固2</strong></div><table class="ptable"><tr><th style="background:#16a34a">相交。直线化为x−y+1=0，圆心(0,0)到直线距离d=|0−0+1|/√(1+1)相交。r，∴=1/√2&lt;1=</th><th style="background:#16a34a">&#160;</th></tr></table>
+<p>求过点 P(1, 1) 且与圆 x2+y2 = 2 相切的切线方程。</p>
+<p><strong>答案：</strong>x + y = 2。圆心 (0,0)，半径 r=√2。设切线为 y−1=k(x−1)，即kx−y−k+1=0。圆心到切线的距离 = |−k+1|/√(k2+1) = √2。解得k=−1。∴ 切线为 y−1=−1(x−1)，即 x+y=2。</p>
+<div class="h3c" style="color:#16a34a"><strong>巩固3</strong></div>
+<p>判断圆 C1：x2+y2 = 4 与圆 C2：(x−3)2+(y−4)2 = 9 的位置关系。</p>
+<p><strong>答案：</strong>外切。C1 圆心 (0,0)，r1=2；C2 圆心 (3,4)，r2=3。圆心距 d = 5。</p>
+<p style="color:#166534">r1+r2=5，|r1−r2|=1。d = r1+r2=5，∴ 两圆外切。</p>
+<div class="h3c" style="color:#b45309"><strong>易错警示</strong></div>
+<p style="color:#92400e">· 直线与圆位置关系：d &lt; r 相交，d = r 相切，d &gt; r 相离。</p>
+<p style="color:#92400e">· 两圆位置关系需比较圆心距 d 与 r1+r2 和 |r1−r2| 的关系。</p>
+<p style="color:#92400e">· 切线问题常用&quot;圆心到直线距离等于半径&quot;来列方程。</p></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

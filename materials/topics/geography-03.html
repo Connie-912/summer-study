@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>地理暑假衔接 · 水循环与洋流 · 精编讲练</title>
+<style>
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../geography.html">‹ 返回</a><h1>地理暑假衔接 · 水循环与洋流</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>水循环与洋流</h2><div class="hero-sub">地理暑假衔接 · 第 22-27 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>专题概述</strong></div><p>水循环连接大气圈、水圈、岩石圈和生物圈，是自然地理的核心枢纽。洋流则通过热量输送影响全球气候。本专题要求<strong>结合地图记忆</strong>洋流名称和分布，掌握&quot;8/0模式&quot;这一经典口诀。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">①</span><strong>考点一：水循环环节与人类活动影响</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">水循环类型</th><th style="background:#0ea5e9">主要环节</th><th style="background:#0ea5e9">空间范围</th></tr><tr><td>海陆间循环（大循环）</td><td>蒸发→水汽输送→降水→地表径流→下渗→地下径流</td><td>海洋与陆地之间</td></tr><tr><td>陆地内循环</td><td>蒸发（蒸腾）→降水</td><td>陆地内部</td></tr><tr><td>海上内循环</td><td>蒸发→降水</td><td>海洋内部</td></tr><tr><td>&#160;</td><td>人类活动影响最大的环节：地表径流（修水库、跨流域调水）、下渗（城市化硬化地面减少下渗→增加地表径流→城市内涝）。</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】分析城市内涝频发的原因，并从水循环角度提出治理措</strong><strong>施。</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><div class="h3c" style="color:#16a34a"><strong>原因：</strong>①城市化导致地面硬化，下渗减少，地表径流增加。②城市排水</div>
+<p>系统不完善。③极端降水事件增多。</p>
+<div class="h3c" style="color:#16a34a"><strong>措施：</strong>①建设&quot;海绵城市&quot;（透水路面、下沉式绿地），增加下渗。②修</div>
+<p>建蓄水池、雨水花园，调蓄地表径流。③完善排水管网。</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>答案：水循环环节中，城市化减少了下渗、增加了地表径流；治理需从增加下渗和调蓄径流两方面入手。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>1.</td><td>&#160;</td><td>说明水循环的地理意义（至少三条）。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：①维持全球水量动态平衡，使陆地水不断更新。②促进能量交换（水循环伴随着热能输送和转化）。③塑造地表形态（流水侵蚀、搬运、沉积作用）。④联系四大圈层（大气圈、水圈、岩石圈、生物圈），是物质迁移的纽带。答：维持水量平衡、促进能量交换、塑造地表形态、联系四大圈层。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. &quot;海绵城市&quot;建设主要影响水循环的哪些环节？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 海绵城市主要通过<strong>透水铺装、下沉式绿地、雨水花园</strong>等措施：</div>
+<p style="color:#166534">①<strong>增加下渗</strong>（透水路面减少地表径流）。</p>
+<p style="color:#166534">②<strong>增加地下径流</strong>（补充地下水）。</p>
+<p style="color:#166534">③<strong>减少地表径流</strong>（缓解城市内涝）。</p>
+<p style="color:#166534">④<strong>增加蒸发（蒸腾）</strong>（绿地和水体增加蒸发量，缓解热岛效应）。</p>
+<p style="color:#166534"><strong>答：主要影响下渗、地表径流、地下径流、蒸发四个环节。</strong></p></div>
+<p><strong>3. 黄河下游地区&quot;地上河&quot;的形成与水循环哪个环节关系最密切？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong> 与<strong>地表径流</strong>和<strong>泥沙搬运沉积</strong>关系最密切。</div><p style="color:#166534">黄河中游流经黄土高原，地表径流携带大量泥沙；下游进入平原，流速减慢，泥沙大量沉积，河床不断抬高，形成&quot;地上河&quot;。</p>
+<p style="color:#166534"><strong>答：地表径流环节（泥沙搬运与沉积）。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 水循环的动力是太阳辐射和重力。</strong>太阳辐射提供蒸发能量，重力驱动降水</div>
+<p style="color:#92400e">下落和径流流动。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 人类活动对水循环的影响是&quot;双刃剑&quot;：</strong>水库既调节径流（正面），又可能</div>
+<p style="color:#92400e">阻断鱼类洄游（负面）。</p></div>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>考点二：洋流分布规律——&quot;8/0模式&quot;2</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>知识精讲</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&quot;8/0模式&quot;口诀：北半球中低纬呈&quot;8&quot;字形（顺时针环流），南半球中低纬呈&quot;0&quot;字形（逆时针环流）。北半球中高纬呈&quot;0&quot;字形（逆时针），南半球中高纬无环流（南极绕极流）。</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><table class="ptable"><tr><th style="background:#0ea5e9">分布规律</th><th style="background:#0ea5e9">洋流模式</th><th style="background:#0ea5e9">典型洋流</th></tr><tr><td>北半球中低纬（以副热带为中心）</td><td>顺时针环流（&quot;8&quot;字形）</td><td>北太平洋暖流、日本暖流（黑潮）、加利福尼亚寒流</td></tr><tr><td>南半球中低纬（以副热带为中心）</td><td>逆时针环流（&quot;0&quot;字形）</td><td>秘鲁寒流、巴西暖流、本格拉寒流</td></tr><tr><td>北半球中高纬（以副极地为中心）</td><td>逆时针环流（&quot;0&quot;字形）</td><td>北大西洋暖流、拉布拉多寒流</td></tr><tr><td>南半球中高纬</td><td>南极绕极流（西风漂流）</td><td>连续的寒流环</td></tr><tr><td>北印度洋（季风洋流）</td><td>冬季逆时针/夏季顺时针</td><td>随季风方向改变</td></tr><tr><td>索马里夏季寒流为离岸风上升补偿流）。</td><td>洋流性质判断：一般从低纬流向高纬为暖流，从高纬流向低纬为寒流（例外：</td><td>&#160;</td></tr></table></div>
+<div class="h3c" style="color:#0ea5e9"><strong>典例破题</strong></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><p><strong>【例题】在大西洋中，从西欧到北美洲东海岸的航线，为什么去程</strong><strong>和回程选择的路线不同？</strong></p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>分析：</strong></div><p><span class="nno">①</span> 西欧→北美：顺<strong>北大西洋暖流</strong>和<strong>盛行西风</strong>，从高纬向西航行，速度</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>快。北美→西欧：顺加那利寒流（南行）→北赤道暖流（西行）→再北2上借助湾流和西风。答案：去程和回程利用不同洋流，顺流航行以节省燃料和时间。</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>1.</td><td>&#160;</td><td>据&quot;8/0模式&quot;，画出北太平洋中低纬大洋环流示意图，标注洋流名称和性质。</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：北太平洋中低纬环流为顺时针（&quot;8&quot;字形）：①日本暖流（黑潮）——暖流，沿日本东海岸北上。②北太平洋暖流——暖流，自西向东横穿太平洋。③加利福尼亚寒流——寒流，沿北美西海岸南下。④北赤道暖流——暖流，自东向西（信风驱动）。答：顺时针环流，西侧暖流、东侧寒流。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 分析秘鲁寒流对南美洲西海岸气候和渔场的影响。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong><strong>对气候：</strong>秘鲁寒流降温减湿，使南美洲西海岸热带沙漠气候向低纬延伸</div>
+<p style="color:#166534">（如阿塔卡马沙漠）。</p>
+<div class="h3c" style="color:#166534"><strong>对渔场：</strong>秘鲁寒流为上升补偿流，将海底营养盐类带到表层，浮游生物繁盛，</div>
+<p style="color:#166534">形成世界著名的<strong>秘鲁渔场</strong>。</p>
+<p style="color:#166534"><strong>答：寒流降温减湿形成沙漠；上升补偿流带来营养盐形成大渔场。</strong></p></div>
+<p><strong>3. 北大西洋暖流对欧洲西部气候有何影响？如果没有它，欧洲西部会怎</strong><strong>样？</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 北大西洋暖流是世界上最强大的暖流之一，<strong>增温增湿</strong>作用显著：</div>
+<p style="color:#166534">①使西欧（如英国、挪威）冬季气温比同纬度大陆东岸高10~15℃。②使西欧形成<strong>温带海洋性气候</strong>，全年温和多雨。③使挪威海港冬季不冻。</p>
+<p style="color:#166534">如果没有北大西洋暖流，西欧冬季将严寒干燥，类似同纬度的加拿大东海岸。</p>
+<p style="color:#166534"><strong>答：暖流增温增湿，使西欧成为同纬度最温暖的地区之一。</strong></p></div>
+<table class="ptable"><tr><td>&#160;</td><td>4.北印度洋季风洋流有何特殊规律？</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#16a34a"><strong>答案：</strong> 北印度洋季风洋流随季风方向改变：</div><p style="color:#166534"><strong>冬季</strong>（11月-次年2月）：盛行东北季风，洋流<strong>逆时针</strong>流动（自东向西）。</p>
+<p style="color:#166534"><strong>夏季</strong>（5月-9月）：盛行西南季风，洋流<strong>顺时针</strong>流动（自西向东）。</p>
+<p style="color:#166534">这是世界唯一随季节改变方向的洋流系统。</p>
+<p style="color:#166534"><strong>答：冬季逆时针，夏季顺时针，随季风方向改变。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. &quot;8/0模式&quot;中，&quot;8&quot;代表顺时针，&quot;0&quot;代表逆时针。</strong>北半球中低纬是&quot;8&quot;（顺</div>
+<p style="color:#92400e">时针），南半球中低纬是&quot;0&quot;（逆时针）。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 寒暖流的判断不能只看纬度高低：</strong>如索马里夏季寒流虽从低纬流向高纬，</div>
+<p style="color:#92400e">但因为是深层冷水上涌补偿，故为寒流。</p></div>
+<div class="box" style="background:#e0f2fe;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><span class="nno">③</span><strong>考点三：海洋资源</strong></div></div>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"><div class="box-t" style="color:#0369a1"><strong>知识精讲</strong></div><table class="ptable"><tr><th style="background:#0ea5e9">资源类型</th><th style="background:#0ea5e9">内容</th><th style="background:#0ea5e9">分布</th></tr><tr><td>海洋生物资源</td><td>鱼类、虾蟹、贝类、藻类</td><td>大陆架海域（阳光充足、营养盐丰富）</td></tr><tr><td>海洋矿产资源</td><td>石油、天然气、锰结核、可燃冰</td><td>大陆架（油气）、深海盆地（锰结核）</td></tr><tr><td>海洋化学资源</td><td>海盐、溴、镁、淡水</td><td>海水本身</td></tr><tr><td>海洋空间资源</td><td>港口、航道、围海造陆、海底隧道</td><td>沿海地区</td></tr><tr><td>海洋能源</td><td>潮汐能、波浪能、温差能</td><td>潮差大的海湾、波浪强的海域</td></tr></table></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>四大渔场及成因：北海道渔场（日本暖流+千岛寒流交汇）、纽芬兰渔场（墨西哥湾暖流+拉布拉多寒流交汇）、北海渔场（北大西洋暖流+北冰洋冷水交汇）、秘鲁渔场（上升补偿流）。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>1.为什么世界主要渔场多分布在寒暖流交汇处？</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>答案：①寒暖流交汇，海水搅动，将下层营养盐类带到表层，浮游生物繁盛。②不同水温的鱼类在此聚集，形成&quot;水障&quot;，鱼群集中。③饵料丰富，吸引大量鱼类觅食。答：寒暖流交汇处营养盐丰富、饵料充足、鱼群聚集，易形成渔场。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0f9ff;border-color:#0ea5e9"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<p><strong>2. 简述海洋石油资源的主要分布区域及开采特点。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 主要分布：<strong>大陆架</strong>海域，如波斯湾、北海、墨西哥湾、几内亚湾、中国</div>
+<p style="color:#166534">近海（渤海、南海）。</p>
+<p style="color:#166534">开采特点：需要<strong>海上钻井平台</strong>，技术难度大、成本高，且存在<strong>溢油污染风险</strong>。</p>
+<p style="color:#166534"><strong>答：主要分布在大陆架，开采技术复杂、成本高、有污染风险。</strong></p></div>
+<p><strong>3. 我国在南海有哪些海洋权益？简述维护海洋权益的意义。</strong></p>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c" style="color:#16a34a"><strong>答案：</strong> 我国在南海拥有<strong>内水、领海（12海里）、专属经济区（200海里）、大</strong></div>
+<p style="color:#166534"><strong>陆架</strong>等海洋权益。</p>
+<div class="h3c" style="color:#166534">意义：①保障国家<strong>主权和领土完整</strong>。②维护<strong>海洋资源</strong>（油气、渔业）的开发</div>
+<p style="color:#166534">权。③保障<strong>海上通道安全</strong>（南海是重要国际航道）。④维护<strong>海洋生态环境</strong>。</p>
+<div class="h3c" style="color:#166534"><strong>答：南海权益包括领海、专属经济区、大陆架等；维护意义涉及主权、资源、</strong></div>
+<p style="color:#166534"><strong>航道和生态。</strong></p></div>
+<div class="chip" style="background:#f59e0b">⚠ 易错警示</div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"><div class="h3c" style="color:#92400e"><strong>1. 渔场形成条件：</strong>大陆架海域（阳光足）+ 营养盐丰富（寒暖流交汇或上升</div>
+<p style="color:#92400e">流）+ 温带或寒带海域（水温适宜）。</p>
+<div class="h3c" style="color:#92400e"><strong>2. 海洋资源开发与海洋环境保护要并重：</strong>过度捕捞和海洋污染是当前海洋面</div>
+<p style="color:#92400e">临的主要问题。</p></div>
+<table class="ptable"></table>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>物理暑假衔接 · 圆周运动 · 精编讲练</title>
+<style>
+:root{--accent:#d97706;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../physics.html">‹ 返回</a><h1>物理暑假衔接 · 圆周运动</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>圆周运动</h2><div class="hero-sub">物理暑假衔接 · 第 35-40 页</div><div class="hero-meta"><span>📄 6 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点1：线速度与角速度</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>线速度：</strong>v = Δs/Δt = 2πr/T = ωr（方向沿切线方向）</div>
+<div class="h3c" style="color:#b45309"><strong>角速度：</strong>ω = Δθ/Δt = 2π/T（单位：rad/s）</div>
+<div class="h3c" style="color:#b45309"><strong>周期</strong><strong>T</strong><strong>、</strong><strong>频率</strong><strong>f</strong><strong>、</strong><strong>转速</strong><strong>n</strong><strong>：</strong>T = 1/f = 1/n，v = 2πrf，ω = 2πf </div>
+<table class="ptable"><tr><th style="background:#f59e0b">物理量</th><th style="background:#f59e0b">符号</th><th style="background:#f59e0b">公式</th><th style="background:#f59e0b">单位</th></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">线速度</th><th style="background:#fffbeb;color:#92400e">v</th><th style="background:#fffbeb;color:#92400e">v=ωr=2πr/T</th><th style="background:#fffbeb;color:#92400e">m/s</th></tr><tr><td>角速度</td><td>ω</td><td>ω=2π/T=v/r</td><td>rad/s</td></tr></table>
+<table class="ptable"><tr><th style="background:#fffbeb;color:#92400e">周期</th><th style="background:#fffbeb;color:#92400e">T</th><th style="background:#fffbeb;color:#92400e">T=2πr/v=2π/ω</th><th style="background:#fffbeb;color:#92400e">s</th></tr><tr><td>向心加速度</td><td>an</td><td>an=v²/r=ω²r</td><td>m/s²</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>一质点做匀速圆周运动，半径为2 m，周期为4 s。求：(1) 角速度；(2) 线速度；(3) 向心加速度。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p><strong>(1) 角速度：</strong>ω = 2π/T = 2π/4 = <strong>π/2 rad/s ≈ 1.57 rad/s</strong></p>
+<div class="h3c"><strong>(2) 线速度：</strong>v = ωr = (π/2) × 2 = <strong>π m/s ≈ 3.14 m/s</strong></div>
+<div class="h3c"><strong>(3) 向心加速度：</strong>an = v²/r = π²/2 ≈ <strong>4.93 m/s²</strong></div></div>
+<table class="ptable"></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>皮带传动装置中，大轮半径是小轮半径的2倍。大轮边缘的线速度v1与小轮边缘的线速度v2之比是多少？角速度之比呢？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><div class="h3c">皮带传动中，<strong>两轮边缘线速度相等</strong>（皮带不打滑时）：</div>
+<div class="h3c">v1 : v2 = <strong>1 : 1</strong></div>
+<p>由 v = ωr 得 ω = v/r：</p>
+<div class="h3c">ω1 : ω2 = (v/r1) : (v/r2) = r2 : r1 = <strong>1 : 2</strong></div>
+<p>大轮角速度是小轮的一半。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>钟表上时针、分针、秒针的角速度之比是多少？</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>秒针周期 T秒 = 60 s，分针周期 T分 = 3600 s，时针周期 T时= 43200 sω = 2π/T，所以：ω秒 : ω分 : ω时 = 1/60 : 1/3600 : 1/43200通分：= 720 : 12 : 1</p>
+<div class="h3c">ω秒 : ω分 : ω时 = <strong>720 : 12 : 1</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点2：向心力与向心加速度</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#f59e0b"><strong>向心加速度：</strong>an = v²/r = ω²r = 4π²r/T²</div>
+<div class="h3c" style="color:#f59e0b"><strong>向心力：</strong>Fn = man = mv²/r = mω²r</div>
+<div class="h3c" style="color:#f59e0b"><strong>关键：</strong>向心力是效果力，由某个力或几个力的合力提供，不</div>
+<p style="color:#e2e8f0">是额外的力！ </p>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div>
+<p>质量为0.5 kg的小球，用长1 m的绳子系着在光滑水平面上做匀速圆周运动，线速度为2 m/s。求绳子的拉力。</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>绳子拉力提供向心力：</p>
+<div class="h3c">F = mv²/r = 0.5 × 2² / 1 = 0.5 × 4 / 1 = <strong>2 N</strong></div>
+<p>注意：这是拉力，不能说&quot;小球受到向心力2 N&quot;，而应说&quot;绳的拉力2 N提供向心力&quot;。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>汽车以10 m/s的速度通过半径为50 m的水平弯道。若轮胎与路面间的动摩擦因数为0.4，汽车能否安全通过？（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>汽车转弯所需向心力：F需 = mv²/r = m × 100/50 = 2m (N)最大静摩擦力（提供向心力）：fmax = μmg = 0.4 × m × 10= 4m (N)F需 = 2m &lt; fmax = 4m<strong>能安全通过。</strong></p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>临界速度：vmax=√(μgr)=√(0.4×10×50)=√200≈14.1m/s</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【巩固题】3圆锥摆：长为L的绳子一端固定，另一端系质量为m的小球。小球在水平面内做匀速圆周运动，绳子与竖直方向夹角为θ。求小球的角速度ω。</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>小球受重力mg和绳子拉力T。</p>
+<p>竖直方向：T cosθ = mg ⇒ T = mg/cosθ水平方向：T sinθ = mω²r，其中 r = L sinθ(mg/cosθ) × sinθ = mω² × L sinθmg tanθ = mω²L sinθ</p>
+<div class="h3c">g/cosθ = ω²L ⇒ ω = <strong>√(g/(L cosθ))</strong></div></div>
+<div class="box" style="background:#fef3c7;border-color:#f59e0b"><table class="ptable"><tr><th style="background:#fef3c7">📖考点3：竖直面内的圆周运动</th><th style="background:#fef3c7">&#160;</th></tr></table></div>
+<div class="h3c" style="color:#b45309"><strong>绳模型（最高点临界速度）：</strong>mg = mv²/r ⇒ vmin = √(gr)</div>
+<div class="h3c" style="color:#b45309"><strong>杆模型（最高点临界速度）：</strong>vmin = 0（杆可以支撑）</div>
+<div class="h3c" style="color:#b45309"><strong>拱桥模型：</strong>最高点 N = mg - mv²/r，压力小于重力（失重感） </div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">①</span><strong>【巩固题】</strong></div></div>
+<table class="ptable"><tr><th>&#160;</th><th>用长0.5m的绳子系一个质量为0.2kg的小球在竖直面内做圆周运动。求小球通过最高点时的最小速度。（g=10m/s²）</th><th>&#160;</th></tr><tr><td>&#160;</td><td>详细解析最高点绳子拉力恰好为零时，重力提供向心力，速度最小：mg=mvmin²/rvmin=√(gr)=√(10×0.5)=√5≈2.24m/s若速度小于此值，小球在到达最高点前就会脱离圆周轨道。</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">②</span><strong>【巩固题】</strong></div>
+<p>汽车通过半径为40 m的拱桥顶端时，速度为10 m/s。汽车质量为1000 kg，求此时汽车对桥面的压力。（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>最高点：mg - N = mv²/rN = mg - mv²/r = 1000 × 10 - 1000 × 100/40 = 10000 -</p>
+<div class="h3c">2500 = <strong>7500 N</strong></div>
+<p>由牛顿第三定律，汽车对桥面的压力 = 7500 N。</p>
+<p>小于重力（10000 N），处于失重状态。 </p></div>
+<div class="box" style="background:#f8fafc;border-color:#cbd5e1"><div class="h3c"><span class="nno">③</span><strong>【巩固题】</strong></div>
+<p>过山车通过半径为20 m的竖直圆环最高点，为保证乘客不脱离座位，过山车通过最高点的最小速度是多少？（g=10 m/s²）</p></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#166534"><strong>详细解析</strong></div><p>最高点，重力与座位支持力提供向心力。临界条件：N = 0mg = mvmin²/r</p></div>
+<table class="ptable"><tr><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>vmin=√(gr)=√(10×20)=√200≈14.14m/s这是绳模型的临界速度，低于此速度过山车会脱离轨道。</th><th>&#160;</th><th>&#160;</th><th>&#160;</th><th>&#160;</th></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>=</td><td>&#160;</td><td>⚠专题05易错警示1.向心力不是额外力：向心力是效果力，由重力、弹力、摩擦力等实际力或其合力提供。受力分析时不要画&quot;向心力&quot;！2.匀速圆周运动：&quot;匀速&quot;指速率不变，但速度方向时刻变化，是变加速曲线运动。合外力不为零！3.皮带传动：两轮边缘线速度相等（同带），但角速度与半径成反比。同轴传动角速度相等。4.竖直面最高点速度：绳模型最低速度√(gr)，杆模型最低速度v=v0。5.转弯临界速度：水平弯道转弯时，摩擦力提供向心力，vmax=√(μgr)。雨天路面湿滑（μ减小），需减速。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"></div>
+<div class="box" style="background:#fffbeb;border-color:#f59e0b"></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

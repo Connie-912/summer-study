@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 专题05 · 氯及其化合物 · 精编讲练</title>
+<style>
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:15.5px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;max-width:100%}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.box{border-radius:12px;padding:14px 16px;margin:14px 0;border:1.5px solid #e2e8f0}
+.box-t{font-weight:700;font-size:15px;margin-bottom:8px}
+.box p{margin:6px 0}
+.chip{display:inline-block;color:#fff;font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:8px;margin:10px 0 6px}
+.h3c{font-weight:700;font-size:15px;margin:14px 0 6px;color:#0f172a}
+.nno{display:inline-block;min-width:20px;text-align:center;font-weight:700;color:#0ea5e9;margin-right:6px}
+.stepno{display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#0ea5e9;margin:4px 0}
+.ptable{display:block;overflow-x:auto;width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(15,23,42,.1)}
+.ptable th{background:var(--accent);color:#fff;padding:9px 10px;text-align:left;font-weight:600;border:1px solid rgba(255,255,255,.25);line-height:1.5}
+.ptable td{border:1px solid #e2e8f0;padding:8px 10px;vertical-align:top;line-height:1.7}
+.ptable tr:nth-child(even) td{background:#f8fafc}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../chemistry.html">‹ 返回</a><h1>化学暑假衔接 · 专题05 · 氯及其化合物</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编讲练</div><h2>专题05 · 氯及其化合物</h2><div class="hero-sub">化学暑假衔接 · 第 40-46 页</div><div class="hero-meta"><span>📄 7 页</span><span>🎨 原版排版还原</span><span>✓ 讲练结合</span></div></div>
+<div class="page">
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>专题05 · 氯及其化合物</strong></div><p style="color:#6b7280">氯是典型的非金属元素，Cl2 既是重要的化工原料也是高考常考物质。掌握氯气性质、氯水成分和漂白粉原理是本专题核心。</p>
+<div class="h3c"><strong>一、知识精讲</strong></div>
+<div class="h3c" style="color:#047857"><strong>考点1：</strong><strong>Cl</strong><strong>2</strong><strong> 的性质</strong></div>
+<table class="ptable"><tr><th style="background:#10b981">反应类型</th><th style="background:#10b981">化学方程式</th><th style="background:#10b981">现象/说明</th></tr><tr><td>与金属Na</td><td>2Na+Cl2=2NaCl</td><td>剧烈燃烧，黄色火焰，白烟</td></tr><tr><td>与金属Fe</td><td>2Fe+3Cl2=2FeCl3</td><td>铁丝在中燃Cl2烧，棕褐色烟</td></tr><tr><td>与金属Cu</td><td>Cu+Cl2=CuCl2</td><td>铜丝在中燃Cl2烧，棕黄色烟</td></tr><tr><td>与H2</td><td>H2+Cl2=2HCl</td><td>点燃或光照，苍白色火焰</td></tr><tr><td>与水</td><td>Cl2+H2O⇌HCl+HClO</td><td>氯水呈浅黄绿色</td></tr><tr><td>与NaOH</td><td>Cl2+2NaOH=NaCl+NaClO+H2O</td><td>实验室吸收尾气</td></tr><tr><td>与Ca(OH)2</td><td>2Cl2+2Ca(OH)2=CaCl2+Ca(ClO)2+2H2O</td><td>制漂白粉</td></tr><tr><td>考点2：HClO</td><td>与漂白粉</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">化学式</th><th style="background:#10b981">性质</th></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="chip" style="background:#16a34a;margin-top:0">物</div><table class="ptable"><tr><td>HClO</td><td>弱酸（酸性比还弱）；强氧化性→漂H2CO3白、杀菌；不稳定→见光分解：2HClO=O2↑2HCl+</td></tr></table>
+<p>次氯　白、杀菌；不稳定→见光分解：2HClO =HClO酸　2HCl + O2↑有效成分 Ca(ClO)2；漂白原理：Ca(ClO)2+CO2+H2O=CaCO3↓+2HClO；漂白　久置失效：Ca(ClO)2+CaCl2粉　Ca(ClO)2+CO2+H2O=CaCO3+2HClO，2HClO=2HCl+O2↑</p>
+<table class="ptable"><tr><th>&#160;</th><th>考点3：氯水成分与性质</th><th>&#160;</th></tr><tr><td>&#160;</td><td>氯水的成分（新制氯水）三分子：Cl2、H2O、HClO四离子：H+、Cl−、ClO−、OH−（极少）</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><th style="background:#10b981">实验</th><th style="background:#10b981">所用成分</th><th style="background:#10b981">现象</th></tr><tr><td>氯水使紫色石蕊试液先变红后褪色</td><td>H+（变红）、HClO（褪色）</td><td>先红后无色</td></tr><tr><td>氯水与溶液AgNO3</td><td>Cl−</td><td>白色沉淀（AgCl↓）</td></tr><tr><td>氯水与Na2CO3</td><td>H+</td><td>产生气泡（CO2↑）</td></tr><tr><td>氯水使品红溶液褪色</td><td>HClO</td><td>褪色</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="h3c"><strong>二、典例破题</strong></div>
+<div class="h3c" style="color:#2563eb"><strong>【典例1】氯水性质</strong></div>
+<p>新制氯水与久置氯水相比，下列成分中减少的是（ ）</p>
+<p>① Cl2 ② HClO ③ H+ ④ Cl−A. ①②   B. ②③   C. ③④   D. ①④</p>
+<div class="h3c" style="color:#10b981"><strong>【答案】</strong><strong>A</strong></div>
+<p>新制氯水：Cl2+H2O⇌HCl+HClO久置过程中：2HClO = 2HCl + O2↑（见光分解），平衡Cl2+H2O⇌HCl+HClO 不断向右移动。</p>
+<p>结果：Cl2 和 HClO 减少，H+ 和 Cl− 增加。久置氯水最终变成稀盐酸。</p>
+<p>减少的是 <strong>①②</strong>，选 A。</p>
+<div class="h3c" style="color:#2563eb"><strong>【典例2】漂白粉原理</strong></div>
+<p>漂白粉在空气中漂白时发生反应的化学方程式为______，漂白粉久置失效的原因是______（用化学方程式表示）。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>漂白原理：<strong>Ca(ClO)</strong><strong>2</strong><strong> + CO</strong><strong>2</strong><strong> + H</strong><strong>2</strong><strong>O = CaCO</strong><strong>3</strong><strong>↓ + 2HClO</strong>（HClO 具有强氧化性，可漂白。）失效原因：<strong>2HClO = 2HCl + O</strong><strong>2</strong><strong>↑</strong>（见光分解）久置后 Ca(ClO)2 逐步转化为 CaCO3 和 HCl，最终失去漂白能力。</p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【典例3】Cl2的实验室制法实验室制取的化学方程式为______，其中氧化剂是______，用______Cl2溶液吸收尾气，反应的离子方程式为______。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】化学方程式：MnO24HCl(浓)+=MnCl2+Cl2↑+2H2O氧化剂：MnO2（Mn从+4降到+2）尾气吸收：NaOH溶液</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><th style="background:#3b82f6">2OH−Cl−ClO−离子方程式：Cl2+=++H2O</th><th style="background:#3b82f6">&#160;</th><th style="background:#3b82f6">&#160;</th><th style="background:#3b82f6">&#160;</th></tr><tr><td>三、巩固提升</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>考点1巩固题</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table>
+<p><strong>Q5-1</strong>写出 Cl2 与下列物质反应的化学方程式：(1) Fe(2) NaOH 溶液（常温）(3) NaBr 溶液</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>(1) <strong>2Fe + 3Cl</strong><strong>2</strong><strong> = 2FeCl</strong><strong>3</strong>（Fe 被氧化为 +3 价）(2) <strong>Cl</strong><strong>2</strong><strong> + 2NaOH = NaCl + NaClO + H</strong><strong>2</strong><strong>O</strong>（歧化反应）(3) <strong>Cl</strong><strong>2</strong><strong> + 2NaBr = 2NaCl + Br</strong><strong>2</strong>（置换反应，氧化性 Cl2 &gt;Br2）<strong>Q5-2</strong>将 Cl2 通入含酚酞的 NaOH 溶液中，红色褪去。甲同学认为是 Cl2 与 NaOH反应使溶液碱性减弱所致，乙同学认为是 HClO 的漂白性所致。请设计实验验证。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>向褪色后的溶液中滴加 NaOH 溶液：若溶液恢复红色，说明甲同学正确（碱性减弱导致褪色）；</p>
+<p>若溶液不恢复红色，说明乙同学正确（HClO 漂白性导致褪色，属于永久性褪色）。</p>
+<p>实际现象：Cl2+2NaOH=NaCl+NaClO+H2O，生成的 NaClO 水解产生 HClO，具有漂白性，褪色后加碱不恢复红色。故乙同学正确。</p>
+<table class="ptable"><tr><td>&#160;</td><td>Q5-3</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#047857"><strong>考点2 巩固题</strong></div><table class="ptable"><tr><th>&#160;</th><th>下列物质中，能使干燥的有色布条褪色的是（）干燥的氯水液氯溶液A.Cl2B.C.D.NaClO</th><th>&#160;</th></tr><tr><td>&#160;</td><td>【答案】BD干燥无漂白性（漂白需要HClO）。A×Cl2氯水中含HClO，具有漂白性。B√液氯是纯净的Cl2（液态），无HClO，无漂白性。C×HClO：ClO−+H2O⇌HClO+OH−，具有漂溶液水解产生D√NaClO白性。</td><td>&#160;</td></tr></table>
+<p><strong>Q5-4</strong>写出漂白粉的有效成分和漂白原理的化学方程式。</p>
+<div class="h3c" style="color:#10b981"><strong>【答案与解析】</strong></div>
+<p>有效成分：<strong>Ca(ClO)</strong><strong>2</strong>漂白原理：<strong>Ca(ClO)</strong><strong>2</strong><strong> + CO</strong><strong>2</strong><strong> + H</strong><strong>2</strong><strong>O = CaCO</strong><strong>3</strong><strong>↓ + 2HClO</strong>离子方程式：<strong>Ca(ClO)</strong><strong>2</strong><strong> + CO</strong><strong>2</strong><strong> + H</strong><strong>2</strong><strong>O = CaCO</strong><strong>3</strong><strong>↓ + 2H</strong><strong>+</strong><strong> +</strong><strong>2ClO</strong><strong>−</strong>（注意 HClO 是弱酸不能拆）实际上离子方程式应为：<strong>Ca</strong><strong>2+</strong><strong> + 2ClO</strong><strong>−</strong><strong> + CO</strong><strong>2</strong><strong> + H</strong><strong>2</strong><strong>O =</strong><strong>CaCO</strong><strong>3</strong><strong>↓ + 2HClO</strong></p>
+<table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q5-5漂白粉长期露置于空气中会失效，写出有关化学方程式。</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】①Ca(ClO)2+CO2+H2O=CaCO3↓+2HClOO2↑（光照）②2HClO=2HCl+最终转化为和HCl，失去漂白性。Ca(ClO)2CaCO3</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>Q5-6工业上为什么用与消石灰制漂白粉，而不用与NaOH？Cl2Ca(OH)2Cl2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><div class="box-t" style="color:#10b981"><strong>【答案与解析】</strong></div><p>Cl2+2NaOH=NaCl+NaClO+H2O 得到的是 NaClO 溶液（漂白液），不易保存和运输。</p>
+<p>2Cl2+2Ca(OH)2=CaCl2+Ca(ClO)2+2H2O 得到固体漂白粉，便于保存和运输。</p>
+<p>消石灰 Ca(OH)2 比 NaOH 便宜，成本更低。</p>
+<div class="h3c" style="color:#047857"><strong>考点3 巩固题</strong></div>
+<p><strong>Q5-7</strong>新制氯水中含有多种微粒。将新制氯水分别滴入下列溶液中，各有何现象？</p>
+<p>说明起作用的主要微粒。</p>
+<p>(1) 紫色石蕊试液(2) AgNO3 溶液(3) Na2CO3 溶液</p>
+<table class="ptable"><tr><td>&#160;</td><td>【答案与解析】先变红后褪色。H+(1)使石蕊变红，HClO使红色褪去。产生白色沉淀。Cl−Ag+(2)+=AgCl↓产生气泡。2H+2−(3)CO2↑+CO3=H2O+</td><td>&#160;</td></tr><tr><td>&#160;</td><td>Q5-8Cl−H+？如何用实验证明氯水中含有和</td><td>&#160;</td></tr><tr><td>&#160;</td><td>【答案与解析】Cl−：取少量氯水，滴加检验溶液和稀硝酸，产生不溶于稀硝AgNO3酸的白色沉淀（AgCl）。H+：取少量氯水，滴加紫色石蕊试液，溶液变红（但不能用检验pH试纸，因为有漂白性会使试纸褪色）。HClO</td><td>&#160;</td></tr></table>
+<table class="ptable"><tr><td>&#160;</td><td>Q5-9在71中，含有原子的物质的量为多少？标准状况下体积为多少？gCl2Cl</td><td>&#160;</td></tr></table></div>
+<div class="box" style="background:#f0fdf4;border-color:#16a34a"><table class="ptable"><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>【答案与解析】n(Cl2)=71g/71g/mol=1mol原子)n(Cl=1×2=2molV(Cl2)=1mol×22.4L/mol=22.4L</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>四、易错警示</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr><tr><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>⚠</td><td>专题05易错点警示·干燥无漂白性：漂白作用的是HClO，不是本身。干燥的不Cl2Cl2Cl2能使有色布条褪色。Cl2、HClO、H+、Cl−·氯水液氯：氯水是混合物（含等），液氯是纯vs净物（液态Cl2）。·与反应：生成FeCl3（+3价），不是氧化性强，直接FeCl2（Cl2FeCl2将氧化到最高价）。Fe·漂白粉失效：涉及两步反应，先与反应生成再HClO，HClOCO2+H2O分解。·的酸性：HClO是弱酸，酸性比还弱，因此就HClOH2CO3CO2+H2O能从中置换出HClO。Ca(ClO)2</td><td>&#160;</td><td>&#160;</td><td>&#160;</td><td>&#160;</td></tr></table></div>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
