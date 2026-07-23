@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>政治暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#dc2626;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#b91c1c;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,14 +61,19 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>政治暑假衔接</h1></div>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>政治暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
 <div class="wrap">
-<div class="page">
-<p>新高二政治暑假衔接讲练</p>
-<p>经济生活 + 政治生活 + 哲学基础</p>
-<p>系统复习高一核心知识，夯实基础，为高二文科学习做好准备</p>
-<p>1 生活与消费——货币、价格、消费</p>
-<p>【知识精讲】</p>
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>政治暑假衔接</h2>
+  <div class="hero-sub">经济生活 + 政治生活 + 哲学基础 系统复习高一核心知识，夯实基础，为高二文科学习做好准备</div>
+  <div class="hero-meta"><span>📚 8 个专题</span><span>📄 64 页精讲</span><span>✓ 讲练结合</span></div>
+</div>
+<div class="page"><h1>1生活与消费——货币、价格、消费</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>核心公式：流通中所需货币量 = 商品价格总额 / 同一单位货币流通速度</p>
 <p>货币职</p>
@@ -93,8 +126,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>2023年，某国央行大量增发货币以刺激经济，导致物价持续上涨。这说明</p>
 <p>（　）</p>
 <p>①纸币发行量必须以流通中实际需要的货币量为限度</p>
@@ -102,12 +135,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③通货膨胀会引起物价上涨</p>
 <p>④纸币供应量过多是物价上涨的根本原因</p>
 <p>A. ①②  B. ①③  C. ②④  D. ③④</p>
-<h3>【答案】B</h3>
-<p>解析：央行大量增发货币导致物价上涨，说明纸币发行量超过了流通中实</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：央行大量增发货币导致物价上涨，说明纸币发行量超过了流通中实</h3>
 <p>际需要的货币量，引发通货膨胀，①③正确。纸币的实际购买力由市场决</p>
 <p>定，不是由国家决定的，②错误。物价上涨的根本原因是价值变化，纸币</p>
 <p>供应量过多是通货膨胀的直接原因而非根本原因，④错误。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>受国际油价上涨影响，国内汽油价格上调，新能源汽车销量随之增加。这</p>
 <p>体现了（　）</p>
 <p>①价格变动影响生产规模</p>
@@ -115,19 +148,19 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③消费者对高档耐用品的需求弹性较大</p>
 <p>④价格变动影响相关商品需求量</p>
 <p>A. ①②  B. ②④  C. ①③  D. ③④</p>
-<h3>【答案】B</h3>
-<p>解析：油价上涨导致新能源汽车销量增加，说明汽油与新能源汽车在消费</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：油价上涨导致新能源汽车销量增加，说明汽油与新能源汽车在消费</h3>
 <p>上可以相互替代，②正确；同时也体现了价格变动对相关商品需求量的影</p>
 <p>响，④正确。材料未涉及生产规模变化，①不符合题意；汽车属于高档耐</p>
 <p>用品，但材料强调的是&quot;相关商品&quot;之间的关系，而非需求弹性大小，③不符</p>
 <p>合题意。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：近年来，随着居民收入水平的提高，旅游消费日益火爆。同时，一</p>
 <p>些商家利用&quot;低价游&quot;&quot;零负团费&quot;等手段诱导消费，导致旅游纠纷频发。国家</p>
 <p>旅游局出台规定，禁止&quot;不合理低价游&quot;，规范旅游市场秩序。</p>
 <p>结合材料，运用&quot;影响消费的因素&quot;和&quot;规范市场秩序&quot;的相关知识，分析如何</p>
 <p>促进旅游市场健康发展。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①收入是消费的基础和前提。居民收入提高为旅游消费提供了物质基础，</p>
 <p>要继续发展经济，增加居民收入，释放旅游消费潜力。</p>
 <p>②消费心理影响消费行为。消费者应树立正确的消费观，避免盲目从众，</p>
@@ -135,14 +168,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③国家应加强宏观调控，规范市场秩序。运用法律和行政手段，打击&quot;零负</p>
 <p>团费&quot;等欺诈行为，建立健全社会信用制度，以道德为支撑、法律为保障，</p>
 <p>营造放心的旅游消费环境。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 下列属于商品的是（　）</p>
 <p>A. 捐赠给灾区的物资</p>
 <p>B. 农民自产自食的蔬菜</p>
 <p>C. 超市里待售的牛奶</p>
 <p>D. 送给朋友的生日礼物</p>
-<h3>【答案】C。商品是用于交换的劳动产品。A、B、D都没有用于交换，只</h3>
+<h3 class="h3-answer">【答案】C。商品是用于交换的劳动产品。A、B、D都没有用于交换，只</h3>
 <p>有C是用于交换的劳动产品。</p>
 <p>2. 某商品生产者率先改进技术，提高了劳动生产率。在其他条件不变的情</p>
 <p>况下，该生产者（　）</p>
@@ -150,7 +183,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 商品价值总量增加</p>
 <p>C. 单位商品价值量不变，但获利减少</p>
 <p>D. 单位商品价值量提高</p>
-<h3>【答案】B。商品价值量由社会必要劳动时间决定，个别生产者提高劳动</h3>
+<h3 class="h3-answer">【答案】B。商品价值量由社会必要劳动时间决定，个别生产者提高劳动</h3>
 <p>生产率不会改变单位商品价值量，但会增加产品数量，从而使价值总量</p>
 <p>增加。</p>
 <p>3. 当猪肉价格上涨时，人们会转而购买鸡肉、鱼肉等。这说明（　）</p>
@@ -158,17 +191,17 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 价格变动会引起需求量的反向变动</p>
 <p>C. 猪肉与鸡肉、鱼肉是互为替代品</p>
 <p>D. 鸡肉、鱼肉的价值量增加了</p>
-<h3>【答案】C。猪肉与鸡肉、鱼肉功能相近，可以相互替代，属于互为替代</h3>
+<h3 class="h3-answer">【答案】C。猪肉与鸡肉、鱼肉功能相近，可以相互替代，属于互为替代</h3>
 <p>品。猪肉价格上涨，人们转而消费替代品，正说明了这一点。</p>
 <p>4. 简述价值规律的基本内容和表现形式。</p>
-<h3>【答案】基本内容：商品的价值量由生产该商品的社会必要劳动时间决</h3>
+<h3 class="h3-answer">【答案】基本内容：商品的价值量由生产该商品的社会必要劳动时间决</h3>
 <p>定，商品交换以价值量为基础实行等价交换。表现形式：商品价格受供</p>
 <p>求关系的影响，围绕价值上下波动。</p>
 <p>5. 近年来，我国居民消费结构不断升级，恩格尔系数持续下降。这说明什</p>
 <p>么？</p>
-<h3>【答案】恩格尔系数下降表明食品支出占家庭消费总支出的比重降低，</h3>
+<h3 class="h3-answer">【答案】恩格尔系数下降表明食品支出占家庭消费总支出的比重降低，</h3>
 <p>说明居民消费水平提高，消费结构改善，生活水平提升。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>混淆货币的职能：看到&quot;标价&quot;&quot;价格&quot;选价值尺度；看到&quot;购买&quot;&quot;现场交易&quot;选流</p>
 <p>通手段；看到&quot;赊账&quot;&quot;工资&quot;&quot;还债&quot;选支付手段。</p>
@@ -184,9 +217,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>恩格尔系数：是食品支出占家庭消费总支出的比重，不是占收入的比重。系</p>
 <p>数越小，生活水平越高。</p>
-<p>⚠</p>
-<p>2 生产、劳动与经营——企业与劳动者</p>
-<p>【知识精讲】</p>
+<p>⚠</p></div>
+<div class="page"><h1>2生产、劳动与经营——企业与劳动者</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>生产决定消费：</p>
 <p>生产决定消费的对象（消费什么）</p>
@@ -240,19 +273,19 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>劳动者权益：平等就业和选择职业的权利、取得劳动报酬的权利、休息休假的权利、获</p>
 <p>得劳动安全卫生保护的权利、接受职业技能培训的权利、享受社会保险和福利的权利、</p>
 <p>提请劳动争议处理的权利等。</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>随着智能手机的普及，移动支付、网络购物、共享经济等新业态蓬勃发</p>
 <p>展。这说明（　）</p>
 <p>A. 生产决定消费的对象</p>
 <p>B. 生产决定消费的方式</p>
 <p>C. 消费对生产具有反作用</p>
 <p>D. 消费为生产创造新的劳动力</p>
-<h3>【答案】B</h3>
-<p>解析：智能手机的普及（生产）带来了移动支付、网络购物等新消费方</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：智能手机的普及（生产）带来了移动支付、网络购物等新消费方</h3>
 <p>式，体现了生产决定消费的方式，选B。A强调&quot;消费什么&quot;，C、D强调消费</p>
 <p>的反作用，均与题意不符。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>下列对公有制经济认识正确的是（　）</p>
 <p>①公有制经济包括国有经济、集体经济以及混合所有制经济中的国有成分</p>
 <p>和集体成分</p>
@@ -260,31 +293,31 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③公有制经济在国民经济中发挥主导作用</p>
 <p>④公有制经济和非公有制经济在国民经济中的地位是平等的</p>
 <p>A. ①②  B. ①③  C. ②④  D. ③④</p>
-<h3>【答案】A</h3>
-<p>解析：①②正确。国有经济发挥主导作用，③错误；公有制经济和非公有</p>
+<h3 class="h3-answer">【答案】A</h3>
+<h3 class="h3-answer">解析：①②正确。国有经济发挥主导作用，③错误；公有制经济和非公有</h3>
 <p>制经济在国民经济中的地位不平等（公有制是主体），但在市场竞争中的</p>
 <p>地位平等，④错误。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：某科技公司坚持&quot;技术立身&quot;，每年将销售收入的15%投入研发，掌握</p>
 <p>了核心技术，产品畅销海内外。该公司还积极承担社会责任，参与公益事</p>
 <p>业，树立了良好的企业形象。</p>
 <p>结合材料，运用&quot;企业的经营与发展&quot;的知识，分析该公司成功的经验。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①制定了正确的经营战略。公司坚持&quot;技术立身&quot;，明确了技术创新的发展方</p>
 <p>向，抓住了市场竞争的关键。</p>
 <p>②提高自主创新能力，形成竞争优势。公司每年投入大量资金用于研发，</p>
 <p>掌握了核心技术，提高了产品的科技含量和市场竞争力。</p>
 <p>③诚信经营，树立良好的信誉和企业形象。公司积极承担社会责任，参与</p>
 <p>公益事业，赢得了消费者的信任和社会的认可，树立了良好的企业形象。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. &quot;没有汽车生产的大发展，就没有人们对家庭轿车的强烈向往。&quot;这主要表</p>
 <p>明（　）</p>
 <p>A. 生产决定消费的对象</p>
 <p>B. 生产决定消费的方式</p>
 <p>C. 生产为消费创造动力</p>
 <p>D. 生产决定消费的质量</p>
-<h3>【答案】C。汽车生产的发展激发了人们的消费欲望，体现生产为消费创</h3>
+<h3 class="h3-answer">【答案】C。汽车生产的发展激发了人们的消费欲望，体现生产为消费创</h3>
 <p>造动力。</p>
 <p>2. 公有制经济的主体地位主要体现在（　）</p>
 <p>①公有资产在社会总资产中占优势</p>
@@ -292,7 +325,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③国有经济对经济发展起主导作用</p>
 <p>④公有制企业在数量上占优势</p>
 <p>A. ①②③  B. ②③④  C. ①③④  D. ①②④</p>
-<h3>【答案】A。公有制主体地位体现在公有资产在社会总资产中占优势（量</h3>
+<h3 class="h3-answer">【答案】A。公有制主体地位体现在公有资产在社会总资产中占优势（量</h3>
 <p>的优势），国有经济控制国民经济命脉、对经济发展起主导作用（质的</p>
 <p>优势）。不是指企业数量占优势。</p>
 <p>3. 下列属于股份有限公司特征的是（　）</p>
@@ -300,19 +333,19 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 公司资本不必划分为等额股份</p>
 <p>C. 可以向社会公开募股集资</p>
 <p>D. 股东人数必须在50人以下</p>
-<h3>【答案】C。股份有限公司可以向社会公开募股，资本划分为等额股份</h3>
+<h3 class="h3-answer">【答案】C。股份有限公司可以向社会公开募股，资本划分为等额股份</h3>
 <p>（股票），股东人数无上限（发起人为2-200人）。A、B、D是有限责任</p>
 <p>公司的特征。</p>
 <p>4. 为什么要尊重劳动、尊重劳动者？</p>
-<h3>【答案】劳动是物质财富和精神财富的创造活动，是人类文明发展进步</h3>
+<h3 class="h3-answer">【答案】劳动是物质财富和精神财富的创造活动，是人类文明发展进步</h3>
 <p>的源泉。劳动者是生产过程的主体，在生产力发展中起主导作用。尊重</p>
 <p>劳动有利于调动劳动者的积极性和创造性，促进社会生产发展。</p>
 <p>5. 简述我国实行公有制为主体、多种所有制经济共同发展的基本经济制度</p>
 <p>的必然性。</p>
-<h3>【答案】这一制度适合社会主义初级阶段生产力发展不平衡、多层次的</h3>
+<h3 class="h3-answer">【答案】这一制度适合社会主义初级阶段生产力发展不平衡、多层次的</h3>
 <p>状况，符合社会主义的本质要求。实践证明，它有利于促进生产力的发</p>
 <p>展，有利于增强综合国力，有利于提高人民生活水平。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>生产决定消费 vs 消费反作用于生产：材料中有&quot;随着……的发展，人们开</p>
 <p>始……&quot;一般强调生产决定消费；有&quot;……消费火爆，带动了……产业发展&quot;则</p>
@@ -329,9 +362,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>股票 vs 债券：股票是所有权凭证，风险大、收益不确定；债券是债务凭证，</p>
 <p>风险相对较小、收益固定。</p>
-<p>⚠</p>
-<p>3 收入与分配——个人收入分配与财政税收</p>
-<p>【知识精讲】</p>
+<p>⚠</p></div>
+<div class="page"><h1>3收入与分配——个人收入分配与财政税收</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>分配方式 适用范围 特点</p>
 <p>按劳分配 公有制经济（国企、集体企</p>
@@ -379,51 +412,51 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>小李在某国有企业工作，每月获得工资8000元；业余时间做家教获得收入</p>
 <p>3000元；将闲置房屋出租获得租金2000元。下列判断正确的是（　）</p>
 <p>A. 8000元属于按劳分配，3000元和2000元属于按生产要素分配</p>
 <p>B. 8000元和3000元都属于按劳分配</p>
 <p>C. 三项收入都属于按劳分配</p>
 <p>D. 三项收入都属于按生产要素分配</p>
-<h3>【答案】A</h3>
-<p>解析：国有企业工资属于按劳分配；做家教属于按劳动要素分配（非公有</p>
+<h3 class="h3-answer">【答案】A</h3>
+<h3 class="h3-answer">解析：国有企业工资属于按劳分配；做家教属于按劳动要素分配（非公有</h3>
 <p>制经济范畴）；房屋租金属于按资本（土地、房屋）要素分配。两者都属</p>
 <p>于按生产要素分配，A正确。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>国家提高个人所得税起征点，增加子女教育、赡养老人等专项附加扣除。</p>
 <p>这体现的财政作用是（　）</p>
 <p>A. 促进资源合理配置</p>
 <p>B. 促进国民经济平稳运行</p>
 <p>C. 促进社会公平、改善人民生活</p>
 <p>D. 增加国家财政收入</p>
-<h3>【答案】C</h3>
-<p>解析：个税改革减轻中低收入者税负，增加居民可支配收入，有利于缩小</p>
+<h3 class="h3-answer">【答案】C</h3>
+<h3 class="h3-answer">解析：个税改革减轻中低收入者税负，增加居民可支配收入，有利于缩小</h3>
 <p>收入差距，促进社会公平，改善人民生活，体现财政是促进社会公平、改</p>
 <p>善人民生活的物质保障，选C。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：近年来，我国居民收入差距问题受到社会广泛关注。国家采取了一</p>
 <p>系列措施：提高最低工资标准，增加低收入者收入；完善税收调节机制，</p>
 <p>加大对高收入群体的税收调节力度；健全社会保障体系，保障困难群众基</p>
 <p>本生活。</p>
 <p>结合材料，运用&quot;收入分配与社会公平&quot;的知识，说明国家是如何促进收入分</p>
 <p>配公平的。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①坚持和完善按劳分配为主体、多种分配方式并存的分配制度。为我国实</p>
 <p>现社会公平、形成合理有序的国民收入分配格局提供了重要的制度保证。</p>
 <p>②增加居民收入，着重保护劳动所得。提高最低工资标准，实现居民收入</p>
 <p>增长和经济发展同步、劳动报酬增长和劳动生产率提高同步。</p>
 <p>③再分配更加注重公平。完善税收调节机制，加大对高收入群体的税收调</p>
 <p>节力度；健全社会保障体系，保障困难群众基本生活，缩小收入差距。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 我国实行按劳分配的前提是（　）</p>
 <p>A. 社会主义制度下劳动的性质和特点</p>
 <p>B. 生产资料公有制</p>
 <p>C. 社会主义公有制条件下生产力的发展水平</p>
 <p>D. 劳动者共同劳动、平等分配的社会地位</p>
-<h3>【答案】B。生产资料公有制是实行按劳分配的前提；社会主义公有制条</h3>
+<h3 class="h3-answer">【答案】B。生产资料公有制是实行按劳分配的前提；社会主义公有制条</h3>
 <p>件下生产力的发展水平是实行按劳分配的物质基础；社会主义制度下劳</p>
 <p>动的性质和特点是直接原因。</p>
 <p>2. 下列属于再分配措施的是（　）</p>
@@ -431,27 +464,27 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 建立最低工资保障制度</p>
 <p>C. 提高最低生活保障标准</p>
 <p>D. 健全生产要素按贡献参与分配的制度</p>
-<h3>【答案】C。再分配是指在初次分配结果的基础上，政府通过税收、社会</h3>
+<h3 class="h3-answer">【答案】C。再分配是指在初次分配结果的基础上，政府通过税收、社会</h3>
 <p>保障、转移支付等手段进行的分配。最低生活保障属于社会保障，是再</p>
 <p>分配措施。A、B属于初次分配，D是分配制度。</p>
 <p>3. 当经济增长滞缓时，政府可以采取的措施有（　）</p>
 <p>①增加财政支出　②减少税收　③减少财政支出　④增加税收</p>
 <p>A. ①②  B. ③④  C. ①③  D. ②④</p>
-<h3>【答案】A。经济增长滞缓时应采取扩张性财政政策，增加财政支出、减</h3>
+<h3 class="h3-answer">【答案】A。经济增长滞缓时应采取扩张性财政政策，增加财政支出、减</h3>
 <p>少税收，刺激总需求，拉动经济增长。</p>
 <p>4. 税收的基本特征及其相互关系是什么？</p>
-<h3>【答案】税收具有强制性、无偿性和固定性三个基本特征。强制性是指</h3>
+<h3 class="h3-answer">【答案】税收具有强制性、无偿性和固定性三个基本特征。强制性是指</h3>
 <p>国家凭借政治权力强制征收；无偿性是指国家取得税收收入，既不需要</p>
 <p>返还给纳税人，也不需要对纳税人直接付出任何代价；固定性是指国家</p>
 <p>在征税之前就以法律的形式，预先规定了征税对象和税率。三者紧密联</p>
 <p>系、不可分割：无偿性要求强制性，强制性和无偿性又要求固定性。</p>
 <p>5. 简述财政在促进国民经济平稳运行中的作用。</p>
-<h3>【答案】经济平稳运行要求社会总供给与社会总需求保持基本平衡。经</h3>
+<h3 class="h3-answer">【答案】经济平稳运行要求社会总供给与社会总需求保持基本平衡。经</h3>
 <p>济增长滞缓时，采取扩张性财政政策，增加财政支出、减少税收，刺激</p>
 <p>总需求增长，降低失业率，拉动经济增长。经济过热时，采取紧缩性财</p>
 <p>政政策，减少财政支出、增加税收，抑制总需求，稳定物价，给经济&quot;降</p>
 <p>温&quot;。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>按劳分配只在公有制经济中：非公有制经济中的工资收入属于按劳动要素分</p>
 <p>配，不是按劳分配。</p>
@@ -467,10 +500,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>个人所得税的作用：是国家财政收入的重要来源，也是调节个人收入分配、</p>
 <p>实现社会公平的有效手段。</p>
-<p>⚠</p>
+<p>⚠</p></div>
+<div class="page"><h1>4发展社会主义市场经济——市场经济与宏观调控</h1>
 <p>发展社会主义市场经济——市场经济与宏观</p>
 <p>调控</p>
-<p>【知识精讲】</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>市场调节</p>
 <p>弊端 含义 表现 关键词</p>
@@ -535,32 +569,32 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>近年来，一些主播在直播间销售假冒伪劣产品，损害消费者权益。这体现</p>
 <p>了市场调节的（　）</p>
 <p>A. 自发性　　B. 盲目性　　C. 滞后性　　D. 竞争性</p>
-<h3>【答案】A</h3>
-<p>解析：主播为了追求利益销售假冒伪劣产品，是为了利益不择手段，体现</p>
+<h3 class="h3-answer">【答案】A</h3>
+<h3 class="h3-answer">解析：主播为了追求利益销售假冒伪劣产品，是为了利益不择手段，体现</h3>
 <p>了市场调节的自发性，选A。盲目性强调跟风决策，滞后性强调时间差，均</p>
 <p>不符合题意。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>下列属于宏观调控经济手段的是（　）</p>
 <p>①央行下调存款准备金率</p>
 <p>②国家出台《反垄断法》</p>
 <p>③政府提高农产品最低收购价</p>
 <p>④市场监管部门查处违规企业</p>
 <p>A. ①②  B. ①③  C. ②④  D. ③④</p>
-<h3>【答案】B</h3>
-<p>解析：①下调存款准备金率属于货币政策，是经济手段；③提高最低收购</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：①下调存款准备金率属于货币政策，是经济手段；③提高最低收购</h3>
 <p>价属于价格政策，是经济手段。②出台法律属于法律手段；④行政查处属</p>
 <p>于行政手段。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：近年来，我国大力推进生态文明建设，实施最严格的生态环境保护</p>
 <p>制度，打好蓝天、碧水、净土保卫战。同时，加快发展方式绿色转型，推</p>
 <p>动形成绿色低碳的生产生活方式。</p>
 <p>结合材料，运用&quot;新发展理念&quot;的知识，说明我国推进生态文明建设的意义。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①绿色发展注重解决人与自然和谐共生问题。推进生态文明建设，实施最</p>
 <p>严格的生态环境保护制度，有利于节约资源和保护环境，促进人与自然和</p>
 <p>谐共生。</p>
@@ -571,37 +605,37 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>益增长的优美生态环境需要。</p>
 <p>④贯彻新发展理念是建设现代化经济体系的必然要求。推进生态文明建</p>
 <p>设，加快发展方式绿色转型，有利于推动经济高质量发展。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 在市场经济中，市场配置资源主要通过（　）来实现。</p>
 <p>A. 计划指令</p>
 <p>B. 价格、供求、竞争</p>
 <p>C. 国家宏观调控</p>
 <p>D. 法律法规</p>
-<h3>【答案】B。市场配置资源主要通过价格、供求、竞争机制来实现。</h3>
+<h3 class="h3-answer">【答案】B。市场配置资源主要通过价格、供求、竞争机制来实现。</h3>
 <p>2. 社会主义市场经济的基本特征包括（　）</p>
 <p>①坚持公有制的主体地位</p>
 <p>②以共同富裕为根本目标</p>
 <p>③能够实行科学的宏观调控</p>
 <p>④市场在资源配置中起决定性作用</p>
 <p>A. ①②③  B. ②③④  C. ①③④  D. ①②④</p>
-<h3>【答案】A。①②③是社会主义市场经济的基本特征。④是市场经济的共</h3>
+<h3 class="h3-answer">【答案】A。①②③是社会主义市场经济的基本特征。④是市场经济的共</h3>
 <p>性，不是社会主义市场经济特有的基本特征。</p>
 <p>3. 当市场上某种商品供过于求时，该商品价格通常会（　）</p>
 <p>A. 上涨　　B. 下降　　C. 不变　　D. 无法判断</p>
-<h3>【答案】B。供过于求，商品价格下跌；供不应求，商品价格上涨。</h3>
+<h3 class="h3-answer">【答案】B。供过于求，商品价格下跌；供不应求，商品价格上涨。</h3>
 <p>4. 简述市场调节的局限性及其后果。</p>
-<h3>【答案】市场调节不是万能的，存在自发性、盲目性、滞后性等固有的</h3>
+<h3 class="h3-answer">【答案】市场调节不是万能的，存在自发性、盲目性、滞后性等固有的</h3>
 <p>弊端。自发性会导致不正当竞争和损害社会公共利益的行为；盲目性会</p>
 <p>造成经济波动和资源浪费；滞后性会导致资源配置效率低下。仅由市场</p>
 <p>调节，会导致资源配置效率低下、资源浪费；社会经济不稳定，发生经</p>
 <p>济波动和混乱；收入分配不公平，收入差距拉大，甚至导致严重的两极</p>
 <p>分化。</p>
 <p>5. 简述建设现代化经济体系的主要措施。</p>
-<h3>【答案】①大力发展实体经济，筑牢现代化经济体系的坚实基础。实体</h3>
+<h3 class="h3-answer">【答案】①大力发展实体经济，筑牢现代化经济体系的坚实基础。实体</h3>
 <p>经济是一国经济的立身之本，是财富创造的根本源泉，是国家强盛的重</p>
 <p>要支柱。②实施乡村振兴战略。③实施区域协调发展战略。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>自发性 vs 盲目性 vs 滞后性：&quot;为了利益造假/排污&quot;是自发性；&quot;跟风种植/投</p>
 <p>资&quot;是盲目性；&quot;产品上市后才发现滞销&quot;是滞后性。</p>
@@ -617,9 +651,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>宏观调控的目标不是消除市场弊端：宏观调控可以弥补市场调节的不足，但</p>
 <p>不能消除市场固有的弊端。</p>
-<p>⚠</p>
-<p>5 公民的政治生活——国家性质与公民权利</p>
-<p>【知识精讲】</p>
+<p>⚠</p></div>
+<div class="page"><h1>5公民的政治生活——国家性质与公民权利</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>人民 vs 公民：人民是政治概念，与&quot;敌人&quot;相对，在我国现阶段包括全体社会主义</p>
 <p>劳动者、社会主义事业的建设者、拥护社会主义的爱国者、拥护祖国统一和致力</p>
@@ -683,76 +717,76 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>我国宪法规定：&quot;中华人民共和国的一切权力属于人民。&quot;这意味着（　）</p>
 <p>A. 人民可以直接行使国家权力</p>
 <p>B. 人民是国家和社会的主人</p>
 <p>C. 公民享有同样的权利和义务</p>
 <p>D. 人民享有无限的自由和权利</p>
-<h3>【答案】B</h3>
-<p>解析：我国一切权力属于人民，说明人民是国家和社会的主人，B正确。人</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：我国一切权力属于人民，说明人民是国家和社会的主人，B正确。人</h3>
 <p>民通过人民代表大会间接行使国家权力，不是直接行使，A错误。公民平等</p>
 <p>地享有权利、履行义务，但不是&quot;同样的&quot;权利和义务，C错误。自由和权利</p>
 <p>是相对的，不是无限的，D错误。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>某市就地铁票价调整举行听证会，广泛听取市民意见。这是公民通过____</p>
 <p>参与民主决策。（　）</p>
 <p>A. 社情民意反映制度</p>
 <p>B. 专家咨询制度</p>
 <p>C. 重大事项社会公示制度</p>
 <p>D. 社会听证制度</p>
-<h3>【答案】D</h3>
-<p>解析：举行听证会是社会听证制度的典型形式，选D。A强调通过电话、信</p>
+<h3 class="h3-answer">【答案】D</h3>
+<h3 class="h3-answer">解析：举行听证会是社会听证制度的典型形式，选D。A强调通过电话、信</h3>
 <p>函、邮件等向决策机关反映意见；B强调邀请专家论证；C强调决策草案向</p>
 <p>社会公示，均与题意不符。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：某村村民通过村民会议讨论决定村里的重大事项，制定村规民约规</p>
 <p>范村民行为，定期公开村务接受村民监督。近年来，该村实现了&quot;小事不出</p>
 <p>组、大事不出村&quot;，成为远近闻名的和谐村。</p>
 <p>结合材料，运用&quot;基层群众自治制度&quot;的知识，说明该村是如何实现有效治理</p>
 <p>的。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①实行村民自治，保障村民直接行使民主权利。村民通过村民会议等形</p>
 <p>式，参与本村公共事务和公益事业的决策与管理，实现了自我管理。</p>
 <p>②制定村规民约，规范村民行为。运用民主的办法来管理村里的日常事</p>
 <p>务，实现自我教育、自我约束，促进了乡风文明。</p>
 <p>③实行村务公开，加强民主监督。定期公开村务，接受村民监督，使村民</p>
 <p>自治逐步走上制度化、规范化的轨道，提升了治理效能。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 我国人民民主专政的本质是（　）</p>
 <p>A. 人民当家作主</p>
 <p>B. 对极少数敌人实行专政</p>
 <p>C. 工人阶级领导</p>
 <p>D. 工农联盟为基础</p>
-<h3>【答案】A。人民民主专政的本质是人民当家作主。B是专政职能，C、D</h3>
+<h3 class="h3-answer">【答案】A。人民民主专政的本质是人民当家作主。B是专政职能，C、D</h3>
 <p>是阶级基础。</p>
 <p>2. 公民参与管理国家和管理社会的基础和标志是（　）</p>
 <p>A. 享有政治自由</p>
 <p>B. 行使选举权和被选举权</p>
 <p>C. 行使监督权</p>
 <p>D. 履行政治义务</p>
-<h3>【答案】B。选举权和被选举权是公民基本的民主权利，行使这个权利是</h3>
+<h3 class="h3-answer">【答案】B。选举权和被选举权是公民基本的民主权利，行使这个权利是</h3>
 <p>公民参与管理国家和管理社会的基础和标志。</p>
 <p>3. 下列属于公民政治义务的是（　）</p>
 <p>A. 选举人大代表</p>
 <p>B. 参加社区志愿服务</p>
 <p>C. 服兵役和参加民兵组织</p>
 <p>D. 向政府提出合理化建议</p>
-<h3>【答案】C。服兵役和参加民兵组织是公民的政治义务。A、D是政治权</h3>
+<h3 class="h3-answer">【答案】C。服兵役和参加民兵组织是公民的政治义务。A、D是政治权</h3>
 <p>利，B是社会公益行为。</p>
 <p>4. 简述公民参与民主决策的意义。</p>
-<h3>【答案】有助于决策充分反映民意，体现决策的民主性；有利于决策广</h3>
+<h3 class="h3-answer">【答案】有助于决策充分反映民意，体现决策的民主性；有利于决策广</h3>
 <p>泛集中民智，增强决策的科学性；有利于促进公民对决策的理解，推动</p>
 <p>决策的实施；有利于提高公民参与公共事务的热情和信心，增强公民的</p>
 <p>社会责任感。</p>
 <p>5. 发展基层民主有什么重要意义？</p>
-<h3>【答案】发展基层民主，保障人民享有更多更切实的民主权利，是我国</h3>
+<h3 class="h3-answer">【答案】发展基层民主，保障人民享有更多更切实的民主权利，是我国</h3>
 <p>发展社会主义民主政治的重要内容。实行村民自治和城市居民自治，以</p>
 <p>保证人民群众依法直接行使民主权利，管理基层公共事务和公益事业，</p>
 <p>是人民当家作主的有效途径，是社会主义民主最为广泛而深刻的实践。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>人民直接行使国家权力 ×：人民通过人民代表大会间接行使国家权力，人大</p>
 <p>代表直接行使国家权力。</p>
@@ -768,9 +802,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>权利与义务的统一：公民在享受权利的同时必须履行义务，没有无义务的权</p>
 <p>利，也没有无权利的义务。</p>
-<p>⚠</p>
-<p>6 为人民服务的政府——政府职能与监督</p>
-<p>【知识精讲】</p>
+<p>⚠</p></div>
+<div class="page"><h1>6为人民服务的政府——政府职能与监督</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>政府职能 主要内容 举例</p>
 <p>保障人民民主</p>
@@ -837,35 +871,35 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>洁；才能真正做到权为民所用，造福人民，建立起一个具有权威的政府。</p>
 <p>•</p>
 <p>•</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>某市政府出台政策，加大对高校毕业生创业的税收优惠和财政补贴力度。</p>
 <p>这是政府在履行（　）</p>
 <p>A. 保障人民民主和维护国家长治久安的职能</p>
 <p>B. 组织社会主义经济建设的职能</p>
 <p>C. 加强社会建设的职能</p>
 <p>D. 组织社会主义文化建设的职能</p>
-<h3>【答案】B</h3>
-<p>解析：税收优惠和财政补贴属于宏观调控手段，是政府组织社会主义经济</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：税收优惠和财政补贴属于宏观调控手段，是政府组织社会主义经济</h3>
 <p>建设职能中的经济调节，选B。A是政治职能，C侧重于公共服务和社会保</p>
 <p>障，D侧重于文化教育和思想道德建设，均不符合题意。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>加强对政府权力的制约和监督，关键在于（　）</p>
 <p>A. 建立全面的行政监督体系</p>
 <p>B. 健全权力运行的制约和监督体系</p>
 <p>C. 实施政务公开</p>
 <p>D. 发挥人民民主对权力的制约和监督</p>
-<h3>【答案】B</h3>
-<p>解析：有效制约和监督权力的关键是健全权力运行的制约和监督体系，这</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：有效制约和监督权力的关键是健全权力运行的制约和监督体系，这</h3>
 <p>个体系一靠民主，二靠法制，B正确。A是措施但不是&quot;关键&quot;；C、D都是监</p>
 <p>督体系中的具体内容，不全面。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：某地方政府在推进城市建设中，广泛征求群众意见，邀请专家论</p>
 <p>证，召开听证会，制定科学的规划方案。同时，建立项目建设信息公开制</p>
 <p>度，接受社会监督，确保工程质量。</p>
 <p>结合材料，运用&quot;政府&quot;的相关知识，分析该地方政府是如何坚持对人民负责</p>
 <p>原则的。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①坚持为人民服务的工作态度。该地方政府在推进城市建设中广泛征求群</p>
 <p>众意见，关注民生，体现了为人民服务的思想。</p>
 <p>②树立求真务实的工作作风。邀请专家论证、召开听证会、制定科学规划</p>
@@ -874,21 +908,21 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③坚持从群众中来到群众中去的工作方法。广泛征求群众意见，通过各种</p>
 <p>途径收集群众的意见和建议，认真对待群众的来信来访，为群众诚心诚意</p>
 <p>办实事，尽心竭力解难题。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 我国政府的宗旨是（　）</p>
 <p>A. 对人民负责</p>
 <p>B. 为人民服务</p>
 <p>C. 依法行政</p>
 <p>D. 管理与服务</p>
-<h3>【答案】B。我国政府的宗旨是为人民服务，工作的基本原则是对人民负</h3>
+<h3 class="h3-answer">【答案】B。我国政府的宗旨是为人民服务，工作的基本原则是对人民负</h3>
 <p>责。</p>
 <p>2. 下列体现政府加强社会建设职能的是（　）</p>
 <p>A. 打击网络犯罪</p>
 <p>B. 推进义务教育均衡发展</p>
 <p>C. 完善社会养老保险制度</p>
 <p>D. 加强生态环境保护</p>
-<h3>【答案】C。完善社会养老保险制度属于加强社会建设职能。A是保障人</h3>
+<h3 class="h3-answer">【答案】C。完善社会养老保险制度属于加强社会建设职能。A是保障人</h3>
 <p>民民主和维护国家长治久安；B是组织社会主义文化建设；D是推进生态</p>
 <p>文明建设。</p>
 <p>3. 政府依法行政有利于（　）</p>
@@ -897,23 +931,23 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③防止行政权力的缺失和滥用</p>
 <p>④带动全社会尊重法律、遵守法律、维护法律</p>
 <p>A. ①②③  B. ②③④  C. ①③④  D. ①②③④</p>
-<h3>【答案】D。政府依法行政有利于保障人民群众的权利和自由；有利于加</h3>
+<h3 class="h3-answer">【答案】D。政府依法行政有利于保障人民群众的权利和自由；有利于加</h3>
 <p>强廉政建设；有利于防止行政权力的缺失和滥用；有利于带动全社会尊</p>
 <p>重、遵守和维护法律，推进社会主义民主法制建设。</p>
 <p>4. 简述政府接受监督的意义。</p>
-<h3>【答案】政府接受监督是坚持依法行政、做好工作的必要保证。①才能</h3>
+<h3 class="h3-answer">【答案】政府接受监督是坚持依法行政、做好工作的必要保证。①才能</h3>
 <p>更好地合民意、集民智、聚民心，作出正确的决策；②才能提高行政水</p>
 <p>平和工作效率，防止和减少工作失误；③才能防止滥用权力，防止以权</p>
 <p>谋私、权钱交易等腐败行为，保证清正廉洁；④才能真正做到权为民所</p>
 <p>用，造福人民，建立起一个具有权威的政府。</p>
 <p>5. 政府如何树立权威？</p>
-<h3>【答案】政府的权威是通过政府及其工作人员决策的科学性、依法行政</h3>
+<h3 class="h3-answer">【答案】政府的权威是通过政府及其工作人员决策的科学性、依法行政</h3>
 <p>的态度和能力、履行职责的效果以及政府工作人员的道德形象等树立起</p>
 <p>来的。政府要树立权威，首先要做到依法行政，审慎用权，科学民主决</p>
 <p>策，完善社会管理，优化公共服务，自觉接受人民监督，与人民群众保</p>
 <p>持和谐关系；其次要有良好的业绩；最后政府工作人员要重品行、作表</p>
 <p>率，牢记权为民所赋，坚持权为民所用、情为民所系、利为民所谋。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>政府职能的区分：看到&quot;打击犯罪、维护稳定&quot;选保障人民民主；看到&quot;调控经</p>
 <p>济、市场监管&quot;选经济建设；看到&quot;教育、文化、思想道德&quot;选文化建设；看</p>
@@ -932,10 +966,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>政府是有限政府：政府不能越位（不该管的不管）、不能缺位（该管的要管</p>
 <p>好）、不能错位（不能既当裁判又当运动员）。</p>
-<p>⚠</p>
+<p>⚠</p></div>
+<div class="page"><h1>7发展社会主义民主政治——人大、政党、民族、宗教</h1>
 <p>发展社会主义民主政治——人大、政党、民</p>
 <p>族、宗教</p>
-<p>【知识精讲】</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>人大职</p>
 <p>权 含义 关键词</p>
@@ -1008,29 +1043,29 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>人民政协对国家机关及其工作人员的</p>
 <p>工作提出意见和建议，是一种民主监</p>
 <p>督，不具有法律约束力。</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>全国人民代表大会审议通过《中华人民共和国民法典》。这是全国人大在</p>
 <p>行使（　）</p>
 <p>A. 决定权　　B. 立法权　　C. 任免权　　D. 监督权</p>
-<h3>【答案】B</h3>
-<p>解析：审议通过法律是立法权的体现，选B。决定权是对重大事项作出决</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：审议通过法律是立法权的体现，选B。决定权是对重大事项作出决</h3>
 <p>定；任免权是对人事任免；监督权是对&quot;一府一委两院&quot;工作进行监督，均与</p>
 <p>题意不符。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>人民政协围绕团结和民主两大主题，履行（　）职能。</p>
 <p>①政治协商　②民主监督　③参政议政　④依法行政</p>
 <p>A. ①②③  B. ①②④  C. ①③④  D. ②③④</p>
-<h3>【答案】A</h3>
-<p>解析：人民政协的职能是政治协商、民主监督、参政议政，①②③正确。</p>
+<h3 class="h3-answer">【答案】A</h3>
+<h3 class="h3-answer">解析：人民政协的职能是政治协商、民主监督、参政议政，①②③正确。</h3>
 <p>依法行政是政府的职责，④错误。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：某自治区在党的领导下，结合自身实际制定自治条例和单行条例，</p>
 <p>发展特色经济，保护民族文化，加强民族团结教育，经济社会快速发展，</p>
 <p>人民生活水平显著提高。</p>
 <p>结合材料，运用&quot;民族区域自治制度&quot;的知识，说明该自治区取得成就的原</p>
 <p>因。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①坚持中国共产党的领导。中国共产党是中国特色社会主义事业的领导核</p>
 <p>心，党的领导是民族区域自治制度的政治保证。</p>
 <p>②坚持民族区域自治制度。该自治区依法行使自治权，制定自治条例和单</p>
@@ -1041,33 +1076,33 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>族关系。</p>
 <p>④结合本地区实际发展特色经济。因地制宜，发挥自身优势，促进了经济</p>
 <p>社会快速发展。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 我国的根本政治制度是（　）</p>
 <p>A. 中国共产党领导的多党合作和政治协商制度</p>
 <p>B. 人民代表大会制度</p>
 <p>C. 民族区域自治制度</p>
 <p>D. 基层群众自治制度</p>
-<h3>【答案】B。人民代表大会制度是我国的根本政治制度。A、C、D是我国</h3>
+<h3 class="h3-answer">【答案】B。人民代表大会制度是我国的根本政治制度。A、C、D是我国</h3>
 <p>的基本政治制度。</p>
 <p>2. 人大代表向人民代表大会提出议案，是在行使（　）</p>
 <p>A. 审议权　　B. 表决权　　C. 提案权　　D. 质询权</p>
-<h3>【答案】C。提出议案是提案权。审议权是审议各项议案；表决权是表决</h3>
+<h3 class="h3-answer">【答案】C。提出议案是提案权。审议权是审议各项议案；表决权是表决</h3>
 <p>各项决定；质询权是对政府机关工作提出质问并要求答复。</p>
 <p>3. 中国共产党执政的基本方式是（　）</p>
 <p>A. 科学执政　　B. 民主执政　　C. 依法执政　　D. 政治领导</p>
-<h3>【答案】C。依法执政是中国共产党执政的基本方式。科学执政、民主执</h3>
+<h3 class="h3-answer">【答案】C。依法执政是中国共产党执政的基本方式。科学执政、民主执</h3>
 <p>政要通过依法执政体现出来，又要靠依法执政来保证实现。</p>
 <p>4. 简述我国处理民族关系的基本原则及其相互关系。</p>
-<h3>【答案】基本原则：民族平等、民族团结、各民族共同繁荣。相互关</h3>
+<h3 class="h3-answer">【答案】基本原则：民族平等、民族团结、各民族共同繁荣。相互关</h3>
 <p>系：民族平等是实现民族团结的政治基础；民族平等和民族团结是实现</p>
 <p>各民族共同繁荣的前提条件；各民族共同繁荣特别是经济发展，又是民</p>
 <p>族平等、民族团结的物质保证。</p>
 <p>5. 简述我国宗教信仰自由政策的内容。</p>
-<h3>【答案】我国实行宗教信仰自由政策，既保护信仰宗教的自由，也保护</h3>
+<h3 class="h3-answer">【答案】我国实行宗教信仰自由政策，既保护信仰宗教的自由，也保护</h3>
 <p>不信仰宗教的自由；依法管理宗教事务；坚持独立自主自办的原则；积</p>
 <p>极引导宗教与社会主义社会相适应。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>人大职权 vs 人大代表职权：人大行使立法权、决定权、任免权、监督权；人</p>
 <p>大代表行使审议权、表决权、提案权、质询权。不能混淆！</p>
@@ -1086,9 +1121,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠</p>
 <p>积极引导宗教与社会主义社会相适应：不是与&quot;社会主义&quot;相适应，而是与&quot;社</p>
 <p>会主义社会&quot;相适应。</p>
-<p>⚠</p>
-<p>8 哲学基础——唯物论与认识论</p>
-<p>【知识精讲】</p>
+<p>⚠</p></div>
+<div class="page"><h1>8哲学基础——唯物论与认识论</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
 <p>核心知识框架</p>
 <p>唯物主义形态基本观点 局限性</p>
 <p>古代朴素唯物</p>
@@ -1162,33 +1197,33 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>【典例破题】</p>
-<p>【例题1】（选择题）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">【例题1】（选择题）</h3>
 <p>&quot;日有所思，夜有所梦&quot;说明（　）</p>
 <p>A. 意识是物质的产物</p>
 <p>B. 意识是人脑对客观存在的反映</p>
 <p>C. 意识能够能动地改造世界</p>
 <p>D. 意识活动具有主动创造性</p>
-<h3>【答案】B</h3>
-<p>解析：&quot;日有所思，夜有所梦&quot;说明梦（意识）是对白天所见所闻（客观存</p>
+<h3 class="h3-answer">【答案】B</h3>
+<h3 class="h3-answer">解析：&quot;日有所思，夜有所梦&quot;说明梦（意识）是对白天所见所闻（客观存</h3>
 <p>在）的反映，体现意识是人脑对客观存在的反映，选B。A强调意识的起</p>
 <p>源，C强调意识的能动作用，D强调意识的特点，均与题意不符。</p>
-<p>【例题2】（选择题）</p>
+<h3 class="h3-example">【例题2】（选择题）</h3>
 <p>&quot;纸上得来终觉浅，绝知此事要躬行。&quot;这体现的哲学道理是（　）</p>
 <p>A. 实践是认识的来源</p>
 <p>B. 实践是认识发展的动力</p>
 <p>C. 实践是检验认识真理性的唯一标准</p>
 <p>D. 实践是认识的目的</p>
-<h3>【答案】A</h3>
-<p>解析：&quot;躬行&quot;即亲身实践，强调要真正深入理解事物，必须亲自去做，体现</p>
+<h3 class="h3-answer">【答案】A</h3>
+<h3 class="h3-answer">解析：&quot;躬行&quot;即亲身实践，强调要真正深入理解事物，必须亲自去做，体现</h3>
 <p>了实践是认识的来源，选A。诗句侧重强调亲自实践才能获得真正的认识，</p>
 <p>而不是强调检验认识或推动认识发展。</p>
-<p>【例题3】（主观题）</p>
+<h3 class="h3-example">【例题3】（主观题）</h3>
 <p>材料：2023年，某地区在推进乡村振兴过程中，深入调研本地自然条件和</p>
 <p>市场需求，因地制宜发展特色产业，不搞&quot;一刀切&quot;。同时，加强科技投入，</p>
 <p>培育新品种，改进种植技术，取得了良好的经济效益和社会效益。</p>
 <p>结合材料，运用&quot;唯物论&quot;的知识，分析该地区推进乡村振兴的做法。</p>
-<h3>【答案】</h3>
+<h3 class="h3-answer">【答案】</h3>
 <p>①物质决定意识，要求我们一切从实际出发，实事求是。该地区深入调研</p>
 <p>本地自然条件和市场需求，因地制宜发展特色产业，不搞&quot;一刀切&quot;，做到了</p>
 <p>从实际出发。</p>
@@ -1197,14 +1232,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③规律是客观的，要求我们尊重客观规律，按规律办事，同时发挥主观能</p>
 <p>动性。该地区遵循市场经济规律和农业生产规律，培育新品种、改进种植</p>
 <p>技术，在尊重规律的基础上充分发挥主观能动性，取得了良好成效。</p>
-<p>【巩固提升】</p>
-<p>练习题</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】</h2>
+<h3 class="h3-example">练习题</h3>
 <p>1. 哲学的基本问题是（　）</p>
 <p>A. 思维和存在何者为第一性的问题</p>
 <p>B. 思维和存在有没有同一性的问题</p>
 <p>C. 思维和存在的关系问题</p>
 <p>D. 物质和意识的辩证关系问题</p>
-<h3>【答案】C。哲学的基本问题是思维和存在的关系问题，包括两个方面：</h3>
+<h3 class="h3-answer">【答案】C。哲学的基本问题是思维和存在的关系问题，包括两个方面：</h3>
 <p>何者为第一性（划分唯物主义和唯心主义的标准）和有无同一性（划分</p>
 <p>可知论和不可知论的标准）。</p>
 <p>2. &quot;巧妇难为无米之炊&quot;说明（　）</p>
@@ -1212,22 +1247,22 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 意识能动作用是有限的</p>
 <p>C. 物质是不以人的意志为转移的</p>
 <p>D. 主观能动性的发挥受客观条件制约</p>
-<h3>【答案】D。没有米（客观条件），再巧的妇人也做不出饭，说明主观能</h3>
+<h3 class="h3-answer">【答案】D。没有米（客观条件），再巧的妇人也做不出饭，说明主观能</h3>
 <p>动性的发挥受客观条件的制约，选D。</p>
 <p>3. 实践之所以是检验认识真理性的唯一标准，是因为（　）</p>
 <p>A. 实践具有客观物质性</p>
 <p>B. 实践具有主观能动性</p>
 <p>C. 实践具有社会历史性</p>
 <p>D. 实践是主观见之于客观的活动</p>
-<h3>【答案】D。实践是主观见之于客观的活动，能够把主观认识和客观实际</h3>
+<h3 class="h3-answer">【答案】D。实践是主观见之于客观的活动，能够把主观认识和客观实际</h3>
 <p>联系起来加以比较和对照，从而检验认识是否正确反映了客观事物。</p>
 <p>4. 简述尊重客观规律与发挥主观能动性的辩证关系。</p>
-<h3>【答案】尊重客观规律是发挥主观能动性的前提和基础，发挥主观能动</h3>
+<h3 class="h3-answer">【答案】尊重客观规律是发挥主观能动性的前提和基础，发挥主观能动</h3>
 <p>性是认识和利用规律的必要条件。要把尊重客观规律与发挥主观能动性</p>
 <p>结合起来，既要反对夸大意识能动作用的唯意志主义，又要反对片面强</p>
 <p>调客观条件、安于现状、因循守旧、无所作为的思想。</p>
 <p>5. 简述认识的反复性和无限性的原因。</p>
-<h3>【答案】认识的反复性：人们对一个事物的正确认识往往要经过从实践</h3>
+<h3 class="h3-answer">【答案】认识的反复性：人们对一个事物的正确认识往往要经过从实践</h3>
 <p>到认识、再从认识到实践的多次反复才能完成。原因是认识受到各种条</p>
 <p>件的限制，从认识的主体来看，受实践水平、立场观点、知识水平等限</p>
 <p>制；从认识的客体来看，客观事物是复杂的、变化着的，其本质的暴露</p>
@@ -1235,7 +1270,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>世界，作为认识主体的人类是世代延续的，作为认识基础的社会实践是</p>
 <p>不断发展的，因此，人类认识是无限发展的，追求真理是一个永无止境</p>
 <p>的过程。</p>
-<p>【易错警示】</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>【易错警示】</h2>
 <p>常见错误与混淆点</p>
 <p>物质决定意识 ≠ 物质和意识的辩证关系：前者是唯物论的基本观点，后者包</p>
 <p>括物质决定意识和意识对物质的能动作用两个方面。</p>
@@ -1256,8 +1291,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>改造规律本身。</p>
 <p>⚠</p>
 <p>新高二政治暑假衔接讲练 · 祝你学习进步，为高二文科学习打下坚实基础！</p>
-<p>本资料仅供学习参考，请结合教材系统复习</p>
-</div>
+<p>本资料仅供学习参考，请结合教材系统复习</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -1283,6 +1317,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>

@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>生物暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#16a34a;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#16a34a;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,14 +61,22 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>生物暑假衔接</h1></div>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>生物暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
 <div class="wrap">
-<div class="page">
-<p>新高二生物暑假衔接讲练</p>
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>生物暑假衔接</h2>
+  <div class="hero-sub">系统复习高一核心知识，夯实基础，为高二选修模块做好充分准备。保留选科可能 性，从生物开始建立自信！</div>
+  <div class="hero-meta"><span>📚 8 个专题</span><span>📄 49 页精讲</span><span>✓ 讲练结合</span></div>
+</div>
+<div class="page"><p>新高二生物暑假衔接讲练</p>
 <p>系统复习高一核心知识，夯实基础，为高二选修模块做好充分准备。保留选科可能</p>
-<p>性，从生物开始建立自信！</p>
-<p>专题一：走近细胞——细胞学说、显微镜、原核与真核细胞</p>
-<p>一、知识精讲</p>
+<p>性，从生物开始建立自信！</p></div>
+<div class="page"><h1>专题一：走近细胞——细胞学说、显微镜、原核与真核细胞</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 细胞学说</p>
 <p>建立者：施莱登（植物学家）和施旺（动物学家），19世纪30年代提出。</p>
 <p>主要内容：</p>
@@ -87,7 +123,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（几丁质），动物无</p>
 <p>蓝细菌（蓝藻）特别提示：能进行光合作用（含叶绿素和藻蓝素），但没有叶绿</p>
 <p>体，属于原核生物。常见类型：颤蓝细菌、色球蓝细菌、念珠蓝细菌、发菜。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（细胞学说理解）</p>
 <p>下列关于细胞学说的叙述，正确的是（　）</p>
 <p>A. 细胞学说认为一切生物都是由细胞构成的</p>
@@ -95,7 +131,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 细胞学说认为细胞是一个相对独立的单位</p>
 <p>D. 细胞学说认为新细胞可以从老细胞的细胞核中产生</p>
 <p>答案：C</p>
-<p>解析：A错误，细胞学说针对的是动植物，不是一切生物（病毒没有细胞</p>
+<h3 class="h3-answer">解析：A错误，细胞学说针对的是动植物，不是一切生物（病毒没有细胞</h3>
 <p>结构）。B错误，细胞学说揭示的是统一性，不是差异性。C正确，这是</p>
 <p>细胞学说的核心内容之一。D错误，新细胞是由老细胞分裂产生的，不是</p>
 <p>从细胞核中产生。</p>
@@ -104,7 +140,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>①酵母菌　②发菜　③草履虫　④乳酸菌　⑤噬菌体　⑥青霉菌</p>
 <p>A. ①②④ B. ②④ C. ②④⑥ D. ①③⑤</p>
 <p>答案：B</p>
-<p>解析：②发菜属于蓝细菌（蓝藻），是原核生物；④乳酸菌属于细菌，是</p>
+<h3 class="h3-answer">解析：②发菜属于蓝细菌（蓝藻），是原核生物；④乳酸菌属于细菌，是</h3>
 <p>原核生物。①酵母菌、⑥青霉菌属于真菌，是真核生物；③草履虫是原生</p>
 <p>动物，真核生物；⑤噬菌体是病毒，没有细胞结构，既不属于原核也不属</p>
 <p>于真核。</p>
@@ -114,10 +150,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>A. 长度、宽度均放大400倍　B. 面积放大400倍　C. 长度或宽度放大40倍</p>
 <p>D. 标本的体积放大400倍</p>
 <p>答案：A</p>
-<p>解析：显微镜的放大倍数 = 目镜放大倍数 × 物镜放大倍数 = 10 × 40 =</p>
+<h3 class="h3-answer">解析：显微镜的放大倍数 = 目镜放大倍数 × 物镜放大倍数 = 10 × 40 =</h3>
 <p>400倍。这里的放大倍数指的是长度和宽度的放大倍数，不是面积或体</p>
 <p>积。面积放大倍数应为400² = 160000倍。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>下列有关蓝细菌的叙述，正确的是（　）</p>
 <p>A. 蓝细菌有叶绿体，能进行光合作用</p>
@@ -149,7 +185,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 低倍镜下找到目标后，直接转高倍镜观察</p>
 <p>D. 观察时先用低倍镜，再用高倍镜</p>
 <p>答案：D</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>混淆&quot;一切动植物&quot;与&quot;一切生物&quot;：细胞学说只适用于动植物，病毒没有细</p>
 <p>胞结构。</p>
@@ -164,9 +200,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>专题二：组成细胞的分子——糖类、脂质、蛋白质、核酸</p>
-<p>一、知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题二：组成细胞的分子——糖类、脂质、蛋白质、核酸</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 组成细胞的元素和化合物</p>
 <p>大量元素：C、H、O、N、P、S、K、Ca、Mg等（含量占生物体总重量万</p>
 <p>分之一以上）</p>
@@ -262,14 +298,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>特别提醒：DNA特有碱基是T（胸腺嘧啶），RNA特有碱基是U（尿嘧啶）。细胞</p>
 <p>生物（原核和真核）都同时含有DNA和RNA，但遗传物质只有DNA。病毒只含一种</p>
 <p>核酸（DNA或RNA）。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（蛋白质计算）</p>
 <p>•</p>
 <p>某蛋白质由n条肽链组成，氨基酸的平均分子质量为a，该蛋白质所含的氨基</p>
 <p>酸数为b，则该蛋白质的相对分子质量约为（　）</p>
 <p>A. ab-18(n-b) B. ab-18(b-n) C. ab+18(b-n) D. ab+6n</p>
 <p>答案：B</p>
-<p>解析：蛋白质相对分子质量 = 氨基酸总分子量 - 脱去水分子的总分子量 =</p>
+<h3 class="h3-answer">解析：蛋白质相对分子质量 = 氨基酸总分子量 - 脱去水分子的总分子量 =</h3>
 <p>a×b - 18×(b-n)。因为脱去水分子数 = 氨基酸数 - 肽链数 = b - n。故选B。</p>
 <p>典例2（核酸辨析）</p>
 <p>下列关于DNA和RNA的叙述，正确的是（　）</p>
@@ -278,7 +314,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. DNA只分布在细胞核中，RNA只分布在细胞质中</p>
 <p>D. 病毒同时含有DNA和RNA</p>
 <p>答案：B</p>
-<p>解析：A错误，DNA含脱氧核糖，RNA含核糖。B正确。C错误，DNA主</p>
+<h3 class="h3-answer">解析：A错误，DNA含脱氧核糖，RNA含核糖。B正确。C错误，DNA主</h3>
 <p>要在细胞核，线粒体和叶绿体中也有；RNA主要在细胞质，细胞核中也有</p>
 <p>（如mRNA在核内合成）。D错误，病毒只含一种核酸，DNA或RNA。</p>
 <p>典例3（糖类和脂质）</p>
@@ -288,9 +324,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 磷脂是所有细胞必不可少的脂质</p>
 <p>D. 胆固醇对人体有害，应该避免摄入</p>
 <p>答案：D</p>
-<p>解析：胆固醇是构成动物细胞膜的重要成分，还参与血液中脂质的运输，</p>
+<h3 class="h3-answer">解析：胆固醇是构成动物细胞膜的重要成分，还参与血液中脂质的运输，</h3>
 <p>是人体必需的。但过量摄入会导致心血管疾病，不是完全有害。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>下列化合物中，属于脂质的是（　）</p>
 <p>A. 淀粉　B. 脂肪　C. 胰岛素　D. 纤维素</p>
@@ -317,7 +353,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 细胞中的DNA只分布在细胞核内</p>
 <p>D. 病毒的遗传物质是DNA或RNA，也可以是蛋白质</p>
 <p>答案：B</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>混淆&quot;主要能源物质&quot;和&quot;主要储能物质&quot;：糖类是主要能源物质，脂肪是主</p>
 <p>要储能物质，ATP是直接能源物质。</p>
@@ -336,9 +372,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>专题三：细胞的基本结构——细胞膜、细胞器、细胞核</p>
-<p>一、知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题三：细胞的基本结构——细胞膜、细胞器、细胞核</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 细胞膜——系统的边界</p>
 <p>成分：主要由脂质（磷脂最丰富）和蛋白质组成，还有少量糖类。</p>
 <p>结构：流动镶嵌模型</p>
@@ -428,7 +464,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>5. 原核细胞与真核细胞的结构对比</p>
 <p>原核细胞只有核糖体一种细胞器，没有核膜包被的细胞核，没有染色体，有环状</p>
 <p>DNA（拟核）。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（细胞膜结构）</p>
 <p>下列关于细胞膜的叙述，错误的是（　）</p>
 <p>A. 细胞膜的主要成分是脂质和蛋白质</p>
@@ -436,14 +472,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 糖蛋白只分布在细胞膜的内表面</p>
 <p>D. 细胞膜的功能特性是选择透过性</p>
 <p>答案：C</p>
-<p>解析：糖蛋白（糖类+蛋白质）只分布在细胞膜的外表面，与细胞识别、</p>
+<h3 class="h3-answer">解析：糖蛋白（糖类+蛋白质）只分布在细胞膜的外表面，与细胞识别、</h3>
 <p>信息交流有关，不在内表面。</p>
 <p>典例2（细胞器功能）</p>
 <p>下列细胞器中，不含磷脂分子的是（　）</p>
 <p>①线粒体　②核糖体　③叶绿体　④内质网　⑤中心体　⑥高尔基体</p>
 <p>A. ①③ B. ②⑤ C. ④⑥ D. ②④</p>
 <p>答案：B</p>
-<p>解析：磷脂是构成生物膜的主要成分。核糖体和中心体都是无膜结构的细</p>
+<h3 class="h3-answer">解析：磷脂是构成生物膜的主要成分。核糖体和中心体都是无膜结构的细</h3>
 <p>胞器，因此不含磷脂。其余都是膜结构细胞器，含有磷脂。</p>
 <p>典例3（分泌蛋白）</p>
 <p>用³H标记的亮氨酸培养胰腺腺泡细胞，下列结构中放射性强度最高的依次是</p>
@@ -451,10 +487,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>A. 高尔基体、内质网、核糖体　B. 核糖体、内质网、高尔基体</p>
 <p>C. 内质网、高尔基体、核糖体　D. 核糖体、高尔基体、内质网</p>
 <p>答案：B</p>
-<p>解析：分泌蛋白的合成顺序是：核糖体合成肽链 → 内质网加工 → 高尔基</p>
+<h3 class="h3-answer">解析：分泌蛋白的合成顺序是：核糖体合成肽链 → 内质网加工 → 高尔基</h3>
 <p>体进一步加工包装。随着时间推移，放射性依次出现，但在短时间内，核</p>
 <p>糖体最先出现放射性，随后内质网，最后高尔基体。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>下列关于细胞核的叙述，正确的是（　）</p>
 <p>A. 核膜是单层膜，把核内物质与细胞质分开</p>
@@ -485,7 +521,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 进行细胞间的信息交流</p>
 <p>D. 为细胞提供能量</p>
 <p>答案：D</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>糖蛋白位置：只分布在细胞膜外表面，参与细胞识别，不在内表面。</p>
 <p>原核细胞的细胞器：只有核糖体，没有线粒体、叶绿体等，但部分原核生</p>
@@ -501,9 +537,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>专题四：细胞的物质输入和输出——跨膜运输、渗透作用</p>
-<p>一、知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题四：细胞的物质输入和输出——跨膜运输、渗透作用</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 渗透作用与细胞的吸水和失水</p>
 <p>渗透作用条件：①具有半透膜；②半透膜两侧溶液具有浓度差。</p>
 <p>渗透方向：水分子从低浓度溶液向高浓度溶液扩散（即从水多的一侧向水少</p>
@@ -558,7 +594,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>协助扩散：受浓度差和载体蛋白数量影响</p>
 <p>主动运输：受载体蛋白数量、能量（ATP）供应、氧气浓度（影响有氧呼吸供</p>
 <p>能）影响</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（渗透作用与质壁分离）</p>
 <p>将紫色洋葱鳞片叶外表皮细胞置于0.3g/mL蔗糖溶液中，观察质壁分离现象。</p>
 <p>下列叙述正确的是（　）</p>
@@ -567,7 +603,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 水分子只能从细胞内向细胞外运输</p>
 <p>D. 蔗糖分子可以通过原生质层进入细胞液</p>
 <p>答案：B</p>
-<p>解析：A错误，细胞失水，液泡变小，颜色变深。B正确，质壁分离即细</p>
+<h3 class="h3-answer">解析：A错误，细胞失水，液泡变小，颜色变深。B正确，质壁分离即细</h3>
 <p>胞壁与原生质层分离。C错误，水分子是双向移动的，只是出去的比进的</p>
 <p>多。D错误，原生质层具有选择透过性，蔗糖分子不能进入细胞。</p>
 <p>•</p>
@@ -580,7 +616,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. K⁺进入小肠上皮细胞</p>
 <p>D. 氧气进入肺泡细胞</p>
 <p>答案：C</p>
-<p>解析：A是自由扩散（或协助扩散通过水通道），B是协助扩散，D是自由</p>
+<h3 class="h3-answer">解析：A是自由扩散（或协助扩散通过水通道），B是协助扩散，D是自由</h3>
 <p>扩散，三者都不消耗能量。C中K⁺进入小肠上皮细胞是逆浓度梯度的主动</p>
 <p>运输，需要消耗ATP。</p>
 <p>典例3（综合应用）</p>
@@ -590,11 +626,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 胞吞和胞吐也需要载体蛋白的协助</p>
 <p>D. 温度变化会影响所有跨膜运输方式的速率</p>
 <p>答案：D</p>
-<p>解析：A错误，主动运输一般是逆浓度梯度，但顺浓度梯度时也可进行</p>
+<h3 class="h3-answer">解析：A错误，主动运输一般是逆浓度梯度，但顺浓度梯度时也可进行</h3>
 <p>（只是不需要能量）。B错误，协助扩散还受载体数量限制。C错误，胞</p>
 <p>吞胞吐不需要载体，依赖膜的流动性。D正确，温度影响分子运动速率、</p>
 <p>膜的流动性以及酶活性（影响主动运输供能）。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>下列关于质壁分离及复原实验的叙述，错误的是（　）</p>
 <p>A. 选用紫色洋葱鳞片叶外表皮细胞是因为其液泡有颜色，便于观察</p>
@@ -625,7 +661,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 只能逆浓度梯度运输</p>
 <p>D. 小肠上皮细胞吸收葡萄糖属于主动运输</p>
 <p>答案：C</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>质壁分离的&quot;质&quot;和&quot;壁&quot;：&quot;质&quot;指原生质层，不是细胞质；&quot;壁&quot;指细胞壁。</p>
 <p>水分子移动方向：水分子是双向移动的，只是净移动方向是从低浓度溶液</p>
@@ -643,10 +679,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>专题五：细胞的能量供应和利用——酶与ATP、呼吸作用、</p>
+<p>•</p></div>
+<div class="page"><h1>专题五：细胞的能量供应和利用——酶与ATP、呼吸作用、</h1>
 <p>光合作用</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 酶——降低化学反应活化能</p>
 <p>概念：酶是活细胞产生的具有催化作用的有机物，其中绝大多数是蛋白质，</p>
 <p>少数是RNA。</p>
@@ -749,7 +785,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>有机物产生量（总光合）= 有机物积累量（净光合）+ 有机物呼吸消耗量</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（酶的特性）</p>
 <p>下列关于酶的叙述，正确的是（　）</p>
 <p>A. 酶只能在细胞内发挥催化作用</p>
@@ -757,7 +793,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 低温会破坏酶的空间结构</p>
 <p>D. 一种酶只能催化一种或一类化学反应</p>
 <p>答案：D</p>
-<p>解析：A错误，酶在适宜条件下可在细胞外发挥作用（如消化酶）。B错</p>
+<h3 class="h3-answer">解析：A错误，酶在适宜条件下可在细胞外发挥作用（如消化酶）。B错</h3>
 <p>误，少数酶是RNA。C错误，低温只抑制酶活性，不破坏空间结构；高温</p>
 <p>才会破坏。D正确，体现了酶的专一性。</p>
 <p>典例2（细胞呼吸）</p>
@@ -767,7 +803,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 无氧呼吸能产生大量ATP</p>
 <p>D. 酵母菌无氧呼吸的产物是乳酸</p>
 <p>答案：A</p>
-<p>解析：A正确，第一阶段都是葡萄糖分解为丙酮酸和[H]，在细胞质基质中</p>
+<h3 class="h3-answer">解析：A正确，第一阶段都是葡萄糖分解为丙酮酸和[H]，在细胞质基质中</h3>
 <p>进行。B错误，有氧呼吸产物是CO₂和H₂O。C错误，无氧呼吸只在第一阶</p>
 <p>段产生少量ATP。D错误，酵母菌无氧呼吸产生酒精和CO₂，不产生乳</p>
 <p>酸。</p>
@@ -776,9 +812,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>A. C₃ B. C₅ C. 葡萄糖　D. 丙酮酸</p>
 <p>•</p>
 <p>答案：A</p>
-<p>解析：暗反应中CO₂的固定过程是：CO₂与C₅结合生成两个C₃分子。因此</p>
+<h3 class="h3-answer">解析：暗反应中CO₂的固定过程是：CO₂与C₅结合生成两个C₃分子。因此</h3>
 <p>CO₂首先被固定形成C₃，然后C₃再被还原成糖类和C₅。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>ATP的结构简式是（　）</p>
 <p>A. A-P-P~P B. A~P~P~P C. A-P~P~P D. A~P-P-P</p>
@@ -810,7 +846,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 色素分布在类囊体薄膜上</p>
 <p>D. 叶绿素对绿光吸收最多，所以叶片呈绿色</p>
 <p>答案：D（叶绿素对绿光吸收最少，反射绿光，所以叶片呈绿色）</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>酶的本质：大多数是蛋白质，少数是RNA。酶的合成场所主要是核糖体</p>
 <p>（蛋白质类酶），少数在细胞核（RNA类酶）。</p>
@@ -831,10 +867,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>净光合 vs 总光合：净光合 = 总光合 - 呼吸。测得的O₂释放量或CO₂吸收</p>
 <p>量通常是净光合速率。</p>
-<p>•</p>
-<p>专题六：细胞的生命历程——增殖、分化、衰老、凋亡、癌</p>
+<p>•</p></div>
+<div class="page"><h1>专题六：细胞的生命历程——增殖、分化、衰老、凋亡、癌</h1>
 <p>变</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 细胞的增殖——有丝分裂</p>
 <p>细胞周期：连续分裂的细胞，从一次分裂完成时开始，到下一次分裂完成时</p>
 <p>为止。包括分裂间期（G₁期、S期、G₂期）和分裂期（M期：前期、中期、</p>
@@ -921,7 +957,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>结果 被吞噬细胞吞噬清除，不引起炎</p>
 <p>症 引起周围组织炎症反应</p>
 <p>性质 主动的、有利的 被动的、有害的</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>•</p>
 <p>•</p>
 <p>•</p>
@@ -930,7 +966,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（　）</p>
 <p>A. 间期和前期　B. 前期和中期　C. 前期和后期　D. 后期和末期</p>
 <p>答案：C</p>
-<p>解析：前期DNA=4N，染色体=2N；后期DNA=4N，染色体=4N。这两个</p>
+<h3 class="h3-answer">解析：前期DNA=4N，染色体=2N；后期DNA=4N，染色体=4N。这两个</h3>
 <p>时期DNA分子数目相同（都是4N），但染色体数目不同（2N vs 4N）。</p>
 <p>因为后期着丝粒分裂，染色体数目加倍，但DNA数目不变。</p>
 <p>典例2（细胞分化）</p>
@@ -940,7 +976,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 细胞分化的实质是基因的选择性表达</p>
 <p>D. 细胞分化是不可逆的，一旦分化就不能再分裂</p>
 <p>答案：C</p>
-<p>解析：A错误，分化过程中遗传物质不变。B错误，细胞数目增加是细胞</p>
+<h3 class="h3-answer">解析：A错误，分化过程中遗传物质不变。B错误，细胞数目增加是细胞</h3>
 <p>分裂的结果。C正确。D错误，分化后的细胞有些仍可分裂（如造血干细</p>
 <p>胞分化成的细胞），且自然条件下不可逆不代表完全不能逆转（如植物组</p>
 <p>织培养）。</p>
@@ -951,9 +987,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 癌细胞膜上糖蛋白增多，黏着性增强</p>
 <p>D. 原癌基因和抑癌基因的突变可导致细胞癌变</p>
 <p>答案：C</p>
-<p>解析：癌细胞膜上糖蛋白减少，导致细胞间黏着性降低，容易分散和转</p>
+<h3 class="h3-answer">解析：癌细胞膜上糖蛋白减少，导致细胞间黏着性降低，容易分散和转</h3>
 <p>移。这是癌细胞容易扩散的重要原因。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>在植物细胞有丝分裂的末期，赤道板位置出现的结构是（　）</p>
 <p>A. 细胞板　B. 纺锤体　C. 染色体　D. 核膜</p>
@@ -983,7 +1019,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 被病原体感染的细胞的清除</p>
 <p>D. 缺氧导致的脑细胞死亡</p>
 <p>答案：C</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>赤道板 vs 细胞板：赤道板是位置概念（不是真实结构），细胞板是植物</p>
 <p>细胞末期出现的真实结构，最终发育成细胞壁。</p>
@@ -1003,9 +1039,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>专题七：遗传的细胞基础——减数分裂与受精作用</p>
-<p>一、知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题七：遗传的细胞基础——减数分裂与受精作用</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. 减数分裂的概念和特点</p>
 <p>概念：进行有性生殖的生物，在产生成熟生殖细胞时进行的染色体数目减半</p>
 <p>的细胞分裂。</p>
@@ -1069,13 +1105,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>子细胞类型 体细胞 生殖细胞</p>
 <p>子细胞数目 2个 4个（精）或1个+3极体</p>
 <p>（卵）</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（减数分裂过程判断）</p>
 <p>在减数第一次分裂过程中，不会出现的是（　）</p>
 <p>A. 同源染色体联会　B. 四分体中的非姐妹染色单体交叉互换</p>
 <p>C. 同源染色体分离　D. 着丝粒分裂，姐妹染色单体分开</p>
 <p>答案：D</p>
-<p>解析：着丝粒分裂、姐妹染色单体分开发生在减数第二次分裂后期，不是</p>
+<h3 class="h3-answer">解析：着丝粒分裂、姐妹染色单体分开发生在减数第二次分裂后期，不是</h3>
 <p>减数第一次分裂。减Ⅰ的主要特征是同源染色体的联会、四分体形成和同源</p>
 <p>染色体分离。</p>
 <p>典例2（精卵形成比较）</p>
@@ -1085,17 +1121,17 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 1个精原细胞可形成4个精子，1个卵原细胞可形成1个卵细胞</p>
 <p>D. 两者都需要经过变形过程</p>
 <p>答案：C</p>
-<p>解析：A错误，精子在睾丸中形成。B错误，卵细胞形成过程中细胞质不</p>
+<h3 class="h3-answer">解析：A错误，精子在睾丸中形成。B错误，卵细胞形成过程中细胞质不</h3>
 <p>均等分裂。C正确。D错误，只有精子需要变形，卵细胞不需要。</p>
 <p>典例3（数量变化）</p>
 <p>某生物体细胞含有4条染色体，则其初级精母细胞在减数第一次分裂后期，细</p>
 <p>胞中染色体、DNA和染色单体的数目分别是（　）</p>
 <p>A. 4、8、8 B. 4、4、0 C. 8、8、0 D. 8、8、8</p>
 <p>答案：A</p>
-<p>解析：减Ⅰ后期，同源染色体分离但仍在同一个细胞中，此时染色体数目仍</p>
+<h3 class="h3-answer">解析：减Ⅰ后期，同源染色体分离但仍在同一个细胞中，此时染色体数目仍</h3>
 <p>为2N=4（每条含两条染色单体），DNA=4N=8，染色单体=4N=8。直到</p>
 <p>减Ⅰ末期细胞分裂后，染色体才减半为N=2。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>减数分裂过程中，染色体数目减半发生在（　）</p>
 <p>A. 减数第一次分裂前期　B. 减数第一次分裂后期</p>
@@ -1127,7 +1163,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>A. 1种　B. 2种　C. 4种　D. 8种</p>
 <p>答案：B（一个精原细胞只能形成2种类型的精子，即AB和ab，或Ab和</p>
 <p>aB，取决于非同源染色体的组合方式）</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>同源染色体：形态、大小一般相同，一条来自父方，一条来自母方。不</p>
 <p>是&quot;一条染色体复制后形成的两条&quot;。</p>
@@ -1153,9 +1189,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>专题八：遗传的分子基础——DNA结构、复制、基因表达</p>
-<p>一、知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题八：遗传的分子基础——DNA结构、复制、基因表达</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>1. DNA是主要的遗传物质——经典实验</p>
 <p>（1）格里菲思的肺炎链球菌转化实验（体内转化）</p>
 <p>R型菌：无荚膜，菌落粗糙，无毒性</p>
@@ -1249,7 +1285,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>刀型细胞贫血症。</p>
 <p>重要认识：生物的性状不仅仅由基因决定，还受环境因素的影响。基因与性状之间</p>
 <p>并不是简单的一一对应关系。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>典例1（DNA结构计算）</p>
 <p>某DNA分子中，腺嘌呤（A）占全部碱基的20%，则该DNA分子中鸟嘌呤</p>
 <p>（G）占（　）</p>
@@ -1257,14 +1293,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>答案：B</p>
-<p>解析：根据碱基互补配对原则，A=T=20%，则A+T=40%。因此</p>
+<h3 class="h3-answer">解析：根据碱基互补配对原则，A=T=20%，则A+T=40%。因此</h3>
 <p>G+C=60%，又G=C，所以G=30%。</p>
 <p>典例2（DNA复制计算）</p>
 <p>一个DNA分子连续复制3次后，含有亲代链的DNA分子占全部DNA分子的比例</p>
 <p>是（　）</p>
 <p>A. 1/2 B. 1/4 C. 1/8 D. 1/16</p>
 <p>答案：B</p>
-<p>解析：DNA复制为半保留复制，复制3次后共产生2³=8个DNA分子。其中</p>
+<h3 class="h3-answer">解析：DNA复制为半保留复制，复制3次后共产生2³=8个DNA分子。其中</h3>
 <p>含有亲代链的DNA分子始终只有2个（每个含一条亲代链），因此比例为</p>
 <p>2/8=1/4。</p>
 <p>典例3（基因表达）</p>
@@ -1274,10 +1310,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 转录时DNA两条链都作为模板</p>
 <p>D. mRNA上的终止密码子不编码氨基酸</p>
 <p>答案：D</p>
-<p>解析：A错误，翻译在核糖体上进行。B错误，转录的原料是核糖核苷</p>
+<h3 class="h3-answer">解析：A错误，翻译在核糖体上进行。B错误，转录的原料是核糖核苷</h3>
 <p>酸。C错误，转录时以DNA的一条链为模板。D正确，终止密码子</p>
 <p>（UAA、UAG、UGA）只起终止信号作用，不编码氨基酸。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>练习1</p>
 <p>在DNA双链中，一条链上（A+T）/（G+C）=0.4，那么互补链中该比值是</p>
 <p>（　）</p>
@@ -1312,7 +1348,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>新高二生物暑假衔接讲练资料</p>
 <p>祝愿你在暑假里夯实基础，迎接高二新挑战！</p>
 <p>答案：C（双链DNA中，C+T=A+G=50%）</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>常见错误与混淆点</p>
 <p>肺炎链球菌转化实验的结论：格里菲思只证明存在&quot;转化因子&quot;，艾弗里才</p>
 <p>证明转化因子是DNA。两个实验结论不要混淆。</p>
@@ -1341,8 +1377,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>本资料仅供学习使用 | 建议配合教材和课堂笔记系统复习</p>
-</div>
+<p>本资料仅供学习使用 | 建议配合教材和课堂笔记系统复习</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -1368,6 +1403,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>

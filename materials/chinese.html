@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>语文暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#ef4444;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#dc2626;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,25 +61,27 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>语文暑假衔接</h1></div>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>语文暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
 <div class="wrap">
-<div class="page">
-<p>新高二语文暑假衔接讲练</p>
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>语文暑假衔接</h2>
+  <div class="hero-sub">专题01 背诵计划 专题02 实词 专题03 虚词 专题04 诗歌鉴赏 专题05 现代文阅读 专题06 作文素材 专题0</div>
+  <div class="hero-meta"><span>📚 9 个专题</span><span>📄 48 页精讲</span><span>✓ 讲练结合</span></div>
 </div>
-<div class="page">
-<h1>专题01 背诵计划 专题02 实词 专题03 虚词</h1>
-</div>
-<div class="page">
-<h1>专题04 诗歌鉴赏 专题05 现代文阅读</h1>
-</div>
-<div class="page">
-<h1>专题06 作文素材 专题07 语言文字 专题08 写作结构</h1>
+<div class="page"><p>新高二语文暑假衔接讲练</p>
+<p>专题01 背诵计划 专题02 实词 专题03 虚词</p>
+<p>专题04 诗歌鉴赏 专题05 现代文阅读</p>
+<p>专题06 作文素材 专题07 语言文字 专题08 写作结构</p>
 <p>新高二语文暑假衔接讲练</p>
 <p>8大专题 古诗文积累 作文素材 阅读技巧</p>
 <p>碎片时间可用</p>
-<p>高一升高二 · 转理科衔接专用 · 知识精讲 + 典例破题 + 巩固提升 + 易错警示</p>
-<p>01高考必背古诗文64篇 · 8周背诵计划</p>
-<p>一、知识精讲：64篇篇目总览与8周计划</p>
+<p>高一升高二 · 转理科衔接专用 · 知识精讲 + 典例破题 + 巩固提升 + 易错警示</p></div>
+<div class="page"><h1>01高考必背古诗文64篇 · 8周背诵计划</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲：64篇篇目总览与8周计划</h2>
 <p>高考语文默写题（6分）全部出自64篇必背篇目（初中50篇 + 高中14篇）。本计划</p>
 <p>按8周拆分，每周约8篇，每天投入15-20分钟即可。背诵重点：名句 + 易错字 + 理解</p>
 <p>性默写。</p>
@@ -297,7 +327,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>&quot;同是天涯沦落人，相逢何必</p>
 <p>曾相识&quot;</p>
 <p>二、默写最易错字总清单（高频TOP 30）</p>
-<h2>易错警示：以下字在高考默写中出错率极高，务必反复书写确认！</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示：以下字在高考默写中出错率极高，务必反复书写确认！</h2>
 <p>易错字 正确写法 常见错误 出自篇目</p>
 <p>罔 门+罒+亡（不要写成&quot;惘&quot;）误写为&quot;惘&quot; 《论语》</p>
 <p>辨 辛+刀+辛（中间是&quot;刀&quot;）误写为&quot;辩&quot; 《鱼我所欲也》</p>
@@ -330,23 +360,23 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>謇 寒+言 误写为&quot;蹇&quot; 《离骚》</p>
 <p>惘 忄+罔 误写为&quot;罔&quot; 《锦瑟》</p>
 <p>钿 钅+田 误写为&quot;佃&quot; 《琵琶行》</p>
-<p>三、巩固提升：理解性默写检测（10题）</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升：理解性默写检测（10题）</h2>
 <p>1. 《论语》中强调&quot;学&quot;与&quot;思&quot;辩证关系的句子是：________________，</p>
 <p>________________。</p>
 <p>答案与解析</p>
 <p>学而不思则罔，思而不学则殆。</p>
-<p>解析：注意&quot;罔&quot;不能写成&quot;惘&quot;（前者是迷惑，后者是失意），&quot;殆&quot;不能写</p>
+<h3 class="h3-answer">解析：注意&quot;罔&quot;不能写成&quot;惘&quot;（前者是迷惑，后者是失意），&quot;殆&quot;不能写</h3>
 <p>成&quot;怠&quot;（前者是疑惑/危险，后者是懈怠）。</p>
 <p>2. 《生于忧患，死于安乐》中，从内外两个方面说明导致亡国原因的句子是：</p>
 <p>________________，________________。</p>
 <p>答案与解析</p>
 <p>入则无法家拂士，出则无敌国外患者。</p>
-<p>解析：&quot;拂&quot;通&quot;弼&quot;，辅佐之意，不可写成&quot;佛&quot;。&quot;患&quot;指祸患。</p>
+<h3 class="h3-answer">解析：&quot;拂&quot;通&quot;弼&quot;，辅佐之意，不可写成&quot;佛&quot;。&quot;患&quot;指祸患。</h3>
 <p>3. 《出师表》中，诸葛亮自述本志、表明无意于功名的句子是：</p>
 <p>________________，________________。</p>
 <p>答案与解析</p>
 <p>苟全性命于乱世，不求闻达于诸侯。</p>
-<p>解析：&quot;苟&quot;不能写成&quot;荀&quot;（前者是苟且，后者是姓氏）。</p>
+<h3 class="h3-answer">解析：&quot;苟&quot;不能写成&quot;荀&quot;（前者是苟且，后者是姓氏）。</h3>
 <p>4. 《岳阳楼记》中表现作者政治抱负的千古名句是：________________，</p>
 <p>________________。</p>
 <p>答案与解析</p>
@@ -355,40 +385,40 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>________________。</p>
 <p>答案与解析</p>
 <p>出淤泥而不染，濯清涟而不妖。</p>
-<p>解析：&quot;淤&quot;（氵+於）不能写成&quot;瘀&quot;（病字头），&quot;濯&quot;（氵+翟）右边是&quot;翟&quot;不</p>
+<h3 class="h3-answer">解析：&quot;淤&quot;（氵+於）不能写成&quot;瘀&quot;（病字头），&quot;濯&quot;（氵+翟）右边是&quot;翟&quot;不</h3>
 <p>是&quot;翟&quot;的变体。</p>
 <p>6. 《使至塞上》中以比喻表达诗人惆怅、抑郁心情的句子是：</p>
 <p>________________，________________。</p>
 <p>答案与解析</p>
 <p>征蓬出汉塞，归雁入胡天。</p>
-<p>解析：注意&quot;蓬&quot;（艹+逢）和&quot;雁&quot;（与&quot;燕&quot;区分——&quot;雁&quot;是大雁，候</p>
+<h3 class="h3-answer">解析：注意&quot;蓬&quot;（艹+逢）和&quot;雁&quot;（与&quot;燕&quot;区分——&quot;雁&quot;是大雁，候</h3>
 <p>鸟；&quot;燕&quot;是燕子，也指地名）。</p>
 <p>7. 《酬乐天扬州初逢席上见赠》中蕴含新事物必将取代旧事物哲理的句子是：</p>
 <p>________________，________________。</p>
 <p>答案与解析</p>
 <p>沉舟侧畔千帆过，病树前头万木春。</p>
-<p>解析：&quot;畔&quot;不能写成&quot;泮&quot;（前者是旁边，后者是融化/学校）。</p>
+<h3 class="h3-answer">解析：&quot;畔&quot;不能写成&quot;泮&quot;（前者是旁边，后者是融化/学校）。</h3>
 <p>8. 《劝学》中，荀子用&quot;青出于蓝&quot;的比喻说明学习可以使人提高的句子是：</p>
 <p>________________，________________。</p>
 <p>答案与解析</p>
 <p>青，取之于蓝而青于蓝；冰，水为之而寒于水。</p>
-<p>解析：注意&quot;輮以为轮&quot;的&quot;輮&quot;（车+柔）不可写成&quot;揉&quot;。</p>
+<h3 class="h3-answer">解析：注意&quot;輮以为轮&quot;的&quot;輮&quot;（车+柔）不可写成&quot;揉&quot;。</h3>
 <p>9. 《赤壁赋》中，苏轼用&quot;________________，________________&quot;两句描</p>
 <p>写自己与客人在江上泛舟时的自由自在之感。</p>
 <p>答案与解析</p>
 <p>纵一苇之所如，凌万顷之茫然。</p>
-<p>解析：&quot;苇&quot;不要写成&quot;纬&quot;，&quot;顷&quot;不是&quot;倾&quot;。</p>
+<h3 class="h3-answer">解析：&quot;苇&quot;不要写成&quot;纬&quot;，&quot;顷&quot;不是&quot;倾&quot;。</h3>
 <p>10. 《琵琶行》中，以&quot;________________，________________&quot;两句描写琵</p>
 <p>琶女出场时的羞涩神态。</p>
 <p>答案与解析</p>
 <p>千呼万唤始出来，犹抱琵琶半遮面。</p>
-<p>解析：&quot;始&quot;不能写成&quot;使&quot;（前者是&quot;才&quot;，后者是&quot;让&quot;）。</p>
+<h3 class="h3-answer">解析：&quot;始&quot;不能写成&quot;使&quot;（前者是&quot;才&quot;，后者是&quot;让&quot;）。</h3>
 <p>学习建议</p>
 <p>每天早读10分钟，按周计划推进。背诵时重点圈画易错字，用红笔标注。每</p>
 <p>周末做一次默写自测，将错字抄写5遍加深记忆。理解性默写比机械默写更重</p>
-<p>要，要能根据提示写出对应句子。</p>
-<p>02文言文阅读 · 120个高考常见实词（精选30个最高频）</p>
-<p>一、知识精讲：30个最高频实词详解</p>
+<p>要，要能根据提示写出对应句子。</p></div>
+<div class="page"><h1>02文言文阅读 · 120个高考常见实词（精选30个最高频）</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲：30个最高频实词详解</h2>
 <p>高考大纲规定120个常见文言实词，以下精选近5年高考考查频率最高的30个，每个</p>
 <p>列出2-3个核心义项及课本例句。</p>
 <p>序</p>
@@ -640,7 +670,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>全活</p>
 <p>犯罪 坐法去</p>
 <p>官</p>
-<p>二、典例破题：实词推断技巧</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题：实词推断技巧</h2>
 <p>技巧一：语境推断法</p>
 <p>根据上下文语境推断词义。如&quot;旦日，客从外来，与坐谈&quot;中的&quot;坐&quot;就是&quot;坐</p>
 <p>下&quot;而非&quot;因为&quot;。</p>
@@ -650,93 +680,93 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>技巧三：结构对称法</p>
 <p>古人行文讲究对仗，利用对称结构推断。如&quot;忠不必用兮，贤不必</p>
 <p>以&quot;，&quot;以&quot;与&quot;用&quot;对称，都是&quot;任用&quot;之意。</p>
-<p>三、巩固提升：实词检测题（20道）</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升：实词检测题（20道）</h2>
 <p>1. &quot;齐国虽褊小，吾何爱一牛&quot;中&quot;爱&quot;的意思是：</p>
 <p>A. 喜爱 B. 吝惜 C. 爱护 D. 爱慕</p>
 <p>答案：B</p>
-<p>解析：&quot;爱&quot;在此为&quot;吝惜、舍不得&quot;，全句意为&quot;齐国虽然狭小，我怎么会吝惜</p>
+<h3 class="h3-answer">解析：&quot;爱&quot;在此为&quot;吝惜、舍不得&quot;，全句意为&quot;齐国虽然狭小，我怎么会吝惜</h3>
 <p>一头牛呢&quot;。</p>
 <p>2. &quot;燕雀安知鸿鹄之志哉&quot;中&quot;安&quot;的意思是：</p>
 <p>A. 安全 B. 安定 C. 怎么 D. 安逸</p>
 <p>答案：C</p>
-<p>解析：&quot;安&quot;作疑问副词，意为&quot;怎么、哪里&quot;。全句：燕雀怎么能知道鸿鹄的志</p>
+<h3 class="h3-answer">解析：&quot;安&quot;作疑问副词，意为&quot;怎么、哪里&quot;。全句：燕雀怎么能知道鸿鹄的志</h3>
 <p>向呢。</p>
 <p>3. &quot;将军身被坚执锐&quot;中&quot;被&quot;的意思是：</p>
 <p>A. 被子 B. 遭受 C. 通&quot;披&quot;，穿着 D. 覆盖</p>
 <p>答案：C</p>
-<p>解析：&quot;被&quot;通&quot;披&quot;，意为&quot;穿着&quot;。&quot;坚&quot;指坚固的铠甲，&quot;锐&quot;指锐利的兵器。</p>
+<h3 class="h3-answer">解析：&quot;被&quot;通&quot;披&quot;，意为&quot;穿着&quot;。&quot;坚&quot;指坚固的铠甲，&quot;锐&quot;指锐利的兵器。</h3>
 <p>4. &quot;收天下之兵&quot;中&quot;兵&quot;的意思是：</p>
 <p>A. 士兵 B. 军队 C. 兵器 D. 战争</p>
 <p>答案：C</p>
-<p>解析：出自《过秦论》，&quot;收天下之兵，聚之咸阳&quot;，&quot;兵&quot;指兵器。</p>
+<h3 class="h3-answer">解析：出自《过秦论》，&quot;收天下之兵，聚之咸阳&quot;，&quot;兵&quot;指兵器。</h3>
 <p>5. &quot;诚宜开张圣听&quot;中&quot;诚&quot;的意思是：</p>
 <p>A. 真诚 B. 确实 C. 如果 D. 忠诚</p>
 <p>答案：B</p>
-<p>解析：出自《出师表》，&quot;诚&quot;作副词&quot;确实&quot;，全句意为&quot;确实应该广泛听取意</p>
+<h3 class="h3-answer">解析：出自《出师表》，&quot;诚&quot;作副词&quot;确实&quot;，全句意为&quot;确实应该广泛听取意</h3>
 <p>见&quot;。</p>
 <p>6. &quot;攘除奸凶&quot;中&quot;除&quot;的意思是：</p>
 <p>A. 除法 B. 台阶 C. 授官 D. 清除</p>
 <p>答案：D</p>
-<p>解析：出自《出师表》，&quot;攘除奸凶&quot;意为铲除奸邪凶恶之人。</p>
+<h3 class="h3-answer">解析：出自《出师表》，&quot;攘除奸凶&quot;意为铲除奸邪凶恶之人。</h3>
 <p>7. &quot;朝辞白帝彩云间&quot;中&quot;辞&quot;的意思是：</p>
 <p>A. 言辞 B. 推辞 C. 告别 D. 辞退</p>
 <p>答案：C</p>
-<p>解析：出自李白《早发白帝城》，&quot;辞&quot;为&quot;告别&quot;之意。</p>
+<h3 class="h3-answer">解析：出自李白《早发白帝城》，&quot;辞&quot;为&quot;告别&quot;之意。</h3>
 <p>8. &quot;合从缔交&quot;中&quot;从&quot;的意思是：</p>
 <p>A. 跟随 B. 顺从 C. 通&quot;纵&quot; D. 从前</p>
 <p>答案：C</p>
-<p>解析：出自《过秦论》，&quot;合从&quot;即&quot;合纵&quot;，指战国时六国联合抗秦的策略。</p>
+<h3 class="h3-answer">解析：出自《过秦论》，&quot;合从&quot;即&quot;合纵&quot;，指战国时六国联合抗秦的策略。</h3>
 <p>9. &quot;安得广厦千万间&quot;中&quot;得&quot;的意思是：</p>
 <p>A. 得到 B. 能够 C. 通&quot;德&quot; D. 得意</p>
 <p>答案：B</p>
-<p>解析：出自杜甫《茅屋为秋风所破歌》，&quot;得&quot;意为&quot;能够&quot;。</p>
+<h3 class="h3-answer">解析：出自杜甫《茅屋为秋风所破歌》，&quot;得&quot;意为&quot;能够&quot;。</h3>
 <p>10. &quot;试使山东之国与陈涉度长絜大&quot;中&quot;度&quot;的意思是：</p>
 <p>A. 制度 B. 度过 C. 量长短 D. 揣度</p>
 <p>答案：C</p>
-<p>解析：出自《过秦论》，&quot;度长絜大&quot;意为比量长短大小，&quot;度&quot;是&quot;量&quot;的意思。</p>
+<h3 class="h3-answer">解析：出自《过秦论》，&quot;度长絜大&quot;意为比量长短大小，&quot;度&quot;是&quot;量&quot;的意思。</h3>
 <p>11. &quot;不敢出一言以复&quot;中&quot;复&quot;的意思是：</p>
 <p>A. 恢复 B. 再 C. 回答 D. 复杂</p>
 <p>答案：C</p>
-<p>解析：出自《送东阳马生序》，&quot;复&quot;意为&quot;回答、回复&quot;。</p>
+<h3 class="h3-answer">解析：出自《送东阳马生序》，&quot;复&quot;意为&quot;回答、回复&quot;。</h3>
 <p>12. &quot;负箧曳屣&quot;中&quot;负&quot;的意思是：</p>
 <p>A. 辜负 B. 背 C. 凭借 D. 失败</p>
 <p>答案：B</p>
-<p>解析：出自《送东阳马生序》，&quot;负箧曳屣&quot;意为背着书箱拖着鞋子。</p>
+<h3 class="h3-answer">解析：出自《送东阳马生序》，&quot;负箧曳屣&quot;意为背着书箱拖着鞋子。</h3>
 <p>13. &quot;温故而知新&quot;中&quot;故&quot;的意思是：</p>
 <p>A. 原因 B. 所以 C. 旧的 D. 故意</p>
 <p>答案：C</p>
-<p>解析：出自《论语》，&quot;故&quot;指&quot;旧的知识&quot;。</p>
+<h3 class="h3-answer">解析：出自《论语》，&quot;故&quot;指&quot;旧的知识&quot;。</h3>
 <p>14. &quot;元方入门不顾&quot;中&quot;顾&quot;的意思是：</p>
 <p>A. 拜访 B. 回头看 C. 但是 D. 顾虑</p>
 <p>答案：B</p>
-<p>解析：出自《陈太丘与友期行》，&quot;顾&quot;意为&quot;回头看&quot;。</p>
+<h3 class="h3-answer">解析：出自《陈太丘与友期行》，&quot;顾&quot;意为&quot;回头看&quot;。</h3>
 <p>15. &quot;去国怀乡&quot;中&quot;国&quot;的意思是：</p>
 <p>A. 国家 B. 国都 C. 国王 D. 地区</p>
 <p>答案：B</p>
-<p>解析：出自《岳阳楼记》，&quot;去国怀乡&quot;意为离开国都、怀念家乡。</p>
+<h3 class="h3-answer">解析：出自《岳阳楼记》，&quot;去国怀乡&quot;意为离开国都、怀念家乡。</h3>
 <p>16. &quot;虽乘奔御风不以疾也&quot;中&quot;疾&quot;的意思是：</p>
 <p>A. 疾病 B. 快速 C. 痛恨 D. 嫉妒</p>
 <p>答案：B</p>
-<p>解析：出自《三峡》，&quot;疾&quot;意为&quot;快&quot;，全句意为&quot;即使骑着奔马驾着风也不如</p>
+<h3 class="h3-answer">解析：出自《三峡》，&quot;疾&quot;意为&quot;快&quot;，全句意为&quot;即使骑着奔马驾着风也不如</h3>
 <p>它快&quot;。</p>
 <p>17. &quot;信而见疑&quot;中&quot;见&quot;的意思是：</p>
 <p>A. 看见 B. 拜见 C. 被 D. 通&quot;现&quot;</p>
 <p>答案：C</p>
-<p>解析：被动用法，&quot;见&quot;表被动，意为&quot;诚信却被怀疑&quot;。</p>
+<h3 class="h3-answer">解析：被动用法，&quot;见&quot;表被动，意为&quot;诚信却被怀疑&quot;。</h3>
 <p>18. &quot;非能水也，而绝江河&quot;中&quot;绝&quot;的意思是：</p>
 <p>A. 断绝 B. 极 C. 横渡 D. 绝妙</p>
 <p>答案：C</p>
-<p>解析：出自《劝学》，&quot;绝&quot;意为&quot;横渡&quot;。</p>
+<h3 class="h3-answer">解析：出自《劝学》，&quot;绝&quot;意为&quot;横渡&quot;。</h3>
 <p>19. &quot;欲信大义于天下&quot;中&quot;信&quot;的意思是：</p>
 <p>A. 诚信 B. 相信 C. 通&quot;伸&quot; D. 信息</p>
 <p>答案：C</p>
-<p>解析：出自《隆中对》，&quot;信&quot;通&quot;伸&quot;，意为&quot;伸张&quot;。</p>
+<h3 class="h3-answer">解析：出自《隆中对》，&quot;信&quot;通&quot;伸&quot;，意为&quot;伸张&quot;。</h3>
 <p>20. &quot;坐法去官&quot;中&quot;坐&quot;的意思是：</p>
 <p>A. 坐下 B. 因为 C. 犯罪 D. 座位</p>
 <p>答案：C</p>
-<p>解析：&quot;坐法&quot;意为&quot;犯法、因罪&quot;，&quot;坐法去官&quot;即&quot;因犯法而被免官&quot;。</p>
-<p>03文言文阅读 · 18个虚词用法（精选最重要的10个）</p>
-<p>一、知识精讲：10个核心虚词用法详解</p>
+<h3 class="h3-answer">解析：&quot;坐法&quot;意为&quot;犯法、因罪&quot;，&quot;坐法去官&quot;即&quot;因犯法而被免官&quot;。</h3></div>
+<div class="page"><h1>03文言文阅读 · 18个虚词用法（精选最重要的10个）</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲：10个核心虚词用法详解</h2>
 <p>高考规定18个文言虚词：而、何、乎、乃、其、且、若、所、为、焉、也、以、</p>
 <p>因、于、与、则、者、之。以下精选考查频率最高的10个详细讲解。</p>
 <p>虚</p>
@@ -793,7 +823,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>焉 于之（兼词） 相当于&quot;于+之&quot; 三人行，必有我师焉</p>
 <p>哪里，怎么 疑问代词 焉用亡郑以陪邻</p>
 <p>语气词 句末 始一反焉</p>
-<p>二、典例破题：虚词辨析方法</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题：虚词辨析方法</h2>
 <p>方法一：位置判断法</p>
 <p>虚词在句中位置不同，用法不同。如&quot;之&quot;在动词后多为代词，在名词之间多</p>
 <p>为&quot;的&quot;。</p>
@@ -802,80 +832,80 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>方法三：删除测试法</p>
 <p>去掉该虚词后句子是否仍通顺。如&quot;师道之不传也久矣&quot;去掉&quot;之&quot;仍通顺，说</p>
 <p>明&quot;之&quot;只是取消独立性。</p>
-<p>三、巩固提升：虚词检测题（15道）</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升：虚词检测题（15道）</h2>
 <p>1. 下列句中&quot;之&quot;的用法与&quot;辍耕之垄上&quot;相同的是：</p>
 <p>A. 学而时习之 B. 燕雀安知鸿鹄之志哉 C. 送杜少府之任蜀州 D. 何陋之有</p>
 <p>答案：C</p>
-<p>解析：题干中&quot;之&quot;是动词&quot;到……去&quot;，C项&quot;之任蜀州&quot;也是&quot;到蜀州赴任&quot;，用</p>
+<h3 class="h3-answer">解析：题干中&quot;之&quot;是动词&quot;到……去&quot;，C项&quot;之任蜀州&quot;也是&quot;到蜀州赴任&quot;，用</h3>
 <p>法相同。A项&quot;之&quot;为代词，B项&quot;之&quot;为&quot;的&quot;，D项&quot;之&quot;为宾语前置标志。</p>
 <p>2. &quot;青，取之于蓝而青于蓝&quot;中&quot;而&quot;的用法是：</p>
 <p>A. 并列 B. 转折 C. 承接 D. 修饰</p>
 <p>答案：B</p>
-<p>解析：&quot;而&quot;表转折，可译为&quot;却&quot;——靛青是从蓝草中提取的，却比蓝草更青。</p>
+<h3 class="h3-answer">解析：&quot;而&quot;表转折，可译为&quot;却&quot;——靛青是从蓝草中提取的，却比蓝草更青。</h3>
 <p>3. &quot;属予作文以记之&quot;中&quot;以&quot;的用法是：</p>
 <p>A. 用 B. 因为 C. 来，用来 D. 以致</p>
 <p>答案：C</p>
-<p>解析：出自《岳阳楼记》，&quot;以&quot;表目的，意为&quot;来、用来&quot;，全句：嘱托我写文</p>
+<h3 class="h3-answer">解析：出自《岳阳楼记》，&quot;以&quot;表目的，意为&quot;来、用来&quot;，全句：嘱托我写文</h3>
 <p>章来记述这件事。</p>
 <p>4. &quot;皆以美于徐公&quot;中&quot;于&quot;的意思是：</p>
 <p>A. 在 B. 比 C. 对 D. 从</p>
 <p>答案：B</p>
-<p>解析：出自《邹忌讽齐王纳谏》，&quot;于&quot;表比较，意为&quot;比&quot;——都认为比徐公</p>
+<h3 class="h3-answer">解析：出自《邹忌讽齐王纳谏》，&quot;于&quot;表比较，意为&quot;比&quot;——都认为比徐公</h3>
 <p>美。</p>
 <p>5. &quot;其真无马邪&quot;中&quot;其&quot;的用法是：</p>
 <p>A. 代词&quot;他的&quot; B. 代词&quot;那&quot; C. 难道（反问） D. 大概</p>
 <p>答案：C</p>
-<p>解析：出自《马说》，&quot;其&quot;表反问语气，意为&quot;难道&quot;——难道真的没有千里马</p>
+<h3 class="h3-answer">解析：出自《马说》，&quot;其&quot;表反问语气，意为&quot;难道&quot;——难道真的没有千里马</h3>
 <p>吗？</p>
 <p>6. &quot;身死国灭，为天下笑&quot;中&quot;为&quot;的读音和意思是：</p>
 <p>A. wèi 替 B. wéi 被 C. wéi 做 D. wèi 因为</p>
 <p>答案：B</p>
-<p>解析：读wéi，表被动，&quot;被天下人耻笑&quot;。</p>
+<h3 class="h3-answer">解析：读wéi，表被动，&quot;被天下人耻笑&quot;。</h3>
 <p>7. &quot;乃不知有汉，无论魏晋&quot;中&quot;乃&quot;的意思是：</p>
 <p>A. 于是 B. 竟然 C. 是 D. 才</p>
 <p>答案：B</p>
-<p>解析：出自《桃花源记》，&quot;乃&quot;表出乎意料，意为&quot;竟然&quot;——竟然不知道有汉</p>
+<h3 class="h3-answer">解析：出自《桃花源记》，&quot;乃&quot;表出乎意料，意为&quot;竟然&quot;——竟然不知道有汉</h3>
 <p>朝，更不用说魏晋了。</p>
 <p>8. &quot;学而不思则罔&quot;中&quot;则&quot;的用法是：</p>
 <p>A. 就 B. 却 C. 是 D. 只</p>
 <p>答案：A</p>
-<p>解析：&quot;则&quot;表承接，意为&quot;就&quot;——只学习不思考就会迷惑。</p>
+<h3 class="h3-answer">解析：&quot;则&quot;表承接，意为&quot;就&quot;——只学习不思考就会迷惑。</h3>
 <p>9. &quot;年且九十&quot;中&quot;且&quot;的意思是：</p>
 <p>A. 而且 B. 况且 C. 将要 D. 尚且</p>
 <p>答案：C</p>
-<p>解析：出自《愚公移山》，&quot;且&quot;作副词，意为&quot;将近、将要&quot;——年纪将近九十</p>
+<h3 class="h3-answer">解析：出自《愚公移山》，&quot;且&quot;作副词，意为&quot;将近、将要&quot;——年纪将近九十</h3>
 <p>岁了。</p>
 <p>10. &quot;三人行，必有我师焉&quot;中&quot;焉&quot;的用法是：</p>
 <p>A. 语气词 B. 兼词&quot;于之&quot; C. 哪里 D. 代词</p>
 <p>答案：B</p>
-<p>解析：&quot;焉&quot;=于之，&quot;必有我师焉&quot;=在其中一定有我的老师。</p>
+<h3 class="h3-answer">解析：&quot;焉&quot;=于之，&quot;必有我师焉&quot;=在其中一定有我的老师。</h3>
 <p>11. 下列&quot;之&quot;的用法与其他三项不同的是：</p>
 <p>A. 何陋之有 B. 句读之不知 C. 宋何罪之有 D. 辍耕之垄上</p>
 <p>答案：D</p>
-<p>解析：A、B、C三项中&quot;之&quot;都是宾语前置的标志，D项&quot;之&quot;是动词&quot;到……</p>
+<h3 class="h3-answer">解析：A、B、C三项中&quot;之&quot;都是宾语前置的标志，D项&quot;之&quot;是动词&quot;到……</h3>
 <p>去&quot;。</p>
 <p>12. 下列&quot;而&quot;的用法与&quot;蟹六跪而二螯&quot;相同的是：</p>
 <p>A. 青，取之于蓝而青于蓝 B. 温故而知新 C. 中峨冠而多髯者为东坡 D. 吾尝终</p>
 <p>日而思矣</p>
 <p>答案：C</p>
-<p>解析：题干中&quot;而&quot;表并列，C项&quot;峨冠而多髯&quot;也是并列。A项表转折，B项表承</p>
+<h3 class="h3-answer">解析：题干中&quot;而&quot;表并列，C项&quot;峨冠而多髯&quot;也是并列。A项表转折，B项表承</h3>
 <p>接，D项表修饰。</p>
 <p>13. &quot;以刀劈狼首&quot;和&quot;以中有足乐者&quot;中两个&quot;以&quot;的用法分别是：</p>
 <p>A. 用 / 因为 B. 来 / 用 C. 因为 / 用 D. 来 / 来</p>
 <p>答案：A</p>
-<p>解析：前者&quot;以刀&quot;=用刀，介词&quot;用&quot;；后者&quot;以中有足乐者&quot;=因为心中有足以快</p>
+<h3 class="h3-answer">解析：前者&quot;以刀&quot;=用刀，介词&quot;用&quot;；后者&quot;以中有足乐者&quot;=因为心中有足以快</h3>
 <p>乐的事，介词&quot;因为&quot;。</p>
 <p>14. &quot;此则岳阳楼之大观也&quot;中&quot;则&quot;的用法是：</p>
 <p>A. 就 B. 却 C. 是，就是 D. 那么</p>
 <p>答案：C</p>
-<p>解析：出自《岳阳楼记》，&quot;则&quot;表判断，可译为&quot;就是&quot;——这就是岳阳楼的壮</p>
+<h3 class="h3-answer">解析：出自《岳阳楼记》，&quot;则&quot;表判断，可译为&quot;就是&quot;——这就是岳阳楼的壮</h3>
 <p>丽景象。</p>
 <p>15. &quot;焉用亡郑以陪邻&quot;中&quot;焉&quot;的意思是：</p>
 <p>A. 于之 B. 哪里 C. 语气词 D. 代词</p>
 <p>答案：B</p>
-<p>解析：出自《烛之武退秦师》，&quot;焉&quot;作疑问代词，意为&quot;哪里、怎么&quot;——哪里</p>
-<p>用得着灭掉郑国来增加邻国的土地呢？</p>
-<p>04古代诗歌鉴赏 · 4大考点精讲</p>
+<h3 class="h3-answer">解析：出自《烛之武退秦师》，&quot;焉&quot;作疑问代词，意为&quot;哪里、怎么&quot;——哪里</h3>
+<p>用得着灭掉郑国来增加邻国的土地呢？</p></div>
+<div class="page"><h1>04古代诗歌鉴赏 · 4大考点精讲</h1>
 <p>考点一：常见意象归纳</p>
 <p>意象是诗歌鉴赏的基础，同一意象在不同诗歌中往往承载相似的情感内涵。</p>
 <p>意象类</p>
@@ -996,7 +1026,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>果（点明情感/手法）。</p>
 <p>答题公式：&quot;______&quot;字/句意为______，描绘了______的画面，运用了</p>
 <p>______手法，表达了______。</p>
-<h2>典例破题：真题示例</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题：真题示例</h2>
 <p>【2023年全国甲卷】阅读下面这首宋诗，回答问题。</p>
 <p>临江仙</p>
 <p>晁补之</p>
@@ -1006,13 +1036,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>枝。</p>
 <p>问题：词的结尾两句&quot;柳垂江上影，梅谢雪中枝&quot;描绘了怎样的画面？有何作</p>
 <p>用？</p>
-<h2>参考答案</h2>
+<h2 class="sec-answer"><span class="sec-ic">✓</span>参考答案</h2>
 <p>画面描绘：结尾两句描绘了春日江边柳树垂下倒影、雪中梅花凋谢只剩枝干的</p>
 <p>画面。前句写春景之美，后句暗含春去之憾，两幅画面虚实相生。</p>
 <p>作用：① 以景结情，含蓄蕴藉。将离别之情融入景物描写之中，不直接言情</p>
 <p>而情自见。② 柳&quot;留&quot;谐音，梅象征高洁，含蓄表达了对友人的挽留与赞美之</p>
 <p>情。③ 两句对仗工整，意境优美，余韵悠长。</p>
-<h2>巩固提升：诗歌鉴赏练习</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升：诗歌鉴赏练习</h2>
 <p>1. &quot;大漠孤烟直，长河落日圆&quot;描绘了怎样的画面？这两句诗好在哪里？</p>
 <p>答案与解析</p>
 <p>描绘了边塞沙漠中一缕孤烟直上云霄、黄河尽头一轮落日浑圆的壮阔画</p>
@@ -1029,8 +1059,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>运用比喻手法，将抽象的&quot;愁&quot;比作&quot;一江春水&quot;，化无形为有形。&quot;春水&quot;具有浩</p>
 <p>荡、绵延不绝的特点，形象地表现了愁绪之深重与无穷无尽；&quot;向东流&quot;暗示愁</p>
 <p>绪如江水一去不返，暗含亡国之恨无可挽回的绝望。设问起笔，自问自答，增</p>
-<p>强了感染力。</p>
-<p>05现代文阅读 · 3大考点精讲</p>
+<p>强了感染力。</p></div>
+<div class="page"><h1>05现代文阅读 · 3大考点精讲</h1>
 <p>考点一：论述类文本阅读技巧</p>
 <p>考查范围：社科类、政论类、学术类文章，以选择题为主（3道选择，9分）。</p>
 <p>核心技巧：三步阅读法</p>
@@ -1081,31 +1111,31 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>② 注意图表数据与文字材料的对应关系</p>
 <p>③ 主观题答案要&quot;综合+概括&quot;，不能照抄原文</p>
 <p>④ 关注材料来源、出处、时间，判断立场和时效性</p>
-<h2>典例破题：文学类文本真题示例</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题：文学类文本真题示例</h2>
 <p>【阅读选段】</p>
 <p>老汪哭丧着脸，嘴唇哆嗦着说：&quot;不中了，不中了……&quot;他蹲在门槛上，双手</p>
 <p>抱住头，像一尊石雕。灶膛里的火光照着他的脸，明一阵暗一阵。他想起二</p>
 <p>十年前，也是这样一个夜晚，他爹蹲在同样的位置，说的也是同样的话。</p>
 <p>问题：画线句子&quot;像一尊石雕&quot;运用了什么修辞手法？有什么表达效果？</p>
-<h2>参考答案</h2>
+<h2 class="sec-answer"><span class="sec-ic">✓</span>参考答案</h2>
 <p>手法：比喻。将老汪比作&quot;石雕&quot;。</p>
 <p>效果：① 生动形象地写出了老汪蹲在门槛上一动不动的姿态，表现他极度悲</p>
 <p>伤、绝望的心理状态；② &quot;石雕&quot;给人以冰冷、坚硬、凝固之感，暗示人物内</p>
 <p>心的痛苦已经使他麻木；③ 与后文&quot;他爹蹲在同样的位置&quot;形成呼应，揭示了</p>
 <p>命运的重复与无奈，深化了主题。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 论述类文本阅读中，以下哪种做法是最有效的？</p>
 <p>A. 先读完全文再逐题作答 B. 先看题目，带着问题定位原文 C. 只看选项，凭感</p>
 <p>觉选 D. 只读首尾段</p>
 <p>答案：B</p>
-<p>解析：论述类文本信息量大，先看题目再定位原文是最有效的方法，可以节省</p>
+<h3 class="h3-answer">解析：论述类文本信息量大，先看题目再定位原文是最有效的方法，可以节省</h3>
 <p>时间并提高准确率。</p>
 <p>2. 小说中环境描写的作用不包括：</p>
 <p>A. 渲染气氛 B. 烘托人物心情 C. 直接表达作者观点 D. 推动情节发展</p>
 <p>答案：C</p>
-<p>解析：环境描写的作用是间接的，它通过渲染气氛、烘托人物等方式间接服务</p>
-<p>于主题，不会直接表达作者观点。直接表达观点是议论的作用。</p>
-<p>06作文素材库 · 6大主题分类积累</p>
+<h3 class="h3-answer">解析：环境描写的作用是间接的，它通过渲染气氛、烘托人物等方式间接服务</h3>
+<p>于主题，不会直接表达作者观点。直接表达观点是议论的作用。</p></div>
+<div class="page"><h1>06作文素材库 · 6大主题分类积累</h1>
 <p>作文素材不求多，但求精。每个主题储备3-4个人物材料+2-3句金句，灵活组合即可</p>
 <p>应对绝大多数作文题目。</p>
 <p>主题一：家国情怀</p>
@@ -1149,8 +1179,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>&quot;惟创新者进，惟创新者强，惟创新者胜。&quot;</p>
 <p>&quot;关键核心技术是要不来、买不来、讨不来的。&quot;</p>
 <p>主题三：青年担当</p>
-<p>陈祥榕</p>
-<p>00后戍边烈士，牺牲时年仅19岁。战斗口号：&quot;清澈的爱，只为中国。&quot;</p>
+<p>陈祥榕</p></div>
+<div class="page"><h1>00后戍边烈士，牺牲时年仅19岁。战斗口号：&quot;清澈的爱，只为中国。&quot;</h1>
 <p>&quot;清澈的爱，只为中国。&quot;</p>
 <p>青春 奉献 爱国</p>
 <p>苏炳添</p>
@@ -1231,8 +1261,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>② 同一素材可以从不同角度使用（如袁隆平可用于&quot;家国情怀&quot;&quot;科技创新&quot;&quot;实</p>
 <p>干精神&quot;）。</p>
 <p>③ 积累素材重在&quot;用&quot;——每周写一段200字的素材运用片段，练到&quot;信手拈</p>
-<p>来&quot;。</p>
-<p>07语言文字运用 · 4大考点精讲</p>
+<p>来&quot;。</p></div>
+<div class="page"><h1>07语言文字运用 · 4大考点精讲</h1>
 <p>考点一：成语辨析（30组易混成语）</p>
 <p>高考成语题考查成语的使用是否恰当，重点是近义成语辨析和常见误用。</p>
 <p>序</p>
@@ -1416,14 +1446,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>拒绝邀请 我不去，没意思 实在抱歉，这次恐怕去不了</p>
 <p>询问长辈 你多大了 请问您今年高寿</p>
 <p>道歉 算我错了行了吧 非常抱歉，是我考虑不周</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 下列成语使用正确的一项是：</p>
 <p>A. 演出结束后，观众们万人空巷地涌向舞台。</p>
 <p>B. 他的一番话真可谓不刊之论，值得反复品味。</p>
 <p>C. 七月流火，天气越来越热了。</p>
 <p>D. 他考试得了第一名，同学们弹冠相庆。</p>
 <p>答案：B</p>
-<p>解析：A项&quot;万人空巷&quot;指人们都从巷子里出来，形容盛大集会，不能说&quot;万人空</p>
+<h3 class="h3-answer">解析：A项&quot;万人空巷&quot;指人们都从巷子里出来，形容盛大集会，不能说&quot;万人空</h3>
 <p>巷地涌向&quot;。B项&quot;不刊之论&quot;指不可修改的言论，正确。C项&quot;七月流火&quot;指火星</p>
 <p>西沉、天气转凉，不是天热。D项&quot;弹冠相庆&quot;是贬义，指小人得势。</p>
 <p>2. 下列句子没有语病的一项是：</p>
@@ -1432,7 +1462,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 我们要养成爱读书，特别是读经典名著。</p>
 <p>D. 阅读不仅能增长知识，而且能陶冶情操。</p>
 <p>答案：D</p>
-<p>解析：A项滥用介词导致主语残缺，删&quot;通过&quot;或&quot;使&quot;。B项主宾搭配不当，应</p>
+<h3 class="h3-answer">解析：A项滥用介词导致主语残缺，删&quot;通过&quot;或&quot;使&quot;。B项主宾搭配不当，应</h3>
 <p>为&quot;西湖的春天&quot;。C项缺宾语中心语，应为&quot;养成爱读书的习惯&quot;。</p>
 <p>3. 下列表达得体的一项是：</p>
 <p>A. 您寄来的稿件我已经看过了，对其中不妥之处，我冒昧地作了斧正。</p>
@@ -1440,10 +1470,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>C. 令爱这次在儿童画展上获奖，多亏您悉心指导，我们全家都很感谢您。</p>
 <p>D. 我写了一篇文章，请您拜读，多提宝贵意见。</p>
 <p>答案：C</p>
-<p>解析：A项&quot;斧正&quot;是请别人修改自己文章的敬辞，不能说自己&quot;斧正&quot;别人。B</p>
+<h3 class="h3-answer">解析：A项&quot;斧正&quot;是请别人修改自己文章的敬辞，不能说自己&quot;斧正&quot;别人。B</h3>
 <p>项&quot;笑纳&quot;是请别人收下礼物的敬辞，不能说自己&quot;笑纳&quot;。D项&quot;拜读&quot;是读别人</p>
-<p>文章的敬辞，不能说&quot;请您拜读&quot;。C项&quot;令爱&quot;是称呼对方女儿的敬辞，正确。</p>
-<p>08议论文写作结构 · 3大结构精讲</p>
+<p>文章的敬辞，不能说&quot;请您拜读&quot;。C项&quot;令爱&quot;是称呼对方女儿的敬辞，正确。</p></div>
+<div class="page"><h1>08议论文写作结构 · 3大结构精讲</h1>
 <p>考点一：总分总结构（最稳妥的基础结构）</p>
 <p>结构说明</p>
 <p>总—— 开头提出中心论点（100-150字）</p>
@@ -1481,7 +1511,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>车。</p>
 <p>【分析对比】正反对比得出结论：诚信者长远，失信者短命。</p>
 <p>【结尾】呼吁坚守诚信，从我做起。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 以&quot;坚持&quot;为话题，写一个总分总结构的提纲（分论点+事例）。</p>
 <p>参考提纲</p>
 <p>中心论点：坚持是通往成功的必经之路。</p>
@@ -1493,7 +1523,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>A. 论证&quot;读书的好处&quot; B. 论证&quot;网络利与弊&quot; C. 论证&quot;青春的价值&quot; D. 论证&quot;友谊</p>
 <p>的重要性&quot;</p>
 <p>答案：B</p>
-<p>解析：对比式结构最适合论证一个事物的两面性。&quot;网络利与弊&quot;天然具有正反</p>
+<h3 class="h3-answer">解析：对比式结构最适合论证一个事物的两面性。&quot;网络利与弊&quot;天然具有正反</h3>
 <p>对比的论证空间，适合用对比式结构先论述利的方面，再论述弊的方面，最后</p>
 <p>辩证总结。</p>
 <p>3. 一个好的分论点应该具备什么特点？</p>
@@ -1506,8 +1536,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>② 写前列提纲（中心论点+分论点+事例），写后对照结构检查。</p>
 <p>③ 积累素材的同时训练&quot;一材多用&quot;——同一个素材在不同主题下如何灵活运</p>
 <p>用。</p>
-<p>④ 阅读优秀范文，关注其结构布局和论证方法。</p>
-</div>
+<p>④ 阅读优秀范文，关注其结构布局和论证方法。</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -1533,6 +1562,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>

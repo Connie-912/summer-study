@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>化学暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#10b981;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#059669;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,18 +61,21 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>化学暑假衔接</h1></div>
-<div class="wrap">
-<div class="page">
-<p>新高二化学暑假衔接讲练</p>
-<p>高一升高二转理科 · 化学系统性补漏</p>
-<h2>知识精讲 典例破题 巩固提升 易错警示</h2>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>化学暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
 </div>
-<div class="page">
-<h1>专题01 · 物质的量</h1>
+<div class="wrap">
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>化学暑假衔接</h2>
+  <div class="hero-sub">高一升高二转理科 · 化学系统性补漏 知识精讲 典例破题 巩固提升 易错警示</div>
+  <div class="hero-meta"><span>📚 8 个专题</span><span>📄 70 页精讲</span><span>✓ 讲练结合</span></div>
+</div>
+<div class="page"><h1>专题01 · 物质的量</h1>
 <p>物质的量是高中化学计算的核心，串联起宏观与微观世界。本专题涵盖5大考</p>
 <p>点，基础薄弱者务必从概念关系网络图入手，逐步建立&quot;物质的量中心&quot;思维。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：n / N / NA / m / M / V / Vm / c 的关系网络</p>
 <p>核心关系网络（以物质的量 n 为中心）</p>
 <p>N（粒子数） ÷NA ↓ ↑ ×NA</p>
@@ -127,14 +158,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>用于两组分混合物的快速计算。设两组分 A、B 的某物理量分别为 a、b，混合后为 c，则：</p>
 <p>nA / nB = (c − b) / (a − c)</p>
 <p>适用场景：平均摩尔质量、平均相对原子质量、溶液混合浓度计算等。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】NA 陷阱综合</p>
 <p>NA 为阿伏伽德罗常数的值。下列说法正确的是（ ）</p>
 <p>A. 标准状况下，22.4 L H2O 含有的分子数为 NA</p>
 <p>B. 1 mol Na2O2 与足量 CO2 充分反应，转移电子数为 NA</p>
 <p>C. 常温常压下，22.4 L N2 含有的分子数为 NA</p>
 <p>D. 1 L 1 mol/L Na2CO3 溶液中含 CO32− 数为 NA</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>A × 标况下 H2O 为液态，不能用 22.4 L/mol。</p>
 <p>B √ 2Na2O2+2CO2=2Na2CO3+O2，Na2O2 中 O 为 −1 价，发生歧化：一半升为</p>
 <p>0 价（O2），一半降为 −2 价（Na2CO3）。每 2 mol Na2O2 转移 2 mol e−，故 1</p>
@@ -147,7 +178,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 定容时俯视刻度线</p>
 <p>C. 未用蒸馏水洗涤烧杯内壁</p>
 <p>D. 容量瓶使用前用 0.10 mol/L Na2CO3 溶液润洗</p>
-<h3>【答案】AC</h3>
+<h3 class="h3-answer">【答案】AC</h3>
 <p>A √ 偏低 左物右码放反后，实际称取质量 = 砝码质量 − 游码质量，偏小，n 偏小，</p>
 <p>c 偏低。</p>
 <p>B × 偏高 俯视使液面未达刻度线就已停止，V 偏小，c 偏高。</p>
@@ -156,7 +187,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>【典例3】十字交叉法</p>
 <p>已知 N2 和 CO2 混合气体的平均摩尔质量为 36 g/mol，求混合气体中 N2 与 CO2 的物质的</p>
 <p>量之比。</p>
-<h3>【答案】n(N2) : n(CO2) = 2 : 1</h3>
+<h3 class="h3-answer">【答案】n(N2) : n(CO2) = 2 : 1</h3>
 <p>M(N2)=28，M(CO2)=44，M平=36</p>
 <p>十字交叉法：</p>
 <p>N2:  28 ──────────── 44−36=8</p>
@@ -167,7 +198,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>验证：M平 = (2×28 + 1×44) / 3 = 100/3 ≈ 33.3... 不对，重新计算。</p>
 <p>n(N2) : n(CO2) = (44−36) : (36−28) = 8 : 8 = 1 : 1</p>
 <p>验证：M平 = (28+44)/2 = 36 √</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题（n/N/NA/m/M/V/Vm/c 关系）</p>
 <p>Q1-1</p>
 <p>0.5 mol H2SO4 中含 H 原子的物质的量为多少？含 O 原子的个数为多少？（NA 表示）</p>
@@ -283,7 +314,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>对气体，体积比 = 物质的量比。</p>
 <p>M平 = (4×28 + 1×32) / 5 = (112+32)/5 = 144/5 = 28.8 g/mol</p>
 <p>（通常取 29 g/mol 作为空气的平均摩尔质量。）</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题01 易错点警示</p>
 <p>标况条件：必须同时满足 0°C 和 101 kPa，只提&quot;标准状况&quot;才可用 Vm=22.4 L/mol。</p>
 <p>物质状态：标况下 H2O、SO3、CCl4、酒精、苯、碳原子数≥5的烷烃均为非气态。</p>
@@ -298,13 +329,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题02 · 氧化还原反应</h1>
+<p>·</p></div>
+<div class="page"><h1>专题02 · 氧化还原反应</h1>
 <p>氧化还原反应是贯穿高中化学的核心反应类型，从化合价变化角度理解&quot;氧</p>
 <p>化&quot;与&quot;还原&quot;的本质——电子转移。本专题从概念辨析到配平方法，循序渐进。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：核心概念辨析</p>
 <p>概念 定义</p>
 <p>化</p>
@@ -414,12 +443,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>S</p>
 <p>既氧化</p>
 <p>又还原 H2O2、Na2O2、SO2、Fe2+ 视反应条件而定</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】氧化还原概念辨析</p>
 <p>在反应 3Cl2 + 6KOH = 5KCl + KClO3 + 3H2O 中，被氧化的氯原子与被还原的氯原子的</p>
 <p>物质的量之比为（ ）</p>
 <p>A. 1:5   B. 5:1   C. 1:3   D. 3:1</p>
-<h3>【答案】A</h3>
+<h3 class="h3-answer">【答案】A</h3>
 <p>Cl2 中 Cl 为 0 价。产物中 KCl 的 Cl 为 −1 价（被还原），KClO3 的 Cl 为 +5 价（被</p>
 <p>氧化）。</p>
 <p>每生成 1 个 KClO3（1 个 Cl 被氧化），同时生成 5 个 KCl（5 个 Cl 被还原）。</p>
@@ -452,7 +481,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>检查电荷：左边 −1+5×(+2)+8×(+1)=−1+10+8=+17；右边 +2+5×(+3)=+2+15=+17</p>
 <p>√</p>
 <p>最终：MnO4− + 5Fe2+ + 8H+ = Mn2+ + 5Fe3+ + 4H2O</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q2-1</p>
 <p>下列反应中，水既不作氧化剂又不作还原剂的是（ ）</p>
@@ -460,7 +489,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 2F2 + 2H2O = 4HF + O2↑</p>
 <p>C. Cl2 + H2O = HCl + HClO</p>
 <p>D. 2H2O = 2H2↑ + O2↑</p>
-<h3>【答案】C</h3>
+<h3 class="h3-answer">【答案】C</h3>
 <p>A: H2O 中 H 从 +1 降到 0（被还原→氧化剂），×</p>
 <p>B: H2O 中 O 从 −2 升到 0（被氧化→还原剂），×</p>
 <p>C: Cl2 自身歧化（0→+1 和 0→−1），H2O 中 H 和 O 化合价均未变，√</p>
@@ -534,7 +563,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>Q2-10</p>
 <p>下列物质中，通常只作氧化剂的是（ ）</p>
 <p>A. Cl2   B. HNO3   C. FeSO4   D. SO2</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>A: Cl2 可歧化（Cl2+2NaOH=NaCl+NaClO+H2O），既作氧化剂又作还原剂。</p>
 <p>B: HNO3 中 N 为 +5 价（最高价），只能得电子→只作氧化剂（在氧化还原反应</p>
 <p>中）。</p>
@@ -556,7 +585,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>还原剂：HCl（Cl 从 −1 升到 0）</p>
 <p>氧化产物：Cl2</p>
 <p>还原产物：MnCl2</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题02 易错点警示</p>
 <p>概念混淆：&quot;氧化剂被还原，还原剂被氧化&quot;——氧化剂发生的是还原反应，还原剂发生</p>
 <p>的是氧化反应。</p>
@@ -572,14 +601,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>检查电荷守恒。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题03 · 离子反应</h1>
+<p>·</p></div>
+<div class="page"><h1>专题03 · 离子反应</h1>
 <p>离子反应是从微观粒子角度理解溶液中的化学反应，是高考必考内</p>
 <p>容。掌握电解质判断、离子方程式书写和离子共存三大核心，即可</p>
 <p>应对大部分题型。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：电解质与非电解质</p>
 <p>概</p>
 <p>念 定义 关键判断 举例</p>
@@ -705,12 +732,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. 沉淀判断：加酸/碱产生沉淀，沉淀颜色和溶解性</p>
 <p>3. 气体判断：加酸产生气体（CO2、SO2等），加碱产生气体（NH3）</p>
 <p>4. 电荷守恒：溶液中阳离子总电荷 = 阴离子总电荷</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】电解质判断</p>
 <p>下列物质中属于电解质的是（ ）</p>
 <p>① 铜 ② NaCl 晶体 ③ 稀硫酸 ④ CO2 ⑤ 液态 HCl ⑥ BaSO4 ⑦ 蔗糖</p>
 <p>A. ①②③⑤   B. ②⑤⑥   C. ②③⑤⑥   D. 全部</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>① 铜是单质，不是化合物→不是电解质</p>
 <p>② NaCl 晶体是盐，熔融或溶于水导电→是电解质 √</p>
 <p>③ 稀硫酸是混合物→不是电解质（H2SO4 才是电解质）</p>
@@ -725,7 +752,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 碳酸钙与醋酸反应：CaCO3 + 2H+ = Ca2+ + H2O + CO2↑</p>
 <p>C. 硫酸铜与氢氧化钡反应：Ba2+ + SO42− = BaSO4↓</p>
 <p>D. 氯气与水反应：Cl2 + H2O = H+ + Cl− + HClO</p>
-<h3>【答案】D</h3>
+<h3 class="h3-answer">【答案】D</h3>
 <p>A × Fe 与稀 H2SO4 生成 Fe2+，不是 Fe3+：Fe + 2H+ = Fe2+ +</p>
 <p>H2↑</p>
 <p>B × 醋酸是弱酸，不能拆：CaCO3 + 2CH3COOH = Ca2+ +</p>
@@ -739,13 +766,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. Cu2+、Na+、SO42−、NO3−</p>
 <p>C. Fe2+、H+、NO3−、SO42−</p>
 <p>D. Na+、K+、OH−、Cl−</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>A × 强酸性溶液中，CO32− + 2H+ = H2O + CO2↑</p>
 <p>B √ 四种离子在酸性条件下均不反应，可大量共存。</p>
 <p>C × 酸性条件下 NO3− 具有强氧化性，会氧化 Fe2+：3Fe2++NO3−</p>
 <p>+4H+=3Fe3++NO↑+2H2O</p>
 <p>D × 强酸性溶液中 OH− + H+ = H2O</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q3-1</p>
 <p>判断下列说法是否正确，并说明理由：</p>
@@ -818,7 +845,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. Na+、CO32−、K+、NO3−</p>
 <p>C. Fe3+、Na+、Cl−、SO42−</p>
 <p>D. Ba2+、Na+、SO42−、Cl−</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>A × MnO4− 为紫色，不符合&quot;无色&quot;条件。</p>
 <p>B √ 四种离子相互不反应，且均为无色。</p>
 <p>C × Fe3+ 为黄色，不符合&quot;无色&quot;条件。</p>
@@ -829,7 +856,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. Na+、K+、CO32−、NO3−</p>
 <p>C. K+、Na+、CH3COO−、Cl−</p>
 <p>D. Fe2+、H+、NO3−、SO42−</p>
-<h3>【答案】A</h3>
+<h3 class="h3-answer">【答案】A</h3>
 <p>pH=1 即强酸性，c(H+)=0.1 mol/L。</p>
 <p>A √ 四种离子在酸性条件下均不反应。</p>
 <p>B × CO32− + 2H+ = H2O + CO2↑。</p>
@@ -890,7 +917,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>4 + 10 = −8 + 2x → 14 = 2x − 8? 不对，应为：4+10 = 8 + 2x</p>
 <p>→ 14 = 8 + 2x → 2x = 6 → x = 3</p>
 <p>SO42− : Cl− = 3 : 8</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题03 易错点警示</p>
 <p>电解质必须是化合物：单质（如 Cu、Cl2）和混合物（如盐酸、氨水）不</p>
 <p>是电解质。</p>
@@ -905,13 +932,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>NO3− 在酸性条件下才是强氧化剂：中性或碱性条件下 NO3− 氧化性很</p>
 <p>弱。</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题04 · 钠及其化合物</h1>
+<p>·</p></div>
+<div class="page"><h1>专题04 · 钠及其化合物</h1>
 <p>钠是典型的活泼金属，其化合物之间存在清晰完整的转化关系网</p>
 <p>络。掌握化学方程式书写和物质性质对比是学习本专题的关键。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：Na / Na2O / Na2O2 / Na2CO3 / NaHCO3 的</p>
 <p>转化关系</p>
 <p>钠及其化合物转化关系图</p>
@@ -1004,12 +1029,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2NaHCO3 = Na2CO3 + CO2↑ + H2O（煅烧）</p>
 <p>关键：先通 NH3 使溶液呈碱性，再通 CO2，利用 NaHCO3 溶解度较小而析</p>
 <p>出。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】Na2O2 的性质</p>
 <p>将 Na2O2 投入含有酚酞的水中，观察到的现象是（ ）</p>
 <p>A. 溶液变红，无气泡   B. 溶液变红，有气泡，后褪色   C. 溶液不变色   D. 溶</p>
 <p>液变蓝</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>2Na2O2 + 2H2O = 4NaOH + O2↑</p>
 <p>生成 NaOH 使酚酞变红，同时产生 O2 气泡。Na2O2 具有强氧化性</p>
 <p>和漂白性，会使红色褪去。故现象为：先变红，有气泡，后褪色。选</p>
@@ -1020,7 +1045,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 分别溶于水，比较溶解度</p>
 <p>C. 分别滴加同浓度盐酸，比较反应速率</p>
 <p>D. 分别加入 BaCl2 溶液，观察是否产生沉淀</p>
-<h3>【答案】D</h3>
+<h3 class="h3-answer">【答案】D</h3>
 <p>A √ NaHCO3 加热分解产生 CO2，Na2CO3 不分解。</p>
 <p>B √ Na2CO3 溶解度大于 NaHCO3。</p>
 <p>C √ NaHCO3 与盐酸反应立即产生气泡，Na2CO3 先无气泡后产生</p>
@@ -1044,7 +1069,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>碱性溶液中溶解度大）。</p>
 <p>析出晶体：NaHCO3（溶解度较小）</p>
 <p>煅烧产物：Na2CO3（纯碱）</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q4-1</p>
 <p>写出下列反应的化学方程式：</p>
@@ -1086,7 +1111,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 所有金属元素都有焰色反应</p>
 <p>C. 观察钾的焰色需透过蓝色钴玻璃</p>
 <p>D. 焰色反应可用于鉴别所有金属元素</p>
-<h3>【答案】C</h3>
+<h3 class="h3-answer">【答案】C</h3>
 <p>A × 焰色反应是物理变化（电子跃迁发光）。</p>
 <p>B × 不是所有金属都有特征焰色（如 Fe、Pt 等无明显焰色）。</p>
 <p>C √ K 的紫色焰色易被 Na 的黄色干扰，需透过蓝色钴玻璃滤去黄</p>
@@ -1133,7 +1158,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>当 1/2 &lt; n(CO2)/n(NaOH) &lt; 1 时，产物为 Na2CO3 和 NaHCO3 的</p>
 <p>混合物；</p>
 <p>当 n(CO2)/n(NaOH) ≥ 1 时，产物为 NaHCO3。</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题04 易错点警示</p>
 <p>Na 与盐溶液反应：Na 先与水反应，不能直接置换出金属（如 Na 投入</p>
 <p>CuSO4 溶液生成 Cu(OH)2 沉淀而非 Cu）。</p>
@@ -1146,13 +1171,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题05 · 氯及其化合物</h1>
+<p>·</p></div>
+<div class="page"><h1>专题05 · 氯及其化合物</h1>
 <p>氯是典型的非金属元素，Cl2 既是重要的化工原料也是高考常考物</p>
 <p>质。掌握氯气性质、氯水成分和漂白粉原理是本专题核心。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：Cl2 的性质</p>
 <p>反应类型 化学方程式 现象/说明</p>
 <p>与金属 Na 2Na + Cl2 = 2NaCl 剧烈燃烧，黄色</p>
@@ -1208,12 +1231,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>氯水与 Na2CO3 H+ 产生气泡</p>
 <p>（CO2↑）</p>
 <p>氯水使品红溶液褪色HClO 褪色</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】氯水性质</p>
 <p>新制氯水与久置氯水相比，下列成分中减少的是（ ）</p>
 <p>① Cl2 ② HClO ③ H+ ④ Cl−</p>
 <p>A. ①②   B. ②③   C. ③④   D. ①④</p>
-<h3>【答案】A</h3>
+<h3 class="h3-answer">【答案】A</h3>
 <p>新制氯水：Cl2+H2O⇌HCl+HClO</p>
 <p>久置过程中：2HClO = 2HCl + O2↑（见光分解），平衡</p>
 <p>Cl2+H2O⇌HCl+HClO 不断向右移动。</p>
@@ -1236,7 +1259,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>氧化剂：MnO2（Mn 从 +4 降到 +2）</p>
 <p>尾气吸收：NaOH 溶液</p>
 <p>离子方程式：Cl2 + 2OH− = Cl− + ClO− + H2O</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q5-1</p>
 <p>写出 Cl2 与下列物质反应的化学方程式：</p>
@@ -1262,7 +1285,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>Q5-3</p>
 <p>下列物质中，能使干燥的有色布条褪色的是（ ）</p>
 <p>A. 干燥的 Cl2   B. 氯水   C. 液氯   D. NaClO 溶液</p>
-<h3>【答案】BD</h3>
+<h3 class="h3-answer">【答案】BD</h3>
 <p>A × 干燥 Cl2 无漂白性（漂白需要 HClO）。</p>
 <p>B √ 氯水中含 HClO，具有漂白性。</p>
 <p>C × 液氯是纯净的 Cl2（液态），无 HClO，无漂白性。</p>
@@ -1316,7 +1339,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>n(Cl2) = 71 g / 71 g/mol = 1 mol</p>
 <p>n(Cl 原子) = 1 × 2 = 2 mol</p>
 <p>V(Cl2) = 1 mol × 22.4 L/mol = 22.4 L</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题05 易错点警示</p>
 <p>干燥 Cl2 无漂白性：漂白作用的是 HClO，不是 Cl2 本身。干燥的 Cl2 不</p>
 <p>能使有色布条褪色。</p>
@@ -1332,13 +1355,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题06 · 铁和铝及其化合物</h1>
+<p>·</p></div>
+<div class="page"><h1>专题06 · 铁和铝及其化合物</h1>
 <p>铁和铝是两种最重要的金属元素，Fe 的变价特性（+2/+3）和 Al</p>
 <p>的两性（既溶于酸又溶于碱）是高考的核心考点。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：Fe/Fe2+/Fe3+ 三角转化</p>
 <p>铁三角转化关系</p>
 <p>转化 化学方程式 条件</p>
@@ -1430,11 +1451,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>先产生白色沉淀，后沉淀溶解：Al3+</p>
 <p>+3OH−=Al(OH)3↓，</p>
 <p>Al(OH)3+OH−=AlO2−+2H2O</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】铁三角</p>
 <p>下列试剂中，不能使 Fe2+ 转化为 Fe3+ 的是（ ）</p>
 <p>A. 氯水   B. KMnO4(H+)   C. 稀硝酸   D. Fe 粉</p>
-<h3>【答案】D</h3>
+<h3 class="h3-answer">【答案】D</h3>
 <p>A √ Cl2 + 2Fe2+ = 2Fe3+ + 2Cl−</p>
 <p>B √ MnO4− + 5Fe2+ + 8H+ = Mn2+ + 5Fe3+ + 4H2O</p>
 <p>C √ 3Fe2+ + 4H+ + NO3− = 3Fe3+ + NO↑ + 2H2O</p>
@@ -1443,7 +1464,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>下列物质中，既能与盐酸反应又能与 NaOH 溶液反应的是（ ）</p>
 <p>① Al ② Al2O3 ③ Al(OH)3 ④ NaHCO3 ⑤ (NH4)2CO3</p>
 <p>A. ①②③   B. ①②③④   C. ①②③⑤   D. 全部</p>
-<h3>【答案】D</h3>
+<h3 class="h3-answer">【答案】D</h3>
 <p>①②③ 铝及其氧化物/氢氧化物具有两性，均能与酸和碱反应。</p>
 <p>④ NaHCO3：与 HCl 反应 HCO3−+H+=H2O+CO2↑；与 NaOH 反</p>
 <p>应 HCO3−+OH−=CO32−+H2O。</p>
@@ -1456,7 +1477,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 滴加 NaOH 溶液</p>
 <p>C. 先滴加 KSCN 溶液，不变色，再滴加氯水</p>
 <p>D. 先滴加氯水，再滴加 KSCN 溶液</p>
-<h3>【答案】C</h3>
+<h3 class="h3-answer">【答案】C</h3>
 <p>A: 只加 KSCN，若不变色只能说明无 Fe3+，不能证明含 Fe2+。</p>
 <p>B: 加 NaOH，Fe2+ 产生白色沉淀后变灰绿色再变红褐色，但现象不</p>
 <p>敏感。</p>
@@ -1464,7 +1485,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>溶液变血红色→证明含 Fe2+。</p>
 <p>D: 先加氯水已将 Fe2+ 氧化为 Fe3+，再加 KSCN 变红，但不能说明</p>
 <p>原溶液中是否含 Fe3+。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q6-1</p>
 <p>写出 Fe 与下列物质反应的化学方程式，并注明反应类型：</p>
@@ -1558,7 +1579,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>③ 另取少量溶液，加过量 NaOH 溶液：先产生沉淀，后沉淀部分溶</p>
 <p>解（Al(OH)3 溶于过量 NaOH），则含 Al3+；不溶解的沉淀若为红褐</p>
 <p>色（Fe(OH)3），验证了 Fe3+。</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题06 易错点警示</p>
 <p>Fe 与氧化剂反应：弱氧化剂（H+、Cu2+、S）→ Fe2+；强氧化剂</p>
 <p>（Cl2、Br2、浓HNO3）→ Fe3+。</p>
@@ -1572,14 +1593,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题07 · 元素周期表与周期律</h1>
+<p>·</p></div>
+<div class="page"><h1>专题07 · 元素周期表与周期律</h1>
 <p>元素周期表是化学的&quot;地图&quot;，元素周期律揭示了元素性质随原子序</p>
 <p>数递增的周期性变化规律。掌握&quot;位—构—性&quot;三者关系是解题关</p>
 <p>键。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：原子结构</p>
 <p>微粒 符号 相对质量 电荷 位置</p>
 <p>质子 p ≈1 +1 原子核内</p>
@@ -1626,7 +1645,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>气态氢化物稳</p>
 <p>定性 — 越稳定</p>
 <p>原电池 作负极 —</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】位—构—性关系</p>
 <p>已知 X 元素的原子序数为 17，回答：</p>
 <p>(1) X 在周期表中的位置是______</p>
@@ -1657,7 +1676,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>④ HClO4 的酸性比 H2SO4 强</p>
 <p>⑤ Cl2 与 Fe 反应生成 FeCl3，S 与 Fe 反应生成 FeS</p>
 <p>A. ①②③④⑤   B. ②③④⑤   C. ②③④   D. ②③⑤</p>
-<h3>【答案】B</h3>
+<h3 class="h3-answer">【答案】B</h3>
 <p>① 无氧酸的酸性强弱不能说明非金属性强弱（HCl 是强酸，H2S 是</p>
 <p>弱酸，但 HF 是弱酸而 F 非金属性最强），×</p>
 <p>② 气态氢化物越稳定，非金属性越强，√</p>
@@ -1666,7 +1685,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⑤ Cl2 将 Fe 氧化到 +3 价（最高价），S 只将 Fe 氧化到 +2 价，说明</p>
 <p>Cl2 氧化性更强→非金属性更强，√</p>
 <p>正确的有②③④⑤，选 B。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q7-1</p>
 <p>某元素原子核内有 20 个中子，质量数为 39，该元素的原子序数为______，</p>
@@ -1728,7 +1747,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 酸性：HClO4 &gt; H2SO4 &gt; H3PO4 &gt; H2SiO3</p>
 <p>C. 碱性：KOH &gt; NaOH &gt; LiOH</p>
 <p>D. 热稳定性：HF &gt; HCl &gt; HBr &gt; HI</p>
-<h3>【答案】A</h3>
+<h3 class="h3-answer">【答案】A</h3>
 <p>A × 同周期从左到右原子半径减小，应为 Na &gt; Mg &gt; Al。</p>
 <p>B √ 同周期最高价含氧酸酸性增强，Si-P-S-Cl 正确。</p>
 <p>C √ 同主族上→下金属性增强，碱性增强。</p>
@@ -1772,7 +1791,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>(2) 位置：第三周期 VIIA 族</p>
 <p>(3) 氧化性：Cl2 是强氧化剂，氧化性比 Br2 强，比 F2 弱。</p>
 <p>(4) 气态氢化物：HCl</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题07 易错点警示</p>
 <p>原子半径比较：同周期左&gt;右，同主族上&lt;下。电子层结构相同的离子，核</p>
 <p>电荷数越大半径越小。</p>
@@ -1786,15 +1805,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>专题08 · 化学键与分子结构（预习</h1>
+<p>·</p></div>
+<div class="page"><h1>专题08 · 化学键与分子结构（预习型）</h1>
 <p>型）</p>
 <p>本专题为高二上学期预习内容，从微观角度理解原子如何结合成分</p>
 <p>子。掌握离子键与共价键的本质区别、电子式的书写以及分子间作</p>
 <p>用力。</p>
-<p>一、知识精讲</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>一、知识精讲</h2>
 <p>考点1：离子键与共价键</p>
 <p>比较 离子键 共价键</p>
 <p>定义 阴阳离子间的静电作用原子间通过共用电子对形</p>
@@ -1886,7 +1903,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>氢键存在的条件</p>
 <p>分子中必须含有与电负性强的原子（N、O、F）相连的 H 原子。如 H2O、</p>
 <p>HF、NH3、CH3CH2OH 等。</p>
-<p>二、典例破题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>二、典例破题</h2>
 <p>【典例1】化学键类型判断</p>
 <p>下列物质中，只含有离子键的是______，只含有共价键的是______，既含</p>
 <p>有离子键又含有共价键的是______。</p>
@@ -1901,7 +1918,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>下列电子式书写正确的是（ ）</p>
 <p>A. H2O：H∶O∶H   B. CO2：∶O∶C∶O∶   C. NaCl：Na∶Cl∶   D. NH3：H∶N∶H</p>
 <p>（H在上方）</p>
-<h3>【答案】A</h3>
+<h3 class="h3-answer">【答案】A</h3>
 <p>A √ H2O 中 O 有 2 对成键电子和 2 对孤对电子（共 8 电子），H 为</p>
 <p>2 电子稳定。</p>
 <p>B × CO2 中 C 与每个 O 形成双键，电子式为 ∶O∶∶C∶∶O∶（C 和 O 均</p>
@@ -1917,7 +1934,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>氢键的强度远大于分子间作用力，破坏氢键需要更多能量，因此 H2O</p>
 <p>的沸点远高于 H2S。</p>
 <p>同理：HF 沸点 &gt; HCl，NH3 沸点 &gt; PH3。</p>
-<p>三、巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>三、巩固提升</h2>
 <p>考点1 巩固题</p>
 <p>Q8-1</p>
 <p>判断下列物质中化学键的类型：</p>
@@ -1933,7 +1950,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 含有共价键的化合物一定是共价化合物</p>
 <p>C. 离子化合物中一定不含共价键</p>
 <p>D. 共价化合物中可能含离子键</p>
-<h3>【答案】A</h3>
+<h3 class="h3-answer">【答案】A</h3>
 <p>A √ 含离子键必为离子化合物（定义）。</p>
 <p>B × 如 NaOH 含共价键（O—H），但 NaOH 是离子化合物。</p>
 <p>C × 离子化合物可含共价键，如 NaOH、NH4Cl、Na2O2。</p>
@@ -1984,7 +2001,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>Q8-8</p>
 <p>下列物质中，分子间存在氢键的是（ ）</p>
 <p>A. HCl   B. CH4   C. NH3   D. H2S</p>
-<h3>【答案】C</h3>
+<h3 class="h3-answer">【答案】C</h3>
 <p>A × HCl 中 Cl 电负性不够强，一般不形成显著氢键。</p>
 <p>B × CH4 中 C—H 键极性很弱，不形成氢键。</p>
 <p>C √ NH3 中 N—H 键极性较强，N 有孤对电子，可形成 N—H···N 氢</p>
@@ -1999,7 +2016,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>原因二：NH3 与 H2O 发生化学反应：NH3+H2O⇌NH3·H2O⇌NH4+</p>
 <p>+OH−。</p>
 <p>物理溶解（氢键）+ 化学溶解（反应）共同导致 NH3 溶解度极大。</p>
-<p>四、易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>四、易错警示</h2>
 <p>⚠ 专题08 易错点警示</p>
 <p>离子化合物 vs 共价化合物：含离子键的一定是离子化合物；但离子化合</p>
 <p>物中可能同时含共价键（如 NaOH、NH4Cl）。</p>
@@ -2015,8 +2032,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>氢键。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
+<p>·</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -2042,6 +2058,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>

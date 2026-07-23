@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>历史暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#991b1b;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#92400e;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,14 +61,19 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>历史暑假衔接</h1></div>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>历史暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
 <div class="wrap">
-<div class="page">
-<p>新高二历史暑假衔接讲练</p>
-<p>系统复习高一内容，夯实基础，迎接高二</p>
-<p>8个专题 知识精讲 典例破题 巩固提升</p>
-<p>适用对象：高一升高二文科方向学生 | 2026年暑假</p>
-<p>1 知识精讲</p>
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>历史暑假衔接</h2>
+  <div class="hero-sub">系统复习高一内容，夯实基础，迎接高二 8个专题 知识精讲 典例破题 巩固提升 适用对象：高一升高二文科方向学生 | 20</div>
+  <div class="hero-meta"><span>📚 8 个专题</span><span>📄 45 页精讲</span><span>✓ 讲练结合</span></div>
+</div>
+<div class="page"><h1>专题一：先秦时期</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>先秦指秦朝建立前的历史阶段，包括远古传说时代、夏商周三代及春秋</p>
 <p>战国时期。这是中华文明的奠基期。</p>
@@ -85,8 +118,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>庄子：逍遥、齐物</p>
 <p>韩非子（法家）：法治、中央集权、变法革新</p>
 <p>墨子（墨家）：兼爱、非攻、尚贤</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>西周时期，周天子将土地和人民分封给诸侯，诸侯在封国内享有世袭统</p>
 <p>治权，同时承担向周王进贡、朝觐、军事保卫等义务。这种制度是</p>
 <p>（　　）</p>
@@ -94,7 +127,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 分封制</p>
 <p>C. 郡县制</p>
 <p>D. 行省制</p>
-<p>解析：题干关键信息&quot;将土地和人民分封给诸侯&quot;&quot;世袭统治权&quot;&quot;进贡、朝觐、</p>
+<h3 class="h3-answer">解析：题干关键信息&quot;将土地和人民分封给诸侯&quot;&quot;世袭统治权&quot;&quot;进贡、朝觐、</h3>
 <p>军事保卫&quot;，这些都是分封制的典型特征。宗法制是以血缘关系为核心的继</p>
 <p>•</p>
 <p>•</p>
@@ -109,21 +142,21 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>承制度；郡县制是秦以后的地方行政制度，官员由中央任免；行省制是元朝</p>
 <p>的制度。故选 B。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;治世不一道，便国不法古。故汤武不循古而王，夏殷不易礼而亡。反</p>
 <p>古者不可非，而循礼者不足多。&quot;</p>
 <p>——《史记·商君列传》</p>
 <p>问题：</p>
 <p>（1）材料反映了哪位思想家的主张？他属于哪个学派？（2分）</p>
 <p>（2）结合所学知识，说明其变法的主要内容及影响。（8分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）商鞅；法家。（2分）</p>
 <p>（2）主要内容：废井田，开阡陌，承认土地私有；奖励耕战；推行县制，</p>
 <p>由国君直接派官吏治理；统一度量衡；实行什伍连坐制。（答出4点即可，4</p>
 <p>分）</p>
 <p>影响：秦国经济得到发展，军队战斗力增强，成为战国后期最富强的国家，</p>
 <p>为秦统一六国奠定了基础。（4分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>下列关于宗法制的表述，正确的是（　　）</p>
 <p>A A. 宗法制是西周时期确立的土地制度</p>
@@ -156,7 +189,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>DD. 学术下移，文化繁荣</p>
 <p>答案：B。根本原因要从经济、社会结构找。春秋战国时期生产力发展引</p>
 <p>起社会大变革，士阶层崛起并活跃于政治舞台，为百家争鸣提供了条件。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠先秦时期常见错误</p>
 <p>禅让制与世袭制：禅让制是原始社会推举贤能的制度（尧舜禹），启</p>
 <p>建立夏朝后变为世袭制，标志着&quot;公天下&quot;变为&quot;家天下&quot;。</p>
@@ -172,8 +205,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题二：秦汉时期</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>秦汉是中国历史上第一个大一统时期。秦朝创立了中央集权制度的基本</p>
 <p>框架，汉朝继承并完善，奠定了中国古代政治制度的基础。</p>
@@ -211,17 +245,17 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>治国思想 法家思想，严刑峻法汉初道家无为→汉武帝后独尊儒术</p>
 <p>民族关系 北击匈奴、南征百越北击匈奴、通西域、和亲政策</p>
 <p>灭亡原因 暴政、赋役繁重 外戚宦官专权、土地兼并、黄巾起义</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>秦始皇在全国范围内推行郡县制，郡守和县令的产生方式是（　　）</p>
 <p>A. 世袭继承</p>
 <p>B. 考试选拔</p>
 <p>C. 皇帝任命</p>
 <p>D. 地方推举</p>
-<p>解析：郡县制下，郡守和县令都由皇帝直接任免，不得世袭，这是郡县制与</p>
+<h3 class="h3-answer">解析：郡县制下，郡守和县令都由皇帝直接任免，不得世袭，这是郡县制与</h3>
 <p>分封制的根本区别。考试选拔是科举制（隋朝开始）；地方推举是察举制</p>
 <p>（汉朝）。故选 C。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;今诸侯或连城数十，地方千里，缓则骄奢易为淫乱，急则阻其强而合</p>
 <p>从以逆京师……愿陛下令诸侯得推恩分子弟，以地侯之。彼人人喜得</p>
 <p>所愿，上以德施，实分其国，不削而稍弱矣。&quot;</p>
@@ -235,14 +269,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>问题：</p>
 <p>（1）材料反映了什么问题？主父偃提出了什么建议？（4分）</p>
 <p>（2）该建议起到了什么作用？体现了汉武帝怎样的治国策略？（6分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）问题：汉初郡国并行，诸侯王势力强大，威胁中央集权。（2分）</p>
 <p>建议：颁布&quot;推恩令&quot;，允许诸侯王将封地分给子弟，建立侯国。（2分）</p>
 <p>（2）作用：诸侯国越分越小，无力与中央对抗，中央集权得到加强。（3</p>
 <p>分）</p>
 <p>策略：以柔克刚、分化瓦解，用和平手段解决王国问题，避免流血冲突。</p>
 <p>（3分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>秦朝统一后，在全国范围内推行的标准文字是（　　）</p>
 <p>A A. 甲骨文</p>
@@ -275,7 +309,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>DD. 农民起义被镇压后政权瓦解</p>
 <p>答案：B。秦朝和隋朝都是二世而亡，主要原因是暴政、大兴土木（长</p>
 <p>城/大运河）、赋役繁重，引发农民起义。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠秦汉时期常见错误</p>
 <p>郡县制与分封制：郡县制官员由皇帝任免，不能世袭；分封制诸侯世</p>
 <p>袭统治。郡县制是官僚政治，分封制是贵族政治。</p>
@@ -293,8 +327,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题三：魏晋南北朝</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>魏晋南北朝（220-589年）是中国历史上的分裂动荡时期，但也是民族</p>
 <p>大融合、江南开发、思想文化多元发展的重要阶段。</p>
@@ -339,8 +374,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>玄学兴起：以老庄思想解释儒家经典，代表有竹林七贤</p>
 <p>文学艺术：书法（王羲之&quot;书圣&quot;）、绘画（顾恺之）、文学（田园诗陶渊</p>
 <p>明）</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>北魏孝文帝改革中，移风易俗的措施不包括（　　）</p>
 <p>A. 迁都洛阳</p>
 <p>B. 改穿汉服</p>
@@ -358,10 +393,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>解析：注意题干限定&quot;移风易俗&quot;。迁都洛阳、穿汉服、说汉话都是改变风俗</p>
+<h3 class="h3-answer">解析：注意题干限定&quot;移风易俗&quot;。迁都洛阳、穿汉服、说汉话都是改变风俗</h3>
 <p>习惯的措施；均田制是土地制度和经济政策，不属于移风易俗范畴。故选</p>
 <p>C。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;自晋宋以来，号洛阳为荒土……昨至洛阳，始知衣冠士族，并在中</p>
 <p>原，礼仪富盛，人物殷阜。&quot;</p>
 <p>——《洛阳伽蓝记》（北魏·杨衒之）</p>
@@ -369,7 +404,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（1）材料反映了什么历史现象？（2分）</p>
 <p>（2）结合所学，分析出现这一现象的主要原因。（4分）</p>
 <p>（3）这一现象对当时及后世产生了什么影响？（4分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）材料反映了北魏后期洛阳的繁荣景象，以及北方民族融合、经济恢复</p>
 <p>发展的历史现象。（2分）</p>
 <p>（2）主要原因：北魏孝文帝迁都洛阳并推行汉化改革，促进了北方经济的</p>
@@ -377,7 +412,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>点即可，4分）</p>
 <p>（3）影响：促进了北方民族大融合，推动了北方经济文化的发展，为隋唐</p>
 <p>时期的统一和繁荣奠定了基础。（4分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>三国两晋南北朝时期，江南地区得以开发的最主要原因是（　　）</p>
 <p>A A. 江南自然条件优越</p>
@@ -412,7 +447,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：C。社会根源要从社会现实找。魏晋南北朝战乱频繁，人民生活困</p>
 <p>苦，佛教的来世观念和解脱思想为人们提供了精神寄托，这是佛教盛行的</p>
 <p>根本原因。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠魏晋南北朝常见错误</p>
 <p>江南开发与重心南移：魏晋南北朝时期江南开始开发，为经济重心南</p>
 <p>移奠定基础；经济重心南移完成是在南宋，不是这一时期。</p>
@@ -427,8 +462,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题四：隋唐时期</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>隋唐（581-907年）是中国封建社会的鼎盛时期，国家统一、经济繁</p>
 <p>荣、文化开放、对外交流频繁，对周边国家产生深远影响。</p>
@@ -503,24 +539,24 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>唐朝中央政府中，负责执行政令的机构是（　　）</p>
 <p>A. 中书省</p>
 <p>B. 门下省</p>
 <p>C. 尚书省</p>
 <p>D. 御史台</p>
-<p>解析：三省分工明确：中书省起草诏令（决策），门下省审核封驳（审</p>
+<h3 class="h3-answer">解析：三省分工明确：中书省起草诏令（决策），门下省审核封驳（审</h3>
 <p>议），尚书省负责执行（下设六部具体执行）。御史台是监察机构。故选</p>
 <p>C。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;自古皆贵中华，贱夷狄，朕独爱之如一。&quot;</p>
 <p>——唐太宗</p>
 <p>问题：</p>
 <p>（1）材料反映了唐太宗怎样的民族观念？（2分）</p>
 <p>（2）结合所学，列举唐朝处理民族关系的典型事例。（4分）</p>
 <p>（3）这种民族政策产生了什么积极影响？（4分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）反映了唐太宗开明、平等的民族观念，认为汉族与少数民族一视同</p>
 <p>仁。（2分）</p>
 <p>（2）典型事例：文成公主入藏嫁给松赞干布；金城公主入藏；册封回纥、</p>
@@ -533,7 +569,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（3）积极影响：促进了民族融合和边疆开发；推动了各民族经济文化交</p>
 <p>流；维护了国家统一和边疆安定；使唐朝国力强盛，被各族尊为&quot;天可汗&quot;。</p>
 <p>（答出2点即可，4分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>隋炀帝开凿大运河的根本目的是（　　）</p>
 <p>A A. 促进南北经济文化交流</p>
@@ -569,7 +605,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：D。唐朝对外交往活跃是因为自身强大、政策开放、交通便利；</p>
 <p>但&quot;西方国家主动前来朝贡&quot;说法错误，唐朝对外是平等交流，不是朝贡体</p>
 <p>系下的被动接受（且当时西方主要指欧洲，与唐朝直接交往较少）。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠隋唐时期常见错误</p>
 <p>大运河：以洛阳为中心，不是长安；北至涿郡（北京），南至余杭</p>
 <p>（杭州），沟通海河、黄河、淮河、长江、钱塘江五大水系。</p>
@@ -588,8 +624,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>义），不要混淆。</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题五：辽宋夏金元</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>辽宋夏金元（916-1368年）是多民族政权并立到元朝统一的历史时期。</p>
 <p>这一时期商品经济繁荣，经济重心完成南移，民族融合深化。</p>
@@ -634,8 +671,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>文学：宋词（苏轼、李清照、辛弃疾、柳永）、元曲（关汉卿《窦娥</p>
 <p>冤》）</p>
 <p>科技：活字印刷术（毕昇）、指南针用于航海、火药武器广泛应用</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>北宋时期，世界上最早的纸币&quot;交子&quot;出现在（　　）</p>
 <p>A. 广州</p>
 <p>B. 泉州</p>
@@ -655,16 +692,16 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>解析：北宋前期，四川地区商品经济发达，但铁钱笨重不便流通，于是民间</p>
+<h3 class="h3-answer">解析：北宋前期，四川地区商品经济发达，但铁钱笨重不便流通，于是民间</h3>
 <p>出现纸币&quot;交子&quot;。广州、泉州是外贸港口；临安是南宋都城。故选 C。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;国家根本，仰给东南。&quot;</p>
 <p>——《宋史》</p>
 <p>问题：</p>
 <p>（1）材料反映了什么历史现象？（2分）</p>
 <p>（2）结合所学，分析这一现象形成的原因。（6分）</p>
 <p>（3）这一现象对中国历史发展产生了什么影响？（4分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）反映了经济重心南移完成，国家财政收入主要依靠南方（东南地</p>
 <p>区）。（2分）</p>
 <p>（2）原因：北方战乱频繁，南方相对安定；北方人口大量南迁，带来劳动</p>
@@ -672,7 +709,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>经济开发；大运河的开通促进了南北经济交流。（答出3点即可，6分）</p>
 <p>（3）影响：促进了南方经济文化的发展；改变了古代经济地理格局；推动</p>
 <p>了南方城市的繁荣；为后世经济格局奠定了基础。（答出2点即可，4分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>北宋加强中央集权的措施中，最直接目的是防止藩镇割据重演的是</p>
 <p>（　　）</p>
@@ -709,7 +746,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：B。宣政院是元朝管理全国佛教和藏族地区事务的机构，标志着西</p>
 <p>藏正式纳入中央政权管辖。西域都护府是西汉设立的；澎湖巡检司管辖台</p>
 <p>湾；理藩院是清朝设立的。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠辽宋夏金元常见错误</p>
 <p>经济重心南移：开始于魏晋南北朝，完成于南宋，不是北宋或元朝。</p>
 <p>唐朝安史之乱后经济重心开始加速南移。</p>
@@ -729,8 +766,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题六：明清时期</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>明清（1368-1840年）是中国封建社会的晚期。统一多民族国家空前巩</p>
 <p>固，但封建制度逐渐衰落，与西方差距拉大，潜藏着深重危机。</p>
@@ -788,8 +826,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>顾炎武（经世致用）、王夫之（唯物思想）</p>
 <p>文学：小说繁荣，《三国演义》《水浒传》《西游记》《红楼梦》</p>
 <p>科技：李时珍《本草纲目》、宋应星《天工开物》、徐光启《农政全书》</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>•</p>
 <p>•</p>
 <p>•</p>
@@ -804,17 +842,17 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 审议政令</p>
 <p>C. 跪受笔录，传达皇帝旨意</p>
 <p>D. 监察百官</p>
-<p>解析：军机处不是法定中央机构，军机大臣没有决策权，只能跪受笔录，按</p>
+<h3 class="h3-answer">解析：军机处不是法定中央机构，军机大臣没有决策权，只能跪受笔录，按</h3>
 <p>皇帝旨意拟写诏令，传达给中央和地方执行。这体现了君主专制的极端强</p>
 <p>化。故选 C。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;天朝物产丰盈，无所不有，原不藉外夷货物以通有无。&quot;</p>
 <p>——清乾隆帝致英王乔治三世信函</p>
 <p>问题：</p>
 <p>（1）材料反映了清朝怎样的对外观念？（2分）</p>
 <p>（2）基于这种观念，清朝实行了怎样的对外政策？（2分）</p>
 <p>（3）结合所学，分析该政策对中国社会产生的影响。（6分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）反映了清朝盲目自大、闭关自守的对外观念，以天朝上国自居，轻视</p>
 <p>对外贸易。（2分）</p>
 <p>（2）实行闭关锁国政策，严格限制对外贸易。（2分）</p>
@@ -826,7 +864,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>明朝废除丞相制度的根本目的是（　　）</p>
 <p>A A. 提高行政效率</p>
@@ -862,7 +900,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>DD. 设台湾府管辖</p>
 <p>答案：D。设台湾府是清朝对台湾地区的管辖措施，不是西藏。A、B、</p>
 <p>C都是清朝管理西藏的重要措施。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠明清时期常见错误</p>
 <p>内阁与军机处：明朝内阁和清朝军机处都是皇帝的顾问/秘书机构，不</p>
 <p>是法定中央一级行政机构，没有独立决策权。</p>
@@ -882,8 +920,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>文字狱：明清都有，但清朝规模最大、最残酷，主要发生在康熙、雍</p>
 <p>正、乾隆三朝。</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题七：中国近代史</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>中国近代史（1840-1949年）是一部列强侵华、民族危机加深与中国人</p>
 <p>民不断抗争、探索救国道路的历史。分为旧民主主义革命时期</p>
@@ -893,6 +932,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>条约 时间 主要内容 影响</p>
 <p>《南京</p>
 <p>条约》</p>
+<p>1842</p>
 <p>年</p>
 <p>割香港岛；赔款2100万银元；五口</p>
 <p>通商；协定关税</p>
@@ -914,6 +954,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>条约 时间 主要内容 影响</p>
 <p>《马关</p>
 <p>条约》</p>
+<p>1895</p>
 <p>年</p>
 <p>割辽东半岛、台湾、澎湖列岛；赔</p>
 <p>款2亿两；允许设厂；开沙市重庆苏</p>
@@ -922,6 +963,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>民地化</p>
 <p>《辛丑</p>
 <p>条约》</p>
+<p>1901</p>
 <p>年</p>
 <p>赔款4.5亿两；设使馆区；拆毁炮</p>
 <p>台；禁止反帝</p>
@@ -987,17 +1029,17 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>抗日战争（1931-1945年）：全民族抗战，国共第二次合作，取得胜利</p>
 <p>解放战争（1945-1949年）：推翻国民党统治，建立新中国</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>《马关条约》与《南京条约》相比，最显著的不同点是（　　）</p>
 <p>A. 割地面积更大</p>
 <p>B. 赔款数额更多</p>
 <p>C. 允许列强在华投资设厂</p>
 <p>D. 开放的通商口岸深入内地</p>
-<p>解析：A、B、D都是两者的不同点，但C是最本质的区别。允许设厂反映了</p>
+<h3 class="h3-answer">解析：A、B、D都是两者的不同点，但C是最本质的区别。允许设厂反映了</h3>
 <p>帝国主义资本输出的要求，标志着列强侵华进入新阶段（由商品输出为主转</p>
 <p>为资本输出为主），对中国民族资本主义发展危害极大。故选 C。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;我支那四千年之大梦唤醒，始自甲午战败割台湾，偿二百兆以后始</p>
 <p>也。&quot;</p>
 <p>——梁启超</p>
@@ -1006,7 +1048,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（2）甲午战败后，中国社会各阶层作出了怎样的反应？（6分）</p>
 <p>（3）结合所学，说明甲午战争对中国社会产生了怎样的深远影响。（4</p>
 <p>分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）指甲午战争失败后，中国人民民族意识觉醒，开始普遍认识到民族危</p>
 <p>•</p>
 <p>•</p>
@@ -1021,7 +1063,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（3）影响：中国半殖民地化程度大大加深；列强掀起瓜分中国的狂潮；民</p>
 <p>族危机刺激了中华民族的觉醒，推动了救亡图存运动的高涨。（答出2点即</p>
 <p>可，4分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>中国完全沦为半殖民地半封建社会的标志是（　　）</p>
 <p>A A. 《南京条约》的签订</p>
@@ -1055,7 +1097,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>DD. 中国共产党成立</p>
 <p>答案：C。五四运动中无产阶级登上历史舞台，开始领导中国革命，标志</p>
 <p>着中国新民主主义革命的开端。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠中国近代史常见错误</p>
 <p>半殖民地半封建：&quot;半殖民地&quot;指主权部分丧失，&quot;半封建&quot;指封建经济</p>
 <p>逐步解体、资本主义因素发展但封建剥削仍保留。不是一半殖民地一</p>
@@ -1076,8 +1118,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-<p>1 知识精讲</p>
+<p>•</p></div>
+<div class="page"><h1>专题八：中国现代史</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>1 知识精讲</h2>
 <p>核心概念</p>
 <p>中国现代史（1949年至今）是中国人民在中国共产党领导下，建立社会</p>
 <p>主义制度，探索社会主义建设道路，实行改革开放，走向民族复兴的历</p>
@@ -1134,8 +1177,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>特色社会主义</p>
 <p>重大成就：加入WTO（2001年）、举办北京奥运会（2008年）、全面建成</p>
 <p>小康社会（2020年）、脱贫攻坚战全面胜利等。</p>
-<p>2 典例破题</p>
-<p>【例题1】选择题</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>2 典例破题</h2>
+<h3 class="h3-example">【例题1】选择题</h3>
 <p>•</p>
 <p>•</p>
 <p>•</p>
@@ -1147,11 +1190,11 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B. 社会主义制度在我国基本建立</p>
 <p>C. 第一个五年计划超额完成</p>
 <p>D. 我国进入社会主义现代化建设新时期</p>
-<p>解析：三大改造的完成实现了生产资料私有制向社会主义公有制的转变，标</p>
+<h3 class="h3-answer">解析：三大改造的完成实现了生产资料私有制向社会主义公有制的转变，标</h3>
 <p>志着社会主义制度在我国基本建立，中国进入社会主义初级阶段。新民主主</p>
 <p>义革命胜利的标志是新中国成立；一五计划完成是1957年；进入现代化建设</p>
 <p>新时期是1978年十一届三中全会。故选 B。</p>
-<p>【例题2】材料分析题</p>
+<h3 class="h3-example">【例题2】材料分析题</h3>
 <p>&quot;改革开放胆子要大一些，敢于试验……计划多一点还是市场多一点，</p>
 <p>不是社会主义与资本主义的本质区别。计划经济不等于社会主义，资</p>
 <p>本主义也有计划；市场经济不等于资本主义，社会主义也有市场。&quot;</p>
@@ -1160,7 +1203,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>（1）邓小平南方谈话是在什么背景下发表的？（2分）</p>
 <p>（2）这段话的核心观点是什么？（4分）</p>
 <p>（3）这一观点对我国的改革开放产生了怎样的影响？（4分）</p>
-<p>解析：</p>
+<h3 class="h3-answer">解析：</h3>
 <p>（1）背景：20世纪80年代末90年代初，中国改革开放面临姓&quot;社&quot;姓&quot;资&quot;的</p>
 <p>争论，人们对市场经济存在疑虑，改革进入关键期。（2分）</p>
 <p>（2）核心观点：计划和市场都是经济手段，不是社会主义与资本主义的本</p>
@@ -1172,7 +1215,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>传统观念；为中共十四大确立社会主义市场经济体制的改革目标奠定了理论</p>
 <p>基础，推动了改革开放的深入发展。（4分）</p>
-<p>3 巩固提升</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>3 巩固提升</h2>
 <p>练习1</p>
 <p>新中国第一部社会主义类型的宪法颁布于（　　）</p>
 <p>A A. 1949年</p>
@@ -1206,7 +1249,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>DD. 全面扩大对外开放</p>
 <p>答案：B。1992年中共十四大明确提出建立社会主义市场经济体制的改革</p>
 <p>目标，这是我国经济体制改革的重要里程碑。</p>
-<p>4 易错警示</p>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>4 易错警示</h2>
 <p>⚠中国现代史常见错误</p>
 <p>新中国成立与社会主义制度建立：新中国成立（1949年）标志着新民</p>
 <p>主主义革命的胜利；三大改造完成（1956年）标志着社会主义制度建</p>
@@ -1233,8 +1276,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p>
-</div>
+<p>•</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -1260,6 +1302,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>

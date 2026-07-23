@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>数学暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#2563eb;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#2563eb;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,21 +61,20 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>数学暑假衔接</h1></div>
-<div class="wrap">
-<div class="page">
-<p>新高二数学暑假衔接讲练</p>
-<p>高一升高二 · 理科方向 · 系统性补基础</p>
-<p>8大专</p>
-<p>题</p>
-<h2>知识精讲 + 典例破题 + 巩固提升 + 易</h2>
-<p>错警示</p>
-<p>每道题带详细</p>
-<p>解析</p>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>数学暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
 </div>
-<div class="page">
-<h1>01 专题01：平面向量 简要回顾</h1>
-<h2>知识精讲</h2>
+<div class="wrap">
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>数学暑假衔接</h2>
+  <div class="hero-sub">高一升高二 · 理科方向 · 系统性补基础 8大专 题</div>
+  <div class="hero-meta"><span>📚 8 个专题</span><span>📄 48 页精讲</span><span>✓ 讲练结合</span></div>
+</div>
+<div class="page"><h1>专题01：平面向量</h1>
+<p>01 专题01：平面向量 简要回顾</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>核心定理/</p>
 <p>公式 内容 关键说明</p>
 <p>平面向量</p>
@@ -69,14 +96,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>数量积公</p>
 <p>式 a·b = |a||b|cosθ 坐标形式：a·b</p>
 <p>= x1x2 + y1y2</p>
-<h2>典例破题</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
 <p>例1：已知 |a| = 3, |b| = 4, a 与 b 夹角为 60°，求 |a + b|。</p>
 <p>解：|a+b|2 = |a|2 + |b|2 + 2a·b = 9 + 16 + 2×3×4×cos60° = 25</p>
 <p>+ 12 = 37，∴ |a+b| = √37。</p>
-<h2>典例破题</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
 <p>例2：利用极化恒等式求 a·b：已知 |a+b| = 5, |a−b| = 3，求 a·b。</p>
 <p>解：由极化恒等式 4a·b = |a+b|2 − |a−b|2 = 25 − 9 = 16，∴ a·b = 4。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>向量共线与线段共线不同：向量共线可同向或反向，线段共线需要三点共</p>
 <p>线。</p>
 <p>等和线定理中 x + y = 1 是三点共线的充要条件，系数必须为正不一定成</p>
@@ -89,11 +116,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>02 专题02：解三角形 5大考点</h1>
-<h2>知识精讲</h2>
+<p>·</p></div>
+<div class="page"><h1>专题02：解三角形</h1>
+<p>02 专题02：解三角形 5大考点</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>定理/公</p>
 <p>式 表达式 适用场景</p>
 <p>正弦定</p>
@@ -117,8 +143,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>化 sinA : sinB : sinC = a : b : c利用正弦定理实现边与角的正弦之</p>
 <p>间的转化</p>
 <p>考点1：正弦定理</p>
-<h2>典例破题</h2>
-<h3>例1：在 ΔABC 中，A = 60°，B = 45°，a = 6，求 b。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：在 ΔABC 中，A = 60°，B = 45°，a = 6，求 b。</h3>
 <p>解：由正弦定理 a/sinA = b/sinB，得 6/sin60° = b/sin45°，∴ b = 6</p>
 <p>× sin45° / sin60° = 6 × (√2/2) / (√3/2) = 6√2/√3 = 2√6。</p>
 <p>巩固1</p>
@@ -139,7 +165,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>B = 30°。由正弦定理：5√3/sin60° = 5/sinB，得 5√3/(√3/2) = 5/</p>
 <p>sinB，即 10 = 5/sinB，∴ sinB = 1/2。又 a &gt; b，∴ A &gt; B，故 B =</p>
 <p>30°。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>SSA 情况（已知两边及其中一边的对角）可能有两解、一解或无解，必须</p>
 <p>判断。</p>
 <p>正弦定理中 a/sinA = 2R（R为外接圆半径），不是 a = sinA。</p>
@@ -147,8 +173,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>角度单位必须统一，不能混用度与弧度。</p>
 <p>考点2：余弦定理</p>
-<h2>典例破题</h2>
-<h3>例1：在 ΔABC 中，a = 7，b = 4√3，c = √13，求最大角。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：在 ΔABC 中，a = 7，b = 4√3，c = √13，求最大角。</h3>
 <p>解：a 最大，对应最大角 A。cosA = (b2+c2−a2)/(2bc) =</p>
 <p>(48+13−49)/(2×4√3×√13) = 12/(8√39) = 3/(2√39) =</p>
 <p>√39/26。A = arccos(√39/26)。</p>
@@ -169,15 +195,15 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>a = 2√19。a2 = b2+c2−2bc·cosA = 36+16−2×6×4×cos120° =</p>
 <p>52−2×24×(−1/2) = 52+24 = 76，∴ a = √76 = 2√19。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>余弦定理中符号：cosA = (b2+c2−a2)/(2bc)，分子是&quot;另两边平方和减</p>
 <p>对边平方&quot;。</p>
 <p>判断三角形形状时，用余弦值的正负：cosA&gt;0 锐角；cosA=0 直角；</p>
 <p>cosA&lt;0 钝角。</p>
 <p>注意防止符号错误，尤其是 cos120° = −1/2。</p>
 <p>考点3：三角形面积</p>
-<h2>典例破题</h2>
-<h3>例1：在 ΔABC 中，a = 4，b = 5，C = 60°，求面积 S。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：在 ΔABC 中，a = 4，b = 5，C = 60°，求面积 S。</h3>
 <p>解：S = ½ab·sinC = ½ × 4 × 5 × sin60° = 10 × √3/2 = 5√3。</p>
 <p>巩固1</p>
 <p>在 ΔABC 中，a = 8，b = 5，C = 30°，求 S。</p>
@@ -196,14 +222,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>S = 12√5。p = (7+8+9)/2 = 12，S =</p>
 <p>√[12×(12−7)×(12−8)×(12−9)] = √[12×5×4×3] = √720 = 12√5。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>S = ½ab·sinC 中夹角必须是 a 和 b 的夹角 C，不能随便用。</p>
 <p>用海伦公式时先求半周长 p，不要忘记除以2。</p>
 <p>已知面积反求角时，sinC = k 通常有两解（锐角或钝角），要结合其他条</p>
 <p>件判断。</p>
 <p>考点4：边角互化</p>
-<h2>典例破题</h2>
-<h3>例1：在 ΔABC 中，acosB = bcosA，判断三角形形状。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：在 ΔABC 中，acosB = bcosA，判断三角形形状。</h3>
 <p>解：由正弦定理 a=2RsinA, b=2RsinB，代入得 2RsinA·cosB =</p>
 <p>2RsinB·cosA，即 sinAcosB−sinBcosA=0，sin(A−B)=0，∴</p>
 <p>A=B，三角形为等腰三角形。</p>
@@ -226,13 +252,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>直角三角形（C = 90°）。由正弦定理得 a2+b2=c2，由勾股定理逆定理知</p>
 <p>ΔABC 为直角三角形，且角 C 为直角。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>边化角用 a = 2RsinA，角化边用 sinA = a/(2R)，注意 2R 不要漏掉。</p>
 <p>sinA : sinB : sinC = a : b : c 是比例关系，不代表相等。</p>
 <p>边角互化后的方程要检验解的合理性。</p>
 <p>考点5：综合应用</p>
-<h2>典例破题</h2>
-<h3>例1：在 ΔABC 中，a=2√3，b=2，B=30°，求 A 和 c。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：在 ΔABC 中，a=2√3，b=2，B=30°，求 A 和 c。</h3>
 <p>·</p>
 <p>·</p>
 <p>·</p>
@@ -263,7 +289,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>b2+c2−2bc·cosA = b2+c2−bc = (b+c)2−3bc = (b+c)2−180。设</p>
 <p>b+c = 30−a，则 a2 = (30−a)2−180，解得 a = 7。于是 b+c = 23，</p>
 <p>bc = 60，解得 b=8, c=15（或 b=15, c=8）。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>综合题中正弦定理、余弦定理、面积公式常需联合使用，注意选择合适的</p>
 <p>公式。</p>
 <p>SSA 情况要特别注意多解讨论，漏解是常见错误。</p>
@@ -271,11 +297,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>等）。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>03 专题03：数列 4大考点</h1>
-<h2>知识精讲</h2>
+<p>·</p></div>
+<div class="page"><h1>专题03：数列</h1>
+<p>03 专题03：数列 4大考点</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>类型 通项公式 前 n 项和 关键性质</p>
 <p>等差</p>
 <p>数列</p>
@@ -302,8 +327,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>an = bn·cn（等差×等比），Sn = ...，</p>
 <p>qSn = ...，相减 乘公比后错位相减</p>
 <p>考点1：等差数列通项与求和</p>
-<h2>典例破题</h2>
-<h3>例1：等差数列 {an} 中，a3 = 7，a7 = 15，求 a1 和 d。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：等差数列 {an} 中，a3 = 7，a7 = 15，求 a1 和 d。</h3>
 <p>解：a3 = a1+2d = 7，a7 = a1+6d = 15。两式相减得 4d = 8，∴ d</p>
 <p>= 2，a1 = 7−4 = 3。</p>
 <p>巩固1</p>
@@ -322,7 +347,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>S9 = 54。由等差数列性质：S3，S6−S3，S9−S6 也成等差数列。6, 18,</p>
 <p>S9−24 成等差数列，∴ 18−6 = (S9−24)−18，得 S9 = 54。或直接用 Sn =</p>
 <p>An2+Bn 待定系数法。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>通项公式 an = a1+(n−1)d，注意是 (n−1) 而不是 n。</p>
 <p>求和公式 Sn = n(a1+an)/2，注意分母是 2。</p>
 <p>等差数列中 Sn 是关于 n 的二次函数（d≠0 时），没有常数项（S0=0）。</p>
@@ -330,8 +355,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<h2>典例破题</h2>
-<p>例1：等比数列 {an} 中，a1 = 2，a4 = 16，求公比 q 和 S5。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：等比数列 {an} 中，a1 = 2，a4 = 16，求公比 q 和 S5。</h3>
 <p>解：a4 = a1·q3 = 2q3 = 16，∴ q3 = 8，q = 2。S5 = 2(1−25)/(1−2)</p>
 <p>= 2(1−32)/(−1) = 62。</p>
 <p>巩固1</p>
@@ -349,14 +374,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>q = 2，a5+a6 = 96。a3+a4 = (a1+a2)q2 = 6q2 = 24，∴ q2 = 4，q</p>
 <p>= 2（取正）；a5+a6 = (a3+a4)q2 = 24×4 = 96。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>等比数列求和公式 Sn = a1(1−qn)/(1−q) 仅在 q≠1 时成立；q = 1 时</p>
 <p>Sn = na1。</p>
 <p>an = a1·qn−1，指数是 n−1 而非 n。</p>
 <p>公比 q 为负数时，各项正负交替，求和时注意符号。</p>
 <p>考点3：数列求和——裂项相消</p>
-<h2>典例破题</h2>
-<h3>例1：求数列 {1/[n(n+1)]} 的前 n 项和 Sn。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求数列 {1/[n(n+1)]} 的前 n 项和 Sn。</h3>
 <p>解：1/[n(n+1)] = 1/n − 1/(n+1)。Sn = (1−1/2)+(1/2−1/3)+...</p>
 <p>+(1/n−1/(n+1)) = 1 − 1/(n+1) = n/(n+1)。</p>
 <p>巩固1</p>
@@ -380,13 +405,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>Sn = √(n+1) − 1。分母有理化：1/(√(k+1)+√k) = √(k+1)−√k。Sn =</p>
 <p>(√2−1)+(√3−√2)+...+(√(n+1)−√n) = √(n+1)−1。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>裂项时注意系数：1/[n(n+k)] = (1/k)[1/n − 1/(n+k)]。</p>
 <p>消去后保留的项要仔细数清楚，通常剩下最开始和最后的几项。</p>
 <p>分母有理化形式的裂项：1/(√A+√B) = (√A−√B)/(A−B)。</p>
 <p>考点4：数列求和——错位相减</p>
-<h2>典例破题</h2>
-<h3>例1：求数列 {n·2n} 的前 n 项和 Sn。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求数列 {n·2n} 的前 n 项和 Sn。</h3>
 <p>解：Sn = 1·21+2·22+3·23+...+n·2n。2Sn = 1·22+2·23+...+</p>
 <p>(n−1)·2n+n·2n+1。相减：−Sn = 21+22+23+...+2n−n·2n+1 =</p>
 <p>2(2n−1)−n·2n+1。∴ Sn = (n−1)·2n+1+2。</p>
@@ -413,7 +438,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>S3 = −18。直接计算：a1 = 1×(−2)1 = −2，a2 = 2×(−2)2 = 2×4 = 8，</p>
 <p>a3 = 3×(−2)3 = 3×(−8) = −24。S3 = −2+8−24 = −18。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>错位相减只适用于&quot;等差×等比&quot;型数列。</p>
 <p>乘公比后对齐时，指数要对应好，别错位。</p>
 <p>·</p>
@@ -421,11 +446,10 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>相减后中间部分构成等比数列，注意首项、公比和项数。</p>
 <p>最后一步解出 Sn 时注意系数的符号。</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>04 专题04：函数复习（重点） 重点复习</h1>
-<h2>知识精讲</h2>
+<p>·</p></div>
+<div class="page"><h1>专题04：函数复习（重点）</h1>
+<p>04 专题04：函数复习（重点） 重点复习</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>知识</p>
 <p>模块 核心内容 重要提醒</p>
 <p>定义</p>
@@ -460,8 +484,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>零点存在定理：f(a)f(b)&lt;0</p>
 <p>⇒ (a,b)内有零点</p>
 <p>考点1：定义域与值域</p>
-<h2>典例破题</h2>
-<h3>例1：求 f(x) = √(x−2) + 1/(x−3) 的定义域。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求 f(x) = √(x−2) + 1/(x−3) 的定义域。</h3>
 <p>解：需满足 x−2 ≥ 0 且 x−3 ≠ 0，即 x ≥ 2 且 x ≠ 3。定义域为 [2,3)</p>
 <p>∪ (3, +∞)。</p>
 <p>巩固1</p>
@@ -477,7 +501,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>[1, 5]。f(x) = (x−2)2+1，对称轴 x=2 ∈ [0,3]，最小值 f(2)=1。</p>
 <p>f(0)=5，f(3)=2，∴ 最大值 f(0)=5，值域 [1,5]。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>求定义域时要同时考虑所有限制条件，取交集。</p>
 <p>对数函数真数必须 &gt; 0（不能等于0）。</p>
 <p>二次函数的值域必须在指定区间上求，不能只看顶点。</p>
@@ -485,8 +509,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>考点2：单调性与奇偶性</p>
-<h2>典例破题</h2>
-<h3>例1：判断 f(x) = x3 + x 的奇偶性及单调性。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：判断 f(x) = x3 + x 的奇偶性及单调性。</h3>
 <p>解：f(−x) = (−x)3+(−x) = −x3−x = −(x3+x) = −f(x)，∴ f(x) 为</p>
 <p>奇函数。f&#x27;(x) = 3x2+1 &gt; 0，∴ f(x) 在 R 上单调递增。</p>
 <p>巩固1</p>
@@ -503,13 +527,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>设 0 &lt; x1 &lt; x2，则 f(x1)−f(x2) = 1/x1−1/x2 = (x2−x1)/(x1x2) &gt; 0，∴</p>
 <p>f(x1) &gt; f(x2)，故 f(x) 在 (0,+∞) 上单调递减。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>判断奇偶性前必须先检验定义域是否关于原点对称。</p>
 <p>f(x) = 0 既是奇函数又是偶函数（唯一一个）。</p>
 <p>单调性证明必须用定义：设 x1&lt;x2，比较 f(x1) 与 f(x2)。</p>
 <p>考点3：指数与对数函数</p>
-<h2>典例破题</h2>
-<h3>例1：比较大小：a = log0.53，b = 20.3，c = 0.32。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：比较大小：a = log0.53，b = 20.3，c = 0.32。</h3>
 <p>解：a = log0.53 &lt; log0.51 = 0；b = 20.3 &gt; 20 = 1；c = 0.32 =</p>
 <p>0.09 ∈ (0,1)。∴ a &lt; c &lt; b。</p>
 <p>巩固1</p>
@@ -529,13 +553,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>1。a = log315，b = log515。1/a+1/b = log153+log155 = log1515 =</p>
 <p>1。（利用换底公式 logab = 1/logba）</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>解对数不等式时，必须考虑真数 &gt; 0 的条件。</p>
 <p>换底公式：logab = logcb / logca = ln b / ln a。</p>
 <p>指数函数 y=ax与对数函数 y=logax 互为反函数，图像关于 y=x 对称。</p>
 <p>考点4：函数零点</p>
-<h2>典例破题</h2>
-<p>例1：判断方程 ln x + x − 2 = 0 在 (1, 2) 内是否有根。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：判断方程 ln x + x − 2 = 0 在 (1, 2) 内是否有根。</h3>
 <p>解：令 f(x) = ln x + x − 2，f(1) = 0+1−2 = −1 &lt; 0，f(2) =</p>
 <p>ln2+2−2 = ln2 &gt; 0。f(x) 在 [1,2] 上连续，f(1)f(2) &lt; 0，由零点存在</p>
 <p>定理，在 (1,2) 内至少有一个根。</p>
@@ -559,18 +583,17 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>0.125−1.5+1 = −0.375 &lt; 0。零点在 (0, 0.5)。f(0.25) = 0.0156−0.75+1</p>
 <p>= 0.2656 &gt; 0。零点在 (0.25, 0.5)。f(0.375) = 0.0527−1.125+1 =</p>
 <p>−0.0723 &lt; 0。零点在 (0.25, 0.375)。取 x ≈ 0.3。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>零点存在定理只能判断零点存在，不能说&quot;只有一个&quot;（除非加上单调</p>
 <p>性）。</p>
 <p>f(a)f(b) &lt; 0 是零点存在的充分条件，不是必要条件。</p>
 <p>二分法每次将区间缩小一半，精度由区间长度决定。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>05 专题05：三角函数 4大考点</h1>
-<h2>知识精讲</h2>
+<p>·</p></div>
+<div class="page"><h1>专题05：三角函数</h1>
+<p>05 专题05：三角函数 4大考点</p>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>知识模</p>
 <p>块 核心内容 关键公式</p>
 <p>诱导公</p>
@@ -591,8 +614,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>正弦定理+余弦定理+面积</p>
 <p>+恒等变换 重点：边角互化与三角恒等变换结合</p>
 <p>考点1：诱导公式</p>
-<h2>典例破题</h2>
-<h3>例1：化简 sin(180°−α) + cos(90°−α)。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：化简 sin(180°−α) + cos(90°−α)。</h3>
 <p>解：sin(180°−α) = sinα（sin 在第二象限为正）；cos(90°−α) =</p>
 <p>sinα。∴ 原式 = sinα + sinα = 2sinα。</p>
 <p>巩固1</p>
@@ -610,14 +633,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>6/5。sin(π−α) = sinα = 3/5；cos(π/2−α) = sinα = 3/5。∴ 原式 = 3/5</p>
 <p>+ 3/5 = 6/5。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>&quot;奇变偶不变&quot;：奇指 k·π/2 中 k 为奇数时函数名改变（sin↔cos,</p>
 <p>tan↔cot）。</p>
 <p>&quot;符号看象限&quot;：把 α 视为锐角，看原函数在对应象限的符号。</p>
 <p>sin(−α) = −sinα，cos(−α) = cosα（sin 是奇函数，cos 是偶函数）。</p>
 <p>考点2：图像与性质</p>
-<h2>典例破题</h2>
-<h3>例1：求函数 y = 2sin(2x + π/3) 的周期和值域。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求函数 y = 2sin(2x + π/3) 的周期和值域。</h3>
 <p>·</p>
 <p>·</p>
 <p>·</p>
@@ -637,7 +660,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>求 y = tan(2x) 的最小正周期。</p>
 <p>答案：</p>
 <p>T = π/2。tan x 的周期为 π，tan(2x) 的周期为 π/2。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>y = Asin(ωx+φ) 的周期 T = 2π/|ω|，不是 2π/ω。</p>
 <p>求单调区间时，先写出标准不等式的通解，加上 2kπ。</p>
 <p>tan x 的定义域要排除 x = π/2 + kπ（k ∈ Z）。</p>
@@ -645,8 +668,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>考点3：三角恒等变换</p>
-<h2>典例破题</h2>
-<h3>例1：已知 sinα = 3/5，α ∈ (π/2, π)，求 sin2α。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：已知 sinα = 3/5，α ∈ (π/2, π)，求 sin2α。</h3>
 <p>解：cosα = −√(1−sin2α) = −4/5。sin2α = 2sinαcosα =</p>
 <p>2×(3/5)×(−4/5) = −24/25。</p>
 <p>巩固1</p>
@@ -664,14 +687,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>f(x) = √2 sin(x+π/4)。sin x + cos x = √2 [(√2/2)sin x + (√2/2)cos</p>
 <p>x] = √2 [sin x·cos(π/4) + cos x·sin(π/4)] = √2 sin(x+π/4)。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>二倍角公式：sin2α = 2sinαcosα（注意系数2）。</p>
 <p>辅助角公式：asin x + bcos x = √(a2+b2) sin(x+φ)，其中 tanφ = b/</p>
 <p>a。</p>
 <p>注意角所在的象限，确定三角函数值的正负。</p>
 <p>考点4：解三角形综合</p>
-<h2>典例破题</h2>
-<h3>例1：在 ΔABC 中，a = 2，b = 3，cosC = 1/3，求 c。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：在 ΔABC 中，a = 2，b = 3，cosC = 1/3，求 c。</h3>
 <p>解：c2 = a2+b2−2ab·cosC = 4+9−2×2×3×1/3 = 13−4 = 9，∴</p>
 <p>c = 3。</p>
 <p>巩固1</p>
@@ -696,21 +719,20 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>sin2A+sin2B+sin2(A+B)。展开：sin2(A+B) = (sinAcosB+cosAsinB)2</p>
 <p>= sin2Acos2B+cos2Asin2B+2sinAcosBcosAsinB。整理得</p>
 <p>2+2cosAcosBcosC。（恒等式证明，记住结论即可）</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>解三角形与三角恒等变换结合时，注意 A+B+C = π 这一隐含条件。</p>
 <p>sin(A+B) = sinC，cos(A+B) = −cosC 是常用转化。</p>
 <p>正余弦定理的选择：已知两边一夹角用余弦定理，已知两角一边用正弦定</p>
 <p>理。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>06 专题06：空间向量与立体几何初步 预习 预习型</h1>
+<p>·</p></div>
+<div class="page"><h1>专题06：空间向量与立体几何初步 预习</h1>
+<p>06 专题06：空间向量与立体几何初步 预习 预习型</p>
 <p>预习说明</p>
 <p>本专题为高二上学期内容预习。空间向量是平面向量的自然延伸，将二维拓</p>
 <p>展到三维。建议先复习专题01的平面向量基础，再学习本专题。</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>知识模块 核心内容 与平面向量的联系</p>
 <p>空间向量</p>
 <p>运算</p>
@@ -728,7 +750,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>算 异面直线夹角、线面角、二面角夹角公式 cosθ = |a·b|/(|a||</p>
 <p>b|)</p>
 <p>考点1：空间向量运算</p>
-<h2>典例破题</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
 <p>例1：已知 a = (1, 2, 3)，b = (−1, 0, 2)，求 a·b 和 |a|。</p>
 <p>解：a·b = 1×(−1) + 2×0 + 3×2 = −1+0+6 = 5。|a| = √(12+22+32) =</p>
 <p>√(1+4+9) = √14。</p>
@@ -747,7 +769,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>1。AB = (−1, 1, 0)，AC = (−1, 0, 1)。AB·AC = (−1)×(−1) + 1×0</p>
 <p>+ 0×1 = 1。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>空间向量坐标有三个分量，运算时不要漏掉 z 分量。</p>
 <p>模长公式：|a| = √(x2+y2+z2)，分母是平方和再开根。</p>
 <p>两个向量垂直的充要条件是数量积为 0（与平面向量一致）。</p>
@@ -755,7 +777,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<h2>典例破题</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
 <p>例1：直线 l 的方向向量为 s = (1, 2, −1)，平面 α 的法向量为 n = (2, −1, 0)，</p>
 <p>判断 l 与 α 的位置关系。</p>
 <p>解：s·n = 1×2 + 2×(−1) + (−1)×0 = 2−2+0 = 0，∴ s ⊥ n。方向向量与</p>
@@ -775,13 +797,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>不垂直。直线垂直平面 ⇔ 方向向量平行于法向量。s 与 n 不平行（1/1 ≠</p>
 <p>1/−1），∴ 直线不垂直于平面。另外 s·n = 1−1+0 = 0，说明直线平行于</p>
 <p>平面。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>直线方向向量与平面法向量垂直 ⇒ 直线平行于平面（或含于平面内）。</p>
 <p>直线方向向量与平面法向量平行 ⇒ 直线垂直于平面。</p>
 <p>两个平面法向量平行 ⇒ 两平面平行；法向量垂直 ⇒ 两平面垂直。</p>
 <p>考点3：空间角计算</p>
-<h2>典例破题</h2>
-<p>例1：求向量 a = (1, 0, 0) 与 b = (1, 1, 1) 的夹角。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求向量 a = (1, 0, 0) 与 b = (1, 1, 1) 的夹角。</h3>
 <p>解：cosθ = (a·b)/(|a||b|) = (1×1+0×1+0×1)/(1×√3) = 1/√3 =</p>
 <p>√3/3。∴ θ = arccos(√3/3)。</p>
 <p>巩固1</p>
@@ -802,7 +824,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>sinθ = 1/2。直线与平面所成角 θ 满足 sinθ = |s·n|/(|s||n|) = |1+0+0|/</p>
 <p>(√2×√2) = 1/2，∴ θ = 30°。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>异面直线的夹角取锐角（或直角），公式中加绝对值：cosθ = |a·b|/(|</p>
 <p>a||b|)。</p>
 <p>线面角的正弦值：sinθ = |s·n|/(|s||n|)，其中 s 为方向向量，n 为法向</p>
@@ -810,15 +832,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>二面角的平面角等于两平面法向量的夹角（或其补角）。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>07 专题07：直线与圆的方程 预习 预习型</h1>
+<p>·</p></div>
+<div class="page"><h1>专题07：直线与圆的方程 预习</h1>
+<p>07 专题07：直线与圆的方程 预习 预习型</p>
 <p>预习说明</p>
 <p>本专题为高二上学期解析几何的预备内容。解析几何的核心思想是用代数方</p>
 <p>法研究几何问题，即&quot;建系——设点——列方程——求解&quot;。直线与圆是最基</p>
 <p>础的解析几何对象。</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>知识模块 核心公式 要点</p>
 <p>斜率公式 k = (y2−y1)/(x2−x1) =</p>
 <p>tanα</p>
@@ -843,8 +864,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>圆的一般</p>
 <p>方程</p>
 <p>考点1：直线方程</p>
-<h2>典例破题</h2>
-<h3>例1：求过点 A(2, 3) 且斜率为 4 的直线方程。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求过点 A(2, 3) 且斜率为 4 的直线方程。</h3>
 <p>解：用点斜式：y − 3 = 4(x − 2)，即 y = 4x − 5，化为一般式：4x −</p>
 <p>y − 5 = 0。</p>
 <p>巩固1</p>
@@ -862,13 +883,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>x + 2y − 3 = 0。原直线斜率 k1=2，垂直直线斜率 k2=−1/2。用点斜式：</p>
 <p>y−1 = (−1/2)(x−1)，即 2y−2 = −x+1，x+2y−3=0。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>点斜式 y−y0=k(x−x0) 不能表示斜率不存在的直线（竖直线 x=x0）。</p>
 <p>两直线平行 ⇔ 斜率相等（k1=k2）或都不存在。</p>
 <p>两直线垂直 ⇔ 斜率乘积为 −1（k1k2=−1）或一个为0一个不存在。</p>
 <p>考点2：圆的方程</p>
-<h2>典例破题</h2>
-<h3>例1：求圆心为 (3, −2)，半径为 4 的圆的标准方程。</h3>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">例1：求圆心为 (3, −2)，半径为 4 的圆的标准方程。</h3>
 <p>解：(x−3)2 + (y+2)2 = 16。</p>
 <p>巩固1</p>
 <p>将 x2 + y2 − 4x + 6y − 3 = 0 化为标准方程。</p>
@@ -888,12 +909,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>不表示圆。D=2, E=−4, F=6。D2+E2−4F = 4+16−24 = −4 &lt; 0，不</p>
 <p>满足圆的判别条件，方程表示一个虚圆（无实数解）。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>一般方程 x2+y2+Dx+Ey+F=0 表示圆的充要条件：D2+E2−4F &gt; 0。</p>
 <p>配方时注意常数项移到右边，记得加到等式两边。</p>
 <p>圆的标准方程中，右边是 r2（不是 r）。</p>
 <p>考点3：位置关系</p>
-<h2>典例破题</h2>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
 <p>例1：判断直线 3x + 4y − 10 = 0 与圆 x2 + y2 = 4 的位置关系。</p>
 <p>解：圆心 (0,0)，半径 r=2。圆心到直线距离 d = |0+0−10|/√(32+42) =</p>
 <p>10/5 = 2 = r。d = r，∴ 直线与圆相切。</p>
@@ -916,16 +937,15 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>答案：</p>
 <p>外切。C1 圆心 (0,0)，r1=2；C2 圆心 (3,4)，r2=3。圆心距 d = 5。</p>
 <p>r1+r2=5，|r1−r2|=1。d = r1+r2=5，∴ 两圆外切。</p>
-<h2>易错警示</h2>
+<h2 class="sec-warn"><span class="sec-ic">⚠</span>易错警示</h2>
 <p>直线与圆位置关系：d &lt; r 相交，d = r 相切，d &gt; r 相离。</p>
 <p>两圆位置关系需比较圆心距 d 与 r1+r2 和 |r1−r2| 的关系。</p>
 <p>切线问题常用&quot;圆心到直线距离等于半径&quot;来列方程。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p>
-</div>
-<div class="page">
-<h1>08 专题08：数学解题思维导图 题型分类+套路总结</h1>
+<p>·</p></div>
+<div class="page"><h1>专题08：数学解题思维导图</h1>
+<p>08 专题08：数学解题思维导图 题型分类+套路总结</p>
 <p>使用说明</p>
 <p>本专题将前面各专题中涉及的解题方法和套路进行系统梳理，形成&quot;题型 + 方</p>
 <p>法&quot;的对应关系。建议在复习完前面各专题后，用本专题进行查漏补缺和思维</p>
@@ -1075,8 +1095,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>·</p>
 <p>·</p>
 <p>新高二数学暑假衔接讲练 — 高一升高二理科方向</p>
-<p>建议配合家教老师一对一辅导使用，每天2-3小时，持续6-8周完成</p>
-</div>
+<p>建议配合家教老师一对一辅导使用，每天2-3小时，持续6-8周完成</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -1102,6 +1121,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>

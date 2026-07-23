@@ -5,26 +5,54 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>地理暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root{--accent:#0ea5e9;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+:root{--accent:#0284c7;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
-.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
-.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
-.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
-.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
-.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
-.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
-.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
-p{font-size:15.5px;margin:8px 0;text-align:justify}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+
+/* 顶栏 + 阅读进度条 */
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+
+/* 封面 */
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:30px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:24px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+
+/* 专题卡片 */
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14px;margin:14px 0 6px;display:inline-block;padding:3px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+
+/* 浮动按钮与目录 */
 .floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
 .fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
 .toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
 .toc.open{right:0}
 .toc-mask.show{opacity:1;pointer-events:auto}
-.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
 .toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
 .toc-body{flex:1;overflow-y:auto;padding:8px 0}
 .toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
@@ -33,19 +61,24 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 </style>
 </head>
 <body>
-<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>地理暑假衔接</h1></div>
+<div class="topbar">
+  <div class="topbar-row"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>地理暑假衔接</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
 <div class="wrap">
-<div class="page">
-<p>新高二地理 暑假衔接讲练</p>
-<p>物化地组合 · 八大专题系统梳理 · 知识精讲 + 典例破题 + 巩固提升 + 易错警示</p>
-<p>适用对象：高一升高二转理科生  |  自然地理+人文地理全覆盖</p>
-<p>地球运动 复习巩固</p>
-<p>专题概述</p>
+<div class="hero">
+  <div class="hero-tag">暑假衔接 · 新高二</div>
+  <h2>地理暑假衔接</h2>
+  <div class="hero-sub">物化地组合 · 八大专题系统梳理 · 知识精讲 + 典例破题 + 巩固提升 + 易错警示 适用对象：高一升高二转理科生 </div>
+  <div class="hero-meta"><span>📚 8 个专题</span><span>📄 56 页精讲</span><span>✓ 讲练结合</span></div>
+</div>
+<div class="page"><h1>地球运动</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>地球运动是自然地理的基础，也是&quot;物化地&quot;组合中最需要理科思维的部分。本专题涵</p>
 <p>盖地方时与区时计算、正午太阳高度、昼夜长短变化、日界线、日照图判读五大考</p>
 <p>点。计算题需掌握&quot;东加西减&quot;原则，日照图判读需要空间想象能力。</p>
 <p>1 考点一：地方时与区时计算</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>概念 定义 关键公式/规则</p>
 <p>地方</p>
 <p>时</p>
@@ -70,8 +103,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>时，向西减1小时。</p>
 <p>过日界线需注意日期</p>
 <p>变更</p>
-<h2>典例破题</h2>
-<p>【例题】已知北京（120°E）为2024年6月21日12:00，求纽约</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】已知北京（120°E）为2024年6月21日12:00，求纽约</h3>
 <p>（75°W）的区时和地方时。</p>
 <p>解题步骤：</p>
 <p>1  确定时区：北京在东八区（120°E÷15=8），纽约在西五区</p>
@@ -83,7 +116,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>分钟 = 13小时。</p>
 <p>5  纽约地方时 = 6月21日12:00 - 13h = 6月20日 23:00。</p>
 <p>答案：纽约区时 6月20日23:00；纽约地方时 6月20日23:00。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 当东京（139°E）地方时为2024年7月1日8:00时，求伦敦（0°）的</p>
 <p>区时和地方时。</p>
 <p>答案：步骤：①东京在139°E，时区=139÷15≈9.27，余数1.27&lt;7.5，属东九</p>
@@ -117,7 +150,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>3. 区时计算用中央经线，地方时计算用实际经度。</p>
 <p>⚠ 易错警示</p>
 <p>2 考点二：正午太阳高度 —— H=90°-|φ-δ|</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>正午太阳高度角（H）是指一天中太阳升到最高位置时（地方时12:00），太</p>
 <p>阳光线与地平面的夹角。</p>
 <p>H = 90° - |φ - δ|</p>
@@ -141,15 +174,15 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>线）</p>
 <p>从南回归线向南北递</p>
 <p>减</p>
-<h2>典例破题</h2>
-<p>【例题】计算北京（40°N）在夏至日（δ=23°26&#x27;N）的正午太</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】计算北京（40°N）在夏至日（δ=23°26&#x27;N）的正午太</h3>
 <p>阳高度角。</p>
 <p>解题步骤：</p>
 <p>1  代入公式：H = 90° - |40° - 23°26&#x27;|。</p>
 <p>2  计算差值：40° - 23°26&#x27; = 16°34&#x27;。</p>
 <p>3  H = 90° - 16°34&#x27; = 73°26&#x27;。</p>
 <p>答案：北京夏至日正午太阳高度角为73°26&#x27;。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 计算海口（20°N）在夏至日（δ=23°26&#x27;N）的正午太阳高度角，</p>
 <p>并说明太阳在正午时位于天顶的哪一侧。</p>
 <p>答案：步骤：①H=90°-|20°-23°26&#x27;|=90°-3°26&#x27;=86°34&#x27;。②由于δ&gt;φ</p>
@@ -184,7 +217,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>3. 太阳直射点纬度δ在南北回归线之间（23°26&#x27;N~23°26&#x27;S）往返移动，必</p>
 <p>须准确记忆各节气δ值。</p>
 <p>3 考点三：昼夜长短变化规律</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>规律 内容</p>
 <p>根本原因 黄赤交角的存在导致太阳直射点在南北回归线之间往返移</p>
 <p>动。</p>
@@ -196,12 +229,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>反。</p>
 <p>春秋分 全球昼夜等长（各12小时）。</p>
 <p>特殊纬度 赤道上全年昼夜等长；极圈以内有极昼极夜现象。</p>
-<h2>典例破题</h2>
-<p>【例题】北半球某地，从春分到夏至，该地昼夜长短如何变化？</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】北半球某地，从春分到夏至，该地昼夜长短如何变化？</h3>
 <p>答案：春分日全球昼夜等长（各12小时）。此后太阳直射点从赤道向北</p>
 <p>移动，北半球昼长逐渐增加、夜长逐渐缩短。到夏至日，北半球昼长达</p>
 <p>一年中最长，夜长达一年中最短。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 比较北京（40°N）和悉尼（34°S）在夏至日（6月22日）的昼夜长</p>
 <p>短状况。</p>
 <p>答案： 夏至日太阳直射北回归线（23°26&#x27;N）。</p>
@@ -236,7 +269,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>昼变长；直射点南移→北半球昼变短。</p>
 <p>⚠ 易错警示</p>
 <p>4 考点四：日界线</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>日界线类型 位置 日期变更规则</p>
 <p>国际日期变更线</p>
 <p>（人为日界线）</p>
@@ -252,8 +285,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>西向东越过减一天</p>
 <p>两条日界线将全球分为&quot;今天&quot;和&quot;昨天&quot;两个区域。顺着地球自转方向（自西向</p>
 <p>东），从0时经线到180°经线为&quot;今天&quot;的范围。</p>
-<h2>典例破题</h2>
-<p>【例题】当北京时间为2024年6月21日8:00时，全球属于6月21日</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】当北京时间为2024年6月21日8:00时，全球属于6月21日</h3>
 <p>的范围占全球的比例是多少？</p>
 <p>解题步骤：</p>
 <p>1  北京时间8:00即120°E为8:00。</p>
@@ -263,7 +296,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>度。</p>
 <p>4  比例：180°/360° = 1/2。</p>
 <p>答案：全球属于6月21日的范围占1/2。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 当北京时间为2024年1月1日20:00时，全球属于1月1日的范围占全</p>
 <p>球的比例？</p>
 <p>答案：步骤：①120°E为20:00。②0时经线：</p>
@@ -287,7 +320,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>差一天。</p>
 <p>⚠ 易错警示</p>
 <p>5 考点五：日照图判读</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>日照图（太阳光照图）是地球运动的核心考查形式。判读要点：</p>
 <p>判读内容 方法</p>
 <p>判断南北</p>
@@ -302,8 +335,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>射点所在经线→12:00</p>
 <p>判断昼夜</p>
 <p>长短 某纬线昼弧所跨经度÷15°=昼长（小时）</p>
-<h2>典例破题</h2>
-<p>【例题】读北极俯视日照图，北极圈内全部为极昼，判断此时节</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】读北极俯视日照图，北极圈内全部为极昼，判断此时节</h3>
 <p>气、太阳直射点纬度、北京昼夜长短状况。</p>
 <p>分析：</p>
 <p>1  北极圈内全部极昼 → 太阳直射北回归线（23°26&#x27;N）。</p>
@@ -311,7 +344,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>3  北京（40°N）在北半球，夏至日昼最长、夜最短。</p>
 <p>答案：夏至；太阳直射23°26&#x27;N；北京昼长夜短，是一年中昼最长的一</p>
 <p>天。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 在北极俯视日照图中，晨昏线恰好经过北极点。判断此时节气，并说</p>
 <p>明全球昼夜长短状况。</p>
 <p>答案： 晨昏线经过北极点，说明晨昏线与经线重合，太阳直射赤道（0°）。</p>
@@ -333,14 +366,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>1. 俯视图的旋转方向判断南北半球：北逆南顺（北半球逆时针转，南半球顺</p>
 <p>时针转）。</p>
 <p>2. 晨线上的点正经历日出，昏线上的点正经历日落。不要混淆。</p>
-<p>⚠ 易错警示</p>
-<p>大气环流与气候 复习巩固</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>大气环流与气候</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>大气环流是理解全球气候分布的核心。本专题从大气受热过程出发，通过热力环流原</p>
 <p>理推导三圈环流和季风环流，最终掌握气候类型判读三步法。理科思维体现在：理</p>
 <p>解&quot;温差→气压差→气流运动&quot;的因果链。</p>
 <p>1 考点一：大气受热过程</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>环节 过程 关键特征</p>
 <p>太阳</p>
 <p>暖大</p>
@@ -366,8 +399,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>大气逆辐射对地面起保温作</p>
 <p>用（温室效应）</p>
 <p>核心结论：太阳辐射是根本能量来源，地面辐射是大气的主要直接热源。</p>
-<h2>典例破题</h2>
-<p>【例题】为什么&quot;高处不胜寒&quot;？从大气受热过程角度分析青藏高原</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】为什么&quot;高处不胜寒&quot;？从大气受热过程角度分析青藏高原</h3>
 <p>比同纬度长江中下游平原气温低的原因。</p>
 <p>分析：</p>
 <p>1  地面是大气的主要直接热源。海拔越高，距离地面热源越远。</p>
@@ -376,7 +409,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>3  大气逆辐射弱，保温作用差，热量散失快。</p>
 <p>答案：地面是大气的直接热源，青藏高原地势高、空气稀薄，吸收地面</p>
 <p>辐射少，大气逆辐射弱，保温作用差，故气温低。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 解释&quot;霜冻多出现在晴朗的夜晚&quot;的原因。</p>
 <p>答案： 晴朗的夜晚，云层少，大气逆辐射弱，地面热量散失快，地面温度迅速</p>
 <p>下降。当近地面温度降至0℃以下时，水汽凝结成霜。</p>
@@ -398,7 +431,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠ 易错警示</p>
 <p>2. 大气逆辐射的强弱主要取决于云量和水汽含量，不是太阳辐射强度。</p>
 <p>2 考点二：热力环流与三圈环流</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>热力环流基本原理：地面冷热不均 → 空气垂直运动（热胀上升/冷缩下沉）→</p>
 <p>同一水平面气压差异 → 水平气压梯度力 → 空气水平运动（风）。</p>
 <p>环流类型 成因 特征</p>
@@ -421,8 +454,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>副热带高气压带 30°附近 动力原因（气流下沉堆积）</p>
 <p>副极地低气压带 60°附近 动力原因（冷暖气流交汇上升）</p>
 <p>极地高气压带 90°附近 热力原因（终年寒冷，气流下沉）</p>
-<h2>典例破题</h2>
-<p>【例题】解释为什么30°N附近多沙漠（如撒哈拉沙漠），而赤道</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】解释为什么30°N附近多沙漠（如撒哈拉沙漠），而赤道</h3>
 <p>附近多雨林。</p>
 <p>分析：</p>
 <p>1  30°N附近为副热带高气压带控制区域，气流下沉。</p>
@@ -431,7 +464,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>4  上升气流降温，水汽凝结 → 降水丰沛 → 形成雨林。</p>
 <p>答案：30°N受副高控制，下沉气流为主，降水少；赤道受赤道低压控</p>
 <p>制，上升气流为主，降水多。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 画出海陆风示意图，并说明白天吹海风的原因。</p>
 <p>答案： 白天，陆地比热容小，升温快，气温高，近地面形成低压；海洋比热容</p>
 <p>大，升温慢，气温低，近地面形成高压。近地面风从海洋（高压）吹向陆地</p>
@@ -456,7 +489,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. 注意&quot;南半球地转偏向力向左偏&quot;，风向与北半球不同。</p>
 <p>⚠ 易错警示</p>
 <p>3 考点三：季风环流</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>季风</p>
 <p>类型 分布 成因 夏季风 冬季风</p>
 <p>东亚</p>
@@ -487,15 +520,15 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>燥）</p>
 <p>东亚季风冬季风强于夏季风（冬季海陆温差更大）；南亚季风夏季风强于冬季</p>
 <p>风（夏季西南风来自南半球东南信风越过赤道右偏）。</p>
-<h2>典例破题</h2>
-<p>【例题】比较东亚季风和南亚季风在成因和特征上的异同。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】比较东亚季风和南亚季风在成因和特征上的异同。</h3>
 <p>答案：</p>
 <p>相同点：都是由于海陆热力性质差异引起的季风。</p>
 <p>不同点：①东亚季风仅由海陆热力差异形成；南亚季风还叠加了气压带</p>
 <p>风带的季节移动。②东亚夏季风为东南风，南亚夏季风为西南风。③东</p>
 <p>亚冬季风强于夏季风，南亚夏季风强于冬季风。④南亚夏季风带来丰沛</p>
 <p>降水（印度洋水汽），东亚季风降水相对较少。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 我国东部季风区夏季盛行什么风向？分析其成因及对我国降水的影</p>
 <p>响。</p>
 <p>答案： 我国东部夏季盛行东南季风（来自太平洋）和西南季风（来自印度</p>
@@ -521,7 +554,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>喀拉山—冈底斯山一线。</p>
 <p>⚠ 易错警示</p>
 <p>4 考点四：气候类型判读三步法</p>
-<h2>知识精讲 —— 气候类型判读三步法</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲 —— 气候类型判读三步法</h2>
 <p>第一步：以&quot;温&quot;定半球 —— 最热月在7月→北半球；最热月</p>
 <p>在1月→南半球</p>
 <p>第二步：以&quot;温&quot;定带 —— 根据最冷月均温判断所属温度带</p>
@@ -532,8 +565,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>亚热带 0℃~15℃ 亚热带季风/地中海气候/温带海洋性</p>
 <p>温带 &lt;0℃ 温带季风/温带大陆性</p>
 <p>寒带 最热月&lt;10℃ 极地气候/苔原气候/冰原气候</p>
-<h2>典例破题</h2>
-<p>【例题】某地气温降水数据：最冷月（1月）均温12℃，最热月</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】某地气温降水数据：最冷月（1月）均温12℃，最热月</h3>
 <p>（7月）均温25℃，年降水量800mm，冬季降水占全年60%。判</p>
 <p>断气候类型。</p>
 <p>三步判读：</p>
@@ -541,7 +574,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2  以温定带：最冷月均温12℃（在0℃~15℃之间）→亚热带。</p>
 <p>3  以水定型：冬季多雨（降水集中在冬季）→地中海气候。</p>
 <p>答案：北半球地中海气候。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 某地全年高温，最冷月均温25℃，年降水量2000mm，各月降水均</p>
 <p>匀。判断气候类型。</p>
 <p>答案： ①最冷月&gt;15℃→热带。②全年多雨、各月降水均匀→热带雨林气候。</p>
@@ -569,14 +602,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>与亚热带季风混淆（亚热带季风最热月&gt;25℃）。</p>
 <p>2. 地中海气候是唯一&quot;雨热不同期&quot;的气候类型（夏季干燥、冬季多雨），这</p>
 <p>是判断的关键特征。</p>
-<p>⚠ 易错警示</p>
-<p>水循环与洋流 复习巩固</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>水循环与洋流</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>水循环连接大气圈、水圈、岩石圈和生物圈，是自然地理的核心枢纽。洋流则通过热</p>
 <p>量输送影响全球气候。本专题要求结合地图记忆洋流名称和分布，掌握&quot;8/0模式&quot;这</p>
 <p>一经典口诀。</p>
 <p>1 考点一：水循环环节与人类活动影响</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>水循环类型 主要环节 空间范围</p>
 <p>海陆间循环（大</p>
 <p>循环）</p>
@@ -588,8 +621,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>海上内循环 蒸发→降水 海洋内部</p>
 <p>人类活动影响最大的环节：地表径流（修水库、跨流域调水）、下渗（城市化</p>
 <p>硬化地面减少下渗→增加地表径流→城市内涝）。</p>
-<h2>典例破题</h2>
-<p>【例题】分析城市内涝频发的原因，并从水循环角度提出治理措</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】分析城市内涝频发的原因，并从水循环角度提出治理措</h3>
 <p>施。</p>
 <p>分析：</p>
 <p>原因：①城市化导致地面硬化，下渗减少，地表径流增加。②城市排水</p>
@@ -598,7 +631,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>建蓄水池、雨水花园，调蓄地表径流。③完善排水管网。</p>
 <p>答案：水循环环节中，城市化减少了下渗、增加了地表径流；治理需从</p>
 <p>增加下渗和调蓄径流两方面入手。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 说明水循环的地理意义（至少三条）。</p>
 <p>答案： ①维持全球水量动态平衡，使陆地水不断更新。②促进能量交换（水循</p>
 <p>环伴随着热能输送和转化）。③塑造地表形态（流水侵蚀、搬运、沉积作</p>
@@ -623,7 +656,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>阻断鱼类洄游（负面）。</p>
 <p>⚠ 易错警示</p>
 <p>2 考点二：洋流分布规律 —— &quot;8/0模式&quot;</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>&quot;8/0模式&quot;口诀：北半球中低纬呈&quot;8&quot;字形（顺时针环</p>
 <p>流），南半球中低纬呈&quot;0&quot;字形（逆时针环流）。</p>
 <p>北半球中高纬呈&quot;0&quot;字形（逆时针），南半球中高纬无环流</p>
@@ -655,8 +688,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>季顺时针 随季风方向改变</p>
 <p>洋流性质判断：一般从低纬流向高纬为暖流，从高纬流向低纬为寒流（例外：</p>
 <p>索马里夏季寒流为离岸风上升补偿流）。</p>
-<h2>典例破题</h2>
-<p>【例题】在大西洋中，从西欧到北美洲东海岸的航线，为什么去程</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】在大西洋中，从西欧到北美洲东海岸的航线，为什么去程</h3>
 <p>和回程选择的路线不同？</p>
 <p>分析：</p>
 <p>1  西欧→北美：顺北大西洋暖流和盛行西风，从高纬向西航行，速度</p>
@@ -664,7 +697,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2  北美→西欧：顺加那利寒流（南行）→北赤道暖流（西行）→再北</p>
 <p>上借助湾流和西风。</p>
 <p>答案：去程和回程利用不同洋流，顺流航行以节省燃料和时间。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 据&quot;8/0模式&quot;，画出北太平洋中低纬大洋环流示意图，标注洋流名称</p>
 <p>和性质。</p>
 <p>答案： 北太平洋中低纬环流为顺时针（&quot;8&quot;字形）：</p>
@@ -698,7 +731,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>但因为是深层冷水上涌补偿，故为寒流。</p>
 <p>⚠ 易错警示</p>
 <p>3 考点三：海洋资源</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>资源类型 内容 分布</p>
 <p>海洋生物</p>
 <p>资源</p>
@@ -725,7 +758,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>四大渔场及成因：北海道渔场（日本暖流+千岛寒流交汇）、纽芬兰渔场（墨</p>
 <p>西哥湾暖流+拉布拉多寒流交汇）、北海渔场（北大西洋暖流+北冰洋冷水交</p>
 <p>汇）、秘鲁渔场（上升补偿流）。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 为什么世界主要渔场多分布在寒暖流交汇处？</p>
 <p>答案： ①寒暖流交汇，海水搅动，将下层营养盐类带到表层，浮游生物繁盛。</p>
 <p>②不同水温的鱼类在此聚集，形成&quot;水障&quot;，鱼群集中。③饵料丰富，吸引大量</p>
@@ -747,14 +780,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>流）+ 温带或寒带海域（水温适宜）。</p>
 <p>2. 海洋资源开发与海洋环境保护要并重：过度捕捞和海洋污染是当前海洋面</p>
 <p>临的主要问题。</p>
-<p>⚠ 易错警示</p>
-<p>地质作用与地貌 复习巩固</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>地质作用与地貌</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>地质作用是塑造地表形态的&quot;雕刻刀&quot;。本专题从内力作用（板块运动、地壳运动、岩</p>
 <p>浆活动）和外力作用（风化、侵蚀、搬运、沉积）两个维度，系统讲解地貌成因，并</p>
 <p>深入岩石圈物质循环和地质剖面图判读。</p>
 <p>1 考点一：内力作用与地貌</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>内力作用形式 表现形式 形成的地貌</p>
 <p>地壳运动（水</p>
 <p>平运动）</p>
@@ -773,8 +806,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>能量 地表断裂、滑坡</p>
 <p>板块构造学说核心：全球分为六大板块（亚欧、非洲、美洲、南极洲、印度</p>
 <p>洋、太平洋板块）。板块交界处地壳活跃，多火山地震；板块内部稳定。</p>
-<h2>典例破题</h2>
-<p>【例题】用板块构造学说解释喜马拉雅山脉和东非大裂谷的形成。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】用板块构造学说解释喜马拉雅山脉和东非大裂谷的形成。</h3>
 <p>分析：</p>
 <p>1  喜马拉雅山脉：亚欧板块与印度洋板块碰撞挤压，地壳褶皱隆起，</p>
 <p>形成世界最高山脉。</p>
@@ -782,7 +815,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>陷，形成裂谷。</p>
 <p>答案：喜马拉雅山是碰撞挤压（消亡边界）形成；东非大裂谷是板块张</p>
 <p>裂（生长边界）形成。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 说明日本多火山地震的原因。</p>
 <p>答案： 日本位于亚欧板块与太平洋板块的消亡边界（环太平洋火山地震带）。</p>
 <p>太平洋板块向亚欧板块下方俯冲，地壳极不稳定，因此多火山地震。</p>
@@ -804,7 +837,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>⚠ 易错警示</p>
 <p>2. 区分&quot;构造&quot;和&quot;地貌&quot;：背斜和向斜是地质构造，山岭和谷地是地貌形态。</p>
 <p>2 考点二：外力作用与地貌</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>外力</p>
 <p>作用 主要形式 典型地貌 主要分布</p>
 <p>区</p>
@@ -844,15 +877,15 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>作用</p>
 <p>海浪侵蚀、搬</p>
 <p>运、堆积 海蚀崖、海蚀柱、沙滩沿海地区</p>
-<h2>典例破题</h2>
-<p>【例题】比较长江三峡（V形谷）和长江中下游平原的成因差异。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】比较长江三峡（V形谷）和长江中下游平原的成因差异。</h3>
 <p>分析：</p>
 <p>长江三峡：位于上游，落差大，流速快，以流水下蚀为主，形成V形峡</p>
 <p>谷。</p>
 <p>长江中下游平原：位于中下游，流速减慢，以流水沉积为主，泥沙堆积</p>
 <p>形成冲积平原。</p>
 <p>答案：三峡是流水侵蚀（下蚀）形成，中下游平原是流水沉积形成。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 喀斯特地貌（岩溶地貌）的形成条件是什么？我国主要分布在哪里？</p>
 <p>答案： 形成条件：①可溶性岩石（石灰岩、白云岩）广泛分布。②温暖湿润的</p>
 <p>气候（流水溶蚀作用强）。③地下水丰富。</p>
@@ -874,7 +907,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>力将物质剥离并搬运走。</p>
 <p>⚠ 易错警示</p>
 <p>3 考点三：岩石圈物质循环</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>岩石类型 形成过程 典型岩石</p>
 <p>岩浆岩</p>
 <p>（火成</p>
@@ -888,7 +921,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>岩石圈物质循环路径：</p>
 <p>岩浆 →（冷却凝固）→ 岩浆岩 →（外力作用）→ 沉积岩 →</p>
 <p>（变质作用）→ 变质岩 →（重熔再生）→ 岩浆</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 花岗岩和玄武岩有何区别？</p>
 <p>答案：花岗岩：侵入岩，岩浆在地下深处缓慢冷却，结晶颗粒大，质地坚硬，</p>
 <p>是良好的建筑材料。</p>
@@ -909,7 +942,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. 只有沉积岩含有化石，岩浆岩和变质岩不含化石。</p>
 <p>⚠ 易错警示</p>
 <p>4 考点四：地质剖面图判读</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>地质剖面图判读是综合考查地质作用的核心题型。判读步骤：</p>
 <p>判读步骤 方法</p>
 <p>1. 判读岩层新</p>
@@ -926,8 +959,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>侵入岩晚于围岩</p>
 <p>4. 分析地貌成</p>
 <p>因 内力作用（构造运动）+ 外力作用（侵蚀、沉积）</p>
-<h2>典例破题</h2>
-<p>【例题】某地质剖面图显示：砂岩层在下，石灰岩层在上，中间有</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】某地质剖面图显示：砂岩层在下，石灰岩层在上，中间有</h3>
 <p>一花岗岩侵入体切穿了两层。判断各地质事件的先后顺序。</p>
 <p>分析：</p>
 <p>1  砂岩最先沉积（在下层）。</p>
@@ -935,7 +968,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>3  花岗岩侵入体切穿了砂岩和石灰岩，说明岩浆活动晚于沉积岩形</p>
 <p>成。</p>
 <p>答案：先后顺序：砂岩沉积 → 石灰岩沉积 → 岩浆侵入（花岗岩形成）。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 地质剖面图中，如何判断断层的形成时间？</p>
 <p>答案： 断层晚于它所切断的所有岩层，早于覆盖在它上面的未受影响的岩层。</p>
 <p>例如：断层切断了A、B、C三层，但D层水平覆盖在断层之上且未被切断，则</p>
@@ -957,14 +990,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>层先形成，上层的岩层后形成（沉积岩）。</p>
 <p>2. 注意区分&quot;侵入岩&quot;和&quot;喷出岩&quot;：侵入岩在剖面图中表现为穿插关系，喷出</p>
 <p>岩表现为层状覆盖。</p>
-<p>⚠ 易错警示</p>
-<p>人口与城市 预习新知</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>人口与城市</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>本专题为人文地理预习内容，重点理解人口增长模式转变、人口迁移的推拉理论和城</p>
 <p>市化进程。作为&quot;物化地&quot;组合的一部分，人文地理侧重理解规律和影响因素，记忆量</p>
 <p>较大，建议配合图表理解。</p>
 <p>1 考点一：人口增长模式</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>模式 特征 典型国</p>
 <p>家/地区</p>
 <p>出</p>
@@ -1009,13 +1042,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>国</p>
 <p>低 低 低/负</p>
 <p>人口增长模式转变的根本原因：社会生产力水平的提高。</p>
-<h2>典例破题</h2>
-<p>【例题】中国目前属于哪种人口增长模式？为什么？</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】中国目前属于哪种人口增长模式？为什么？</h3>
 <p>答案：中国目前属于现代型（低-低-低）。</p>
 <p>原因：①经济发展，生活水平提高，育儿成本上升。②计划生育政策的</p>
 <p>长期影响。③女性受教育程度提高、生育观念转变。④出生率低（约</p>
 <p>6~7‰），死亡率低（约7‰），自然增长率接近零甚至为负。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 比较发达国家和发展中国家人口增长模式的差异。</p>
 <p>答案：发达国家：现代型（低-低-低），出生率低、死亡率低，自然增长率低</p>
 <p>甚至为负，人口老龄化严重。</p>
@@ -1040,7 +1073,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. &quot;人口自然增长率&quot;不是&quot;人口增长率&quot;：人口增长率还包括机械增长（人口</p>
 <p>迁移）。</p>
 <p>2 考点二：人口迁移</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>推拉理论：人口迁移受迁出地的&quot;推力&quot;和迁入地的&quot;拉力&quot;共同作用。</p>
 <p>类型 推力因素（迁出地） 拉力因素（迁入地）</p>
 <p>经济因</p>
@@ -1063,7 +1096,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>丰富</p>
 <p>我国人口迁移特点：改革开放后，大量人口从中西部流向东部沿海，从农村流</p>
 <p>向城市（农民工潮）。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 分析我国&quot;孔雀东南飞&quot;（人口从内陆向东南沿海迁移）的主要原因。</p>
 <p>答案：推力（内陆）：经济欠发达、就业机会少、收入低、基础设施落后。</p>
 <p>拉力（东南沿海）：经济发达、就业机会多（制造业、服务业）、收入高、基</p>
@@ -1088,7 +1121,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>短期往返（如春运）。</p>
 <p>⚠ 易错警示</p>
 <p>3 考点三：城市化与城市问题</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>城市化阶段 特征 城市化水</p>
 <p>平</p>
 <p>初期阶段 城市化水平低，发展缓慢 &lt;30%</p>
@@ -1103,7 +1136,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>困难、社会秩序混乱。</p>
 <p>我国城市化特点：起步晚、发展快、规模大，目前处于加速阶段（2023年城</p>
 <p>镇化率约66%）。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 什么是&quot;逆城市化&quot;？分析其产生的原因。</p>
 <p>答案：逆城市化：城市人口向郊区或乡村迁移，城市中心区人口减少的现象。</p>
 <p>原因：①城市中心区环境恶化（污染、拥挤）。②交通改善，郊区通勤成为可</p>
@@ -1129,13 +1162,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>持续发展道路。</p>
 <p>2. &quot;逆城市化&quot;不是&quot;反城市化&quot;：而是城市化发展到高级阶段的表现，城市人</p>
 <p>口向郊区扩散。</p>
-<p>⚠ 易错警示</p>
-<p>农业与工业 预习新知</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>农业与工业</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>农业和工业是人文地理的核心内容。本专题围绕区位因素分析展开，掌握&quot;自然因素</p>
 <p>+社会经济因素&quot;的分析框架，理解主要农业地域类型的分布和特征。</p>
 <p>1 考点一：农业区位因素</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>因素类别 具体因素 影响</p>
 <p>自然因素</p>
 <p>气候（光照、热量、降</p>
@@ -1153,8 +1186,8 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>政策 引导和调控农业生产</p>
 <p>科技 良种、化肥、机械化提高</p>
 <p>产量</p>
-<h2>典例破题</h2>
-<p>【例题】分析我国南方地区成为水稻主产区的区位条件。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】分析我国南方地区成为水稻主产区的区位条件。</h3>
 <p>分析：</p>
 <p>自然因素：①亚热带/热带季风气候，雨热同期，水热条件优越。②地形</p>
 <p>以平原和丘陵为主，利于耕作。③河流众多，灌溉水源充足。④水稻土</p>
@@ -1162,7 +1195,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>社会经济因素：①人口稠密，劳动力丰富。②南方人喜食米饭，市场广</p>
 <p>阔。③水稻种植历史悠久，经验丰富。</p>
 <p>答案：优越的水热条件+雨热同期的季风气候+丰富劳动力+广阔市场。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 为什么我国东北大米品质优良？从自然因素分析。</p>
 <p>答案： ①光照充足：东北纬度高，夏季日照时间长，光合作用充分。②昼夜温</p>
 <p>差大：有利于有机质积累，米质好。③生长周期长：一年一熟，养分积累充</p>
@@ -1185,7 +1218,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>市场需求和技术支撑，也可能发展某种农业。</p>
 <p>⚠ 易错警示</p>
 <p>2 考点二：工业区位因素</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>导向类型 主导因素 典型工业</p>
 <p>原料导向</p>
 <p>型</p>
@@ -1205,7 +1238,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>技术导向</p>
 <p>型 科技与人才 集成电路、航空航天、生</p>
 <p>物制药</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 钢铁工业的区位选择经历了怎样的变化？</p>
 <p>答案： ①早期：近煤铁资源（原料导向型），如英国伯明翰。</p>
 <p>②中期：近沿海港口（交通导向型），利用廉价海运进口铁矿石，如日本。</p>
@@ -1229,7 +1262,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>响越来越强。</p>
 <p>⚠ 易错警示</p>
 <p>3 考点三：主要农业地域类型</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>农业</p>
 <p>地域</p>
 <p>类型</p>
@@ -1281,7 +1314,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>灵活高效</p>
 <p>自然条件适合、市</p>
 <p>场适应性强</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 比较季风水田农业和商品谷物农业的主要差异。</p>
 <p>答案：</p>
 <p>比较项 季风水田农业 商品谷物农业</p>
@@ -1307,14 +1340,14 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>然条件。</p>
 <p>2. 注意区分&quot;季风水田农业&quot;和&quot;水稻种植业&quot;：两者本质相同，但&quot;季风水田农</p>
 <p>业&quot;强调季风气候区的水稻种植。</p>
-<p>⚠ 易错警示</p>
-<p>地理读图技巧 专项突破</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>地理读图技巧</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>地图是地理学的&quot;第二语言&quot;。本专题集中训练等高线地形图、等压线图、气候统计图</p>
 <p>三大类图的判读方法，每种图都有一整套&quot;读图口诀&quot;，掌握后读图速度和准确率大幅</p>
 <p>提升。</p>
 <p>1 考点一：等高线地形图判读</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>等高线判读口诀：</p>
 <p>等高线密坡陡峭，等高线疏坡和缓；</p>
 <p>向高凸出是山谷，向低凸出是山脊；</p>
@@ -1327,13 +1360,13 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>鞍部 两山顶之间的低洼处</p>
 <p>陡崖 多条等高线重叠</p>
 <p>陡坡/缓坡 等高线密集为陡坡，稀疏为缓坡</p>
-<h2>典例破题</h2>
-<p>【例题】在等高线地形图中，规划一条从A村到B村最省力的公路</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>典例破题</h2>
+<h3 class="h3-example">【例题】在等高线地形图中，规划一条从A村到B村最省力的公路</h3>
 <p>线路，应如何选择？</p>
 <p>分析：公路应沿等高线修建，尽量与等高线平行，减少坡度，降低施工</p>
 <p>难度和行车风险。避免穿越陡崖和深谷。</p>
 <p>答案：沿等高线走&quot;之&quot;字形路线，坡度平缓，最省力安全。</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 等高线地形图中，如何判断河流流向？</p>
 <p>答案： ①河流发育在山谷中（等高线向高处凸出）。</p>
 <p>②河流流向与等高线凸出方向相反（水往低处流）。</p>
@@ -1357,7 +1390,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. 陡崖的相对高度计算公式：(n-1)d ≤ H &lt; (n+1)d，其中n为重叠等高线条</p>
 <p>数，d为等高距。</p>
 <p>2 考点二：等压线图判读</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>判读内容 方法</p>
 <p>判断气压高</p>
 <p>低</p>
@@ -1369,7 +1402,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>最终风向</p>
 <p>判断天气 高压控制→晴朗；低压控制→阴雨；锋面附近→降水</p>
 <p>判断季节 陆地高压→冬季；海洋高压→夏季（北半球）</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 在等压线图中，北半球某地气压梯度力方向为正北，最终风向最可能</p>
 <p>是什么？</p>
 <p>答案： 气压梯度力方向正北（由北指向南），即高压在北、低压在南。</p>
@@ -1395,7 +1428,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>锋面活动。</p>
 <p>⚠ 易错警示</p>
 <p>3 考点三：气候统计图判读</p>
-<h2>知识精讲</h2>
+<h2 class="sec-core"><span class="sec-ic">▣</span>知识精讲</h2>
 <p>气候统计图（气温曲线+降水柱状图）是气候类型判读的核心工具。判读时结</p>
 <p>合&quot;以温定半球→以温定带→以水定型&quot;三步法（参见专题02考点四）。</p>
 <p>常见气候类型的气温曲线特征：</p>
@@ -1418,7 +1451,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>洋性</p>
 <p>全年温和（0~20℃），</p>
 <p>起伏小 全年降水均匀</p>
-<h2>巩固提升</h2>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>巩固提升</h2>
 <p>1. 读某地气候统计图：最热月均温28℃，最冷月均温-3℃，年降水量约</p>
 <p>650mm，降水集中在7-8月。判断气候类型。</p>
 <p>答案： ①最热月7月→北半球。②最冷月&lt;0℃→温带。③降水集中在夏季（7-8</p>
@@ -1443,9 +1476,9 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>看最冷月均温是否&gt;0℃（亚热带季风&gt;0℃，温带季风&lt;0℃）。</p>
 <p>2. 注意&quot;温带海洋性气候&quot;和&quot;温带季风气候&quot;的降水分配差异：前者全年均</p>
 <p>匀，后者集中在夏季。</p>
-<p>⚠ 易错警示</p>
-<p>地理综合题答题模板 方法总结</p>
-<p>专题概述</p>
+<p>⚠ 易错警示</p></div>
+<div class="page"><h1>地理综合题答题模板</h1>
+<h2 class="sec-core"><span class="sec-ic">▣</span>专题概述</h2>
 <p>地理综合题（大题）往往是拉开分差的关键。很多同学知识点都懂，但答题时丢三落</p>
 <p>四、逻辑不清。本专题整理了四大类综合题型的答题模板，每种模板都配有真题示</p>
 <p>例，帮助建立&quot;看到题目→套模板→组织答案&quot;的答题思维。</p>
@@ -1468,7 +1501,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. 人文原因：人口（数量+素质）+ 经济（发展水平+产业结构）+ 交通（便利程</p>
 <p>度）+ 政策（国家/地方政策）+ 科技（技术水平）+ 历史（历史基础）</p>
 <p>真题示例：分析我国西北地区土地荒漠化的原因。</p>
-<h2>参考答案：</h2>
+<h2 class="sec-answer"><span class="sec-ic">✓</span>参考答案：</h2>
 <p>自然原因：①气候干旱（深居内陆，降水稀少，蒸发旺盛）。②风力强劲（靠近</p>
 <p>冬季风源地）。③地表物质疏松（沙质土壤为主）。④植被稀少（覆盖度低）。</p>
 <p>人为原因：①过度放牧（草场退化）。②过度开垦（破坏植被）。③过度樵采</p>
@@ -1480,7 +1513,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>2. 不利影响（消极）：经济（成本上升/资源消耗）+ 社会（搬迁安置/社会矛</p>
 <p>盾）+ 生态（环境污染/生态破坏/资源枯竭）</p>
 <p>真题示例：评价南水北调工程对华北地区的有利影响。</p>
-<h2>参考答案：</h2>
+<h2 class="sec-answer"><span class="sec-ic">✓</span>参考答案：</h2>
 <p>有利影响：①缓解水资源短缺，满足工农业生产和居民生活用水需求。②改善生</p>
 <p>态环境，回补地下水，缓解地面沉降。③促进经济发展，为工业发展提供水资源</p>
 <p>保障。④改善水质，替换超采的地下水。</p>
@@ -1493,7 +1526,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>3. 技术措施：改良技术/节水灌溉/清洁生产/节能减排</p>
 <p>4. 管理措施：制定法规/加强监管/宣传教育/经济手段（补贴/征税）</p>
 <p>真题示例：针对我国华北地区水资源短缺问题，提出解决措施。</p>
-<h2>参考答案：</h2>
+<h2 class="sec-answer"><span class="sec-ic">✓</span>参考答案：</h2>
 <p>工程措施：①跨流域调水（南水北调）。②修建水库，调节径流季节分配。③海</p>
 <p>水淡化（沿海地区）。</p>
 <p>生物措施：①植树造林，增加水源涵养能力。②保护湿地。</p>
@@ -1506,8 +1539,7 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
 <p>充。脱离材料的空洞答案不得分。</p>
 <p>3. 综合题的字数控制：一般每道题4-6个要点，每个要点1-2句话，总分值对应答题要</p>
 <p>点数（通常每点1-2分）。</p>
-<p>⚠ 易错警示</p>
-</div>
+<p>⚠ 易错警示</p></div>
 </div>
 <div class="floaters">
 <button class="fbtn" id="tocBtn" title="目录">☰</button>
@@ -1533,6 +1565,12 @@ p{font-size:15.5px;margin:8px 0;text-align:justify}
   document.getElementById('tocClose').addEventListener('click',closeToc);
   mask.addEventListener('click',closeToc);
   document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
 })();
 </script>
 </body>
