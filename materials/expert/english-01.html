@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>英语·专题01 动词-ing · 精编讲练</title>
+<style>
+:root{--accent:#7c3aed;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+tr:first-child td,tr:first-child th{background:#f1f5f9;font-weight:600}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../english.html">‹ 返回</a><h1>英语·专题01 动词-ing</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编带图版 · 学生版</div><h2>英语·专题01 动词-ing</h2><div class="hero-sub">动词-ing形式作定语、表语、宾补、状语、主语和宾语</div><div class="hero-meta"><span>🖼 几何图全保留</span><span>📊 真表格</span><span>💡 做完题到「答疑」问AI老师对答案</span></div></div>
+<div class="page">
+<div class="tbl"><table><tr><td>考点序号</td><td>考点聚焦</td></tr><tr><td>动词-ing作定语</td><td>单个-ing作前置定语；-ing短语作后置定语，与所修饰名词构成主动/进行关系，可转化为定语从句</td></tr><tr><td>动词-ing作表语</td><td>动名词作表语（说明主语内容）与现在分词作表语（表示主语特征）的辨析</td></tr><tr><td>动词-ing作宾补</td><td>感官动词和使役动词后接doing作宾补，表示动作正在进行；与不定式作宾补（全过程）的区别</td></tr><tr><td>动词-ing作状语</td><td>表示时间、原因、条件、结果、伴随/方式等；与主句主语构成逻辑主谓关系，可转化为状语从句</td></tr><tr><td>动词-ing作主语</td><td>动名词作主语，谓语用单数；it作形式主语的句型；“There is no + doing”固定结构</td></tr><tr><td>动词-ing作宾语</td><td>只接doing作宾语的动词（如avoid, enjoy）；介词后的动名词；动词+doing与+to do的区别</td></tr></table></div>
+<h3 class="h3-point">考点一 动词-ing形式作定语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>基本形式回顾</p>
+<div class="tbl"><table><tr><td>形式</td><td>主动语态</td><td>被动语态</td><td>用法说明</td></tr><tr><td>一般式</td><td>doing</td><td>being done</td><td>动作与谓语动词同时发生，或表示一般性动作</td></tr><tr><td>完成式</td><td>having done</td><td>having been done</td><td>动作发生在谓语动词之前</td></tr><tr><td>否定式</td><td>not doing / not having done</td><td>not being done / not having been done</td><td>在-ing前直接加not</td></tr></table></div>
+<p>动词-ing形式作定语，是高考语法填空和短文改错中的高频考点。</p>
+<p>1. 单个动词-ing形式作前置定语</p>
+<p>单个的-ing通常放在被修饰名词的前面，主要有两种情况：</p>
+<div class="tbl"><table><tr><td>类型</td><td>含义</td><td>示例</td><td>说明</td></tr><tr><td>表用途</td><td>说明被修饰词的“功能和用途”</td><td>a reading room（阅览室）、a swimming pool（游泳池）、running shoes（跑鞋）</td><td>动名词性质，意为“供……用”</td></tr><tr><td>表状态/动作</td><td>表示被修饰词的“动作或状态”</td><td>a sleeping baby（熟睡的婴儿）、boiling water（沸腾的水）、a barking dog（狂吠的狗）</td><td>现在分词性质，相当于“正在……的”</td></tr></table></div>
+<p>辨析：a smoking room（吸烟室——用途，动名词）vs a smoking man（正在吸烟的人——动作，现在分词）</p>
+<p>2. -ing短语作后置定语</p>
+<p>-ing短语作定语时，放在所修饰名词的后面，相当于一个定语从句，表示主动或进行的关系。</p>
+<p>示例：The boy standing over there is my brother. = The boy who is standing over there is my brother.</p>
+<p>示例：The professor giving a lecture is from Cambridge. = The professor who is giving a lecture is from Cambridge.</p>
+<p>注意：现在分词短语作后置定语时，可表示：</p>
+<p>(1) 正在进行的动作（定语从句用进行时）；(2) 现在的状态（定语从句用一般时）。</p>
+<p>3. -ing的被动形式作定语</p>
+<p>被修饰名词与-ing形式之间是被动关系时，使用 being done 形式。</p>
+<p>示例：The bridge being built now will be completed next year.（正在建造的桥）</p>
+<p>4. 动名词与现在分词作定语对比</p>
+<div class="tbl"><table><tr><td>类型</td><td>修饰关系</td><td>逻辑关系</td><td>示例</td></tr><tr><td>动名词</td><td>表示用途</td><td>无主动/被动关系</td><td>a walking stick（手杖）→ a stick for walking</td></tr><tr><td>现在分词</td><td>表示动作</td><td>与名词构成主谓关系</td><td>a walking man（行走的人）→ a man who is walking</td></tr></table></div>
+<p>巧记：动名词说明“用来做什么”，现在分词说明“正在做什么”。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<p>（2024·新高考Ⅰ卷改编）语法填空</p>
+<p>The building __________ (build) over there is our new library.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（6小题，限时5分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. The man __________ (stand) at the school gate is our headmaster.</p>
+<p>2. There is a __________ (swim) pool in our community.</p>
+<p>3. The problem __________ (discuss) at the meeting now is very important.</p>
+<p>4. The __________ (rise) sun looks beautiful over the horizon.</p>
+<p>5. The girl __________ (wear) a red dress is my cousin.</p>
+<p>6. We live in a __________ (live) room facing south.</p>
+<h3 class="h3-point">考点二：动词-ing形式作表语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>动词-ing形式作表语是高考中容易混淆的考点，核心区别在于动名词和现在分词的不同功能。</p>
+<p>1. 动名词作表语</p>
+<p>动名词作表语时，说明主语的具体内容，主语和表语之间是等值关系，可以互换，句子意思不变。</p>
+<p>My favorite sport is swimming. → Swimming is my favorite sport.</p>
+<p>Her job is teaching English. → Teaching English is her job.</p>
+<p>特点：动名词作表语一般表示比较抽象的、习惯性的行为，后面可以接宾语和状语。</p>
+<p>2. 现在分词作表语</p>
+<p>现在分词作表语时，说明主语的性质、特征，相当于形容词，主语和表语不能互换。</p>
+<p>The film is very moving.</p>
+<p>The story sounds interesting.</p>
+<p>The news is exciting.</p>
+<p>辨析：现在分词作表语表示“令人……的”，主语通常是物；其过去分词形式（如interested, excited, moved）表示“感到……的”，主语通常是人。</p>
+<p>3. 动名词与现在分词作表语对比</p>
+<div class="tbl"><table><tr><td>对比维度</td><td>动名词作表语</td><td>现在分词作表语</td></tr><tr><td>功能</td><td>说明主语的具体内容</td><td>说明主语的特征</td></tr><tr><td>可互换性</td><td>可与主语互换</td><td>不可互换</td></tr><tr><td>转化为</td><td>主语→表语</td><td>形容词</td></tr><tr><td>示例</td><td>His job is teaching（他的工作是教学）</td><td>The movie is moving（这部电影很感人）</td></tr></table></div>
+<p>注意：判断动词-ing作表语是动名词还是现在分词，一看能否互换，二看-ing本身是否已形容词化（如interesting, exciting, moving等）。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">例题（2023·全国甲卷改编）语法填空</h3>
+<p>It is really __________ (amaze) that such a little boy can play the piano so well.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（6小题，限时5分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. The news is really __________ (excite). Everyone jumped with joy.</p>
+<p>2. His only hobby is __________ (collect) stamps.</p>
+<p>3. The journey was __________ (tire), but we all enjoyed it.</p>
+<p>4. What he likes best is __________ (make) model planes.</p>
+<p>5. The speech was so __________ (bore) that many people fell asleep.</p>
+<p>6. Seeing is __________ (believe).</p>
+<h3 class="h3-point">考点三：动词-ing形式作宾语补足语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>动词-ing形式作宾补是高考语法填空的难点，常与不定式作宾补进行比较考查。</p>
+<p>1. 感官动词后接-ing作宾补</p>
+<p>感官动词（see, hear, notice, watch, feel, smell, observe, find等）后可用-ing形式作宾补，表示动作正在进行，强调“看见/听见……正在做某事”。</p>
+<p>I saw him crossing the street.（看见他正在过马路）</p>
+<p>We heard the children shouting upstairs.（听见孩子们正在楼上叫喊）</p>
+<p>I felt my heart beating violently.（觉得心脏在猛烈地跳动）</p>
+<p>2. 使役动词后接-ing作宾补</p>
+<p>使役动词（have, get, keep, leave, set, catch等）后可用-ing形式作宾补，表示“使/让……一直做某事”。</p>
+<p>He kept me waiting for an hour.（他让我等了一个小时）</p>
+<p>I won’t have you running about in the room.（我不会让你在房间里到处跑）</p>
+<p>We kept the fire burning all night long.（我们让火整夜燃烧）</p>
+<p>3. with复合结构</p>
+<p>“with + 宾语 + doing”结构中，doing表示主动或正在进行的动作。</p>
+<p>He fell asleep with the lamp burning.</p>
+<p>With so many people helping us, we finished the work ahead of time.</p>
+<p>4. 与不定式作宾补的对比（重要！）</p>
+<div class="tbl"><table><tr><td>对比维度</td><td>doing作宾补</td><td>to do作宾补</td></tr><tr><td>意义</td><td>动作正在进行</td><td>动作全过程或已完成</td></tr><tr><td>强调</td><td>过程/片断</td><td>事实/结果</td></tr><tr><td>示例</td><td>I saw her getting on the bus.（看见她正在上车）</td><td>I saw her get on the bus and drive off.（看见她上车开走了）</td></tr></table></div>
+<p>注意：如果宾语补足语是一系列动作，通常只能用不定式。例如：I saw him enter the room, sit down and light a cigarette.</p>
+<p>5. 特别提示</p>
+<p>have sb doing与have sb do的区别：</p>
+<p>have sb doing：让某人一直做某事（持续性）</p>
+<p>have sb do：让某人做某事（一次性）</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<p>（2022·全国乙卷改编）语法填空</p>
+<p>When I came in, I noticed a stranger __________ (stand) at the corner.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（6小题，限时5分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. I heard someone __________ (knock) at the door when I was reading.</p>
+<p>2. Don’t leave the water __________ (run) while you are brushing your teeth.</p>
+<p>3. We watched the children __________ (play) football on the playground.</p>
+<p>4. With the teacher __________ (help) us, we made great progress.</p>
+<p>5. She could feel her heart __________ (beat) fast with fear.</p>
+<p>6. I saw him __________ (walk) into the library just now.（强调整个动作的过程）</p>
+<h3 class="h3-point">考点四：动词-ing形式作状语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>动词-ing形式作状语是高考语法填空中最核心的考点之一，功能极为丰富。ing形式作状语时，动作的发出者一般是句子的主语，构成逻辑上的主谓关系。</p>
+<p>1. 时间状语</p>
+<p>表示谓语动作发生的时间，可以转化为时间状语从句。</p>
+<p>Hearing the news, he couldn’t help laughing. = When he heard the news, he couldn’t help laughing.</p>
+<p>Walking in the park, I met an old friend.</p>
+<p>注意：如果-ing动作发生在谓语动作之前，要用having done形式。</p>
+<p>2. 原因状语</p>
+<p>表示谓语动作发生的原因，可以转化为原因状语从句。</p>
+<p>Being ill, he didn’t go to school. = Because he was ill, he didn’t go to school.</p>
+<p>Not knowing her address, I had to telephone her. = Because I didn’t know her address, I had to telephone her.</p>
+<p>注意：作原因状语时，主句前不加so，否则不能使用-ing形式作状语。</p>
+<p>3. 条件状语</p>
+<p>表示谓语动作发生的条件，可以转化为条件状语从句。</p>
+<p>Working hard, you will surely succeed. = If you work hard, you will surely succeed.</p>
+<p>Turning left, you will find the hospital.</p>
+<p>4. 结果状语</p>
+<p>表示谓语动作发生带来的顺理成章的结果，可以转化为并列句。现在分词作结果状语，是随着谓语动词的发生而产生的自然结果。</p>
+<p>The child slipped and fell, hitting his head against the door. = … and hit his head.</p>
+<p>His parents died, leaving him an orphan.</p>
+<p>辨析：不定式作结果状语常表示出乎意料的结果。如：He hurried to the station, only to find the train had left.</p>
+<p>5. 方式、伴随状语</p>
+<p>表示伴随谓语动作发生的另一动作，不转化或转化为并列谓语。</p>
+<p>The students walked on the street, talking and laughing.（边走边聊）</p>
+<p>She sat there reading a novel.</p>
+<p>6. 完成式作状语</p>
+<p>当ing动作发生在谓语动作之前时，用having done形式。</p>
+<p>Having worked for two days, he managed to finish his report.（先工作了2天，然后完成了报告）</p>
+<p>Having struggled for many years, he was finally admitted to a key university.</p>
+<p>7. 被动式作状语</p>
+<p>当-ing与主语是被动关系时，用being done或having been done。</p>
+<p>Being laughed at for his mistakes, the boy was very upset.</p>
+<p>8. 独立主格结构</p>
+<p>当状语的主语和主句的主语不一致时，用“逻辑主语 + 现在分词”结构。</p>
+<p>Weather permitting, we will go camping.（天气允许的话……）</p>
+<p>All the work finished, they went home.</p>
+<p>9. 评注性状语</p>
+<p>某些固定的-ing短语作独立成分，说明说话人的态度。</p>
+<p>Generally speaking, girls are more careful than boys.</p>
+<p>Judging from his accent, he is from the south.</p>
+<p>10. 现在分词作状语的基本特征</p>
+<div class="tbl"><table><tr><td>状语类型</td><td>连词提示</td><td>转化方式</td><td>示例</td></tr><tr><td>时间</td><td>when, while</td><td>时间状语从句</td><td>Hearing the news…</td></tr><tr><td>原因</td><td>because, as, since</td><td>原因状语从句</td><td>Being ill…</td></tr><tr><td>条件</td><td>if, unless</td><td>条件状语从句</td><td>Working hard…</td></tr><tr><td>结果</td><td>so, and</td><td>并列句/结果状语从句</td><td>…, making him…</td></tr><tr><td>伴随/方式</td><td>and</td><td>并列谓语</td><td>…, talking and laughing</td></tr></table></div>
+<p>巧记：ing状语，前有时间/原因/条件/结果/伴随/方式，主句主语是逻辑主，主动进行记心间。五种状语各不同，转化从句便分明。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">例题（2024·新高考Ⅱ卷改编）语法填空</h3>
+<p>__________ (work) in the fields for a whole day, the farmer felt very tired.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（8小题，限时8分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. __________ (finish) his homework, he went out to play football.</p>
+<p>2. __________ (not know) the way to the station, he asked a policeman.</p>
+<p>3. The old man was walking along the river, __________ (whistle) happily.</p>
+<p>4. __________ (work) hard, and you will succeed.</p>
+<p>5. __________ (see) from the top of the mountain, the city looks magnificent.</p>
+<p>6. He dropped the glass, __________ (break) it into pieces.</p>
+<p>7. __________ (live) in Shanghai for three years, she knows every corner of the city.</p>
+<p>8. __________ (judge) from his expression, he is very angry.</p>
+<h3 class="h3-point">考点五：动词-ing形式作主语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>动词-ing形式（动名词）作主语是高考语法填空的高频考点，主要考查谓语动词的单复数以及固定句型。</p>
+<p>1. 动名词直接作主语</p>
+<p>动名词作主语时，通常表示习惯性、抽象性、一般性的动作或状态。谓语动词用单数形式。</p>
+<p>Reading in the morning is a good habit.（早起读书是好习惯）</p>
+<p>Swimming gives us great pleasure.（游泳给我们带来极大快乐）</p>
+<p>Laughing is the best medicine.（笑是最好的良药）</p>
+<p>注意：动名词作主语与不定式作主语的细微区别：动名词多表示抽象、习惯的动作，不定式多表示具体、某次的动作。</p>
+<p>Smoking is harmful to health.（泛指吸烟，习惯性）</p>
+<p>To smoke here is not allowed.（指在此处吸烟，具体场合）</p>
+<p>2. it作形式主语，动名词作真正主语</p>
+<p>常见于以“It is + no use / no good / useless / a waste of time / worthwhile”等开头的句型中。</p>
+<p>It is no use crying over spilt milk.（覆水难收）</p>
+<p>It is a waste of time playing computer games all day.</p>
+<p>It is worth making an effort.</p>
+<p>巧记：it形式主句型，no use/good/worthwhile，后跟doing莫迟疑。</p>
+<p>3. “There is no + doing”结构</p>
+<p>该结构意为“不可能做某事”，是高考完形填空中的常见搭配。</p>
+<p>There is no telling what will happen next.（无法预料接下来会发生什么）</p>
+<p>There is no denying that he is a great scientist.</p>
+<p>There is no accounting for taste.（人各有所好）</p>
+<p>4. 动名词的复合结构作主语</p>
+<p>当动名词有自己的逻辑主语时，用“物主代词/名词所有格 + doing”形式。</p>
+<p>His coming late made the teacher angry.</p>
+<p>Tom’s being late for class is unacceptable.</p>
+<p>注意：在非正式英语中，常用人称代词宾格或名词普通格代替，但高考语法填空建议用标准形式。</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">例题（2023·全国乙卷改编）语法填空</h3>
+<p>__________ (take) regular exercise is beneficial to our health.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（6小题，限时5分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. __________ (learn) a foreign language takes time and patience.</p>
+<p>2. It is no good __________ (talk) without doing anything.</p>
+<p>3. There is no __________ (tell) what may happen in the future.</p>
+<p>4. __________ (collect) stamps is one of my hobbies.</p>
+<p>5. His __________ (fail) to pass the exam made his parents worried.</p>
+<p>6. It is a waste of time __________ (wait) for him any longer.</p>
+<h3 class="h3-point">考点六：动词-ing形式作宾语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>动词-ing形式作宾语是高考必考点，包括作动词宾语和介词宾语两类，重点是掌握只接doing作宾语的动词及动词短语，以及与不定式作宾语的辨析。</p>
+<p>1. 只接动词-ing形式作宾语的动词及短语（高频！）</p>
+<div class="tbl"><table><tr><td>类别</td><td>常见动词</td><td>巧记口诀</td></tr><tr><td>表示“避免、错过、放弃”</td><td>avoid, miss, escape, give up</td><td>“避免错过放弃”</td></tr><tr><td>表示“完成、停止、练习”</td><td>finish, stop, practise, quit</td><td>“完成停止练习”</td></tr><tr><td>表示“享受、喜欢、厌恶”</td><td>enjoy, appreciate, dislike, hate, mind</td><td>“享受讨厌介意”</td></tr><tr><td>表示“考虑、建议、允许”</td><td>consider, suggest, advise, permit, allow</td><td>“考虑建议允许”</td></tr><tr><td>表示“耽误、推迟、拖延”</td><td>delay, postpone, put off</td><td>“耽搁推迟”</td></tr><tr><td>表示“承认、否认、报告”</td><td>admit, deny, report</td><td>“承认否认报告”</td></tr><tr><td>短语动词</td><td>keep(on), insist on, feel like, be used to, look forward to, pay attention to, devote to, object to, get down to</td><td>注意：to是介词！</td></tr></table></div>
+<p>巧记口诀：避免错过放弃（avoid, miss, give up），完成停止练习（finish, stop, practise），享受讨厌介意（enjoy, dislike, mind），考虑建议允许（consider, suggest, allow），耽搁推迟（delay, put off），承认否认（admit, deny），禁不住（can’t help），值得（be worth）。</p>
+<p>2. 只接不定式作宾语的动词（对比记忆）</p>
+<div class="tbl"><table><tr><td>动词</td><td>示例</td><td>对比</td></tr><tr><td>want, wish, hope, expect, decide, refuse, promise, offer, pretend, plan, manage, fail, afford, agree</td><td>He refused to help me.</td><td>不能接doing</td></tr></table></div>
+<p>3. 既可接doing又可接to do但意义不同的动词（高频易错点）</p>
+<div class="tbl"><table><tr><td>动词</td><td>+ doing</td><td>+ to do</td></tr><tr><td>remember</td><td>记得做过某事（已做）</td><td>记得去做某事（未做）</td></tr><tr><td>forget</td><td>忘记做过某事（已做）</td><td>忘记去做某事（未做）</td></tr><tr><td>regret</td><td>后悔做过某事</td><td>遗憾去做某事（未做）</td></tr><tr><td>try</td><td>尝试做（方法）</td><td>努力做（目的）</td></tr><tr><td>mean</td><td>意味着（解释）</td><td>打算做（意图）</td></tr><tr><td>stop</td><td>停止做某事</td><td>停下来去做另一事</td></tr><tr><td>go on</td><td>继续做同一件事</td><td>接着做另一件事</td></tr><tr><td>can’t help</td><td>情不自禁</td><td>不能帮忙（后接(to) help）</td></tr></table></div>
+<p>辨析示例：</p>
+<p>I remember locking the door.（我记得锁了门）</p>
+<p>Please remember to lock the door.（记得去锁门）</p>
+<p>Try using a different method.（尝试换一种方法）</p>
+<p>Try to win the race.（努力赢得比赛）</p>
+<p>4. 介词后接动名词作宾语</p>
+<p>所有介词（in, on, at, of, from, for, about, without, by, after, before等）之后，动词必须用-ing形式。</p>
+<p>Thank you for helping me.</p>
+<p>He left without saying goodbye.</p>
+<p>She is interested in reading novels.</p>
+<p>注意：短语动词中的to是介词时，后接doing。如：look forward to, be used to, devote to, pay attention to, get down to, object to等。</p>
+<p>5. need, require, want, deserve表示“需要”时</p>
+<p>主语是物时，后接doing主动形式表示被动意义，相当于to be done。</p>
+<p>The room needs cleaning (= to be cleaned).</p>
+<p>Your hair wants cutting (= to be cut).</p>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">例题1（2024·新高考Ⅰ卷改编）语法填空</h3>
+<p>I really appreciate __________ (have) such a wonderful opportunity to study abroad.</p>
+<p>【思路点拨】 ① 谓语动词appreciate意为“感激”；② 该动词只能接doing作宾语；③ 故填having。</p>
+<h3 class="h3-example">例题2（2023·全国甲卷改编）语法填空</h3>
+<p>When I entered the room, I found him __________ (read) a book and didn’t notice me.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（8小题，限时6分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. Would you mind __________ (turn) down the music a little?</p>
+<p>2. He is looking forward to __________ (visit) the Great Wall.</p>
+<p>3. I still remember __________ (see) her for the first time when she was only five.</p>
+<p>4. Don’t forget __________ (lock) the door when you leave.</p>
+<p>5. The flowers need __________ (water).</p>
+<p>6. He devoted all his life to __________ (help) the poor.</p>
+<p>7. I can’t help __________ (laugh) when I hear the joke.</p>
+<p>8. Try __________ (add) some salt to the soup if it’s too bland.</p>
+<p>一、单项选择</p>
+<p>1．—What made your partner look so surprised?</p>
+<p>—________ of stealing by his good friend.</p>
+<p>A．Accused	B．Accusing	C．To accuse	D．Being accused</p>
+<p>2．You&#x27;ll imagine what difficulty we had ________ home in the snowstorm.</p>
+<p>A．to walk	B．having walked	C．walked	D．walking</p>
+<p>3．_______he&#x27;s only been learning English for a year，he speaks it very well.</p>
+<p>A．Considered	B．Considering</p>
+<p>C．Having considered	D．To consider</p>
+<p>4．_________ the earthquake was quite an unusual experience for him.</p>
+<p>A．Survive	B．To survive</p>
+<p>C．Surviving	D．Survived</p>
+<p>A．talk	B．talked	C．talking	D．talks</p>
+<p>6．At that time ________two important players ________a big problem for Lang Ping.</p>
+<p>A．to lose; is	B．losing; was</p>
+<p>C．lose; was	D．losing; is</p>
+<p>7．The pen _______ so well and I think it is worth _______.</p>
+<p>A．is written; buying	B．writes; to be bought</p>
+<p>C．writes; buying	D．wrote; being bought</p>
+<p>8．You can not imagine a child ________so cruelly.</p>
+<p>A．to treat	B．treating	C．being treated	D．to be treated</p>
+<p>9．It’s no good ________ for other people to make decisions for you.</p>
+<p>A．to wait	B．wait	C．waiting	D．to be waiting</p>
+<p>10．_______ in the leg made it impossible for him to walk to school every day.</p>
+<p>A．Being injured	B．Injured</p>
+<p>C．Having injured	D．Injuring</p>
+<p>二、语法填空</p>
+<p>11．A special task force         (consist) of senior medical experts is to help guide treatment in makeshift hospitals (方舱医院). (所给词的适当形式填空)</p>
+<p>12．As a musician, she has spent years         (perfect) her technique. (所给词的适当形式填空)</p>
+<p>13．        (strength) social ties helps build communities and protect individuals against stress. (所给词的适当形式填空)</p>
+<p>14．To avoid             (punish), John preferred not to tell the truth that he broke the vase. (所给词的适当形式填空)</p>
+<p>15．There was a terrible noise           (follow) the sudden burst of light. (所给词的适当形式填空)</p>
+<p>16．With exams            (approach), it’s a good idea to review your class notes. （所给词的适当形式填空）</p>
+<p>17．I look forward to          (receive) your reply. (所给词的适当形式填空)</p>
+<p>18．She is interested in        (collect) stamps from different countries. (所给词的适当形式填空)</p>
+<p>19．       (finish) his homework, Tom went to help his mom with the dishes. (所给词的适当形式填空)</p>
+<p>20．The ancient building remained,        (function) as shelters for many homeless people. (所给词的适当形式填空)</p>
+<p>阅读下面材料，在空白处填入1个单词或括号内单词的正确形式。</p>
+<p>One evening 18,000 BC, Lala turned for home with her collections of nuts and fruits. A feast was waiting for her,    21    was a family reunion after a long        22       （ separate）. How excited she was to meet his husband, Dahu, again!  Having heard wolves howling in the forest, Lala accelerated her steps     23    （ fear） there might be wild beasts lying in wait for her.</p>
+<p>She had almost reached her destination    24    a delicious smell arrested her progress and she stopped. The smell of meat filled the air and her senses became dizzy  25  hunger. She saw the great dinner was well     26     （ prepare）  . The family were doing their own duties and Dahu, with      27     （ strong ） pronounced eyebrows and cheekbones,     28     （ sharpen ） his tools.</p>
+<p>The first guests      29      （ arrive） for dinner were all from the neighbouring caves. Lala&#x27;s  spirits    30   （ rise）. She smiled to herself gaily and went out of the cave to welcome her friends and neighbours.</p>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

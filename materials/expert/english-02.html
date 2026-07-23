@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>英语·专题02 动词不定式 · 精编讲练</title>
+<style>
+:root{--accent:#7c3aed;--bg:#eef2f7;--ink:#0f172a;--sub:#64748b;--line:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(15,23,42,.18)}
+.topbar-row{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.topbar .back{background:rgba(255,255,255,.18);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.progress{height:3px;background:rgba(255,255,255,.25)}
+.progress i{display:block;height:100%;width:0;background:#fff;transition:width .1s linear}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 80px}
+.hero{background:var(--accent);color:#fff;border-radius:16px;padding:28px 24px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:12px;letter-spacing:2px;margin-bottom:12px}
+.hero h2{color:#fff;font-size:23px;border:none;padding:0;margin:0 0 8px;line-height:1.4}
+.hero-sub{font-size:14px;opacity:.85;margin-bottom:16px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-meta span{background:rgba(255,255,255,.15);padding:5px 12px;border-radius:8px;font-size:12.5px}
+.page{background:#fff;border-radius:14px;padding:24px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(15,23,42,.07);border-top:4px solid var(--accent)}
+.wrap h1{font-size:19px;color:var(--accent);margin:0 0 12px;padding:10px 14px;background:#f1f5f9;border-left:5px solid var(--accent);border-radius:8px;line-height:1.5}
+.wrap h2{font-size:16px;margin:20px 0 10px;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.wrap h2 .sec-ic{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;color:#fff;font-size:12px;flex:none}
+.sec-core{background:#eff6ff;color:#1d4ed8} .sec-core .sec-ic{background:#2563eb}
+.sec-example{background:#fffbeb;color:#b45309} .sec-example .sec-ic{background:#d97706}
+.sec-practice{background:#ecfeff;color:#0e7490} .sec-practice .sec-ic{background:#0891b2}
+.sec-warn{background:#fef2f2;color:#b91c1c} .sec-warn .sec-ic{background:#dc2626}
+.sec-answer{background:#ecfdf5;color:#047857} .sec-answer .sec-ic{background:#059669}
+.wrap h3{font-size:14.5px;margin:16px 0 8px;display:inline-block;padding:4px 12px;border-radius:6px;font-weight:600}
+.h3-example{background:#fef3c7;color:#92400e}
+.h3-answer{background:#d1fae5;color:#065f46}
+.h3-point{background:#dbeafe;color:#1e40af}
+.wrap p{font-size:15.5px;margin:8px 0;text-align:justify;color:#1e293b}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+td,th{border:1px solid #cbd5e1;padding:7px 9px;text-align:left;vertical-align:top;line-height:1.6}
+tr:first-child td,tr:first-child th{background:#f1f5f9;font-weight:600}
+.fig{text-align:center;margin:14px 0}
+.fig img{max-width:100%;border-radius:8px;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid var(--line);font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-row"><a class="back" href="../english.html">‹ 返回</a><h1>英语·专题02 动词不定式</h1></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+<div class="wrap">
+<div class="hero"><div class="hero-tag">精编带图版 · 学生版</div><h2>英语·专题02 动词不定式</h2><div class="hero-sub">动词不定式作定语和状语</div><div class="hero-meta"><span>🖼 几何图全保留</span><span>📊 真表格</span><span>💡 做完题到「答疑」问AI老师对答案</span></div></div>
+<div class="page">
+<div class="tbl"><table><tr><td>考点序号</td><td>考点聚焦</td></tr><tr><td>不定式作定语</td><td>后置定语，与被修饰名词构成动宾、主谓或同位关系；不定式主动形式表被动；常考“the first/last/next + to do”结构</td></tr><tr><td>不定式作状语</td><td>目的状语（in order to, so as to）；结果状语（only to do, too...to, enough to）；原因、条件、评注性状语；与-ing分词作状语的区别</td></tr></table></div>
+<h3 class="h3-point">考点一：动词不定式作定语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>不定式作定语时，通常放在被修饰名词的后面（后置定语）。这是高考语法填空的高频考点。</p>
+<p>1. 不定式与被修饰名词的逻辑关系</p>
+<div class="tbl"><table><tr><td>逻辑关系</td><td>说明</td><td>示例</td><td>转化方式</td></tr><tr><td>动宾关系</td><td>被修饰名词是不定式动词的宾语</td><td>I have a lot of work to do.</td><td>do the work</td></tr><tr><td>主谓关系</td><td>被修饰名词是不定式动词的主语</td><td>He is the first to arrive.</td><td>He arrives first</td></tr><tr><td>同位关系</td><td>不定式解释说明抽象名词的内容</td><td>He has the ability to solve the problem.</td><td>ability = to solve…</td></tr><tr><td>介词宾语关系</td><td>不定式为不及物动词，需要加介词</td><td>I need a pen to write with.</td><td>write with a pen</td></tr></table></div>
+<p>注意：当不定式与被修饰名词构成动宾关系，且不定式动词为不及物动词时，必须加上相应的介词，且介词不能省略。</p>
+<p>He has no house to live in.（不能说 to live）</p>
+<p>Please give me a chair to sit on.</p>
+<p>2. 不定式主动形式表被动意义</p>
+<p>在“There be + 主语 + to do”结构中，不定式用主动形式表示被动意义，这是高考常考考点。</p>
+<p>There is no time to lose.（没有时间可浪费了）= to be lost</p>
+<p>There are many books to read.（有很多书要读）= to be read</p>
+<p>辨析：如果强调动作的执行者，用主动形式更自然；如果需要明确表示被动，也可用被动式，但主动式更常见。</p>
+<p>3. 修饰抽象名词的不定式</p>
+<p>下列抽象名词后常接不定式作定语：ability, ambition, anxiety, attempt, chance, courage, decision, determination, effort, opportunity, plan, promise, refusal, responsibility, right, time, way, wish等。</p>
+<p>He made a promise to help me.</p>
+<p>I have no chance to go abroad.</p>
+<p>4. 修饰序数词、最高级或“the only/next/last”等</p>
+<p>当被修饰词是序数词（the first, the second）、最高级（the best）或“the only, the next, the last”时，常用不定式作定语。</p>
+<p>She is the only student to be praised.</p>
+<p>He is the best man to do the job.</p>
+<p>5. 不定式与-ing分词作定语的区别</p>
+<div class="tbl"><table><tr><td>比较维度</td><td>不定式作定语</td><td>-ing分词作定语</td></tr><tr><td>时间关系</td><td>通常指将来动作</td><td>通常指正在进行或习惯性动作</td></tr><tr><td>逻辑关系</td><td>可表动宾、主谓、同位</td><td>多表主动/进行</td></tr><tr><td>示例对比</td><td>a meeting to be held tomorrow</td><td>a meeting being held now</td></tr></table></div>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<p>（2024·新高考Ⅱ卷）语法填空</p>
+<p>If you have any problems __________ (solve), please let me know.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（8小题，限时6分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. He is always the first __________ (come) and the last __________ (leave).</p>
+<p>2. I have a composition __________ (write) this evening.</p>
+<p>3. There are still many difficulties __________ (overcome).</p>
+<p>4. Please lend me a pen __________ (write) with.</p>
+<p>5. She has no desire __________ (travel) abroad.</p>
+<p>6. The next train __________ (arrive) is from Shanghai.</p>
+<p>7. He is looking for a room __________ (live) in.</p>
+<p>8. The problem __________ (discuss) at tomorrow’s meeting is very important.</p>
+<h3 class="h3-point">考点二：动词不定式作状语</h3>
+<h2 class="sec-core"><span class="sec-ic">▣</span>【知识精讲】</h2>
+<p>不定式作状语可以表示目的、结果、原因、条件、方式等多种意义，是高考的高频考点，尤其需要掌握与-ing分词作状语的区别。</p>
+<p>1. 目的状语</p>
+<p>不定式作目的状语是最常见的用法，可以转化为“in order to”或“so as to”（注意so as to不能置于句首）。</p>
+<p>He got up early to catch the first bus. = He got up early in order to catch the first bus.</p>
+<p>To improve his English, he practices every day.</p>
+<p>In order to pass the exam, he studied hard.（句首只能用in order to，不能用so as to）</p>
+<p>注意：否定形式为“not to do”或“in order not to do / so as not to do”。</p>
+<p>He spoke quietly not to wake the baby.</p>
+<p>He left early so as not to miss the train.</p>
+<p>2. 结果状语</p>
+<p>不定式作结果状语常与only, too, enough, so...as to, such...as to等连用。</p>
+<div class="tbl"><table><tr><td>结构</td><td>含义</td><td>示例</td></tr><tr><td>only to do</td><td>意想不到的结果（常表失望、惊讶）</td><td>He hurried to the station, only to find the train had left.</td></tr><tr><td>too...to do</td><td>太……而不能</td><td>He is too young to join the army.</td></tr><tr><td>...enough to do</td><td>足够……以至于能</td><td>He is old enough to go to school.</td></tr><tr><td>so + adj/adv + as to do</td><td>如此……以至于</td><td>He was so angry as to shout at everyone.</td></tr><tr><td>such + n + as to do</td><td>如此……以至于</td><td>It was such a loud noise as to wake the whole building.</td></tr></table></div>
+<p>辨析：-ing分词作结果状语表示“自然而然的结果”，而不定式（尤其only to do）常表示“出乎意料的、令人失望的结果”。</p>
+<p>He died, leaving his wife a large debt.（自然结果）</p>
+<p>He rushed to the airport, only to be told the flight had been canceled.（意外结果）</p>
+<p>3. 原因状语</p>
+<p>不定式作原因状语多用在表示情感的形容词之后，说明产生这种情感的原因。</p>
+<p>常见形容词：happy, glad, sad, sorry, surprised, delighted, lucky, proud, eager, anxious, foolish, cruel, right, wrong等。</p>
+<p>I am sorry to hear that.</p>
+<p>She was surprised to see me there.</p>
+<p>We are proud to be Chinese.</p>
+<p>注意：这种结构往往可与“主语+be+形容词+that从句”互换。如：I am glad that I have helped you. → I am glad to have helped you.</p>
+<p>4. 条件状语</p>
+<p>不定式作条件状语常用于“to do...，you will...”结构中，或与“if”引导的条件状语从句互换。</p>
+<p>To look at him, you would think he is a millionaire.（= If you looked at him...）</p>
+<p>To hear him talk, you would think he knows everything.</p>
+<p>5. 评注性状语（独立成分）</p>
+<p>某些不定式短语用作独立成分，修饰整个句子，表示说话人的态度或评价。</p>
+<p>常用短语：to tell the truth（说实话），to be honest（老实说），to be frank（坦率地说），to make matters worse（更糟的是），to begin with（首先）等。</p>
+<p>To tell the truth, I don’t like him.</p>
+<p>To be honest, I have no idea.</p>
+<p>6. 不定式作状语与-ing分词的对比</p>
+<div class="tbl"><table><tr><td>状语类型</td><td>不定式</td><td>-ing分词</td></tr><tr><td>目的</td><td>常用（强调意图）</td><td>不用</td></tr><tr><td>结果</td><td>意外结果（only to do）</td><td>自然结果（doing）</td></tr><tr><td>原因</td><td>多用于表情感形容词后</td><td>一般原因（Being ill...）</td></tr><tr><td>时间/伴随</td><td>不常用</td><td>常用</td></tr></table></div>
+<h2 class="sec-example"><span class="sec-ic">✎</span>【典例破题】</h2>
+<h3 class="h3-example">例题1（2023·全国甲卷）语法填空</h3>
+<p>He hurried to the booking office, only __________ (tell) that the tickets had been sold out.</p>
+<h3 class="h3-example">例题2（2024·新高考Ⅰ卷）语法填空</h3>
+<p>__________ (improve) his pronunciation, he listens to English news every day.</p>
+<h2 class="sec-practice"><span class="sec-ic">✦</span>【巩固提升】（8小题，限时6分钟）</h2>
+<p>用括号内所给动词的适当形式填空。</p>
+<p>1. He worked day and night, only __________ (fail) in the end.</p>
+<p>2. She was too nervous __________ (say) a word.</p>
+<p>3. __________ (get) a better view, he climbed to the top of the hill.</p>
+<p>4. We are delighted __________ (invite) to the party.</p>
+<p>5. He is old enough __________ (take) care of himself.</p>
+<p>6. __________ (tell) you the truth, I don’t agree with you.</p>
+<p>7. He spoke loudly so as __________ (hear) by everyone.</p>
+<p>8. __________ (hear) him talk, you would think he is an expert.</p>
+<p>一、单项选择</p>
+<p>1．Jenny ________ a present from Peter yesterday, but she didn’t want to ________ it.</p>
+<p>A．received; receive	B．accepted; receive</p>
+<p>C．received; accept	D．accepted; accept</p>
+<p>2．What is the way George thought of  ______ enough money to buy the house?</p>
+<p>A．to get	B．getting	C．having got	D．being got</p>
+<p>3．China has made great efforts___________ other countries build high-speed railways.</p>
+<p>A．help	B．to help	C．helping	D．helped</p>
+<p>4．The new robot is going to ______ by Larry’s company in two weeks.</p>
+<p>A．test	B．testing	C．be tested	D．have tested</p>
+<p>5．The teacher told them ______ make so much noise.</p>
+<p>A．don’t	B．not	C．will not	D．not to</p>
+<p>6．Many people have already begun to do what they can __________ the environment.</p>
+<p>A．protecting	B．protect	C．to protect	D．protected</p>
+<p>7．A high-tech park is announced ________ in this area, but I don’t know when the project will be put into practice.</p>
+<p>A．to have built	B．to have been built	C．to be built	D．to build</p>
+<p>8．—I hope to take the computer course.</p>
+<p>—Good idea. __________ more about it, visit this website.</p>
+<p>A．To find out	B．Finding out</p>
+<p>C．To be finding out	D．Having found out</p>
+<p>9．The elevated roads are flooded with large outdoor signboards of ads, which are designed ________ by passing car drivers.</p>
+<p>A．to read	B．to be reading	C．to have read	D．to be read</p>
+<p>10．When I am travelling, I always take something in case I am hungry.</p>
+<p>A．to eat	B．eaten	C．eating	D．eat</p>
+<p>二、语法填空</p>
+<p>11．After months of careful research and comparison, the committee finally made their decision, only         (select) the most ill-behaved candidate for the position. （所给词的适当形式填空）</p>
+<p>12．     (complete) the difficult project, Tom worked hard and put a lot of effort into it.</p>
+<p>13．Atalanta was one of the cities                  (hit) in the hurricane. (所给词的适当形式填空)</p>
+<p>14．We should take measures            (protect) the earth we live on.（用单词的适当形式完成句子）</p>
+<p>15．It took a long time for the birthday cake          (make).(所给词的适当形式填空)</p>
+<p>16．They are close friends, so nothing is likely          (threat) their relationship which many people find harmonious. (所给词的适当形式填空)</p>
+<p>17．The government troops were forced          (withdraw). (所给词的适当形式填空)</p>
+<p>18．It is suggested that you should practice more on daily basis to          (sharp) your badminton skills. (所给词的适当形式填空)</p>
+<p>19．        (obtain) the degree, she has to pass all of the examinations. （所给词的适当形式填空）</p>
+<p>20．The room needs          (clean) every day. (所给词的适当形式填空)</p>
+<p>阅读下面短文，在空白处填入1个适当的单词或括号内单词的正确形式。</p>
+<p>Last October I left the UK behind and joined Gillotts School on their rugby and hockey tour in sunny Italy. It was my first time away on a sports tour and I could not have enjoyed it      21      (much)! Five days of sports, between training and matches with Italian players, but also plenty    22   time for sightseeing and free moments to enjoy an ice cream in the sun.</p>
+<p>23     our flight had landed in Milan, we got on our coach and drove for a couple of hours towards our home for the week, the Hotel San Zeno, a      24      (comfort), family-run accommodation, with a splendid view of Lake Garda. Starting the day with a self-led training, enjoying a boat tour on the lake, wandering along the streets of Sirmione for a few hours and heading off      25      (play) a sport — these are just a few     26     (example) of the kind of adventures you could be having!</p>
+<p>The girls and boys on this tour seemed to enjoy     27      (they) thoroughly, especially after winning ALL of their games! I found myself     28     (cheer) them on like a proud aunt and celebrating afterwards with food, drink and social time, hosted by rugby clubs after matches. On the last day we headed back to      29      airport, but not before stopping in Milan! We      30      (pay) a visit to the San Siro museum and enjoyed a stadium tour before moving on to Milan city centre for an afternoon of shopping.</p>
+</div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本讲目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h2,.wrap h3'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H3')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  var bar=document.getElementById('progressBar');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
