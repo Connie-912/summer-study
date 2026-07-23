@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>政治 · 暑假衔接讲练</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>政治暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root { --accent: #dc2626; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text2: #64748b; --border: #e2e8f0; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.9; }
-.topbar { position: sticky; top: 0; z-index: 10; background: var(--accent); color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-.topbar .back { color: #fff; text-decoration: none; font-size: 13px; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; white-space: nowrap; cursor: pointer; border: none; font-family: inherit; }
-.topbar .tt { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 60px; }
-.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
-h1 { font-size: 19px; color: var(--accent); margin: 6px 0 14px; }
-h2 { font-size: 16px; color: var(--accent); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--accent); }
-h3 { font-size: 15px; color: var(--text); margin: 14px 0 6px; background: #f1f5f9; display: inline-block; padding: 2px 10px; border-radius: 6px; }
-p { margin: 4px 0; }
-.pg-num { text-align: center; font-size: 11px; color: var(--text2); margin: 0 0 14px; }
-@media (max-width: 640px) { body { font-size: 14.5px; } .page { padding: 16px 14px; } }
+:root{--accent:#dc2626;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
+p{font-size:15.5px;margin:8px 0;text-align:justify}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <button class="back" onclick="window.close();if(!window.closed){history.back()}">&#8592; 返回</button>
-  <div class="tt">政治 · 暑假衔接讲练</div>
-</div>
+<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>政治暑假衔接</h1></div>
 <div class="wrap">
 <div class="page">
 <p>新高二政治暑假衔接讲练</p>
 <p>经济生活 + 政治生活 + 哲学基础</p>
 <p>系统复习高一核心知识，夯实基础，为高二文科学习做好准备</p>
-</div>
 <p>1 生活与消费——货币、价格、消费</p>
 <p>【知识精讲】</p>
 <p>核心知识框架</p>
@@ -112,21 +119,21 @@ p { margin: 4px 0; }
 <p>解析：油价上涨导致新能源汽车销量增加，说明汽油与新能源汽车在消费</p>
 <p>上可以相互替代，②正确；同时也体现了价格变动对相关商品需求量的影</p>
 <p>响，④正确。材料未涉及生产规模变化，①不符合题意；汽车属于高档耐</p>
-<p>用品，但材料强调的是"相关商品"之间的关系，而非需求弹性大小，③不符</p>
+<p>用品，但材料强调的是&quot;相关商品&quot;之间的关系，而非需求弹性大小，③不符</p>
 <p>合题意。</p>
 <p>【例题3】（主观题）</p>
 <p>材料：近年来，随着居民收入水平的提高，旅游消费日益火爆。同时，一</p>
-<p>些商家利用"低价游""零负团费"等手段诱导消费，导致旅游纠纷频发。国家</p>
-<p>旅游局出台规定，禁止"不合理低价游"，规范旅游市场秩序。</p>
-<p>结合材料，运用"影响消费的因素"和"规范市场秩序"的相关知识，分析如何</p>
+<p>些商家利用&quot;低价游&quot;&quot;零负团费&quot;等手段诱导消费，导致旅游纠纷频发。国家</p>
+<p>旅游局出台规定，禁止&quot;不合理低价游&quot;，规范旅游市场秩序。</p>
+<p>结合材料，运用&quot;影响消费的因素&quot;和&quot;规范市场秩序&quot;的相关知识，分析如何</p>
 <p>促进旅游市场健康发展。</p>
 <h3>【答案】</h3>
 <p>①收入是消费的基础和前提。居民收入提高为旅游消费提供了物质基础，</p>
 <p>要继续发展经济，增加居民收入，释放旅游消费潜力。</p>
 <p>②消费心理影响消费行为。消费者应树立正确的消费观，避免盲目从众，</p>
-<p>理性选择旅游产品，不贪图便宜参加"不合理低价游"。</p>
-<p>③国家应加强宏观调控，规范市场秩序。运用法律和行政手段，打击"零负</p>
-<p>团费"等欺诈行为，建立健全社会信用制度，以道德为支撑、法律为保障，</p>
+<p>理性选择旅游产品，不贪图便宜参加&quot;不合理低价游&quot;。</p>
+<p>③国家应加强宏观调控，规范市场秩序。运用法律和行政手段，打击&quot;零负</p>
+<p>团费&quot;等欺诈行为，建立健全社会信用制度，以道德为支撑、法律为保障，</p>
 <p>营造放心的旅游消费环境。</p>
 <p>【巩固提升】</p>
 <p>练习题</p>
@@ -163,14 +170,14 @@ p { margin: 4px 0; }
 <p>说明居民消费水平提高，消费结构改善，生活水平提升。</p>
 <p>【易错警示】</p>
 <p>常见错误与混淆点</p>
-<p>混淆货币的职能：看到"标价""价格"选价值尺度；看到"购买""现场交易"选流</p>
-<p>通手段；看到"赊账""工资""还债"选支付手段。</p>
+<p>混淆货币的职能：看到&quot;标价&quot;&quot;价格&quot;选价值尺度；看到&quot;购买&quot;&quot;现场交易&quot;选流</p>
+<p>通手段；看到&quot;赊账&quot;&quot;工资&quot;&quot;还债&quot;选支付手段。</p>
 <p>⚠</p>
 <p>个别劳动生产率与单位商品价值量无关：单位商品价值量只与社会必要劳动</p>
 <p>时间有关，与个别生产者无关。</p>
 <p>⚠</p>
-<p>互为替代品 vs 互补品：替代品是"二选一"（如牛肉和羊肉）；互补品是"缺一</p>
-<p>不可"（如汽车和汽油）。</p>
+<p>互为替代品 vs 互补品：替代品是&quot;二选一&quot;（如牛肉和羊肉）；互补品是&quot;缺一</p>
+<p>不可&quot;（如汽车和汽油）。</p>
 <p>⚠</p>
 <p>通货膨胀的实质：是社会总需求大于社会总供给，纸币贬值、物价持续上</p>
 <p>涨。注意：物价上涨不等于通货膨胀，偶尔的物价上涨不一定是通胀。</p>
@@ -243,7 +250,7 @@ p { margin: 4px 0; }
 <p>D. 消费为生产创造新的劳动力</p>
 <h3>【答案】B</h3>
 <p>解析：智能手机的普及（生产）带来了移动支付、网络购物等新消费方</p>
-<p>式，体现了生产决定消费的方式，选B。A强调"消费什么"，C、D强调消费</p>
+<p>式，体现了生产决定消费的方式，选B。A强调&quot;消费什么&quot;，C、D强调消费</p>
 <p>的反作用，均与题意不符。</p>
 <p>【例题2】（选择题）</p>
 <p>下列对公有制经济认识正确的是（　）</p>
@@ -258,12 +265,12 @@ p { margin: 4px 0; }
 <p>制经济在国民经济中的地位不平等（公有制是主体），但在市场竞争中的</p>
 <p>地位平等，④错误。</p>
 <p>【例题3】（主观题）</p>
-<p>材料：某科技公司坚持"技术立身"，每年将销售收入的15%投入研发，掌握</p>
+<p>材料：某科技公司坚持&quot;技术立身&quot;，每年将销售收入的15%投入研发，掌握</p>
 <p>了核心技术，产品畅销海内外。该公司还积极承担社会责任，参与公益事</p>
 <p>业，树立了良好的企业形象。</p>
-<p>结合材料，运用"企业的经营与发展"的知识，分析该公司成功的经验。</p>
+<p>结合材料，运用&quot;企业的经营与发展&quot;的知识，分析该公司成功的经验。</p>
 <h3>【答案】</h3>
-<p>①制定了正确的经营战略。公司坚持"技术立身"，明确了技术创新的发展方</p>
+<p>①制定了正确的经营战略。公司坚持&quot;技术立身&quot;，明确了技术创新的发展方</p>
 <p>向，抓住了市场竞争的关键。</p>
 <p>②提高自主创新能力，形成竞争优势。公司每年投入大量资金用于研发，</p>
 <p>掌握了核心技术，提高了产品的科技含量和市场竞争力。</p>
@@ -271,7 +278,7 @@ p { margin: 4px 0; }
 <p>公益事业，赢得了消费者的信任和社会的认可，树立了良好的企业形象。</p>
 <p>【巩固提升】</p>
 <p>练习题</p>
-<p>1. "没有汽车生产的大发展，就没有人们对家庭轿车的强烈向往。"这主要表</p>
+<p>1. &quot;没有汽车生产的大发展，就没有人们对家庭轿车的强烈向往。&quot;这主要表</p>
 <p>明（　）</p>
 <p>A. 生产决定消费的对象</p>
 <p>B. 生产决定消费的方式</p>
@@ -307,8 +314,8 @@ p { margin: 4px 0; }
 <p>展，有利于增强综合国力，有利于提高人民生活水平。</p>
 <p>【易错警示】</p>
 <p>常见错误与混淆点</p>
-<p>生产决定消费 vs 消费反作用于生产：材料中有"随着……的发展，人们开</p>
-<p>始……"一般强调生产决定消费；有"……消费火爆，带动了……产业发展"则</p>
+<p>生产决定消费 vs 消费反作用于生产：材料中有&quot;随着……的发展，人们开</p>
+<p>始……&quot;一般强调生产决定消费；有&quot;……消费火爆，带动了……产业发展&quot;则</p>
 <p>强调消费的反作用。</p>
 <p>⚠</p>
 <p>公有制主体地位 ≠ 国有经济主导作用：公有制是主体（量+质），国有经济是</p>
@@ -317,8 +324,8 @@ p { margin: 4px 0; }
 <p>社会主义经济 ≠ 社会主义市场经济：社会主义经济仅指公有制经济；社会主</p>
 <p>义市场经济包括公有制和非公有制经济。</p>
 <p>⚠</p>
-<p>劳动者各项权利的区分："获得工资"是取得劳动报酬的权利；"休息放假"是休</p>
-<p>息休假的权利；"缴纳社保"涉及社会保险和福利的权利。</p>
+<p>劳动者各项权利的区分：&quot;获得工资&quot;是取得劳动报酬的权利；&quot;休息放假&quot;是休</p>
+<p>息休假的权利；&quot;缴纳社保&quot;涉及社会保险和福利的权利。</p>
 <p>⚠</p>
 <p>股票 vs 债券：股票是所有权凭证，风险大、收益不确定；债券是债务凭证，</p>
 <p>风险相对较小、收益固定。</p>
@@ -368,7 +375,7 @@ p { margin: 4px 0; }
 <p>紧缩性财政政策</p>
 <p>经济过热时采用。减少财政支出、增</p>
 <p>加税收，抑制总需求，稳定物价，给</p>
-<p>经济"降温"。</p>
+<p>经济&quot;降温&quot;。</p>
 <p>•</p>
 <p>•</p>
 <p>•</p>
@@ -400,7 +407,7 @@ p { margin: 4px 0; }
 <p>系列措施：提高最低工资标准，增加低收入者收入；完善税收调节机制，</p>
 <p>加大对高收入群体的税收调节力度；健全社会保障体系，保障困难群众基</p>
 <p>本生活。</p>
-<p>结合材料，运用"收入分配与社会公平"的知识，说明国家是如何促进收入分</p>
+<p>结合材料，运用&quot;收入分配与社会公平&quot;的知识，说明国家是如何促进收入分</p>
 <p>配公平的。</p>
 <h3>【答案】</h3>
 <p>①坚持和完善按劳分配为主体、多种分配方式并存的分配制度。为我国实</p>
@@ -442,8 +449,8 @@ p { margin: 4px 0; }
 <h3>【答案】经济平稳运行要求社会总供给与社会总需求保持基本平衡。经</h3>
 <p>济增长滞缓时，采取扩张性财政政策，增加财政支出、减少税收，刺激</p>
 <p>总需求增长，降低失业率，拉动经济增长。经济过热时，采取紧缩性财</p>
-<p>政政策，减少财政支出、增加税收，抑制总需求，稳定物价，给经济"降</p>
-<p>温"。</p>
+<p>政政策，减少财政支出、增加税收，抑制总需求，稳定物价，给经济&quot;降</p>
+<p>温&quot;。</p>
 <p>【易错警示】</p>
 <p>常见错误与混淆点</p>
 <p>按劳分配只在公有制经济中：非公有制经济中的工资收入属于按劳动要素分</p>
@@ -452,8 +459,8 @@ p { margin: 4px 0; }
 <p>初次分配 vs 再分配：企业内部的工资分配属于初次分配；政府的税收、社</p>
 <p>保、转移支付属于再分配。</p>
 <p>⚠</p>
-<p>财政政策的"反向调节"：经济低迷时"增支减税"（扩张），经济过热时"减支</p>
-<p>增税"（紧缩）。</p>
+<p>财政政策的&quot;反向调节&quot;：经济低迷时&quot;增支减税&quot;（扩张），经济过热时&quot;减支</p>
+<p>增税&quot;（紧缩）。</p>
 <p>⚠</p>
 <p>税收的固定性不是一成不变：固定性指征税前以法律形式预先规定，不是永</p>
 <p>远不能改变。国家可以依法调整税率。</p>
@@ -552,7 +559,7 @@ p { margin: 4px 0; }
 <p>材料：近年来，我国大力推进生态文明建设，实施最严格的生态环境保护</p>
 <p>制度，打好蓝天、碧水、净土保卫战。同时，加快发展方式绿色转型，推</p>
 <p>动形成绿色低碳的生产生活方式。</p>
-<p>结合材料，运用"新发展理念"的知识，说明我国推进生态文明建设的意义。</p>
+<p>结合材料，运用&quot;新发展理念&quot;的知识，说明我国推进生态文明建设的意义。</p>
 <h3>【答案】</h3>
 <p>①绿色发展注重解决人与自然和谐共生问题。推进生态文明建设，实施最</p>
 <p>严格的生态环境保护制度，有利于节约资源和保护环境，促进人与自然和</p>
@@ -596,8 +603,8 @@ p { margin: 4px 0; }
 <p>要支柱。②实施乡村振兴战略。③实施区域协调发展战略。</p>
 <p>【易错警示】</p>
 <p>常见错误与混淆点</p>
-<p>自发性 vs 盲目性 vs 滞后性："为了利益造假/排污"是自发性；"跟风种植/投</p>
-<p>资"是盲目性；"产品上市后才发现滞销"是滞后性。</p>
+<p>自发性 vs 盲目性 vs 滞后性：&quot;为了利益造假/排污&quot;是自发性；&quot;跟风种植/投</p>
+<p>资&quot;是盲目性；&quot;产品上市后才发现滞销&quot;是滞后性。</p>
 <p>⚠</p>
 <p>经济手段 vs 行政手段：经济手段通过利益调节引导（如税收、利率）；行政</p>
 <p>手段通过强制命令（如罚款、查封、限购）。</p>
@@ -614,7 +621,7 @@ p { margin: 4px 0; }
 <p>5 公民的政治生活——国家性质与公民权利</p>
 <p>【知识精讲】</p>
 <p>核心知识框架</p>
-<p>人民 vs 公民：人民是政治概念，与"敌人"相对，在我国现阶段包括全体社会主义</p>
+<p>人民 vs 公民：人民是政治概念，与&quot;敌人&quot;相对，在我国现阶段包括全体社会主义</p>
 <p>劳动者、社会主义事业的建设者、拥护社会主义的爱国者、拥护祖国统一和致力</p>
 <p>于中华民族伟大复兴的爱国者。公民是法律概念，指具有某国国籍并依据该国宪</p>
 <p>法和法律规定，享有权利和承担义务的人。公民范围大于人民。</p>
@@ -678,7 +685,7 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>【典例破题】</p>
 <p>【例题1】（选择题）</p>
-<p>我国宪法规定："中华人民共和国的一切权力属于人民。"这意味着（　）</p>
+<p>我国宪法规定：&quot;中华人民共和国的一切权力属于人民。&quot;这意味着（　）</p>
 <p>A. 人民可以直接行使国家权力</p>
 <p>B. 人民是国家和社会的主人</p>
 <p>C. 公民享有同样的权利和义务</p>
@@ -686,7 +693,7 @@ p { margin: 4px 0; }
 <h3>【答案】B</h3>
 <p>解析：我国一切权力属于人民，说明人民是国家和社会的主人，B正确。人</p>
 <p>民通过人民代表大会间接行使国家权力，不是直接行使，A错误。公民平等</p>
-<p>地享有权利、履行义务，但不是"同样的"权利和义务，C错误。自由和权利</p>
+<p>地享有权利、履行义务，但不是&quot;同样的&quot;权利和义务，C错误。自由和权利</p>
 <p>是相对的，不是无限的，D错误。</p>
 <p>【例题2】（选择题）</p>
 <p>某市就地铁票价调整举行听证会，广泛听取市民意见。这是公民通过____</p>
@@ -701,9 +708,9 @@ p { margin: 4px 0; }
 <p>社会公示，均与题意不符。</p>
 <p>【例题3】（主观题）</p>
 <p>材料：某村村民通过村民会议讨论决定村里的重大事项，制定村规民约规</p>
-<p>范村民行为，定期公开村务接受村民监督。近年来，该村实现了"小事不出</p>
-<p>组、大事不出村"，成为远近闻名的和谐村。</p>
-<p>结合材料，运用"基层群众自治制度"的知识，说明该村是如何实现有效治理</p>
+<p>范村民行为，定期公开村务接受村民监督。近年来，该村实现了&quot;小事不出</p>
+<p>组、大事不出村&quot;，成为远近闻名的和谐村。</p>
+<p>结合材料，运用&quot;基层群众自治制度&quot;的知识，说明该村是如何实现有效治理</p>
 <p>的。</p>
 <h3>【答案】</h3>
 <p>①实行村民自治，保障村民直接行使民主权利。村民通过村民会议等形</p>
@@ -750,11 +757,11 @@ p { margin: 4px 0; }
 <p>人民直接行使国家权力 ×：人民通过人民代表大会间接行使国家权力，人大</p>
 <p>代表直接行使国家权力。</p>
 <p>⚠</p>
-<p>选举权和被选举权的范围：特指选举和被选举为"国家权力机关代表"（人大代</p>
+<p>选举权和被选举权的范围：特指选举和被选举为&quot;国家权力机关代表&quot;（人大代</p>
 <p>表），不包括选举村委会主任、居委会主任等。</p>
 <p>⚠</p>
-<p>民主决策 ≠ 民主监督：民主决策是"事前参与决策"，民主监督是"事后监督执</p>
-<p>行"。</p>
+<p>民主决策 ≠ 民主监督：民主决策是&quot;事前参与决策&quot;，民主监督是&quot;事后监督执</p>
+<p>行&quot;。</p>
 <p>⚠</p>
 <p>基层群众自治组织不是国家机关：村委会、居委会是基层群众性自治组织，</p>
 <p>不是政府机关，不履行政府职能。</p>
@@ -850,13 +857,13 @@ p { margin: 4px 0; }
 <p>D. 发挥人民民主对权力的制约和监督</p>
 <h3>【答案】B</h3>
 <p>解析：有效制约和监督权力的关键是健全权力运行的制约和监督体系，这</p>
-<p>个体系一靠民主，二靠法制，B正确。A是措施但不是"关键"；C、D都是监</p>
+<p>个体系一靠民主，二靠法制，B正确。A是措施但不是&quot;关键&quot;；C、D都是监</p>
 <p>督体系中的具体内容，不全面。</p>
 <p>【例题3】（主观题）</p>
 <p>材料：某地方政府在推进城市建设中，广泛征求群众意见，邀请专家论</p>
 <p>证，召开听证会，制定科学的规划方案。同时，建立项目建设信息公开制</p>
 <p>度，接受社会监督，确保工程质量。</p>
-<p>结合材料，运用"政府"的相关知识，分析该地方政府是如何坚持对人民负责</p>
+<p>结合材料，运用&quot;政府&quot;的相关知识，分析该地方政府是如何坚持对人民负责</p>
 <p>原则的。</p>
 <h3>【答案】</h3>
 <p>①坚持为人民服务的工作态度。该地方政府在推进城市建设中广泛征求群</p>
@@ -908,9 +915,9 @@ p { margin: 4px 0; }
 <p>率，牢记权为民所赋，坚持权为民所用、情为民所系、利为民所谋。</p>
 <p>【易错警示】</p>
 <p>常见错误与混淆点</p>
-<p>政府职能的区分：看到"打击犯罪、维护稳定"选保障人民民主；看到"调控经</p>
-<p>济、市场监管"选经济建设；看到"教育、文化、思想道德"选文化建设；看</p>
-<p>到"社保、医疗、住房"选社会建设；看到"环保、节能、生态"选生态文明。</p>
+<p>政府职能的区分：看到&quot;打击犯罪、维护稳定&quot;选保障人民民主；看到&quot;调控经</p>
+<p>济、市场监管&quot;选经济建设；看到&quot;教育、文化、思想道德&quot;选文化建设；看</p>
+<p>到&quot;社保、医疗、住房&quot;选社会建设；看到&quot;环保、节能、生态&quot;选生态文明。</p>
 <p>⚠</p>
 <p>政府不能包办一切：政府履行基本职能，有效发挥作用，并不意味着政府包</p>
 <p>办一切。我国正在建设服务型政府，其根本目的是进一步提高政府为经济社</p>
@@ -959,8 +966,8 @@ p { margin: 4px 0; }
 <p>权力</p>
 <p>选举、任命、罢免、撤</p>
 <p>职</p>
-<p>监督权 监督宪法和法律的实施，监督"一府一</p>
-<p>委两院"的工作</p>
+<p>监督权 监督宪法和法律的实施，监督&quot;一府一</p>
+<p>委两院&quot;的工作</p>
 <p>听取和审议工作报告、</p>
 <p>执法检查</p>
 <p>人大代表职</p>
@@ -994,7 +1001,7 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>•</p>
 <p>人大监督</p>
-<p>国家权力机关对"一府一委两院"的监</p>
+<p>国家权力机关对&quot;一府一委两院&quot;的监</p>
 <p>督，具有法律效力和强制性，是国家</p>
 <p>监督体系中最高层次的监督。</p>
 <p>政协监督</p>
@@ -1008,7 +1015,7 @@ p { margin: 4px 0; }
 <p>A. 决定权　　B. 立法权　　C. 任免权　　D. 监督权</p>
 <h3>【答案】B</h3>
 <p>解析：审议通过法律是立法权的体现，选B。决定权是对重大事项作出决</p>
-<p>定；任免权是对人事任免；监督权是对"一府一委两院"工作进行监督，均与</p>
+<p>定；任免权是对人事任免；监督权是对&quot;一府一委两院&quot;工作进行监督，均与</p>
 <p>题意不符。</p>
 <p>【例题2】（选择题）</p>
 <p>人民政协围绕团结和民主两大主题，履行（　）职能。</p>
@@ -1021,7 +1028,7 @@ p { margin: 4px 0; }
 <p>材料：某自治区在党的领导下，结合自身实际制定自治条例和单行条例，</p>
 <p>发展特色经济，保护民族文化，加强民族团结教育，经济社会快速发展，</p>
 <p>人民生活水平显著提高。</p>
-<p>结合材料，运用"民族区域自治制度"的知识，说明该自治区取得成就的原</p>
+<p>结合材料，运用&quot;民族区域自治制度&quot;的知识，说明该自治区取得成就的原</p>
 <p>因。</p>
 <h3>【答案】</h3>
 <p>①坚持中国共产党的领导。中国共产党是中国特色社会主义事业的领导核</p>
@@ -1074,11 +1081,11 @@ p { margin: 4px 0; }
 <p>人民政协不是国家机关：人民政协是多党合作和政治协商的重要机构，是统</p>
 <p>一战线组织，不是国家权力机关或行政机关，不行使国家权力。</p>
 <p>⚠</p>
-<p>民族区域自治不是"完全自治"：民族区域自治是在国家统一领导下的自治，</p>
+<p>民族区域自治不是&quot;完全自治&quot;：民族区域自治是在国家统一领导下的自治，</p>
 <p>自治地方是国家不可分割的一部分。</p>
 <p>⚠</p>
-<p>积极引导宗教与社会主义社会相适应：不是与"社会主义"相适应，而是与"社</p>
-<p>会主义社会"相适应。</p>
+<p>积极引导宗教与社会主义社会相适应：不是与&quot;社会主义&quot;相适应，而是与&quot;社</p>
+<p>会主义社会&quot;相适应。</p>
 <p>⚠</p>
 <p>8 哲学基础——唯物论与认识论</p>
 <p>【知识精讲】</p>
@@ -1157,33 +1164,33 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>【典例破题】</p>
 <p>【例题1】（选择题）</p>
-<p>"日有所思，夜有所梦"说明（　）</p>
+<p>&quot;日有所思，夜有所梦&quot;说明（　）</p>
 <p>A. 意识是物质的产物</p>
 <p>B. 意识是人脑对客观存在的反映</p>
 <p>C. 意识能够能动地改造世界</p>
 <p>D. 意识活动具有主动创造性</p>
 <h3>【答案】B</h3>
-<p>解析："日有所思，夜有所梦"说明梦（意识）是对白天所见所闻（客观存</p>
+<p>解析：&quot;日有所思，夜有所梦&quot;说明梦（意识）是对白天所见所闻（客观存</p>
 <p>在）的反映，体现意识是人脑对客观存在的反映，选B。A强调意识的起</p>
 <p>源，C强调意识的能动作用，D强调意识的特点，均与题意不符。</p>
 <p>【例题2】（选择题）</p>
-<p>"纸上得来终觉浅，绝知此事要躬行。"这体现的哲学道理是（　）</p>
+<p>&quot;纸上得来终觉浅，绝知此事要躬行。&quot;这体现的哲学道理是（　）</p>
 <p>A. 实践是认识的来源</p>
 <p>B. 实践是认识发展的动力</p>
 <p>C. 实践是检验认识真理性的唯一标准</p>
 <p>D. 实践是认识的目的</p>
 <h3>【答案】A</h3>
-<p>解析："躬行"即亲身实践，强调要真正深入理解事物，必须亲自去做，体现</p>
+<p>解析：&quot;躬行&quot;即亲身实践，强调要真正深入理解事物，必须亲自去做，体现</p>
 <p>了实践是认识的来源，选A。诗句侧重强调亲自实践才能获得真正的认识，</p>
 <p>而不是强调检验认识或推动认识发展。</p>
 <p>【例题3】（主观题）</p>
 <p>材料：2023年，某地区在推进乡村振兴过程中，深入调研本地自然条件和</p>
-<p>市场需求，因地制宜发展特色产业，不搞"一刀切"。同时，加强科技投入，</p>
+<p>市场需求，因地制宜发展特色产业，不搞&quot;一刀切&quot;。同时，加强科技投入，</p>
 <p>培育新品种，改进种植技术，取得了良好的经济效益和社会效益。</p>
-<p>结合材料，运用"唯物论"的知识，分析该地区推进乡村振兴的做法。</p>
+<p>结合材料，运用&quot;唯物论&quot;的知识，分析该地区推进乡村振兴的做法。</p>
 <h3>【答案】</h3>
 <p>①物质决定意识，要求我们一切从实际出发，实事求是。该地区深入调研</p>
-<p>本地自然条件和市场需求，因地制宜发展特色产业，不搞"一刀切"，做到了</p>
+<p>本地自然条件和市场需求，因地制宜发展特色产业，不搞&quot;一刀切&quot;，做到了</p>
 <p>从实际出发。</p>
 <p>②意识对物质具有能动作用，正确的意识促进事物的发展。该地区科学规</p>
 <p>划产业发展，加强科技投入，以正确的意识指导实践，推动了乡村振兴。</p>
@@ -1200,7 +1207,7 @@ p { margin: 4px 0; }
 <h3>【答案】C。哲学的基本问题是思维和存在的关系问题，包括两个方面：</h3>
 <p>何者为第一性（划分唯物主义和唯心主义的标准）和有无同一性（划分</p>
 <p>可知论和不可知论的标准）。</p>
-<p>2. "巧妇难为无米之炊"说明（　）</p>
+<p>2. &quot;巧妇难为无米之炊&quot;说明（　）</p>
 <p>A. 意识能动作用是巨大的</p>
 <p>B. 意识能动作用是有限的</p>
 <p>C. 物质是不以人的意志为转移的</p>
@@ -1249,7 +1256,34 @@ p { margin: 4px 0; }
 <p>改造规律本身。</p>
 <p>⚠</p>
 <p>新高二政治暑假衔接讲练 · 祝你学习进步，为高二文科学习打下坚实基础！</p>
-<p>本资料仅供学习参考，请结合教材系统复习</p></div>
+<p>本资料仅供学习参考，请结合教材系统复习</p>
 </div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本册目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h1,.wrap h2'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H2')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>

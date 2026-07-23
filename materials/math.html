@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>数学 · 暑假衔接讲练</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>数学暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root { --accent: #2563eb; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text2: #64748b; --border: #e2e8f0; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.9; }
-.topbar { position: sticky; top: 0; z-index: 10; background: var(--accent); color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-.topbar .back { color: #fff; text-decoration: none; font-size: 13px; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; white-space: nowrap; cursor: pointer; border: none; font-family: inherit; }
-.topbar .tt { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 60px; }
-.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
-h1 { font-size: 19px; color: var(--accent); margin: 6px 0 14px; }
-h2 { font-size: 16px; color: var(--accent); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--accent); }
-h3 { font-size: 15px; color: var(--text); margin: 14px 0 6px; background: #f1f5f9; display: inline-block; padding: 2px 10px; border-radius: 6px; }
-p { margin: 4px 0; }
-.pg-num { text-align: center; font-size: 11px; color: var(--text2); margin: 0 0 14px; }
-@media (max-width: 640px) { body { font-size: 14.5px; } .page { padding: 16px 14px; } }
+:root{--accent:#2563eb;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
+p{font-size:15.5px;margin:8px 0;text-align:justify}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <button class="back" onclick="window.close();if(!window.closed){history.back()}">&#8592; 返回</button>
-  <div class="tt">数学 · 暑假衔接讲练</div>
-</div>
+<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>数学暑假衔接</h1></div>
 <div class="wrap">
 <div class="page">
 <p>新高二数学暑假衔接讲练</p>
@@ -37,6 +45,7 @@ p { margin: 4px 0; }
 <p>每道题带详细</p>
 <p>解析</p>
 </div>
+<div class="page">
 <h1>01 专题01：平面向量 简要回顾</h1>
 <h2>知识精讲</h2>
 <p>核心定理/</p>
@@ -72,7 +81,7 @@ p { margin: 4px 0; }
 <p>线。</p>
 <p>等和线定理中 x + y = 1 是三点共线的充要条件，系数必须为正不一定成</p>
 <p>立。</p>
-<p>极化恒等式用"和"与"差"的模长来表示数量积，注意系数4的位置。</p>
+<p>极化恒等式用&quot;和&quot;与&quot;差&quot;的模长来表示数量积，注意系数4的位置。</p>
 <p>数量积结果是一个实数，不是向量。</p>
 <p>说明</p>
 <p>本专题为简要回顾。家教老师已提供详细资料，建议重点掌握基本定理和等</p>
@@ -81,7 +90,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>02 专题02：解三角形 5大考点</h1>
 <h2>知识精讲</h2>
 <p>定理/公</p>
@@ -160,8 +170,8 @@ p { margin: 4px 0; }
 <p>a = 2√19。a2 = b2+c2−2bc·cosA = 36+16−2×6×4×cos120° =</p>
 <p>52−2×24×(−1/2) = 52+24 = 76，∴ a = √76 = 2√19。</p>
 <h2>易错警示</h2>
-<p>余弦定理中符号：cosA = (b2+c2−a2)/(2bc)，分子是"另两边平方和减</p>
-<p>对边平方"。</p>
+<p>余弦定理中符号：cosA = (b2+c2−a2)/(2bc)，分子是&quot;另两边平方和减</p>
+<p>对边平方&quot;。</p>
 <p>判断三角形形状时，用余弦值的正负：cosA&gt;0 锐角；cosA=0 直角；</p>
 <p>cosA&lt;0 钝角。</p>
 <p>注意防止符号错误，尤其是 cos120° = −1/2。</p>
@@ -262,7 +272,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>03 专题03：数列 4大考点</h1>
 <h2>知识精讲</h2>
 <p>类型 通项公式 前 n 项和 关键性质</p>
@@ -403,7 +414,7 @@ p { margin: 4px 0; }
 <p>S3 = −18。直接计算：a1 = 1×(−2)1 = −2，a2 = 2×(−2)2 = 2×4 = 8，</p>
 <p>a3 = 3×(−2)3 = 3×(−8) = −24。S3 = −2+8−24 = −18。</p>
 <h2>易错警示</h2>
-<p>错位相减只适用于"等差×等比"型数列。</p>
+<p>错位相减只适用于&quot;等差×等比&quot;型数列。</p>
 <p>乘公比后对齐时，指数要对应好，别错位。</p>
 <p>·</p>
 <p>·</p>
@@ -411,7 +422,8 @@ p { margin: 4px 0; }
 <p>最后一步解出 Sn 时注意系数的符号。</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>04 专题04：函数复习（重点） 重点复习</h1>
 <h2>知识精讲</h2>
 <p>知识</p>
@@ -430,7 +442,7 @@ p { margin: 4px 0; }
 <p>性</p>
 <p>x1&lt;x2 ⇒ f(x1)&lt;f(x2) 为增函数；反之减</p>
 <p>函数</p>
-<p>导数法（f'(x)&gt;0增）、定</p>
+<p>导数法（f&#x27;(x)&gt;0增）、定</p>
 <p>义法、图像法</p>
 <p>奇偶</p>
 <p>性 奇：f(−x) = −f(x)；偶：f(−x) = f(x)定义域必须关于原点对称，</p>
@@ -476,7 +488,7 @@ p { margin: 4px 0; }
 <h2>典例破题</h2>
 <h3>例1：判断 f(x) = x3 + x 的奇偶性及单调性。</h3>
 <p>解：f(−x) = (−x)3+(−x) = −x3−x = −(x3+x) = −f(x)，∴ f(x) 为</p>
-<p>奇函数。f'(x) = 3x2+1 &gt; 0，∴ f(x) 在 R 上单调递增。</p>
+<p>奇函数。f&#x27;(x) = 3x2+1 &gt; 0，∴ f(x) 在 R 上单调递增。</p>
 <p>巩固1</p>
 <p>判断 f(x) = x2 − 2|x| 的奇偶性。</p>
 <p>答案：</p>
@@ -537,7 +549,7 @@ p { margin: 4px 0; }
 <p>巩固2</p>
 <p>判断 f(x) = 2x + x − 3 在 (0, 2) 内零点的个数。</p>
 <p>答案：</p>
-<p>1个。f(0) = 1+0−3 = −2 &lt; 0，f(2) = 4+2−3 = 3 &gt; 0。f'(x) =</p>
+<p>1个。f(0) = 1+0−3 = −2 &lt; 0，f(2) = 4+2−3 = 3 &gt; 0。f&#x27;(x) =</p>
 <p>2xln2 + 1 &gt; 0，f(x) 单调递增，故在 (0,2) 内有且仅有 1 个零点。</p>
 <p>巩固3</p>
 <p>若 f(x) = x3 − 3x + 1 在区间 (0, 1) 内有零点，用二分法求近似值（精确到</p>
@@ -548,20 +560,21 @@ p { margin: 4px 0; }
 <p>= 0.2656 &gt; 0。零点在 (0.25, 0.5)。f(0.375) = 0.0527−1.125+1 =</p>
 <p>−0.0723 &lt; 0。零点在 (0.25, 0.375)。取 x ≈ 0.3。</p>
 <h2>易错警示</h2>
-<p>零点存在定理只能判断零点存在，不能说"只有一个"（除非加上单调</p>
+<p>零点存在定理只能判断零点存在，不能说&quot;只有一个&quot;（除非加上单调</p>
 <p>性）。</p>
 <p>f(a)f(b) &lt; 0 是零点存在的充分条件，不是必要条件。</p>
 <p>二分法每次将区间缩小一半，精度由区间长度决定。</p>
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>05 专题05：三角函数 4大考点</h1>
 <h2>知识精讲</h2>
 <p>知识模</p>
 <p>块 核心内容 关键公式</p>
 <p>诱导公</p>
-<p>式 "奇变偶不变，符号看象限"sin(π+α) = −sinα；cos(π/2−α) =</p>
+<p>式 &quot;奇变偶不变，符号看象限&quot;sin(π+α) = −sinα；cos(π/2−α) =</p>
 <p>sinα</p>
 <p>图像与</p>
 <p>性质</p>
@@ -598,9 +611,9 @@ p { margin: 4px 0; }
 <p>6/5。sin(π−α) = sinα = 3/5；cos(π/2−α) = sinα = 3/5。∴ 原式 = 3/5</p>
 <p>+ 3/5 = 6/5。</p>
 <h2>易错警示</h2>
-<p>"奇变偶不变"：奇指 k·π/2 中 k 为奇数时函数名改变（sin↔cos,</p>
+<p>&quot;奇变偶不变&quot;：奇指 k·π/2 中 k 为奇数时函数名改变（sin↔cos,</p>
 <p>tan↔cot）。</p>
-<p>"符号看象限"：把 α 视为锐角，看原函数在对应象限的符号。</p>
+<p>&quot;符号看象限&quot;：把 α 视为锐角，看原函数在对应象限的符号。</p>
 <p>sin(−α) = −sinα，cos(−α) = cosα（sin 是奇函数，cos 是偶函数）。</p>
 <p>考点2：图像与性质</p>
 <h2>典例破题</h2>
@@ -691,7 +704,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>06 专题06：空间向量与立体几何初步 预习 预习型</h1>
 <p>预习说明</p>
 <p>本专题为高二上学期内容预习。空间向量是平面向量的自然延伸，将二维拓</p>
@@ -797,11 +811,12 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>07 专题07：直线与圆的方程 预习 预习型</h1>
 <p>预习说明</p>
 <p>本专题为高二上学期解析几何的预备内容。解析几何的核心思想是用代数方</p>
-<p>法研究几何问题，即"建系——设点——列方程——求解"。直线与圆是最基</p>
+<p>法研究几何问题，即&quot;建系——设点——列方程——求解&quot;。直线与圆是最基</p>
 <p>础的解析几何对象。</p>
 <h2>知识精讲</h2>
 <p>知识模块 核心公式 要点</p>
@@ -904,15 +919,16 @@ p { margin: 4px 0; }
 <h2>易错警示</h2>
 <p>直线与圆位置关系：d &lt; r 相交，d = r 相切，d &gt; r 相离。</p>
 <p>两圆位置关系需比较圆心距 d 与 r1+r2 和 |r1−r2| 的关系。</p>
-<p>切线问题常用"圆心到直线距离等于半径"来列方程。</p>
+<p>切线问题常用&quot;圆心到直线距离等于半径&quot;来列方程。</p>
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>08 专题08：数学解题思维导图 题型分类+套路总结</h1>
 <p>使用说明</p>
-<p>本专题将前面各专题中涉及的解题方法和套路进行系统梳理，形成"题型 + 方</p>
-<p>法"的对应关系。建议在复习完前面各专题后，用本专题进行查漏补缺和思维</p>
+<p>本专题将前面各专题中涉及的解题方法和套路进行系统梳理，形成&quot;题型 + 方</p>
+<p>法&quot;的对应关系。建议在复习完前面各专题后，用本专题进行查漏补缺和思维</p>
 <p>建模。</p>
 <p>一、函数值域求法大全</p>
 <p>1. 配方法</p>
@@ -987,7 +1003,7 @@ p { margin: 4px 0; }
 <p>直观但需要较强的几何直觉</p>
 <p>4a·b = |a+b|2 − |a−b|2</p>
 <p>将数量积转化为模长</p>
-<p>适用：已知"和"与"差"的模长</p>
+<p>适用：已知&quot;和&quot;与&quot;差&quot;的模长</p>
 <p>技巧性强，需专门练习</p>
 <p>方法：正弦定理</p>
 <p>先求第三角，再求其他边</p>
@@ -1045,7 +1061,7 @@ p { margin: 4px 0; }
 <p>综合学习建议</p>
 <p>基础薄弱怎么办：从专题04（函数复习）开始，函数是一切的基础。每天</p>
 <p>至少做5道题，坚持21天形成习惯。</p>
-<p>做题顺序：先看"知识精讲"表格 → 做"典例破题" → 独立做"巩固提升" →</p>
+<p>做题顺序：先看&quot;知识精讲&quot;表格 → 做&quot;典例破题&quot; → 独立做&quot;巩固提升&quot; →</p>
 <p>对答案 → 记录错题。</p>
 <p>重点突破：函数（专题04）和三角函数（专题05）是高二上学期的基础，</p>
 <p>务必优先掌握。</p>
@@ -1059,7 +1075,34 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>新高二数学暑假衔接讲练 — 高一升高二理科方向</p>
-<p>建议配合家教老师一对一辅导使用，每天2-3小时，持续6-8周完成</p></div>
+<p>建议配合家教老师一对一辅导使用，每天2-3小时，持续6-8周完成</p>
 </div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本册目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h1,.wrap h2'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H2')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>

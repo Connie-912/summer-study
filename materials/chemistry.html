@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>化学 · 暑假衔接讲练</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>化学暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root { --accent: #10b981; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text2: #64748b; --border: #e2e8f0; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.9; }
-.topbar { position: sticky; top: 0; z-index: 10; background: var(--accent); color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-.topbar .back { color: #fff; text-decoration: none; font-size: 13px; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; white-space: nowrap; cursor: pointer; border: none; font-family: inherit; }
-.topbar .tt { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 60px; }
-.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
-h1 { font-size: 19px; color: var(--accent); margin: 6px 0 14px; }
-h2 { font-size: 16px; color: var(--accent); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--accent); }
-h3 { font-size: 15px; color: var(--text); margin: 14px 0 6px; background: #f1f5f9; display: inline-block; padding: 2px 10px; border-radius: 6px; }
-p { margin: 4px 0; }
-.pg-num { text-align: center; font-size: 11px; color: var(--text2); margin: 0 0 14px; }
-@media (max-width: 640px) { body { font-size: 14.5px; } .page { padding: 16px 14px; } }
+:root{--accent:#10b981;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
+p{font-size:15.5px;margin:8px 0;text-align:justify}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <button class="back" onclick="window.close();if(!window.closed){history.back()}">&#8592; 返回</button>
-  <div class="tt">化学 · 暑假衔接讲练</div>
-</div>
+<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>化学暑假衔接</h1></div>
 <div class="wrap">
 <div class="page">
 <p>新高二化学暑假衔接讲练</p>
 <p>高一升高二转理科 · 化学系统性补漏</p>
 <h2>知识精讲 典例破题 巩固提升 易错警示</h2>
 </div>
+<div class="page">
 <h1>专题01 · 物质的量</h1>
 <p>物质的量是高中化学计算的核心，串联起宏观与微观世界。本专题涵盖5大考</p>
-<p>点，基础薄弱者务必从概念关系网络图入手，逐步建立"物质的量中心"思维。</p>
+<p>点，基础薄弱者务必从概念关系网络图入手，逐步建立&quot;物质的量中心&quot;思维。</p>
 <p>一、知识精讲</p>
 <p>考点1：n / N / NA / m / M / V / Vm / c 的关系网络</p>
 <p>核心关系网络（以物质的量 n 为中心）</p>
@@ -189,8 +198,8 @@ p { margin: 4px 0; }
 <p>NA 为阿伏伽德罗常数的值。判断：1 mol Fe 与足量稀 HNO3 反应，转移电子数为 3NA。</p>
 <p>【答案与解析】</p>
 <p>不一定。若稀 HNO3 过量，Fe 被氧化为 Fe3+，转移 3NA e−；若 Fe 过量，可能生</p>
-<p>成 Fe2+（Fe+2Fe3+=3Fe2+），需结合具体条件分析。此题表述不严谨，按"足量稀</p>
-<p>HNO3"应认为氧化为 Fe3+，转移 3NA，正确。</p>
+<p>成 Fe2+（Fe+2Fe3+=3Fe2+），需结合具体条件分析。此题表述不严谨，按&quot;足量稀</p>
+<p>HNO3&quot;应认为氧化为 Fe3+，转移 3NA，正确。</p>
 <p>Q1-6</p>
 <p>判断：1 L 0.1 mol/L NaHCO3 溶液中 HCO3− 和 CO32− 离子数之和为 0.1NA。</p>
 <p>【答案与解析】</p>
@@ -205,7 +214,7 @@ p { margin: 4px 0; }
 <p>M(NaOH) = 23 + 16 + 1 = 40 g/mol</p>
 <p>m(NaOH) = 0.05 mol × 40 g/mol = 2.0 g</p>
 <p>Q1-8</p>
-<p>配制一定物质的量浓度溶液时，下列操作对浓度有何影响（填"偏大""偏小""无影响"）：</p>
+<p>配制一定物质的量浓度溶液时，下列操作对浓度有何影响（填&quot;偏大&quot;&quot;偏小&quot;&quot;无影响&quot;）：</p>
 <p>(1) 溶解后未冷却即转移至容量瓶中 ______</p>
 <p>(2) 定容时液面超过刻度线，用胶头滴管吸出多余部分 ______</p>
 <p>(3) 转移时有少量溶液溅出 ______</p>
@@ -267,7 +276,7 @@ p { margin: 4px 0; }
 <p>48y</p>
 <p>此数据不足以求解。题目可能想考察的是平均摩尔质量：M平 = 32x+48y/(x+y)。</p>
 <p>此题数据有误，不适用十字交叉法。</p>
-<p>（说明：此题旨在让学生意识到十字交叉法需满足"可加和性"前提。）</p>
+<p>（说明：此题旨在让学生意识到十字交叉法需满足&quot;可加和性&quot;前提。）</p>
 <p>Q1-15</p>
 <p>已知空气中 N2 和 O2 的体积比约为 4 : 1，求空气的平均摩尔质量。</p>
 <p>【答案与解析】</p>
@@ -276,11 +285,11 @@ p { margin: 4px 0; }
 <p>（通常取 29 g/mol 作为空气的平均摩尔质量。）</p>
 <p>四、易错警示</p>
 <p>⚠ 专题01 易错点警示</p>
-<p>标况条件：必须同时满足 0°C 和 101 kPa，只提"标准状况"才可用 Vm=22.4 L/mol。</p>
+<p>标况条件：必须同时满足 0°C 和 101 kPa，只提&quot;标准状况&quot;才可用 Vm=22.4 L/mol。</p>
 <p>物质状态：标况下 H2O、SO3、CCl4、酒精、苯、碳原子数≥5的烷烃均为非气态。</p>
-<p>粒子种类：注意问的是"原子数"还是"分子数"，是"质子数"还是"电子数"。</p>
+<p>粒子种类：注意问的是&quot;原子数&quot;还是&quot;分子数&quot;，是&quot;质子数&quot;还是&quot;电子数&quot;。</p>
 <p>容量瓶规格：常见规格为 50 mL、100 mL、250 mL、500 mL、1000 mL，配制时选</p>
-<p>择"大于且最接近"所需体积的规格。</p>
+<p>择&quot;大于且最接近&quot;所需体积的规格。</p>
 <p>定容操作：距刻度线 1~2 cm 处必须改用胶头滴管，不能直接倾倒。</p>
 <p>十字交叉法注意：仅适用于两组分混合、可加和的物理量（如质量、物质的量、摩尔质</p>
 <p>量），不适用于体积（非理想混合）或不可加和的量。</p>
@@ -290,10 +299,11 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题02 · 氧化还原反应</h1>
-<p>氧化还原反应是贯穿高中化学的核心反应类型，从化合价变化角度理解"氧</p>
-<p>化"与"还原"的本质——电子转移。本专题从概念辨析到配平方法，循序渐进。</p>
+<p>氧化还原反应是贯穿高中化学的核心反应类型，从化合价变化角度理解&quot;氧</p>
+<p>化&quot;与&quot;还原&quot;的本质——电子转移。本专题从概念辨析到配平方法，循序渐进。</p>
 <p>一、知识精讲</p>
 <p>考点1：核心概念辨析</p>
 <p>概念 定义</p>
@@ -357,29 +367,29 @@ p { margin: 4px 0; }
 <p>氧化剂被还原</p>
 <p>后的产物 — — Cu（还原产物）</p>
 <p>记忆口诀</p>
-<p>"升失氧，降得还"——化合价升高，失电子，发生氧化反应（还原剂）；化合价降低，得电</p>
+<p>&quot;升失氧，降得还&quot;——化合价升高，失电子，发生氧化反应（还原剂）；化合价降低，得电</p>
 <p>子，发生还原反应（氧化剂）。</p>
-<p>"氧氧还还"——氧化剂被还原（发生还原反应），还原剂被氧化（发生氧化反应）。</p>
+<p>&quot;氧氧还还&quot;——氧化剂被还原（发生还原反应），还原剂被氧化（发生氧化反应）。</p>
 <p>考点2：双线桥与单线桥</p>
 <p>方法 连接方式 箭头含义 标注内容</p>
 <p>双线</p>
 <p>桥 反应物→产物（同元素）电子转移</p>
 <p>方向</p>
-<p>"得/失 ne−"，化合价</p>
+<p>&quot;得/失 ne−&quot;，化合价</p>
 <p>升降</p>
 <p>单线</p>
 <p>桥</p>
 <p>还原剂→氧化剂（反应物</p>
 <p>之间）</p>
 <p>电子转移</p>
-<p>方向 "ne−"</p>
+<p>方向 &quot;ne−&quot;</p>
 <p>【示例】MnO2 + 4HCl(浓) → MnCl2 + Cl2↑ + 2H2O</p>
-<p>双线桥：Mn 从 +4 降到 +2，"得 2e−"；Cl 从 −1 升到 0，"失 2×e−"（注意：4 个 HCl 中只</p>
+<p>双线桥：Mn 从 +4 降到 +2，&quot;得 2e−&quot;；Cl 从 −1 升到 0，&quot;失 2×e−&quot;（注意：4 个 HCl 中只</p>
 <p>有 2 个 Cl− 被氧化）。</p>
-<p>单线桥：从 HCl 中 Cl 指向 MnO2 中 Mn，标"2e−"。</p>
+<p>单线桥：从 HCl 中 Cl 指向 MnO2 中 Mn，标&quot;2e−&quot;。</p>
 <p>考点3：化合价升降法配平</p>
 <p>配平口诀</p>
-<p>"一标变价，二列升降，三求最小公倍数，四配系数，五查守恒"</p>
+<p>&quot;一标变价，二列升降，三求最小公倍数，四配系数，五查守恒&quot;</p>
 <p>步骤：</p>
 <p>(1) 标出所有元素化合价，找出变价元素。</p>
 <p>(2) 列出化合价升降数（升价数/降价数）。</p>
@@ -466,7 +476,7 @@ p { margin: 4px 0; }
 <p>Q2-3</p>
 <p>已知反应：2Fe3+ + 2I− = 2Fe2+ + I2，判断氧化性强弱顺序。</p>
 <p>【答案与解析】</p>
-<p>根据"氧化剂的氧化性 &gt; 氧化产物的氧化性"：</p>
+<p>根据&quot;氧化剂的氧化性 &gt; 氧化产物的氧化性&quot;：</p>
 <p>氧化剂为 Fe3+，氧化产物为 I2</p>
 <p>氧化性：Fe3+ &gt; I2</p>
 <p>同理，还原性：I− &gt; Fe2+</p>
@@ -474,10 +484,10 @@ p { margin: 4px 0; }
 <p>Q2-4</p>
 <p>用双线桥法表示反应 2Al + Fe2O3 = Al2O3 + 2Fe 中的电子转移。</p>
 <p>【答案与解析】</p>
-<p>Al: 0→+3，升 3，2 个 Al 共升 6，"失 2×3e−"</p>
-<p>Fe: +3→0，降 3，2 个 Fe 共降 6，"得 2×3e−"</p>
-<p>双线桥：一条从 Al 指向 Al2O3 中 Al，标"失 2×3e−，化合价升高"；另一条从</p>
-<p>Fe2O3 中 Fe 指向 Fe，标"得 2×3e−，化合价降低"。转移电子总数 = 6e−。</p>
+<p>Al: 0→+3，升 3，2 个 Al 共升 6，&quot;失 2×3e−&quot;</p>
+<p>Fe: +3→0，降 3，2 个 Fe 共降 6，&quot;得 2×3e−&quot;</p>
+<p>双线桥：一条从 Al 指向 Al2O3 中 Al，标&quot;失 2×3e−，化合价升高&quot;；另一条从</p>
+<p>Fe2O3 中 Fe 指向 Fe，标&quot;得 2×3e−，化合价降低&quot;。转移电子总数 = 6e−。</p>
 <p>Q2-5</p>
 <p>用单线桥法表示反应 2Na + Cl2 = 2NaCl 中的电子转移。</p>
 <p>【答案与解析】</p>
@@ -548,7 +558,7 @@ p { margin: 4px 0; }
 <p>还原产物：MnCl2</p>
 <p>四、易错警示</p>
 <p>⚠ 专题02 易错点警示</p>
-<p>概念混淆："氧化剂被还原，还原剂被氧化"——氧化剂发生的是还原反应，还原剂发生</p>
+<p>概念混淆：&quot;氧化剂被还原，还原剂被氧化&quot;——氧化剂发生的是还原反应，还原剂发生</p>
 <p>的是氧化反应。</p>
 <p>歧化反应：同一元素既升高又降低（如 Cl2+2NaOH→NaCl+NaClO+H2O），该物质</p>
 <p>既作氧化剂又作还原剂。</p>
@@ -563,7 +573,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题03 · 离子反应</h1>
 <p>离子反应是从微观粒子角度理解溶液中的化学反应，是高考必考内</p>
 <p>容。掌握电解质判断、离子方程式书写和离子共存三大核心，即可</p>
@@ -808,9 +819,9 @@ p { margin: 4px 0; }
 <p>C. Fe3+、Na+、Cl−、SO42−</p>
 <p>D. Ba2+、Na+、SO42−、Cl−</p>
 <h3>【答案】B</h3>
-<p>A × MnO4− 为紫色，不符合"无色"条件。</p>
+<p>A × MnO4− 为紫色，不符合&quot;无色&quot;条件。</p>
 <p>B √ 四种离子相互不反应，且均为无色。</p>
-<p>C × Fe3+ 为黄色，不符合"无色"条件。</p>
+<p>C × Fe3+ 为黄色，不符合&quot;无色&quot;条件。</p>
 <p>D × Ba2+ + SO42− = BaSO4↓。</p>
 <p>Q3-8</p>
 <p>在 pH=1 的溶液中，能大量共存的是（ ）</p>
@@ -883,11 +894,11 @@ p { margin: 4px 0; }
 <p>⚠ 专题03 易错点警示</p>
 <p>电解质必须是化合物：单质（如 Cu、Cl2）和混合物（如盐酸、氨水）不</p>
 <p>是电解质。</p>
-<p>"拆"的规则：只有强酸、强碱、可溶性盐才能拆成离子。微溶物作反应物</p>
+<p>&quot;拆&quot;的规则：只有强酸、强碱、可溶性盐才能拆成离子。微溶物作反应物</p>
 <p>且为澄清溶液时可拆，作生成物时标↓。</p>
 <p>离子方程式电荷守恒：写完离子方程式后必须检查两边电荷是否相等。</p>
-<p>隐含条件："无色"→排除 Cu2+、Fe3+、Fe2+、MnO4−；"pH=1"→强酸</p>
-<p>性；"pH=13"→强碱性。</p>
+<p>隐含条件：&quot;无色&quot;→排除 Cu2+、Fe3+、Fe2+、MnO4−；&quot;pH=1&quot;→强酸</p>
+<p>性；&quot;pH=13&quot;→强碱性。</p>
 <p>·</p>
 <p>·</p>
 <p>·</p>
@@ -895,7 +906,8 @@ p { margin: 4px 0; }
 <p>NO3− 在酸性条件下才是强氧化剂：中性或碱性条件下 NO3− 氧化性很</p>
 <p>弱。</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题04 · 钠及其化合物</h1>
 <p>钠是典型的活泼金属，其化合物之间存在清晰完整的转化关系网</p>
 <p>络。掌握化学方程式书写和物质性质对比是学习本专题的关键。</p>
@@ -1014,7 +1026,7 @@ p { margin: 4px 0; }
 <p>C √ NaHCO3 与盐酸反应立即产生气泡，Na2CO3 先无气泡后产生</p>
 <p>（分步反应：CO32−+H+=HCO3−，HCO3−+H+=H2O+CO2↑）。</p>
 <p>D × Na2CO3+BaCl2=BaCO3↓+2NaCl，但 NaHCO3 与 BaCl2 不</p>
-<p>反应。看似可行，但题目要求选"不可行"的——实际上 D 也可行，但</p>
+<p>反应。看似可行，但题目要求选&quot;不可行&quot;的——实际上 D 也可行，但</p>
 <p>若 NaHCO3 溶液中加 BaCl2 再加碱也会产生 BaCO3。不过单纯加</p>
 <p>BaCl2 确实可以区分：Na2CO3 产生沉淀，NaHCO3 不产生。所以这</p>
 <p>道题四个方法都可行。重新审视：实际上 D 是可行的（Na2CO3 产生</p>
@@ -1135,7 +1147,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题05 · 氯及其化合物</h1>
 <p>氯是典型的非金属元素，Cl2 既是重要的化工原料也是高考常考物</p>
 <p>质。掌握氯气性质、氯水成分和漂白粉原理是本专题核心。</p>
@@ -1320,7 +1333,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题06 · 铁和铝及其化合物</h1>
 <p>铁和铝是两种最重要的金属元素，Fe 的变价特性（+2/+3）和 Al</p>
 <p>的两性（既溶于酸又溶于碱）是高考的核心考点。</p>
@@ -1559,10 +1573,11 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题07 · 元素周期表与周期律</h1>
-<p>元素周期表是化学的"地图"，元素周期律揭示了元素性质随原子序</p>
-<p>数递增的周期性变化规律。掌握"位—构—性"三者关系是解题关</p>
+<p>元素周期表是化学的&quot;地图&quot;，元素周期律揭示了元素性质随原子序</p>
+<p>数递增的周期性变化规律。掌握&quot;位—构—性&quot;三者关系是解题关</p>
 <p>键。</p>
 <p>一、知识精讲</p>
 <p>考点1：原子结构</p>
@@ -1617,7 +1632,7 @@ p { margin: 4px 0; }
 <p>(1) X 在周期表中的位置是______</p>
 <p>(2) X 的最高价氧化物水化物的化学式为______</p>
 <p>(3) X 的气态氢化物的化学式为______，稳定性比 HBr______</p>
-<p>（填"强"或"弱"）</p>
+<p>（填&quot;强&quot;或&quot;弱&quot;）</p>
 <p>【答案与解析】</p>
 <p>原子序数 17→Cl（氯）。</p>
 <p>(1) 位置：第三周期 VIIA 族（电子排布：2-8-7）</p>
@@ -1747,7 +1762,7 @@ p { margin: 4px 0; }
 <p>方法三：比较气态氢化物稳定性：HCl 比 H2S 稳定（HCl 加热不分</p>
 <p>解，H2S 加热易分解）。</p>
 <p>Q7-12</p>
-<p>"位—构—性"综合：某元素原子核外有 3 个电子层，最外层有 7 个电子。回</p>
+<p>&quot;位—构—性&quot;综合：某元素原子核外有 3 个电子层，最外层有 7 个电子。回</p>
 <p>答：(1) 该元素的名称和符号；(2) 在周期表中的位置；(3) 预测其单质的氧化</p>
 <p>性强弱；(4) 写出其气态氢化物的化学式。</p>
 <p>【答案与解析】</p>
@@ -1772,7 +1787,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>专题08 · 化学键与分子结构（预习</h1>
 <p>型）</p>
 <p>本专题为高二上学期预习内容，从微观角度理解原子如何结合成分</p>
@@ -1830,7 +1846,7 @@ p { margin: 4px 0; }
 <p>CH4</p>
 <p>考点2：电子式书写</p>
 <p>电子式书写规则</p>
-<p>原子：在元素符号周围用"·"或"×"表示最外层电子。如 Na·、·Cl·</p>
+<p>原子：在元素符号周围用&quot;·&quot;或&quot;×&quot;表示最外层电子。如 Na·、·Cl·</p>
 <p>离子：阳离子直接用离子符号（如 Na+）；阴离子在元素符号周围标出最外层</p>
 <p>8 电子并加方括号和电荷（如 [∶Cl∶]−）</p>
 <p>离子化合物：阴阳离子分别写出，如 Na+[∶Cl∶]−</p>
@@ -1999,7 +2015,34 @@ p { margin: 4px 0; }
 <p>氢键。</p>
 <p>·</p>
 <p>·</p>
-<p>·</p></div>
+<p>·</p>
 </div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本册目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h1,.wrap h2'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H2')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>

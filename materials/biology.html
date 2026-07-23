@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>生物 · 暑假衔接讲练</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>生物暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root { --accent: #16a34a; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text2: #64748b; --border: #e2e8f0; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.9; }
-.topbar { position: sticky; top: 0; z-index: 10; background: var(--accent); color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-.topbar .back { color: #fff; text-decoration: none; font-size: 13px; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; white-space: nowrap; cursor: pointer; border: none; font-family: inherit; }
-.topbar .tt { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 60px; }
-.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
-h1 { font-size: 19px; color: var(--accent); margin: 6px 0 14px; }
-h2 { font-size: 16px; color: var(--accent); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--accent); }
-h3 { font-size: 15px; color: var(--text); margin: 14px 0 6px; background: #f1f5f9; display: inline-block; padding: 2px 10px; border-radius: 6px; }
-p { margin: 4px 0; }
-.pg-num { text-align: center; font-size: 11px; color: var(--text2); margin: 0 0 14px; }
-@media (max-width: 640px) { body { font-size: 14.5px; } .page { padding: 16px 14px; } }
+:root{--accent:#16a34a;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
+p{font-size:15.5px;margin:8px 0;text-align:justify}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <button class="back" onclick="window.close();if(!window.closed){history.back()}">&#8592; 返回</button>
-  <div class="tt">生物 · 暑假衔接讲练</div>
-</div>
+<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>生物暑假衔接</h1></div>
 <div class="wrap">
 <div class="page">
 <p>新高二生物暑假衔接讲练</p>
 <p>系统复习高一核心知识，夯实基础，为高二选修模块做好充分准备。保留选科可能</p>
 <p>性，从生物开始建立自信！</p>
-</div>
 <p>专题一：走近细胞——细胞学说、显微镜、原核与真核细胞</p>
 <p>一、知识精讲</p>
 <p>1. 细胞学说</p>
@@ -144,9 +151,9 @@ p { margin: 4px 0; }
 <p>答案：D</p>
 <p>四、易错警示</p>
 <p>常见错误与混淆点</p>
-<p>混淆"一切动植物"与"一切生物"：细胞学说只适用于动植物，病毒没有细</p>
+<p>混淆&quot;一切动植物&quot;与&quot;一切生物&quot;：细胞学说只适用于动植物，病毒没有细</p>
 <p>胞结构。</p>
-<p>蓝细菌不是细菌吗？蓝细菌旧称"蓝藻"，属于原核生物，能光合作用但没</p>
+<p>蓝细菌不是细菌吗？蓝细菌旧称&quot;蓝藻&quot;，属于原核生物，能光合作用但没</p>
 <p>有叶绿体，含有叶绿素和藻蓝素。</p>
 <p>原核生物≠没有细胞器：原核生物有核糖体，只是没有其他膜结构细胞</p>
 <p>器。</p>
@@ -312,7 +319,7 @@ p { margin: 4px 0; }
 <p>答案：B</p>
 <p>四、易错警示</p>
 <p>常见错误与混淆点</p>
-<p>混淆"主要能源物质"和"主要储能物质"：糖类是主要能源物质，脂肪是主</p>
+<p>混淆&quot;主要能源物质&quot;和&quot;主要储能物质&quot;：糖类是主要能源物质，脂肪是主</p>
 <p>要储能物质，ATP是直接能源物质。</p>
 <p>纤维素≠能源物质：纤维素是植物细胞壁成分，人和动物一般不能消化利</p>
 <p>用（不是能源物质）。</p>
@@ -351,8 +358,8 @@ p { margin: 4px 0; }
 <p>体</p>
 <p>双层膜，内膜向内折叠</p>
 <p>形成嵴，含少量DNA</p>
-<p>有氧呼吸的主要场所，"动</p>
-<p>力车间"</p>
+<p>有氧呼吸的主要场所，&quot;动</p>
+<p>力车间&quot;</p>
 <p>动植物细</p>
 <p>胞</p>
 <p>叶绿</p>
@@ -360,8 +367,8 @@ p { margin: 4px 0; }
 <p>双层膜，内有类囊体和</p>
 <p>基质，含少量DNA、</p>
 <p>色素</p>
-<p>光合作用的场所，"养料制</p>
-<p>造车间"和"能量转换站"</p>
+<p>光合作用的场所，&quot;养料制</p>
+<p>造车间&quot;和&quot;能量转换站&quot;</p>
 <p>植物绿色</p>
 <p>部分细胞</p>
 <p>内质</p>
@@ -383,8 +390,8 @@ p { margin: 4px 0; }
 <p>动植物细</p>
 <p>胞</p>
 <p>核糖</p>
-<p>体 无膜结构 合成蛋白质的场所，"生产</p>
-<p>蛋白质的机器" 所有细胞</p>
+<p>体 无膜结构 合成蛋白质的场所，&quot;生产</p>
+<p>蛋白质的机器&quot; 所有细胞</p>
 <p>溶酶</p>
 <p>体 单层膜，含水解酶</p>
 <p>分解衰老损伤的细胞器，</p>
@@ -620,13 +627,13 @@ p { margin: 4px 0; }
 <p>答案：C</p>
 <p>四、易错警示</p>
 <p>常见错误与混淆点</p>
-<p>质壁分离的"质"和"壁"："质"指原生质层，不是细胞质；"壁"指细胞壁。</p>
+<p>质壁分离的&quot;质&quot;和&quot;壁&quot;：&quot;质&quot;指原生质层，不是细胞质；&quot;壁&quot;指细胞壁。</p>
 <p>水分子移动方向：水分子是双向移动的，只是净移动方向是从低浓度溶液</p>
 <p>向高浓度溶液。</p>
 <p>原生质层≠原生质体：原生质层是细胞膜+液泡膜+细胞质；原生质体是去</p>
 <p>壁后的植物细胞。</p>
-<p>主动运输的误解：主动运输的特点是"需要载体和能量"，不是"必须逆浓</p>
-<p>度"。顺浓度时也可进行主动运输（只是此时不耗能）。</p>
+<p>主动运输的误解：主动运输的特点是&quot;需要载体和能量&quot;，不是&quot;必须逆浓</p>
+<p>度&quot;。顺浓度时也可进行主动运输（只是此时不耗能）。</p>
 <p>胞吞胞吐：运输的是大分子，穿过0层膜（通过膜融合实现），需要能</p>
 <p>量，体现膜的流动性。</p>
 <p>氧气浓度影响：自由扩散和协助扩散不受氧气浓度影响，主动运输和胞吞</p>
@@ -652,7 +659,7 @@ p { margin: 4px 0; }
 <p>最适温度：动物酶约35~40℃，植物酶约40~50℃。</p>
 <p>pH：过酸或过碱都会使酶变性失活。胃蛋白酶最适pH约1.5，胰蛋白酶</p>
 <p>最适pH约8.0。</p>
-<p>2. ATP——细胞的能量"货币"</p>
+<p>2. ATP——细胞的能量&quot;货币&quot;</p>
 <p>全称：腺苷三磷酸（Adenosine Triphosphate）</p>
 <p>结构简式：A-P~P~P（A：腺苷；P：磷酸基团；~：高能磷酸键）</p>
 <p>特点：ATP在细胞中含量很少，但转化十分迅速。ATP与ADP之间的相互转</p>
@@ -1123,7 +1130,7 @@ p { margin: 4px 0; }
 <p>四、易错警示</p>
 <p>常见错误与混淆点</p>
 <p>同源染色体：形态、大小一般相同，一条来自父方，一条来自母方。不</p>
-<p>是"一条染色体复制后形成的两条"。</p>
+<p>是&quot;一条染色体复制后形成的两条&quot;。</p>
 <p>四分体 = 一对同源染色体 = 2条染色体 = 4条染色单体：数量关系要清</p>
 <p>楚。</p>
 <p>交叉互换：发生在四分体的非姐妹染色单体之间，属于基因重组，增加配</p>
@@ -1153,7 +1160,7 @@ p { margin: 4px 0; }
 <p>（1）格里菲思的肺炎链球菌转化实验（体内转化）</p>
 <p>R型菌：无荚膜，菌落粗糙，无毒性</p>
 <p>S型菌：有荚膜，菌落光滑，有毒性</p>
-<p>实验结论：加热杀死的S型菌中含有某种"转化因子"，能将R型活细菌转化为</p>
+<p>实验结论：加热杀死的S型菌中含有某种&quot;转化因子&quot;，能将R型活细菌转化为</p>
 <p>S型活细菌。</p>
 <p>（2）艾弗里的肺炎链球菌转化实验（体外转化）</p>
 <p>设计思路：将S型菌的各种成分（DNA、蛋白质、多糖等）分开，单独观察</p>
@@ -1168,8 +1175,8 @@ p { margin: 4px 0; }
 <p>染的细菌）→ 检测放射性。</p>
 <p>实验结果：³²P标记的DNA进入细菌体内，³⁵S标记的蛋白质留在外面。</p>
 <p>实验结论：DNA是噬菌体的遗传物质。</p>
-<p>特别提醒：这两个实验都证明了DNA是遗传物质，但没有证明DNA是"主要"遗传物</p>
-<p>质。"DNA是主要遗传物质"是针对整个生物界而言（因为绝大多数生物的遗传物质</p>
+<p>特别提醒：这两个实验都证明了DNA是遗传物质，但没有证明DNA是&quot;主要&quot;遗传物</p>
+<p>质。&quot;DNA是主要遗传物质&quot;是针对整个生物界而言（因为绝大多数生物的遗传物质</p>
 <p>是DNA，少数病毒的遗传物质是RNA）。</p>
 <p>2. DNA的结构</p>
 <p>DNA双螺旋结构特点（沃森和克里克提出）：</p>
@@ -1179,13 +1186,13 @@ p { margin: 4px 0; }
 <p>碱基互补配对原则：A（腺嘌呤）与T（胸腺嘧啶）配对，形成2个氢键；</p>
 <p>G（鸟嘌呤）与C（胞嘧啶）配对，形成3个氢键</p>
 <p>DNA平面结构示意图（文字描述）</p>
-<p>5'-磷酸-脱氧核糖-碱基-3'（一条链）</p>
+<p>5&#x27;-磷酸-脱氧核糖-碱基-3&#x27;（一条链）</p>
 <p>↑↓氢键</p>
-<p>3'-脱氧核糖-磷酸-碱基-5'（互补链）</p>
+<p>3&#x27;-脱氧核糖-磷酸-碱基-5&#x27;（互补链）</p>
 <p>碱基配对：A=T（双氢键），G≡C（三氢键）</p>
 <p>规律：在双链DNA中，A=T，G=C，因此A+G=T+C=A+C=T+G=总碱基数的</p>
 <p>一半</p>
-<p>DNA两条链反向平行：一条链从5'端到3'端，另一条从3'端到5'端</p>
+<p>DNA两条链反向平行：一条链从5&#x27;端到3&#x27;端，另一条从3&#x27;端到5&#x27;端</p>
 <p>3. DNA的复制</p>
 <p>复制时间：有丝分裂间期和减数第一次分裂前的间期。</p>
 <p>复制条件：模板（DNA两条链）、原料（4种游离的脱氧核苷酸）、能量</p>
@@ -1216,7 +1223,7 @@ p { margin: 4px 0; }
 <p>转运工具：tRNA（反密码子与mRNA上的密码子互补配对）</p>
 <p>产物：多肽（蛋白质）</p>
 <p>翻译过程示意（文字描述）</p>
-<p>mRNA：5'-AUG GGC UCU AAA ...-3'</p>
+<p>mRNA：5&#x27;-AUG GGC UCU AAA ...-3&#x27;</p>
 <p>↑ ↑ ↑ ↑</p>
 <p>tRNA：反密码子UAC CCG AGA UUU ...</p>
 <p>↓ ↓ ↓ ↓</p>
@@ -1307,11 +1314,11 @@ p { margin: 4px 0; }
 <p>答案：C（双链DNA中，C+T=A+G=50%）</p>
 <p>四、易错警示</p>
 <p>常见错误与混淆点</p>
-<p>肺炎链球菌转化实验的结论：格里菲思只证明存在"转化因子"，艾弗里才</p>
+<p>肺炎链球菌转化实验的结论：格里菲思只证明存在&quot;转化因子&quot;，艾弗里才</p>
 <p>证明转化因子是DNA。两个实验结论不要混淆。</p>
 <p>噬菌体实验的标记选择：必须分别标记（³⁵S标记蛋白质外壳，³²P标记</p>
 <p>DNA），不能同时标记。因为同时标记无法区分是哪种物质进入细菌。</p>
-<p>"DNA是主要遗传物质"的理解：这是针对整个生物界而言的，对某一具体</p>
+<p>&quot;DNA是主要遗传物质&quot;的理解：这是针对整个生物界而言的，对某一具体</p>
 <p>生物来说，遗传物质只能是DNA或RNA中的一种。</p>
 <p>碱基计算规律：双链DNA中A=T、G=C，但单链中不一定成立。（A+T）/</p>
 <p>（G+C）在两条互补链和整个DNA分子中相等。</p>
@@ -1334,7 +1341,34 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>本资料仅供学习使用 | 建议配合教材和课堂笔记系统复习</p></div>
+<p>本资料仅供学习使用 | 建议配合教材和课堂笔记系统复习</p>
 </div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本册目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h1,.wrap h2'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H2')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>

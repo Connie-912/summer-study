@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>英语 · 暑假衔接讲练</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>英语暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root { --accent: #8b5cf6; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text2: #64748b; --border: #e2e8f0; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.9; }
-.topbar { position: sticky; top: 0; z-index: 10; background: var(--accent); color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-.topbar .back { color: #fff; text-decoration: none; font-size: 13px; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; white-space: nowrap; cursor: pointer; border: none; font-family: inherit; }
-.topbar .tt { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 60px; }
-.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
-h1 { font-size: 19px; color: var(--accent); margin: 6px 0 14px; }
-h2 { font-size: 16px; color: var(--accent); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--accent); }
-h3 { font-size: 15px; color: var(--text); margin: 14px 0 6px; background: #f1f5f9; display: inline-block; padding: 2px 10px; border-radius: 6px; }
-p { margin: 4px 0; }
-.pg-num { text-align: center; font-size: 11px; color: var(--text2); margin: 0 0 14px; }
-@media (max-width: 640px) { body { font-size: 14.5px; } .page { padding: 16px 14px; } }
+:root{--accent:#8b5cf6;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
+p{font-size:15.5px;margin:8px 0;text-align:justify}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <button class="back" onclick="window.close();if(!window.closed){history.back()}">&#8592; 返回</button>
-  <div class="tt">英语 · 暑假衔接讲练</div>
-</div>
+<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>英语暑假衔接</h1></div>
 <div class="wrap">
 <div class="page">
 <p>新高二英语暑假衔接讲练</p>
 <p>高一升高二（理科方向）· 系统性语法 + 完形 + 写作</p>
 <h2>知识精讲 · 典例破题 · 巩固提升 · 易错警示</h2>
 </div>
+<div class="page">
 <h1>01 动词-ing形式的用法</h1>
 <h2>知识精讲</h2>
 <p>动词-ing形式（又称动名词/现在分词）是高中英语的核心语法，兼具动词和名词/形容词/副词的特性。本专</p>
@@ -60,7 +69,7 @@ p { margin: 4px 0; }
 <p>5 作主语 Reading English aloud</p>
 <p>is helpful.</p>
 <p>谓语用单数；it作形式主</p>
-<p>语：It's no use crying.</p>
+<p>语：It&#x27;s no use crying.</p>
 <p>考点</p>
 <p>6 作宾语 He enjoys swimming.</p>
 <p>常接-ing的动词：enjoy,</p>
@@ -75,14 +84,14 @@ p { margin: 4px 0; }
 <p>vs. ______ (see) from the top of the hill, we can see the whole city.</p>
 <p>解析：第一句主语city与see是被动关系，填Seen；第二句主语we与see是主动关系，填Seeing。</p>
 <p>关键：判断非谓语动词与主语之间的主被动关系。</p>
-<p>【例3】I can't imagine ______ (live) without electricity.</p>
+<p>【例3】I can&#x27;t imagine ______ (live) without electricity.</p>
 <p>解析：imagine后接动词-ing形式作宾语，填living。常接-ing的动词口诀：避免错过少延期，建议</p>
 <p>完成勤练习，承认介意别逃避，考虑冒险不放弃。</p>
 <h2>巩固提升</h2>
 <p>【巩固题】用括号内动词的正确形式填空：</p>
 <p>He is used to ______ (get) up early every morning.</p>
 <p>The house ______ (build) now will be our new library.</p>
-<p>______ (not know) her address, I couldn't visit her.</p>
+<p>______ (not know) her address, I couldn&#x27;t visit her.</p>
 <p>I heard someone ______ (sing) in the next room.</p>
 <p>______ (collect) stamps is one of my hobbies.</p>
 <h2>参考答案：</h2>
@@ -115,7 +124,8 @@ p { margin: 4px 0; }
 <p>（此处的to是介词）。</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>02 动词不定式的用法</h1>
 <h2>知识精讲</h2>
 <p>动词不定式（to do）是高中英语最重要的非谓语动词形式之一，形式为 to + 动词原形（有时省略to）。</p>
@@ -165,7 +175,7 @@ p { margin: 4px 0; }
 <p>解析：make sb. do sth. 使役动词后接省略to的不定式作宾补，填 stand。注意：改为被动语态时</p>
 <p>to要还原 —— He was made to stand outside.</p>
 <p>【例3】He is said ______ (go) abroad last year.</p>
-<p>解析：be said后面接不定式，"last year"表明动作已发生，go发生在is said之前，用完成式。填</p>
+<p>解析：be said后面接不定式，&quot;last year&quot;表明动作已发生，go发生在is said之前，用完成式。填</p>
 <p>to have gone。</p>
 <h2>巩固提升</h2>
 <p>【巩固题】用括号内动词的适当形式填空：</p>
@@ -176,8 +186,8 @@ p { margin: 4px 0; }
 <p>I have no idea about what ______ (do) next.</p>
 <h2>参考答案：</h2>
 <p>not to play —— tell sb. not to do sth. 告诉某人不要做某事，否定词not放在to前面</p>
-<p>to be reading —— pretend to be doing 假装正在做，进行式表示"当我进来时正在</p>
-<p>读"</p>
+<p>to be reading —— pretend to be doing 假装正在做，进行式表示&quot;当我进来时正在</p>
+<p>读&quot;</p>
 <p>to be built —— 不定式被动式作定语，bridge与build是被动关系，next year表示将</p>
 <p>来</p>
 <p>to say —— too...to... 太……而不能……，固定结构</p>
@@ -204,11 +214,12 @@ p { margin: 4px 0; }
 <p>stop to do（停下来去做）vs stop doing（停止做）：意义完全不同，考试高频。</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>03 过去分词的用法</h1>
 <h2>知识精讲</h2>
 <p>过去分词（done）表示被动或完成的意义，在句中可作定语、表语、宾补和状语。规则动词的过去分词</p>
-<p>由"动词原形+ed"构成，不规则动词需单独记忆。</p>
+<p>由&quot;动词原形+ed&quot;构成，不规则动词需单独记忆。</p>
 <p>考点 功能 例句 说明</p>
 <p>考点</p>
 <p>1 作定语 The broken window</p>
@@ -220,8 +231,8 @@ p { margin: 4px 0; }
 <p>2 作表语 I am interested in</p>
 <p>English.</p>
 <p>表示主语的状态或感受；-</p>
-<p>ing表"令人……的"，-ed</p>
-<p>表"感到……的"</p>
+<p>ing表&quot;令人……的&quot;，-ed</p>
+<p>表&quot;感到……的&quot;</p>
 <p>考点</p>
 <p>3 作宾补 I had my hair cut</p>
 <p>yesterday.</p>
@@ -244,12 +255,12 @@ p { margin: 4px 0; }
 <h2>巩固提升</h2>
 <p>【巩固题】用括号内动词的适当形式填空：</p>
 <p>The children looked at the ______ (break) toy with sadness.</p>
-<p>______ (lose) in thought, he didn't notice me come in.</p>
+<p>______ (lose) in thought, he didn&#x27;t notice me come in.</p>
 <p>I need to get my bike ______ (repair) this afternoon.</p>
 <p>The speech ______ (give) by the headmaster was very inspiring.</p>
 <p>When ______ (ask) about his age, he refused to answer.</p>
 <h2>参考答案：</h2>
-<p>broken —— 过去分词作前置定语，表示"坏了的"玩具</p>
+<p>broken —— 过去分词作前置定语，表示&quot;坏了的&quot;玩具</p>
 <p>Lost —— be lost in thought 陷入沉思，过去分词短语作原因状语</p>
 <p>repaired —— get sth. done 让某事被做，bike与repair是被动关系</p>
 <p>given —— 过去分词短语作后置定语，speech与give是被动关系</p>
@@ -280,7 +291,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>04 定语从句</h1>
 <h2>知识精讲</h2>
 <p>定语从句在复合句中修饰名词或代词，被修饰的词叫先行词，引导定语从句的词叫关系词。关系词分为关系</p>
@@ -297,7 +309,7 @@ p { margin: 4px 0; }
 <p>关系副词 先行词 在从句中充当例句</p>
 <p>when 时间名词 时间状语 I still remember the day when we first met.</p>
 <p>where 地点名词 地点状语 This is the school where I studied.</p>
-<p>why reason 原因状语 I don't know the reason why he was late.</p>
+<p>why reason 原因状语 I don&#x27;t know the reason why he was late.</p>
 <p>三、限制性 vs 非限制性定语从句</p>
 <p>限制性定语从句：对先行词起限定作用，不可省略，不用逗号分隔。如：The man who is</p>
 <p>standing there is my father.</p>
@@ -308,7 +320,7 @@ p { margin: 4px 0; }
 <p>只用that不用which的情况：先行词被最高级/序数词/the only/the very修饰；先行词是all/</p>
 <p>everything/nothing等不定代词；先行词既有人又有物。</p>
 <p>介词+关系代词：This is the house in which I lived. = This is the house where I lived.</p>
-<p>as与which的区别：as引导的非限制性定语从句可置于句首，which不能。as有"正如"之意。</p>
+<p>as与which的区别：as引导的非限制性定语从句可置于句首，which不能。as有&quot;正如&quot;之意。</p>
 <h2>典例破题</h2>
 <p>【例1】This is the factory ______ my father worked ten years ago.</p>
 <p>解析：先行词factory在从句中作地点状语（worked in the factory），用关系副词where。也可用</p>
@@ -329,7 +341,7 @@ p { margin: 4px 0; }
 <h2>参考答案：</h2>
 <p>whose —— roof与house是所属关系，whose作定语</p>
 <p>that/which —— days在从句中作spent的宾语，用关系代词（可省略）</p>
-<p>As —— as引导非限制性定语从句，可置于句首，意为"正如"</p>
+<p>As —— as引导非限制性定语从句，可置于句首，意为&quot;正如&quot;</p>
 <p>that —— 先行词被the very修饰，只能用that</p>
 <p>·</p>
 <p>·</p>
@@ -359,7 +371,8 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>05 名词性从句</h1>
 <h2>知识精讲</h2>
 <p>名词性从句在复合句中起名词的作用，可作主语、宾语、表语和同位语。引导词分为三类：从属连词（that,</p>
@@ -376,7 +389,7 @@ p { margin: 4px 0; }
 <p>2 宾语从句 I believe that he is</p>
 <p>honest.</p>
 <p>that可省略；whether/if表</p>
-<p>示"是否"；注意语序用陈述</p>
+<p>示&quot;是否&quot;；注意语序用陈述</p>
 <p>语序</p>
 <p>考点</p>
 <p>3 表语从句</p>
@@ -394,18 +407,18 @@ p { margin: 4px 0; }
 <p>后，解释其内容</p>
 <p>核心连接词辨析</p>
 <p>that vs what：that在从句中不作成分、无意义（仅起连接作用）；what在从句中作主</p>
-<p>语/宾语/表语，意为"……的东西/事情"。</p>
+<p>语/宾语/表语，意为&quot;……的东西/事情&quot;。</p>
 <p>whether vs if：下列情况只能用whether：①主语从句 ②表语从句 ③同位语从句 ④介词</p>
 <p>后 ⑤与or not直接连用 ⑥不定式前。</p>
 <p>whoever = anyone who：Whoever breaks the law will be punished. = Anyone</p>
 <p>who breaks the law will be punished.</p>
 <h2>典例破题</h2>
 <p>【例1】______ he said at the meeting astonished everyone.</p>
-<p>解析：主语从句中said缺少宾语，表示"他说的话"，用What。that只起连接作用不作成分，此处不</p>
+<p>解析：主语从句中said缺少宾语，表示&quot;他说的话&quot;，用What。that只起连接作用不作成分，此处不</p>
 <p>能填that。</p>
 <p>【例2】The problem is ______ we can get there in time.</p>
-<p>解析：表语从句中不缺少成分，但表示"是否"，用whether。表语从句中不能用if。</p>
-<p>【例3】I don't know ______ he will come or not.</p>
+<p>解析：表语从句中不缺少成分，但表示&quot;是否&quot;，用whether。表语从句中不能用if。</p>
+<p>【例3】I don&#x27;t know ______ he will come or not.</p>
 <p>解析：宾语从句，与or not连用，用whether。whether...or not是固定搭配。</p>
 <h2>巩固提升</h2>
 <p>【巩固题】用适当的连接词填空：</p>
@@ -415,15 +428,15 @@ p { margin: 4px 0; }
 <p>______ leaves the room last should turn off the lights.</p>
 <p>That is ______ I disagree with you.</p>
 <h2>参考答案：</h2>
-<p>What —— 主语从句中need缺少宾语，what意为"……的东西"</p>
+<p>What —— 主语从句中need缺少宾语，what意为&quot;……的东西&quot;</p>
 <p>that —— 同位语从句，解释news的内容，从句不缺成分，用that</p>
-<p>whether/if —— 宾语从句表示"是否"，两者均可</p>
-<p>Whoever —— 主语从句，意为"无论谁"，whoever = anyone who</p>
-<p>where —— 表语从句，where意为"……的地方/方面"，表示分歧所在</p>
+<p>whether/if —— 宾语从句表示&quot;是否&quot;，两者均可</p>
+<p>Whoever —— 主语从句，意为&quot;无论谁&quot;，whoever = anyone who</p>
+<p>where —— 表语从句，where意为&quot;……的地方/方面&quot;，表示分歧所在</p>
 <h2>易错警示</h2>
 <p>⚠ 易错点：</p>
-<p>语序问题：名词性从句一律用陈述语序（主语+谓语）。错：I don't know what is he</p>
-<p>doing. 正：I don't know what he is doing.</p>
+<p>语序问题：名词性从句一律用陈述语序（主语+谓语）。错：I don&#x27;t know what is he</p>
+<p>doing. 正：I don&#x27;t know what he is doing.</p>
 <p>that不可省略的情况：主语从句、表语从句、同位语从句中that不能省略。宾语从句中</p>
 <p>that可省略，但多个并列宾语从句时第二个及以后的that不可省略。</p>
 <p>1.</p>
@@ -444,7 +457,8 @@ p { margin: 4px 0; }
 <p>语/宾语从句后置。</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>06 状语从句</h1>
 <h2>知识精讲</h2>
 <p>状语从句在复合句中修饰主句中的动词、形容词或副词，表示时间、条件、原因、让步、目的、结果、比</p>
@@ -516,27 +530,27 @@ p { margin: 4px 0; }
 <p>用虚拟语气</p>
 <h2>典例破题</h2>
 <p>【例1】I will call you ______ I arrive in Beijing. (用适当的连词填空)</p>
-<p>解析：主句用将来时，从句表示"一……就……"，用as soon as / the moment / when。注意</p>
+<p>解析：主句用将来时，从句表示&quot;一……就……&quot;，用as soon as / the moment / when。注意</p>
 <p>从句用一般现在时。</p>
 <p>【例2】______ he is very old, he still works hard every day.</p>
-<p>解析：让步状语从句，表示"尽管"，用Although / Though / Even though。注意不能与but连</p>
+<p>解析：让步状语从句，表示&quot;尽管&quot;，用Although / Though / Even though。注意不能与but连</p>
 <p>用。</p>
 <p>【例3】It was ______ a difficult problem ______ nobody could solve it.</p>
-<p>解析：结果状语从句，"如此……以至于……"，problem是名词，用such...that...。so...that...用</p>
+<p>解析：结果状语从句，&quot;如此……以至于……&quot;，problem是名词，用such...that...。so...that...用</p>
 <p>于形容词/副词前。</p>
 <h2>巩固提升</h2>
 <p>【巩固题】用适当的连词填空：</p>
-<p>You won't pass the exam ______ you study harder.</p>
+<p>You won&#x27;t pass the exam ______ you study harder.</p>
 <p>He speaks English ______ he were an American.</p>
 <p>The ______ you practice, the ______ you will become.</p>
 <p>______ it was raining heavily, they still went on working.</p>
-<p>He didn't go to school yesterday ______ he was ill.</p>
+<p>He didn&#x27;t go to school yesterday ______ he was ill.</p>
 <h2>参考答案：</h2>
-<p>unless —— 条件状语从句，unless = if...not，意为"除非"</p>
+<p>unless —— 条件状语从句，unless = if...not，意为&quot;除非&quot;</p>
 <p>as if / as though —— 方式状语从句，因与事实相反（他不是美国人），用虚拟语气</p>
 <p>were</p>
-<p>more; better —— the + 比较级, the + 比较级，比较状语从句，"越……越……"</p>
-<p>Although / Though / Even though —— 让步状语从句，表示"尽管/虽然"</p>
+<p>more; better —— the + 比较级, the + 比较级，比较状语从句，&quot;越……越……&quot;</p>
+<p>Although / Though / Even though —— 让步状语从句，表示&quot;尽管/虽然&quot;</p>
 <p>1.</p>
 <p>2.</p>
 <p>3.</p>
@@ -562,14 +576,15 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>07 完形填空解题技巧</h1>
 <h2>知识精讲</h2>
 <p>完形填空是高考英语的重要题型，主要考查上下文理解能力、词汇辨析能力和逻辑推理能力。本专题从四个</p>
 <p>核心维度展开。</p>
 <p>一、上下文逻辑</p>
-<p>核心策略：完形填空的答案往往在上下文中能找到线索。不要孤立地看一句话，要"瞻前顾</p>
-<p>后"。</p>
+<p>核心策略：完形填空的答案往往在上下文中能找到线索。不要孤立地看一句话，要&quot;瞻前顾</p>
+<p>后&quot;。</p>
 <p>词汇复现：同一词汇或同义词汇在上下文中反复出现。</p>
 <p>逻辑关系：关注转折（but, however）、因果（so, therefore）、并列（and）、递进</p>
 <p>（moreover）、对比（while）等逻辑词。</p>
@@ -615,16 +630,16 @@ p { margin: 4px 0; }
 <p>【例1】When I was a child, my mother always told me that I should</p>
 <p>be ______ to others. She said kindness is the most important quality.</p>
 <p>A. rude   B. kind   C. strict   D. cold</p>
-<p>解析：根据后文"kindness is the most important quality"可知，母亲教我要善良。上下文词汇复</p>
+<p>解析：根据后文&quot;kindness is the most important quality&quot;可知，母亲教我要善良。上下文词汇复</p>
 <p>现，选B。</p>
-<p>【例2】He wanted to buy the book, ______ he didn't have enough</p>
+<p>【例2】He wanted to buy the book, ______ he didn&#x27;t have enough</p>
 <p>money.</p>
 <p>A. so   B. for   C. but   D. or</p>
 <p>解析：前后是转折关系（想买但没有钱），选C。</p>
 <p>【例3】The little girl felt ______ when she saw her mother coming.</p>
 <p>She ran to her with a big smile.</p>
 <p>A. anxious   B. disappointed   C. excited   D. worried</p>
-<p>解析：根据"ran to her with a big smile"可知是积极情绪，选C。</p>
+<p>解析：根据&quot;ran to her with a big smile&quot;可知是积极情绪，选C。</p>
 <h2>巩固提升</h2>
 <p>【巩固题】完形填空微练习：</p>
 <p>阅读下面短文，从每题所给的A、B、C、D四个选项中选出最佳选项。</p>
@@ -632,24 +647,24 @@ p { margin: 4px 0; }
 <p>very (1) and decided to ask for a meal at the next house. However, he lost his (2) when</p>
 <p>a lovely young woman opened the door. Instead of a meal, he asked for a drink of water.</p>
 <p>She thought he looked hungry, so she brought him a large glass of (3). He drank it slowly</p>
-<p>and then asked, "How much do I owe you?" "You don't owe me anything," she replied.</p>
-<p>"Mother has taught me never to accept (4) for a kindness."</p>
+<p>and then asked, &quot;How much do I owe you?&quot; &quot;You don&#x27;t owe me anything,&quot; she replied.</p>
+<p>&quot;Mother has taught me never to accept (4) for a kindness.&quot;</p>
 <p>1. A. hungry   B. thirsty   C. tired   D. angry</p>
 <p>2. A. heart   B. way   C. courage   D. interest</p>
 <p>3. A. water   B. milk   C. coffee   D. juice</p>
 <p>4. A. pay   B. thanks   C. advice   D. help</p>
 <h2>参考答案：</h2>
-<p>A（hungry） —— 前文"selling goods to pay for school"和"ask for a meal"提示</p>
+<p>A（hungry） —— 前文&quot;selling goods to pay for school&quot;和&quot;ask for a meal&quot;提示</p>
 <p>他很饿</p>
 <p>C（courage） —— lost his courage（失去勇气），因为开门的是一位年轻女士，他</p>
 <p>害羞了</p>
-<p>B（milk） —— 前文提到"ask for a drink of water"，后文"looked hungry"暗示她</p>
-<p>给了比水更有营养的东西，且"a large glass of milk"是经典故事</p>
+<p>B（milk） —— 前文提到&quot;ask for a drink of water&quot;，后文&quot;looked hungry&quot;暗示她</p>
+<p>给了比水更有营养的东西，且&quot;a large glass of milk&quot;是经典故事</p>
 <p>A（pay） —— accept pay for a kindness 接受善意的报酬，固定搭配</p>
 <h2>易错警示</h2>
 <p>⚠ 易错点：</p>
-<p>不要边读边选：先通读全文了解大意，再逐空选择。很多同学错在"只见树木，不见森</p>
-<p>林"。</p>
+<p>不要边读边选：先通读全文了解大意，再逐空选择。很多同学错在&quot;只见树木，不见森</p>
+<p>林&quot;。</p>
 <p>不要凭语感盲目选：每个选项都必须在原文中找到依据，不能主观臆断。</p>
 <p>注意近义词辨析：如receive（收到）vs accept（接受），affect（影响v.）vs effect</p>
 <p>（效果n.），alone（独自）vs lonely（孤独）。</p>
@@ -662,31 +677,32 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-</div><div class="page">
+</div>
+<div class="page">
 <h1>08 英语应用文写作模板</h1>
 <h2>知识精讲</h2>
 <p>应用文写作是高考英语的必考题型（通常占15-25分），考查学生在真实语境中运用英语的能力。本专题提</p>
 <p>供六大常见体裁的写作模板和实用句型，基础薄弱的同学可直接背诵套用。</p>
 <p>一、书信（Letter）</p>
 <p>通用结构：</p>
-<p>开头：Dear ___, / I'm writing to... / How is everything going?</p>
-<p>正文：First of all... / What's more... / Last but not least...</p>
-<p>结尾：I'm looking forward to your reply. / Best wishes! / Yours sincerely,</p>
+<p>开头：Dear ___, / I&#x27;m writing to... / How is everything going?</p>
+<p>正文：First of all... / What&#x27;s more... / Last but not least...</p>
+<p>结尾：I&#x27;m looking forward to your reply. / Best wishes! / Yours sincerely,</p>
 <p>二、通知（Notice）</p>
 <p>通用结构：</p>
 <p>标题：NOTICE（居中大写）</p>
 <p>正文：In order to... / ...will be held... / It will start at... / Everyone is welcome.</p>
-<p>落款：Students' Union / The School Office（右下角）</p>
+<p>落款：Students&#x27; Union / The School Office（右下角）</p>
 <p>日期：落款上方</p>
 <p>三、演讲稿（Speech）</p>
 <p>通用结构：</p>
-<p>开头：Good morning, everyone! / It's a great honor to... / I'm glad to stand</p>
+<p>开头：Good morning, everyone! / It&#x27;s a great honor to... / I&#x27;m glad to stand</p>
 <p>here to...</p>
 <p>正文：The topic of my speech is... / Firstly... Secondly... / For example...</p>
-<p>结尾：That's all. Thank you for listening! / Let's take action now!</p>
+<p>结尾：That&#x27;s all. Thank you for listening! / Let&#x27;s take action now!</p>
 <p>四、建议信（Letter of Advice）</p>
 <p>万能句型：</p>
-<p>I'm sorry to hear that... / You asked for my advice about... / Here are some</p>
+<p>I&#x27;m sorry to hear that... / You asked for my advice about... / Here are some</p>
 <p>suggestions.</p>
 <p>·</p>
 <p>·</p>
@@ -699,29 +715,29 @@ p { margin: 4px 0; }
 <p>·</p>
 <p>·</p>
 <p>·</p>
-<p>It would be a good idea to... / Why not...? / You'd better... / I suggest that you</p>
+<p>It would be a good idea to... / Why not...? / You&#x27;d better... / I suggest that you</p>
 <p>should...</p>
-<p>I hope my suggestions will be helpful. / I'm sure you will make it.</p>
+<p>I hope my suggestions will be helpful. / I&#x27;m sure you will make it.</p>
 <p>五、感谢信（Letter of Thanks）</p>
 <p>万能句型：</p>
-<p>I'm writing to express my sincere thanks to you for... / I'm truly grateful for...</p>
-<p>Without your help, I couldn't have... / It was your kindness that made it</p>
+<p>I&#x27;m writing to express my sincere thanks to you for... / I&#x27;m truly grateful for...</p>
+<p>Without your help, I couldn&#x27;t have... / It was your kindness that made it</p>
 <p>possible...</p>
 <p>Again, I would like to express my warm thanks to you. / I will never forget</p>
 <p>your kindness.</p>
 <p>六、邀请信（Letter of Invitation）</p>
 <p>万能句型：</p>
-<p>I'm writing to invite you to... / It's my pleasure to invite you to...</p>
+<p>I&#x27;m writing to invite you to... / It&#x27;s my pleasure to invite you to...</p>
 <p>The activity will be held in... on... / It will start at... and last for about...</p>
-<p>I would appreciate it if you could come. / I'm looking forward to your early</p>
+<p>I would appreciate it if you could come. / I&#x27;m looking forward to your early</p>
 <p>reply.</p>
 <p>高频过渡词和连接词</p>
 <p>功能 表达</p>
 <p>首先/其次/</p>
 <p>最后</p>
-<p>first of all / to begin with; secondly / what's more / in addition; last</p>
+<p>first of all / to begin with; secondly / what&#x27;s more / in addition; last</p>
 <p>but not least / finally</p>
-<p>个人观点 in my opinion / as far as I'm concerned / from my point of view /</p>
+<p>个人观点 in my opinion / as far as I&#x27;m concerned / from my point of view /</p>
 <p>personally speaking</p>
 <p>总结 in a word / in conclusion / to sum up / all in all / in short</p>
 <p>举例 for example / for instance / such as / take...as an example</p>
@@ -740,19 +756,19 @@ p { margin: 4px 0; }
 <p>Smith担任评委。</p>
 <p>参考范文：</p>
 <p>Dear Mr. Smith,</p>
-<p>I'm writing to invite you to be a judge for the English speech contest, which will be held</p>
+<p>I&#x27;m writing to invite you to be a judge for the English speech contest, which will be held</p>
 <p>in the school hall at 2:00 p.m. next Friday. The contest will last for about two hours.</p>
 <p>As an experienced teacher, your opinion will be of great value to us. I would appreciate</p>
 <p>it if you could accept our invitation.</p>
-<p>I'm looking forward to your early reply.</p>
+<p>I&#x27;m looking forward to your early reply.</p>
 <p>Yours sincerely,</p>
 <p>Li Hua</p>
 <p>【例2】假设你是李华，你的朋友Tom来信说他学习压力大，请你写一封建议信。</p>
 <p>参考范文：</p>
 <p>Dear Tom,</p>
-<p>I'm sorry to hear that you are under great pressure from your studies. Here are some</p>
+<p>I&#x27;m sorry to hear that you are under great pressure from your studies. Here are some</p>
 <p>suggestions that may help you.</p>
-<p>First of all, you'd better make a reasonable study plan and follow it strictly. What's more,</p>
+<p>First of all, you&#x27;d better make a reasonable study plan and follow it strictly. What&#x27;s more,</p>
 <p>why not take regular exercise? It can help you relax both physically and mentally. Last</p>
 <p>but not least, you should talk to your teachers or friends when you feel stressed.</p>
 <p>I hope my suggestions will be helpful to you.</p>
@@ -772,10 +788,10 @@ p { margin: 4px 0; }
 <p>一场英语学习方法讲座。</p>
 <h2>参考答案：</h2>
 <p>1. 翻译答案：</p>
-<p>I'm writing to invite you to take part in our activity.</p>
+<p>I&#x27;m writing to invite you to take part in our activity.</p>
 <p>I really appreciate your help when I was in trouble/difficulty.</p>
 <p>I would appreciate it if you could accept my invitation.</p>
-<p>In my opinion / As far as I'm concerned, the most important thing in learning</p>
+<p>In my opinion / As far as I&#x27;m concerned, the most important thing in learning</p>
 <p>English is persistence.</p>
 <p>First of all, you should make a reasonable study plan.</p>
 <p>2. 通知范文：</p>
@@ -785,7 +801,7 @@ p { margin: 4px 0; }
 <p>An experienced English teacher will share useful tips on how to learn English</p>
 <p>more effectively. Everyone is welcome to attend.</p>
 <p>Please be on time and bring a notebook with you.</p>
-<p>Students' Union</p>
+<p>Students&#x27; Union</p>
 <p>July 20, 2026</p>
 <h2>易错警示</h2>
 <p>⚠ 易错点：</p>
@@ -793,8 +809,8 @@ p { margin: 4px 0; }
 <p>款和日期。格式分很关键！</p>
 <p>时态混乱：描述将要发生的事用一般将来时，描述过去的事用一般过去时，描述客观事实</p>
 <p>用一般现在时。</p>
-<p>中式英语：避免逐字翻译中文。如"我很高兴"不能写成"I am very happy"（太口语</p>
-<p>化），应用"I'm delighted/pleased to..."。</p>
+<p>中式英语：避免逐字翻译中文。如&quot;我很高兴&quot;不能写成&quot;I am very happy&quot;（太口语</p>
+<p>化），应用&quot;I&#x27;m delighted/pleased to...&quot;。</p>
 <p>3.</p>
 <p>4.</p>
 <p>5.</p>
@@ -813,7 +829,34 @@ p { margin: 4px 0; }
 <p>拼写和标点：拼写错误会扣分，尤其是常见词（如receive不是recieve）。英文标点与</p>
 <p>中文不同，不要混用。</p>
 <p>·</p>
-<p>·</p></div>
+<p>·</p>
 </div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本册目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h1,.wrap h2'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H2')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>

@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>历史 · 暑假衔接讲练</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>历史暑假衔接 · 暑假衔接讲练</title>
 <style>
-:root { --accent: #991b1b; --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --text2: #64748b; --border: #e2e8f0; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.9; }
-.topbar { position: sticky; top: 0; z-index: 10; background: var(--accent); color: #fff; padding: 12px 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-.topbar .back { color: #fff; text-decoration: none; font-size: 13px; background: rgba(255,255,255,.18); padding: 4px 12px; border-radius: 999px; white-space: nowrap; cursor: pointer; border: none; font-family: inherit; }
-.topbar .tt { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 60px; }
-.page { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
-h1 { font-size: 19px; color: var(--accent); margin: 6px 0 14px; }
-h2 { font-size: 16px; color: var(--accent); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--accent); }
-h3 { font-size: 15px; color: var(--text); margin: 14px 0 6px; background: #f1f5f9; display: inline-block; padding: 2px 10px; border-radius: 6px; }
-p { margin: 4px 0; }
-.pg-num { text-align: center; font-size: 11px; color: var(--text2); margin: 0 0 14px; }
-@media (max-width: 640px) { body { font-size: 14.5px; } .page { padding: 16px 14px; } }
+:root{--accent:#991b1b;--bg:#f4f7fb;--ink:#1e293b;--sub:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;-webkit-text-size-adjust:100%}
+.topbar{position:sticky;top:0;z-index:10;background:var(--accent);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.topbar .back{background:rgba(255,255,255,.2);border:none;color:#fff;padding:6px 12px;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.topbar h1{font-size:17px;font-weight:600;color:#fff;margin:0;padding:0;border:none}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+.page{background:#fff;border-radius:12px;padding:22px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+.wrap h1{font-size:19px;color:var(--accent);margin:14px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.wrap h2{font-size:16px;color:var(--ink);margin:18px 0 8px;padding-left:10px;border-left:4px solid var(--accent)}
+.wrap h3{font-size:15px;color:var(--sub);margin:14px 0 6px;background:#f1f5f9;display:inline-block;padding:3px 10px;border-radius:6px}
+p{font-size:15.5px;margin:8px 0;text-align:justify}
+.floaters{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:20}
+.fbtn{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:18px;box-shadow:0 4px 12px rgba(15,23,42,.3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.toc-mask{position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.toc{position:fixed;top:0;right:-300px;width:280px;height:100%;background:#fff;z-index:31;transition:right .25s;display:flex;flex-direction:column;box-shadow:-4px 0 16px rgba(15,23,42,.2)}
+.toc.open{right:0}
+.toc-mask.show{opacity:1;pointer-events:auto}
+.toc-head{padding:16px;border-bottom:1px solid #e2e8f0;font-weight:600;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+.toc-head button{border:none;background:none;font-size:20px;color:#94a3b8;cursor:pointer}
+.toc-body{flex:1;overflow-y:auto;padding:8px 0}
+.toc a{display:block;padding:10px 18px;color:var(--ink);text-decoration:none;font-size:14px;border-left:3px solid transparent}
+.toc a.lv2{padding-left:34px;color:var(--sub);font-size:13px}
+.toc a:active,.toc a:hover{background:#f1f5f9;border-left-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <button class="back" onclick="window.close();if(!window.closed){history.back()}">&#8592; 返回</button>
-  <div class="tt">历史 · 暑假衔接讲练</div>
-</div>
+<div class="topbar"><button class="back" onclick="window.close();if(!window.closed){history.back()}">‹ 返回</button><h1>历史暑假衔接</h1></div>
 <div class="wrap">
 <div class="page">
 <p>新高二历史暑假衔接讲练</p>
 <p>系统复习高一内容，夯实基础，迎接高二</p>
 <p>8个专题 知识精讲 典例破题 巩固提升</p>
 <p>适用对象：高一升高二文科方向学生 | 2026年暑假</p>
-</div>
 <p>1 知识精讲</p>
 <p>核心概念</p>
 <p>先秦指秦朝建立前的历史阶段，包括远古传说时代、夏商周三代及春秋</p>
@@ -87,8 +94,8 @@ p { margin: 4px 0; }
 <p>B. 分封制</p>
 <p>C. 郡县制</p>
 <p>D. 行省制</p>
-<p>解析：题干关键信息"将土地和人民分封给诸侯""世袭统治权""进贡、朝觐、</p>
-<p>军事保卫"，这些都是分封制的典型特征。宗法制是以血缘关系为核心的继</p>
+<p>解析：题干关键信息&quot;将土地和人民分封给诸侯&quot;&quot;世袭统治权&quot;&quot;进贡、朝觐、</p>
+<p>军事保卫&quot;，这些都是分封制的典型特征。宗法制是以血缘关系为核心的继</p>
 <p>•</p>
 <p>•</p>
 <p>•</p>
@@ -103,8 +110,8 @@ p { margin: 4px 0; }
 <p>承制度；郡县制是秦以后的地方行政制度，官员由中央任免；行省制是元朝</p>
 <p>的制度。故选 B。</p>
 <p>【例题2】材料分析题</p>
-<p>"治世不一道，便国不法古。故汤武不循古而王，夏殷不易礼而亡。反</p>
-<p>古者不可非，而循礼者不足多。"</p>
+<p>&quot;治世不一道，便国不法古。故汤武不循古而王，夏殷不易礼而亡。反</p>
+<p>古者不可非，而循礼者不足多。&quot;</p>
 <p>——《史记·商君列传》</p>
 <p>问题：</p>
 <p>（1）材料反映了哪位思想家的主张？他属于哪个学派？（2分）</p>
@@ -135,12 +142,12 @@ p { margin: 4px 0; }
 <p>答案：C。生产力决定生产关系，铁犁牛耕是生产力进步的标志，由此引</p>
 <p>发一系列社会变革。A、B、D都是生产力发展的结果。</p>
 <p>练习3</p>
-<p>孔子主张"仁者爱人""克己复礼"，其思想的核心是（　　）</p>
+<p>孔子主张&quot;仁者爱人&quot;&quot;克己复礼&quot;，其思想的核心是（　　）</p>
 <p>A A. 仁</p>
 <p>BB. 礼</p>
 <p>C C. 法</p>
 <p>DD. 道</p>
-<p>答案：A。"仁"是孔子思想的核心，"礼"是实现"仁"的途径。</p>
+<p>答案：A。&quot;仁&quot;是孔子思想的核心，&quot;礼&quot;是实现&quot;仁&quot;的途径。</p>
 <p>练习4</p>
 <p>战国时期，百家争鸣局面出现的根本原因是（　　）</p>
 <p>A A. 私学兴起，教育普及</p>
@@ -152,7 +159,7 @@ p { margin: 4px 0; }
 <p>4 易错警示</p>
 <p>⚠先秦时期常见错误</p>
 <p>禅让制与世袭制：禅让制是原始社会推举贤能的制度（尧舜禹），启</p>
-<p>建立夏朝后变为世袭制，标志着"公天下"变为"家天下"。</p>
+<p>建立夏朝后变为世袭制，标志着&quot;公天下&quot;变为&quot;家天下&quot;。</p>
 <p>分封制与宗法制的关系：二者互为表里，宗法制是分封制的血缘基</p>
 <p>础，分封制是宗法制的政治体现，不是对立关系。</p>
 <p>井田制的性质：井田制是土地国有制（周王所有），不是私有制；私</p>
@@ -175,12 +182,12 @@ p { margin: 4px 0; }
 <p>西汉（前202年-公元8年）</p>
 <p>汉初：吸取秦亡教训，实行休养生息政策，黄老之术（道家无为而治）</p>
 <p>汉武帝时期（大一统鼎盛）：</p>
-<p>政治：颁布"推恩令"，削弱王国势力；设立刺史监察地方</p>
+<p>政治：颁布&quot;推恩令&quot;，削弱王国势力；设立刺史监察地方</p>
 <p>经济：盐铁官营、均输平准、统一铸币（五铢钱）</p>
-<p>思想："罢黜百家，独尊儒术"，设太学，以儒学为正统</p>
+<p>思想：&quot;罢黜百家，独尊儒术&quot;，设太学，以儒学为正统</p>
 <p>军事：卫青、霍去病北击匈奴；张骞通西域，开辟丝绸之路</p>
 <p>东汉（25年-220年）</p>
-<p>光武帝刘秀建立，定都洛阳，出现"光武中兴"</p>
+<p>光武帝刘秀建立，定都洛阳，出现&quot;光武中兴&quot;</p>
 <p>专题二：秦汉时期</p>
 <p>统一多民族封建国家的建立与巩固</p>
 <p>前221年秦始皇统一六国，建立秦朝，定都咸阳</p>
@@ -215,9 +222,9 @@ p { margin: 4px 0; }
 <p>分封制的根本区别。考试选拔是科举制（隋朝开始）；地方推举是察举制</p>
 <p>（汉朝）。故选 C。</p>
 <p>【例题2】材料分析题</p>
-<p>"今诸侯或连城数十，地方千里，缓则骄奢易为淫乱，急则阻其强而合</p>
+<p>&quot;今诸侯或连城数十，地方千里，缓则骄奢易为淫乱，急则阻其强而合</p>
 <p>从以逆京师……愿陛下令诸侯得推恩分子弟，以地侯之。彼人人喜得</p>
-<p>所愿，上以德施，实分其国，不削而稍弱矣。"</p>
+<p>所愿，上以德施，实分其国，不削而稍弱矣。&quot;</p>
 <p>•</p>
 <p>•</p>
 <p>•</p>
@@ -230,7 +237,7 @@ p { margin: 4px 0; }
 <p>（2）该建议起到了什么作用？体现了汉武帝怎样的治国策略？（6分）</p>
 <p>解析：</p>
 <p>（1）问题：汉初郡国并行，诸侯王势力强大，威胁中央集权。（2分）</p>
-<p>建议：颁布"推恩令"，允许诸侯王将封地分给子弟，建立侯国。（2分）</p>
+<p>建议：颁布&quot;推恩令&quot;，允许诸侯王将封地分给子弟，建立侯国。（2分）</p>
 <p>（2）作用：诸侯国越分越小，无力与中央对抗，中央集权得到加强。（3</p>
 <p>分）</p>
 <p>策略：以柔克刚、分化瓦解，用和平手段解决王国问题，避免流血冲突。</p>
@@ -245,12 +252,12 @@ p { margin: 4px 0; }
 <p>答案：C。秦始皇统一文字，以秦国的小篆为标准字体，后隶书逐渐流</p>
 <p>行。</p>
 <p>练习2</p>
-<p>汉武帝"罢黜百家，独尊儒术"的实质是（　　）</p>
+<p>汉武帝&quot;罢黜百家，独尊儒术&quot;的实质是（　　）</p>
 <p>A A. 消灭其他学派的思想</p>
 <p>BB. 以儒家思想作为封建正统思想</p>
 <p>C C. 让儒家学者都去做官</p>
 <p>DD. 彻底否定法家和道家的作用</p>
-<p>答案：B。"独尊儒术"是将儒学确立为官方正统思想，为封建统治服务，</p>
+<p>答案：B。&quot;独尊儒术&quot;是将儒学确立为官方正统思想，为封建统治服务，</p>
 <p>但不是消灭其他学派。</p>
 <p>练习3</p>
 <p>下列关于丝绸之路的表述，不正确的是（　　）</p>
@@ -277,10 +284,10 @@ p { margin: 4px 0; }
 <p>籍。</p>
 <p>推恩令：不是废除封国，而是将大诸侯国分割为小侯国，侯国归郡管</p>
 <p>辖，变相削弱诸侯势力。</p>
-<p>独尊儒术：汉武帝尊儒的同时，实际政策是"外儒内法"，法家思想仍</p>
+<p>独尊儒术：汉武帝尊儒的同时，实际政策是&quot;外儒内法&quot;，法家思想仍</p>
 <p>在政治实践中发挥作用。</p>
 <p>丝绸之路：张骞两次出使西域（前138年、前119年），但丝绸之路的</p>
-<p>形成是一个渐进过程，不是张骞"开辟"了一条路，而是促进了中西交</p>
+<p>形成是一个渐进过程，不是张骞&quot;开辟&quot;了一条路，而是促进了中西交</p>
 <p>通。</p>
 <p>•</p>
 <p>•</p>
@@ -293,7 +300,7 @@ p { margin: 4px 0; }
 <p>大融合、江南开发、思想文化多元发展的重要阶段。</p>
 <p>一、政权更迭脉络</p>
 <p>二、政治特征</p>
-<p>门阀政治：士族门阀垄断高官，皇权衰弱，"上品无寒门，下品无士族"</p>
+<p>门阀政治：士族门阀垄断高官，皇权衰弱，&quot;上品无寒门，下品无士族&quot;</p>
 <p>九品中正制：曹魏创立的选官制度，后期被士族把持，成为维护门阀统治</p>
 <p>的工具</p>
 <p>三省制萌芽：魏晋时期尚书省、中书省、门下省的分工初步形成</p>
@@ -330,7 +337,7 @@ p { margin: 4px 0; }
 <p>佛教盛行：社会动荡，佛教传播迅速，石窟艺术兴盛（云冈、龙门）</p>
 <p>道教发展：道教逐渐官方化、理论化</p>
 <p>玄学兴起：以老庄思想解释儒家经典，代表有竹林七贤</p>
-<p>文学艺术：书法（王羲之"书圣"）、绘画（顾恺之）、文学（田园诗陶渊</p>
+<p>文学艺术：书法（王羲之&quot;书圣&quot;）、绘画（顾恺之）、文学（田园诗陶渊</p>
 <p>明）</p>
 <p>2 典例破题</p>
 <p>【例题1】选择题</p>
@@ -351,12 +358,12 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>解析：注意题干限定"移风易俗"。迁都洛阳、穿汉服、说汉话都是改变风俗</p>
+<p>解析：注意题干限定&quot;移风易俗&quot;。迁都洛阳、穿汉服、说汉话都是改变风俗</p>
 <p>习惯的措施；均田制是土地制度和经济政策，不属于移风易俗范畴。故选</p>
 <p>C。</p>
 <p>【例题2】材料分析题</p>
-<p>"自晋宋以来，号洛阳为荒土……昨至洛阳，始知衣冠士族，并在中</p>
-<p>原，礼仪富盛，人物殷阜。"</p>
+<p>&quot;自晋宋以来，号洛阳为荒土……昨至洛阳，始知衣冠士族，并在中</p>
+<p>原，礼仪富盛，人物殷阜。&quot;</p>
 <p>——《洛阳伽蓝记》（北魏·杨衒之）</p>
 <p>问题：</p>
 <p>（1）材料反映了什么历史现象？（2分）</p>
@@ -386,7 +393,7 @@ p { margin: 4px 0; }
 <p>C C. 考试成绩</p>
 <p>DD. 皇帝喜好</p>
 <p>答案：B。九品中正制初期重视才能品德，后期被门阀士族把持，选官标</p>
-<p>准主要看家世门第，形成"上品无寒门，下品无士族"的局面。</p>
+<p>准主要看家世门第，形成&quot;上品无寒门，下品无士族&quot;的局面。</p>
 <p>练习3</p>
 <p>下列关于北魏孝文帝改革的评价，正确的是（　　）</p>
 <p>A A. 彻底消除了民族矛盾</p>
@@ -460,7 +467,7 @@ p { margin: 4px 0; }
 <p>商业：长安是国际大都市，设市坊制度；出现柜坊（银行雏形）和飞钱</p>
 <p>（汇兑）</p>
 <p>民族关系与对外交往</p>
-<p>民族关系：实行开明的民族政策，被尊为"天可汗"</p>
+<p>民族关系：实行开明的民族政策，被尊为&quot;天可汗&quot;</p>
 <p>与吐蕃：文成公主、金城公主入藏（唐蕃和亲）</p>
 <p>与回纥、靺鞨、南诏等保持友好关系</p>
 <p>对外交往：开放包容，兼收并蓄</p>
@@ -469,10 +476,10 @@ p { margin: 4px 0; }
 <p>遣唐使来华学习</p>
 <p>丝绸之路繁盛</p>
 <p>文化成就</p>
-<p>诗歌：黄金时代，李白（诗仙，浪漫主义）、杜甫（诗圣，现实主义，"诗</p>
-<p>史"）、白居易</p>
-<p>书法：颜真卿、柳公权（"颜筋柳骨"）、欧阳询</p>
-<p>绘画：阎立本、吴道子（"画圣"）</p>
+<p>诗歌：黄金时代，李白（诗仙，浪漫主义）、杜甫（诗圣，现实主义，&quot;诗</p>
+<p>史&quot;）、白居易</p>
+<p>书法：颜真卿、柳公权（&quot;颜筋柳骨&quot;）、欧阳询</p>
+<p>绘画：阎立本、吴道子（&quot;画圣&quot;）</p>
 <p>科技：雕版印刷术（《金刚经》）、火药配方记载</p>
 <p>安史之乱与唐朝衰落</p>
 <p>755-763年，安禄山、史思明叛乱，唐朝由盛转衰</p>
@@ -507,7 +514,7 @@ p { margin: 4px 0; }
 <p>议），尚书省负责执行（下设六部具体执行）。御史台是监察机构。故选</p>
 <p>C。</p>
 <p>【例题2】材料分析题</p>
-<p>"自古皆贵中华，贱夷狄，朕独爱之如一。"</p>
+<p>&quot;自古皆贵中华，贱夷狄，朕独爱之如一。&quot;</p>
 <p>——唐太宗</p>
 <p>问题：</p>
 <p>（1）材料反映了唐太宗怎样的民族观念？（2分）</p>
@@ -524,7 +531,7 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>•</p>
 <p>（3）积极影响：促进了民族融合和边疆开发；推动了各民族经济文化交</p>
-<p>流；维护了国家统一和边疆安定；使唐朝国力强盛，被各族尊为"天可汗"。</p>
+<p>流；维护了国家统一和边疆安定；使唐朝国力强盛，被各族尊为&quot;天可汗&quot;。</p>
 <p>（答出2点即可，4分）</p>
 <p>3 巩固提升</p>
 <p>练习1</p>
@@ -541,17 +548,17 @@ p { margin: 4px 0; }
 <p>BB. 唐朝时进士科最重要</p>
 <p>C C. 打破了世家大族对官场的垄断</p>
 <p>DD. 唐朝科举只看考试成绩，不问出身</p>
-<p>答案：D。唐朝科举虽然扩大了选官范围，但仍有"行卷"等风气，且门第</p>
+<p>答案：D。唐朝科举虽然扩大了选官范围，但仍有&quot;行卷&quot;等风气，且门第</p>
 <p>出身对录取仍有影响；另外，科举制完全只看考试成绩是宋朝以后更加规</p>
 <p>范才实现的。</p>
 <p>练习3</p>
-<p>"开元盛世"局面出现的主要原因是（　　）</p>
+<p>&quot;开元盛世&quot;局面出现的主要原因是（　　）</p>
 <p>A A. 唐太宗的治理奠定了基础</p>
 <p>BB. 武则天统治时期继续发展</p>
 <p>C C. 唐玄宗前期的励精图治</p>
 <p>DD. 以上都是</p>
 <p>答案：D。开元盛世的出现是几代统治者共同努力的结果：贞观之治奠定</p>
-<p>基础，武则天时期继续发展（"政启开元，治宏贞观"），唐玄宗前期励精</p>
+<p>基础，武则天时期继续发展（&quot;政启开元，治宏贞观&quot;），唐玄宗前期励精</p>
 <p>图治达到鼎盛。</p>
 <p>练习4</p>
 <p>唐朝对外交往活跃的主要原因不包括（　　）</p>
@@ -560,7 +567,7 @@ p { margin: 4px 0; }
 <p>C C. 对外交通发达</p>
 <p>DD. 西方国家主动前来朝贡</p>
 <p>答案：D。唐朝对外交往活跃是因为自身强大、政策开放、交通便利；</p>
-<p>但"西方国家主动前来朝贡"说法错误，唐朝对外是平等交流，不是朝贡体</p>
+<p>但&quot;西方国家主动前来朝贡&quot;说法错误，唐朝对外是平等交流，不是朝贡体</p>
 <p>系下的被动接受（且当时西方主要指欧洲，与唐朝直接交往较少）。</p>
 <p>4 易错警示</p>
 <p>⚠隋唐时期常见错误</p>
@@ -577,7 +584,7 @@ p { margin: 4px 0; }
 <p>907年朱温建立后梁。</p>
 <p>唐三彩：是陶器（低温釉陶），不是瓷器或丝绸。唐朝瓷器以青瓷</p>
 <p>（越窑）和白瓷（邢窑）为代表。</p>
-<p>诗仙与诗圣：李白是"诗仙"（浪漫主义），杜甫是"诗圣"（现实主</p>
+<p>诗仙与诗圣：李白是&quot;诗仙&quot;（浪漫主义），杜甫是&quot;诗圣&quot;（现实主</p>
 <p>义），不要混淆。</p>
 <p>•</p>
 <p>•</p>
@@ -593,7 +600,7 @@ p { margin: 4px 0; }
 <p>行政：中央设二府三司（中书门下、枢密院、三司）；地方派文官任知</p>
 <p>州，设通判监督</p>
 <p>财政：地方财赋除留用外送交中央，设转运使管理</p>
-<p>影响：加强了中央集权，但造成"三冗"（冗官、冗兵、冗费）和"积贫积弱"。</p>
+<p>影响：加强了中央集权，但造成&quot;三冗&quot;（冗官、冗兵、冗费）和&quot;积贫积弱&quot;。</p>
 <p>专题五：辽宋夏金元</p>
 <p>民族关系与社会经济新变化</p>
 <p>916年耶律阿保机建立辽（契丹）</p>
@@ -609,7 +616,7 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>三、经济重心南移完成</p>
 <p>表现：</p>
-<p>农业：水稻产量提高，占城稻推广，"苏湖熟，天下足"</p>
+<p>农业：水稻产量提高，占城稻推广，&quot;苏湖熟，天下足&quot;</p>
 <p>手工业：棉纺织业推广（黄道婆改进技术），瓷器（景德镇），造船业居</p>
 <p>世界前列</p>
 <p>商业：打破坊市界限和时间限制；出现交子（世界最早纸币，北宋四</p>
@@ -622,14 +629,14 @@ p { margin: 4px 0; }
 <p>民族政策：实行四等人制（蒙古、色目、汉人、南人），带有民族歧视色</p>
 <p>彩</p>
 <p>五、思想文化</p>
-<p>理学：程颢、程颐、朱熹（程朱理学），主张"存天理，灭人欲"，维护封</p>
+<p>理学：程颢、程颐、朱熹（程朱理学），主张&quot;存天理，灭人欲&quot;，维护封</p>
 <p>建伦理</p>
 <p>文学：宋词（苏轼、李清照、辛弃疾、柳永）、元曲（关汉卿《窦娥</p>
 <p>冤》）</p>
 <p>科技：活字印刷术（毕昇）、指南针用于航海、火药武器广泛应用</p>
 <p>2 典例破题</p>
 <p>【例题1】选择题</p>
-<p>北宋时期，世界上最早的纸币"交子"出现在（　　）</p>
+<p>北宋时期，世界上最早的纸币&quot;交子&quot;出现在（　　）</p>
 <p>A. 广州</p>
 <p>B. 泉州</p>
 <p>C. 四川地区</p>
@@ -649,9 +656,9 @@ p { margin: 4px 0; }
 <p>•</p>
 <p>•</p>
 <p>解析：北宋前期，四川地区商品经济发达，但铁钱笨重不便流通，于是民间</p>
-<p>出现纸币"交子"。广州、泉州是外贸港口；临安是南宋都城。故选 C。</p>
+<p>出现纸币&quot;交子&quot;。广州、泉州是外贸港口；临安是南宋都城。故选 C。</p>
 <p>【例题2】材料分析题</p>
-<p>"国家根本，仰给东南。"</p>
+<p>&quot;国家根本，仰给东南。&quot;</p>
 <p>——《宋史》</p>
 <p>问题：</p>
 <p>（1）材料反映了什么历史现象？（2分）</p>
@@ -682,7 +689,7 @@ p { margin: 4px 0; }
 <p>C C. 促进了各民族经济文化交流</p>
 <p>DD. 巩固了多民族国家的统一</p>
 <p>答案：B。行省制度是中国省制的开端，对后世影响深远，是古代地方行</p>
-<p>政制度的重大变革。A、C、D都是其意义，但"最主要意义"应从制度创新</p>
+<p>政制度的重大变革。A、C、D都是其意义，但&quot;最主要意义&quot;应从制度创新</p>
 <p>角度考虑。</p>
 <p>练习3</p>
 <p>下列关于宋代商业发展的表述，正确的是（　　）</p>
@@ -738,7 +745,7 @@ p { margin: 4px 0; }
 <p>举</p>
 <p>戚继光抗倭：平息东南沿海倭患</p>
 <p>葡萄牙占澳门（1553年）、荷兰占台湾（1624年）</p>
-<p>明朝中后期实行"海禁"政策</p>
+<p>明朝中后期实行&quot;海禁&quot;政策</p>
 <p>民族关系</p>
 <p>北方：修筑长城，防御蒙古</p>
 <p>西南：改土归流（废除土司制度，派流官管理）</p>
@@ -775,7 +782,7 @@ p { margin: 4px 0; }
 <p>经济</p>
 <p>农业：引进高产作物（玉米、甘薯、马铃薯），人口增长</p>
 <p>手工业：丝织业、棉纺织业、制瓷业（青花瓷）发达</p>
-<p>商业：出现资本主义萌芽（江南丝织业"机户出资，机工出力"）</p>
+<p>商业：出现资本主义萌芽（江南丝织业&quot;机户出资，机工出力&quot;）</p>
 <p>思想文化</p>
 <p>思想：王阳明心学；明清之际进步思想家——黄宗羲（批判君主专制）、</p>
 <p>顾炎武（经世致用）、王夫之（唯物思想）</p>
@@ -801,7 +808,7 @@ p { margin: 4px 0; }
 <p>皇帝旨意拟写诏令，传达给中央和地方执行。这体现了君主专制的极端强</p>
 <p>化。故选 C。</p>
 <p>【例题2】材料分析题</p>
-<p>"天朝物产丰盈，无所不有，原不藉外夷货物以通有无。"</p>
+<p>&quot;天朝物产丰盈，无所不有，原不藉外夷货物以通有无。&quot;</p>
 <p>——清乾隆帝致英王乔治三世信函</p>
 <p>问题：</p>
 <p>（1）材料反映了清朝怎样的对外观念？（2分）</p>
@@ -930,8 +937,8 @@ p { margin: 4px 0; }
 <p>代</p>
 <p>奕䜣、曾国</p>
 <p>藩、李鸿章</p>
-<p>"师夷长技以自</p>
-<p>强"，学习西方技</p>
+<p>&quot;师夷长技以自</p>
+<p>强&quot;，学习西方技</p>
 <p>术，创办近代工业</p>
 <p>未触动封建制</p>
 <p>度，甲午战败</p>
@@ -962,7 +969,7 @@ p { margin: 4px 0; }
 <p>陈独秀、李</p>
 <p>大钊、胡</p>
 <p>适、鲁迅</p>
-<p>"民主"与"科学"，批</p>
+<p>&quot;民主&quot;与&quot;科学&quot;，批</p>
 <p>判封建思想</p>
 <p>思想解放运</p>
 <p>动，为马克思</p>
@@ -991,11 +998,11 @@ p { margin: 4px 0; }
 <p>帝国主义资本输出的要求，标志着列强侵华进入新阶段（由商品输出为主转</p>
 <p>为资本输出为主），对中国民族资本主义发展危害极大。故选 C。</p>
 <p>【例题2】材料分析题</p>
-<p>"我支那四千年之大梦唤醒，始自甲午战败割台湾，偿二百兆以后始</p>
-<p>也。"</p>
+<p>&quot;我支那四千年之大梦唤醒，始自甲午战败割台湾，偿二百兆以后始</p>
+<p>也。&quot;</p>
 <p>——梁启超</p>
 <p>问题：</p>
-<p>（1）梁启超所说的"大梦唤醒"指什么？（2分）</p>
+<p>（1）梁启超所说的&quot;大梦唤醒&quot;指什么？（2分）</p>
 <p>（2）甲午战败后，中国社会各阶层作出了怎样的反应？（6分）</p>
 <p>（3）结合所学，说明甲午战争对中国社会产生了怎样的深远影响。（4</p>
 <p>分）</p>
@@ -1030,7 +1037,7 @@ p { margin: 4px 0; }
 <p>C C. 戊戌政变发生</p>
 <p>DD. 义和团运动失败</p>
 <p>答案：B。北洋舰队是洋务运动在军事方面的主要成果，甲午战争中全军</p>
-<p>覆没，说明洋务运动"自强"目标未能实现，标志着洋务运动的失败。</p>
+<p>覆没，说明洋务运动&quot;自强&quot;目标未能实现，标志着洋务运动的失败。</p>
 <p>练习3</p>
 <p>辛亥革命最伟大的历史功绩是（　　）</p>
 <p>A A. 推翻了清王朝的统治</p>
@@ -1050,7 +1057,7 @@ p { margin: 4px 0; }
 <p>着中国新民主主义革命的开端。</p>
 <p>4 易错警示</p>
 <p>⚠中国近代史常见错误</p>
-<p>半殖民地半封建："半殖民地"指主权部分丧失，"半封建"指封建经济</p>
+<p>半殖民地半封建：&quot;半殖民地&quot;指主权部分丧失，&quot;半封建&quot;指封建经济</p>
 <p>逐步解体、资本主义因素发展但封建剥削仍保留。不是一半殖民地一</p>
 <p>半封建的意思。</p>
 <p>洋务运动的性质：是封建统治阶级的自救运动，不是资产阶级改革。</p>
@@ -1097,8 +1104,8 @@ p { margin: 4px 0; }
 <p>良好开端</p>
 <p>1958年大跃进和人民公社化运动——急于求成，违背经济规律，造成严</p>
 <p>重经济困难</p>
-<p>1960年冬提出"调整、巩固、充实、提高"八字方针，国民经济逐步恢复</p>
-<p>1966-1976年"文化大革命"——给党和国家带来严重灾难</p>
+<p>1960年冬提出&quot;调整、巩固、充实、提高&quot;八字方针，国民经济逐步恢复</p>
+<p>1966-1976年&quot;文化大革命&quot;——给党和国家带来严重灾难</p>
 <p>三、改革开放新时期（1978年至今）</p>
 <p>十一届三中全会（1978年）：把党和国家工作中心转移到经济建设上来，</p>
 <p>实行改革开放，是新中国成立以来党的历史上具有深远意义的伟大转折</p>
@@ -1115,7 +1122,7 @@ p { margin: 4px 0; }
 <p>（1997年）</p>
 <p>确立为党的指导思想；什么是社</p>
 <p>会主义、怎样建设社会主义</p>
-<p>"三个代表"重要思想中共十六大</p>
+<p>&quot;三个代表&quot;重要思想中共十六大</p>
 <p>（2002年） 建设什么样的党、怎样建设党</p>
 <p>科学发展观 中共十八大</p>
 <p>（2012年） 实现什么样的发展、怎样发展</p>
@@ -1145,16 +1152,16 @@ p { margin: 4px 0; }
 <p>义革命胜利的标志是新中国成立；一五计划完成是1957年；进入现代化建设</p>
 <p>新时期是1978年十一届三中全会。故选 B。</p>
 <p>【例题2】材料分析题</p>
-<p>"改革开放胆子要大一些，敢于试验……计划多一点还是市场多一点，</p>
+<p>&quot;改革开放胆子要大一些，敢于试验……计划多一点还是市场多一点，</p>
 <p>不是社会主义与资本主义的本质区别。计划经济不等于社会主义，资</p>
-<p>本主义也有计划；市场经济不等于资本主义，社会主义也有市场。"</p>
+<p>本主义也有计划；市场经济不等于资本主义，社会主义也有市场。&quot;</p>
 <p>——1992年邓小平南方谈话</p>
 <p>问题：</p>
 <p>（1）邓小平南方谈话是在什么背景下发表的？（2分）</p>
 <p>（2）这段话的核心观点是什么？（4分）</p>
 <p>（3）这一观点对我国的改革开放产生了怎样的影响？（4分）</p>
 <p>解析：</p>
-<p>（1）背景：20世纪80年代末90年代初，中国改革开放面临姓"社"姓"资"的</p>
+<p>（1）背景：20世纪80年代末90年代初，中国改革开放面临姓&quot;社&quot;姓&quot;资&quot;的</p>
 <p>争论，人们对市场经济存在疑虑，改革进入关键期。（2分）</p>
 <p>（2）核心观点：计划和市场都是经济手段，不是社会主义与资本主义的本</p>
 <p>质区别；社会主义也可以搞市场经济。（4分）</p>
@@ -1176,12 +1183,12 @@ p { margin: 4px 0; }
 <p>国宪法》，这是新中国第一部社会主义类型的宪法。</p>
 <p>练习2</p>
 <p>中共十一届三中全会是新中国成立以来党的历史上具有深远意义的伟大</p>
-<p>转折，其"转折"主要体现在（　　）</p>
+<p>转折，其&quot;转折&quot;主要体现在（　　）</p>
 <p>A A. 确立了以毛泽东为核心的党中央领导</p>
 <p>BB. 党和国家工作中心转移到经济建设上来</p>
 <p>C C. 确立了社会主义制度</p>
-<p>DD. 提出了"两个凡是"的方针</p>
-<p>答案：B。十一届三中全会果断停止使用"以阶级斗争为纲"的口号，作出</p>
+<p>DD. 提出了&quot;两个凡是&quot;的方针</p>
+<p>答案：B。十一届三中全会果断停止使用&quot;以阶级斗争为纲&quot;的口号，作出</p>
 <p>把党和国家工作中心转移到经济建设上来、实行改革开放的历史性决策。</p>
 <p>练习3</p>
 <p>我国农村经济体制改革的起点是（　　）</p>
@@ -1221,12 +1228,39 @@ p { margin: 4px 0; }
 <p>经济上享受特殊政策；特别行政区（香港、澳门）实行资本主义制</p>
 <p>度，享有高度自治权。</p>
 <p>建国后土地制度变化：土地改革（1950-1952年，农民土地私有）→</p>
-<p>农业合作化（集体所有）→人民公社（"一大二公"）→家庭联产承包</p>
+<p>农业合作化（集体所有）→人民公社（&quot;一大二公&quot;）→家庭联产承包</p>
 <p>责任制（集体所有、分户经营）。</p>
 <p>•</p>
 <p>•</p>
 <p>•</p>
-<p>•</p></div>
+<p>•</p>
 </div>
+</div>
+<div class="floaters">
+<button class="fbtn" id="tocBtn" title="目录">☰</button>
+<button class="fbtn" id="topBtn" title="回顶部" style="background:#475569">↑</button>
+</div>
+<div class="toc-mask" id="tocMask"></div>
+<nav class="toc" id="tocPanel">
+<div class="toc-head"><span>📑 本册目录</span><button id="tocClose">×</button></div>
+<div class="toc-body" id="tocList"></div>
+</nav>
+<script>
+(function(){
+  var heads=document.querySelectorAll('.wrap h1,.wrap h2'),list=document.getElementById('tocList');
+  heads.forEach(function(h,i){h.id='sec-'+i;
+    var a=document.createElement('a');a.href='#sec-'+i;a.textContent=h.textContent;
+    if(h.tagName==='H2')a.className='lv2';
+    a.addEventListener('click',function(){closeToc()});
+    list.appendChild(a);});
+  var panel=document.getElementById('tocPanel'),mask=document.getElementById('tocMask');
+  function openToc(){panel.classList.add('open');mask.classList.add('show')}
+  function closeToc(){panel.classList.remove('open');mask.classList.remove('show')}
+  document.getElementById('tocBtn').addEventListener('click',openToc);
+  document.getElementById('tocClose').addEventListener('click',closeToc);
+  mask.addEventListener('click',closeToc);
+  document.getElementById('topBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>
