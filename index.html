@@ -2475,6 +2475,7 @@ function getConfig() {
 
 /* ========== Tab切换 ========== */
 function switchTab(tabName) {
+  if (window.stopTTS) window.stopTTS();
   state.currentTab = tabName;
   state.currentSubject = null;
   saveState();
@@ -2483,6 +2484,7 @@ function switchTab(tabName) {
 
 /* ========== 科目操作 ========== */
 function openSubject(subjectId) {
+  if (window.stopTTS) window.stopTTS();
   state.currentSubject = subjectId;
   saveState();
   render();
@@ -2495,9 +2497,17 @@ function backToSubjects() {
 }
 
 function selectTeacher(subjectId) {
+  if (window.stopTTS) window.stopTTS();
   state.currentTeacher = subjectId;
   saveState();
   renderChat();
+  // 新老师无聊天记录时，自动朗读欢迎语
+  const h = state.chatHistory[subjectId] || [];
+  if (h.length === 0 && window.autoSpeakReply) {
+    const teacher = SUBJECTS.find(s => s.id === subjectId);
+    const { completed, remaining } = getCompletedTopics(subjectId);
+    window.autoSpeakReply(`你好！我是${teacher.teacher.name}，很高兴能帮助你复习${teacher.name}。你已经完成了${completed.length}个专题，还有${remaining.length}个专题待完成。有什么不懂的尽管问我！`);
+  }
 }
 
 /* ========== 进度操作 ========== */
@@ -3681,10 +3691,12 @@ function renderChat() {
       </div>`;
   }
 
+  const autoTTSOn = !(state.config && state.config.autoTTS === false);
   el.innerHTML = `
     <div class="teacher-scroll">${teacherChips}</div>
     <div class="chat-area" id="chatArea">${chatMsgs}</div>
     <div class="chat-input-area">
+      <button id="autoTTSBtn" class="chat-send-btn" style="margin-right:8px;${autoTTSOn ? '' : 'background:#94a3b8;'}" title="自动朗读：${autoTTSOn ? '已开启，点我关闭' : '已关闭，点我开启'}" onclick="toggleAutoTTS()">${autoTTSOn ? '🔊' : '🔇'}</button>
       <textarea id="chatInput" placeholder="输入你的问题..." rows="1" onkeydown="handleChatKeydown(event)"></textarea>
       <button class="chat-send-btn" onclick="sendMessage()">➤</button>
     </div>
@@ -3774,6 +3786,7 @@ async function sendMessage() {
       </div>`;
     chatArea.insertAdjacentHTML('beforeend', assistantMsgHtml);
     chatArea.scrollTop = chatArea.scrollHeight;
+    if (window.autoSpeakReply) window.autoSpeakReply(reply);
     return;
   }
 
@@ -3858,6 +3871,8 @@ async function sendMessage() {
           <span class="tts-btn">&#128264;</span> <span class="tts-label">朗读</span>
         </div>`;
     }
+    // 自动朗读老师回复
+    if (window.autoSpeakReply) window.autoSpeakReply(content);
 
   } catch (error) {
     const thinkingEl = document.getElementById('thinkingMsg');
@@ -4605,6 +4620,94 @@ render();
     speechSynthesis.speak(utterance);
   };
 
+  /* ---------- 自动朗读：老师回复即播报，可暂停/继续/停止 ---------- */
+  var ttsFloatEl = null, ttsSpeaking = false, ttsPaused = false;
+
+  function isAutoTTS() { return !(state.config && state.config.autoTTS === false); }
+
+  function ensureTTSFloat() {
+    if (ttsFloatEl && document.body.contains(ttsFloatEl)) return;
+    ttsFloatEl = document.createElement('div');
+    ttsFloatEl.id = 'ttsFloat';
+    ttsFloatEl.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:88888;display:none;align-items:center;gap:8px;background:#1e3a8a;color:#fff;padding:8px 10px 8px 14px;border-radius:24px;box-shadow:0 4px 16px rgba(15,23,42,.35);font-size:13px;';
+    ttsFloatEl.innerHTML =
+      '<span id="ttsFloatLabel">🔊 朗读中</span>' +
+      '<button id="ttsPauseBtn" title="暂停/继续" style="width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.18);color:#fff;font-size:14px;cursor:pointer;">⏸</button>' +
+      '<button id="ttsStopBtn" title="停止朗读" style="width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.18);color:#fff;font-size:14px;cursor:pointer;">⏹</button>';
+    document.body.appendChild(ttsFloatEl);
+    document.getElementById('ttsPauseBtn').onclick = function () {
+      if (!ttsSpeaking) return;
+      var label = document.getElementById('ttsFloatLabel');
+      if (ttsPaused) {
+        try { speechSynthesis.resume(); } catch (e) {}
+        ttsPaused = false; this.textContent = '⏸'; label.textContent = '🔊 朗读中';
+      } else {
+        try { speechSynthesis.pause(); } catch (e) {}
+        ttsPaused = true; this.textContent = '▶'; label.textContent = '⏸ 已暂停';
+      }
+    };
+    document.getElementById('ttsStopBtn').onclick = function () { window.stopTTS(); };
+  }
+
+  function showTTSFloat() { ensureTTSFloat(); ttsFloatEl.style.display = 'flex'; }
+  function hideTTSFloat() {
+    if (ttsFloatEl) ttsFloatEl.style.display = 'none';
+    var p = document.getElementById('ttsPauseBtn');
+    if (p) p.textContent = '⏸';
+    ttsPaused = false; ttsSpeaking = false;
+  }
+
+  window.stopTTS = function () {
+    try { speechSynthesis.cancel(); } catch (e) {}
+    if (typeof currentTTSBtn !== 'undefined' && currentTTSBtn) {
+      currentTTSBtn.querySelector('.tts-label').textContent = '朗读';
+      currentTTSBtn.querySelector('.tts-btn').innerHTML = '&#128264;';
+      currentTTSBtn.classList.remove('speaking');
+      currentTTSBtn = null;
+    }
+    if (typeof currentUtterance !== 'undefined') currentUtterance = null;
+    hideTTSFloat();
+  };
+
+  window.autoSpeakReply = function (text) {
+    if (!isAutoTTS()) return;
+    if (!('speechSynthesis' in window)) return;
+    if (!text || !text.trim()) return;
+    window.stopTTS();
+    // 去掉 Markdown 符号，避免把 "#"、"*" 读出来
+    var clean = String(text).replace(/[#*>`|\[\]()-]/g, '').replace(/\s+/g, ' ').trim();
+    if (!clean) return;
+    if (clean.length > 600) clean = clean.slice(0, 600) + '。这段内容比较长，完整版请看屏幕。';
+    var utterance = new SpeechSynthesisUtterance(clean);
+    utterance.lang = 'zh-CN';
+    var picked = pickTeacherVoice(state.currentTeacher || '');
+    if (picked.voice) utterance.voice = picked.voice;
+    utterance.pitch = picked.pitch;
+    utterance.rate = picked.rate;
+    ttsSpeaking = true; ttsPaused = false;
+    showTTSFloat();
+    utterance.onend = utterance.onerror = function () {
+      hideTTSFloat();
+      if (typeof currentUtterance !== 'undefined') currentUtterance = null;
+    };
+    currentUtterance = utterance;
+    try { speechSynthesis.speak(utterance); } catch (e) { hideTTSFloat(); }
+  };
+
+  window.toggleAutoTTS = function () {
+    if (!state.config) state.config = {};
+    state.config.autoTTS = !isAutoTTS();
+    try { saveState(); } catch (e) {}
+    if (!state.config.autoTTS) window.stopTTS();
+    var b = document.getElementById('autoTTSBtn');
+    if (b) {
+      var on = isAutoTTS();
+      b.textContent = on ? '🔊' : '🔇';
+      b.title = '自动朗读：' + (on ? '已开启，点我关闭' : '已关闭，点我开启');
+      b.style.background = on ? '' : '#94a3b8';
+    }
+  };
+
   if (!ONLINE) return; // 本地模式到此为止
 
   /* ---------- 在线模式：固定接入后端 ---------- */
@@ -4828,7 +4931,7 @@ render();
    ================================================================ */
 (function () {
   if (location.protocol.indexOf('http') !== 0) return;
-  var APP_VERSION = '2026.07.23.2';
+  var APP_VERSION = '2026.07.23.3';
   var shown = false;
   function check() {
     fetch('/api/health', { cache: 'no-store' }).then(function (r) { return r.json(); })

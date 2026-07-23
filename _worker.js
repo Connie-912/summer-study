@@ -2,7 +2,7 @@
 // - /api/login、/api/ai、/api/sync/:code 由本 Worker 处理
 // - 其余路径转发给 Pages 静态资源（env.ASSETS）
 
-const APP_VERSION = '2026.07.23.2';
+const APP_VERSION = '2026.07.23.3';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
