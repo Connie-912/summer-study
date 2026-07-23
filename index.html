@@ -2154,63 +2154,63 @@ html, body {
 const SUBJECTS = [
   {
     id: 'chinese', name: '语文', icon: '\u{1F4D6}', color: '#ef4444',
-    materialPath: '../chinese/\u65B0\u9AD8\u4E8C\u8BED\u6587\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/chinese.html',
     teacher: { name: '\u82CF\u8001\u5E08', title: '\u9AD8\u7EA7\u8BED\u6587\u6559\u5E08\u00B720\u5E74\u6559\u9F84', avatar: '\u{1F469}\u{200D}\u{1F3EB}', style: '\u6E29\u6587\u5C14\u96C5\uFF0C\u8BF4\u8BDD\u5E38\u5F15\u7528\u53E4\u8BD7\u6587\uFF0C\u6CE8\u91CD\u9605\u8BFB\u7406\u89E3\u548C\u5199\u4F5C\u65B9\u6CD5' },
     topics: ['现代文阅读基础', '文言文实词虚词', '古诗词鉴赏', '名篇名句默写', '语言文字运用', '作文审题立意', '作文结构布局', '传统文化常识'],
     score: 80, priority: 3, group: 'core'
   },
   {
     id: 'math', name: '数学', icon: '\u{1F4D0}', color: '#2563eb',
-    materialPath: '../math/\u65B0\u9AD8\u4E8C\u6570\u5B66\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/math.html',
     teacher: { name: '\u9648\u8001\u5E08', title: '\u6570\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u5965\u8D5B\u6559\u7EC3', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u4E25\u8C28\u8010\u5FC3\uFF0C\u5F3A\u8C03\u6BCF\u4E00\u6B65\u90FD\u8981\u6709\u4F9D\u636E\uFF0C\u6CE8\u91CD\u89E3\u9898\u65B9\u6CD5\u548C\u601D\u7EF4\u8BAD\u7EC3' },
     topics: ['平面向量', '解三角形', '等差与等比数列', '数列求通项与求和', '函数概念与基本性质', '指数与对数函数', '函数零点与方程', '不等式基础'],
     score: 41, priority: 0, group: 'core'
   },
   {
     id: 'english', name: '英语', icon: '\u{1F524}', color: '#8b5cf6',
-    materialPath: '../english/\u65B0\u9AD8\u4E8C\u82F1\u8BED\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/english.html',
     teacher: { name: 'Lily\u8001\u5E08', title: '\u82F1\u8BED\u9AA8\u5E72\u6559\u5E08\u00B7\u96C5\u601D8\u5206', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6D3B\u6CFC\u9F13\u52B1\uFF0C\u4E2D\u82F1\u5939\u6742\uFF0C\u6CE8\u91CD\u8BED\u611F\u548C\u505A\u9898\u6280\u5DE7\uFF0C\u9F13\u52B1\u5B66\u751F\u5927\u80C6\u5C1D\u8BD5' },
     topics: ['时态语态', '非谓语动词', '定语从句', '名词性从句', '状语从句', '完形填空', '阅读理解', '书面表达'],
     score: 42, priority: 0, group: 'core'
   },
   {
     id: 'physics', name: '物理', icon: '\u269B\uFE0F', color: '#f59e0b',
-    materialPath: '../physics/\u65B0\u9AD8\u4E8C\u7269\u7406\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/physics.html',
     teacher: { name: '\u738B\u8001\u5E08', title: '\u7269\u7406\u9AD8\u7EA7\u6559\u5E08\u00B7\u5B9E\u9A8C\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F52C}', style: '\u70ED\u7231\u5B9E\u9A8C\uFF0C\u559C\u6B22\u7528\u751F\u6D3B\u4F8B\u5B50\u89E3\u91CA\u6982\u5FF5\uFF0C\u6CE8\u91CD\u7269\u7406\u6A21\u578B\u5EFA\u7ACB' },
     topics: ['匀变速直线运动', '相互作用与平衡', '牛顿运动定律', '曲线运动', '万有引力与航天', '功和能', '动量与动量守恒', '电场基础'],
     score: 0, priority: 1, group: 'core'
   },
   {
     id: 'chemistry', name: '化学', icon: '\u{1F9EA}', color: '#10b981',
-    materialPath: '../chemistry/\u65B0\u9AD8\u4E8C\u5316\u5B66\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/chemistry.html',
     teacher: { name: '\u674E\u8001\u5E08', title: '\u5316\u5B66\u7279\u7EA7\u6559\u5E08\u00B7\u547D\u9898\u4E13\u5BB6', avatar: '\u{1F469}\u{200D}\u{1F52C}', style: '\u7EC6\u81F4\u4E25\u8C28\uFF0C\u5F3A\u8C03\u5316\u5B66\u65B9\u7A0B\u5F0F\u89C4\u8303\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u4E4B\u95F4\u7684\u8054\u7CFB' },
     topics: ['物质的分类与转化', '离子反应', '氧化还原反应', '钠及其化合物', '氯及其化合物', '物质的量', '铁及其化合物', '原子结构与元素周期律'],
     score: 0, priority: 1, group: 'core'
   },
   {
     id: 'biology', name: '生物', icon: '\u{1F9EC}', color: '#16a34a',
-    materialPath: '../biology/\u65B0\u9AD8\u4E8C\u751F\u7269\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/biology.html',
     teacher: { name: '\u5468\u8001\u5E08', title: '\u751F\u7269\u9AA8\u5E72\u6559\u5E08\u00B7\u5E7D\u9ED8\u98CE\u8DA3', avatar: '\u{1F469}\u{200D}\u{1F393}', style: '\u6E29\u548C\u4EB2\u5207\uFF0C\u559C\u6B22\u7528\u56FE\u89E3\u548C\u7C7B\u6BD4\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u7406\u89E3\u548C\u8BB0\u5FC6\u7ED3\u5408' },
     topics: ['走近细胞', '组成细胞的分子', '细胞的基本结构', '细胞的物质输入和输出', '细胞的能量供应和利用', '细胞的生命历程', '遗传的细胞基础', '遗传的分子基础'],
     score: 0, priority: 3, group: 'extra'
   },
   {
     id: 'history', name: '历史', icon: '\u{1F4DC}', color: '#991b1b',
-    materialPath: '../history/\u65B0\u9AD8\u4E8C\u5386\u53F2\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/history.html',
     teacher: { name: '\u5F20\u8001\u5E08', title: '\u5386\u53F2\u9AD8\u7EA7\u6559\u5E08\u00B7\u6587\u53F2\u5B66\u8005', avatar: '\u{1F468}\u{200D}\u{1F393}', style: '\u77E5\u8BC6\u6E0A\u535A\uFF0C\u64C5\u957F\u8BB2\u6545\u4E8B\u548C\u6A2A\u5411\u5BF9\u6BD4\uFF0C\u6CE8\u91CD\u5386\u53F2\u601D\u7EF4\u548C\u65F6\u95F4\u7EBF' },
     topics: ['先秦时期', '秦汉时期', '魏晋南北朝', '隋唐时期', '辽宋夏金元', '明清时期', '中国近代史', '中国现代史'],
     score: 46, priority: 2, group: 'core'
   },
   {
     id: 'politics', name: '政治', icon: '\u2696\uFE0F', color: '#dc2626',
-    materialPath: '../politics/\u65B0\u9AD8\u4E8C\u653F\u6CBB\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/politics.html',
     teacher: { name: '\u5218\u8001\u5E08', title: '\u653F\u6CBB\u9AA8\u5E72\u6559\u5E08\u00B7\u65F6\u653F\u8BC4\u8BBA\u5458', avatar: '\u{1F469}\u{200D}\u{1F4BC}', style: '\u6761\u7406\u6E05\u6670\uFF0C\u6CE8\u91CD\u77E5\u8BC6\u70B9\u4E0E\u70ED\u70B9\u7ED3\u5408\uFF0C\u5F3A\u8C03\u7B54\u9898\u89C4\u8303' },
     topics: ['生活与消费', '生产劳动与经营', '收入与分配', '社会主义市场经济', '公民的政治生活', '为人民服务的政府', '社会主义民主政治', '哲学基础'],
     score: 56, priority: 2, group: 'core'
   },
   {
     id: 'geography', name: '地理', icon: '\u{1F30D}', color: '#0ea5e9',
-    materialPath: '../geography/\u65B0\u9AD8\u4E8C\u5730\u7406\u6691\u5047\u8854\u63A5\u8BB2\u7EC3.html',
+    materialPath: 'materials/geography.html',
     teacher: { name: '\u8D75\u8001\u5E08', title: '\u5730\u7406\u7279\u7EA7\u6559\u5E08\u00B7\u91CE\u5916\u8003\u5BDF\u8FBE\u4EBA', avatar: '\u{1F468}\u{200D}\u{1F3EB}', style: '\u7A7A\u95F4\u601D\u7EF4\u5F3A\uFF0C\u559C\u6B22\u753B\u56FE\u8BB2\u89E3\uFF0C\u6CE8\u91CD\u5730\u56FE\u548C\u6570\u636E\u5206\u6790' },
     topics: ['地球与地图', '地球上的大气', '地球上的水', '地表形态的塑造', '自然地理环境的整体性与差异性', '人口与城市', '农业与工业区位', '交通运输与可持续发展'],
     score: 50, priority: 2, group: 'core'
@@ -4527,6 +4527,300 @@ render();
     el.appendChild(card);
   };
   if (state.currentTab === 'diagnosis') renderDiagnosis();
+})();
+
+/* ================================================================
+   云端模块：账号登录门 + 云同步 + 在线AI固定接入 + 9位老师多音色
+   仅在 http(s) 在线模式启用；本地 file:// 双击打开时自动跳过，
+   保持纯本地单机可用。
+   ================================================================ */
+(function () {
+  var ONLINE = location.protocol.indexOf('http') === 0;
+  var AUTH_KEY = 'studyAuth';
+  var SYNC_CODE = 'main';
+
+  /* ---------- 多音色语音：9位老师9种声音 ---------- */
+  var VOICE_MAP = {
+    chinese:   { prefs: [/Xiaoxiao/i, /Yaoyao/i],                       pitch: 1.00, rate: 0.95 },
+    math:      { prefs: [/Yunjian/i, /Yunyang/i, /Kangkang/i],          pitch: 0.95, rate: 1.00 },
+    english:   { prefs: [/Xiaoyi/i, /Xiaohan/i, /Google \u666e\u901a\u8bdd/i], pitch: 1.15, rate: 1.05 },
+    physics:   { prefs: [/Yunyang/i, /Yunxi/i, /Kangkang/i],            pitch: 1.05, rate: 1.00 },
+    chemistry: { prefs: [/Yunxia/i, /Xiaomo/i, /Huihui/i],              pitch: 0.95, rate: 0.98 },
+    biology:   { prefs: [/Xiaobei/i, /Xiaoni/i, /Huihui/i],             pitch: 1.10, rate: 1.02 },
+    history:   { prefs: [/Yunze/i, /Yunfeng/i, /Kangkang/i],            pitch: 0.85, rate: 0.95 },
+    politics:  { prefs: [/Xiaomo/i, /Xiaorui/i, /Yaoyao/i],             pitch: 1.08, rate: 1.02 },
+    geography: { prefs: [/Yunxi/i, /Yunze/i, /Kangkang/i],              pitch: 1.00, rate: 1.05 }
+  };
+  var FALLBACK_PITCH = { chinese: 1.0, math: 0.9, english: 1.2, physics: 1.0, chemistry: 0.92, biology: 1.12, history: 0.85, politics: 1.06, geography: 1.0 };
+
+  function pickTeacherVoice(teacherId) {
+    var conf = VOICE_MAP[teacherId] || { prefs: [], pitch: 1.0, rate: 1.0 };
+    var voices = ('speechSynthesis' in window) ? speechSynthesis.getVoices() : [];
+    var zh = voices.filter(function (v) { return (v.lang || '').toLowerCase().indexOf('zh') === 0; });
+    for (var i = 0; i < conf.prefs.length; i++) {
+      var hit = zh.find(function (v) { return conf.prefs[i].test(v.name); });
+      if (hit) return { voice: hit, pitch: conf.pitch, rate: conf.rate };
+    }
+    return { voice: zh[0] || null, pitch: (FALLBACK_PITCH[teacherId] || conf.pitch), rate: conf.rate };
+  }
+
+  // 重新定义朗读：按当前老师选择不同音色（讲课与答疑共用此入口）
+  window.speakMessage = function (msgId, btnEl) {
+    if (typeof currentUtterance !== 'undefined' && currentUtterance) {
+      speechSynthesis.cancel();
+      if (currentTTSBtn) {
+        currentTTSBtn.querySelector('.tts-label').textContent = '朗读';
+        currentTTSBtn.querySelector('.tts-btn').innerHTML = '&#128264;';
+        currentTTSBtn.classList.remove('speaking');
+      }
+      if (currentTTSBtn === btnEl) { currentUtterance = null; currentTTSBtn = null; return; }
+    }
+    var msgEl = document.getElementById(msgId);
+    if (!msgEl) return;
+    var clone = msgEl.cloneNode(true);
+    var ttsBar = clone.querySelector('.tts-bar');
+    if (ttsBar) ttsBar.remove();
+    var text = clone.textContent || clone.innerText || '';
+    if (!text.trim()) return;
+
+    var utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'zh-CN';
+    var picked = pickTeacherVoice(state.currentTeacher || '');
+    if (picked.voice) utterance.voice = picked.voice;
+    utterance.pitch = picked.pitch;
+    utterance.rate = picked.rate;
+
+    btnEl.querySelector('.tts-label').textContent = '停止';
+    btnEl.querySelector('.tts-btn').innerHTML = '&#128263;';
+    btnEl.classList.add('speaking');
+    currentUtterance = utterance;
+    currentTTSBtn = btnEl;
+    utterance.onend = utterance.onerror = function () {
+      btnEl.querySelector('.tts-label').textContent = '朗读';
+      btnEl.querySelector('.tts-btn').innerHTML = '&#128264;';
+      btnEl.classList.remove('speaking');
+      currentUtterance = null;
+      currentTTSBtn = null;
+    };
+    speechSynthesis.speak(utterance);
+  };
+
+  if (!ONLINE) return; // 本地模式到此为止
+
+  /* ---------- 在线模式：固定接入后端 ---------- */
+  function getToken() { try { return localStorage.getItem(AUTH_KEY) || ''; } catch (e) { return ''; } }
+  function setToken(t) { try { localStorage.setItem(AUTH_KEY, t); } catch (e) {} }
+  function clearToken() { try { localStorage.removeItem(AUTH_KEY); } catch (e) {} }
+
+  function applyBackendConfig() {
+    var t = getToken();
+    if (!t) return;
+    state.config.apiEndpoint = location.origin + '/api/ai';
+    state.config.apiKey = t;
+    try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
+  }
+
+  /* ---------- 登录遮罩 ---------- */
+  function showLoginGate() {
+    if (document.getElementById('loginGate')) return;
+    var gate = document.createElement('div');
+    gate.id = 'loginGate';
+    gate.innerHTML =
+      '<div style="position:fixed;inset:0;z-index:99999;background:linear-gradient(160deg,#0f2557 0%,#1e3a8a 45%,#2563eb 100%);display:flex;align-items:center;justify-content:center;padding:24px;">' +
+        '<div style="width:100%;max-width:360px;background:#ffffff;border-radius:16px;padding:36px 28px;box-shadow:0 24px 64px rgba(2,12,45,.45);">' +
+          '<div style="text-align:center;margin-bottom:26px;">' +
+            '<div style="width:56px;height:56px;margin:0 auto 12px;border-radius:14px;background:linear-gradient(135deg,#2563eb,#1e40af);display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;">&#128218;</div>' +
+            '<div style="font-size:20px;font-weight:700;color:#0f172a;letter-spacing:.5px;">新高二暑假智能学习系统</div>' +
+            '<div style="font-size:12px;color:#64748b;margin-top:6px;">请使用账号密码登录后进入学习</div>' +
+          '</div>' +
+          '<label style="font-size:13px;color:#334155;font-weight:600;">账号</label>' +
+          '<input id="lgUser" type="text" inputmode="numeric" autocomplete="username" placeholder="请输入账号" style="width:100%;box-sizing:border-box;margin:6px 0 14px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
+          '<label style="font-size:13px;color:#334155;font-weight:600;">密码</label>' +
+          '<input id="lgPass" type="password" autocomplete="current-password" placeholder="请输入密码" style="width:100%;box-sizing:border-box;margin:6px 0 8px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
+          '<div id="lgErr" style="min-height:20px;font-size:12px;color:#dc2626;margin-bottom:6px;"></div>' +
+          '<button id="lgBtn" style="width:100%;padding:13px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-size:15px;font-weight:600;cursor:pointer;">登 录</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(gate);
+
+    function doLogin() {
+      var u = document.getElementById('lgUser').value.trim();
+      var p = document.getElementById('lgPass').value;
+      var err = document.getElementById('lgErr');
+      var btn = document.getElementById('lgBtn');
+      if (!u || !p) { err.textContent = '请输入账号和密码'; return; }
+      btn.disabled = true; btn.textContent = '登录中…'; err.textContent = '';
+      fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user: u, pass: p })
+      }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (res.ok && res.d && res.d.ok && res.d.token) {
+            setToken(res.d.token);
+            applyBackendConfig();
+            gate.remove();
+            bootSync();
+            render();
+          } else {
+            err.textContent = (res.d && res.d.error) || '账号或密码错误';
+            btn.disabled = false; btn.textContent = '登 录';
+          }
+        })
+        .catch(function () {
+          err.textContent = '网络异常，请稍后重试';
+          btn.disabled = false; btn.textContent = '登 录';
+        });
+    }
+    document.getElementById('lgBtn').addEventListener('click', doLogin);
+    gate.addEventListener('keydown', function (e) { if (e.key === 'Enter') doLogin(); });
+    setTimeout(function () { var i = document.getElementById('lgUser'); if (i) i.focus(); }, 100);
+  }
+
+  /* ---------- 云同步 ---------- */
+  var syncTimer = null;
+  var syncing = false;
+  var lastSyncAt = 0;
+  var lastSyncError = '';
+
+  function uploadState() {
+    if (!getToken() || syncing) return;
+    syncing = true;
+    state.syncedAt = Date.now();
+    var copy = JSON.parse(JSON.stringify(state));
+    copy.config = Object.assign({}, copy.config, { apiKey: '', apiEndpoint: '' }); // 凭据不上云
+    fetch('/api/sync/' + SYNC_CODE, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getToken() },
+      body: JSON.stringify(copy)
+    }).then(function (r) {
+      syncing = false;
+      if (r.ok) { lastSyncAt = Date.now(); lastSyncError = ''; }
+      else { lastSyncError = '同步失败(' + r.status + ')'; }
+      updateSyncCard();
+    }).catch(function () {
+      syncing = false;
+      lastSyncError = '网络异常，待会会自动重试';
+      updateSyncCard();
+    });
+  }
+
+  function scheduleUpload() {
+    if (!getToken()) return;
+    if (syncTimer) clearTimeout(syncTimer);
+    syncTimer = setTimeout(uploadState, 2000);
+  }
+
+  function downloadState() {
+    return fetch('/api/sync/' + SYNC_CODE, {
+      headers: { 'Authorization': 'Bearer ' + getToken() }
+    }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (remote) {
+        if (remote && typeof remote === 'object') {
+          var rt = remote.syncedAt || 0;
+          var lt = state.syncedAt || 0;
+          if (rt > lt) {
+            var token = getToken();
+            state = Object.assign({}, DEFAULT_STATE, remote);
+            state.config = Object.assign({}, DEFAULT_STATE.config, remote.config || {});
+            state.examSettings = Object.assign({}, DEFAULT_STATE.examSettings, remote.examSettings || {});
+            state.config.apiKey = token;
+            state.config.apiEndpoint = location.origin + '/api/ai';
+            try { localStorage.setItem('studySystem', JSON.stringify(state)); } catch (e) {}
+            render();
+          }
+        } else {
+          uploadState(); // 云端还没有数据，把本地推上去
+        }
+      }).catch(function () {});
+  }
+
+  function bootSync() {
+    applyBackendConfig();
+    downloadState();
+  }
+
+  // 包装 saveState：每次保存后防抖上传（登录后生效）
+  var _origSave = window.saveState;
+  window.saveState = function () {
+    _origSave();
+    scheduleUpload();
+  };
+
+  /* ---------- 「我的」页：AI状态 + 云同步卡 + 退出登录 ---------- */
+  function fmtTime(ts) {
+    if (!ts) return '还未同步';
+    var d = new Date(ts);
+    function p(n) { return (n < 10 ? '0' : '') + n; }
+    return (d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  function updateSyncCard() {
+    var el = document.getElementById('syncStatusText');
+    if (!el) return;
+    el.textContent = lastSyncError ? ('⚠️ ' + lastSyncError) : ('上次同步：' + fmtTime(lastSyncAt));
+  }
+
+  window.syncNow = function () { lastSyncError = ''; uploadState(); updateSyncCard(); };
+  window.logoutAccount = function () {
+    if (!confirm('退出登录后会回到登录页，学习数据已保存在云端。确定退出吗？')) return;
+    clearToken();
+    location.reload();
+  };
+
+  var _origRenderMe = window.renderMe;
+  window.renderMe = function () {
+    _origRenderMe();
+    if (!getToken()) return;
+    var el = document.getElementById('tab-me');
+    if (!el) return;
+
+    // 1) 改写 AI 设置卡为「在线AI已就绪」，隐藏手动配置区
+    var cards = el.querySelectorAll('.card');
+    for (var i = 0; i < cards.length; i++) {
+      var title = cards[i].querySelector('.card-title');
+      if (title && title.textContent.indexOf('AI') >= 0 && title.textContent.indexOf('设置') >= 0) {
+        cards[i].innerHTML =
+          '<div class="card-title">🤖 在线 AI 老师</div>' +
+          '<div style="font-size:13px;color:var(--text-secondary);line-height:1.8;">✅ 已接入在线 AI（DeepSeek），无需任何配置，答疑、讲课、出卷开箱即用。<br><span style="color:var(--text-light);font-size:12px;">AI 服务由平台统一提供，密钥已安全托管在服务端。</span></div>';
+        var settingsDiv = cards[i].nextElementSibling;
+        if (settingsDiv && settingsDiv.querySelector('#apiKeyInput')) settingsDiv.style.display = 'none';
+        break;
+      }
+    }
+
+    // 2) 注入云同步卡（放在「数据管理」之前）
+    if (!el.querySelector('#cloudSyncCard')) {
+      var dataCard = null;
+      for (var j = 0; j < cards.length; j++) {
+        var t2 = cards[j].querySelector('.card-title');
+        if (t2 && t2.textContent.indexOf('数据管理') >= 0) { dataCard = cards[j]; break; }
+      }
+      var syncCard = document.createElement('div');
+      syncCard.className = 'card';
+      syncCard.id = 'cloudSyncCard';
+      syncCard.innerHTML =
+        '<div class="card-title">☁️ 云同步</div>' +
+        '<div id="syncStatusText" style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">上次同步：' + fmtTime(lastSyncAt) + '</div>' +
+        '<div style="font-size:12px;color:var(--text-light);margin-bottom:12px;">学习进度、成绩、聊天记录会自动同步到云端，换设备登录同一账号即可继续学习。</div>' +
+        '<button class="btn btn-outline btn-block" onclick="syncNow()">立即同步</button>';
+      if (dataCard) el.insertBefore(syncCard, dataCard); else el.appendChild(syncCard);
+
+      // 3) 退出登录按钮（放在版本卡之前）
+      var logoutCard = document.createElement('div');
+      logoutCard.className = 'card';
+      logoutCard.innerHTML = '<button class="btn btn-danger btn-block" onclick="logoutAccount()">退出登录</button>';
+      el.insertBefore(logoutCard, syncCard.nextSibling);
+    }
+    updateSyncCard();
+  };
+
+  /* ---------- 启动 ---------- */
+  if (!getToken()) {
+    showLoginGate();
+  } else {
+    bootSync();
+  }
 })();
 </script>
 </body>
