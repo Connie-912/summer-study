@@ -4822,6 +4822,29 @@ render();
     bootSync();
   }
 })();
+
+/* ================================================================
+   版本检测：线上有新版本时提示刷新，避免旧页面卡住
+   ================================================================ */
+(function () {
+  if (location.protocol.indexOf('http') !== 0) return;
+  var APP_VERSION = '2026.07.23.2';
+  var shown = false;
+  function check() {
+    fetch('/api/health', { cache: 'no-store' }).then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (shown || !d || !d.version || d.version === APP_VERSION) return;
+        shown = true;
+        var bar = document.createElement('div');
+        bar.style.cssText = 'position:fixed;left:50%;bottom:80px;transform:translateX(-50%);z-index:99998;background:#1e3a8a;color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;box-shadow:0 8px 24px rgba(2,12,45,.35);cursor:pointer;font-family:inherit;';
+        bar.textContent = '✨ 已有新版本，点我立即更新';
+        bar.onclick = function () { location.reload(); };
+        document.body.appendChild(bar);
+      }).catch(function () {});
+  }
+  setTimeout(check, 5000);
+  setInterval(check, 60000);
+})();
 </script>
 </body>
 </html>

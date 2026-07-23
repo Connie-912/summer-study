@@ -2,6 +2,8 @@
 // - /api/login、/api/ai、/api/sync/:code 由本 Worker 处理
 // - 其余路径转发给 Pages 静态资源（env.ASSETS）
 
+const APP_VERSION = '2026.07.23.2';
+
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, PUT, POST, OPTIONS',
@@ -101,7 +103,7 @@ export default {
     if (m) return handleSync(request, env, m[1]);
 
     if (url.pathname === '/api' || url.pathname === '/api/health') {
-      return json('{"ok":true,"service":"study-sync"}');
+      return json(JSON.stringify({ ok: true, service: 'study-sync', version: APP_VERSION }));
     }
 
     // 其余全部交给静态资源（SPA：/ 自动落到 index.html）
