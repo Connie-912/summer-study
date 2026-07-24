@@ -2226,14 +2226,19 @@ html, body {
       ${(function () {
         try { if (localStorage.getItem('studyAdmin') !== '1') return ''; } catch (e) { return ''; }
         return '<div class="card" style="border-left:4px solid #f59e0b;margin-top:14px;">' +
-          '<div class="card-title">🔑 邀请码管理（仅你可见）</div>' +
-          '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">每售出一份课程就生成一个邀请码发给家长，注册时必须填写。默认每码可用 1 次。</div>' +
-          '<div style="display:flex;gap:8px;margin-bottom:10px;">' +
-            '<button class="btn btn-primary btn-sm" onclick="adminGenInvite(1)">生成 1 次码</button>' +
-            '<button class="btn btn-outline btn-sm" onclick="adminGenInvite(5)">生成 5 次码</button>' +
-            '<button class="btn btn-outline btn-sm" onclick="adminListInvites()">刷新列表</button>' +
+          '<div class="card-title">👥 账号管理（仅你可见）</div>' +
+          '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;">在这里给购课家长的孩子开通账号，把用户名和密码发给他们即可登录。</div>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">' +
+            '<input id="admName" placeholder="姓名（同学称呼）" style="padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;">' +
+            '<select id="admGrade" style="padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;background:#fff;"><option value="高一">高一</option><option value="高二">高二</option><option value="高三">高三</option></select>' +
+            '<input id="admUser" placeholder="用户名（建议手机号）" style="padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;">' +
+            '<input id="admPass" placeholder="初始密码（至少6位）" style="padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:14px;">' +
           '</div>' +
-          '<div id="inviteList" style="font-size:13px;color:#334155;max-height:220px;overflow:auto;">点「刷新列表」查看已生成的邀请码</div>' +
+          '<div style="display:flex;gap:8px;margin-bottom:10px;">' +
+            '<button class="btn btn-primary btn-sm" onclick="adminCreateUser()">＋ 开通账号</button>' +
+            '<button class="btn btn-outline btn-sm" onclick="adminListUsers()">刷新列表</button>' +
+          '</div>' +
+          '<div id="userList" style="font-size:13px;color:#334155;max-height:260px;overflow:auto;">点「刷新列表」查看已开通的账号</div>' +
         '</div>';
       })()}
   </div>
@@ -4889,49 +4894,75 @@ function updateNickname(name) {
 }
 
 /* 更新分数 */
-function copyInvite(btn) {
-  var c = btn.getAttribute('data-code') || '';
-  function done() { showToast('已复制 ' + c, 'success'); }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(c).then(done).catch(function () { showToast('复制失败，请手动抄录：' + c, 'warning'); });
-  } else {
-    showToast('请手动抄录邀请码：' + c, 'info');
-  }
-}
-
-function adminGenInvite(max) {
-  fetch('/api/invite', {
-    method: 'POST',
+function adminApi(method, body) {
+  return fetch('/api/admin/users', {
+    method: method,
     headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + getToken() },
-    body: JSON.stringify({ max: max })
-  }).then(function (r) { return r.json(); }).then(function (d) {
-    if (d && d.ok && d.code) {
-      showToast('已生成邀请码：' + d.code, 'success');
-      adminListInvites();
-    } else {
-      showToast('生成失败：' + ((d && d.error) || '未知错误'), 'error');
-    }
-  }).catch(function () { showToast('网络异常', 'error'); });
+    body: body ? JSON.stringify(body) : undefined
+  }).then(function (r) {
+    if (r.status === 401) { authExpired(); throw new Error('auth'); }
+    return r.json();
+  });
 }
 
-function adminListInvites() {
-  var box = document.getElementById('inviteList');
+function adminCreateUser() {
+  var name = document.getElementById('admName').value.trim();
+  var grade = document.getElementById('admGrade').value;
+  var user = document.getElementById('admUser').value.trim();
+  var pass = document.getElementById('admPass').value;
+  if (!name || !user || !pass) { showToast('姓名、用户名、密码都要填', 'warning'); return; }
+  adminApi('POST', { user: user, pass: pass, name: name, grade: grade }).then(function (d) {
+    if (d && d.ok) {
+      showToast('已开通：' + user + '（' + name + '）', 'success');
+      document.getElementById('admUser').value = '';
+      document.getElementById('admPass').value = '';
+      document.getElementById('admName').value = '';
+      adminListUsers();
+    } else {
+      showToast('开通失败：' + ((d && d.error) || '未知错误'), 'error');
+    }
+  }).catch(function (e) { if (e.message !== 'auth') showToast('网络异常', 'error'); });
+}
+
+function adminListUsers() {
+  var box = document.getElementById('userList');
   if (!box) return;
   box.textContent = '加载中…';
-  fetch('/api/invite', { headers: { 'Authorization': 'Bearer ' + getToken() } })
-    .then(function (r) { return r.json(); }).then(function (d) {
-      if (!d || !d.ok) { box.textContent = '加载失败：' + ((d && d.error) || ''); return; }
-      if (!d.invites.length) { box.textContent = '还没有邀请码，点上方按钮生成'; return; }
-      box.innerHTML = d.invites.map(function (v) {
-        var left = (v.max || 1) - (v.used || 0);
-        var color = left > 0 ? '#059669' : '#94a3b8';
-        return '<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-bottom:1px dashed #e2e8f0;">' +
-          '<span style="font-weight:700;letter-spacing:2px;font-family:monospace;font-size:15px;">' + v.code + '</span>' +
-          '<span style="font-size:12px;color:' + color + ';">剩余 ' + left + '/' + (v.max || 1) + ' 次</span>' +
-          '<button class="btn btn-outline btn-sm" data-code="' + v.code + '" onclick="copyInvite(this)">复制</button>' +
-        '</div>';
-      }).join('');
-    }).catch(function () { box.textContent = '网络异常'; });
+  adminApi('GET').then(function (d) {
+    if (!d || !d.ok) { box.textContent = '加载失败：' + ((d && d.error) || ''); return; }
+    if (!d.users.length) { box.textContent = '还没有开通任何账号'; return; }
+    box.innerHTML = d.users.map(function (u) {
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px dashed #e2e8f0;gap:6px;">' +
+        '<div style="min-width:0;">' +
+          '<div style="font-weight:700;font-size:14px;">' + u.name + '<span style="font-weight:400;color:#64748b;font-size:12px;margin-left:6px;">' + u.grade + '</span></div>' +
+          '<div style="font-size:12px;color:#64748b;font-family:monospace;">' + u.user + '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:6px;flex-shrink:0;">' +
+          '<button class="btn btn-outline btn-sm" data-u="' + u.user + '" onclick="adminResetPass(this)">重置密码</button>' +
+          '<button class="btn btn-outline btn-sm" style="color:#dc2626;" data-u="' + u.user + '" data-n="' + u.name + '" onclick="adminDelUser(this)">删除</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }).catch(function (e) { if (e.message !== 'auth') box.textContent = '网络异常'; });
+}
+
+function adminResetPass(btn) {
+  var u = btn.getAttribute('data-u');
+  var np = prompt('给「' + u + '」设置新密码（至少6位）：');
+  if (!np) return;
+  adminApi('PUT', { user: u, pass: np }).then(function (d) {
+    showToast(d && d.ok ? '密码已重置' : ('重置失败：' + ((d && d.error) || '')), d && d.ok ? 'success' : 'error');
+  }).catch(function (e) { if (e.message !== 'auth') showToast('网络异常', 'error'); });
+}
+
+function adminDelUser(btn) {
+  var u = btn.getAttribute('data-u');
+  var n = btn.getAttribute('data-n');
+  if (!confirm('确定删除账号「' + u + '（' + n + '）」？该账号的云端学习数据会一并清除，不可恢复。')) return;
+  adminApi('DELETE', { user: u }).then(function (d) {
+    if (d && d.ok) { showToast('已删除 ' + u, 'success'); adminListUsers(); }
+    else showToast('删除失败：' + ((d && d.error) || ''), 'error');
+  }).catch(function (e) { if (e.message !== 'auth') showToast('网络异常', 'error'); });
 }
 
 function updateGrade(g) {
@@ -5539,6 +5570,8 @@ render();
     return cleanStageText(s).replace(/[#*>`|\[\]]/g, '').replace(/【|】/g, '').replace(/\s+/g, ' ').trim();
   }
   window.cleanStageText = cleanStageText;
+  window.getToken = getToken;
+  window.authExpired = authExpired;
 
   function pumpTTS() {
     if (ttsSpeaking || !ttsQueue.length) return;
@@ -5638,30 +5671,14 @@ render();
             '<div style="font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.3px;">AI智能学伴</div>' +
             '<div style="font-size:13px;color:#64748b;margin-top:6px;line-height:1.5;">每位同学一个专属空间<br>学习记录云端保存，缺啥补啥</div>' +
           '</div>' +
-          '<div style="display:flex;background:#f1f5f9;border-radius:12px;padding:4px;margin-bottom:20px;">' +
-            '<button id="lgTabLogin" style="flex:1;padding:10px;border:none;border-radius:10px;background:#0891b2;color:#fff;font-size:14px;font-weight:700;cursor:pointer;">登 录</button>' +
-            '<button id="lgTabReg" style="flex:1;padding:10px;border:none;border-radius:10px;background:transparent;color:#475569;font-size:14px;font-weight:600;cursor:pointer;">注 册</button>' +
-          '</div>' +
-          '<div id="lgRegFields" style="display:none;">' +
-            '<label style="font-size:13px;color:#334155;font-weight:600;">姓名</label>' +
-            '<input id="lgName" type="text" autocomplete="nickname" placeholder="同学称呼，如：小雅" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
-            '<label style="font-size:13px;color:#334155;font-weight:600;">年级</label>' +
-            '<select id="lgGrade" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;background:#fff;color:#0f172a;appearance:auto;">' +
-              '<option value="">请选择年级</option>' +
-              '<option value="高一">高一</option>' +
-              '<option value="高二">高二</option>' +
-              '<option value="高三">高三</option>' +
-            '</select>' +
-              '<label style="font-size:13px;color:#334155;font-weight:600;">邀请码</label>' +
-              '<input id="lgCode" type="text" autocomplete="off" placeholder="向已购课家长或老师索取" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;text-transform:uppercase;">' +
-          '</div>' +
+          '<div style="text-align:center;font-size:13px;color:#64748b;background:#f0f9ff;border-radius:10px;padding:9px 12px;margin-bottom:18px;">账号由管理员统一开通 · 没有账号请联系课程老师</div>' +
           '<label style="font-size:13px;color:#334155;font-weight:600;">用户名</label>' +
           '<input id="lgUser" type="text" autocomplete="username" placeholder="手机号或字母数字均可" style="width:100%;box-sizing:border-box;margin:6px 0 12px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
           '<label style="font-size:13px;color:#334155;font-weight:600;">密码</label>' +
           '<input id="lgPass" type="password" autocomplete="current-password" placeholder="至少6位" style="width:100%;box-sizing:border-box;margin:6px 0 8px;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;outline:none;">' +
           '<div id="lgErr" style="min-height:20px;font-size:12px;color:#dc2626;margin-bottom:6px;"></div>' +
           '<button id="lgBtn" style="width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#0e7490,#0891b2);color:#fff;font-size:15px;font-weight:700;cursor:pointer;">登 录</button>' +
-          '<div id="lgHint" style="text-align:center;font-size:12px;color:#94a3b8;margin-top:12px;">还没有账号？点上方「注册」10秒开通</div>' +
+
           '<div style="text-align:center;margin-top:10px;padding-top:10px;border-top:1px solid #f1f5f9;">' +
             '<button id="lgGuestBtn" style="background:none;border:none;color:#94a3b8;font-size:12px;cursor:pointer;text-decoration:underline;">🐾 先看看，不登录</button>' +
           '</div>' +
@@ -5669,25 +5686,7 @@ render();
       '</div>';
     document.body.appendChild(gate);
 
-    var mode = 'login';
-    var tabL = document.getElementById('lgTabLogin');
-    var tabR = document.getElementById('lgTabReg');
-    var regFields = document.getElementById('lgRegFields');
     var btn = document.getElementById('lgBtn');
-    var hint = document.getElementById('lgHint');
-    function setMode(m) {
-      mode = m;
-      var on = 'flex:1;padding:9px;border:none;border-radius:8px;background:#2563eb;color:#fff;font-size:14px;font-weight:600;cursor:pointer;';
-      var off = 'flex:1;padding:9px;border:none;border-radius:8px;background:transparent;color:#475569;font-size:14px;font-weight:600;cursor:pointer;';
-      tabL.style.cssText = (m === 'login') ? on : off;
-      tabR.style.cssText = (m === 'register') ? on : off;
-      regFields.style.display = (m === 'register') ? 'block' : 'none';
-      btn.textContent = (m === 'register') ? '注册并进入' : '登 录';
-      hint.textContent = (m === 'register') ? '注册即开通专属学习空间，数据云端保存' : '还没有账号？点上方「注册」10秒开通';
-      document.getElementById('lgErr').textContent = '';
-    }
-    tabL.addEventListener('click', function () { setMode('login'); });
-    tabR.addEventListener('click', function () { setMode('register'); });
 
     function afterAuth(d) {
       setToken(d.token);
@@ -5721,22 +5720,8 @@ render();
       var err = document.getElementById('lgErr');
       if (!u || !p) { err.textContent = '请输入用户名和密码'; return; }
       var body = { user: u, pass: p };
-      var url = '/api/login';
-      if (mode === 'register') {
-        var name = document.getElementById('lgName').value.trim();
-        var grade = document.getElementById('lgGrade').value;
-        if (!name) { err.textContent = '请填写姓名（同学称呼）'; btn.disabled = false; return; }
-        if (!grade) { err.textContent = '请选择年级'; btn.disabled = false; return; }
-        if (p.length < 6) { err.textContent = '密码至少6位'; return; }
-        var code = document.getElementById('lgCode').value.trim();
-        if (!code) { err.textContent = '请填写邀请码（向已购课家长或老师索取）'; btn.disabled = false; return; }
-        body.name = name;
-        body.grade = grade;
-        body.code = code;
-        url = '/api/register';
-      }
-      btn.disabled = true; btn.textContent = mode === 'register' ? '注册中…' : '登录中…'; err.textContent = '';
-      fetch(url, {
+      btn.disabled = true; btn.textContent = '登录中…'; err.textContent = '';
+      fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
@@ -5745,13 +5730,13 @@ render();
           if (res.ok && res.d && res.d.ok && res.d.token) {
             afterAuth(res.d);
           } else {
-            err.textContent = (res.d && res.d.error) || (mode === 'register' ? '注册失败' : '账号或密码错误');
-            btn.disabled = false; btn.textContent = mode === 'register' ? '注册并进入' : '登 录';
+            err.textContent = (res.d && res.d.error) || '账号或密码错误';
+            btn.disabled = false; btn.textContent = '登 录';
           }
         })
         .catch(function () {
           err.textContent = '网络异常，请稍后重试';
-          btn.disabled = false; btn.textContent = mode === 'register' ? '注册并进入' : '登 录';
+          btn.disabled = false; btn.textContent = '登 录';
         });
     }
     btn.addEventListener('click', doSubmit);
@@ -5932,7 +5917,7 @@ render();
    ================================================================ */
 (function () {
   if (location.protocol.indexOf('http') !== 0) return;
-  var APP_VERSION = '2026.07.24.2';
+  var APP_VERSION = '2026.07.24.3';
   var shown = false;
   function check() {
     fetch('/api/health', { cache: 'no-store' }).then(function (r) { return r.json(); })
